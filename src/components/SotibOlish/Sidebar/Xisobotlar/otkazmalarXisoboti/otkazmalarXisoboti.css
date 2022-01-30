@@ -1,0 +1,93 @@
+.textHeader{
+    display: flex;
+    align-items: baseline;
+}
+.rowStyleX select{
+    width: 100%;
+    height: 32px;
+    background-color:#F5F5F7;
+    padding-left: 4px;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+.rowStyleX select{
+    width: 100%;
+    height: 32px;
+    background-color:#F5F5F7;
+}
+
+.rowStyleX select:hover{
+    cursor: pointer;
+}
+.rowStyleTab{
+    justify-content: space-between;
+    border-radius: 8px;
+    padding: 20px 30px 20px 30px;
+    box-shadow: 0px 10px 20px grey;
+    margin-top: 32px;
+}
+.textHeader h2{
+    margin-right: 10px;
+    font-size: 24px;
+}
+.rowStyleTab .qoshish{
+    display: flex;
+    justify-content: space-between;
+    border-radius: 16px;
+}
+.rowStyleTab .izlash{
+    display: flex;
+    margin-top: 32px;
+    
+}
+
+.rowStyleTab .izlash p{
+    text-align: center;
+}
+.rowStyleTab .izlash select{
+    height: 28px;
+    border-radius: 4px;
+    border: 1px solid #6b6363a0;
+    margin-left: 4px;
+}
+.rowStyleTab .izlash button:hover{
+    cursor: pointer;
+    background-color: #e0dddd;
+}
+.rowStyleTab .izlash button{
+    height: 28px;
+    border-radius: 4px;
+    border: 1px solid #6b6363a0;
+    margin-left: 4px;
+    background-color: #f3efef;
+    font-size: 11px;
+}
+.rowStyleTab .izlash button img{
+    width: 16px;
+}
+
+.rowStyleTab .izlash input{
+    height: 28px;
+    border-radius: 4px;
+    border: 1px solid #6b6363a0;
+    background-color: #FFFF;
+    padding: 8px 0px 8px 12px;
+    margin-left: 24px;
+}
+.rowStyleTab .sahifalar{
+    display: flex;
+    justify-content: end;
+}
+.rowStyleTab .sahifalar :first-child{
+    border-radius: 4px 0px 0px 4px;
+    border: 1px solid #6b6363a0;
+}
+.rowStyleTab .sahifalar button{
+    border: 1px solid #6b6363a0;
+    background-color: #FFFF;
+    color:#1f1c1ca0;
+}
+.sahifalar :last-child{
+  border-radius: 0px 4px 4px 0px;
+  
+}

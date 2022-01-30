@@ -1,0 +1,39 @@
+:root{
+    --color:"aqua"
+}
+
+*{
+
+}
+body{
+    border: 1px solid red;
+}
+.app-css{
+    width: 1440px;
+    display: flex;
+    transition: 1s linear;
+}
+.display-none{
+    display: none;
+}
+.homebody{
+    width: 100%;
+    transition: 0.5s linear;
+}
+
+.homepage1{
+    transition: 0.5s linear;
+    width: 18%;
+    }
+.homepage2 {
+    transition: 0.5s linear;
+    width: 82%;
+}
+.homepageone{
+    transition: 1s linear;
+    width: 0;
+}
+.homepagetwo{
+    transition: 1s linear;
+    width: 100%;
+}

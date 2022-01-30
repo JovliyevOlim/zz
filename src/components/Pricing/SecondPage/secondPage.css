@@ -1,0 +1,68 @@
+.row .col-md-12 .text{
+    text-align: center;
+    margin-top: 25%;
+}
+.row .col-md-12 .text p{
+    margin-top: 5%;
+}
+.switch{
+    display: flex;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 5%;
+    width: 60px;
+    height: 32px;
+    border: 1px solid gray;
+    border-radius: 30px;
+    padding: 3px 30px 3px 3px;
+    cursor: pointer;
+    transition: 0.5s linear;
+}
+#switch{
+    display: none;
+}
+#switch[type=checkbox]:checked + .switch{
+    transition: 0.5s linear;
+        padding: 3px 3px 3px 30px;
+}
+.switch span{
+    display: flex;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #0044FF;
+}
+.row .col-md-12 .active{
+    display: flex;
+}
+.row .col-md-12 .active p{
+    margin-top: 5%;
+}
+.row .col-md-12 .active .p1{
+    margin-left: 42%;
+}
+.row .col-md-12 .active .p2{
+    margin-right: 42%;
+}
+.row .c1{
+    width: 300px;
+}
+.row .c2{
+    margin-left: 5%;
+    width: 320px;
+    margin-top: -12%;
+}
+.row .c3{
+    margin-left: 5%;
+    width: 300px;
+}
+.row .f{
+    display: flex;
+    margin-top: 12%;
+}
+.row .back{
+    width: 100%;
+    height: 70vh;
+    background: #0044FF;
+    margin-top: -28%;
+}

@@ -1,0 +1,13 @@
+.row .card{
+    padding: 2rem;
+    margin-left: 10%;
+}
+
+.row .price{
+    display: flex;
+    align-items: center;
+}
+.row .card .ch{
+    display: flex;
+    align-items: center;
+}

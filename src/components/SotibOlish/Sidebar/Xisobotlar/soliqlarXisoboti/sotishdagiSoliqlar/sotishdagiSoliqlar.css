@@ -1,0 +1,73 @@
+.rowStyleHaridSotish{
+    justify-content: space-between;
+    border-radius: 8px;
+    background-color: #FFFF;
+}
+.textHeader{
+    display: flex;
+    align-items: baseline;
+}
+.textHeader h2{
+    margin-right: 10px;
+    font-size: 24px;
+}
+.rowStyleHaridSotish .izlash{
+    display: flex;
+    margin-top: 32px;
+    
+}
+
+.rowStyleHaridSotish .izlash p{
+    text-align: center;
+}
+.rowStyleHaridSotish .izlash select{
+    height: 28px;
+    border-radius: 4px;
+    border: 1px solid #6b6363a0;
+    margin-left: 4px;
+}
+.rowStyleHaridSotish .izlash button:hover{
+    cursor: pointer;
+    background-color: #e0dddd;
+}
+.rowStyleHaridSotish .izlash button{
+    height: 28px;
+    border-radius: 4px;
+    border: 1px solid #6b6363a0;
+    margin-left: 4px;
+    background-color: #f3efef;
+    font-size: 11px;
+}
+.rowStyleHaridSotish .izlash button img{
+    width: 16px;
+}
+
+.rowStyleHaridSotish .izlash input{
+    height: 28px;
+    border-radius: 4px;
+    border: 1px solid #6b6363a0;
+    background-color: #FFFF;
+    padding: 8px 0px 8px 12px;
+    margin-left: 24px;
+}
+.rowStyleHaridSotish .sahifalar{
+    display: flex;
+    justify-content: end;
+}
+.rowStyleHaridSotish .sahifalar :first-child{
+    border-radius: 4px 0px 0px 4px;
+    border: 1px solid #6b6363a0;
+    -webkit-border-radius: 4px 0px 0px 4px;
+    -moz-border-radius: 4px 0px 0px 4px;
+    -ms-border-radius: 4px 0px 0px 4px;
+    -o-border-radius: 4px 0px 0px 4px;
+}
+.rowStyleHaridSotish .sahifalar button{
+    border: 1px solid #6b6363a0;
+    background-color: #FFFF;
+    color:#1f1c1ca0;
+}
+.sahifalar :last-child{
+  border-radius: 0px 4px 4px 0px;
+  
+}

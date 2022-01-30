@@ -1,0 +1,43 @@
+.rowStyleMax{
+       border-radius: 8px;
+       padding: 20px 30px 20px 30px;
+       box-shadow: 0px 2px 5px grey;
+}
+
+.textHeader{
+       display: flex;
+       align-items: baseline;
+}
+
+.rowStyleMax .qoshish{
+       margin-bottom: 28px;
+}
+.rowStyleMax .chescbox{
+       display: flex;
+       align-items: center;
+       text-align: center;
+       margin-top: 32px;
+}
+.rowStyleMax select{
+       width: 160px;
+       height: 32px;
+       background-color:#F5F5F7;
+}
+
+.rowStyleMax select:hover{
+       cursor: pointer;
+}
+.rowStyleMax .chescbox input{
+    width: 16px;   
+    height: 16px;
+    margin-right: 10px;
+}
+.rowStyleMax .chescbox input:hover{
+       cursor: pointer;
+}
+.rowStyleMax .chescbox h6{
+       margin: 0px;
+}
+.rowStyleMax .bynBarchMax{
+       margin-top: 46px;
+}

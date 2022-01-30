@@ -1,0 +1,163 @@
+import "./taminotchilar.css"
+import {Link} from "react-router-dom"
+import CSV from '../../../../../img/CSV.png'
+import Excel from '../../../../../img/Excel.png'
+import Print from '../../../../../img/Print.png'
+import Data from '../../../../../img/Data.png'
+import Pdf from '../../../../../img/PDF.png'
+import Edit from '../../../../../img/Edit.png'
+import Korish from '../../../../../img/Korish.png'
+import Delete from '../../../../../img/Delete.png'
+// import Arrow from '../../../../../img/arrowIcon.png'
+import {useState} from 'react'
+import {Modal, ModalBody, ModalFooter, ModalHeader} from "reactstrap";
+
+
+export default function Taminotchilar() {
+
+    const [active, setActive] = useState(false);
+
+    function toggle() {
+        setActive(!active)
+    }
+
+    const [input, setInput] = useState(
+        {
+            name: 'Boshliq',
+            tel: '0301313',
+            telegram: '@google',
+            taminot: 'nmadir'
+        },
+    );
+
+    return (
+
+        <div>
+            <div className="col-md-12 mt-2">
+                <div className="textHeader">
+                    <h2>Taminotchilar/Diller </h2>
+                    <p>Barcha Taminotchilar/Diller</p>
+                </div>
+                <div className="rowStyle">
+                    <div className="qoshish">
+                        <h5>Barcha Taminotchilar/Diller</h5>
+                        <button onClick={toggle} className='btn btn-primary'>+Qo'shish</button>
+                    </div>
+                    <div className="izlash">
+                        <p>Ko'rsatildi</p>
+                        <select name="" id="">
+                            <option value="">25</option>
+                            <option value="">50</option>
+                            <option value="">100</option>
+                            <option value="">200</option>
+                            <option value="">500</option>
+                            <option value="">1,000</option>
+                            <option value="">All</option>
+                        </select>
+                        <button><img src={CSV} alt=""/> Export CSV</button>
+                        <button><img src={Excel} alt=""/> Export Excel</button>
+                        <button><img src={Print} alt=""/> Print</button>
+                        <button><img src={Pdf} alt=""/>Export PDF</button>
+                        <button><img src={Data} alt=""/>Malumotlarni kamaytirish</button>
+                        <input type="text" placeholder='Izlash...'/>
+                    </div>
+
+                    <table className='table table-striped table-bordered mt-4'>
+                        <thead>
+                        <tr>
+                            <th>Ismi</th>
+                            <th>Telefon raqam</th>
+                            <th>Telegram</th>
+                            <th>Taminotchi turi</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>boshliq</td>
+                            <td>+998998887778</td>
+                            <td>ssdd@</td>
+                            <td>nimadir</td>
+                            <td>
+                                <Link to={'/headerthird/taminotchilar/taxrirlash'}>
+                                    <button onClick={toggle} className='taxrirlash'><img src={Edit} alt=""/> Taxrirlash
+                                    </button>
+                                </Link>
+                                <Link to={'/headerthird/taminotchilar/view/' + input.name+'/'+input.tel+'/'+input.telegram+'/'+input.taminot}>
+                                    <button className='korish'><img src={Korish} alt=""/> Ko'rish</button>
+                                </Link>
+                                <button className='ochirish'><img src={Delete} alt=""/> O'chirish</button>
+                                <Link to={''}>
+                                    <button className="amallar">Amallar alt="" /></button>
+                                </Link>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <p>Ko'rsatildi 1 ta sahifa 1 va yana 1 ta sahifa bor</p>
+                    <div className='sahifalar'>
+                        <button>Ortga</button>
+                        <button>1</button>
+                        <button>Oldinga</button>
+                    </div>
+                </div>
+
+                {active ?
+                    <Modal isOpen={active} toggle={toggle}>
+                        <ModalHeader>
+                            Yangi Qo`shish
+                        </ModalHeader>
+                        <ModalBody>
+                            <label htmlFor="">Munosabat turi</label>
+                            <select name="" id="" className={'p-1'} style={{marginLeft: '20px'}}>
+                                <option value="#">Tanlash</option>
+                                <option value="#">Taminotchilar</option>
+                                <option value="#">Mijozlar</option>
+                                <option value="#">(ikkisi ham) Taminotchi ha Mijoz</option>
+                            </select>
+                            <div className="in d-flex align-items-center justify-content-sm-around mt-3">
+                                <input type="radio" id={'in1'}/>
+                                <label htmlFor={'in1'}>
+                                    lang_v1.induvidial
+                                </label>
+                                <input type="radio" id={'in2'}/>
+                                <label htmlFor={'in2'}>
+                                    Do`kon
+                                </label>
+                            </div>
+                            <label htmlFor={'idRaqam'}>ID Raqami</label>
+                            <input type="text" id={'idRaqam'} placeholder={'ID Raqami'} className={'form-control'}/>
+                            lang_v1.leave_empty_to_autogenerate
+                            <div className="in d-flex mt-3">
+                                <div>
+                                    <label htmlFor={'log1'}>Login</label>
+                                    <input type="text" className={'form-control'} placeholder={'Mr/Mrs/Mis'}
+                                           id={'log1'}/>
+                                </div>
+                                <div>
+                                    <label htmlFor={'ism'}>Ismi</label>
+                                    <input type="text" id={'ism'} placeholder={'Ismi'} className={'form-control'}/>
+                                </div>
+                            </div>
+                            <div className="in d-flex">
+                                <div className={'mt-3'}>
+                                    <label htmlFor={'ot'}>Otasining ismi</label>
+                                    <input type="text" className={'form-control'} placeholder={'Otasining ismi'}/>
+                                </div>
+                                <div className={'mt-3'}>
+                                    <label htmlFor={'ot'}>Familiyasi</label>
+                                    <input type="text" placeholder={'Familiyasi'} className={'form-control'}/>
+                                </div>
+                            </div>
+
+                        </ModalBody>
+                        <ModalFooter>
+                            <button className={'btn btn-outline-primary'}>SAVE</button>
+                            <button className={'btn btn-outline-primary'} onClick={toggle}>CHIQISH</button>
+                        </ModalFooter>
+                    </Modal> : ''
+                }
+            </div>
+        </div>
+    )
+}

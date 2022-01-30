@@ -1,0 +1,71 @@
+.header-narx{
+    width: 454px;
+    height: 48px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+
+}
+
+.colorback {
+    background: #FFFFFF;
+    border: 1px solid #E3E6EB;
+    box-sizing: border-box;
+    border-radius: 8px
+}
+.header-menu{
+    margin-right: 64px;
+}
+.header-menu a{
+    font-family: "Montserrat",sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    margin-right: 64px;
+}
+.header-menu select{
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000000;
+    border: 0;
+    outline: none;
+}
+.header-narx button{
+    background: #FFFFFF;
+    border: 1px solid #0044FF;
+    box-sizing: border-box;
+    border-radius: 8px;
+    padding: 6px 24px;
+    font-family: "Montserrat" ,sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+
+    text-align: center;
+
+    color: #0044FF;
+}
+.header__ .image__{
+    align-items: center;
+    display: flex;
+}
+
+.header__ .image__ img{
+    width: 188px;
+    height: 40px;
+    margin-right: 575px;
+}
+
+.header__{
+    position: fixed;
+    padding: 28px 135px 28px 135px;
+    width: 1440px;
+    background-color: #FFFFFF;
+}

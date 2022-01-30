@@ -1,0 +1,16 @@
+.l1 label{
+    margin-left: 10px;
+    font-size: 18px;
+}
+.li input{
+    width: 30px;
+    height: 30px;
+}
+.ikki{
+    margin-left: 8%;
+}
+.l1{
+    border-radius: 8px;
+    background-color: #ffffff;
+    padding: 1rem;
+}

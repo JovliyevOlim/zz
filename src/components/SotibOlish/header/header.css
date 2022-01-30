@@ -1,0 +1,68 @@
+.row .one img{
+    cursor: pointer;
+    margin-top: 2%;
+
+}
+hr{
+    margin-top: 5%;
+}
+.d{
+    /*border: 1px solid red;*/
+    width: 100%;
+    height: 50px;
+    top: 0;
+    align-items: center;
+}
+.paddingheader{
+    padding: 12px 38px 12px 27px;
+}
+.row .two{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    /*border: 1px solid red;*/
+}
+.row .two .im2{
+    cursor: pointer;
+    margin-top: 11px;
+    margin-right: 30px;
+}
+.row .two .im3{
+    cursor: pointer;
+    margin-left: -15%;
+    margin-top: 11px;
+    margin-right: 34px;
+}
+.img2img3{
+    margin-right: 34px;
+}
+.row .two .imgUser{
+    margin-left: -15%;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: gray;
+    cursor: pointer;
+    margin-top: 11px;
+    margin-right: 5px;
+}
+.row .two select{
+    width: 16px;
+    height: 16px;
+    background: transparent;
+    border: 0;
+    outline: none;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+hr{
+    margin-top: 51%;
+}
+.padding-10{
+padding: 0 10px !important;
+}
+.homepage2 .padding-10{
+    padding: 0 1.2rem !important;
+}
+
