@@ -37,7 +37,7 @@ function App({func,active}) {
                 }
 
             </div>gt
-            <h4>olimsendehfwef</h4>
+            <h4>olimsendehfwefbgdbg</h4>
             <div className={`${func.class2}`}>
                 <Switch>
                     <Route path={'/home'} render={() => <Home linkpost={linkpost}/>}/>
