@@ -52,7 +52,7 @@ function Sidebar({func}) {
                         <Xirsobotlar/>
                         <Sozlamalar/>
                     </div>
-                    <h4>hello islom
+                    <h4>hello islom;jslhgskggs
                     </h4>
                 </div>
 
