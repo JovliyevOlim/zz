@@ -26,6 +26,9 @@
     top: 0;
     transition: 2s linear ;
 }
+.h .ul:hover{
+
+}
 .h .ul li{
     /*border: 1px solid red;*/
     margin-top: 5px;

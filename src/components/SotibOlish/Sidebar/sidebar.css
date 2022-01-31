@@ -1,9 +1,17 @@
-
 .sidebar{
     background: #ffffff;
     margin-top: 1%;
     transition: 0.3s linear;
     transform: translateX(-250px);
+    cursor: pointer;
+}
+.sidebar ul li{
+    transition: all 0.3s linear;
+    width: 100%;
+}
+.sidebar ul li:hover{
+    width: 120%;
+    font-size: 24px;
 }
 .sidebar2{
     transition: 1s linear;

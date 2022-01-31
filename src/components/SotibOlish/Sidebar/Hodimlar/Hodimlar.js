@@ -40,15 +40,16 @@ function Hodimlar() {
                         <path d="M8.91016 19.92L15.4302 13.4C16.2002 12.63 16.2002 11.37 15.4302 10.6L8.91016 4.07999" stroke="#3A3C40" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
 
-
                 </div>
-                {
-                    active?<ul className={'ul'}  >
-                        <li><Link to={'/headerthird/hodimlarruyxati'} className={"lll"}>Xodimlar ruyxati</Link></li>
-                        <li><Link to={'/headerthird/lavozimlar'} className={"lll"}>Lavozimlar</Link></li>
-                        <li><Link to={'/headerthird/hodimulush'} className={"lll"}>Xodimlar ulushi</Link>   </li>
-                    </ul>:''
-                }
+                <div className={'fff'}>
+                    {
+                        active?<ul className={'ul'}  >
+                            <li><Link to={'/headerthird/hodimlarruyxati'} className={"lll"}>Xodimlar ruyxati</Link></li>
+                            <li><Link to={'/headerthird/lavozimlar'} className={"lll"}>Lavozimlar</Link></li>
+                            <li><Link to={'/headerthird/hodimulush'} className={"lll"}>Xodimlar ulushi</Link>   </li>
+                        </ul>:''
+                    }
+                </div>
             </div>
         // </div>
     )
