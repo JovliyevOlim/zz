@@ -48,8 +48,6 @@ export default function Dukon() {
                 <Route path={'/third/dukonSozlama/10'} component={QisqaQoshimcha}/>
                 <Route path={'/third/dukonSozlama/11'} component={EmailSozlama}/>
 
-                <h1>SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS</h1>
-
             </div>
         </div>
     )

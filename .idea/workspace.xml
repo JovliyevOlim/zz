@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2ed0236b-2151-406e-828e-c9a3e0b2b336" name="Changes" comment="" />
+    <list default="true" id="2ed0236b-2151-406e-828e-c9a3e0b2b336" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,6 +16,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="24RsketNtc6XaMKeOi6aNnZqMZ2" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -24,14 +27,9 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/SotibOlish/Sidebar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Evaset" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\Projects\gitz\src\components\SotibOlish\Sidebar" />
-    </key>
   </component>
   <component name="RunManager">
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
@@ -58,8 +56,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1643604878473</updated>
-      <workItem from="1643604879958" duration="4797000" />
-      <workItem from="1643612314520" duration="531000" />
+      <workItem from="1643604879958" duration="6325000" />
     </task>
     <task id="LOCAL-00001" summary="app.js">
       <created>1643606654320</created>
@@ -83,18 +80,18 @@
       <updated>1643610356279</updated>
     </task>
     <task id="LOCAL-00004" summary="app.js">
-      <created>1643612381976</created>
+      <created>1643611412006</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1643612381976</updated>
+      <updated>1643611412006</updated>
     </task>
-    <task id="LOCAL-00005" summary="setting">
-      <created>1643612624094</created>
+    <task id="LOCAL-00005" summary="app.js">
+      <created>1643611485269</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1643612624094</updated>
+      <updated>1643611485269</updated>
     </task>
     <option name="localTasksCounter" value="6" />
     <servers />
@@ -114,8 +111,8 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="SHELVE_DETAILS_PREVIEW_SHOWN" value="true" />
     <MESSAGE value="app.js" />
-    <MESSAGE value="setting" />
-    <option name="LAST_COMMIT_MESSAGE" value="setting" />
+    <option name="LAST_COMMIT_MESSAGE" value="app.js" />
   </component>
 </project>
