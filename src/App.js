@@ -27,7 +27,6 @@ function App({func,active}) {
         Setlink('/headerthird')
     }
 
-
     return (
         <div className={'app-css'}>
             <div className={`${func.class1}`}>
@@ -44,7 +43,6 @@ function App({func,active}) {
                     <Redirect to={link}/>
                 </Switch>
             </div>
-
 
         </div>
 

@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2ed0236b-2151-406e-828e-c9a3e0b2b336" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Settings/bazalar/Bazalar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Settings/bazalar/bazalar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/img/settings.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Sidebar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Settings/Sozlamalar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Settings/Sozlamalar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/headerthird.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/headerthird.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,9 +34,15 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Evaset" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/img" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Projects\gitz\src\img" />
+      <recent name="E:\Projects\gitz\src\components\SotibOlish\Sidebar\Settings" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
@@ -94,7 +106,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643611485269</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="yangui">
+      <created>1643613534612</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1643613534612</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -105,7 +124,13 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="TEXT_FILTER_SETTINGS">
+                <TextFilterSettings>
+                  <option name="MATCH_CASE" value="true" />
+                </TextFilterSettings>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -114,6 +139,7 @@
   <component name="VcsManagerConfiguration">
     <option name="SHELVE_DETAILS_PREVIEW_SHOWN" value="true" />
     <MESSAGE value="app.js" />
-    <option name="LAST_COMMIT_MESSAGE" value="app.js" />
+    <MESSAGE value="yangui" />
+    <option name="LAST_COMMIT_MESSAGE" value="yangui" />
   </component>
 </project>
