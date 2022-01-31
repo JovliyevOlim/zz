@@ -76,7 +76,7 @@ function Home({saveusers,users,linkpost}) {
 
     return (
         <div>
-            <div id={'home'}>
+            <div id={'home col-md-12 '}>
                 <div>
                     <Header/>
                 </div>
