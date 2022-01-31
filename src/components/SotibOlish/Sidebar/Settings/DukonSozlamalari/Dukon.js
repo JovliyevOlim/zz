@@ -5,6 +5,12 @@ import Soliq from "./soliq/Soliq";
 import Mahsulot2 from "./maxsulot/Mahsulot2";
 import Aloqa from "./aloqa/Aloqa";
 import Savdo2 from "./savdo/Savdo2";
+import SavdoOyna from "./SavdoOynasi/SavdoOyna";
+import XaridlarDukonSozlama from "./XaridlarDukonSozlama/XaridlarDukonSozlama";
+import BoshSahifaDukonSozlama from "./BoshSahifaDukonSozlama/BoshSahifaDukonSozlama";
+import TizimKorinishiDukonSozlama from "./TizimKorinishiDukonSozlama/TizimKorinishiDukonSozlama";
+import QisqaQoshimcha from "./QisqaQoshimcha/QisqaQoshimcha";
+import EmailSozlama from "./eMailSozlama/EmailSozlama";
 
 export default function Dukon() {
     return (
@@ -35,6 +41,12 @@ export default function Dukon() {
                 <Route path={'/third/dukonSozlama/3'} component={Mahsulot2}/>
                 <Route path={'/third/dukonSozlama/4'} component={Aloqa}/>
                 <Route path={'/third/dukonSozlama/5'} component={Savdo2}/>
+                <Route path={'/third/dukonSozlama/6'} component={SavdoOyna}/>
+                <Route path={'/third/dukonSozlama/7'} component={XaridlarDukonSozlama}/>
+                <Route path={'/third/dukonSozlama/8'} component={BoshSahifaDukonSozlama}/>
+                <Route path={'/third/dukonSozlama/9'} component={TizimKorinishiDukonSozlama}/>
+                <Route path={'/third/dukonSozlama/10'} component={QisqaQoshimcha}/>
+                <Route path={'/third/dukonSozlama/11'} component={EmailSozlama}/>
 
             </div>
         </div>

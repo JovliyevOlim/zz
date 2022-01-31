@@ -36,7 +36,7 @@ function App({func,active}) {
                         : ''
                 }
 
-            </div>
+            </div>gt
             <h4>olimsend</h4>
             <div className={`${func.class2}`}>
                 <Switch>
