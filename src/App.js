@@ -37,6 +37,9 @@ function App({func,active}) {
                 }
 
             </div>
+            <div>
+                <h4>pushed</h4>
+            </div>
             <div className={`${func.class2}`}>
                 <Switch>
                     <Route path={'/home'} render={() => <Home linkpost={linkpost}/>}/>
