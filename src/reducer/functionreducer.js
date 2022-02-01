@@ -30,4 +30,3 @@ const slice1 =createSlice({
 
 export const {active} = slice1.actions
 export default slice1.reducer
-

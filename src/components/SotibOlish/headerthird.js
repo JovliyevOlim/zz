@@ -42,6 +42,8 @@ import Dukon from "./Sidebar/Settings/DukonSozlamalari/Dukon";
 import SoliqlarXisoboti from "./Sidebar/Xisobotlar/soliqlarXisoboti/SoliqlarXisoboti";
 import Bazalar from './Sidebar/Settings/bazalar/Bazalar'
 import SozlamalarBtn from './Sidebar/Settings/bazalar/SozlamalarBtn'
+import Dukon1 from './Sidebar/Settings/DukonSozlamalari/dukon/Dukon1'
+import Soliq from './Sidebar/Settings/DukonSozlamalari/soliq/Soliq'
 function Headerthird() {
 
 
@@ -91,7 +93,7 @@ function Headerthird() {
                 <Route path={'/headerthird/kopSotilgan'} component={KopSotilgan}/>
                 <Route path={'/headerthird/otkazmalarXisoboti'} component={OtkazmalarXisoboti}/>
                 <Route path={'/headerthird/qoldiqlarXisoboti'} component={QoldiqlarXisoboti}/>
-                <Route path={'/headerthird/dukonSetting'} component={Dukon}/>
+                <Route path={'/headerthird/dukonSozlama'} component={Dukon}/>
                 <Route path={'/headerthird/soliqlarXisoboti'} component={SoliqlarXisoboti}/>
                 <Route path={'/headerthird/bazalarSetting'} component={Bazalar}/>
                 <Route path={'/headerthird/bazaSozlama'} component={SozlamalarBtn}/>

@@ -78,7 +78,6 @@ padding: 0px 134px 0 89px;
     border-radius: 8px;
     margin-bottom: 24px;
     padding: 16px;
-
 }
 .kirish-input input::placeholder{
     font-family: "Montserrat",sans-serif;
@@ -86,24 +85,12 @@ padding: 0px 134px 0 89px;
     font-weight: 500;
     font-size: 16px;
     line-height: 24px;
-    /* identical to box height, or 150% */
-
-
     color: #A1AFCA;
 }
-/*.kirish-input.placeholder input::placeholder{*/
-/*    color: red;*/
-/*    font-weight: bolder;*/
-/*    font-family: "Montserrat",sans-serif;*/
-/*    font-style: normal;*/
-/*    font-size: 16px;*/
-/*    line-height: 24px;*/
-/*}*/
-
 .kirish-input img{
     position: absolute;
     top: 356px;
-    right: 151px;
+    right: 15%;
     cursor: pointer;
 }
 .kirish-input button{
@@ -175,9 +162,6 @@ padding: 0px 134px 0 89px;
     font-weight: 500;
     font-size: 16px;
     line-height: 24px;
-    /* identical to box height, or 150% */
-
-
     color: #0044FF;
 
 }

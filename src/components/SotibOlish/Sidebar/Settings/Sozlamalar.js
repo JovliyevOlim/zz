@@ -43,7 +43,7 @@ function Sozlamalar() {
                 </svg>              </div>
             {
                 active?<ul style={{width:'80%'}}>
-                    <Link to={'/headerthird/dukonSetting'} className={'mahsulotSetting'}><li>Do`kon sozlamalari</li></Link>
+                    <Link to={'/headerthird/dukonSozlama'} className={'mahsulotSetting'}><li>Do`kon sozlamalari</li></Link>
                     <Link to={'/headerthird/bazalarSetting'} className={'mahsulotSetting'}><li>Bazalar</li></Link>
                     {/*<Link to={'/chekSetting'} className={'mahsulotSetting'}><li>Cheklar sozlamalari</li></Link>*/}
                     {/*<Link to={'/shtrixKodlar'} className={'mahsulotSetting'}><li>Shtrix kodlar sozlamalari</li></Link>*/}

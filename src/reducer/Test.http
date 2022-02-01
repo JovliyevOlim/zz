@@ -1,0 +1,15 @@
+GET http://192.168.0.203:8080/api/address
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY0MzY5MzA1OSwiZXhwIjoxNjQzNzI5MDU5LCJyb2xlIjoiQWRtaW4ifQ.9UWmcCE-3k2r3rc6Rr_HnGrrBzB9DlxqMX51XKXhjnYLbYhKS8tIaZtbmuN4cJE93zY0fQ2JiLSW10QmthCQ3g
+
+
+###
+POST http://192.168.0.203:8080/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "123"
+}
+###
+GET http://192.168.0.203:8080/api/user/1
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY0MzY5MzA1OSwiZXhwIjoxNjQzNzI5MDU5LCJyb2xlIjoiQWRtaW4ifQ.9UWmcCE-3k2r3rc6Rr_HnGrrBzB9DlxqMX51XKXhjnYLbYhKS8tIaZtbmuN4cJE93zY0fQ2JiLSW10QmthCQ3g

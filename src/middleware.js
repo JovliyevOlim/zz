@@ -8,7 +8,8 @@ export const api = ({dispatch}) => (next) => (action) => {
     next(action)
     const {url, method, data, onSuccess, onFail} = action.payload
     axios({
-        baseURL: 'http://localhost:5000',
+        baseURL: 'http://192.168.0.203:8080/api',
+        // baseURL: 'http://localhost:5000',
         url, method, data
     }).then(res => {
         dispatch({
@@ -21,7 +22,6 @@ export const api = ({dispatch}) => (next) => (action) => {
             payload: err.data
         })
     })
-
 
 }
 export default api

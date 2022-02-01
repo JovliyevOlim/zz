@@ -2,7 +2,7 @@ import './taxrirlash.css'
 function Taxrirlash() {
     return(
         <div className={'row mt-5'}>
-            <h4 className={'text-center'}>Lavozimni taxrirlash</h4>
+            <h4 className={'text-center'}>Lavozimni qo`shish / taxrirlash</h4>
 
             <div className="col-md-12">
 
