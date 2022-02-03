@@ -9,33 +9,11 @@ import Delete from '../../../../../img/Delete.png'
 import './xaridxisobot.css'
 import {useState,useRef} from "react";
 import { DateRangePickerComponent } from '@syncfusion/ej2-react-calendars'
-import {MenuItem, TextField,Select,InputLabel} from "@mui/material";
 export default function XaridlarXisoboti() {
 
     const [active,setActive] = useState(false)
     const [selectvalue,setSelectvalue] =useState('')
-    const startValueDate = new Date(new Date().getFullYear(), new Date().getMonth(), 14);
-    const endValueDate = new Date(new Date().getFullYear(), new Date().getMonth() + 1, 15);
-    const minDateDate = new Date(new Date().getFullYear(), new Date().getMonth(), 8);
-    const maxDateDate = new Date(new Date().getFullYear(), new Date().getMonth()+1, 20);
-    function selectchange(event){
-         console.log(event.isDefaultPrevented(false))
-             event.isDefaultPrevented(true)
-        event.isPropagationStopped(false)
-        if(event.target.value == 20){
 
-            setActive(true)
-        }
-        else{
-            setActive(false)
-        }
-        if(event.target.value == 3){
-            const day = new Date()
-            const day1 = new Date().getMonth()+1
-            const day2 = new Date().getFullYear()
-            console.log(day,day1,day2)
-        }
-    }
 
     function toggle(){
         setActive(!active)
@@ -75,22 +53,12 @@ export default function XaridlarXisoboti() {
                     </div>
                     <div className="col-md-6">
                         <h6>Sanani belgilang:</h6>
-                        <select  onClick={selectchange}  value={selectvalue} name="" id="">
-                            <option value="">1</option>
-                            <option value="">2</option>
-                        </select>
-                            {
-                                active?     <DateRangePickerComponent placeholder="Enter Date Range"
-                                                                      startDate={startValueDate}
-                                                                      endDate={endValueDate}
-                                                                      min={minDateDate}
-                                                                      max={maxDateDate}
-                                                                      minDays={1}
-                                                                      maxDays={10000}
-                                                                      format="dd-MMM-yy"
-
-                                ></DateRangePickerComponent>:''
-                            }
+                        <input type="text" className={'form-control'}/>
+                        <div>
+                            <ul className={'form-control'}>
+                                <li>bu kun</li>
+                            </ul>
+                        </div>
 
                     </div>
                 </div>

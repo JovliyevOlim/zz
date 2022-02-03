@@ -7,12 +7,13 @@ import Bottom from "../Bottom/Bottom";
 import Third from "../SotibOlish/ThirdPage/Third";
 import {Link, Switch, Route, Redirect} from 'react-router-dom'
 import {connect} from "react-redux";
-import {getusers, saveusers} from "../../reducer/users";
+import login, {getlogin, savelogin} from "../../reducer/login";
+import {active} from "../../reducer/functionreducer";
 import SecondPage from "../Pricing/SecondPage/SecondPage";
 import {toast} from "react-toastify";
 
 
-function Home({saveusers, users, getusers, linkpost}) {
+function Home({savelogin, getlogin, linkpost,active}) {
 
     useEffect(() => {
     }, [])
@@ -68,8 +69,8 @@ function Home({saveusers, users, getusers, linkpost}) {
 
     function testusers() {
         linkpost()
-        getusers()
-    }
+        savelogin({username:inputlogin,password:inputparol})
+        }
 
     return (
         <div>
@@ -151,4 +152,4 @@ function Home({saveusers, users, getusers, linkpost}) {
     )
 }
 
-export default connect(({users: {users}}) => ({users}), {getusers, saveusers})(Home)
+export default connect((login), {getlogin, savelogin,active})(Home)

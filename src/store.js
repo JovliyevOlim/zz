@@ -1,10 +1,10 @@
 import {configureStore} from "@reduxjs/toolkit";
 import {api} from './middleware';
-import users from "./reducer/users";
+import login from "./reducer/login";
 import functionreducer from "./reducer/functionreducer";
 export default configureStore({
     reducer:{
-        users,functionreducer
+        login,functionreducer
     },
         middleware:[api]
 })

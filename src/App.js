@@ -12,7 +12,6 @@ import HodimlarRoyhati from "./components/SotibOlish/Sidebar/Hodimlar/hodimlarRo
 import functionreducer from "./reducer/functionreducer";
 import Sidebar from "./components/SotibOlish/Sidebar/Sidebar";
 
-
 function App({func,active}) {
     const history = useHistory()
 
@@ -43,7 +42,6 @@ function App({func,active}) {
                     <Redirect to={link}/>
                 </Switch>
             </div>
-
         </div>
 
     );

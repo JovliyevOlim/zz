@@ -53,6 +53,10 @@ function Headerthird() {
         history.push('/headerthird/third')
     }, [])
 
+    window.addEventListener('popstate',function (){
+
+    })
+
     return (
         <div className={'headerthird'}>
             <Header/>

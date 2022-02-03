@@ -20,36 +20,38 @@ import Chart from 'react-apexcharts'
 
 function Third({display}) {
 
-    const [mahsulot,setmahsulot]=useState(
+    const [mahsulot, setmahsulot] = useState(
         {
-            name:'FullHD Computer Monitor',
-            categoriya:'Monitorlar',
-            brand:'Dell',
-            narxi:"1 259 000 so'm",
-            sotilgan:'1548 dona',
+            name: 'FullHD Computer Monitor',
+            categoriya: 'Monitorlar',
+            brand: 'Dell',
+            narxi: "1 259 000 so'm",
+            sotilgan: '1548 dona',
         }
     )
-    function ommabop(){
+
+    function ommabop() {
         for (let i = 0; i < 500; i++) {
-            let a =tablemahsulot
-            a.push({...mahsulot,id:i})
+            let a = tablemahsulot
+            a.push({...mahsulot, id: i})
             settablemasulot(a)
         }
     }
+
     useEffect(() => {
         console.log('third')
         ommabop()
         // getuser()
-    },[])
+    }, [])
     // async function getuser(){
     //     console.log(current)
     //     let a =tablemahsulot.filter((item,index)=>index>=(current-1)*5 && index<current*5)
     //     setdata(a)
     // }
 
-    const [tablemahsulot,settablemasulot]=useState([])
+    const [tablemahsulot, settablemasulot] = useState([])
     // const [disabled,setdisabled]=useState(true)
-    const [data,setdata]=useState([])
+    const [data, setdata] = useState([])
 
 
     //
@@ -148,30 +150,25 @@ function Third({display}) {
     //     setPageactive(a)
     // }
 
-    const quantityPageRef = useRef();
-    const [currentIndex,setCurrentIndex] =useState(0);
-    const [endPosition,setEndPosition] =useState(4)
-
-
 
     const [third, setThird] = useState('')
     const chartOptions = {
         series: [
             {
                 name: "Daromad",
-                data: [100000, 400000, 250000, 300000, 450000, 150000,250000]
+                data: [100000, 400000, 250000, 300000, 450000, 150000, 250000]
             },
             {
                 name: 'Harajat',
-                data: [120000, 300000, 250000, 400000, 200000, 100000,300000]
+                data: [120000, 300000, 250000, 400000, 200000, 100000, 300000]
             }],
         options: {
 
             colors: ['#0044FF', '#FF9777'],
 
             chart: {
-                height:350,
-                type:'area'
+                height: 350,
+                type: 'area'
             },
             dataLabels: {
                 enabled: false
@@ -185,7 +182,7 @@ function Third({display}) {
                 max: 500000
             },
             xaxis: {
-                categories: [0, 5, 10, 15, 20, 25,30,35]
+                categories: [0, 5, 10, 15, 20, 25, 30, 35]
             },
             legend: {
                 position: 'top',
@@ -196,118 +193,119 @@ function Third({display}) {
         }
     }
     const [shophistory, setShophistory] = useState([
-            {
-                name: 'Buyurtmalar',
-                jami: '1288',
-                text: 'Jami buyurtmalar',
-                foiz: '15%  oshdi',
-                svg: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path opacity="1"
-                          d="M15.4807 10.7702L11.6907 15.8202H6.08072C5.12072 15.8202 4.64073 14.6602 5.32073 13.9802L10.5007 8.80023C11.3307 7.97023 12.6807 7.97023 13.5107 8.80023L15.4807 10.7702Z"
-                          fill="#008000"/>
-                    <path
-                        d="M17.9195 15.82H11.6895L15.4795 10.77L18.6895 13.98C19.3595 14.66 18.8795 15.82 17.9195 15.82Z"
-                        fill="#008000"/>
-                </svg>
-            },
-            {
-                name: 'Xaridlar',
-                jami: '579',
-                text: "Jami haridlar",
-                foiz: '8% oshdi',
-                svg: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path opacity="1"
-                          d="M15.4807 10.7702L11.6907 15.8202H6.08072C5.12072 15.8202 4.64073 14.6602 5.32073 13.9802L10.5007 8.80023C11.3307 7.97023 12.6807 7.97023 13.5107 8.80023L15.4807 10.7702Z"
-                          fill="#008000"/>
-                    <path
-                        d="M17.9195 15.82H11.6895L15.4795 10.77L18.6895 13.98C19.3595 14.66 18.8795 15.82 17.9195 15.82Z"
-                        fill="#008000"/>
-                </svg>
-            }
+        {
+            name: 'Buyurtmalar',
+            jami: '1288',
+            text: 'Jami buyurtmalar',
+            foiz: '15%  oshdi',
+            svg: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path opacity="1"
+                      d="M15.4807 10.7702L11.6907 15.8202H6.08072C5.12072 15.8202 4.64073 14.6602 5.32073 13.9802L10.5007 8.80023C11.3307 7.97023 12.6807 7.97023 13.5107 8.80023L15.4807 10.7702Z"
+                      fill="#008000"/>
+                <path
+                    d="M17.9195 15.82H11.6895L15.4795 10.77L18.6895 13.98C19.3595 14.66 18.8795 15.82 17.9195 15.82Z"
+                    fill="#008000"/>
+            </svg>
+        },
+        {
+            name: 'Xaridlar',
+            jami: '579',
+            text: "Jami haridlar",
+            foiz: '8% oshdi',
+            svg: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path opacity="1"
+                      d="M15.4807 10.7702L11.6907 15.8202H6.08072C5.12072 15.8202 4.64073 14.6602 5.32073 13.9802L10.5007 8.80023C11.3307 7.97023 12.6807 7.97023 13.5107 8.80023L15.4807 10.7702Z"
+                      fill="#008000"/>
+                <path
+                    d="M17.9195 15.82H11.6895L15.4795 10.77L18.6895 13.98C19.3595 14.66 18.8795 15.82 17.9195 15.82Z"
+                    fill="#008000"/>
+            </svg>
+        }
 
-        ])
+    ])
     const [diagramma, setDiagramm] = useState([
-            {
-                week: 'Du',
-                span: <span className={'rounded-1 mb-1'}
-                            style={{width: "25px", height: '90px', display: 'flex'}}></span>,
-                span2: <strong>250</strong>
-            },
-            {
-                week: 'Se',
-                span: <span className={'rounded-1 mb-1'}
-                            style={{width: "25px", height: '160px', display: 'flex'}}></span>,
-                span2: <strong>250</strong>
+        {
+            week: 'Du',
+            span: <span className={'rounded-1 mb-1'}
+                        style={{width: "25px", height: '90px', display: 'flex'}}></span>,
+            span2: <strong>250</strong>
+        },
+        {
+            week: 'Se',
+            span: <span className={'rounded-1 mb-1'}
+                        style={{width: "25px", height: '160px', display: 'flex'}}></span>,
+            span2: <strong>250</strong>
 
-            },
-            {
-                week: 'Cho',
-                span: <span className={'rounded-1 mb-1'}
-                            style={{width: "25px", height: '120px', display: 'flex'}}></span>,
-                span2: <strong>250</strong>,
+        },
+        {
+            week: 'Cho',
+            span: <span className={'rounded-1 mb-1'}
+                        style={{width: "25px", height: '120px', display: 'flex'}}></span>,
+            span2: <strong>250</strong>,
 
-            },
-            {
-                week: 'Pa',
-                span: <span className={'rounded-1 mb-1'}
-                            style={{width: "25px", height: '130px', display: 'flex'}}></span>,
-                span2: <strong>250</strong>
+        },
+        {
+            week: 'Pa',
+            span: <span className={'rounded-1 mb-1'}
+                        style={{width: "25px", height: '130px', display: 'flex'}}></span>,
+            span2: <strong>250</strong>
 
-            },
-            {
-                week: 'Ju',
-                span: <span className={'rounded-1 mb-1'}
-                            style={{width: "25px", height: '110px', display: 'flex'}}></span>,
-                span2: <strong>250</strong>
+        },
+        {
+            week: 'Ju',
+            span: <span className={'rounded-1 mb-1'}
+                        style={{width: "25px", height: '110px', display: 'flex'}}></span>,
+            span2: <strong>250</strong>
 
-            },
-            {
-                week: 'Sha',
-                span: <span className={'rounded-1 mb-1'}
-                            style={{width: "25px", height: '180px', display: 'flex'}}></span>,
-                span2: <strong>250</strong>
+        },
+        {
+            week: 'Sha',
+            span: <span className={'rounded-1 mb-1'}
+                        style={{width: "25px", height: '180px', display: 'flex'}}></span>,
+            span2: <strong>250</strong>
 
-            },
-            {
-                week: 'Ya',
-                span: <span className={'rounded-1 mb-1'}
-                            style={{width: "25px", height: '100px', display: 'flex'}}></span>,
-                span2: <strong>250</strong>
+        },
+        {
+            week: 'Ya',
+            span: <span className={'rounded-1 mb-1'}
+                        style={{width: "25px", height: '100px', display: 'flex'}}></span>,
+            span2: <strong>250</strong>
 
-            },
+        },
 
-        ])
+    ])
     const [jami, setJami] = useState([
-            {
-                number: "2 400 000 so'm",
-                foiz: "+10.23%",
-                text: 'JAMI XARIDLAR',
-                svg: <img src={shopping} alt={'shopping'}/>,
-                svgfoiz: <img src={jami1} alt={'jami1'}/>
-            },
-            {
-                number: "2 400 000 so'm",
-                foiz: "+10.23%",
-                text: 'JAMI SAVDO',
-                svg: <img src={jamisavdo} alt={'jamisavdo'}/>,
-                svgfoiz: <img src={jami2} alt={'jami2'}/>
-            },
-            {
-                number: "2 400 000 so'm",
-                foiz: "+10.23%",
-                text: 'BOZORDAN QARZIM',
-                svg: <img src={bozordanqarz} alt={'bozordanqarz'}/>,
-                svgfoiz: <img src={jami3} alt={'jami3'}/>
-            },
-            {
-                number: "2 400 000 so'm",
-                foiz: "+10.23%",
-                text: 'QARZDORLARDAN HAQIM',
-                svgfoiz: <img src={jami4} alt={'jami4'}/>,
-                svg: <img src={qarzdorlar} alt={'qarzdorlar'}/>,
-            },
-        ])
+        {
+            number: "2 400 000 so'm",
+            foiz: "+10.23%",
+            text: 'JAMI XARIDLAR',
+            svg: <img src={shopping} alt={'shopping'}/>,
+            svgfoiz: <img src={jami1} alt={'jami1'}/>
+        },
+        {
+            number: "2 400 000 so'm",
+            foiz: "+10.23%",
+            text: 'JAMI SAVDO',
+            svg: <img src={jamisavdo} alt={'jamisavdo'}/>,
+            svgfoiz: <img src={jami2} alt={'jami2'}/>
+        },
+        {
+            number: "2 400 000 so'm",
+            foiz: "+10.23%",
+            text: 'BOZORDAN QARZIM',
+            svg: <img src={bozordanqarz} alt={'bozordanqarz'}/>,
+            svgfoiz: <img src={jami3} alt={'jami3'}/>
+        },
+        {
+            number: "2 400 000 so'm",
+            foiz: "+10.23%",
+            text: 'QARZDORLARDAN HAQIM',
+            svgfoiz: <img src={jami4} alt={'jami4'}/>,
+            svg: <img src={qarzdorlar} alt={'qarzdorlar'}/>,
+        },
+    ])
     const [active, Setactive] = useState(false)
+
     function sidebar() {
         if (third === '') {
             setThird('third2')
@@ -316,40 +314,38 @@ function Third({display}) {
 
         }
     }
-    const options={
-                series:[200000,300000,500000,600000],
-        chart:{
-                    type:'donut'
+
+    const options = {
+        series: [200000, 300000, 500000, 600000],
+        chart: {
+            type: 'donut'
         },
 
-                labels:[" Uzcard"," Humo"," Naqd"," Turli to'lovlar"],
-        colors: ["#B09FFF","#FFD572","#99FFA3","#7AD3FF"],
-        padding:0,
-            plotOptions:{
-                    pie:{
-                        customScale:1,
-                        expandOnClick:false,
-                        name:{
-                        },
-                        donut:{
-                            size:'55px',
-                            labels:{
-                                show: true,
-                                showAlways:false,
-                                fontSize:"12px"
-                            }
-                        }
+        labels: [" Uzcard", " Humo", " Naqd", " Turli to'lovlar"],
+        colors: ["#B09FFF", "#FFD572", "#99FFA3", "#7AD3FF"],
+        padding: 0,
+        plotOptions: {
+            pie: {
+                customScale: 1,
+                expandOnClick: false,
+                name: {},
+                donut: {
+                    size: '55px',
+                    labels: {
+                        show: true,
+                        showAlways: false,
+                        fontSize: "12px"
                     }
-
+                }
             }
 
         }
-        const  series = [200000,300000,500000,600000]
+
+    }
+    const series = [200000, 300000, 500000, 600000]
 
 
-
-
-            return (
+    return (
         <div className={`third  pt-4 ${display} ${third}`}>
             <div className="container gap">
                 <div className="row p-0 d-flex colorback mb-3 rounded-3 justify-content-between">
@@ -417,7 +413,6 @@ function Third({display}) {
                     }
 
                 </div>
-
                 <div className="row p-0 d-flex colorback mb-3 rounded-3 justify-content-between">
                     <div className="col-6 pt-4 ps-4">
                         <h3 className={'diagramm-text'}>30 kunlik savdo statistikasi (so'm)</h3>
@@ -426,7 +421,7 @@ function Third({display}) {
                         <div className="row p-0 align-items-center  ">
                             <div className="col-12 pe-3 d-flex justify-content-end">
                                 <div className={'selects-style'}>
-                                    <select className={'selects'} form={'select'}  id="select">
+                                    <select className={'selects'} form={'select'} id="select">
                                         <option value="1">Ushbu oy</option>
                                         <option value="2">O'tgan oy</option>
                                         <option value="3">Bugun</option>
@@ -453,7 +448,6 @@ function Third({display}) {
                     </div>
 
                 </div>
-
                 <div className="row p-0 mb-3 diagramm d-flex justify-content-between">
                     {
                         shophistory.map((item, index) =>
@@ -579,20 +573,20 @@ function Third({display}) {
                             <div className="col-12 mt-3">
                                 <div className="row p-0 ">
                                     <table className={"table table-bordered"}>
-                                        <thead >
+                                        <thead>
                                         <tr className={'justify-content-between'}>
                                             <th className={'thead-padding-left th-text'}>Mahsulot nomi</th>
                                             <th className={'th-text'}>Kategoriya</th>
                                             <th className={'th-text'}>Brand</th>
                                             <th className={'th-text'}>Narxi</th>
-                                            <th  className={"text-end thead-padding-right th-text"}>Sotilganlar soni</th>
+                                            <th className={"text-end thead-padding-right th-text"}>Sotilganlar soni</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         {
-                                            tablemahsulot.slice(currentIndex,endPosition).map((item,index)=>
+                                            tablemahsulot.map((item, index) =>
                                                 <tr key={item.id}>
-                                                    <td>{item.id+1}</td>
+                                                    <td>{item.id + 1}</td>
                                                     <td className={'thead-padding-left'}>{item.name}</td>
                                                     <td className={'thead-padding-left'}>{item.categoriya}</td>
                                                     <td className={'thead-padding-left'}>{item.brand}</td>
@@ -602,15 +596,7 @@ function Third({display}) {
                                         }
                                         </tbody>
                                     </table>
-                                        {/*<ul className="pagination justify-content-end">*/}
-                                        {/*    <li className="page"><button disabled={disabled} className={'page-button'}  onClick={prev}>*/}
-                                        {/*        <img  src={arrowleft} alt="arrowleft"/></button></li>*/}
-                                        {/*    <li className={`page ${pageactive.pageactive1}`}><button disabled={disabled}  id={'current'} className={`page-button`}  onClick={currentput}  >{page}</button></li>*/}
-                                        {/*    <li className={`page ${pageactive.pageactive2}`}><button onClick={()=>currentput2(current)} className={'page-button'}  >{page+1}</button></li>*/}
-                                        {/*    <li className={`page ${pageactive.pageactive3}`}><button onClick={()=>currentput3(current+1)} className={'page-button'} value={current+2}  >{page+2}</button></li>*/}
-                                        {/*    <li className="page"><button onClick={next} className={'page-button'} ><img*/}
-                                        {/*        src={arrowright} alt="arrowleft"/></button></li>*/}
-                                        {/*</ul>*/}
+
                                 </div>
 
                             </div>

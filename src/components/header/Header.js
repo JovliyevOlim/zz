@@ -6,7 +6,7 @@ function Header() {
     return(
 
             <div className={'header__ '}>
-                <div className="d-flex">
+                <div className="homebody">
                     <div className="image__ ">
                         <a href="#"><img src={Logo} alt=""/></a>
                     </div>

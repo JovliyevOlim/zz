@@ -2,33 +2,37 @@ import {createSlice} from "@reduxjs/toolkit";
 import {apiCall} from "../api";
 
 export const slice = createSlice({
-    name: 'users',
+    name: 'login',
     initialState: {
-        users: [ ]
+        login: [ ],
+        active:false
     },
     reducers: {
         save: (state, action) => {
-            console.log(action.payload)
-            state.users.push(action.payload)
-            console.log(state.users)
+            state.login = action.payload
+            if(action.payload !== {}){
+                state.active = true
+            }
+            else{
+                state.active = false
+            }
         },
         get: (state, action) => {
             console.log(action.payload)
-            state.users = action.payload
-            console.log(state.users)
+            state.login = action.payload
         }
     }
 })
 
-export const saveusers=(data) => apiCall({
-    url: '/user',
+export const savelogin=(data) => apiCall({
+    url: '/auth/login',
     method: 'post',
     data,
     onSuccess: slice.actions.save.type
 })
 
-export const getusers = () => apiCall({
-    url: '/user',
+export const getlogin = () => apiCall({
+    url: '/auth/login',
     method: 'get',
     onSuccess: slice.actions.get.type
 })

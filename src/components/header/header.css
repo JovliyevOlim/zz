@@ -5,7 +5,7 @@
     flex-direction: row;
     align-items: center;
     padding: 0px;
-
+    justify-content: space-between;
 }
 
 .colorback {
@@ -23,7 +23,6 @@
     font-weight: 500;
     font-size: 16px;
     line-height: 20px;
-    margin-right: 64px;
 }
 .header-menu select{
     font-family: "Montserrat", sans-serif;
@@ -60,7 +59,6 @@
 .header__ .image__ img{
     width: 188px;
     height: 40px;
-    margin-right: 575px;
 }
 
 .header__{
@@ -68,4 +66,8 @@
     padding: 28px 135px 28px 135px;
     width: 1440px;
     background-color: #FFFFFF;
+}
+.homebody{
+    display: flex;
+    justify-content: space-between;
 }

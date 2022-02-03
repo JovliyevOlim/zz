@@ -16,8 +16,15 @@
     margin-top: 96px;
     width: 50%;
 }
-
-
+.input{
+    position: relative;
+}
+.input img{
+    position: absolute;
+    top: 30%;
+    right: 5%;
+    cursor: pointer;
+}
 .home-img{
     padding: 96px 89px 0 135px;
 }
@@ -87,12 +94,7 @@ padding: 0px 134px 0 89px;
     line-height: 24px;
     color: #A1AFCA;
 }
-.kirish-input img{
-    position: absolute;
-    top: 356px;
-    right: 15%;
-    cursor: pointer;
-}
+
 .kirish-input button{
     background: #0044FF;
     border-radius: 8px;
@@ -169,3 +171,4 @@ padding: 0px 134px 0 89px;
     position: relative;
     z-index: 2;
 }
+

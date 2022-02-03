@@ -2,16 +2,19 @@ import './header.css'
 import imgMenu from '../../../img/menu.png'
 import imgCalc from '../../../img/calculator.png'
 import imgNot from '../../../img/notification.png'
-import {useState} from "react";
-import Sidebar from "../Sidebar/Sidebar";
+import {useState,useEffect} from "react";
 import {connect} from "react-redux";
 import {active} from "../../../reducer/functionreducer";
-import {ModalBody} from "reactstrap";
-import {ReactCalculator} from "simple-react-calculator";
+import Calculator from "./Calculator/Calculator";
+
 
 function Header({active}) {
 
-    const [calactive,setCalactive] = useState(true)
+    useEffect(()=>{
+        setCalactive(false)
+    },[])
+
+    const [calactive,setCalactive] = useState(false)
 
     function calchange(){
         setCalactive(!calactive)
@@ -22,7 +25,7 @@ function Header({active}) {
     }
 
     return(
-        <div className={'container padding-10'}>
+        <div className={'container padding-10 position-relative'}>
             <div className={'row colorback justify-content-between pb-2 mb-1 align-items-center'}>
                 <div className="col-md-6 one d-flex">
                     <img onClick={sidebar}
@@ -32,6 +35,9 @@ function Header({active}) {
                     <div className={'img2img3'}>
                         <img src={imgCalc} onClick={calchange} className={'im2'} alt=""/>
                         <img src={imgNot}  className={'im3'} alt=""/>
+                        {
+                            calactive ? <Calculator/> :''
+                        }
                     </div>
                     <div className="imgUser">
                     </div>
@@ -42,6 +48,7 @@ function Header({active}) {
                         <option value="#">My Cabinet</option>
                     </select>
                 </div>
+
 
             </div>
         </div>
