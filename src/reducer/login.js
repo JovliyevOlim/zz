@@ -11,7 +11,7 @@ export const slice = createSlice({
         save: (state, action) => {
             state.login = action.payload
             if(action.payload !== {}){
-                state.active = true
+                state.active = true 
             }
             else{
                 state.active = false
