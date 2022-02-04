@@ -1,20 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="2ed0236b-2151-406e-828e-c9a3e0b2b336" name="Changes" comment="add calculator">
+    <list default="true" id="2ed0236b-2151-406e-828e-c9a3e0b2b336" name="Changes" comment="style">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Bottom/bottom.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Bottom/bottom.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Hbody/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Hbody/Home.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Hbody/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Hbody/home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Pricing/SecondPage/SecondPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Pricing/SecondPage/SecondPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Pricing/SecondPage/secondPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Pricing/SecondPage/secondPage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/XaridlarXisoboti/XaridlarXisoboti.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/XaridlarXisoboti/XaridlarXisoboti.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/Header.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/header/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/middleware.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reducer/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,13 +31,6 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="useMavenConfig" value="true" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
   <component name="ProjectId" id="24RsketNtc6XaMKeOi6aNnZqMZ2" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -53,15 +43,11 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/evaset-app/evaset-app" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -113,11 +99,8 @@
       <workItem from="1643692151814" duration="7663000" />
       <workItem from="1643787409957" duration="4684000" />
       <workItem from="1643816701566" duration="2941000" />
-      <workItem from="1643864639049" duration="9886000" />
-      <workItem from="1643951739889" duration="256000" />
-      <workItem from="1643952576610" duration="3145000" />
-      <workItem from="1643958641464" duration="601000" />
-      <workItem from="1643960360519" duration="2298000" />
+      <workItem from="1643864639049" duration="6930000" />
+      <workItem from="1643877310160" duration="14332000" />
     </task>
     <task id="LOCAL-00001" summary="app.js">
       <created>1643606654320</created>
@@ -182,14 +165,7 @@
       <option name="project" value="LOCAL" />
       <updated>1643645569976</updated>
     </task>
-    <task id="LOCAL-00010" summary="add calculator">
-      <created>1643871954941</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1643871954941</updated>
-    </task>
-    <option name="localTasksCounter" value="11" />
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -219,18 +195,7 @@
     <MESSAGE value="baza" />
     <MESSAGE value="udar boldi" />
     <MESSAGE value="hodimRuyxat" />
-    <MESSAGE value="add calculator" />
-    <option name="LAST_COMMIT_MESSAGE" value="add calculator" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/components/Pricing/SecondPage/SecondPage.js</url>
-          <line>34</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="style" />
+    <option name="LAST_COMMIT_MESSAGE" value="style" />
   </component>
 </project>

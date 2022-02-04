@@ -27,7 +27,7 @@
     cursor: pointer;
 }
 .home-img{
-    padding: 96px 89px 0 135px;
+    padding: 96px 40px 0 135px;
 }
 .home-img img{
     margin-bottom: 32px;
@@ -99,7 +99,7 @@ padding: 0px 134px 0 89px;
 .kirish-input button{
     background: #0044FF;
     border-radius: 8px;
-    padding: 16px 213px;
+    padding: 16px 100px;
     font-family: "Montserrat",sans-serif;
     font-style: normal;
     font-weight: 500;
@@ -151,9 +151,8 @@ padding: 0px 134px 0 89px;
     font-family: "Montserrat",sans-serif;
     font-style: normal;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 15px;
     line-height: 24px;
-    margin-right: 177px;
     /* identical to box height, or 150% */
 
 
@@ -163,7 +162,7 @@ padding: 0px 134px 0 89px;
     font-family: "Montserrat",sans-serif;
     font-style: normal;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 15px;
     line-height: 24px;
     color: #0044FF;
 

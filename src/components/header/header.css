@@ -1,5 +1,5 @@
 .header-narx{
-    width: 454px;
+    width: 40%;
     height: 48px;
     display: flex;
     flex-direction: row;
@@ -14,9 +14,6 @@
     box-sizing: border-box;
     border-radius: 8px
 }
-.header-menu{
-    margin-right: 64px;
-}
 .header-menu a{
     font-family: "Montserrat",sans-serif;
     font-style: normal;
@@ -24,19 +21,18 @@
     font-size: 16px;
     line-height: 20px;
 }
-.header-menu select{
+.header-narx select{
     font-family: "Montserrat", sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
     line-height: 20px;
     color: #000000;
-    border: 0;
+    border: none;
     outline: none;
 }
 .header-narx button{
     background: #FFFFFF;
-    border: 1px solid #0044FF;
     box-sizing: border-box;
     border-radius: 8px;
     padding: 6px 24px;
@@ -45,11 +41,8 @@
     font-weight: 500;
     font-size: 16px;
     line-height: 24px;
-    /* identical to box height, or 150% */
-
+    border: 1px solid  #0044FF ;
     text-align: center;
-
-    color: #0044FF;
 }
 .header__ .image__{
     align-items: center;
@@ -61,14 +54,15 @@
     height: 40px;
 }
 
-.header__{
+.header__{;
+    background-color: #ffffff;
     position: fixed;
     z-index: 10000;
     padding: 28px 135px 28px 135px;
     width: 100%;
-    background-color: #FFFFFF;
 }
 .homebody{
     display: flex;
     justify-content: space-between;
+    width: 100%;
 }

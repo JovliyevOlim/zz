@@ -96,7 +96,6 @@ function Home({savelogin, getlogin, linkpost,active}) {
                                 </p>
                             </div>
                         </div>
-
                     </div>
 
                     <div className="half-2 home-enter">
@@ -130,16 +129,12 @@ function Home({savelogin, getlogin, linkpost,active}) {
                             </button>
                         </div>
                     </div>
-
-
                 </div>
-                <div className="row">
-                    <div className="col-md-12">
+                <div>
                         <Bottom/>
-                    </div>
                 </div>
 
-                <div className="row">
+                <div className="row" style={{width:'100%'}}>
                     <div className="col-md-12">
                         <SecondPage/>
                     </div>
