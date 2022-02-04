@@ -71,32 +71,30 @@ function HodimlarRoyhati({getXodim, deleteXodim, saveXodim, editXodim,xodimlar})
                         </tr>
                         </thead>
                         <tbody>
-                        {/*<tr>*/}
-                            {
-                                xodimlar.map((item,index)=><tr>
-                                    <td>{item.username}</td>
-                                    <td>{item.firstName}</td>
-                                    <td>{item.lastName}</td>
-                                    <td>{item.role.name}</td>
-                                        <td>-</td>
-                                    <td>
-                                        <Link to={'/headerthird/hodimlarruyxati/taxrirlash'}>
-                                            <button className='taxrirlash'><img src={Edit} alt=""/>Taxrirlash</button>
-                                        </Link>
-                                        <Link
-                                            to={'/headerthird/hodimlarruyxati/view/' + input.name + '/' + input.login + '/' + input.email}>
-                                            <button className='korish'><img src={Korish} alt=""/> Ko'rish</button>
-                                        </Link>
-                                        <Link to={'/third/delete'}>
-                                            <button className='ochirish'><img src={Delete} alt=""/> O'chirish</button>
-                                        </Link>
-                                    </td>
 
-                                </tr>)
-                            }
+                            {/*{*/}
+                            {/*    xodimlar.map((item,index)=><tr>*/}
+                            {/*        <td>{item.username}</td>*/}
+                            {/*        <td>{item.firstName}</td>*/}
+                            {/*        <td>{item.lastName}</td>*/}
+                            {/*        <td>{item.role.name}</td>*/}
+                            {/*            <td>-</td>*/}
+                            {/*        <td>*/}
+                            {/*            <Link to={'/headerthird/hodimlarruyxati/taxrirlash'}>*/}
+                            {/*                <button className='taxrirlash'><img src={Edit} alt=""/>Taxrirlash</button>*/}
+                            {/*            </Link>*/}
+                            {/*            <Link*/}
+                            {/*                to={'/headerthird/hodimlarruyxati/view/' + input.name + '/' + input.login + '/' + input.email}>*/}
+                            {/*                <button className='korish'><img src={Korish} alt=""/> Ko'rish</button>*/}
+                            {/*            </Link>*/}
+                            {/*            <Link to={'/third/delete'}>*/}
+                            {/*                <button className='ochirish'><img src={Delete} alt=""/> O'chirish</button>*/}
+                            {/*            </Link>*/}
+                            {/*        </td>*/}
 
-                            {/*</td>*/}
-                        {/*</tr>*/}
+                            {/*    </tr>)*/}
+                            {/*}*/}
+
                         </tbody>
                     </table>
 

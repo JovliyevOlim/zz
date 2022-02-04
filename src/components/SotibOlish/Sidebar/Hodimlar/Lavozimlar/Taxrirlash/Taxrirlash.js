@@ -1,5 +1,46 @@
 import './taxrirlash.css'
+import {useState} from 'react'
+
 function Taxrirlash() {
+
+    const [input,setInput] = useState(
+        {
+            name:'',
+            xodimkorish:'',
+            xodimqoshish:'',
+            xodimtaxrirlash:'',
+            xodimochirish:'',
+        }
+    )
+
+    function changename(e){
+        input.name = e.target.value
+        let a = {...input}
+        setInput(a)
+        console.log(input.name)
+    }
+
+    function changexodimkorish(e){
+        input.xodimkorish = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+    function changexodimqoshish(e){
+        input.xodimqoshish = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+    function changexodimtaxrirlash(e){
+        input.xodimqtaxrirlash = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+    function changexodimochirish(e){
+        input.xodimochirish = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+
     return(
         <div className={'row mt-5'}>
             <h4 className={'text-center'}>Lavozimni qo`shish / taxrirlash</h4>
@@ -11,7 +52,7 @@ function Taxrirlash() {
                     <div className="l1 p-3 mt-5 col-md-6 border">
                         <div>
                             <label htmlFor={'l'}>Lavozim nomi</label>
-                            <input type="text" className={'form-control'} placeholder={'Lavozim nomi'}/>
+                            <input type="text" className={'form-control mt-2'} value={input.name} onChange={changename} placeholder={'Lavozim nomi'}/>
 
                             <div className="ruxsat mt-4">
                                 <h5>Ruxsatnomalar</h5>
@@ -20,19 +61,19 @@ function Taxrirlash() {
                                 <input type="checkbox" style={{marginLeft:'10px',width:'15px',height:'15px'}} id={'ch'}/>
 
                                 <div className={'mt-4'}>
-                                    <input type="checkbox" style={{width:'15px',height:'15px', marginTop:'4px'}} id={'kor'}/>
+                                    <input type="checkbox" value={input.xodimkorish} onChange={changexodimkorish} style={{width:'15px',height:'15px', marginTop:'4px'}} id={'kor'}/>
                                     <label htmlFor={'kor'}>Xodimlarni korish</label>
                                 </div>
                                 <div>
-                                    <input type="checkbox" id={'qosh'} style={{width:'15px',marginTop:'10px', height:'15px'}}/>
+                                    <input type="checkbox" id={'qosh'} value={input.xodimqoshish} onChange={changexodimqoshish} style={{width:'15px',marginTop:'10px', height:'15px'}}/>
                                     <label htmlFor={'qosh'}>Xodimlarni Qo`shish</label>
                                 </div>
                                 <div>
-                                    <input type="checkbox" id={'tax'} style={{width:'15px',height:'15px',marginTop:'10px'}}/>
+                                    <input type="checkbox" value={input.xodimtaxrirlash} onChange={changexodimtaxrirlash} id={'tax'} style={{width:'15px',height:'15px',marginTop:'10px'}}/>
                                     <label htmlFor={'tax'}>Xodimlarni taxrirlash</label>
                                 </div>
                                 <div>
-                                    <input type="checkbox" id={'och'} style={{width:'15px',height:'15px',marginTop:'10px'}}/>
+                                    <input type="checkbox" value={input.xodimochirish} onChange={changexodimochirish} id={'och'} style={{width:'15px',height:'15px',marginTop:'10px'}}/>
                                     <label htmlFor={'och'}>Xodimlarni o`chirish</label>
                                 </div>
 

@@ -9,7 +9,7 @@ const slice = createSlice({
     },
     reducers: {
         getFrom: (state, action) => {
-            state.xodimlar = action.payload.object
+            state.xodimlar = <action className="payload object"></action>
             console.log(action.payload.object);
         },
         savefrom: (state, action) => {
