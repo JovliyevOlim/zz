@@ -8,7 +8,7 @@ function SecondPage() {
     return(
 
 
-        <div className={`container`}>
+        <div className={`container secondpage`}>
 
             <div className={'row'}>
                 <div className="col-md-12">
