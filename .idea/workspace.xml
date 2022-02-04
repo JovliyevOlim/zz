@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2ed0236b-2151-406e-828e-c9a3e0b2b336" name="Changes" comment="style">
+    <list default="true" id="2ed0236b-2151-406e-828e-c9a3e0b2b336" name="Changes" comment="token">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Bottom/bottom.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Bottom/bottom.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Hbody/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Hbody/Home.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Hbody/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Hbody/home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducer/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Pricing/SecondPage/secondPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Pricing/SecondPage/secondPage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducer/Test.http" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducer/login.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
