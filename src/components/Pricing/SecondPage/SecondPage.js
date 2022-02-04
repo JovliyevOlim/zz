@@ -19,33 +19,36 @@ function SecondPage() {
                     </div>
 
                     <div className="active">
-                        <p className={'p1'}>Oylik</p>
-                        <input type="checkbox" id={'switch'}/>
-                        <label className={'switch'} htmlFor="switch">
-                            <span >
-                            </span>
-                        </label>
+                        <div className='activSelect'>
+                            <p className={'p1'}>Oylik</p>
+                            <input type="checkbox" id={'switch'}/>
+                            <label className={'switch'} htmlFor="switch">
+                                <span ></span>
+                            </label>
 
-                        <p className={'p2'}>Yillik</p>
+                            <p className={'p2'}>Yillik</p>
+                            </div>
                     </div>
 
                 </div>
             </div>
 
             <div className="row">
-                <div className="col-md-9 offset-1  f">
+                <div className="col-md-12 f">
+                    <div className='fBox'>
+                        <div className="c1">
+                            <Card/>
+                        </div>
 
-                    <div className="c1">
-                        <Card/>
-                    </div>
+                        <div className="c2">
+                            <BigCard/>
+                        </div>
 
-                    <div className="c2">
-                        <BigCard/>
+                        <div className="c3">
+                            <Card/>
+                        </div>
                     </div>
-
-                    <div className="c3">
-                        <Card/>
-                    </div>
+                    
                 </div>
                 <div className="back">
 

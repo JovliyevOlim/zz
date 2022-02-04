@@ -12,10 +12,6 @@
     display: flex;
     align-items: center;
 }
-.half-2{
-    margin-top: 96px;
-    width: 50%;
-}
 .input{
     position: relative;
 }
@@ -25,7 +21,8 @@
     right: 5%;
     cursor: pointer;
 }
-.home-img{
+.home-body .homeContainer .home-img{
+    width: 50%;
     padding: 96px 40px 0 135px;
 }
 .home-img img{
@@ -38,9 +35,6 @@
     font-size: 44px;
     line-height: 54px;
     margin-bottom: 16px;
-    /* identical to box height */
-
-
     color: #000000;
 
 }
@@ -50,13 +44,15 @@
     font-weight: normal;
     font-size: 18px;
     line-height: 32px;
-    /* or 178% */
-
-
     color: #000000;
 }
-.home-enter{
-padding: 0px 134px 0 89px;
+.home-body .homeContainer .home-enter{
+    padding: 0px 134px 0 89px;
+    width: 50%;
+}
+.home-body .homeContainer{
+    display: flex;
+    margin-top: 96px;
 }
 .kirish-text h5{
     font-family: "Montserrat" ,sans-serif;
@@ -65,7 +61,7 @@ padding: 0px 134px 0 89px;
     font-size: 28px;
     line-height: 34px;
     color: #000000;
-    margin-bottom: 8px;
+    margin-top: 100px;
 }
 .kirish-text p{
     font-family: "Montserrat",sans-serif;
@@ -73,9 +69,6 @@ padding: 0px 134px 0 89px;
     font-weight: normal;
     font-size: 16px;
     line-height: 20px;
-    /* identical to box height */
-
-
     color: #000000;
 }
 .kirish-input input[type='text'] , .kirish-input input[type='password']{
@@ -104,15 +97,18 @@ padding: 0px 134px 0 89px;
     font-weight: 500;
     font-size: 16px;
     line-height: 24px;
-    /* identical to box height, or 150% */
-
-
     color: #FFFFFF;
 }
 .kirish-checkbox{
     display: flex;
     align-items: center;
     margin-bottom: 20px;
+}
+.kirish-checkbox .login{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
 }
 .kirish-checkbox input[type=checkbox]{
   display: none;
@@ -152,9 +148,6 @@ padding: 0px 134px 0 89px;
     font-weight: 500;
     font-size: 15px;
     line-height: 24px;
-    /* identical to box height, or 150% */
-
-
     color: #A1AFCA;
 }
 .kirish-checkbox a{
@@ -164,10 +157,25 @@ padding: 0px 134px 0 89px;
     font-size: 15px;
     line-height: 24px;
     color: #0044FF;
-
 }
 .home-active{
     position: relative;
     z-index: 2;
+}
+
+@media (max-width: 426.9px) {
+    .home-body .homeContainer{
+        display: block;
+    }
+    .home-body .homeContainer .home-img{
+        background-color: royalblue;
+        padding: 0px;
+        width: 100%;
+    }
+
+    .home-body .homeContainer .home-enter{
+        width: 100%;
+        padding: 0px;
+    }
 }
 

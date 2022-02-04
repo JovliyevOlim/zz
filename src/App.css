@@ -8,11 +8,9 @@
 body{
 }
 .app-css{
-    border: 1px solid red;
     width: 100%;
     display: flex;
     transition: 1s linear;
-    /* men kodni gitdan ozgartirdim */
 }
 .display-none{
     display: none;

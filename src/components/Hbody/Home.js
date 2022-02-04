@@ -79,31 +79,30 @@ function Home({savelogin, getlogin, linkpost,active}) {
                     <Header/>
                 </div>
                 <div className={'home-body'}>
-                    <div className="half-2">
-                        <div className={"home-img"}>
-                            <img src={img} alt=""/>
+                    <div className="homeContainer">
+                            <div className={"home-img"}>
+                                <img src={img} alt=""/>
+                                <div className="home-text">
+                                    <h4 className={'welcome'}>
+                                        EVASET Xush kelibsiz!
+                                    </h4>
+                                    <p className={'p'}>
+                                        Nulla porttitor accumsan tincidunt.
+                                        Pellentesque in<br/> ipsum
+                                        id orci porta dapibus.
+                                        Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
+                                    </p>
+                                </div>
+                            </div>
 
-                            <div className="home-text">
-                                <h4 className={'welcome'}>
-                                    EVASET Xush kelibsiz!
-                                </h4>
+
+                        <div className="home-enter">
+                            <div className="kirish-text">
+                                <h5>Kirish</h5>
                                 <p className={'p'}>
-                                    Nulla porttitor accumsan tincidunt.
-                                    Pellentesque in<br/> ipsum
-                                    id orci porta dapibus.
-                                    Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
+                                    At ullamcorper pharetra eleifend lectus vitae sit.
                                 </p>
                             </div>
-                        </div>
-                    </div>
-
-                    <div className="half-2 home-enter">
-                        <div className="kirish-text">
-                            <h5>Kirish</h5>
-                            <p className={'p'}>
-                                At ullamcorper pharetra eleifend lectus vitae sit.
-                            </p>
-                        </div>
                         <div className={`kirish-input`}>
                             <input onChange={login} value={inputlogin} type="text" className={'form-control'}
                                    placeholder={placeholderl}/>
@@ -121,19 +120,25 @@ function Home({savelogin, getlogin, linkpost,active}) {
                                             d="M400,48H112a64.07,64.07,0,0,0-64,64V400a64.07,64.07,0,0,0,64,64H400a64.07,64.07,0,0,0,64-64V112A64.07,64.07,0,0,0,400,48ZM364.25,186.29l-134.4,160a16,16,0,0,1-12,5.71h-.27a16,16,0,0,1-11.89-5.3l-57.6-64a16,16,0,1,1,23.78-21.4l45.29,50.32L339.75,165.71a16,16,0,0,1,24.5,20.58Z"/>
                                     </svg>
                                 </label>
-                                <h4>Meni eslab qol</h4>
-                                <a href="#">Parolni unutdingizmi?</a>
+                                <div className="login">
+                                     <h4>Meni eslab qol</h4>
+                                     <a href="#">Parolni unutdingizmi?</a>
+                                </div>
+                               
                             </div>
-                            <button onClick={testusers} className={'btn btn-primary form-control kirish'}>Kirish
-                            </button>
+                            <button onClick={testusers} className={'btn btn-primary form-control kirish'}>Kirish </button>
                         </div>
                     </div>
+
+                    </div>
+                   
+                    
                 </div>
                 <div>
                         <Bottom/>
                 </div>
 
-                <div className="row" style={{width:'100%'}}>
+                <div>
                     <div className="col-md-12">
                         <SecondPage/>
                     </div>
