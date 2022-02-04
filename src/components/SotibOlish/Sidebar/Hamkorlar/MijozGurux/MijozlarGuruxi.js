@@ -10,12 +10,18 @@ import Korish from '../../../../../img/Korish.png'
 import Delete from '../../../../../img/Delete.png'
 import Arrow from '../../../../../img/arrowIcon.png'
 import './mijozlarGuruxi.css'
-import {useState} from 'react'
+import {useState,useEffect} from 'react'
+import {connect} from "react-redux";
+import {getTMijozGurux,saveMijozGurux,editMijozGurux,deleteMijozGurux} from "../reducer/MijozGuruxReducer";
 import {Modal, ModalBody, ModalFooter, ModalHeader} from "reactstrap";
 
-export default function Mijozlarguruxi() {
+function Mijozlarguruxi({getMijozGurux,saveMijozGurux,editMijozGurux,deleteMijozGurux,mijozgurux}) {
 
     const [active, setActive] = useState(false);
+
+    useEffect(()=>{
+        getTMijozGurux()
+    })
 
     function toggle() {
         setActive(!active)
@@ -111,3 +117,4 @@ export default function Mijozlarguruxi() {
         </div>
     )
 }
+export default connect(({MijozGuruxReducer:{mijozgurux}})=>({mijozgurux}),{getTMijozGurux,saveMijozGurux,editMijozGurux,deleteMijozGurux}) (Mijozlarguruxi)

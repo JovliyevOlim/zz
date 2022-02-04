@@ -7,10 +7,21 @@ import Pdf from '../../../../../img/PDF.png'
 import Edit from '../../../../../img/Edit.png'
 import Delete from '../../../../../img/Delete.png'
 import './xarajatTurlari.css'
-import {useState} from "react";
+import {useState,useEffect} from "react";
 import {Modal, ModalBody, ModalFooter, ModalHeader} from "reactstrap";
+import {connect} from "react-redux";
+import {
+       deleteXarajatlarTurlari,
+       editXarajatlarTurlari,
+       getXarajatlarTurlari,
+       saveXarajatlarTurlari
+} from "../reducer/XarajatTurlariReducer";
 
-export default function XarajatTurlari() {
+function XarajatTurlari({}) {
+
+       useEffect(()=>{
+              getXarajatlarTurlari()
+       })
 
        const [active,setActive] = useState(false)
 
@@ -99,3 +110,4 @@ export default function XarajatTurlari() {
        </div>  
        )
 }
+export default connect(({XarajatTurlariReducer:{xarajatlarturlari}})=>({xarajatlarturlari}),{getXarajatlarTurlari,saveXarajatlarTurlari,deleteXarajatlarTurlari,editXarajatlarTurlari}) (XarajatTurlari)

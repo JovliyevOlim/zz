@@ -10,8 +10,8 @@ const slice = createSlice({
     },
     reducers: {
         getFrom: (state, action) => {
-            state.taminot = action.payload
-            console.log(action.payload);
+            state.taminot = action.payload.object
+            console.log(action.payload.object);
         },
         savefrom: (state,action) => {
             state.taminot.unshift(action.payload)
@@ -34,27 +34,27 @@ const slice = createSlice({
 });
 
 export const getTaminot=()=>apiCall({
-    url: '/user',
+    url: '/supplier',
     method:'get',
     onSuccess: slice.actions.getFrom.type
 });
 
 export const saveTaminot=(data)=>apiCall({
-    url: '/user',
+    url: '/supplier',
     method:'post',
     data,
     onSuccess: slice.actions.savefrom.type
 });
 
 export const editTaminot=(data)=>apiCall({
-    url: '/user',
+    url: '/supplier',
     method: 'post',
     data,
     onSuccess: slice.actions.editfrom.type
 });
 
 export const deleteTaminot=(data)=>apiCall({
-    url: '/user',
+    url: '/supplier',
     method:'post',
     data,
     onSuccess: slice.actions.deletefrom.type

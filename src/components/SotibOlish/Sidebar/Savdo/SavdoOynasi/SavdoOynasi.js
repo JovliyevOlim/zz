@@ -6,9 +6,15 @@ import img5 from '../../../../../img/clipboard-text.svg'
 import img6 from '../../../../../img/backward-10-seconds.svg'
 import img7 from '../../../../../img/people.svg'
 import img8 from '../../../../../img/search-normal-1.svg'
-import {useState} from "react";
+import {useEffect, useState} from "react";
+import {connect} from "react-redux";
+import {deleteSavdo, editSavdo, getSavdo, saveSavdo} from "../reducer/SavdoOynaReducer";
 
-function SavdoOynasi(){
+function SavdoOynasi({getSavdo,editSavdo,deleteSavdo,saveSavdo}){
+
+    useEffect(()=>{
+        getSavdo()
+    })
 
     const [count,setCount] = useState(0)
 
@@ -114,4 +120,4 @@ function SavdoOynasi(){
         </div>
     )
 }
-export default SavdoOynasi
+export default connect(({SavdoOynaReducer:{savdo}})=>({savdo}),{getSavdo,saveSavdo,editSavdo,deleteSavdo}) (SavdoOynasi)

@@ -4,7 +4,8 @@ import BarchaMaxsulotlar from "../../Maxsulotlar/MahsulotlarRuyxati/barchaMaxsul
 import QoldiqlarXisoboti from "../../Maxsulotlar/MahsulotlarRuyxati/qoldiqlarXisoboti/QoldiqlarXisoboti"
 import React from "react";
 
-export default function MaxsulotlarRoyxati() {
+
+function MaxsulotlarRoyxati() {
 
 
        return (
@@ -86,3 +87,4 @@ export default function MaxsulotlarRoyxati() {
                      </div>
        )
 }
+export default  (MaxsulotlarRoyxati)

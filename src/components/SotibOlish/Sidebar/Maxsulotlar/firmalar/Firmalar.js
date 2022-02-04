@@ -7,11 +7,17 @@ import Data from '../../../../../img/Data.png'
 import Pdf from '../../../../../img/PDF.png'
 import Edit from '../../../../../img/Edit.png'
 import Delete from '../../../../../img/Delete.png'
-import {useState} from "react";
+import {useState,useEffect} from "react";
+import {connect} from "react-redux";
 import './firmalar.css'
 import {Modal,ModalHeader,ModalFooter,ModalBody} from "reactstrap";
+import {deleteFirma, editFirma, getFirma, saveFirma} from "../reducer/FirmaReducer";
 
-export default function Firmalar() {
+function Firmalar() {
+
+       useEffect(()=>{
+              getFirma()
+       })
 
        const [active,setActive] = useState(false)
 
@@ -95,3 +101,4 @@ export default function Firmalar() {
        </div>  
        )
 }
+export default connect(({FirmaReducer:{firmalar}})=>({firmalar}),{getFirma,saveFirma,editFirma,deleteFirma}) (Firmalar)

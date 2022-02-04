@@ -9,11 +9,18 @@ import Edit from '../../../../../img/Edit.png'
 import Korish from '../../../../../img/Korish.png'
 import Delete from '../../../../../img/Delete.png'
 // import Arrow from '../../../../../img/arrowIcon.png'
+import {useEffect} from "react";
+import {connect} from "react-redux";
+import {getTaminot,saveTaminot,editTaminot,deleteTaminot} from "../reducer/TaminotReducer";
 import {useState} from 'react'
 import {Modal, ModalBody, ModalFooter, ModalHeader} from "reactstrap";
 
 
-export default function Taminotchilar() {
+function Taminotchilar({getTaminot,saveTaminot,editTaminot,deleteTaminot,taminot}) {
+
+    useEffect(()=>{
+        getTaminot()
+    })
 
     const [active, setActive] = useState(false);
 
@@ -72,25 +79,31 @@ export default function Taminotchilar() {
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>boshliq</td>
-                            <td>+998998887778</td>
-                            <td>ssdd@</td>
-                            <td>nimadir</td>
-                            <td>
-                                <Link to={'/headerthird/taminotchilar/taxrirlash'}>
-                                    <button onClick={toggle} className='taxrirlash'><img src={Edit} alt=""/> Taxrirlash
-                                    </button>
-                                </Link>
-                                <Link to={'/headerthird/taminotchilar/view/' + input.name+'/'+input.tel+'/'+input.telegram+'/'+input.taminot}>
-                                    <button className='korish'><img src={Korish} alt=""/> Ko'rish</button>
-                                </Link>
-                                <button className='ochirish'><img src={Delete} alt=""/> O'chirish</button>
-                                <Link to={''}>
-                                    <button className="amallar">Amallar alt="" /></button>
-                                </Link>
-                            </td>
-                        </tr>
+                        {/*{*/}
+                        {/*    taminot.map(item=><tr key={item.id}>*/}
+                        {/*        <td>{item.name}</td>*/}
+                        {/*    </tr>)*/}
+                        {/*}*/}
+
+                        {/*<tr>*/}
+                        {/*    <td>boshliq</td>*/}
+                        {/*    <td>+998998887778</td>*/}
+                        {/*    <td>ssdd@</td>*/}
+                        {/*    <td>nimadir</td>*/}
+                        {/*    <td>*/}
+                        {/*        <Link to={'/headerthird/taminotchilar/taxrirlash'}>*/}
+                        {/*            <button onClick={toggle} className='taxrirlash'><img src={Edit} alt=""/> Taxrirlash*/}
+                        {/*            </button>*/}
+                        {/*        </Link>*/}
+                        {/*        <Link to={'/headerthird/taminotchilar/view/' + input.name+'/'+input.tel+'/'+input.telegram+'/'+input.taminot}>*/}
+                        {/*            <button className='korish'><img src={Korish} alt=""/> Ko'rish</button>*/}
+                        {/*        </Link>*/}
+                        {/*        <button className='ochirish'><img src={Delete} alt=""/> O'chirish</button>*/}
+                        {/*        <Link to={''}>*/}
+                        {/*            <button className="amallar">Amallar alt="" /></button>*/}
+                        {/*        </Link>*/}
+                        {/*    </td>*/}
+                        {/*</tr>*/}
                         </tbody>
                     </table>
 
@@ -161,3 +174,4 @@ export default function Taminotchilar() {
         </div>
     )
 }
+export default connect(({XodimReducer:{xodimlar}})=>({xodimlar}),{getTaminot,saveTaminot,editTaminot,deleteTaminot}) (Taminotchilar)

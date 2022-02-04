@@ -44,7 +44,7 @@ function Mahsulotlar() {
                 active?<ul>
                     <li><Link to={'/headerthird/xaridlarRuyxati'} className={'haridClass'}>Xaridlar ruyxati</Link></li>
                     <li><Link to={'/headerthird/xaridQilish'} className={'haridClass'}>Xarid qilish</Link></li>
-                    <li><Link to={'/headerthird/qaytganXarid'} className={'haridClass'}>Qaytarilgan Xaridlar</Link></li>
+                    {/*<li><Link to={'/headerthird/qaytganXarid'} className={'haridClass'}>Qaytarilgan Xaridlar</Link></li>*/}
                 </ul>:''
             }
         </div>

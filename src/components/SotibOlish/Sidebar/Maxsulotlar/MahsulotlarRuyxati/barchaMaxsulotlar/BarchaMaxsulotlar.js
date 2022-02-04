@@ -8,10 +8,17 @@ import Edit from '../../../../../../img/Edit.png'
 import Korish from '../../../../../../img/Korish.png'
 import Delete from '../../../../../../img/Delete.png'
 import {Switch,Link,Route} from 'react-router-dom'
-import {useState} from "react";
+import {useState,useEffect} from "react";
 import KorishM from '../Taxrirlash/Korish'
+import {connect} from "react-redux";
+import {deleteMahsulot, editMahsulot, getMahsulot, saveMahsulot} from "../../reducer/MahsulotReducer";
 
-export default function BarchaMaxsulotlar() {
+
+function BarchaMaxsulotlar() {
+
+       useEffect(()=>{
+              getMahsulot()
+       })
 
        const [input,setInput] = useState(
            {
@@ -106,3 +113,4 @@ export default function BarchaMaxsulotlar() {
               </div>
        )
 }
+export default connect(({MahsulotReducer:{mahsulotlar}})=>({mahsulotlar}),{getMahsulot,saveMahsulot,editMahsulot,deleteMahsulot}) (BarchaMaxsulotlar)
