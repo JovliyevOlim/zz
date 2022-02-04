@@ -84,10 +84,10 @@
         width: 100%;
         background-color: red;
     }
-    .header__ .homebody .image__ a img{
+    /* .header__ .homebody .image__ a img{
         /* width: 80px;
         height: 20px; */
-    }
+    } */
     .header__ .homebody .header-narx select{
        font-size: 10px;
     }
