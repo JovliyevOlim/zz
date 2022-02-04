@@ -36,6 +36,7 @@ function App({func,active}) {
 
             </div>
             <div className={`${func.class2}`}>
+                <h3>Come back</h3>
                 <Switch>
                     <Route path={'/home'} render={() => <Home linkpost={linkpost}/>}/>
                     <Route path={'/headerthird'} component={Headerthird}/>
