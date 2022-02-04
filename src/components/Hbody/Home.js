@@ -49,7 +49,7 @@ function Home({saveusers, getusers, linkpost,active}) {
     }
 
 
-    const [typeinput, Settype] = useState('text')
+    const [typeinput, Settype] = useState('password')
     const [placeholderp, Setplaceholderp] = useState('password')
     const [placeholderl, Setplaceholderl] = useState('login')
     const [array, Setarray] = useState('')

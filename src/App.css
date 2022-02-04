@@ -12,7 +12,6 @@ body{
     width: 100%;
     display: flex;
     transition: 1s linear;
-    /* men kodni gitdan ozgartirdim */
 }
 .display-none{
     display: none;

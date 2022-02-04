@@ -3,8 +3,16 @@ import "./lavozimlar.css"
 import Edit from '../../../../../img/Edit.png'
 import Delete from '../../../../../img/Delete.png'
 import {Switch,Link,Route} from 'react-router-dom'
+import {useEffect,useState} from "react";
+import {connect} from "react-redux";
+import {getLavozim,saveLavozim,editLavozim,deleteLavozim} from "../reducer/LavozimReducer";
 
-export default function Lavozimlar(){
+function Lavozimlar({getLavozim,saveLavozim,deleteLavozim,editLavozim}){
+
+       useEffect(()=>{
+              getLavozim()
+       })
+
        return (
               <div>
                      <div>
@@ -63,3 +71,4 @@ export default function Lavozimlar(){
               </div>
        )
 }
+export default connect(({LavozimReducer:{lavozimlar}})=>({lavozimlar}),{getLavozim,saveLavozim,deleteLavozim,editLavozim}) (Lavozimlar)

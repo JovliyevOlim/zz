@@ -9,9 +9,15 @@ import Edit from '../../../../../img/Edit.png'
 import Korish from '../../../../../img/Korish.png'
 import Delete from '../../../../../img/Delete.png'
 import {Modal,ModalBody,ModalFooter,ModalHeader} from "reactstrap";
-import {useState} from 'react'
+import {useState,useEffect} from 'react'
+import {connect} from "react-redux";
+import {getXodimSavdo,saveXodimSavdo,editXodimSavdo,deleteXodimSavdo} from "../reducer/XodimSavdoReducer";
 
-export default function HodimlarSavdodanUlushi() {
+ function HodimlarSavdodanUlushi() {
+
+       useEffect(()=>{
+              getXodimSavdo()
+       })
 
        const [active,setActive] = useState(false);
 
@@ -121,3 +127,4 @@ export default function HodimlarSavdodanUlushi() {
 
        )
 }
+export default connect(({XodimSavdoReducer:{xodimsavdo}})=>({xodimsavdo}),{getXodimSavdo,saveXodimSavdo,editXodimSavdo,deleteXodimSavdo}) (HodimlarSavdodanUlushi)

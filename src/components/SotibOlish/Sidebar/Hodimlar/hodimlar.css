@@ -52,10 +52,11 @@
 .h .imgDiv img{
     margin-left: 3px;
 }
-.h{
-    transition: 4s linear;
 
-}
-.fff{
-    background-color: red;
-}
+/*.fff{*/
+/*    transition: 1s all;*/
+/*}*/
+/*.fff:active{*/
+/*    transition: 1s all;*/
+/*    background: #0A58CA;*/
+/*}*/
