@@ -7,17 +7,24 @@ import Pdf from '../../../../../img/PDF.png'
 import Edit from '../../../../../img/Edit.png'
 import Delete from '../../../../../img/Delete.png'
 import './xaridxisobot.css'
-import {useState,useRef} from "react";
+import {useState,useRef,useEffect} from "react";
 import { DateRangePickerComponent } from '@syncfusion/ej2-react-calendars'
 export default function XaridlarXisoboti() {
 
     const [active,setActive] = useState(false)
     const [selectvalue,setSelectvalue] =useState('')
 
+    useEffect(()=>{
+        const b= new Date().getFullYear()
+        setinputvalue(b)
+    })
+
 
     function toggle(){
         setActive(!active)
     }
+
+    const [inputvalue,setinputvalue] = useState('')
 
     return (
         <div className="col-md-12 mt-2">
@@ -53,10 +60,12 @@ export default function XaridlarXisoboti() {
                     </div>
                     <div className="col-md-6">
                         <h6>Sanani belgilang:</h6>
-                        <input type="text" className={'form-control'}/>
+                        <input type="text" className={'form-control'} placeholder={inputvalue}/>
                         <div>
                             <ul className={'form-control'}>
-                                <li>bu kun</li>
+                                <li>Bugun</li>
+                                <li>Oxirgi 7 kun</li>
+                                <li>Oxirgi 30 kun</li>
                             </ul>
                         </div>
 

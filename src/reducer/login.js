@@ -1,21 +1,20 @@
 import {createSlice} from "@reduxjs/toolkit";
 import {apiCall} from "../api";
 
+
 export const slice = createSlice({
     name: 'login',
     initialState: {
         login: [ ],
-        active:false
+        active:false,
+        remember:false
     },
     reducers: {
         save: (state, action) => {
             state.login = action.payload
-            if(action.payload !== {}){
-                state.active = true
-            }
-            else{
-                state.active = false
-            }
+            console.log(action.payload)
+            console.log(action.payload)
+            console.log(action.payload)
         },
         get: (state, action) => {
             console.log(action.payload)

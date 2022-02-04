@@ -15,6 +15,7 @@
 .half-2{
     margin-top: 96px;
     width: 50%;
+    border: 2px solid #0044FF;
 }
 .input{
     position: relative;

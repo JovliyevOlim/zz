@@ -45,6 +45,7 @@ function Home({savelogin, getlogin, linkpost,active}) {
 
     function changechecked() {
         setchecked(prev => !prev)
+
     }
 
 
@@ -143,8 +144,6 @@ function Home({savelogin, getlogin, linkpost,active}) {
                         <SecondPage/>
                     </div>
                 </div>
-
-
             </div>
             <Switch>
             </Switch>

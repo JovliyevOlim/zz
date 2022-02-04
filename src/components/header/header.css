@@ -63,8 +63,9 @@
 
 .header__{
     position: fixed;
+    z-index: 10000;
     padding: 28px 135px 28px 135px;
-    width: 1440px;
+    width: 100%;
     background-color: #FFFFFF;
 }
 .homebody{

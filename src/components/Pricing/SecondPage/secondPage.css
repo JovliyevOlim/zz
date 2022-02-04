@@ -1,3 +1,7 @@
+.secondpage{
+    border: 2px solid green;
+}
+
 .row .col-md-12 .text{
     text-align: center;
     margin-top: 25%;
