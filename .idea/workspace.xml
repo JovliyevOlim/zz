@@ -1,14 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2ed0236b-2151-406e-828e-c9a3e0b2b336" name="Changes" comment="token">
+    <list default="true" id="2ed0236b-2151-406e-828e-c9a3e0b2b336" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Hbody/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Hbody/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Hbody/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Hbody/home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Pricing/SecondPage/secondPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Pricing/SecondPage/secondPage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducer/Test.http" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducer/login.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +43,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Projects\evaset2" />
       <recent name="E:\Projects\gitz\src\components\SotibOlish\Sidebar\Hodimlar\hodimlarRoyxati\Taxrirlash" />
       <recent name="E:\Projects\gitz\src\img" />
       <recent name="E:\Projects\gitz\src\components\SotibOlish\Sidebar\Settings" />
@@ -98,6 +93,7 @@
       <workItem from="1643816701566" duration="2941000" />
       <workItem from="1643864639049" duration="6930000" />
       <workItem from="1643877310160" duration="14332000" />
+      <workItem from="1643968772640" duration="579000" />
     </task>
     <task id="LOCAL-00001" summary="app.js">
       <created>1643606654320</created>
@@ -162,7 +158,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643645569976</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="bek">
+      <created>1643969082690</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1643969082690</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -193,6 +196,7 @@
     <MESSAGE value="udar boldi" />
     <MESSAGE value="hodimRuyxat" />
     <MESSAGE value="style" />
-    <option name="LAST_COMMIT_MESSAGE" value="style" />
+    <MESSAGE value="bek" />
+    <option name="LAST_COMMIT_MESSAGE" value="bek" />
   </component>
 </project>
