@@ -13,7 +13,6 @@ import Sozlamalar from "./Settings/Sozlamalar";
 import Savdo from "./Savdo/Savdo";
 import logo from '../../../img/LOGO.png'
 import {Route, Switch, Link} from "react-router-dom";
-import HodimlarRoyhati from "./Hodimlar/hodimlarRoyxati/HodimlarRoyhati";
 
 function Sidebar({func}) {
 

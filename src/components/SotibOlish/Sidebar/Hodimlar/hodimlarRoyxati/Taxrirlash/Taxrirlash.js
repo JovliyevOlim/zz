@@ -4,9 +4,9 @@ import {Modal,ModalBody,ModalFooter,ModalHeader} from "reactstrap";
 import {useState,useEffect} from "react";
 import {connect} from "react-redux";
 import LavozimReducer, {getLavozim, saveLavozim} from "../../reducer/LavozimReducer";
-import XodimReducer, {saveXodim} from "../../reducer/XodimReducer";
+import XodimReducer, {saveXodim,getXodim} from "../../reducer/XodimReducer";
 import {Link} from 'react-router-dom'
-function Taxrirlash({getLavozim,saveXodim,XodimReducer,LavozimReducer}) {
+function Taxrirlash({getLavozim,saveXodim,XodimReducer,LavozimReducer,getXodim}) {
 
     useEffect(()=>{
        getLavozim()
@@ -63,14 +63,15 @@ function Taxrirlash({getLavozim,saveXodim,XodimReducer,LavozimReducer}) {
     function saqla(){
         saveXodim({
             firstName: input.firstName,
-            lasttName: input.lastName,
-            username: input.userName,
-            password: input.parol,
-            roleId: '',
+            lastName: input.lastName,
+            username: input.username,
+            password: "92462629",
+            roleId: 1,
             branchId:1,
-            businnessId: 1,
+            businessId: 1,
             enabled: false
         })
+        getXodim()
     }
 
     const [active,setActive] = useState(false)
@@ -82,7 +83,7 @@ function Taxrirlash({getLavozim,saveXodim,XodimReducer,LavozimReducer}) {
         <div className={'row ht'}>
             <h5 className={'text-center mt-4'}>Xodim qo`shish</h5>
             <div className="col-md-12">
-                {console.log(LavozimReducer)}
+                {console.log()}
                 <div className="col-md-12 d-flex justify-content-between align-items-center">
                     <div className="col-md-4">
                         <label htmlFor={'login1'}>Login</label>
@@ -158,4 +159,4 @@ function Taxrirlash({getLavozim,saveXodim,XodimReducer,LavozimReducer}) {
         </div>
     )
 }
-export default connect((LavozimReducer,XodimReducer),{getLavozim,saveLavozim,saveXodim}) (Taxrirlash)
+export default connect((LavozimReducer,XodimReducer),{getLavozim,saveLavozim,saveXodim,getXodim}) (Taxrirlash)
