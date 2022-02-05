@@ -63,7 +63,7 @@ function Taxrirlash({getLavozim,saveXodim,XodimReducer,LavozimReducer}) {
     function saqla(){
         saveXodim({
             firstName: input.firstName,
-            lasttName: input.lastName,
+            lastName: input.lastName,
             username: input.userName,
             password: input.parol,
             roleId: '',

@@ -19,9 +19,33 @@ function Mijozlarguruxi({getMijozGurux,saveMijozGurux,editMijozGurux,deleteMijoz
 
     const [active, setActive] = useState(false);
 
+    const [input,setInput] = useState(
+        {
+            guruhnomi:'',
+            selectfoiz:'',
+            foizda:'',
+        }
+    )
+
+    function changeguruxnomi(e){
+        input.guruhnomi = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+    function changeselectfoiz(e){
+        input.selectfoiz = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+    function changefoizda(e){
+        input.foizda = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+
     useEffect(()=>{
         getTMijozGurux()
-    })
+    },[])
 
     function toggle() {
         setActive(!active)
@@ -94,18 +118,17 @@ function Mijozlarguruxi({getMijozGurux,saveMijozGurux,editMijozGurux,deleteMijoz
 
                 <Modal isOpen={active} toggle={toggle}>
                     <ModalHeader>
-                        Yangi guruh qo`shish
+                        Yangi guruh qo`shish / taxrirlash
                     </ModalHeader>
                     <ModalBody>
                         <label htmlFor={'nomi'}>Guruh nomi</label>
-                        <input id={'nomi'} type="text" className={'form-control'}/>
+                        <input checked={input.guruhnomi} onChange={changeguruxnomi} id={'nomi'} type="text" className={'form-control'}/>
                         <label htmlFor={'lang'}>lang_v1.price_calculation_type</label>
-                        <select className={'form-control mt-3'}  name="" id="">
+                        <select value={input.selectfoiz} onChange={changeselectfoiz} className={'form-control mt-3'}  name="" id="">
                             <option value="#">Foizda</option>
-                            <option value="#">Sotuv narxida guruhlash</option>
                         </select>
                         <label htmlFor={'foizda'} className={'mt-3'}>Foizda</label>
-                        <input type="text" className={'form-control'} id={'foizda'}/>
+                        <input type="text" checked={input.foizda} onChange={changefoizda} className={'form-control'} id={'foizda'}/>
                     </ModalBody>
                     <ModalFooter>
                         <button className={'btn btn-primary'}>SAQLASH</button>

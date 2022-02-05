@@ -30,12 +30,51 @@ function Taminotchilar({getTaminot,saveTaminot,editTaminot,deleteTaminot,taminot
 
     const [input, setInput] = useState(
         {
-            name: 'Boshliq',
-            tel: '0301313',
-            telegram: '@google',
-            taminot: 'nmadir'
+            langv1:'',
+            dukon:'',
+            idraqam: '',
+            login:'',
+            ismi:'',
+            otaismi:'',
+            familiyasi:''
         },
     );
+
+    function changelangv1(e){
+        input.langv1 = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+    function changedukon(e){
+        input.dukon = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+    function changeidraqam(e){
+        input.idraqam = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+    function changelogin(e){
+        input.login = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+    function changeismi(e){
+        input.ismi = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+    function changeotaismi(e){
+        input.otaismi = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+    function changefamiliyasi(e){
+        input.familiyasi = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
 
     return (
 
@@ -129,37 +168,37 @@ function Taminotchilar({getTaminot,saveTaminot,editTaminot,deleteTaminot,taminot
                                 <option value="#">(ikkisi ham) Taminotchi ha Mijoz</option>
                             </select>
                             <div className="in d-flex align-items-center justify-content-sm-around mt-3">
-                                <input type="radio" id={'in1'}/>
+                                <input type="radio" checked={input.langv1} onChange={changelangv1} name={'radio'} id={'in1'}/>
                                 <label htmlFor={'in1'}>
                                     lang_v1.induvidial
                                 </label>
-                                <input type="radio" id={'in2'}/>
+                                <input type="radio" checked={input.dukon} onChange={changedukon} name={'radio'} id={'in2'}/>
                                 <label htmlFor={'in2'}>
                                     Do`kon
                                 </label>
                             </div>
                             <label htmlFor={'idRaqam'}>ID Raqami</label>
-                            <input type="text" id={'idRaqam'} placeholder={'ID Raqami'} className={'form-control'}/>
+                            <input checked={input.idraqam} onChange={changeidraqam} type="text" id={'idRaqam'} placeholder={'ID Raqami'} className={'form-control'}/>
                             lang_v1.leave_empty_to_autogenerate
                             <div className="in d-flex mt-3">
                                 <div>
                                     <label htmlFor={'log1'}>Login</label>
-                                    <input type="text" className={'form-control'} placeholder={'Mr/Mrs/Mis'}
+                                    <input type="text" checked={input.login} onChange={changelogin} className={'form-control'} placeholder={'Mr/Mrs/Mis'}
                                            id={'log1'}/>
                                 </div>
                                 <div>
                                     <label htmlFor={'ism'}>Ismi</label>
-                                    <input type="text" id={'ism'} placeholder={'Ismi'} className={'form-control'}/>
+                                    <input onChange={changeismi} checked={input.ismi} type="text" id={'ism'} placeholder={'Ismi'} className={'form-control'}/>
                                 </div>
                             </div>
                             <div className="in d-flex">
                                 <div className={'mt-3'}>
                                     <label htmlFor={'ot'}>Otasining ismi</label>
-                                    <input type="text" className={'form-control'} placeholder={'Otasining ismi'}/>
+                                    <input checked={input.otaismi} onChange={changeotaismi} type="text" className={'form-control'} placeholder={'Otasining ismi'}/>
                                 </div>
                                 <div className={'mt-3'}>
                                     <label htmlFor={'ot'}>Familiyasi</label>
-                                    <input type="text" placeholder={'Familiyasi'} className={'form-control'}/>
+                                    <input checked={input.familiyasi} onChange={changefamiliyasi} type="text" placeholder={'Familiyasi'} className={'form-control'}/>
                                 </div>
                             </div>
 

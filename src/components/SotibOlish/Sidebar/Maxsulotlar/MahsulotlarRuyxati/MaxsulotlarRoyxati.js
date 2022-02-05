@@ -4,7 +4,7 @@ import BarchaMaxsulotlar from "../../Maxsulotlar/MahsulotlarRuyxati/barchaMaxsul
 import QoldiqlarXisoboti from "../../Maxsulotlar/MahsulotlarRuyxati/qoldiqlarXisoboti/QoldiqlarXisoboti"
 import React from "react";
 import {connect} from 'react-redux'
-import {useEffect} from 'react'
+import {useEffect,useState} from 'react'
 import {getMaxsulotRuyxati,saveMaxsulotRuyxati,editMaxsulotRuyxati,deleteMaxsulotRuyxati} from '../reducer/MaxsulotlarRoyxariReducer'
 function MaxsulotlarRoyxati({getMaxsulotRuyxati,saveMaxsulotRuyxati}) {
 
@@ -12,6 +12,53 @@ function MaxsulotlarRoyxati({getMaxsulotRuyxati,saveMaxsulotRuyxati}) {
         getMaxsulotRuyxati()
     },[])
 
+    const [input,setInput] = useState(
+        {
+            maxsulotturi:'',
+            soliq:'',
+            bolim:'',
+            firma:'',
+            ulcov:'',
+            baza:'',
+            sotvemas:'',
+        }
+    )
+
+    function changemaxsulotturi(e){
+        input.maxsulotturi = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+    function changesoliq(e){
+        input.soliq = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+    function changebolim(e){
+        input.bolim = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+    function changefirma(e){
+        input.firma = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+    function changeulcov(e){
+        input.ulcov = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+    function changebaza(e){
+        input.baza = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+    function changesotuvemas(e){
+        input.sotvemas = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
        return (
               <div className="col-md-12 mt-2 ">
                             <div className="textHeader">
@@ -25,56 +72,54 @@ function MaxsulotlarRoyxati({getMaxsulotRuyxati,saveMaxsulotRuyxati}) {
                                    <div className="row cont">
                                           <div className="col-md-4">
                                                         <h6>Maxsulot turi:</h6>
-                                                        <select name="" id="">
+                                                        <select value={input.maxsulotturi} onChange={changemaxsulotturi} name="" id="">
                                                                <option value="">Barchasi</option>
-                                                               <option value="">Bir turli</option>
-                                                               <option value="">Turli xil</option>
-                                                               <option value="">Komplekt</option>
+                                                               {/*<option value="">Bir turli</option>*/}
+                                                               {/*<option value="">Turli xil</option>*/}
+                                                               {/*<option value="">Komplekt</option>*/}
                                                         </select>
                                           </div>
                                           <div className="col-md-4">
                                                          <h6>Bo'lim:</h6>
-                                                        <select name="" id="">
+                                                        <select value={input.bolim} onChange={changebolim} name="" id="">
                                                                <option value="">Barchasi</option>
                                                         </select>
                                            </div>
                                           <div className="col-md-4">
                                                          <h6>O'lchov birligi:</h6>
-                                                        <select name="" id="">
+                                                        <select name="" id="" value={input.ulcov} onChange={changeulcov}>
                                                                <option value="">Barchasi</option>
-                                                               <option value="">Pieces(Pc(s))</option>
-                                                               <option value="">KG(kg)</option>
-                                                               <option value="">Dona(dona)</option>
+                                                               {/*<option value="">Pieces(Pc(s))</option>*/}
+                                                               {/*<option value="">KG(kg)</option>*/}
+                                                               {/*<option value="">Dona(dona)</option>*/}
                                                         </select>
                                           </div>
                                    </div>
                                    <div className="row mt-4">
                                           <div className="col-md-4">
                                                         <h6>Soliq:</h6>
-                                                         <select name="" id="">
+                                                         <select name="" id="" onChange={changesoliq} value={input.soliq}>
                                                               <option value="">Barchasi</option>
                                                         </select>
                                           </div>
                                           <div className="col-md-4">
                                                         <h6>Firma:</h6>
-                                                         <select name="" id="">
+                                                         <select name="" id="" onChange={changefirma} value={input.firma}>
                                                               <option value="">Barchasi</option>
                                                         </select>
                                           </div>
                                           <div className="col-md-4">
                                                          <h6>Baza:</h6>
-                                                         <select name="" id="">
+                                                         <select name="" id="" onChange={changebaza} value={input.baza}>
                                                               <option value="">Barchasi</option>
-                                                              <option value="">Mavjud emas</option>
-                                                              <option value="">Shifer zavod</option>
-                                                              <option value="">Instrumentlar</option>
+
                                                         </select>
                                           </div>
                                    </div>
                                    <div className="row">
                                           <div className="col-md-12">
                                                  <div className="chescbox">
-                                                        <input type="checkbox" id={'d'}/>
+                                                        <input type="checkbox" onChange={changesotuvemas} checked={input.sotvemas}  id={'d'}/>
                                                      <label htmlFor={'d'}><h6>Sotuvda emas</h6></label>
                                                  </div>
                                           </div>

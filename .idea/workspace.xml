@@ -2,16 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2ed0236b-2151-406e-828e-c9a3e0b2b336" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/reducer/MaxsulotlarRoyxariReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hamkorlar/reducer/MijozGuruxReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hamkorlar/reducer/MijozGuruxReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hamkorlar/reducer/TaminotReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hamkorlar/reducer/TaminotReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/Lavozimlar/Lavozimlar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/Lavozimlar/Lavozimlar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/hodimlarRoyxati/HodimlarRoyhati.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/hodimlarRoyxati/HodimlarRoyhati.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hamkorlar/MijozGurux/MijozlarGuruxi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hamkorlar/MijozGurux/MijozlarGuruxi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hamkorlar/taminotchilar/Taminotchilar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hamkorlar/taminotchilar/Taminotchilar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/hodimlarRoyxati/Taxrirlash/Taxrirlash.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/hodimlarRoyxati/Taxrirlash/Taxrirlash.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/reducer/XodimReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/reducer/XodimReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/MahsulotlarRuyxati/MaxsulotlarRoyxati.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/MahsulotlarRuyxati/MaxsulotlarRoyxati.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/middleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/MahsulotlarRuyxati/barchaMaxsulotlar/BarchaMaxsulotlar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/MahsulotlarRuyxati/barchaMaxsulotlar/BarchaMaxsulotlar.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +25,8 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/MahsulotlarRuyxati/barchaMaxsulotlar/BarchaMaxsulotlar.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hamkorlar/taminotchilar/Taminotchilar.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/MahsulotlarRuyxati/MaxsulotlarRoyxati.js" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -50,7 +48,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ReaCt/SelF Tacks PDP/EX 7/mashq" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ReaCt/SelF Tacks PDP/EX 18/mashq" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
@@ -113,7 +111,7 @@
       <workItem from="1643968772640" duration="579000" />
       <workItem from="1643969710596" duration="4399000" />
       <workItem from="1643992042949" duration="7322000" />
-      <workItem from="1644038637112" duration="12607000" />
+      <workItem from="1644038637112" duration="20065000" />
     </task>
     <task id="LOCAL-00001" summary="app.js">
       <created>1643606654320</created>
@@ -220,7 +218,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644046416947</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="linkSave">
+      <created>1644052902063</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1644052902063</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -257,6 +262,7 @@
     <MESSAGE value="lavozim" />
     <MESSAGE value="reducerlar" />
     <MESSAGE value="lavozimtaxrirlash" />
-    <option name="LAST_COMMIT_MESSAGE" value="lavozimtaxrirlash" />
+    <MESSAGE value="linkSave" />
+    <option name="LAST_COMMIT_MESSAGE" value="linkSave" />
   </component>
 </project>
