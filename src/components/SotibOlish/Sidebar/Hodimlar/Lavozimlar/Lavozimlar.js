@@ -11,7 +11,7 @@ function Lavozimlar({getLavozim, saveLavozim, deleteLavozim, editLavozim, lavozi
 
     useEffect(() => {
         getLavozim()
-    })
+    },[])
 
     return (
         <div>

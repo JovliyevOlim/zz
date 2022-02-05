@@ -4,9 +4,9 @@ import {Modal,ModalBody,ModalFooter,ModalHeader} from "reactstrap";
 import {useState,useEffect} from "react";
 import {connect} from "react-redux";
 import LavozimReducer, {getLavozim, saveLavozim} from "../../reducer/LavozimReducer";
-import XodimReducer from "../../reducer/XodimReducer";
-
-function Taxrirlash({getLavozim,XodimReducer,LavozimReducer}) {
+import XodimReducer, {saveXodim} from "../../reducer/XodimReducer";
+import {Link} from 'react-router-dom'
+function Taxrirlash({getLavozim,saveXodim,XodimReducer,LavozimReducer}) {
 
     useEffect(()=>{
        getLavozim()
@@ -60,6 +60,19 @@ function Taxrirlash({getLavozim,XodimReducer,LavozimReducer}) {
         setInput(a)
     }
 
+    function saqla(){
+        saveXodim({
+            firstName: input.firstName,
+            lasttName: input.lastName,
+            username: input.userName,
+            password: input.parol,
+            roleId: '',
+            branchId:1,
+            businnessId: 1,
+            enabled: false
+        })
+    }
+
     const [active,setActive] = useState(false)
 
     function toggle(){
@@ -102,6 +115,10 @@ function Taxrirlash({getLavozim,XodimReducer,LavozimReducer}) {
                         <button className={'btn btn-outline-primary'} onClick={toggle}>Login parol berish</button>
                     </div>
 
+                    <div className="cold-m-4">
+                        <Link to={'/headerthird/hodimlarruyxati'}><button onClick={saqla} className={'btn btn-outline-primary'}>Saqlash</button></Link>
+                    </div>
+
                     <Modal isOpen={active} toggle={toggle}>
                         <ModalHeader>
                             Log / Parol
@@ -141,4 +158,4 @@ function Taxrirlash({getLavozim,XodimReducer,LavozimReducer}) {
         </div>
     )
 }
-export default connect((LavozimReducer,XodimReducer),{getLavozim,saveLavozim}) (Taxrirlash)
+export default connect((LavozimReducer,XodimReducer),{getLavozim,saveLavozim,saveXodim}) (Taxrirlash)

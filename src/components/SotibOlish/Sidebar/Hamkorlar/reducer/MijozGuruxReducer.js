@@ -56,7 +56,7 @@ export const deleteMijozGurux=(data)=>apiCall({
     url: '/customer',
     method:'post',
     data,
-    onSuccess: slice.actions.deletefrom.type
+    onSuccess: slice.actions.deletefrom.typex
 })
 
 export default slice.reducer

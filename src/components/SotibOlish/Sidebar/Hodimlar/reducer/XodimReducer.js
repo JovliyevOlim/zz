@@ -13,8 +13,8 @@ const slice = createSlice({
             console.log(action.payload.object);
         },
         savefrom: (state, action) => {
-            state.xodimlar.unshift(action.payload)
-
+            console.log(action.payload)
+            console.log('tfhkrt')
         },
         editfrom: (state, action) => {
             state.xodimlar.map((item, index) => {

@@ -3,10 +3,14 @@ import { Link ,Switch,Route} from "react-router-dom"
 import BarchaMaxsulotlar from "../../Maxsulotlar/MahsulotlarRuyxati/barchaMaxsulotlar/BarchaMaxsulotlar"
 import QoldiqlarXisoboti from "../../Maxsulotlar/MahsulotlarRuyxati/qoldiqlarXisoboti/QoldiqlarXisoboti"
 import React from "react";
+import {connect} from 'react-redux'
+import {useEffect} from 'react'
+import {getMaxsulotRuyxati,saveMaxsulotRuyxati,editMaxsulotRuyxati,deleteMaxsulotRuyxati} from '../reducer/MaxsulotlarRoyxariReducer'
+function MaxsulotlarRoyxati({getMaxsulotRuyxati,saveMaxsulotRuyxati}) {
 
-
-function MaxsulotlarRoyxati() {
-
+    useEffect(()=>{
+        getMaxsulotRuyxati()
+    },[])
 
        return (
               <div className="col-md-12 mt-2 ">
@@ -82,9 +86,8 @@ function MaxsulotlarRoyxati() {
                                    </div>
                                 <Route path={'/headerthird/mahsulotRuyxati/barcaMahsulot'} component={BarchaMaxsulotlar}/>
                                 <Route path={'/headerthird/mahsulotRuyxati/qoldiqXisobot'} component={QoldiqlarXisoboti}/>
-
                             </div>
                      </div>
        )
 }
-export default  (MaxsulotlarRoyxati)
+export default connect(({XodimReducer:{xodimlar}})=>({xodimlar}),{getMaxsulotRuyxati,saveMaxsulotRuyxati,editMaxsulotRuyxati,deleteMaxsulotRuyxati})  (MaxsulotlarRoyxati)

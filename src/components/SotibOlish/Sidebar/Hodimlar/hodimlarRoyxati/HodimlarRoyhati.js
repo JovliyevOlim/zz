@@ -22,7 +22,7 @@ function HodimlarRoyhati({getXodim, deleteXodim, saveXodim, editXodim,xodimlar})
     },[])
 
     const [input,setInput] = useState('')
-
+    const [inputsearch,setinputsearch] = useState('')
     const history = useHistory();
 
 
@@ -78,7 +78,7 @@ function HodimlarRoyhati({getXodim, deleteXodim, saveXodim, editXodim,xodimlar})
                                     <td>{item.firstName}</td>
                                     <td>{item.lastName}</td>
                                     <td>{item.role.name}</td>
-                                        <td>-</td>
+                                    <td>-</td>
                                     <td>
                                         <Link to={'/headerthird/hodimlarruyxati/taxrirlash'}>
                                             <button className='taxrirlash'><img src={Edit} alt=""/>Taxrirlash</button>
