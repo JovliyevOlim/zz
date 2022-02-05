@@ -67,87 +67,76 @@
     width: 100%;
 }
 
-@media (max-width: 426.9px) {
-
+@media (max-width: 425.9px) {
     .header__{
-        padding: 0px 6px 0px 0px;
+        padding: 24px 16px 0px 16px;
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: rosybrown;
-        
     }
     .header__ .homebody{
         display: block;
     }
     .header__ .homebody .header-narx{
         width: 100%;
-        background-color: red;
     }
-    /* .header__ .homebody .image__ a img{
+    .header__ .homebody .image__ a img{
         /* width: 80px;
         height: 20px; */
-    } */
+    }
     .header__ .homebody .header-narx select{
-       font-size: 10px;
+       font-size: 14px;
+       background-color: transparent;
     }
     .header__ .homebody .header-narx button{
         background: #FFFFFF;
         border-radius: 4px;
         padding: 0px;
         font-family: "Montserrat" ,sans-serif;
-        font-size: 10px;
+        font-size: 12px;
         display: flex;
+        padding: 4px;
         align-items: center;
         justify-content: center;
         border: 1px solid #0044FF ;
-        width: 64px;
-        height: 16px;
+        /* width: 64px; */
+        /* height: 16px; */
         color: #0044FF;
     }
 }
 
-@media (min-width: 427px) and (max-width: 768.9px){
+@media (min-width: 426px) and (max-width: 768.9px){
     .header__{
-        padding: 0px 16px 0px 16px;
-        font-size: 10px;
-        
+        padding: 28px 4% 28px 4%;
+    }
+    .header__ .homebody{
     }
     .header__ .homebody .header-narx{
-        width: 42%;
+        width: 50%;
     }
-    .header__ .homebody .image__ a img{
-        width: 90px;
-        height: 20px;
+    .header__ .homebody .header-narx a{
+        font-size: 12px;
     }
     .header__ .homebody .header-narx select{
-       font-size: 10px;
+        font-size: 12px;
+        background-color: transparent;
     }
     .header__ .homebody .header-narx button{
-        background: #FFFFFF;
-        border-radius: 4px;
-        padding: 0px;
-        font-family: "Montserrat" ,sans-serif;
-        font-size: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: 1px solid #0044FF ;
-        width: 64px;
-        height: 16px;
-        color: #0044FF;
-    }   
+        font-size: 12px;
+        padding: 4px;
+    }
+    .header__ .homebody .image__ a img{
+        width: 80%;
+        height: 80%;
+    }
+    
+
+
 }
 
 @media (min-width: 769px) and (max-width: 1024px){
     .header__{
         padding: 28px 80px 28px 80px;
-        
     }
-    .header__ .homebody .header-narx{
-        width: 300px;
-    }
-    
-    
 }
     

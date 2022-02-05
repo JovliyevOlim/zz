@@ -17,7 +17,7 @@ function BigCard() {
 
                 <p>Quisque velit nisi, pretium ut lacinia in, elementum id enim.</p>
 
-                <button className={'btn btn-primary form-control'}>
+                <button className={'btn btn-outline-primary form-control'}>
                     Tarifni ulash
                 </button>
 

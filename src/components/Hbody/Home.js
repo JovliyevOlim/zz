@@ -75,21 +75,23 @@ function Home({saveusers, getusers, linkpost,active}) {
 
     return (
         <div>
-            <div id={'home col-md-12 '}>
+            <div id={'home'}>
                 <div>
                     <Header/>
                 </div>
                 <div className={'home-body'}>
                     <div className="homeContainer">
                             <div className={"home-img"}>
-                                <img src={img} alt=""/>
+                                <div className="imgContainer">
+                                    <img src={img} alt=""/>
+                                </div>
                                 <div className="home-text">
                                     <h4 className={'welcome'}>
                                         EVASET Xush kelibsiz!
                                     </h4>
                                     <p className={'p'}>
                                         Nulla porttitor accumsan tincidunt.
-                                        Pellentesque in<br/> ipsum
+                                        Pellentesque inipsum
                                         id orci porta dapibus.
                                         Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
                                     </p>
@@ -104,36 +106,32 @@ function Home({saveusers, getusers, linkpost,active}) {
                                     At ullamcorper pharetra eleifend lectus vitae sit.
                                 </p>
                             </div>
-                        <div className={`kirish-input`}>
-                            <input onChange={login} value={inputlogin} type="text" className={'form-control'}
-                                   placeholder={placeholderl}/>
-                            <div className={'input'}>
-                                <input onChange={parol} value={inputparol} type={typeinput} className={'form-control'}
-                                       placeholder={placeholderp}/>
-                                <img onClick={changetypeinput} src={eye} alt=""/>
-                            </div>
-                            <div className="kirish-checkbox">
-                                <input onChange={changechecked} checked={checked} type="checkbox" id={'check'}/>
-                                <label htmlFor={'check'}>
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                        <title >ionicons-v5-l</title>
-                                        <path
-                                            d="M400,48H112a64.07,64.07,0,0,0-64,64V400a64.07,64.07,0,0,0,64,64H400a64.07,64.07,0,0,0,64-64V112A64.07,64.07,0,0,0,400,48ZM364.25,186.29l-134.4,160a16,16,0,0,1-12,5.71h-.27a16,16,0,0,1-11.89-5.3l-57.6-64a16,16,0,1,1,23.78-21.4l45.29,50.32L339.75,165.71a16,16,0,0,1,24.5,20.58Z"/>
-                                    </svg>
-                                </label>
-                                <div className="login">
-                                     <h4>Meni eslab qol</h4>
-                                     <a href="#">Parolni unutdingizmi?</a>
+                            <div className={`kirish-input`}>
+                                <input onChange={login} value={inputlogin} type="text" className={'form-control login'} placeholder={placeholderl}/>
+                                <div className={'input'}>
+                                    <input onChange={parol} value={inputparol} type={typeinput} className={'form-control pasword'}
+                                        placeholder={placeholderp}/>
+                                    <img onClick={changetypeinput} src={eye} alt=""/>
                                 </div>
-                               
-                            </div>
+                                <div className="kirish-checkbox">
+                                    <input onChange={changechecked} checked={checked} type="checkbox" id={'check'}/>
+                                    <label htmlFor={'check'}>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                            <title >ionicons-v5-l</title>
+                                            <path
+                                                d="M400,48H112a64.07,64.07,0,0,0-64,64V400a64.07,64.07,0,0,0,64,64H400a64.07,64.07,0,0,0,64-64V112A64.07,64.07,0,0,0,400,48ZM364.25,186.29l-134.4,160a16,16,0,0,1-12,5.71h-.27a16,16,0,0,1-11.89-5.3l-57.6-64a16,16,0,1,1,23.78-21.4l45.29,50.32L339.75,165.71a16,16,0,0,1,24.5,20.58Z"/>
+                                        </svg>
+                                    </label>
+                                    <div className="login">
+                                        <h4>Meni eslab qol</h4>
+                                        <a href="#">Parolni unutdingizmi?</a>
+                                    </div>
+                                
+                                </div>
                             <button onClick={testusers} className={'btn btn-primary form-control kirish'}>Kirish </button>
+                            </div>
                         </div>
                     </div>
-
-                    </div>
-                   
-                    
                 </div>
                 <div>
                         <Bottom/>

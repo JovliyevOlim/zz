@@ -22,10 +22,10 @@
     cursor: pointer;
 }
 .home-body .homeContainer .home-img{
+    padding: 96px 40px 0px 135px;
     width: 50%;
-    padding: 96px 40px 0 135px;
 }
-.home-img img{
+.home-img .homeContainer img{
     margin-bottom: 32px;
 }
 .home-text h4{
@@ -52,6 +52,7 @@
 }
 .home-body .homeContainer{
     display: flex;
+    justify-content: space-between;
     margin-top: 96px;
 }
 .kirish-text h5{
@@ -163,19 +164,142 @@
     z-index: 2;
 }
 
-@media (max-width: 426.9px) {
+@media (max-width: 425.9px) {
     .home-body .homeContainer{
         display: block;
     }
     .home-body .homeContainer .home-img{
-        background-color: royalblue;
-        padding: 0px;
+        width: 100%;
+        padding: 80px 16px 0px 16px;
+    }
+    .home-body .homeContainer .home-img .homeContainer{
+        display: flex;
+        justify-content: center;
         width: 100%;
     }
-
+    .home-body .homeContainer .home-img img{
+        width: 100%;
+    }
     .home-body .homeContainer .home-enter{
         width: 100%;
         padding: 0px;
     }
+    .home-body .homeContainer .home-img .home-text{
+        margin-top: 20px;
+    }
+    .home-body .homeContainer .home-img .home-text h4{
+        font-size: 24px;
+        line-height: 16px;
+    }
+    .home-body .homeContainer .home-img .home-text p{
+        font-size: 12px;
+        line-height: 16px;
+        margin: 0px;
+    }
+    .home-body .homeContainer .home-enter{
+        padding: 0px 16px 0px 16px;
+    }
+
+    .home-body .homeContainer .home-enter .kirish-text h5{
+        font-size: 20px;
+        line-height: 16px;
+    }
+    .home-body .homeContainer .home-enter .kirish-text .p{
+        font-size: 12px;
+        line-height: 16px;
+    }
+    .home-body .homeContainer .home-enter .kirish-input .login{
+        height: 20px;
+    }
+    .home-body .homeContainer .home-enter .kirish-input .kirish-checkbox svg{
+        width: 16px;
+        height: 16px;
+        border-radius: 4px;
+    }
+    .home-body .homeContainer .home-enter .kirish-input .kirish-checkbox svg:hover{
+        cursor: pointer;
+    }
+    .home-body .homeContainer .home-enter .kirish-input .kirish-checkbox .login h4{
+        font-size: 12px;
+    }
+    .home-body .homeContainer .home-enter .kirish-input .kirish-checkbox .login a{
+        font-size: 12px;
+    }
+    .home-body .homeContainer .home-enter .kirish-input .input .pasword{
+        height: 20px;
+    }
+    .home-body .homeContainer .home-enter .kirish-input .input img{
+        width: 16px;
+    } 
+    .home-body .homeContainer .home-enter .kirish-input .kirish{
+        height: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+        
+}
+
+
+
+@media (min-width: 426px) and (max-width: 768px){
+    .home-body .homeContainer .home-img{
+        padding: 96px 30px 0px 4%;
+    }
+    .home-body .homeContainer .home-img .imgContainer img{
+        width: 100%;
+    }
+    .home-body .homeContainer .home-img .home-text h4{
+        font-size: 24px;
+        line-height: 32px;
+        margin-top: 10px;
+    }
+    .home-body .homeContainer .home-img .home-text p{
+        font-size: 12px;
+        line-height: 16px;
+    }
+    .home-body .homeContainer .home-enter{
+        padding: 12px 4% 0px 30px;
+    }
+    .home-body .homeContainer .home-enter .kirish-text h5{
+        font-size: 20px;
+    }
+    .home-body .homeContainer .home-enter .kirish-text p{
+        font-size: 12px;
+        line-height: 16px;
+    }
+    .home-enter .kirish-input .login{
+        height: 20px;
+    }
+    .home-enter .kirish-input .pasword{
+        height: 20px;
+    }
+    .home-enter .kirish-input img{
+        height: 16px;
+    }
+    .home-enter .kirish-input .kirish-checkbox svg{
+        width: 20px;
+        height: 20px;
+    }
+    .home-enter .kirish-input .kirish-checkbox .login h4{
+        font-size: 12px;
+        line-height: 14px;
+    }
+    .home-enter .kirish-input .kirish-checkbox .login a{
+        font-size: 12px;
+        line-height: 14px;
+    }
+    .home-enter .kirish-input button{
+        padding: 4px;
+    }
+    
+
+
+
+
+
+
+    
+   
 }
 

@@ -9,10 +9,8 @@ function SecondPage() {
 
 
         <div className={`container secondpage`}>
-
             <div className={'row'}>
                 <div className="col-md-12">
-
                     <div className="text">
                         <h4>Oddiy, shaffof narxlash</h4>
                         <p>Istalgan vaqtda shartnomani bekor qilish</p>
@@ -29,7 +27,6 @@ function SecondPage() {
                             <p className={'p2'}>Yillik</p>
                             </div>
                     </div>
-
                 </div>
             </div>
 
@@ -48,7 +45,6 @@ function SecondPage() {
                             <Card/>
                         </div>
                     </div>
-                    
                 </div>
                 <div className="back">
 
