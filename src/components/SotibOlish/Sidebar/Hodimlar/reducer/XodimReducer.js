@@ -5,7 +5,7 @@ import {apiCall} from "../../../../../api";
 const slice = createSlice({
     name: 'xodimlar',
     initialState: {
-        xodimlar: []
+        xodimlar: [],
     },
     reducers: {
         getFrom: (state, action) => {

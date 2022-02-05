@@ -18,22 +18,17 @@ body{
 }
 .homebody{
     width: 100%;
-    transition: 0.5s linear;
 }
 
 .homepage1{
-    transition: 0.5s linear;
     width: 18%;
     }
 .homepage2 {
-    transition: 0.5s linear;
     width: 82%;
 }
 .homepageone{
-    transition: 1s linear;
     width: 0;
 }
 .homepagetwo{
-    transition: 1s linear;
     width: 100%;
 }

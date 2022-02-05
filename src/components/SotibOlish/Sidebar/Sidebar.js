@@ -23,7 +23,7 @@ function Sidebar({func}) {
                     <div className="sidehead d-flex justify-content-center">
                         <img src={logo} alt="logo"/>
                     </div>
-                    <div className={'gap ms-2'}>
+                    <div className={'gap ms-2 sidebar-active'}>
                         <div className="row bosh">
                             <div className="imgDiv">
                                 <div className={'d-flex align-items-center'}>
@@ -37,7 +37,6 @@ function Sidebar({func}) {
                                     </Link>
 
                                 </div>
-
                             </div>
 
                         </div>
