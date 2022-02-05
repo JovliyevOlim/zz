@@ -7,8 +7,16 @@ import Pdf from '../../../../../img/PDF.png'
 import Edit from '../../../../../img/Edit.png'
 import Delete from '../../../../../img/Delete.png'
 import './xarajatlarRoyxati.css'
+import {useEffect} from "react";
+import {connect} from "react-redux";
+import {deleteXarajatlar, editXarajatlar, getXarajatlar, saveXarajatlar} from "../reducer/XarajatlarReducer";
 
-export default function XarajatlarRoyxati() {
+function XarajatlarRoyxati({getXarajatlar}) {
+
+       useEffect(()=>{
+              getXarajatlar()
+       })
+
        return (
               <div className="col-md-12 mt-2">
                      <div className="textHeader">
@@ -155,3 +163,4 @@ export default function XarajatlarRoyxati() {
               </div>
        )
 }
+export default connect(({XarajatlarReducer:{xarajatlar}})=>({xarajatlar}),{getXarajatlar,saveXarajatlar,editXarajatlar,deleteXarajatlar}) (XarajatlarRoyxati)

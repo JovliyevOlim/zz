@@ -4,9 +4,9 @@ import {Modal,ModalBody,ModalFooter,ModalHeader} from "reactstrap";
 import {useState,useEffect} from "react";
 import {connect} from "react-redux";
 import LavozimReducer, {getLavozim, saveLavozim} from "../../reducer/LavozimReducer";
-import XodimReducer from "../../reducer/XodimReducer";
-
-function Taxrirlash({getLavozim,XodimReducer,LavozimReducer}) {
+import XodimReducer, {saveXodim,getXodim} from "../../reducer/XodimReducer";
+import {Link} from 'react-router-dom'
+function Taxrirlash({getLavozim,saveXodim,XodimReducer,LavozimReducer,getXodim}) {
 
     useEffect(()=>{
        getLavozim()
@@ -60,6 +60,20 @@ function Taxrirlash({getLavozim,XodimReducer,LavozimReducer}) {
         setInput(a)
     }
 
+    function saqla(){
+        saveXodim({
+            firstName: input.firstName,
+            lastName: input.lastName,
+            username: input.username,
+            password: "92462629",
+            roleId: 1,
+            branchId:1,
+            businessId: 1,
+            enabled: false
+        })
+        getXodim()
+    }
+
     const [active,setActive] = useState(false)
 
     function toggle(){
@@ -69,7 +83,7 @@ function Taxrirlash({getLavozim,XodimReducer,LavozimReducer}) {
         <div className={'row ht'}>
             <h5 className={'text-center mt-4'}>Xodim qo`shish</h5>
             <div className="col-md-12">
-                {console.log(LavozimReducer)}
+                {console.log()}
                 <div className="col-md-12 d-flex justify-content-between align-items-center">
                     <div className="col-md-4">
                         <label htmlFor={'login1'}>Login</label>
@@ -100,6 +114,10 @@ function Taxrirlash({getLavozim,XodimReducer,LavozimReducer}) {
 
                     <div className="col-md-4">
                         <button className={'btn btn-outline-primary'} onClick={toggle}>Login parol berish</button>
+                    </div>
+
+                    <div className="cold-m-4">
+                        <Link to={'/headerthird/hodimlarruyxati'}><button onClick={saqla} className={'btn btn-outline-primary'}>Saqlash</button></Link>
                     </div>
 
                     <Modal isOpen={active} toggle={toggle}>
@@ -141,4 +159,4 @@ function Taxrirlash({getLavozim,XodimReducer,LavozimReducer}) {
         </div>
     )
 }
-export default connect((LavozimReducer,XodimReducer),{getLavozim,saveLavozim}) (Taxrirlash)
+export default connect((LavozimReducer,XodimReducer),{getLavozim,saveLavozim,saveXodim,getXodim}) (Taxrirlash)

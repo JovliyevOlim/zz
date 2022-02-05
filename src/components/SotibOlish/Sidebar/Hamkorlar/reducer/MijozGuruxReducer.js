@@ -9,8 +9,8 @@ const slice = createSlice({
     },
     reducers: {
         getFrom: (state, action) => {
-            state.taminot = action.payload
-            console.log(action.payload);
+            state.taminot = action.payload.object
+            console.log(action.payload.object);
         },
         savefrom: (state,action) => {
             state.taminot.unshift(action.payload)
@@ -33,30 +33,30 @@ const slice = createSlice({
 });
 
 export const getTMijozGurux=()=>apiCall({
-    url: '/user',
+    url: '/customer',
     method:'get',
     onSuccess: slice.actions.getFrom.type
 });
 
 export const saveMijozGurux=(data)=>apiCall({
-    url: '/user',
+    url: '/customer',
     method:'post',
     data,
     onSuccess: slice.actions.savefrom.type
 });
 
 export const editMijozGurux=(data)=>apiCall({
-    url: '/user',
+    url: '/customer',
     method: 'post',
     data,
     onSuccess: slice.actions.editfrom.type
 });
 
 export const deleteMijozGurux=(data)=>apiCall({
-    url: '/user',
+    url: '/customer',
     method:'post',
     data,
-    onSuccess: slice.actions.deletefrom.type
+    onSuccess: slice.actions.deletefrom.typex
 })
 
 export default slice.reducer

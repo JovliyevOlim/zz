@@ -13,7 +13,6 @@ import Sozlamalar from "./Settings/Sozlamalar";
 import Savdo from "./Savdo/Savdo";
 import logo from '../../../img/LOGO.png'
 import {Route, Switch, Link} from "react-router-dom";
-import HodimlarRoyhati from "./Hodimlar/hodimlarRoyxati/HodimlarRoyhati";
 
 function Sidebar({func}) {
 
@@ -23,7 +22,7 @@ function Sidebar({func}) {
                     <div className="sidehead d-flex justify-content-center">
                         <img src={logo} alt="logo"/>
                     </div>
-                    <div className={'gap ms-2'}>
+                    <div className={'gap ms-2 sidebar-active'}>
                         <div className="row bosh">
                             <div className="imgDiv">
                                 <div className={'d-flex align-items-center'}>
@@ -37,7 +36,6 @@ function Sidebar({func}) {
                                     </Link>
 
                                 </div>
-
                             </div>
 
                         </div>

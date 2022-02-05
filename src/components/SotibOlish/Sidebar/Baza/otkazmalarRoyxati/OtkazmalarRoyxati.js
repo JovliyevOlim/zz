@@ -10,8 +10,16 @@ import Korish from '../../../../../img/Korish.png'
 import Delete from '../../../../../img/Delete.png'
 import Arrow from '../../../../../img/arrowIcon.png'
 import './otkazmalarRoyxati.css'
+import {connect} from "react-redux";
+import {useEffect} from "react";
+import {deleteOtkazma, editOtkazma, getOtkazma, saveOtkazma} from "../reducer/OtkazmaReducer";
 
-export default function OtkazmalarRoyxati() {
+function OtkazmalarRoyxati({getOtkazma}) {
+
+       useEffect(()=>{
+              getOtkazma()
+       })
+
        return (
               <div className="col-md-12 mt-2 ">
                             <div className="textHeader">
@@ -82,3 +90,4 @@ export default function OtkazmalarRoyxati() {
                      </div>
        )
 }
+export default connect(({OtkazmalarReducer:{otkazmalar}})=>({otkazmalar}),{getOtkazma,saveOtkazma,editOtkazma,deleteOtkazma}) (OtkazmalarRoyxati)

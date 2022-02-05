@@ -7,29 +7,56 @@ import Pdf from '../../../../../img/PDF.png'
 import Edit from '../../../../../img/Edit.png'
 import Delete from '../../../../../img/Delete.png'
 import './xaridxisobot.css'
-import {useState,useRef,useEffect} from "react";
+import {useState, useRef, useEffect} from "react";
 import { DateRangePickerComponent } from '@syncfusion/ej2-react-calendars'
-export default function XaridlarXisoboti() {
+import {MenuItem, TextField,Select,InputLabel} from "@mui/material";
+import {connect} from "react-redux";
+import {
+    deleteXaridXisobot,
+    editXaridXisobot,
+    getXaridXisobot,
+    saveXaridXisobot
+} from "../reducer/XaridlarXisobotiReducer";
+
+function XaridlarXisoboti({getXaridXisobot}) {
+
+    useEffect(()=>{
+        getXaridXisobot()
+    })
 
     const [active,setActive] = useState(false)
     const [selectvalue,setSelectvalue] =useState('')
+    const startValueDate = new Date(new Date().getFullYear(), new Date().getMonth(), 14);
+    const endValueDate = new Date(new Date().getFullYear(), new Date().getMonth() + 1, 15);
+    const minDateDate = new Date(new Date().getFullYear(), new Date().getMonth(), 8);
+    const maxDateDate = new Date(new Date().getFullYear(), new Date().getMonth()+1, 20);
+    function selectchange(event){
+         console.log(event.isDefaultPrevented(false))
+             event.isDefaultPrevented(true)
+        event.isPropagationStopped(false)
+        if(event.target.value == 20){
 
-    useEffect(()=>{
-        const b= new Date().getFullYear()
-        setinputvalue(b)
-    })
-
+            setActive(true)
+        }
+        else{
+            setActive(false)
+        }
+        if(event.target.value == 3){
+            const day = new Date()
+            const day1 = new Date().getMonth()+1
+            const day2 = new Date().getFullYear()
+            console.log(day,day1,day2)
+        }
+    }
 
     function toggle(){
         setActive(!active)
     }
 
-    const [inputvalue,setinputvalue] = useState('')
-
     return (
         <div className="col-md-12 mt-2">
             <div className="textHeader">
-                <h2>Xarajatlar</h2>
+                <h2>Xaridlar Xisoboti</h2>
             </div>
             <div className="rowStyleH">
                 <div className="qoshish">
@@ -60,14 +87,22 @@ export default function XaridlarXisoboti() {
                     </div>
                     <div className="col-md-6">
                         <h6>Sanani belgilang:</h6>
-                        <input type="text" className={'form-control'} placeholder={inputvalue}/>
-                        <div>
-                            <ul className={'form-control'}>
-                                <li>Bugun</li>
-                                <li>Oxirgi 7 kun</li>
-                                <li>Oxirgi 30 kun</li>
-                            </ul>
-                        </div>
+                        <select  onClick={selectchange}  value={selectvalue} name="" id="">
+                            <option value="">1</option>
+                            <option value="">2</option>
+                        </select>
+                            {
+                                active?     <DateRangePickerComponent placeholder="Enter Date Range"
+                                                                      startDate={startValueDate}
+                                                                      endDate={endValueDate}
+                                                                      min={minDateDate}
+                                                                      max={maxDateDate}
+                                                                      minDays={1}
+                                                                      maxDays={10000}
+                                                                      format="dd-MMM-yy"
+
+                                ></DateRangePickerComponent>:''
+                            }
 
                     </div>
                 </div>
@@ -170,3 +205,4 @@ export default function XaridlarXisoboti() {
         </div>
     )
 }
+export default connect(({FirmaReducer:{firmalar}})=>({firmalar}),{getXaridXisobot,saveXaridXisobot,editXaridXisobot,deleteXaridXisobot}) (XaridlarXisoboti)

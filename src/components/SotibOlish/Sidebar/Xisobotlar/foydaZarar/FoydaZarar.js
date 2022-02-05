@@ -1,7 +1,14 @@
 import './foydaZarar.css'
+import {connect} from "react-redux";
+import {useEffect} from "react";
+import {deleteFoydaZarar, editFoydaZarar, getFoydaZarar, saveFoydaZarar} from "../reducer/FoydaZararReducer";
 
+function FoydaZarar({getFoydaZarar,saveFoydaZarar,editFoydaZarar,deleteFoydaZarar}) {
 
-export default function FoydaZarar() {
+       useEffect(()=>{
+              getFoydaZarar()
+       })
+
        return (
               <div className="col-md-12 mt-2">
                      <div className="textHeaderF">
@@ -63,3 +70,4 @@ export default function FoydaZarar() {
               </div>  
        )
 }
+export default connect(({FoydaZararReducer:{foydazarar}})=>({foydazarar}),{getFoydaZarar,saveFoydaZarar,editFoydaZarar,deleteFoydaZarar}) (FoydaZarar)

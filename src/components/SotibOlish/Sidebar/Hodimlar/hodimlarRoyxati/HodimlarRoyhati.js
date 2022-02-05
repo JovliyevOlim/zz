@@ -1,19 +1,18 @@
-import './HodimlarRoyhati.css'
+import './HodimlarRoyhati.css';
 import CSV from '../../../../../img/CSV.png'
-import Excel from '../../../../../img/Excel.png'
-import Print from '../../../../../img/Print.png'
-import Data from '../../../../../img/Data.png'
-import Pdf from '../../../../../img/PDF.png'
-import Edit from '../../../../../img/Edit.png'
-import Korish from '../../../../../img/Korish.png'
-import Delete from '../../../../../img/Delete.png'
-import {Link, Route, Switch} from 'react-router-dom'
-import {useHistory} from 'react-router-dom'
-import {useEffect, useState} from 'react'
+import Excel from '../../../../../img/Excel.png';
+import Print from '../../../../../img/Print.png';
+import Data from '../../../../../img/Data.png';
+import Pdf from '../../../../../img/PDF.png';
+import Edit from '../../../../../img/Edit.png';
+import Korish from '../../../../../img/Korish.png';
+import Delete from '../../../../../img/Delete.png';
+import {Link, Route, Switch} from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
+import {useEffect, useState} from 'react';
 import {connect} from "react-redux";
 import xodimReducer, {getXodim, saveXodim, editXodim, deleteXodim} from "../reducer/XodimReducer";
 
-import Sidebar from "../../Sidebar";
 
 function HodimlarRoyhati({getXodim, deleteXodim, saveXodim, editXodim,xodimlar}) {
 
@@ -22,9 +21,14 @@ function HodimlarRoyhati({getXodim, deleteXodim, saveXodim, editXodim,xodimlar})
     },[])
 
     const [input,setInput] = useState('')
-
+    const [inputsearch,setinputsearch] = useState('')
     const history = useHistory();
 
+    function deletex(id){
+        console.log(id)
+        deleteXodim(id)
+        getXodim()
+    }
 
     return (
         <div>
@@ -71,14 +75,15 @@ function HodimlarRoyhati({getXodim, deleteXodim, saveXodim, editXodim,xodimlar})
                         </tr>
                         </thead>
                         <tbody>
-                        {/*<tr>*/}
+
                             {
                                 xodimlar.map((item,index)=><tr>
                                     <td>{item.username}</td>
                                     <td>{item.firstName}</td>
                                     <td>{item.lastName}</td>
                                     <td>{item.role.name}</td>
-                                        <td>-</td>
+
+                                    <td>-</td>
                                     <td>
                                         <Link to={'/headerthird/hodimlarruyxati/taxrirlash'}>
                                             <button className='taxrirlash'><img src={Edit} alt=""/>Taxrirlash</button>
@@ -87,16 +92,12 @@ function HodimlarRoyhati({getXodim, deleteXodim, saveXodim, editXodim,xodimlar})
                                             to={'/headerthird/hodimlarruyxati/view/' + input.name + '/' + input.login + '/' + input.email}>
                                             <button className='korish'><img src={Korish} alt=""/> Ko'rish</button>
                                         </Link>
-                                        <Link to={'/third/delete'}>
-                                            <button className='ochirish'><img src={Delete} alt=""/> O'chirish</button>
-                                        </Link>
+                                            <button onClick={()=>deletex(item.id)} className='ochirish'><img src={Delete} alt=""/> O'chirish</button>
                                     </td>
 
                                 </tr>)
                             }
 
-                            {/*</td>*/}
-                        {/*</tr>*/}
                         </tbody>
                     </table>
 
@@ -113,4 +114,4 @@ function HodimlarRoyhati({getXodim, deleteXodim, saveXodim, editXodim,xodimlar})
     )
 }
 
-export default connect(({XodimReducer:{xodimlar}})=>({xodimlar}), {getXodim, saveXodim, editXodim})(HodimlarRoyhati)
+export default connect(({XodimReducer:{xodimlar}})=>({xodimlar}), {getXodim, saveXodim, editXodim,deleteXodim})(HodimlarRoyhati)

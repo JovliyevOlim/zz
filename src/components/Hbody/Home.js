@@ -25,7 +25,7 @@ function Home({saveusers, getusers, linkpost,active}) {
 
     function login(event) {
         setLogin(event.target.value)
-        console.log(inputlogin)
+        // console.log(inputlogin)
         if (inputparol !== '') {
             setdisabled(false)
         } else (
@@ -35,7 +35,7 @@ function Home({saveusers, getusers, linkpost,active}) {
 
     function parol(event) {
         setparol(event.target.value)
-        console.log(inputparol)
+        // console.log(inputparol)
         if (inputlogin !== '') {
             setdisabled(false)
         } else (

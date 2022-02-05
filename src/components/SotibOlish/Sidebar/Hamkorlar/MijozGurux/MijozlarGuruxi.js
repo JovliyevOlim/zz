@@ -10,12 +10,42 @@ import Korish from '../../../../../img/Korish.png'
 import Delete from '../../../../../img/Delete.png'
 import Arrow from '../../../../../img/arrowIcon.png'
 import './mijozlarGuruxi.css'
-import {useState} from 'react'
+import {useState,useEffect} from 'react'
+import {connect} from "react-redux";
+import {getTMijozGurux,saveMijozGurux,editMijozGurux,deleteMijozGurux} from "../reducer/MijozGuruxReducer";
 import {Modal, ModalBody, ModalFooter, ModalHeader} from "reactstrap";
 
-export default function Mijozlarguruxi() {
+function Mijozlarguruxi({getMijozGurux,saveMijozGurux,editMijozGurux,deleteMijozGurux,mijozgurux}) {
 
     const [active, setActive] = useState(false);
+
+    const [input,setInput] = useState(
+        {
+            guruhnomi:'',
+            selectfoiz:'',
+            foizda:'',
+        }
+    )
+
+    function changeguruxnomi(e){
+        input.guruhnomi = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+    function changeselectfoiz(e){
+        input.selectfoiz = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+    function changefoizda(e){
+        input.foizda = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+
+    useEffect(()=>{
+        getTMijozGurux()
+    },[])
 
     function toggle() {
         setActive(!active)
@@ -88,18 +118,17 @@ export default function Mijozlarguruxi() {
 
                 <Modal isOpen={active} toggle={toggle}>
                     <ModalHeader>
-                        Yangi guruh qo`shish
+                        Yangi guruh qo`shish / taxrirlash
                     </ModalHeader>
                     <ModalBody>
                         <label htmlFor={'nomi'}>Guruh nomi</label>
-                        <input id={'nomi'} type="text" className={'form-control'}/>
+                        <input checked={input.guruhnomi} onChange={changeguruxnomi} id={'nomi'} type="text" className={'form-control'}/>
                         <label htmlFor={'lang'}>lang_v1.price_calculation_type</label>
-                        <select className={'form-control mt-3'}  name="" id="">
+                        <select value={input.selectfoiz} onChange={changeselectfoiz} className={'form-control mt-3'}  name="" id="">
                             <option value="#">Foizda</option>
-                            <option value="#">Sotuv narxida guruhlash</option>
                         </select>
                         <label htmlFor={'foizda'} className={'mt-3'}>Foizda</label>
-                        <input type="text" className={'form-control'} id={'foizda'}/>
+                        <input type="text" checked={input.foizda} onChange={changefoizda} className={'form-control'} id={'foizda'}/>
                     </ModalBody>
                     <ModalFooter>
                         <button className={'btn btn-primary'}>SAQLASH</button>
@@ -111,3 +140,4 @@ export default function Mijozlarguruxi() {
         </div>
     )
 }
+export default connect(({MijozGuruxReducer:{mijozgurux}})=>({mijozgurux}),{getTMijozGurux,saveMijozGurux,editMijozGurux,deleteMijozGurux}) (Mijozlarguruxi)

@@ -5,7 +5,8 @@ import {apiCall} from "../../../../../api";
 const slice = createSlice({
     name: 'xodimlar',
     initialState: {
-        xodimlar: []
+        xodimlar: [],
+        id:''
     },
     reducers: {
         getFrom: (state, action) => {
@@ -13,7 +14,6 @@ const slice = createSlice({
             console.log(action.payload.object);
         },
         savefrom: (state, action) => {
-            state.xodimlar.unshift(action.payload)
 
         },
         editfrom: (state, action) => {
@@ -25,7 +25,9 @@ const slice = createSlice({
             // toast.success('O`zgartirildi')
         },
         deletefrom: (state, action) => {
-
+            state.id=action.payload
+                console.log('delete')
+            console.log(action.payload)
             // toast.info('O`chirildi')
         }
 
@@ -53,10 +55,12 @@ export const editXodim = (data) => apiCall({
 });
 
 export const deleteXodim = (data) => apiCall({
-    url: '/user',
-    method: 'post',
+
+    url: '/user/'+data.id,
+    method: '',
     data,
     onSuccess: slice.actions.deletefrom.type
 })
+
 
 export default slice.reducer

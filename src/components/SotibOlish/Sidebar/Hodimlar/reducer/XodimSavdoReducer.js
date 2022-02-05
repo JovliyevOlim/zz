@@ -28,7 +28,7 @@ const slice = createSlice({
 
             // toast.info('O`chirildi')
         }
-
+    //customer,suplier,product
     }
 });
 

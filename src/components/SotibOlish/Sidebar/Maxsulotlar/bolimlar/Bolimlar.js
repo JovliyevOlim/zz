@@ -9,10 +9,16 @@ import Edit from '../../../../../img/Edit.png'
 import Delete from '../../../../../img/Delete.png'
 // import Arrow from '../../img/arrowIcon.png'
 import './bolimlar.css'
-import {useState} from "react";
+import {useState,useEffect} from "react";
 import {Modal, ModalBody, ModalFooter, ModalHeader} from "reactstrap";
+import {connect} from "react-redux";
+import {deleteBolim, editBolim, getBolim, saveBolim} from "../reducer/BolimReducer";
 
-export default function Bolimlar() {
+function Bolimlar() {
+
+    useEffect(()=>{
+        getBolim()
+    })
 
     const [active, setActive] = useState(false)
 
@@ -103,3 +109,4 @@ export default function Bolimlar() {
         </div>
     )
 }
+export default connect(({BolimReducer:{bolimlar}})=>({bolimlar}),{getBolim,saveBolim,deleteBolim,editBolim}) (Bolimlar)

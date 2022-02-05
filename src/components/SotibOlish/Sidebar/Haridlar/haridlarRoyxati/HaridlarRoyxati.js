@@ -7,8 +7,16 @@ import Pdf from '../../../../../img/PDF.png'
 import Edit from '../../../../../img/Edit.png'
 import Delete from '../../../../../img/Delete.png'
 import './haridlarRoyxati.css'
+import {connect} from "react-redux";
+import {useEffect} from "react";
+import {deleteXarid, editXarid, getXarid, saveXarid} from "../reducer/XaridReducer";
 
-export default function HaridlarRoyxati() {
+function HaridlarRoyxati() {
+
+       useEffect(()=>{
+              getXarid()
+       })
+
        return (
               <div className="col-md-12 mt-2">
                      <div className="textHeader">
@@ -131,3 +139,4 @@ export default function HaridlarRoyxati() {
               </div>
        )
 }
+export default connect(({XaridReducer:{xaridlar}})=>({xaridlar}),{getXarid,saveXarid,editXarid,deleteXarid}) (HaridlarRoyxati)

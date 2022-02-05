@@ -7,16 +7,22 @@ import Pdf from '../../../../../img/PDF.png'
 import Edit from '../../../../../img/Edit.png'
 import Delete from '../../../../../img/Delete.png'
 import './sotuvNarxiniGuruxlash.css'
-import {useState} from "react";
+import {useState,useEffect} from "react";
+import {connect} from "react-redux";
 import {Modal, ModalBody, ModalFooter, ModalHeader} from "reactstrap";
+import {deleteSotuvNarxi, editSotuvNarxi, getSotuvNarxi, saveSotuvNarxi} from "../reducer/SotuvNarxiReducer";
 
-export default function SotuvNarxiniGuruxlash() {
+function SotuvNarxiniGuruxlash() {
 
        const [active,setActive] = useState(false)
 
        function toggle(){
               setActive(!active)
        }
+
+       useEffect(()=>{
+              getSotuvNarxi()
+       })
 
        return (
               <div className="col-md-12 mt-2">
@@ -114,3 +120,4 @@ export default function SotuvNarxiniGuruxlash() {
                </div>  
        )
 }
+export default connect(({XodimReducer:{xodimlar}})=>({xodimlar}),{getSotuvNarxi,saveSotuvNarxi,deleteSotuvNarxi,editSotuvNarxi}) (SotuvNarxiniGuruxlash)
