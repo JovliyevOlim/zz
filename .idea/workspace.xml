@@ -3,10 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="2ed0236b-2151-406e-828e-c9a3e0b2b336" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/hodimlarRoyxati/HodimlarRoyhati.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/hodimlarRoyxati/HodimlarRoyhati.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/hodimlarRoyxati/Taxrirlash/Taxrirlash.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/hodimlarRoyxati/Taxrirlash/Taxrirlash.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/reducer/XodimReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/reducer/XodimReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Sidebar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Haridlar/Xarid qilish/Xarid.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Haridlar/Xarid qilish/Xarid.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Haridlar/haridlarRoyxati/HaridlarRoyxati.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Haridlar/haridlarRoyxati/HaridlarRoyxati.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/MahsulotlarRuyxati/Taxrirlash/Taxrirlash.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/MahsulotlarRuyxati/Taxrirlash/Taxrirlash.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/MahsulotlarRuyxati/barchaMaxsulotlar/BarchaMaxsulotlar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/MahsulotlarRuyxati/barchaMaxsulotlar/BarchaMaxsulotlar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/bolimlar/Bolimlar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/bolimlar/Bolimlar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/firmalar/Firmalar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/firmalar/Firmalar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/sotuvNarxiniGuruxlash/SotuvNarxiniGuruxlash.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/sotuvNarxiniGuruxlash/SotuvNarxiniGuruxlash.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/headerthird.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/headerthird.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/middleware.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -24,7 +28,19 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/MahsulotlarRuyxati/barchaMaxsulotlar/BarchaMaxsulotlar.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hamkorlar/taminotchilar/Taminotchilar.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/MahsulotlarRuyxati/Taxrirlash/Taxrirlash.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Haridlar/Xarid qilish/Xarid.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/MahsulotlarRuyxati/MaxsulotlarRoyxati.js" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -110,6 +126,7 @@
       <workItem from="1643969710596" duration="4399000" />
       <workItem from="1643992042949" duration="7322000" />
       <workItem from="1644038637112" duration="12607000" />
+      <workItem from="1644125029596" duration="18836000" />
     </task>
     <task id="LOCAL-00001" summary="app.js">
       <created>1643606654320</created>

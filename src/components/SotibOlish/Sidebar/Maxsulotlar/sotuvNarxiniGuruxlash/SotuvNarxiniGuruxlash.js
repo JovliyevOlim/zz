@@ -14,6 +14,36 @@ import {deleteSotuvNarxi, editSotuvNarxi, getSotuvNarxi, saveSotuvNarxi} from ".
 
 function SotuvNarxiniGuruxlash() {
 
+       const [input,setInput] = useState(
+           {
+                  nomi:'',
+                  qisqacamalumot:'',
+                  search:'',
+                  view:'',
+           }
+       )
+
+       function nomi(e){
+              input.nomi = e.target.value
+              let a = {...input}
+              setInput(a)
+       }
+       function view(e){
+              input.view = e.target.value
+              let a = {...input}
+              setInput(a)
+       }
+       function qisqacamalumot(e){
+              input.qisqacamalumot = e.target.value
+              let a = {...input}
+              setInput(a)
+       }
+       function search(e){
+              input.search = e.target.value
+              let a = {...input}
+              setInput(a)
+       }
+
        const [active,setActive] = useState(false)
 
        function toggle(){
@@ -58,13 +88,8 @@ function SotuvNarxiniGuruxlash() {
                             </div>
                             <div className="izlash">
                                    <p>Ko'rsatildi</p>
-                                   <select name="" id="">
+                                   <select value={input.view} onChange={view} name="" id="">
                                           <option value="">25</option>
-                                          <option value="">50</option>
-                                          <option value="">100</option>
-                                          <option value="">200</option>
-                                          <option value="">500</option>
-                                          <option value="">1,000</option>
                                           <option value="">All</option>
                                    </select>
                                    <button> <img src={CSV} alt="" /> Export CSV</button>
@@ -72,7 +97,7 @@ function SotuvNarxiniGuruxlash() {
                                    <button><img src={Print} alt="" /> Print</button>
                                    <button><img src={Pdf} alt="" />Export PDF</button>
                                    <button> <img src={Data} alt="" />Malumotlarni kamaytirish </button>
-                                   <input type="text" placeholder='Izlash...'/>
+                                   <input type="text" value={input.search} onChange={search} placeholder='Izlash...'/>
                             </div>
 
                             <table className='table table-striped table-bordered mt-4'>
@@ -107,9 +132,9 @@ function SotuvNarxiniGuruxlash() {
                                    </ModalHeader>
                                    <ModalBody>
                                           <label htmlFor={'noi'}>Nomi</label>
-                                          <input type="text" className={'form-control'} placeholder={'Nomi'}/>
+                                          <input type="text" className={'form-control'} value={input.nomi} onChange={nomi} placeholder={'Nomi'}/>
                                           <label className={'mt-4'} htmlFor={'qisqa'}>Qisqacha malumot</label>
-                                          <textarea className={'form-control'} name="" id={'qisqa'} cols="30" rows="4"> </textarea>
+                                          <textarea className={'form-control'} name="" onChange={qisqacamalumot} value={input.qisqacamalumot} id={'qisqa'} cols="30" rows="4"> </textarea>
                                    </ModalBody>
                                    <ModalFooter>
                                           <button className={'btn btn-primary'}>Saqlash</button>

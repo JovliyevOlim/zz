@@ -15,6 +15,36 @@ import {deleteFirma, editFirma, getFirma, saveFirma} from "../reducer/FirmaReduc
 
 function Firmalar() {
 
+       const [input,setInput] = useState(
+           {
+                  view:'',
+                  search:'',
+                  brandqoshish:'',
+                  qisqaeslatma:''
+           }
+       )
+
+       function view(e){
+              input.view = e.target.value
+              let a = {...input}
+              setInput(a)
+       }
+       function search(e){
+              input.search = e.target.value
+              let a = {...input}
+              setInput(a)
+       }
+       function brandqoshish(e){
+              input.brandqoshish = e.target.value
+              let a = {...input}
+              setInput(a)
+       }
+       function qisqaeslatma(e){
+              input.qisqaeslatma = e.target.value
+              let a = {...input}
+              setInput(a)
+       }
+
        useEffect(()=>{
               getFirma()
        })
@@ -38,7 +68,7 @@ function Firmalar() {
                      </div>
                      <div className="izlash">
                             <p>Ko'rsatildi</p>
-                            <select name="" id="">
+                            <select value={input.view} onChange={view} name="" id="">
                                    <option value="">25</option>
                                    <option value="">50</option>
                                    <option value="">100</option>
@@ -52,7 +82,7 @@ function Firmalar() {
                             <button><img src={Print} alt="" /> Print</button>
                             <button><img src={Pdf} alt="" />Export PDF</button>
                             <button> <img src={Data} alt="" />Malumotlarni kamaytirish </button>
-                            <input type="text" placeholder='Izlash...'/>
+                            <input type="text" value={input.search} onChange={search} placeholder='Izlash...'/>
                      </div>
 
                      <table className='table table-striped table-bordered mt-4'>
@@ -88,9 +118,9 @@ function Firmalar() {
                             </ModalHeader>
                             <ModalBody>
                                    <label htmlFor={'l'}>Brand qo`shish</label>
-                                   <input type="text" id={'l'} className={'form-control'}/>
+                                   <input value={input.brandqoshish} onChange={brandqoshish} type="text" id={'l'} className={'form-control'}/>
                                    <label htmlFor={'l2'} className={'mt-3'}>Qisqa eslatma</label>
-                                   <input type="text" className={'form-control'} id={'l2'}/>
+                                   <input value={input.qisqaeslatma} onChange={qisqaeslatma} type="text" className={'form-control'} id={'l2'}/>
                             </ModalBody>
                             <ModalFooter>
                                    <button className={'btn btn-outline-primary'}>Saqlash</button>
