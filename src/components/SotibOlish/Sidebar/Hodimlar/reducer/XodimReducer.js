@@ -12,9 +12,10 @@ const slice = createSlice({
         getFrom: (state, action) => {
             state.xodimlar = action.payload.object
             console.log(action.payload.object);
+            console.log('qoshildi')
         },
         savefrom: (state, action) => {
-
+            state.xodimlar.unshift(action.payload)
         },
         editfrom: (state, action) => {
             state.xodimlar.map((item, index) => {
@@ -25,10 +26,9 @@ const slice = createSlice({
             // toast.success('O`zgartirildi')
         },
         deletefrom: (state, action) => {
-            state.id=action.payload
-                console.log('delete')
-            console.log(action.payload)
-            // toast.info('O`chirildi')
+            console.log('ochrildi')
+            console.log(action.payload.object.id)
+            console.log(typeof action.payload)
         }
 
     }
@@ -56,8 +56,8 @@ export const editXodim = (data) => apiCall({
 
 export const deleteXodim = (data) => apiCall({
 
-    url: '/user/'+data.id,
-    method: '',
+    url: '/user/'+data,
+    method: 'delete',
     data,
     onSuccess: slice.actions.deletefrom.type
 })

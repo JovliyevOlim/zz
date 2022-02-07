@@ -38,6 +38,7 @@ function MaxsulotlarRoyxati({getMaxsulotRuyxati,saveMaxsulotRuyxati}) {
         input.bolim = e.target.value
         let a = {...input}
         setInput(a)
+        console.log(input.bolim)
     }
     function changefirma(e){
         input.firma = e.target.value

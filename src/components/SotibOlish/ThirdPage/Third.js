@@ -16,139 +16,14 @@ import React, {useEffect, useRef} from 'react';
 import Logo from "../../../img/Group.png";
 import {useState} from "react";
 import Chart from 'react-apexcharts'
+import Pagination from "./Pagination";
 
 
 function Third({display}) {
 
-    const [mahsulot, setmahsulot] = useState(
-        {
-            name: 'FullHD Computer Monitor',
-            categoriya: 'Monitorlar',
-            brand: 'Dell',
-            narxi: "1 259 000 so'm",
-            sotilgan: '1548 dona',
-        }
-    )
-
-    function ommabop() {
-        for (let i = 0; i < 500; i++) {
-            let a = tablemahsulot
-            a.push({...mahsulot, id: i})
-            settablemasulot(a)
-        }
-    }
-
-    useEffect(() => {
-        console.log('third')
-        ommabop()
-        // getuser()
-    }, [])
-    // async function getuser(){
-    //     console.log(current)
-    //     let a =tablemahsulot.filter((item,index)=>index>=(current-1)*5 && index<current*5)
-    //     setdata(a)
-    // }
-
-    const [tablemahsulot, settablemasulot] = useState([])
-    // const [disabled,setdisabled]=useState(true)
-    const [data, setdata] = useState([])
 
 
-    //
-    // const [current,Setcurrent]=useState(1)
-    // const [pagecurrent,setpagecurrent] = useState(2)
-    // const [pagecurrent2,setpagecurrent2] = useState(2)
-    // const [pagecurrent3,setpagecurrent3] = useState(1)
-    // const [page,setpage] = useState(1)
-    // const [pageactive,setPageactive] =useState( {
-    //         pageactive1:'page-active',
-    //         pageactive2:'',
-    //         pageactive3:''
-    //     }
-    // )
-    // function prev(){
-    //     switch (pagecurrent2) {
-    //         case 1:
-    //             pageactive.pageactive1='page-active'
-    //             pageactive.pageactive2=''
-    //             pageactive.pageactive3=''
-    //             let a ={...pageactive}
-    //             setPageactive(a)
-    //             setpagecurrent2(1)
-    //             setpagecurrent(2)
-    //             setpage(prev=>prev-1)
-    //             Setcurrent(prev=>prev-1)
-    //             break;
-    //         case 2:
-    //             pageactive.pageactive2='page-active'
-    //             pageactive.pageactive1=''
-    //             pageactive.pageactive3=''
-    //             let b ={...pageactive}
-    //             setPageactive(b)
-    //             setpagecurrent2(1)
-    //             setpagecurrent(3)
-    //             Setcurrent(prev=>prev-1)
-    //             break;
-    //         default:setpagecurrent(3)
-    //     }
-    //     console.log(current)
-    //     if(current===1 || page === 1){
-    //         Setcurrent(1)
-    //         setdisabled(true)
-    //     }
-    // }
-    // function next(){
-    //     setdisabled(false)
-    //     switch (pagecurrent) {
-    //         case 2:
-    //             pageactive.pageactive2='page-active'
-    //             pageactive.pageactive1=''
-    //             pageactive.pageactive3=''
-    //             let b ={...pageactive}
-    //             setPageactive(b)
-    //             setpagecurrent(3)
-    //             setpagecurrent2(1)
-    //             Setcurrent(prev=>prev+1)
-    //             break;
-    //         case 3:
-    //             pageactive.pageactive3='page-active'
-    //             pageactive.pageactive2=''
-    //             pageactive.pageactive1=''
-    //             let c ={...pageactive}
-    //             setPageactive(c)
-    //             setpagecurrent(3)
-    //             setpagecurrent2(2)
-    //             Setcurrent(prev=>prev+1)
-    //             break;
-    //         default:setpagecurrent(0)
-    //     }
-    //
-    //     if(current >= 3){
-    //         setpage(prev=>prev+1)
-    //     }
-    //
-    // }
-    // function currentput(currentone){
-    //     pageactive.pageactive1='page-active'
-    //     pageactive.pageactive2=''
-    //     pageactive.pageactive3=''
-    //     let a ={...pageactive}
-    //     setPageactive(a)
-    // }
-    // function currentput2(){
-    //     pageactive.pageactive2='page-active'
-    //     pageactive.pageactive1=''
-    //     pageactive.pageactive3=''
-    //     let a ={...pageactive}
-    //     setPageactive(a)
-    // }
-    // function currentput3(){
-    //     pageactive.pageactive3='page-active'
-    //     pageactive.pageactive2=''
-    //     pageactive.pageactive1=''
-    //     let a ={...pageactive}
-    //     setPageactive(a)
-    // }
+
 
 
     const [third, setThird] = useState('')
@@ -305,7 +180,6 @@ function Third({display}) {
         },
     ])
     const [active, Setactive] = useState(false)
-
     function sidebar() {
         if (third === '') {
             setThird('third2')
@@ -314,7 +188,6 @@ function Third({display}) {
 
         }
     }
-
     const options = {
         series: [200000, 300000, 500000, 600000],
         chart: {
@@ -571,39 +444,13 @@ function Third({display}) {
                                 </div>
                             </div>
                             <div className="col-12 mt-3">
-                                <div className="row p-0 ">
-                                    <table className={"table table-bordered"}>
-                                        <thead>
-                                        <tr className={'justify-content-between'}>
-                                            <th className={'thead-padding-left th-text'}>Mahsulot nomi</th>
-                                            <th className={'th-text'}>Kategoriya</th>
-                                            <th className={'th-text'}>Brand</th>
-                                            <th className={'th-text'}>Narxi</th>
-                                            <th className={"text-end thead-padding-right th-text"}>Sotilganlar soni</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        {
-                                            tablemahsulot.map((item, index) =>
-                                                <tr key={item.id}>
-                                                    <td>{item.id + 1}</td>
-                                                    <td className={'thead-padding-left'}>{item.name}</td>
-                                                    <td className={'thead-padding-left'}>{item.categoriya}</td>
-                                                    <td className={'thead-padding-left'}>{item.brand}</td>
-                                                    <td className={'thead-padding-left'}>{item.narxi}</td>
-                                                    <td className={'thead-padding-left'}>{item.sotilgan}</td>
-                                                </tr>)
-                                        }
-                                        </tbody>
-                                    </table>
-
-                                </div>
-
+                                <Pagination/>
                             </div>
                         </div>
                     </div>
                 </div>
-
+                <div className="row p-0 mb-3 d-flex">
+                </div>
             </div>
         </div>
     );

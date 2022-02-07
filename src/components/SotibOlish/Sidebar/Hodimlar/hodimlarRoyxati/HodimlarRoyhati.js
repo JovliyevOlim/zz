@@ -18,15 +18,15 @@ function HodimlarRoyhati({getXodim, deleteXodim, saveXodim, editXodim,xodimlar})
 
     useEffect(()=>{
            getXodim()
-    },[])
+    },[xodimlar])
 
     const [input,setInput] = useState('')
     const [inputsearch,setinputsearch] = useState('')
     const history = useHistory();
 
-    function deletex(id){
-        console.log(id)
-        deleteXodim(id)
+    function deletex(item){
+        console.log(item)
+        deleteXodim(item.id)
         getXodim()
     }
 
@@ -92,7 +92,7 @@ function HodimlarRoyhati({getXodim, deleteXodim, saveXodim, editXodim,xodimlar})
                                             to={'/headerthird/hodimlarruyxati/view/' + input.name + '/' + input.login + '/' + input.email}>
                                             <button className='korish'><img src={Korish} alt=""/> Ko'rish</button>
                                         </Link>
-                                            <button onClick={()=>deletex(item.id)} className='ochirish'><img src={Delete} alt=""/> O'chirish</button>
+                                            <button onClick={()=>deletex(item)} className='ochirish'><img src={Delete} alt=""/> O'chirish</button>
                                     </td>
 
                                 </tr>)

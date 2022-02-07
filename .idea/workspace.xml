@@ -2,37 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2ed0236b-2151-406e-828e-c9a3e0b2b336" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/reducer/KopsotilgantovarlarReducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/reducer/MaxsulotxisobotReducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/reducer/MijozHisobotiReducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/reducer/OtkazmalarxisobotiReducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/reducer/QoldiqlarxisobotiReducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/reducer/SavdodagiTulovReducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/reducer/SoliqlarxisobotiReducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/reducer/XarajatXisobotReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Baza/otkazmalarRoyxati/OtkazmalarRoyxati.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Baza/otkazmalarRoyxati/OtkazmalarRoyxati.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Baza/otkazmalarRoyxati/taxrirlash/Taxrirlash.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Baza/otkazmalarRoyxati/taxrirlash/Taxrirlash.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Baza/yangiOtkazma/YangiOtkazma.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Baza/yangiOtkazma/YangiOtkazma.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Savdo/SavdoOynasi/SavdoOynasi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Savdo/SavdoOynasi/SavdoOynasi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Savdo/SavdoQoshish/SavdoQoshish.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Savdo/SavdoQoshish/SavdoQoshish.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Sidebar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xarajatlar/Qoshish/XarajatQoshish.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xarajatlar/Qoshish/XarajatQoshish.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xarajatlar/xarajatTurlari/XarajatTurlari.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xarajatlar/xarajatTurlari/XarajatTurlari.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xarajatlar/xarajatTurlari/xarajatTurlari.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xarajatlar/xarajatTurlari/xarajatTurlari.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xarajatlar/xarajatTurlari/xarajatTurlari/XarajatTurlari.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xarajatlar/xarajatTurlari/xarajatTurlari/xarajatTurlari.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xarajatlar/xarajatlarRoyxati/XarajatlarRoyxati.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xarajatlar/xarajatlarRoyxati/XarajatlarRoyxati.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/KopSotilganTovarlar/KopSotilgan.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/KopSotilganTovarlar/KopSotilgan.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/MaxsulotlarXisoboti/MaxsulotXisoboti.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/MaxsulotlarXisoboti/MaxsulotXisoboti.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/MijozlarXisoboti/MijozlarXisoboti.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/MijozlarXisoboti/MijozlarXisoboti.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/SavdodaQilinganTulov/SavdodaTulov.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/SavdodaQilinganTulov/SavdodaTulov.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/otkazmalarXisoboti/OtkazmalarXisoboti.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/otkazmalarXisoboti/OtkazmalarXisoboti.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/qoldiqlarXisoboti/QoldiqlarXisoboti.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/qoldiqlarXisoboti/QoldiqlarXisoboti.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/soliqlarXisoboti/SoliqlarXisoboti.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/soliqlarXisoboti/SoliqlarXisoboti.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/xarajatlarXisoboti/XarajatlarXisoboti.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/xarajatlarXisoboti/XarajatlarXisoboti.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/PAGANATION.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/Pagination.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/RenderComponent.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/img/Product Avatar.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/hodimlarRoyxati/HodimlarRoyhati.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/hodimlarRoyxati/HodimlarRoyhati.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/hodimlarRoyxati/Taxrirlash/Taxrirlash.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/hodimlarRoyxati/Taxrirlash/Taxrirlash.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/reducer/XodimReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/reducer/XodimReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/MahsulotlarRuyxati/MaxsulotlarRoyxati.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/MahsulotlarRuyxati/MaxsulotlarRoyxati.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/bolimlar/Bolimlar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/bolimlar/Bolimlar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/Third.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/Third.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/middleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducer/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer/users.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,25 +39,25 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Baza/otkazmalarRoyxati/taxrirlash/Taxrirlash.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/xarajatlarXisoboti/XarajatlarXisoboti.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Savdo/SavdoQoshish/SavdoQoshish.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/reducer/KopsotilgantovarlarReducer.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/KopSotilganTovarlar/KopSotilgan.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/MahsulotlarRuyxati/Taxrirlash/Taxrirlash.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Baza/otkazmalarRoyxati/OtkazmalarRoyxati.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/otkazmalarXisoboti/OtkazmalarXisoboti.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/MahsulotlarRuyxati/barchaMaxsulotlar/BarchaMaxsulotlar.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/soliqlarXisoboti/SoliqlarXisoboti.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xarajatlar/xarajatlarRoyxati/XarajatlarRoyxati.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hamkorlar/taminotchilar/Taminotchilar.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Haridlar/Xarid qilish/Xarid.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/MijozlarXisoboti/MijozlarXisoboti.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/MahsulotlarRuyxati/MaxsulotlarRoyxati.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xarajatlar/Qoshish/XarajatQoshish.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/MahsulotlarRuyxati/Taxrirlash/Taxrirlash.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/store.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/MaxsulotlarXisoboti/MaxsulotXisoboti.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xarajatlar/xarajatlarRoyxati/XarajatlarRoyxati.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/MahsulotlarRuyxati/MaxsulotlarRoyxati.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xarajatlar/xarajatTurlari/XarajatTurlari.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xarajatlar/Qoshish/XarajatQoshish.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Haridlar/Xarid qilish/Xarid.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/soliqlarXisoboti/SoliqlarXisoboti.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/reducer/KopsotilgantovarlarReducer.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Savdo/SavdoQoshish/SavdoQoshish.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/MijozlarXisoboti/MijozlarXisoboti.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hamkorlar/taminotchilar/Taminotchilar.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/MaxsulotlarXisoboti/MaxsulotXisoboti.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Baza/otkazmalarRoyxati/taxrirlash/Taxrirlash.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/KopSotilganTovarlar/KopSotilgan.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Baza/otkazmalarRoyxati/OtkazmalarRoyxati.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/xarajatlarXisoboti/XarajatlarXisoboti.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/otkazmalarXisoboti/OtkazmalarXisoboti.js" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />

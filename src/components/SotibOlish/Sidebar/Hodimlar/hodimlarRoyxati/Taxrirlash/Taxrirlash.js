@@ -6,7 +6,7 @@ import {connect} from "react-redux";
 import LavozimReducer, {getLavozim, saveLavozim} from "../../reducer/LavozimReducer";
 import XodimReducer, {saveXodim,getXodim} from "../../reducer/XodimReducer";
 import {Link} from 'react-router-dom'
-function Taxrirlash({getLavozim,saveXodim,XodimReducer,LavozimReducer,getXodim}) {
+function Taxrirlash({getLavozim,saveXodim,LavozimReducer,getXodim}) {
 
     useEffect(()=>{
        getLavozim()

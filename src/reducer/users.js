@@ -5,15 +5,16 @@ export const slice = createSlice({
     name: 'users',
     initialState: {
         users: [ ],
-        token:{
-            token_name:''
+        token: {
+            token_name: ''
         }
     },
     reducers: {
         save: (state, action) => {
             console.log(action.payload)
             state.token.token_name=action.payload
-            console.log(state.token.token_name)
+             console.log(state.token.token_name)
+
             localStorage.setItem('tokenname',action.payload)
         },
         get: (state, action) => {

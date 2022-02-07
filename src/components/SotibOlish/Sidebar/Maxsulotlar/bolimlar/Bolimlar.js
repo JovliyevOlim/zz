@@ -40,6 +40,7 @@ function Bolimlar() {
         input.bolimnomi = e.target.value
         let a = {...input}
         setInput(a)
+        console.log(input.bolimnomi)
     }
     function bolimkodi(e){
         input.bolimkodi = e.target.value
