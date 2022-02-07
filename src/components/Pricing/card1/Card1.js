@@ -1,15 +1,15 @@
 import img from '../../../img/tick-circle.png'
-import './Card.css'
-function Card() {
+import './card1.css'
+function Card1() {
     return(
         <div className={'row'}>
 
             <div className="card">
                 <p>
-                    Preimum
+                    Oddiy
                 </p>
                 <div className="price">
-                    <h4>599 990</h4>
+                    <h4>149 990</h4>
                     <p>so`m / yiliga</p>
                 </div>
                 <p>
@@ -25,11 +25,11 @@ function Card() {
                 </div>
                 <div className="ch">
                     <img src={img} alt=""/>
-                    <p>Cheksiz hodimlar</p>
+                    <p>100 tagacha hodim</p>
                 </div>
                 <div className="ch">
                     <img src={img} alt=""/>
-                    <p>Cheksiz mahsulot</p>
+                    <p>100 tagacha mahsulot</p>
                 </div>
                 <div className="ch">
                     <img src={img} alt=""/>
@@ -41,4 +41,4 @@ function Card() {
         </div>
     )
 }
-export default Card
+export default Card1

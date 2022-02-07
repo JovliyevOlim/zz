@@ -1,4 +1,5 @@
 import './secondPage.css'
+import Card1 from '../card1/Card1';
 import Card from "../Card/Card";
 import BigCard from "../bigCard/BigCard";
 
@@ -34,7 +35,7 @@ function SecondPage() {
                 <div className="col-md-12 f">
                     <div className='fBox'>
                         <div className="c1">
-                            <Card/>
+                            <Card1/>
                         </div>
 
                         <div className="c2">
