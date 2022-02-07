@@ -8,7 +8,7 @@ import {active} from "../../../reducer/functionreducer";
 import Calculator from "./Calculator/Calculator";
 
 
-function Header({active}) {
+function Header({active,sidebarfunc}) {
 
     useEffect(()=>{
         setCalactive(false)
@@ -21,11 +21,11 @@ function Header({active}) {
     }
     function sidebar() {
         active(false)
-        console.log('akfla')
+        sidebarfunc()
     }
 
     return(
-        <div className={'container padding-10 position-relative'}>
+        <div className={'container-fluid padding-10 position-relative'}>
             <div className={'row colorback justify-content-between pb-2 mb-1 align-items-center'}>
                 <div className="col-md-6 one d-flex">
                     <img onClick={sidebar}

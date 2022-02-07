@@ -220,7 +220,7 @@ function Third({display}) {
 
     return (
         <div className={`third  pt-4 ${display} ${third}`}>
-            <div className="container gap">
+            <div className="container-fluid gap">
                 <div className="row p-0 d-flex colorback mb-3 rounded-3 justify-content-between">
                     <div className="col-md-9 p-2 ">
                         <div className="row align-items-center">
