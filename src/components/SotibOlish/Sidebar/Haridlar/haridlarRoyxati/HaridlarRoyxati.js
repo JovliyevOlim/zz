@@ -8,7 +8,7 @@ import Edit from '../../../../../img/Edit.png'
 import Delete from '../../../../../img/Delete.png'
 import './haridlarRoyxati.css'
 import {connect} from "react-redux";
-import {useEffect} from "react";
+import {useEffect,useState} from "react";
 import {deleteXarid, editXarid, getXarid, saveXarid} from "../reducer/XaridReducer";
 
 function HaridlarRoyxati() {
@@ -16,6 +16,54 @@ function HaridlarRoyxati() {
        useEffect(()=>{
               getXarid()
        })
+
+       const [input,setInput] = useState(
+           {
+                  baza:'',
+                  diller:'',
+                  xaridstatus:'',
+                  tulovstatus:'',
+                  sana:'',
+                  view:'',
+                  search:'',
+           }
+       )
+
+       function baza(e){
+              input.baza = e.target.value
+              let a = {...input}
+              setInput(a)
+       }
+       function diller(e){
+              input.diller = e.target.value
+              let a = {...input}
+              setInput(a)
+       }
+       function xaridstatus(e){
+              input.xaridstatus = e.target.value
+              let a = {...input}
+              setInput(a)
+       }
+       function tulovstatus(e){
+              input.tulovstatus = e.target.value
+              let a = {...input}
+              setInput(a)
+       }
+       function sana(e){
+              input.sana = e.target.value
+              let a = {...input}
+              setInput(a)
+       }
+       function view(e){
+              input.view = e.target.value
+              let a = {...input}
+              setInput(a)
+       }
+       function search(e){
+              input.search = e.target.value
+              let a = {...input}
+              setInput(a)
+       }
 
        return (
               <div className="col-md-12 mt-2">
@@ -29,15 +77,14 @@ function HaridlarRoyxati() {
                             <div className="row cont">
                                    <div className="col-md-6">
                                           <h6>Baza:</h6>
-                                          <select name="" id="">
+                                          <select name="" value={input.baza} onChange={baza} id="">
                                                  <option value="">Barchasi</option>
-                                                 <option value=""></option>
                                                  <option value=""></option>
                                           </select>
                                    </div>
                                    <div className="col-md-6">
                                           <h6>Diller:</h6>
-                                          <select name="" id="">
+                                          <select name="" id="" value={input.diller} onChange={diller}>
                                                  <option value="">Barchasi</option>
                                                  <option value=""></option>
                                                  <option value=""></option>
@@ -47,7 +94,7 @@ function HaridlarRoyxati() {
                             <div className="row">
                                    <div className="col-md-6">
                                           <h6>Harid statusi:</h6>
-                                          <select name="" id="">
+                                          <select name="" id="" value={input.xaridstatus} onChange={xaridstatus}>
                                                  <option value="">Barchasi</option>
                                                  <option value="">Qabul qilindi</option>
                                                  <option value="">Kutilmoqda</option>
@@ -56,12 +103,12 @@ function HaridlarRoyxati() {
                                    </div>
                                    <div className="col-md-6">
                                           <h6>To'lov statusi:</h6>
-                                                 <select name="" id="">
+                                                 <select name="" value={input.tulovstatus} onChange={tulovstatus} id="">
                                                         <option value="">Barchasi</option>
                                                         <option value="">To'langan</option>
-                                                        <option value="">To'lanmagan</option>
-                                                        <option value="">Qisman to'langan</option>
-                                                        <option value="">To'lov muddati o'tgan</option>
+                                                        {/*<option value="">To'lanmagan</option>*/}
+                                                        {/*<option value="">Qisman to'langan</option>*/}
+                                                        {/*<option value="">To'lov muddati o'tgan</option>*/}
                                                  </select>
                                    </div>
                             </div>
@@ -69,7 +116,7 @@ function HaridlarRoyxati() {
                                    <div className="col-md-12" >
                                           <div className="sana">
                                                  <h6>Sanani belgilang:</h6>
-                                                 <input type="date"/> 
+                                                 <input type="date" onChange={sana} value={input.sana}/>
                                           </div>
                                    </div>
                             </div>
@@ -78,25 +125,20 @@ function HaridlarRoyxati() {
                       <div className="rowStyle">
                             <div className="qoshish">
                                    <h5>Barcha haridlar</h5>
-                                   <Link to={'/third/xaridlarRuyxati/taxrirlash'}><button className='btn btn-primary'>+Qo'shish</button></Link>
+                                   <Link to={'/headerthird/xaridlarRuyxati/1'}><button className='btn btn-primary'>+Qo'shish</button></Link>
                             </div>
                             <div className="izlash">
                                    <p>Ko'rsatildi</p>
-                                   <select name="" id="">
+                                   <select name="" id="" value={input.view} onChange={view}>
                                           <option value="">25</option>
                                           <option value="">50</option>
-                                          <option value="">100</option>
-                                          <option value="">200</option>
-                                          <option value="">500</option>
-                                          <option value="">1,000</option>
-                                          <option value="">All</option>
                                    </select>
                                    <button> <img src={CSV} alt="" /> Export CSV</button>
                                    <button><img src={Excel} alt="" /> Export Excel</button>
                                    <button><img src={Print} alt="" /> Print</button>
                                    <button><img src={Pdf} alt="" />Export PDF</button>
                                    <button> <img src={Data} alt="" />Malumotlarni kamaytirish </button>
-                                   <input type="text" placeholder='Izlash...'/>
+                                   <input type="text" placeholder='Izlash...' onChange={search} value={input.search}/>
                             </div>
                             <table className='table table-striped table-bordered mt-4'>
                                    <thead>
@@ -122,7 +164,7 @@ function HaridlarRoyxati() {
                                                  <td>qarz miq</td>
                                                  <td></td>
                                                  <td>   
-                                                        <Link to={'/third/xaridlarRuyxati/taxrirlash'}><button className='taxrirlash'> <img src={Edit} alt="" /> Taxrirlash</button> </Link>
+                                                        <Link to={'/headerthird/xaridlarRuyxati/1'}><button className='taxrirlash'> <img src={Edit} alt="" /> Taxrirlash</button> </Link>
                                                         <button className='ochirish'> <img src={Delete} alt="" /> O'chirish</button>
                                                  </td>
                                           </tr>

@@ -16,6 +16,7 @@ import {deleteMahsulot, editMahsulot, getMahsulot, saveMahsulot} from "../../red
 
 function BarchaMaxsulotlar() {
 
+
     const [input, setInput] = useState(
         {
             maxsulot: '',
@@ -63,6 +64,7 @@ function BarchaMaxsulotlar() {
         let a = {...input}
         setInput(a)
     }
+
 
     useEffect(() => {
         getMahsulot()

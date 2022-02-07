@@ -16,6 +16,42 @@ import {deleteBolim, editBolim, getBolim, saveBolim} from "../reducer/BolimReduc
 
 function Bolimlar() {
 
+    const [input,setInput] = useState(
+        {
+            view:'',
+            search:'',
+            bolimnomi:'',
+            bolimkodi:'',
+            qisqacamalumot:'',
+        }
+    )
+
+    function view(e){
+        input.view = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+    function search(e){
+        input.search = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+    function bolimnomi(e){
+        input.bolimnomi = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+    function bolimkodi(e){
+        input.bolimkodi = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+    function qisqacamalumot(e){
+        input.qisqacamalumot = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+
     useEffect(()=>{
         getBolim()
     })
@@ -39,7 +75,7 @@ function Bolimlar() {
                 </div>
                 <div className="izlash">
                     <p>Ko'rsatildi</p>
-                    <select name="" id="">
+                    <select name="" value={input.view} onChange={view} id="">
                         <option value="">25</option>
                         <option value="">50</option>
                         <option value="">100</option>
@@ -53,7 +89,7 @@ function Bolimlar() {
                     <button><img src={Print} alt=""/> Print</button>
                     <button><img src={Pdf} alt=""/>Export PDF</button>
                     <button><img src={Data} alt=""/>Malumotlarni kamaytirish</button>
-                    <input type="text" placeholder='Izlash...'/>
+                    <input type="text" placeholder='Izlash...' onChange={search} value={input.search}/>
                 </div>
 
                 <table className='table table-striped table-bordered mt-4'>
@@ -93,9 +129,9 @@ function Bolimlar() {
                     </ModalHeader>
                     <ModalBody>
                         <label htmlFor={'bnomi'}>Bo`lim nomi</label>
-                        <input type="text" className={'form-control'} id={'bnomi'}/>
+                        <input type="text" className={'form-control'} id={'bnomi'} onChange={bolimnomi} value={input.bolimnomi}/>
                         <label className={'mt-4'} htmlFor={'bkodi'}>Bo`lim kodi</label>
-                        <input type="text" className={'form-control'} id={'bkodi'}/>
+                        <input type="text" className={'form-control'} value={input.bolimkodi} onChange={bolimkodi} id={'bkodi'}/>
                         bo`limni izlashga oson bol`ishi uchun bironta belgi kiritng
                         <label className={'mt-3'} htmlFor={'area'}>Qisqacha malumot</label>
                         <textarea className={'form-control'} name="" id={'area'} cols="30" rows="4"> </textarea>
