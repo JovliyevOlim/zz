@@ -59,7 +59,8 @@ function Headerthird() {
 
     return (
         <div className={'headerthird'}>
-            <Header/>
+           <div className='px-2'>            <Header/>
+</div>
             <Switch>
                 <Route path={'/headerthird/third'} component={Third}/>
                 <Route path={'/headerthird/hodimlarruyxati/taxrirlash'} component={Taxrirlash}/>

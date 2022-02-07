@@ -25,7 +25,8 @@ function Header({active}) {
     }
 
     return(
-        <div className={'container padding-10 position-relative'}>
+       
+        <div className={'container-fluid padding-10 position-relative'}>
             <div className={'row colorback justify-content-between pb-2 mb-1 align-items-center'}>
                 <div className="col-md-6 one d-flex">
                     <img onClick={sidebar}

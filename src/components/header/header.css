@@ -30,6 +30,7 @@
     color: #000000;
     border: none;
     outline: none;
+    background-color: transparent;
 }
 .header-narx button{
     background: #FFFFFF;
@@ -80,10 +81,6 @@
     .header__ .homebody .header-narx{
         width: 100%;
     }
-    .header__ .homebody .image__ a img{
-        /* width: 80px;
-        height: 20px; */
-    }
     .header__ .homebody .header-narx select{
        font-size: 14px;
        background-color: transparent;
@@ -99,8 +96,6 @@
         align-items: center;
         justify-content: center;
         border: 1px solid #0044FF ;
-        /* width: 64px; */
-        /* height: 16px; */
         color: #0044FF;
     }
 }

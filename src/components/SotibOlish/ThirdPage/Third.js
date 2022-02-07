@@ -220,7 +220,7 @@ function Third({display}) {
 
     return (
         <div className={`third  pt-4 ${display} ${third}`}>
-            <div className="container gap">
+            <div className="container-fluid gap">
                 <div className="row p-0 d-flex colorback mb-3 rounded-3 justify-content-between">
                     <div className="col-md-9 p-2 ">
                         <div className="row align-items-center">
@@ -404,8 +404,8 @@ function Third({display}) {
                                         options={options}
                                         series={series}
                                         type={'donut'}
-                                        width={390}
-                                        height={390}
+                                        width={'105%'}
+                                        height={'120%'}
                                     />
                                 </div>
                                 <div className="col-md-12  p-3 bar-chart d-flex align-items-center mt-4">

@@ -1,4 +1,4 @@
-.third{
+    .third{
     padding: 2rem;
 }
 .homepage2 .third{
@@ -95,7 +95,7 @@ h4.jami {
     color: #82868C;
 }
 .homepage2 h4.jami{
-    font-size: 13px;
+    font-size: 12px;
 }
 
 
@@ -314,7 +314,7 @@ div.col-12.margin {
     font-family: "Montserrat",sans-serif;
     font-style: normal;
     font-weight: 600;
-    font-size: 28px;
+    font-size: 22px;
     line-height: 32px;
     color: #3A3C40;
 }
