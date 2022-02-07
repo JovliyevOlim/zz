@@ -7,9 +7,15 @@ import Pdf from '../../../../../img/PDF.png'
 import Edit from '../../../../../img/Edit.png'
 import Delete from '../../../../../img/Delete.png'
 import './qoldiqlarXisoboti.css'
+import {connect} from 'react-redux'
+import {useEffect} from 'react'
+import {getQoldiqlarxisobotiReducer,saveQoldiqlarxisobotiReducer,editQoldiqlarxisobotiReducer,deleteQoldiqlarxisobotiReducer} from '../reducer/QoldiqlarxisobotiReducer'
+function QoldiqlarXisoboti() {
 
+    useEffect(()=>{
+        getQoldiqlarxisobotiReducer()
+    })
 
-export default function QoldiqlarXisoboti() {
     return (
         <div className="col-md-12 mt-2">
         <div className="textHeader">
@@ -165,3 +171,10 @@ export default function QoldiqlarXisoboti() {
  </div>
     )
 }
+
+export default connect(({QoldiqlarxisobotiReducer: {qoldiqxisobot}}) => ({qoldiqxisobot}), {
+    getQoldiqlarxisobotiReducer,
+    saveQoldiqlarxisobotiReducer,
+    editQoldiqlarxisobotiReducer,
+    deleteQoldiqlarxisobotiReducer
+})(QoldiqlarXisoboti)

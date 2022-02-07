@@ -5,8 +5,15 @@ import Print from '../../../../../img/Print.png'
 import Data from '../../../../../img/Data.png'
 import Pdf from '../../../../../img/PDF.png'
 import './otkazmalarXisoboti.css'
+import {connect} from 'react-redux'
+import {getOtkazmalarxisoboti,saveOtkazmalarxisoboti,editOtkazmalarxisoboti,deleteOtkazmalarxisoboti} from '../reducer/OtkazmalarxisobotiReducer'
+import {useEffect} from 'react'
+function OtkazmalarXisoboti({getOtkazmalarxisoboti,saveOtkazmalarxisoboti,editOtkazmalarxisoboti,deleteOtkazmalarxisoboti}) {
 
-export default function OtkazmalarXisoboti() {
+    useEffect(()=>{
+        getOtkazmalarxisoboti()
+    })
+
     return (
         <div className="col-md-12 mt-2">
                      <div className="textHeader">
@@ -89,3 +96,4 @@ export default function OtkazmalarXisoboti() {
               </div>
     )
 }
+export default connect(({OtkazmalarxisobotiReducer:{otkazmaxisobot}})=>({otkazmaxisobot}),{getOtkazmalarxisoboti,saveOtkazmalarxisoboti,editOtkazmalarxisoboti,deleteOtkazmalarxisoboti}) (OtkazmalarXisoboti)

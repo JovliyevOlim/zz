@@ -12,6 +12,30 @@ import {deleteSavdo, editSavdo, getSavdo, saveSavdo} from "../reducer/SavdoOynaR
 
 function SavdoOynasi({getSavdo,editSavdo,deleteSavdo,saveSavdo}){
 
+    const [input,setInput] = useState(
+        {
+            baza:'',
+            mahsulotnomi:'',
+            barchabrandlar:''
+        }
+    )
+
+    function baza(e){
+        input.baza = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+    function mahsulotnomi(e){
+        input.mahsulotnomi = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+    function barchabrandlar(e){
+        input.barchabrandlar = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+
     useEffect(()=>{
         getSavdo()
     })
@@ -24,10 +48,6 @@ function SavdoOynasi({getSavdo,editSavdo,deleteSavdo,saveSavdo}){
 
                 <div className="col-md-12 d-flex justify-content-between align-items-center mt-4">
                     <label htmlFor={'baza'}>BAZA</label>
-                    {/*<select name="" id="" className={'baza'}>*/}
-                    {/*    <option value={''}>Shifer zavod (Bl001)</option>*/}
-                    {/*    <option value={''}>Instrumentlar (Bl002)</option>*/}
-                    {/*</select>*/}
 
                     <div className="nav d-flex justify-content-between" style={{width:'500px'}}>
                         <button className={'btn btn-outline-primary'}>Oxirgi savdolar</button>
@@ -43,13 +63,13 @@ function SavdoOynasi({getSavdo,editSavdo,deleteSavdo,saveSavdo}){
                     <div className={'col-md-6'}>
                         <div className="col-md-12 d-flex mt-2">
                             <div className="col-md-6 p-3">
-                                <select className={'form-control'} name="" id="">
+                                <select className={'form-control'} value={input.baza} onChange={baza} name="" id="">
                                     <option value="#">Walk in-customer</option>
                                     <option value="#">Walk in-seller</option>
                                 </select>
                             </div>
                             <div className="col-md-6 d-flex p-3">
-                                <input type="text" className={'form-control'} placeholder={'mahsulot nomini yozing'}/>
+                                <input type="text" className={'form-control'} value={input.mahsulotnomi} onChange={mahsulotnomi} placeholder={'mahsulot nomini yozing'}/>
                                 <img src={img8} alt="" style={{cursor:'pointer'}}/>
                             </div>
                         </div>
@@ -98,7 +118,7 @@ function SavdoOynasi({getSavdo,editSavdo,deleteSavdo,saveSavdo}){
                     </div>
                     <div className="col-md-6 mt-4">
                         <label htmlFor={'brand'}>Barcha brandlar</label>
-                        <select name="" className={'form-control'} id={'brand'}>
+                        <select name="" className={'form-control'} id={'brand'} value={input.barchabrandlar} onChange={barchabrandlar}>
                             <option value="#">Barcha brandlar</option>
                         </select>
                     </div>

@@ -11,7 +11,7 @@ import {useHistory} from "react-router-dom";
 import HodimlarRoyhati from "./components/SotibOlish/Sidebar/Hodimlar/hodimlarRoyxati/HodimlarRoyhati";
 import functionreducer from "./reducer/functionreducer";
 import Sidebar from "./components/SotibOlish/Sidebar/Sidebar";
-
+import OtkazmalarRoyxati from './components/SotibOlish/Sidebar/Baza/otkazmalarRoyxati/OtkazmalarRoyxati'
 function App({func,active}) {
     const history = useHistory()
 

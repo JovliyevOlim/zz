@@ -7,12 +7,18 @@ import Data from '../../../../../img/Data.png'
 import Pdf from '../../../../../img/PDF.png'
 import Edit from '../../../../../img/Edit.png'
 import Delete from '../../../../../img/Delete.png'
-import React, {useState} from "react";
 import {Modal, ModalBody, ModalFooter, ModalHeader} from "reactstrap";
 import Chart from "react-apexcharts";
+import {connect} from 'react-redux'
+import {getKopsotilgan,saveKopsotilgan,editKopsotilgan,deleteKopsotilgan} from '../reducer/KopsotilgantovarlarReducer'
+import {useEffect,useState} from 'react'
+function KopSotilgan({mijoz,dukon,summa,eslatma,getKopsotilgan,editKopsotilgan,saveKopsotilgan,deleteKopsotilgan}) {
 
-export default function KopSotilgan(props) {
-    const {mijoz,dukon,summa,eslatma} = props.match.params
+    useEffect(()=>{
+        getKopsotilgan()
+    })
+
+    // const {mijoz,dukon,summa,eslatma} = props.match.params
     const [input,setInput] = useState(
         {
             mijoz: 'React',
@@ -183,3 +189,4 @@ export default function KopSotilgan(props) {
         </div>
     )
 }
+export default connect(({KopsotilgantovarlarReducer:{kopsotilgan}})=>({kopsotilgan}),{getKopsotilgan,saveKopsotilgan,editKopsotilgan,deleteKopsotilgan}) (KopSotilgan)

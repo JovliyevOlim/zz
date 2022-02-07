@@ -17,7 +17,6 @@ import {Route, Switch, Link} from "react-router-dom";
 function Sidebar({func}) {
 
     return (
-
                 <div className={`col-md-12 sidebar ${func.class3}`}>
                     <div className="sidehead d-flex justify-content-center">
                         <img src={logo} alt="logo"/>

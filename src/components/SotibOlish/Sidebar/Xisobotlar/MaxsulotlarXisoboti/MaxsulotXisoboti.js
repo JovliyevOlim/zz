@@ -7,11 +7,17 @@ import Pdf from '../../../../../img/PDF.png'
 import Edit from '../../../../../img/Edit.png'
 import Delete from '../../../../../img/Delete.png'
 import './maxsulotxisoboti.css'
-import {useState} from "react";
+import {useState,useEffect} from "react";
 import {Modal, ModalBody, ModalFooter, ModalHeader} from "reactstrap";
+import {getMaxsulotxisobot,saveMaxsulotxisobot,editMaxsulotxisobot,deleteMaxsulotxisobot} from '../reducer/MaxsulotxisobotReducer'
+import {connect} from 'react-redux'
+function MaxsulotXisoboti({getMaxsulotxisobot,saveMaxsulotxisobot,editMaxsulotxisobot,deleteMaxsulotxisobot,mijoz,dukon,summa,eslatma}) {
 
-export default function MaxsulotXisoboti(props) {
-    const {mijoz,dukon,summa,eslatma} = props.match.params
+    useEffect(()=>{
+        getMaxsulotxisobot()
+    })
+
+    // const {mijoz,dukon,summa,eslatma} = props.match.params
     const [input,setInput] = useState(
         {
             mijoz: 'React',
@@ -85,22 +91,10 @@ export default function MaxsulotXisoboti(props) {
 
             <div className="rowStyleH2">
 
-                {/*<div className={'d-flex'}>*/}
-                {/*    <Link to={'/third/mijozlarXisoboti/1'}><button className={'btn btn-outline-danger'}>Savdolar</button></Link>*/}
-                {/*    <Link to={'/third/mijozlarXisoboti/2'}><button className={'btn btn-outline-danger'}>Ulushli savdolar</button></Link>*/}
-                {/*    <Link to={'/third/mijozlarXisoboti/3'}><button className={'btn btn-outline-danger'}>Xarajatlar</button></Link>*/}
-                {/*    <Link to={'/third/mijozlarXisoboti/4'}><button className={'btn btn-outline-danger'}>Mijozlar bn ishlash</button></Link>*/}
-                {/*</div>*/}
-
                 <div className="qoshish mt-4">
                     <h5>Barcha savdolar</h5>
                     {/*<Link to={'/third/xarajatlarRuyxati/xarajatqoshish'}><button className='btn btn-primary'>+Qo'shish</button></Link>*/}
                 </div>
-
-                {/*<Route path={'/third/mijozlarXisoboti/1'} component={Savdolar1}/>*/}
-                {/*<Route path={'/third/mijozlarXisoboti/2'} component={Ulushli}/>*/}
-                {/*<Route path={'/third/mijozlarXisoboti/3'} component={Xarajatlar3}/>*/}
-                {/*<Route path={'/third/mijozlarXisoboti/4'} component={MijozlarBnIshlash}/>*/}
 
                 <div className="izlash">
                     <p>Ko'rsatildi</p>
@@ -192,3 +186,4 @@ export default function MaxsulotXisoboti(props) {
         </div>
     )
 }
+export default connect(({MaxsulotxisobotReducer:{maxsulotxisobot}})=>({maxsulotxisobot}),{getMaxsulotxisobot,saveMaxsulotxisobot,editMaxsulotxisobot,deleteMaxsulotxisobot}) (MaxsulotXisoboti)

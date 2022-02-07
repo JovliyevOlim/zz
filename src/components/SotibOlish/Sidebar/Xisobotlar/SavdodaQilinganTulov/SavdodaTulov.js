@@ -7,10 +7,16 @@ import Pdf from '../../../../../img/PDF.png'
 import Edit from '../../../../../img/Edit.png'
 import Delete from '../../../../../img/Delete.png'
 import './savdoqilingantulov.css'
-import {useState} from "react";
+import {useState,useEffect} from "react";
 import {Modal, ModalBody, ModalFooter, ModalHeader} from "reactstrap";
+import {getSavdotulov,saveSavdotulov,editSavdotulov,deleteSavdotulov} from '../reducer/SavdodagiTulovReducer'
+import {connect} from 'react-redux'
+function SavdodaTulov(props) {
 
-export default function SavdodaTulov(props) {
+    useEffect(()=>{
+        getSavdotulov()
+    })
+
     const {mijoz,dukon,summa,eslatma} = props.match.params
     const [input,setInput] = useState(
         {
@@ -173,7 +179,6 @@ export default function SavdodaTulov(props) {
                                 </ModalFooter>
                             </Modal>
                             {/*<td>200000</td>*/}
-                            {/*<td>33222333</td>*/}
                         </tr>
                         </tbody>
                     </table>
@@ -190,3 +195,4 @@ export default function SavdodaTulov(props) {
         </div>
     )
 }
+export default connect(({SavdodagiTulovReducer:{savdotulov}})=>({savdotulov}),{getSavdotulov,saveSavdotulov,editSavdotulov,deleteSavdotulov}) (SavdodaTulov)

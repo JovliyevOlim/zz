@@ -3,9 +3,15 @@ import HariddadiSoliqlar from './hariddagiSoliqlar/HariddadiSoliqlar'
 import SotishdagiSoliqlar from './sotishdagiSoliqlar/SotishdagiSoliqlar'
 import BoshqaSoliqlar from './boshqaSoliqlar/BoshqaSoliqlar'
 import './soliqlarXisoboti.css'
+import {connect} from 'react-redux'
+import {getSoliqxisobot,saveSoliqxisobot,editSoliqxisobot,deleteSoliqxisobot} from '../reducer/SoliqlarxisobotiReducer'
+import {useEffect} from 'react'
+function SoliqlarXisoboti() {
 
+    useEffect(()=>{
+        getSoliqxisobot()
+    })
 
-export default function SoliqlarXisoboti() {
     return (
         <div className="col-md-12 mt-2">
         <div className="textHeader">
@@ -62,3 +68,9 @@ export default function SoliqlarXisoboti() {
  </div>
     )
 }
+export default connect(({XarajatXisobotReducer: {xarajatxisobot}}) => ({xarajatxisobot}), {
+    getSoliqxisobot,
+    saveSoliqxisobot,
+    editSoliqxisobot,
+    deleteSoliqxisobot
+})(SoliqlarXisoboti)

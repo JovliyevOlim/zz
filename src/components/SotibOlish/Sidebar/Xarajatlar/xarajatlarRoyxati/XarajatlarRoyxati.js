@@ -7,11 +7,65 @@ import Pdf from '../../../../../img/PDF.png'
 import Edit from '../../../../../img/Edit.png'
 import Delete from '../../../../../img/Delete.png'
 import './xarajatlarRoyxati.css'
-import {useEffect} from "react";
+import {useEffect,useState} from "react";
 import {connect} from "react-redux";
 import {deleteXarajatlar, editXarajatlar, getXarajatlar, saveXarajatlar} from "../reducer/XarajatlarReducer";
 
 function XarajatlarRoyxati({getXarajatlar}) {
+
+       const [input,setInput] = useState(
+           {
+                  baza:'',
+                  xarajatqildi:'',
+                  aloqa:'',
+                  xarajatturi:'',
+                  sana:'',
+                  obuna:'',
+                  view:'',
+                  izlash:'',
+           }
+       )
+
+       function baza(e){
+              input.baza = e.target.value
+              let a = {...input}
+              setInput(a)
+       }
+       function xarajatqildi(e){
+              input.xarajatqildi = e.target.value
+              let a = {...input}
+              setInput(a)
+       }
+       function aloqa(e){
+              input.aloqa = e.target.value
+              let a = {...input}
+              setInput(a)
+       }
+       function xarajatturi(e){
+              input.xarajatturi = e.target.value
+              let a = {...input}
+              setInput(a)
+       }
+       function sana(e){
+              input.sana = e.target.value
+              let a = {...input}
+              setInput(a)
+       }
+       function obuna(e){
+              input.obuna = e.target.value
+              let a = {...input}
+              setInput(a)
+       }
+       function view(e){
+              input.view = e.target.value
+              let a = {...input}
+              setInput(a)
+       }
+       function izlash(e){
+              input.izlash = e.target.value
+              let a = {...input}
+              setInput(a)
+       }
 
        useEffect(()=>{
               getXarajatlar()
@@ -29,17 +83,15 @@ function XarajatlarRoyxati({getXarajatlar}) {
                             <div className="row cont">
                                    <div className="col-md-6">
                                           <h6>Baza:</h6>
-                                          <select name="" id="">
+                                          <select name="" value={input.baza} onChange={baza} id="">
                                                  <option value="">Barcha bazalar</option>
-                                                 <option value=""></option>
                                                  <option value=""></option>
                                           </select>
                                    </div>
                                    <div className="col-md-6">
                                           <h6>Xarajat qildi:</h6>
-                                          <select name="" id="">
+                                          <select name="" id="" value={input.xarajatqildi} onChange={xarajatqildi}>
                                                  <option value="">Barchasi</option>
-                                                 <option value=""></option>
                                                  <option value=""></option>
                                           </select>
                                    </div>
@@ -47,19 +99,14 @@ function XarajatlarRoyxati({getXarajatlar}) {
                             <div className="row">
                                    <div className="col-md-6">
                                           <h6>Aloqa:</h6>
-                                          <select name="" id="">
+                                          <select name="" id="" value={input.aloqa} onChange={aloqa}>
                                                  <option value="">Barchasi</option>
-                                                 <option value="">Boshliq</option>
-                                                 <option value=""></option>
                                           </select>
                                    </div>
                                    <div className="col-md-6">
                                           <h6>Xarajat turi:</h6>
-                                                 <select name="" id="">
+                                                 <select name="" id="" value={input.xarajatturi} onChange={xarajatturi}>
                                                         <option value="">Barchasi</option>
-                                                        <option value="">To'langan</option>
-                                                        <option value="">To'lanmagan</option>
-                                                        <option value="">Qisman to'langan</option>
                                                         <option value="">To'lov muddati o'tgan</option>
                                                  </select>
                                    </div>
@@ -68,14 +115,13 @@ function XarajatlarRoyxati({getXarajatlar}) {
                                    <div className="col-md-6" >
                                           <div className="sana">
                                                  <h6>Sanani belgilang:</h6>
-                                                 <input type="date"/> 
+                                                 <input type="date" value={input.sana} onChange={sana}/>
                                           </div>
                                    </div>
                                    <div className="col-md-6">
                                           <h6>Obuna:</h6>
-                                          <select name="" id="">
+                                          <select name="" id="" value={input.obuna} onChange={obuna}>
                                                  <option value="">Barchasi</option>
-                                                 <option value=""></option>
                                                  <option value=""></option>
                                           </select>
                                    </div>
@@ -89,13 +135,8 @@ function XarajatlarRoyxati({getXarajatlar}) {
                             </div>
                             <div className="izlash">
                                    <p>Ko'rsatildi</p>
-                                   <select name="" id="">
+                                   <select name="" id="" value={input.view} onChange={view}>
                                           <option value="">25</option>
-                                          <option value="">50</option>
-                                          <option value="">100</option>
-                                          <option value="">200</option>
-                                          <option value="">500</option>
-                                          <option value="">1,000</option>
                                           <option value="">All</option>
                                    </select>
                                    <button> <img src={CSV} alt="" /> Export CSV</button>
@@ -103,7 +144,7 @@ function XarajatlarRoyxati({getXarajatlar}) {
                                    <button><img src={Print} alt="" /> Print</button>
                                    <button><img src={Pdf} alt="" />Export PDF</button>
                                    <button> <img src={Data} alt="" />Malumotlarni kamaytirish </button>
-                                   <input type="text" placeholder='Izlash...'/>
+                                   <input type="text" placeholder='Izlash...' value={input.izlash} onChange={izlash}/>
                             </div>
                             <div className="table-responsive">
                                    <table className='table table-striped table-bordered mt-4 '>
@@ -145,7 +186,7 @@ function XarajatlarRoyxati({getXarajatlar}) {
                                                         <td></td>
                                                         <td></td>
                                                         <td>   
-                                                               <Link to={'/third/xarajatlarRuyxati/xarajatqoshish'}><button className='taxrirlash'> <img src={Edit} alt="" /> Taxrirlash</button> </Link>
+                                                               <Link to={'/headerthird/xarajatQoshish'}><button className='taxrirlash'> <img src={Edit} alt="" /> Taxrirlash</button> </Link>
                                                                <button className='ochirish'> <img src={Delete} alt="" /> O'chirish</button>
                                                         </td>
                                                  </tr>

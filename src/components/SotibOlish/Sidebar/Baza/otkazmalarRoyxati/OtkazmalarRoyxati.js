@@ -11,10 +11,30 @@ import Delete from '../../../../../img/Delete.png'
 import Arrow from '../../../../../img/arrowIcon.png'
 import './otkazmalarRoyxati.css'
 import {connect} from "react-redux";
-import {useEffect} from "react";
-import {deleteOtkazma, editOtkazma, getOtkazma, saveOtkazma} from "../reducer/OtkazmaReducer";
+import {useEffect,useState} from "react";
+import {getOtkazma} from '../reducer/OtkazmaReducer'
+import {deleteOtkazma, editOtkazma, saveOtkazma} from "../reducer/OtkazmaReducer";
 
 function OtkazmalarRoyxati({getOtkazma}) {
+
+       const [input,setInput] = useState(
+           {
+                  view:'',
+                  search:'',
+
+           }
+       )
+
+       function view(e){
+              input.view = e.target.value
+              let a = {...input}
+              setInput(a)
+       }
+       function search(e){
+              input.search = e.target.value
+              let a = {...input}
+              setInput(a)
+       }
 
        useEffect(()=>{
               getOtkazma()
@@ -32,12 +52,8 @@ function OtkazmalarRoyxati({getOtkazma}) {
                                    </div>
                                    <div className="izlash">
                                           <p>Ko'rsatildi</p>
-                                          <select name="" id="">
+                                          <select name="" value={input.view} onChange={view} id="">
                                                  <option value="">25</option>
-                                                 <option value="">50</option>
-                                                 <option value="">100</option>
-                                                 <option value="">200</option>
-                                                 <option value="">500</option>
                                                  <option value="">1,000</option>
                                                  <option value="">All</option>
                                           </select>
@@ -46,7 +62,7 @@ function OtkazmalarRoyxati({getOtkazma}) {
                                           <button><img src={Print} alt="" /> Print</button>
                                           <button><img src={Pdf} alt="" />Export PDF</button>
                                           <button> <img src={Data} alt="" />Malumotlarni kamaytirish </button>
-                                          <input type="text" placeholder='Izlash...'/>
+                                          <input type="text" placeholder='Izlash...' value={input.search} onChange={search}/>
                                    </div>
                                    <div className="table-responsive">
                                           <table className='table table-striped table-bordered mt-4'>
@@ -56,7 +72,7 @@ function OtkazmalarRoyxati({getOtkazma}) {
                                                                <th>Bazadan (Amaldagi baza)</th>
                                                                <th>Bazaga (O'tkaziladigan baza)</th>
                                                                <th>Status</th>
-                                                               <th>Yo'kira haqi</th>
+                                                               <th>Yo'lkira haqi</th>
                                                                <th>Jami summa</th>
                                                                <th>Qisqa eslatma</th>
                                                                <th>Amallar</th>
@@ -90,4 +106,4 @@ function OtkazmalarRoyxati({getOtkazma}) {
                      </div>
        )
 }
-export default connect(({OtkazmalarReducer:{otkazmalar}})=>({otkazmalar}),{getOtkazma,saveOtkazma,editOtkazma,deleteOtkazma}) (OtkazmalarRoyxati)
+export default connect(({OtkazmaReducer:{otkazmalar}})=>({otkazmalar}),{getOtkazma,saveOtkazma,editOtkazma,deleteOtkazma}) (OtkazmalarRoyxati)

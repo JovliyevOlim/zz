@@ -7,19 +7,24 @@ import Pdf from '../../../../../img/PDF.png'
 import Edit from '../../../../../img/Edit.png'
 import Delete from '../../../../../img/Delete.png'
 import './mijozlarxisoboti.css'
-import {useState} from "react";
+import {useState,useEffect} from "react";
 import Savdolar1 from "./Savdolar/1/Savdolar1";
 import Ulushli from "./Savdolar/2/Ulushli";
 import Xarajatlar3 from "./Savdolar/3/Xarajatlar3";
 import MijozlarBnIshlash from "./Savdolar/4/MijozlarBnIshlash";
-
-export default function XaridlarXisoboti() {
+import {connect} from 'react-redux'
+import {getMijozhisobot,deleteMijozhisobot,saveMijozhisobot,editMijozhisobot} from '../reducer/MijozHisobotiReducer'
+function MijozlarXisoboti() {
 
     const [active,setActive] = useState(false)
 
     function toggle(){
         setActive(!active)
     }
+
+    useEffect(()=>{
+        getMijozhisobot()
+    })
 
     return (
         <div className="col-md-12 mt-2">
@@ -77,15 +82,12 @@ export default function XaridlarXisoboti() {
             <div className="rowStyleH2">
                 <div className="col-md-12">
                     <h5>Summary</h5>
-
                     <h3>Jami savdo - Jami sotuvlar bo`yicha daromad: ( backend-backend = backend )</h3>
                     <h3>Jami xarajatlar: ( backend )</h3>
                 </div>
-
             </div>
 
             <div className="rowStyleH2">
-
                 <div className={'d-flex'}>
                     <Link to={'/headerthird/mijozlarXisoboti/1'}><button className={'btn btn-outline-danger'}>Savdolar</button></Link>
                     <Link to={'/headerthird/mijozlarXisoboti/2'}><button className={'btn btn-outline-danger'}>Ulushli savdolar</button></Link>
@@ -113,3 +115,5 @@ export default function XaridlarXisoboti() {
         </div>
     )
 }
+
+export default connect(({MijozHisobotiReducer:{mijozhisobot}})=>({mijozhisobot}),{getMijozhisobot,saveMijozhisobot,editMijozhisobot,deleteMijozhisobot}) (MijozlarXisoboti)

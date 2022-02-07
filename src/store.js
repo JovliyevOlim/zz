@@ -18,12 +18,22 @@ import XarajatlarReducer from "./components/SotibOlish/Sidebar/Xarajatlar/reduce
 import XarajatTurlariReducer from "./components/SotibOlish/Sidebar/Xarajatlar/reducer/XarajatTurlariReducer";
 import FoydaZararReducer from "./components/SotibOlish/Sidebar/Xisobotlar/reducer/FoydaZararReducer";
 import XaridlarXisobotiReducer from "./components/SotibOlish/Sidebar/Xisobotlar/reducer/XaridlarXisobotiReducer";
+import MijozHisobotiReducer from './components/SotibOlish/Sidebar/Xisobotlar/reducer/MijozHisobotiReducer'
+import XarajatXisobotReducer from './components/SotibOlish/Sidebar/Xisobotlar/reducer/XarajatXisobotReducer'
+import SavdodagiTulovReducer from './components/SotibOlish/Sidebar/Xisobotlar/reducer/SavdodagiTulovReducer'
+import MaxsulotxisobotReducer from './components/SotibOlish/Sidebar/Xisobotlar/reducer/MaxsulotxisobotReducer'
+import KopsotilgantovarlarReducer from './components/SotibOlish/Sidebar/Xisobotlar/reducer/KopsotilgantovarlarReducer'
+import OtkazmalarxisobotiReducer from './components/SotibOlish/Sidebar/Xisobotlar/reducer/OtkazmalarxisobotiReducer'
+import QoldiqlarxisobotiReducer from './components/SotibOlish/Sidebar/Xisobotlar/reducer/QoldiqlarxisobotiReducer'
+import SoliqlarxisobotiReducer from './components/SotibOlish/Sidebar/Xisobotlar/reducer/SoliqlarxisobotiReducer'
 
 export default configureStore({
     reducer:{
         users,functionreducer,XodimReducer,LavozimReducer,XodimSavdoReducer,TaminotReducer,
         MijozGuruxReducer,MahsulotReducer,SotuvNarxiReducer,BolimReducer,FirmaReducer,XaridReducer,SavdoOynaReducer,
         OtkazmaReducer,XarajatlarReducer,XarajatTurlariReducer,FoydaZararReducer,XaridlarXisobotiReducer,
+        MijozHisobotiReducer,XarajatXisobotReducer,SavdodagiTulovReducer,MaxsulotxisobotReducer,KopsotilgantovarlarReducer,
+        OtkazmalarxisobotiReducer,QoldiqlarxisobotiReducer,SoliqlarxisobotiReducer,
     },
         middleware:[api]
 })
