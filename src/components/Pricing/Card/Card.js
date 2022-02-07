@@ -9,7 +9,7 @@ function Card() {
                     Oddiy
                 </p>
                 <div className="price">
-                    <h4>149 990</h4>
+                    <h4>599 990</h4>
                     <p>so`m / yiliga</p>
                 </div>
                 <p>
@@ -25,15 +25,15 @@ function Card() {
                 </div>
                 <div className="ch">
                     <img src={img} alt=""/>
-                    <p>100 tagcha hodim</p>
+                    <p>Cheksiz hodimlar</p>
                 </div>
                 <div className="ch">
                     <img src={img} alt=""/>
-                    <p>100 tagacha mahsulot</p>
+                    <p>Cheksiz mahsulot</p>
                 </div>
                 <div className="ch">
                     <img src={img} alt=""/>
-                    <p>cheksiz hsob-fakturalari</p>
+                    <p>Cheksiz hsob-fakturalari</p>
                 </div>
 
             </div>

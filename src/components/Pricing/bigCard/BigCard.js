@@ -35,12 +35,9 @@ function BigCard() {
                 </div>
                 <div className="ch">
                     <img src={img} alt=""/>
-                    <p>Cheksiz hisob-fakturalari</p>
-                </div>
-                <div className="ch">
-                    <img src={img} alt=""/>
                     <p>Cheksiz bazalar</p>
                 </div>
+               
                 <div className="ch">
                     <img src={img} alt=""/>
                     <p>Cheksiz imkoniyatlar</p>
@@ -53,6 +50,10 @@ function BigCard() {
                 <div className="ch">
                     <img src={img} alt=""/>
                     <p>1000 tagacha fakturalar</p>
+                </div>
+                <div className="ch">
+                    <img src={img} alt=""/>
+                    <p>Cheksiz hisob fakturalar</p>
                 </div>
             </div>
         </div>

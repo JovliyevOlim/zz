@@ -100,6 +100,7 @@
 }
 
 @media (min-width: 426px) and (max-width: 768.9px){
+   
     .secondpage .row .f .fBox{
         display: block;
     }
@@ -114,5 +115,23 @@
         width: 100%;
     }
 
-
 }
+@media (min-width: 769px) and (max-width: 1024.9px){
+    .secondpage .row .f{
+        width: 90%;
+        margin: 0 auto;
+    }
+    .secondpage .row .f .fBox{
+        width: 100%;
+    }
+    .secondpage .row .c1{
+        width: 29%;
+    }
+    .secondpage .row .c2{
+        width: 29%;
+    }
+    .secondpage .row .c3{
+        width: 29%;
+    }
+}
+

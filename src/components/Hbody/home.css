@@ -242,7 +242,7 @@
 
 
 
-@media (min-width: 426px) and (max-width: 768px){
+@media (min-width: 426px) and (max-width: 768.9px){
     .home-body .homeContainer .home-img{
         padding: 96px 30px 0px 4%;
     }
@@ -292,14 +292,66 @@
     .home-enter .kirish-input button{
         padding: 4px;
     }
-    
-
-
-
-
-
-
-    
    
+}
+
+
+@media (min-width: 769px) and (max-width: 1024.9px){
+    .home-body .homeContainer .home-img{
+        padding: 96px 30px 0px 5%;
+    }
+    .home-body .homeContainer .home-img .imgContainer img{
+        width: 100%;
+    }
+    .home-body .homeContainer .home-img .home-text h4{
+        font-size: 24px;
+        line-height: 32px;
+        margin-top: 10px;
+    }
+    .home-body .homeContainer .home-img .home-text p{
+        font-size: 12px;
+        line-height: 16px;
+    }
+    .home-body .homeContainer .home-enter{
+        padding: 12px 5% 0px 30px;
+    }
+    .home-body .homeContainer .home-enter .kirish-text h5{
+        font-size: 20px;
+    }
+    .home-body .homeContainer .home-enter .kirish-text p{
+        font-size: 12px;
+        line-height: 16px;
+    }
+    .home-enter .kirish-input img{
+        height: 16px;
+    }
+    .home-enter .kirish-input .kirish-checkbox svg{
+        width: 20px;
+        height: 20px;
+    }
+    .home-enter .kirish-input .kirish-checkbox .login h4{
+        font-size: 12px;
+        line-height: 14px;
+    }
+    .home-enter .kirish-input .kirish-checkbox .login a{
+        font-size: 12px;
+        line-height: 14px;
+    }
+   
+}
+
+@media (min-width: 1025px) and (max-width: 1199.9px){
+    .home-enter .kirish-input .kirish-checkbox svg{
+        width: 20px;
+        height: 20px;
+    }
+    .home-enter .kirish-input .kirish-checkbox .login h4{
+        font-size: 14px;
+        line-height: 14px;
+    }
+    .home-enter .kirish-input .kirish-checkbox .login a{
+        font-size: 14px;
+        line-height: 14px;
+    }
 }
 

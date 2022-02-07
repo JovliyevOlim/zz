@@ -109,8 +109,6 @@
     .header__{
         padding: 28px 4% 28px 4%;
     }
-    .header__ .homebody{
-    }
     .header__ .homebody .header-narx{
         width: 50%;
     }
@@ -136,7 +134,7 @@
 
 @media (min-width: 769px) and (max-width: 1024px){
     .header__{
-        padding: 28px 80px 28px 80px;
+        padding: 28px 5% 28px 5% ;
     }
 }
     
