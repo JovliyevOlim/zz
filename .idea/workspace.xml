@@ -2,18 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2ed0236b-2151-406e-828e-c9a3e0b2b336" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/PAGANATION.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/Pagination.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/RenderComponent.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/img/Product Avatar.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/hodimlarRoyxati/HodimlarRoyhati.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/hodimlarRoyxati/HodimlarRoyhati.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/hodimlarRoyxati/Taxrirlash/Taxrirlash.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/hodimlarRoyxati/Taxrirlash/Taxrirlash.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/reducer/XodimReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/reducer/XodimReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/MahsulotlarRuyxati/MaxsulotlarRoyxati.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/MahsulotlarRuyxati/MaxsulotlarRoyxati.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/bolimlar/Bolimlar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/bolimlar/Bolimlar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/Third.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/Third.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/middleware.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducer/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer/users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/header/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/headerthird.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/headerthird.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/headerthird.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/headerthird.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -261,7 +254,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644162847366</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="pagination">
+      <created>1644236984147</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1644236984147</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -299,6 +299,7 @@
     <MESSAGE value="reducerlar" />
     <MESSAGE value="lavozimtaxrirlash" />
     <MESSAGE value="value" />
-    <option name="LAST_COMMIT_MESSAGE" value="value" />
+    <MESSAGE value="pagination" />
+    <option name="LAST_COMMIT_MESSAGE" value="pagination" />
   </component>
 </project>

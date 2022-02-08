@@ -8,7 +8,7 @@ import {active} from "../../../reducer/functionreducer";
 import Calculator from "./Calculator/Calculator";
 
 
-function Header({active}) {
+function Header({active,sidebarfunc}) {
 
     useEffect(()=>{
         setCalactive(false)
@@ -21,7 +21,7 @@ function Header({active}) {
     }
     function sidebar() {
         active(false)
-        console.log('akfla')
+        sidebarfunc()
     }
 
     return(

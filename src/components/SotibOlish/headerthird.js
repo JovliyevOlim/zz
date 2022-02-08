@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Third from "./ThirdPage/Third";
 import './headerthird.css'
 import Header from "./header/Header";
@@ -46,7 +46,16 @@ import Dukon1 from './Sidebar/Settings/DukonSozlamalari/dukon/Dukon1'
 import Soliq from './Sidebar/Settings/DukonSozlamalari/soliq/Soliq'
 function Headerthird() {
 
+    const [classheader,setClassheader] = useState('classheader1')
 
+    function sidebarheader(){
+        if(classheader==='classheader1'){
+            setClassheader('classheader2')
+        }
+        else{
+            setClassheader('classheader1')
+        }
+    }
     const history = useHistory()
 
     useEffect(() => {
@@ -59,8 +68,9 @@ function Headerthird() {
 
     return (
         <div className={'headerthird'}>
-           <div className='px-2'>            <Header/>
-</div>
+            <div className={`${classheader}`}>
+                <Header sidebarfunc={sidebarheader}/>
+            </div>
             <Switch>
                 <Route path={'/headerthird/third'} component={Third}/>
                 <Route path={'/headerthird/hodimlarruyxati/taxrirlash'} component={Taxrirlash}/>
