@@ -1,5 +1,12 @@
-
+import {useState} from 'react'
 export default function EmailSozlama(){
+
+    const [input,setInput] = useState(
+        {
+
+        }
+    )
+
     return(
         <div className={'col-md-10'}>
 

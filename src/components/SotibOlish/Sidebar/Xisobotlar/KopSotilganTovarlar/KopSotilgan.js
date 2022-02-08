@@ -18,6 +18,60 @@ function KopSotilgan({mijoz,dukon,summa,eslatma,getKopsotilgan,editKopsotilgan,s
         getKopsotilgan()
     })
 
+    const [inputvalue,setInputvalue] = useState(
+        {
+            baza:'',
+            bolim:'',
+            bolim2:'',
+            firma:'',
+            ulcovbirligi:'',
+            sananiblegilang:'',
+            numofproduct:'',
+            maxsulotturi:'',
+
+        }
+    )
+
+    function baza(e){
+        inputvalue.baza = e.target.value
+        let a = {...inputvalue}
+        setInputvalue(a)
+    }
+    function bolim(e){
+        inputvalue.bolim = e.target.value
+        let a = {...inputvalue}
+        setInputvalue(a)
+    }
+    function bolim2(e){
+        inputvalue.bolim2 = e.target.value
+        let a = {...inputvalue}
+        setInputvalue(a)
+    }
+    function firma(e){
+        inputvalue.firma = e.target.value
+        let a = {...inputvalue}
+        setInputvalue(a)
+    }
+    function ulcovbirligi(e){
+        inputvalue.ulcovbirligi = e.target.value
+        let a = {...inputvalue}
+        setInputvalue(a)
+    }
+    function sananiblegilang(e){
+        inputvalue.sananiblegilang = e.target.value
+        let a = {...inputvalue}
+        setInputvalue(a)
+    }
+    function numofproduct(e){
+        inputvalue.numofproduct = e.target.value
+        let a = {...inputvalue}
+        setInputvalue(a)
+    }
+    function maxsulotturi(e){
+        inputvalue.maxsulotturi = e.target.value
+        let a = {...inputvalue}
+        setInputvalue(a)
+    }
     // const {mijoz,dukon,summa,eslatma} = props.match.params
     const [input,setInput] = useState(
         {
@@ -83,28 +137,21 @@ function KopSotilgan({mijoz,dukon,summa,eslatma,getKopsotilgan,editKopsotilgan,s
                 <div className="row cont">
                     <div className="col-md-6">
                         <h6>Baza:</h6>
-                        <input type="text" className={'form-control'}/>
+                        <input value={inputvalue.baza} onChange={baza} type="text" className={'form-control'}/>
                     </div>
                     <div className="col-md-6">
                         <h6>Bo`lim:</h6>
-                        <select name="" id="" >
+                        <select name="" value={inputvalue.bolim} onChange={bolim} id="" >
                             <option value="">Bugun</option>
                             <option value="">Kecha</option>
                             <option value="">Oxirgi 7 kun</option>
-                            <option value="">Oxirgi 30 kun</option>
-                            <option value="">Bu oy</option>
-                            <option value="">O`tgan oy</option>
-                            <option value="">Bu yilgi moliya</option>
-                            <option value="">Bu yil</option>
-                            <option value="">O`tgan yil moliyasi</option>
-                            <option value="" onClick={toggle}>Siz istagan sana</option>
                         </select>
                     </div>
                 </div>
                 <div className="row">
                     <div className="col-md-6">
                         <h6>Bo`lim ichida bo`lim:</h6>
-                        <select name="" id="" >
+                        <select name="" id="" value={inputvalue.bolim2} onChange={bolim2}>
                             <option value="">Tanlash</option>
                             <option value="">Shefir zavod</option>
                             <option value="">Instrumentlar</option>
@@ -112,7 +159,7 @@ function KopSotilgan({mijoz,dukon,summa,eslatma,getKopsotilgan,editKopsotilgan,s
                     </div>
                     <div className="col-md-6">
                         <h6>Ferma:</h6>
-                        <select name="" id="" >
+                        <select name="" id="" value={inputvalue.firma} onChange={firma}>
                             <option value="">Bugun</option>
                             <option value="">Kecha</option>
                             <option value="">Oxirgi 7 kun</option>
@@ -129,7 +176,7 @@ function KopSotilgan({mijoz,dukon,summa,eslatma,getKopsotilgan,editKopsotilgan,s
                     <div className="col-md-12 d-flex">
                         <div className="col-md-3">
                             <label htmlFor={'olcov1'}>O`lchov birligi</label>
-                            <select name="" id={'olcov1'}>
+                            <select name="" id={'olcov1'} value={inputvalue.ulcovbirligi} onChange={ulcovbirligi}>
                                 <option value="#">Barchasi</option>
                                 <option value="#">Pc(s)</option>
                                 <option value="#">Kg</option>
@@ -137,8 +184,8 @@ function KopSotilgan({mijoz,dukon,summa,eslatma,getKopsotilgan,editKopsotilgan,s
                             </select>
                         </div>
                         <div className="col-md-3">
-                            <label htmlFor={'olcov2'}>O`lchov birligi</label>
-                            <select name="" id={'olcov2'}>
+                            <label htmlFor={'olcov2'}>Sanani belgilang</label>
+                            <select name="" id={'olcov2'} onChange={sananiblegilang} value={inputvalue.sananiblegilang}>
                                 <option value="#">Sanani belgilang</option>
                                 <option value="#">Bugun</option>
                                 <option value="#">Kecha</option>
@@ -149,16 +196,15 @@ function KopSotilgan({mijoz,dukon,summa,eslatma,getKopsotilgan,editKopsotilgan,s
                             </select>
                         </div>
                         <div className="col-md-3">
-                            <label htmlFor={'olcov3'}>O`lchov birligi</label>
-                            <input type="text" id={'olcov3'} className={'form-control'}/>
+                            <label htmlFor={'olcov3'}>Num of products</label>
+                            <input type="text" id={'olcov3'} className={'form-control'} value={inputvalue.numofproduct} onChange={numofproduct}/>
                         </div>
                         <div className="col-md-3">
-                            <label htmlFor={'olcov4'} >O`lchov birligi</label>
-                            <select name="" id={'olcov4'}>
+                            <label htmlFor={'olcov4'} >Maxsulot turi</label>
+                            <select name="" id={'olcov4'} value={inputvalue.maxsulotturi} onChange={maxsulotturi}>
                                 <option value="#">Barchasi</option>
                                 <option value="#">Bir tuliq</option>
                                 <option value="#">Turli xil</option>
-                                <option value="#">Komplekt</option>
                             </select>
                         </div>
                     </div>

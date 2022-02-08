@@ -5,8 +5,26 @@ import BoshqaSoliqlar from './boshqaSoliqlar/BoshqaSoliqlar'
 import './soliqlarXisoboti.css'
 import {connect} from 'react-redux'
 import {getSoliqxisobot,saveSoliqxisobot,editSoliqxisobot,deleteSoliqxisobot} from '../reducer/SoliqlarxisobotiReducer'
-import {useEffect} from 'react'
+import {useEffect,useState} from 'react'
 function SoliqlarXisoboti() {
+
+    const [input,setInput] = useState(
+        {
+            baza:'',
+            aniqsanabelgilash:''
+        }
+    )
+
+    function baza(e){
+        input.baza = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+    function aniqsanabelgilash(e){
+        input.aniqsanabelgilash = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
 
     useEffect(()=>{
         getSoliqxisobot()
@@ -25,15 +43,14 @@ function SoliqlarXisoboti() {
                <div className="row cont">
                       <div className="col-md-6">
                              <h6>Baza:</h6>
-                             <select name="" id="">
+                             <select name="" id="" value={input.baza} onChange={baza}>
                                     <option value="">Barchasi</option>
-                                    <option value=""></option>
                                     <option value=""></option>
                              </select>
                       </div>
                       <div className="col-md-6">
                              <h6>Aniq sanani belgilash:</h6>
-                             <select name="" id="">
+                             <select name="" id="" value={input.aniqsanabelgilash} onChange={aniqsanabelgilash}>
                                     <option value="">Bugun</option>
                                     <option value="">Oxirgi bir xafta</option>
                                     <option value="">Oxirgi bir oy</option>

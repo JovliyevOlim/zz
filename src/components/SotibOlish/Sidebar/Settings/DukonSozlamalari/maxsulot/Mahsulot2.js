@@ -1,3 +1,5 @@
+import {maxsulot} from 'react'
+
 function Mahsulot2(){
     return(
         <div className={

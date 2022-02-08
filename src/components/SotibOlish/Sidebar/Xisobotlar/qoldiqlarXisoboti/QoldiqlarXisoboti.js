@@ -8,9 +8,63 @@ import Edit from '../../../../../img/Edit.png'
 import Delete from '../../../../../img/Delete.png'
 import './qoldiqlarXisoboti.css'
 import {connect} from 'react-redux'
-import {useEffect} from 'react'
+import {useEffect,useState} from 'react'
 import {getQoldiqlarxisobotiReducer,saveQoldiqlarxisobotiReducer,editQoldiqlarxisobotiReducer,deleteQoldiqlarxisobotiReducer} from '../reducer/QoldiqlarxisobotiReducer'
 function QoldiqlarXisoboti() {
+
+    const [input,setInput] = useState(
+        {
+            bazatanlash:'',
+            firma:'',
+            bolim:'',
+            bolim2:'',
+            ulcovbirligi:'',
+            ishlabciqariladigancheck:'',
+            view:'',
+            izlash:'',
+        }
+    )
+
+    function bazatanlash(e){
+        input.bazatanlash = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+    function firma(e){
+        input.firma = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+    function bolim(e){
+        input.bolim = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+    function bolim2(e){
+        input.bolim2 = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+    function ulcovbirligi(e){
+        input.ulcovbirligi = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+    function ishlabciqariladigancheck(e){
+        input.ishlabciqariladigancheck = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+    function view(e){
+        input.view = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+    function izlash(e){
+        input.izlash = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
 
     useEffect(()=>{
         getQoldiqlarxisobotiReducer()
@@ -28,17 +82,15 @@ function QoldiqlarXisoboti() {
                <div className="row cont">
                       <div className="col-md-6">
                              <h6>Baza:</h6>
-                             <select name="" id="">
+                             <select value={input.bazatanlash} onChange={bazatanlash} name="" id="">
                                     <option value="">Barchasi</option>
-                                    <option value=""></option>
                                     <option value=""></option>
                              </select>
                       </div>
                       <div className="col-md-6">
                              <h6>Bo'limlar:</h6>
-                             <select name="" id="">
+                             <select value={input.bolim} onChange={bolim} name="" id="" >
                                     <option value="">Barchasi</option>
-                                    <option value=""></option>
                                     <option value=""></option>
                              </select>
                       </div>
@@ -46,14 +98,14 @@ function QoldiqlarXisoboti() {
                <div className="row">
                       <div className="col-md-6">
                              <h6>Firma:</h6>
-                             <select name="" id="">
+                             <select name="" id="" value={input.firma} onChange={firma}>
                                     <option value="">Barchasi</option>
                                     <option value="">Boshliq</option>
                              </select>
                       </div>
                       <div className="col-md-6">
                              <h6>Bo'lim ichida bo'lim:</h6>
-                                    <select name="" id="">
+                                    <select name="" id="" value={input.bolim2} onChange={bolim2}>
                                            <option value="">Barchasi</option>
                                     </select>
                       </div>
@@ -61,7 +113,7 @@ function QoldiqlarXisoboti() {
                <div className="row">
                       <div className="col-md-6" >
                             <h6>O'lchov birligi:</h6>
-                            <select name="" id="">
+                            <select name="" id="" value={input.ulcovbirligi} onChange={ulcovbirligi}>
                                 <option value="">Barchasi</option>
                                 <option value=""></option>
                             </select>
@@ -69,7 +121,7 @@ function QoldiqlarXisoboti() {
                       <div className="col-md-6">
                                     <h6>Faqat ishlab chiqarilgan maxsulotlar:</h6>
                              <div className="obuna">
-                             <input type="checkbox"/>
+                             <input type="checkbox" checked={input.ishlabciqariladigancheck} onChange={ishlabciqariladigancheck}/>
                              </div>
                       </div>
                </div>
@@ -114,12 +166,8 @@ function QoldiqlarXisoboti() {
         <div className="rowStyle">
                <div className="izlash">
                       <p>Ko'rsatildi</p>
-                      <select name="" id="">
+                      <select name="" id="" value={input.view} onChange={view}>
                              <option value="">25</option>
-                             <option value="">50</option>
-                             <option value="">100</option>
-                             <option value="">200</option>
-                             <option value="">500</option>
                              <option value="">1,000</option>
                              <option value="">All</option>
                       </select>
@@ -128,7 +176,7 @@ function QoldiqlarXisoboti() {
                       <button><img src={Print} alt="" /> Print</button>
                       <button><img src={Pdf} alt="" />Export PDF</button>
                       <button> <img src={Data} alt="" />Malumotlarni kamaytirish </button>
-                      <input type="text" placeholder='Izlash...'/>
+                      <input type="text" placeholder='Izlash...' value={input.izlash} onChange={izlash}/>
                </div>
                <div className="table-responsive mb-4">
                       <table className='table table-striped table-bordered mt-4 '>

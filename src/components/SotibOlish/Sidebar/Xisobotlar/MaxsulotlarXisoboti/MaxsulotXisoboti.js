@@ -13,6 +13,48 @@ import {getMaxsulotxisobot,saveMaxsulotxisobot,editMaxsulotxisobot,deleteMaxsulo
 import {connect} from 'react-redux'
 function MaxsulotXisoboti({getMaxsulotxisobot,saveMaxsulotxisobot,editMaxsulotxisobot,deleteMaxsulotxisobot,mijoz,dukon,summa,eslatma}) {
 
+    const [inputvalue,setInputvalue] = useState(
+        {
+            baza:'',
+            mijoz:'',
+            xaridsanasi:'',
+            sananibelgilang:'',
+            view:'',
+            izlash:''
+        }
+    )
+
+    function baza(e){
+        inputvalue.baza = e.target.value
+        let a = {...inputvalue}
+        setInputvalue(a)
+    }
+    function mijoz(e){
+        inputvalue.mijoz = e.target.value
+        let a = {...inputvalue}
+        setInputvalue(a)
+    }
+    function xaridsanasi(e){
+        inputvalue.xaridsanasi = e.target.value
+        let a = {...inputvalue}
+        setInputvalue(a)
+    }
+    function sananibelgilang(e){
+        inputvalue.sananibelgilang = e.target.value
+        let a = {...inputvalue}
+        setInputvalue(a)
+    }
+    function view(e){
+        inputvalue.view= e.target.value
+        let a = {...inputvalue}
+        setInputvalue(a)
+    }
+    function izlash(e){
+        inputvalue.izlash= e.target.value
+        let a = {...inputvalue}
+        setInputvalue(a)
+    }
+
     useEffect(()=>{
         getMaxsulotxisobot()
     })
@@ -44,11 +86,11 @@ function MaxsulotXisoboti({getMaxsulotxisobot,saveMaxsulotxisobot,editMaxsulotxi
                 <div className="row cont">
                     <div className="col-md-6">
                         <h6>Diller:</h6>
-                        <input type="text" className={'form-control'}/>
+                        <input value={inputvalue.baza} onChange={baza} type="text" className={'form-control'}/>
                     </div>
                     <div className="col-md-6">
                         <h6>Xarid sanasi:</h6>
-                        <select name="" id="" className={'form-control'}>
+                        <select name="" id="" value={inputvalue.xaridsanasi} onChange={xaridsanasi} className={'form-control'}>
                             <option value="">Bugun</option>
                             <option value="">Kecha</option>
                             <option value="">Oxirgi 7 kun</option>
@@ -65,7 +107,7 @@ function MaxsulotXisoboti({getMaxsulotxisobot,saveMaxsulotxisobot,editMaxsulotxi
                 <div className="row">
                     <div className="col-md-6">
                         <h6>Mijoz:</h6>
-                        <select name="" id="" className={'form-control'}>
+                        <select name="" id="" className={'form-control'} value={inputvalue.mijoz} onChange={mijoz}>
                             <option value="">Tanlash</option>
                             <option value="">Shefir zavod</option>
                             <option value="">Instrumentlar</option>
@@ -73,7 +115,7 @@ function MaxsulotXisoboti({getMaxsulotxisobot,saveMaxsulotxisobot,editMaxsulotxi
                     </div>
                     <div className="col-md-6">
                         <h6>Sanani belgilang:</h6>
-                        <select name="" id="" className={'form-control'}>
+                        <select name="" id="" className={'form-control'} value={inputvalue.sananibelgilang} onChange={sananibelgilang}>
                             <option value="">Bugun</option>
                             <option value="">Kecha</option>
                             <option value="">Oxirgi 7 kun</option>
@@ -98,7 +140,7 @@ function MaxsulotXisoboti({getMaxsulotxisobot,saveMaxsulotxisobot,editMaxsulotxi
 
                 <div className="izlash">
                     <p>Ko'rsatildi</p>
-                    <select name="" id="">
+                    <select name="" id="" value={inputvalue.view} onChange={view}>
                         <option value="">25</option>
                         <option value="">50</option>
                         <option value="">100</option>
@@ -112,7 +154,7 @@ function MaxsulotXisoboti({getMaxsulotxisobot,saveMaxsulotxisobot,editMaxsulotxi
                     <button><img src={Print} alt="" /> Print</button>
                     <button><img src={Pdf} alt="" />Export PDF</button>
                     <button> <img src={Data} alt="" />Malumotlarni kamaytirish </button>
-                    <input type="text" placeholder='Izlash...'/>
+                    <input type="text" placeholder='Izlash...' value={inputvalue.izlash} onChange={izlash}/>
                 </div>
                 <div className="table-responsive">
                     <table className='table table-striped table-bordered mt-4 '>
