@@ -6,11 +6,11 @@ import React from "react";
 import {connect} from 'react-redux'
 import {useEffect,useState} from 'react'
 import {getMaxsulotRuyxati,saveMaxsulotRuyxati,editMaxsulotRuyxati,deleteMaxsulotRuyxati} from '../reducer/MaxsulotlarRoyxariReducer'
-function MaxsulotlarRoyxati({getMaxsulotRuyxati,saveMaxsulotRuyxati}) {
+function MaxsulotlarRoyxati({getMaxsulotRuyxati,saveMaxsulotRuyxati,maxsulotruyxati}) {
 
-    useEffect(()=>{
-        getMaxsulotRuyxati()
-    },[])
+    // useEffect(()=>{
+    //     getMaxsulotRuyxati()
+    // },[])
 
     const [input,setInput] = useState(
         {
@@ -90,9 +90,6 @@ function MaxsulotlarRoyxati({getMaxsulotRuyxati,saveMaxsulotRuyxati}) {
                                                          <h6>O'lchov birligi:</h6>
                                                         <select name="" id="" value={input.ulcov} onChange={changeulcov}>
                                                                <option value="">Barchasi</option>
-                                                               {/*<option value="">Pieces(Pc(s))</option>*/}
-                                                               {/*<option value="">KG(kg)</option>*/}
-                                                               {/*<option value="">Dona(dona)</option>*/}
                                                         </select>
                                           </div>
                                    </div>
@@ -136,4 +133,4 @@ function MaxsulotlarRoyxati({getMaxsulotRuyxati,saveMaxsulotRuyxati}) {
                      </div>
        )
 }
-export default connect(({XodimReducer:{xodimlar}})=>({xodimlar}),{getMaxsulotRuyxati,saveMaxsulotRuyxati,editMaxsulotRuyxati,deleteMaxsulotRuyxati})  (MaxsulotlarRoyxati)
+export default connect((MaxsulotlarRoyxariReducer,maxsulotruyxati)=>({maxsulotruyxati}),{getMaxsulotRuyxati,saveMaxsulotRuyxati,editMaxsulotRuyxati,deleteMaxsulotRuyxati})  (MaxsulotlarRoyxati)

@@ -14,7 +14,6 @@ const slice = createSlice({
         },
         savefrom: (state,action) => {
             state.mahsulotlar.unshift(action.payload)
-            // toast.success('Saqlandi')
         },
         editfrom: (state,action) => {
             state.mahsulotlar.map((item,index)=>{

@@ -31,7 +31,7 @@ const slice = createSlice({
 });
 
 export const getMaxsulotRuyxati=()=>apiCall({
-    url: '/product',
+    url: '/product/get-by-branch/1',
     method:'get',
     onSuccess: slice.actions.getFrom.type
 });

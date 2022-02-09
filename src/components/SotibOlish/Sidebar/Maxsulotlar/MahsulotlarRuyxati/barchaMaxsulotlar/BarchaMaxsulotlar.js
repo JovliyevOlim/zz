@@ -29,6 +29,10 @@ function BarchaMaxsulotlar() {
         }
     )
 
+    useEffect(()=>{
+
+    },[])
+
     function changecheckbarcha(e){
         input.checkbarcha = e.target.value
         let a = {...input}
