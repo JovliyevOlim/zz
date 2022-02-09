@@ -106,7 +106,7 @@ function Pagination() {
                     <button
                         onClick={goToNextPage}
                         className={`next ${currentPage === pages ? 'disabled' : ''}`}
-                        disabled={currentPage===pages ? true : false}
+                        disabled={currentPage === pages ? true : false}
                     >
                         next
                     </button>

@@ -1,6 +1,6 @@
 import './sidebar.css'
 import {connect} from "react-redux";
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import Hodimlar from "./Hodimlar/Hodimlar";
 import Hamkorlar from "./Hamkorlar/Hamkorlar";
 import Maxsulotlar from "./Maxsulotlar/Maxsulotlar";
@@ -13,11 +13,15 @@ import Sozlamalar from "./Settings/Sozlamalar";
 import Savdo from "./Savdo/Savdo";
 import logo from '../../../img/LOGO.png'
 import {Route, Switch, Link} from "react-router-dom";
+import functionreducer from "../../../reducer/functionreducer";
+import xodimReducer from "./Hodimlar/reducer/XodimReducer";
 
-function Sidebar({func}) {
+function Sidebar({functionreducer}) {
+
+
 
     return (
-                <div className={`col-md-12 sidebar ${func.class3}`}>
+                <div className={`col-md-12 sidebar ${functionreducer.func.class3}`}>
                     <div className="sidehead d-flex justify-content-center">
                         <img src={logo} alt="logo"/>
                     </div>
@@ -38,7 +42,10 @@ function Sidebar({func}) {
                             </div>
 
                         </div>
-                        <Hodimlar/>
+
+                            <Hodimlar/>
+
+
                         <Hamkorlar/>
                         <Maxsulotlar/>
                         <Haridlar/>
@@ -56,4 +63,4 @@ function Sidebar({func}) {
     )
 }
 
-export default connect(({functionreducer: {func}}) => ({func})) (Sidebar)
+export default connect(functionreducer) (Sidebar)

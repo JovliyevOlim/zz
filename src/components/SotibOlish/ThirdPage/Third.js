@@ -180,7 +180,6 @@ function Third({display}) {
         },
     ])
     const [active, Setactive] = useState(false)
-
     function sidebar() {
         if (third === '') {
             setThird('third2')
@@ -189,7 +188,6 @@ function Third({display}) {
 
         }
     }
-
     const options = {
         series: [200000, 300000, 500000, 600000],
         chart: {
