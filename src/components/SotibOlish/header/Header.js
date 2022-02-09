@@ -26,28 +26,34 @@ function Header({active,sidebarfunc}) {
 
     return(
        
-        <div className={'container-fluid padding-10 position-relative'}>
-            <div className={'row colorback justify-content-between pb-2 mb-1 align-items-center'}>
-                <div className="col-md-6 one d-flex">
-                    <img onClick={sidebar}
-                         src={imgMenu}  className={'im1'} alt=""/>
+        <div className={'container-fluid position-relative'}>
+            <div className={'headerBox '}>
+                <div className="dashbortButton">
+                    <img onClick={sidebar} src={imgMenu}  className={'im1'} alt=""/>
                 </div>
-                <div className="col-md-4 two">
+                <div className="two ">
                     <div className={'img2img3'}>
                         <img src={imgCalc} onClick={calchange} className={'im2'} alt=""/>
-                        <img src={imgNot}  className={'im3'} alt=""/>
+                        <div className="notificBox">
+                            <img src={imgNot}  className={'im3'} alt=""/>
+                            <div className="notificatNum">
+                                <p>2</p>
+                            </div>
+                        </div>
                         {
                             calactive ? <Calculator/> :''
                         }
                     </div>
-                    <div className="imgUser">
-                    </div>
-                    <select className={'profil'} name="" id="">
-                        <option value='none'> </option>
-                        <option value="#">Profile</option>
-                        <option value="#">About Me</option>
-                        <option value="#">My Cabinet</option>
-                    </select>
+                    <div className="imgUserBox">
+                        <div className="imgUser">
+                        </div>
+                        <select className={'profil'} name="" id="">
+                            <option value='none'> </option>
+                            <option value="#">Profile</option>
+                            <option value="#">About Me</option>
+                            <option value="#">My Cabinet</option>
+                        </select>
+                    </div>    
                 </div>
 
 

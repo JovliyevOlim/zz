@@ -48,7 +48,6 @@ function SecondPage() {
                     </div>
                 </div>
                 <div className="back">
-                        
                 </div>
             </div>
         </div>

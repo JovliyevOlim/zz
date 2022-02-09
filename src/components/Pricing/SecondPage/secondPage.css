@@ -93,6 +93,9 @@
     .row .c3{
         width: 100%;
     }
+    .secondpage .back{
+        height: 24vh;
+    }
 
 
 }
@@ -111,6 +114,9 @@
     }
     .secondpage .row .c3{
         width: 100%;
+    }
+    .secondpage .back{
+        height: 50vh;
     }
 
 }
@@ -131,5 +137,9 @@
     .secondpage .row .c3{
         width: 29%;
     }
+    .secondpage .back{
+        height: 60vh;
+    }
+
 }
 
