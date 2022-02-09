@@ -8,7 +8,7 @@ import Pdf from '../../../../../img/PDF.png'
 import Edit from '../../../../../img/Edit.png'
 import Delete from '../../../../../img/Delete.png'
 import './xarajatlarXisoboti.css'
-import {useEffect} from 'react'
+import {useEffect,useState} from 'react'
 import {connect} from 'react-redux'
 import {
     getXarajatxisobot,
@@ -19,6 +19,44 @@ import {
 } from '../reducer/XarajatXisobotReducer'
 
 function XarajatlarXisoboti() {
+
+
+    const [input,setInput] = useState(
+        {
+            baza:'',
+            bolim:'',
+            aniqsana:'',
+            view:'',
+            izlash:'',
+        }
+    )
+
+    function view(e){
+        input.view = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+    function baza(e){
+        input.baza = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+    function bolim(e){
+        input.bolim = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+    function aniqsana(e){
+        input.aniqsana = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+    function izlash(e){
+        input.izlash = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+
 
     useEffect(() => {
         getXarajatxisobot()
@@ -36,27 +74,24 @@ function XarajatlarXisoboti() {
                 <div className="row cont">
                     <div className="col-md-4">
                         <h6>Baza:</h6>
-                        <select name="" id="">
+                        <select value={input.baza} onChange={baza} name="" id="">
                             <option value="">Barchasi</option>
-                            <option value=""></option>
                             <option value=""></option>
                         </select>
                     </div>
                     <div className="col-md-4">
                         <h6>Bo'limlar:</h6>
-                        <select name="" id="">
+                        <select name="" id="" onChange={bolim} value={input.bolim}>
                             <option value="">Barchasi</option>
-                            <option value=""></option>
                             <option value=""></option>
                         </select>
                     </div>
                     <div className="col-md-4">
                         <h6>Aniq sanani belgilash:</h6>
-                        <select name="" id="">
+                        <select name="" id="" value={input.aniqsana} onChange={aniqsana}>
                             <option value="" hidden>Aniq sanani belgilash</option>
                             <option value="">Bugun</option>
                             <option value="">Oxirgi 1 hafta</option>
-                            <option value="">Oxirgi 1 oy</option>
                         </select>
                     </div>
                 </div>
@@ -70,12 +105,9 @@ function XarajatlarXisoboti() {
             <div className="rowStyleTab">
                 <div className="izlash">
                     <p>Ko'rsatildi</p>
-                    <select name="" id="">
+                    <select name="" id="" value={input.view} onChange={view}>
                         <option value="">25</option>
                         <option value="">50</option>
-                        <option value="">100</option>
-                        <option value="">200</option>
-                        <option value="">500</option>
                         <option value="">1,000</option>
                         <option value="">All</option>
                     </select>
@@ -84,7 +116,7 @@ function XarajatlarXisoboti() {
                     <button><img src={Print} alt=""/> Print</button>
                     <button><img src={Pdf} alt=""/>Export PDF</button>
                     <button><img src={Data} alt=""/>Malumotlarni kamaytirish</button>
-                    <input type="text" placeholder='Izlash...'/>
+                    <input type="text" placeholder='Izlash...' value={input.izlash} onChange={izlash}/>
                 </div>
                 <div className="table-responsive">
                     <table className='table table-striped table-bordered mt-4 '>

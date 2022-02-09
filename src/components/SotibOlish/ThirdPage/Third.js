@@ -8,6 +8,7 @@ import jami1 from '../../../img/jami1.svg'
 import jami2 from '../../../img/Jami2.svg'
 import jami3 from '../../../img/Jami3.svg'
 import jami4 from '../../../img/JAmi4.svg'
+import search from '../../../img/search-normal.png'
 import bozordanqarz from '../../../img/bozordanqarzim.svg'
 import qarzdorlar from '../../../img/Qarzdorlardan.svg'
 import evaset from '../../../img/Group.png'
@@ -17,13 +18,12 @@ import Logo from "../../../img/Group.png";
 import {useState} from "react";
 import Chart from 'react-apexcharts'
 import Pagination from "./Pagination";
+import Pagination2 from "./pagination2";
+import Pagination3 from "./pagination3";
+import Pagination4 from "./Pagination4";
 
 
 function Third({display}) {
-
-
-
-
 
 
     const [third, setThird] = useState('')
@@ -180,6 +180,7 @@ function Third({display}) {
         },
     ])
     const [active, Setactive] = useState(false)
+
     function sidebar() {
         if (third === '') {
             setThird('third2')
@@ -188,6 +189,7 @@ function Third({display}) {
 
         }
     }
+
     const options = {
         series: [200000, 300000, 500000, 600000],
         chart: {
@@ -406,6 +408,8 @@ function Third({display}) {
                                         type={'donut'}
                                         width={'105%'}
                                         height={'120%'}
+                                        width={'100%'}
+                                        height={'100%'}
                                     />
                                 </div>
                                 <div className="col-md-12  p-3 bar-chart d-flex align-items-center mt-4">
@@ -423,34 +427,141 @@ function Third({display}) {
                 </div>
                 <div className="row p-0 mb-3 d-flex justify-content-between">
                     <div className="col-md-7">
-                        <div className="row p-0 colorback">
-                            <div className="col-6 pt-3 ps-3">
-                                <h3 className={'diagramm-text-one'}>Ommabop mahsulotlar</h3>
-                            </div>
-                            <div className="col-5  pt-3 ps-3 offset-1">
-                                <div className="row p-0 align-items-center">
-                                    <div className="col-12 d-flex justify-content-end">
-                                        <div className={'selects-style'}>
-                                            <select className={'selects '} name="" id="">
-                                                <option value="1">Ushbu oy</option>
-                                                <option value="2">O'tgan oy</option>
-                                                <option value="3">Bugun</option>
-                                            </select>
-                                        </div>
-                                        <div className={'btn-nuqta'}>
-                                            <button className={'nuqta'}>...</button>
+                        <div className={'pe-4'}>
+                            <div className="row p-0 colorback">
+                                <div className="col-6 pt-3 ps-3">
+                                    <h3 className={'diagramm-text-one'}>Ommabop mahsulotlar</h3>
+                                </div>
+                                <div className="col-5  pt-3 ps-3 offset-1">
+                                    <div className="row p-0 align-items-center">
+                                        <div className="col-12 d-flex justify-content-end">
+                                            <div className={'selects-style'}>
+                                                <select className={'selects '} name="" id="">
+                                                    <option value="1">Ushbu oy</option>
+                                                    <option value="2">O'tgan oy</option>
+                                                    <option value="3">Bugun</option>
+                                                </select>
+                                            </div>
+                                            <div className={'btn-nuqta'}>
+                                                <button className={'nuqta'}>...</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+                                <div className="col-12 mt-3">
+                                    <Pagination/>
+                                </div>
                             </div>
-                            <div className="col-12 mt-3">
-                                <Pagination/>
+
+                        </div>
+                    </div>
+                    <div className="col-md-5">
+                        <div>
+                            <div className="row p-0 colorback">
+                                <div className="col-6 pt-3 ps-3">
+                                    <h3 className={'diagramm-text-one'}>Oz qolgan mahsulotlar</h3>
+                                </div>
+                                <div className="col-5  pt-3 ps-3 offset-1">
+                                    <div className="row p-0 align-items-center">
+                                        <div className="col-12 d-flex justify-content-end">
+                                            <div className={'btn-nuqta'}>
+                                                <button className={'nuqta'}>...</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-12 mt-3">
+                                    <Pagination2/>
+                                </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
                 <div className="row p-0 mb-3 d-flex">
+                    <div className="col-md-12">
+                        <div className={''}>
+                            <div className="row p-0 colorback">
+                                <div className="col-6 pt-3 ps-3">
+                                    <h3 className={'diagramm-text-one'}>Ommabop mahsulotlar</h3>
+                                </div>
+                                <div className="col-6  pt-3 ps-3 pe-0">
+                                    <div className="row p-0 align-items-center">
+                                        <div className="col-12 d-flex justify-content-end">
+                                            <div className="col-md-7 offset-3">
+                                                <div className={'selects-style bg-transparent'}>
+                                                    <div className={'input-group mb-1'}>
+                                                        <input type="text" className={'search border-0 bg-transparent'}
+                                                               placeholder={'Qidirish'}/>
+                                                        <img className={'search'} src={search} alt=""/>
+                                                    </div>
+                                                    <hr className={'p-0 m-0'}/>
+                                                </div>
+                                            </div>
+                                            <div className="col-md-2">
+                                                <div className={'btn-nuqta'}>
+                                                    <button className={'nuqta'}>...</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-12 mt-3">
+                                    <Pagination3/>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
                 </div>
+                <div className="row p-0 mb-3 d-flex justify-content-between">
+                    <div className="col-md-6">
+                        <div className={'pe-4'}>
+                            <div className="row p-0 colorback">
+                                <div className="col-6 pt-3 ps-3">
+                                    <h3 className={'diagramm-text-one'}>Qarzdorlarda haqingiz (Nasiyalar)</h3>
+                                </div>
+                                <div className="col-5  pt-3 ps-3 offset-1">
+                                    <div className="row p-0 align-items-center">
+                                        <div className="col-12 d-flex justify-content-end">
+                                            <div className={'btn-nuqta'}>
+                                                <button className={'nuqta'}>...</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-12 mt-3">
+                                    <Pagination4/>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        <div>
+                            <div className="row p-0 colorback">
+                                <div className="col-6 pt-3 ps-3">
+                                    <h3 className={'diagramm-text-one'}>Bozordan qarzingiz</h3>
+                                </div>
+                                <div className="col-5  pt-3 ps-3 offset-1">
+                                    <div className="row p-0 align-items-center">
+                                        <div className="col-12 d-flex justify-content-end">
+                                            <div className={'btn-nuqta'}>
+                                                <button className={'nuqta'}>...</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-12 mt-3">
+                                    <Pagination4/>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     );

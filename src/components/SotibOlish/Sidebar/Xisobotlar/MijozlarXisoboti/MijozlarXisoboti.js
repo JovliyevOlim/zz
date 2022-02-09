@@ -14,7 +14,32 @@ import Xarajatlar3 from "./Savdolar/3/Xarajatlar3";
 import MijozlarBnIshlash from "./Savdolar/4/MijozlarBnIshlash";
 import {connect} from 'react-redux'
 import {getMijozhisobot,deleteMijozhisobot,saveMijozhisobot,editMijozhisobot} from '../reducer/MijozHisobotiReducer'
+
 function MijozlarXisoboti() {
+
+    const [inputvalue,setinputvalue] = useState(
+        {
+            baza:'',
+            xodim:'',
+            sananibelgilang:'',
+        }
+    )
+
+    function xodim(e){
+        inputvalue.xodim = e.target.value
+        let a = {...inputvalue}
+        setinputvalue(a)
+    }
+    function baza(e){
+        inputvalue.baza = e.target.value
+        let a = {...inputvalue}
+        setinputvalue(a)
+    }
+    function sananibelgilang(e){
+        inputvalue.sananibelgilang = e.target.value
+        let a = {...inputvalue}
+        setinputvalue(a)
+    }
 
     const [active,setActive] = useState(false)
 
@@ -37,22 +62,20 @@ function MijozlarXisoboti() {
                 </div>
                 <div className="row cont">
                     <div className="col-md-6">
-                        <h6>Baza:</h6>
-                        <input type="text" className={'form-control'}/>
+                        <h6>Xodim:</h6>
+                        <select value={inputvalue.xodim} onChange={xodim} name="" id="">
+                            <option value="#">Barcha xodimlar</option>
+                            <option value="#"> . . . . . .</option>
+                        </select>
                     </div>
                     <div className="col-md-6">
-                        <h6>Diller:</h6>
-                        <select name="" id="" className={'form-control'}>
-                            <option value="">Mavjud emas</option>
-                            <option value="">Taminotchi</option>
-                            <option value="">(2)</option>
-                        </select>
+
                     </div>
                 </div>
                 <div className="row">
                     <div className="col-md-6">
                         <h6>Baza:</h6>
-                        <select name="" id="" className={'form-control'}>
+                        <select name="" id="" value={inputvalue.baza} onChange={baza} className={'form-control'}>
                             <option value="">Tanlash</option>
                             <option value="">Shefir zavod</option>
                             <option value="">Instrumentlar</option>
@@ -60,7 +83,7 @@ function MijozlarXisoboti() {
                     </div>
                     <div className="col-md-6">
                         <h6>Sanani belgilang:</h6>
-                        <select name="" id="" className={'form-control'}>
+                        <select name="" id="" className={'form-control'} value={inputvalue.sananibelgilang} onChange={sananibelgilang}>
                             <option value="">Bugun</option>
                             <option value="">Kecha</option>
                             <option value="">Oxirgi 7 kun</option>

@@ -1,9 +1,28 @@
 import './foydaZarar.css'
 import {connect} from "react-redux";
-import {useEffect} from "react";
+import {useEffect,useState} from "react";
 import {deleteFoydaZarar, editFoydaZarar, getFoydaZarar, saveFoydaZarar} from "../reducer/FoydaZararReducer";
 
 function FoydaZarar({getFoydaZarar,saveFoydaZarar,editFoydaZarar,deleteFoydaZarar}) {
+
+       const [input,setInput] = useState(
+           {
+                  bazatanlash:'',
+                  aniqsananibelgilash:'',
+
+           }
+       )
+
+       function bazatanlash(e){
+              input.bazatanlash = e.target.value
+              let a = {...input}
+              setInput(a)
+       }
+       function aniqsananibelgilash(e){
+              input.aniqsananibelgilash = e.target.value
+              let a = {...input}
+              setInput(a)
+       }
 
        useEffect(()=>{
               getFoydaZarar()
@@ -19,15 +38,14 @@ function FoydaZarar({getFoydaZarar,saveFoydaZarar,editFoydaZarar,deleteFoydaZara
                                    <div className="row">
                                           <div className="col-md-6 ">
                                                  <h6>Baza tanlash:</h6>
-                                                 <select name="" id="" >
+                                                 <select value={input.bazatanlash} onChange={bazatanlash} name="" id="" >
                                                         <option value="" >Barcha bazalar</option>
-                                                        <option value=""></option>
                                                         <option value=""></option>
                                                  </select>
                                           </div>
                                           <div className="col-md-6">
                                                  <h6>Aniq sanani belgilash:</h6>
-                                                 <select name="" id="">
+                                                 <select name="" id="" value={input.aniqsananibelgilash} onChange={aniqsananibelgilash}>
                                                         <option value="" hidden> Aniq sana belgilash</option>
                                                         <option value="">Bugun</option>
                                                         <option value="">Oxirgi 1 hafta</option>

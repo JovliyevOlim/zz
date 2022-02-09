@@ -7,8 +7,39 @@ import Pdf from '../../../../../img/PDF.png'
 import './otkazmalarXisoboti.css'
 import {connect} from 'react-redux'
 import {getOtkazmalarxisoboti,saveOtkazmalarxisoboti,editOtkazmalarxisoboti,deleteOtkazmalarxisoboti} from '../reducer/OtkazmalarxisobotiReducer'
-import {useEffect} from 'react'
+import {useEffect,useState} from 'react'
+
 function OtkazmalarXisoboti({getOtkazmalarxisoboti,saveOtkazmalarxisoboti,editOtkazmalarxisoboti,deleteOtkazmalarxisoboti}) {
+
+    const [input,setInput] = useState(
+        {
+            bazatanlash:'',
+            aniqsananibelgilash:'',
+            view:'',
+            izlash:'',
+        }
+    )
+
+    function bazatanlash(e){
+        input.bazatanlash = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+    function aniqsananibelgilash(e){
+        input.aniqsananibelgilash = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+    function view(e){
+        input.view = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+    function izlash(e){
+        input.izlash = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
 
     useEffect(()=>{
         getOtkazmalarxisoboti()
@@ -23,19 +54,16 @@ function OtkazmalarXisoboti({getOtkazmalarxisoboti,saveOtkazmalarxisoboti,editOt
                             <div className="row">
                                    <div className="col-md-6">
                                           <h6>Baza tanlash:</h6>
-                                          <select name="" id="">
+                                          <select name="" value={input.bazatanlash} onChange={bazatanlash} id="">
                                                  <option value="">Barchasi</option>
-                                                 <option value=""></option>
                                                  <option value=""></option>
                                           </select>
                                    </div>
                                    <div className="col-md-6">
                                        <h6>Aniq sanani belgilash:</h6>
-                                       <select name="" id="">
+                                       <select name="" id="" value={input.aniqsananibelgilash} onChange={aniqsananibelgilash}>
                                            <option value="" hidden>Aniq sanani belgilash</option>
                                            <option value="">Bugun</option>
-                                           <option value="">Oxirgi 1 hafta</option>
-                                           <option value="">Oxirgi 1 oy</option>
                                        </select>
                                    </div>
                             </div>
@@ -47,12 +75,8 @@ function OtkazmalarXisoboti({getOtkazmalarxisoboti,saveOtkazmalarxisoboti,editOt
                             </div>
                                 <div className="izlash">
                                     <p>Ko'rsatildi</p>
-                                    <select name="" id="">
+                                    <select name="" value={input.view} onChange={view} id="">
                                             <option value="">25</option>
-                                            <option value="">50</option>
-                                            <option value="">100</option>
-                                            <option value="">200</option>
-                                            <option value="">500</option>
                                             <option value="">1,000</option>
                                             <option value="">All</option>
                                     </select>
@@ -61,7 +85,7 @@ function OtkazmalarXisoboti({getOtkazmalarxisoboti,saveOtkazmalarxisoboti,editOt
                                     <button><img src={Print} alt="" /> Print</button>
                                     <button><img src={Pdf} alt="" />Export PDF</button>
                                     <button> <img src={Data} alt="" />Malumotlarni kamaytirish </button>
-                                    <input type="text" placeholder='Izlash...'/>
+                                    <input type="text" value={input.izlash} onChange={izlash} placeholder='Izlash...'/>
                                 </div>
                             <div className="table-responsive">
                                    <table className='table table-striped table-bordered mt-4 '>

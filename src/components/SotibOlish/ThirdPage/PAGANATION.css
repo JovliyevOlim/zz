@@ -43,6 +43,7 @@
     background-color: #0044FF;
     color: #ffffff;
     pointer-events: none;
+    margin: 0 !important;
 }
 
 .prev.disabled,
@@ -54,4 +55,10 @@
 }
 .pagination-img{
 
+}
+td{
+   font-size: 14px;
+}
+th{
+    font-size: 16px;
 }

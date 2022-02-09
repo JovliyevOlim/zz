@@ -5,17 +5,34 @@ import Data from '../../../../../../../img/Data.png'
 import Pdf from '../../../../../../../img/PDF.png'
 import Edit from '../../../../../../../img/Edit.png'
 import Delete from '../../../../../../../img/Delete.png'
+import {useState} from 'react'
 
 function Savdolar1(){
+
+    const [input,setInput] = useState(
+        {
+            view:'',
+            izlash:'',
+        }
+    )
+
+    function view(e){
+        input.view = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+    function izlash(e){
+        input.izlash = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+
     return(
         <div>
             <div className="izlash">
                 <p>Ko'rsatildi</p>
-                <select name="" id="">
+                <select name="" value={input.view} onChange={view} id="">
                     <option value="">25</option>
-                    <option value="">50</option>
-                    <option value="">100</option>
-                    <option value="">200</option>
                     <option value="">500</option>
                     <option value="">1,000</option>
                     <option value="">All</option>
@@ -25,7 +42,7 @@ function Savdolar1(){
                 <button><img src={Print} alt="" /> Print</button>
                 <button><img src={Pdf} alt="" />Export PDF</button>
                 <button> <img src={Data} alt="" />Malumotlarni kamaytirish </button>
-                <input type="text" placeholder='Izlash...'/>
+                <input type="text" placeholder='Izlash...' value={input.izlash} onChange={izlash}/>
             </div>
             <div className="table-responsive">
                 <table className='table table-striped table-bordered mt-4 '>

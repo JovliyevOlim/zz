@@ -2,11 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2ed0236b-2151-406e-828e-c9a3e0b2b336" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/Pagination4.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/RenderComponent2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/RenderComponent3.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/RenderComponent4.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/pagination2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/pagination3.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/img/Vector.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/img/search-normal.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/PAGANATION.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/PAGANATION.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/Pagination.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/Pagination.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/RenderComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/RenderComponent.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/Third.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/Third.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/header/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/headerthird.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/headerthird.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/headerthird.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/headerthird.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/third.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/third.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +80,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../React js/dars8/task33" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/img" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
@@ -80,11 +89,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\evasetpro\src\img" />
       <recent name="E:\Projects\evaset2\src\components\SotibOlish\Sidebar" />
       <recent name="E:\Projects\evaset2\src" />
       <recent name="E:\Projects\evaset2" />
       <recent name="E:\Projects\gitz\src\components\SotibOlish\Sidebar\Hodimlar\hodimlarRoyxati\Taxrirlash" />
-      <recent name="E:\Projects\gitz\src\img" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Projects\evaset2\src\components\SotibOlish\Sidebar\Xarajatlar" />
@@ -141,6 +150,7 @@
       <workItem from="1644038637112" duration="12607000" />
       <workItem from="1644125029596" duration="19792000" />
       <workItem from="1644209514200" duration="24244000" />
+      <workItem from="1644295657104" duration="8453000" />
     </task>
     <task id="LOCAL-00001" summary="app.js">
       <created>1643606654320</created>
@@ -261,7 +271,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644236984147</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="headersidebar">
+      <created>1644240257433</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1644240257433</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -300,6 +317,7 @@
     <MESSAGE value="lavozimtaxrirlash" />
     <MESSAGE value="value" />
     <MESSAGE value="pagination" />
-    <option name="LAST_COMMIT_MESSAGE" value="pagination" />
+    <MESSAGE value="headersidebar" />
+    <option name="LAST_COMMIT_MESSAGE" value="headersidebar" />
   </component>
 </project>

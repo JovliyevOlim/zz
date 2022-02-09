@@ -63,8 +63,8 @@ function Pagination() {
     <div>
 
         <div>
-            <div className="row p-0 ">
-                <table className={"table table-bordered"}>
+            <div className="row p-0 pb-3">
+                <table className={"table"}>
                     <thead>
                     <tr className={'justify-content-between border-0'}>
                         <th className={'border-0 thead-padding-left'}>Mahsulot nomi</th>
@@ -72,6 +72,7 @@ function Pagination() {
                         <th className={'border-0 '}>Brand</th>
                         <th className={'border-0 '}>Narxi</th>
                         <th className={"border-0"}>Sotilganlar soni</th>
+
                     </tr>
                     </thead>
                     <tbody>
@@ -80,41 +81,42 @@ function Pagination() {
                         ))}
                     </tbody>
                 </table>
-
-            </div>
-
-
-
-
-            <div className="pagination justify-content-end">
-                {/* previous button */}
-                <button
-                    onClick={goToPreviousPage}
-                    className={`prev ${currentPage === 1 ? 'disabled' : ''}`}
-                >
-                    prev
-                </button>
-
-                {/* show page numbers */}
-                {getPaginationGroup().map((item, index) => (
+                    <hr/>
+                <div className="pagination justify-content-end">
+                    {/* previous button */}
                     <button
-                        key={index}
-                        onClick={changePage}
-                        className={`paginationItem ${currentPage === item ? 'active' : null}`}
+                        onClick={goToPreviousPage}
+                        className={`prev ${currentPage === 1 ? 'disabled' : ''}`}
                     >
-                        <span>{item}</span>
+                        prev
                     </button>
-                ))}
 
-                {/* next button */}
-                <button
-                    onClick={goToNextPage}
-                    className={`next ${currentPage === pages ? 'disabled' : ''}`}
-                    disabled={currentPage===pages ? true : false}
-                >
-                    next
-                </button>
+                    {/* show page numbers */}
+                    {getPaginationGroup().map((item, index) => (
+                        <button
+                            key={index}
+                            onClick={changePage}
+                            className={`paginationItem ${currentPage === item ? 'active' : null}`}
+                        >
+                            <span>{item}</span>
+                        </button>
+                    ))}
+
+                    {/* next button */}
+                    <button
+                        onClick={goToNextPage}
+                        className={`next ${currentPage === pages ? 'disabled' : ''}`}
+                        disabled={currentPage===pages ? true : false}
+                    >
+                        next
+                    </button>
+                </div>
+
             </div>
+
+
+
+
         </div>
         </div>
     );

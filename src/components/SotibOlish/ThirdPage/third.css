@@ -315,14 +315,22 @@ div.col-12.margin {
     font-style: normal;
     font-weight: 600;
     font-size: 22px;
+    font-size: 18px;
     line-height: 32px;
     color: #3A3C40;
 }
-.homepage2 .third .container .row .col-4 .p-2 .row .col-7 .diagramm-text-one{
+.homepage2 .third .container-fluid .row .col-4 .p-2 .row .col-7 .diagramm-text-one{
     font-size: 22px;
-}.homepage2 .third .container .row .col-4 .p-2 .row .col-6 .diagramm-text-one{
+}
+.homepage2 .third .container-fluid .row .col-4 .p-2 .row .col-6 .diagramm-text-one{
      font-size: 22px;
  }
+.homepage2 .third .container-fluid .row .col-4 .p-2 .row .col-5  .diagramm-text-one{
+    font-size: 18px;
+}
+.homepage2 .third .container-fluid .row .col-md-6 div .row .col-6  .diagramm-text-one{
+    font-size: 15px;
+}
 .diagramm .col-4:nth-child(2) div .row .col-6 h4 {
     font-family: "Montserrat",sans-serif;
     font-style: normal;
@@ -481,61 +489,19 @@ div.col-12.margin {
     line-height: 17px;
     color: #3A3C40;
 }
-.page-item{
-
-    margin-right: 10px;
+img.search{
+    width: 24px;
+    height: 24px;
+    align-items: center;
 }
-.page-button{
-    width: 100%;
-    font-family: "Roboto",sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 24px;
+input.search{
+    width: 90%;
     background-color: transparent;
 }
-.page{
-    width: 32px;
-    height: 32px;
-    border: 1px solid #82868C;
-    border-radius: 4px;
-    text-align: center;
-    padding: 2px 1px 3px 1px;
-    margin-right: 6px;
+input.search::placeholder{
+    font-size: 16px;
 }
-.page-active{
-    background-color: #0044FF;
-    color: #ffffff;
-}
-.page-active button{
-    color: #ffffff;
-}
-.paginationBttns{
-    width: 80%;
-    height: 40px;
-    list-style: none;
-    display: flex;
-    justify-content: center;
-}
-.paginationBttns a{
-    padding: 10px;
-    margin:8px;
-    border-radius: 5px;
-    border: 1px solid #2b2eff;
-    color: #2b2eff;
-    cursor:pointer;
-}
-.paginationBttns a:hover{
-    color:white;
-    background-color: #2b2eff;
-}
-
-.paginationActive a{
-    color:white;
-    background-color: #2b2eff;
-}
-
-.page:disabled{
-    background-color: #3A3C40;
+.input-group{
+    width: 100%;
 }
 
