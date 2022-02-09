@@ -5,12 +5,12 @@ import QoldiqlarXisoboti from "../../Maxsulotlar/MahsulotlarRuyxati/qoldiqlarXis
 import React from "react";
 import {connect} from 'react-redux'
 import {useEffect,useState} from 'react'
-import {getMaxsulotRuyxati,saveMaxsulotRuyxati,editMaxsulotRuyxati,deleteMaxsulotRuyxati} from '../reducer/MaxsulotlarRoyxariReducer'
-function MaxsulotlarRoyxati({getMaxsulotRuyxati,saveMaxsulotRuyxati,maxsulotruyxati}) {
+import MaxsulotlarRoyxariReducer,{getMaxsulotRuyxati,saveMaxsulotRuyxati,editMaxsulotRuyxati,deleteMaxsulotRuyxati,getCategory} from '../reducer/MaxsulotlarRoyxariReducer'
+function MaxsulotlarRoyxati({getMaxsulotRuyxati,saveMaxsulotRuyxati,maxsulotruyxati,getCategory}) {
 
-    // useEffect(()=>{
-    //     getMaxsulotRuyxati()
-    // },[])
+    useEffect(()=>{
+        getMaxsulotRuyxati()
+    },[])
 
     const [input,setInput] = useState(
         {
@@ -75,9 +75,6 @@ function MaxsulotlarRoyxati({getMaxsulotRuyxati,saveMaxsulotRuyxati,maxsulotruyx
                                                         <h6>Maxsulot turi:</h6>
                                                         <select value={input.maxsulotturi} onChange={changemaxsulotturi} name="" id="">
                                                                <option value="">Barchasi</option>
-                                                               {/*<option value="">Bir turli</option>*/}
-                                                               {/*<option value="">Turli xil</option>*/}
-                                                               {/*<option value="">Komplekt</option>*/}
                                                         </select>
                                           </div>
                                           <div className="col-md-4">
@@ -133,4 +130,4 @@ function MaxsulotlarRoyxati({getMaxsulotRuyxati,saveMaxsulotRuyxati,maxsulotruyx
                      </div>
        )
 }
-export default connect((MaxsulotlarRoyxariReducer,maxsulotruyxati)=>({maxsulotruyxati}),{getMaxsulotRuyxati,saveMaxsulotRuyxati,editMaxsulotRuyxati,deleteMaxsulotRuyxati})  (MaxsulotlarRoyxati)
+export default connect((MaxsulotlarRoyxariReducer),{getMaxsulotRuyxati,saveMaxsulotRuyxati,editMaxsulotRuyxati,deleteMaxsulotRuyxati,getCategory})  (MaxsulotlarRoyxati)

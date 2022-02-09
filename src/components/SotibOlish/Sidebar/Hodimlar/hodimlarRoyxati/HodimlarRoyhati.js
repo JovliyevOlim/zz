@@ -14,12 +14,11 @@ import {connect} from "react-redux";
 import XodimReducer, {getXodim, saveXodim, editXodim, deleteXodim} from "../reducer/XodimReducer";
 import users from "../../../../../reducer/users";
 
-
 function HodimlarRoyhati({getXodim, deleteXodim, saveXodim, editXodim,XodimReducer,users}) {
 
     useEffect(()=>{
         xodim()
-    },[XodimReducer.xodimlar])
+    },[])
 
 
     function xodim(){

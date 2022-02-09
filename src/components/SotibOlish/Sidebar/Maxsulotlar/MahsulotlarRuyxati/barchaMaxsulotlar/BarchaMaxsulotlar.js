@@ -11,14 +11,15 @@ import {Switch, Link, Route} from 'react-router-dom'
 import {useState, useEffect} from "react";
 import KorishM from '../Taxrirlash/Korish'
 import {connect} from "react-redux";
-import {deleteMahsulot, editMahsulot, getMahsulot, saveMahsulot} from "../../reducer/MahsulotReducer";
+// import {deleteMahsulot, editMahsulot, getMahsulot, saveMahsulot} from "../../reducer/MahsulotReducer";
+import MaxsulotlarRoyxariReducer,{getMaxsulotRuyxati,maxsulotruyxati,saveMaxsulotRuyxati,editMaxsulotRuyxati,deleteMaxsulotRuyxati} from '../../reducer/MaxsulotlarRoyxariReducer'
 
-
-function BarchaMaxsulotlar() {
-
+function BarchaMaxsulotlar({getMaxsulotRuyxati,maxsulotruyxati}) {
 
     const [input, setInput] = useState(
         {
+            view:'',
+            izlash:'',
             maxsulot: '',
             baza: '',
             sotibolishnarxi: '',
@@ -30,9 +31,19 @@ function BarchaMaxsulotlar() {
     )
 
     useEffect(()=>{
-
+        getMaxsulotRuyxati()
     },[])
 
+    function view(e){
+        input.view = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+    function izlash(e){
+        input.izlash = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
     function changecheckbarcha(e){
         input.checkbarcha = e.target.value
         let a = {...input}
@@ -69,12 +80,6 @@ function BarchaMaxsulotlar() {
         setInput(a)
     }
 
-
-    useEffect(() => {
-        getMahsulot()
-    })
-
-
     const [active, setActive] = useState(false)
 
     function toggle() {
@@ -93,13 +98,8 @@ function BarchaMaxsulotlar() {
                     </div>
                     <div className="izlash">
                         <p>Ko'rsatildi</p>
-                        <select name="" id="">
+                        <select name="" id="" value={input.view} onChange={view}>
                             <option value="">25</option>
-                            <option value="">50</option>
-                            <option value="">100</option>
-                            <option value="">200</option>
-                            <option value="">500</option>
-                            <option value="">1,000</option>
                             <option value="">All</option>
                         </select>
                         <button><img src={CSV} alt=""/> Export CSV</button>
@@ -107,7 +107,7 @@ function BarchaMaxsulotlar() {
                         <button><img src={Print} alt=""/> Print</button>
                         <button><img src={Pdf} alt=""/>Export PDF</button>
                         <button><img src={Data} alt=""/>Malumotlarni kamaytirish</button>
-                        <input type="text" placeholder='Izlash...'/>
+                        <input type="text" placeholder='Izlash...' value={input.izlash} onChange={izlash}/>
                     </div>
 
                     <table className='table table-striped table-bordered mt-4'>
@@ -124,26 +124,31 @@ function BarchaMaxsulotlar() {
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td><input type="checkbox"/></td>
-                            <td>AZBS</td>
-                            <td>Shifer zavod</td>
-                            <td>so'm 100.00</td>
-                            <td>so'm 200.00</td>
-                            <td>KG</td>
-                            <td></td>
-                            <td>
-                                <Link to={'/headerthird/mahsulotRuyxati/barcaMahsulot/taxrirlash'}>
-                                    <button className='taxrirlash'><img src={Edit} alt=""/> Taxrirlash</button>
-                                </Link>
-                                <Link
-                                    to={'/headerthird/mahsulotRuyxati/barcaMahsulot/view/' + input.name + '/' + input.ferma + '/' + input.pay + '/' + input.sotishNarxi + '/'}>
-                                    <button onClick={toggle} className='korish'><img src={Korish} alt=""/> Ko'rish
-                                    </button>
-                                </Link>
-                                <button className='ochirish'><img src={Delete} alt=""/> O'chirish</button>
-                            </td>
-                        </tr>
+                        {/*{*/}
+                        {/*    maxsulotruyxati.map(item=><tr key={item.id}>*/}
+                        {/*        <td>{item.name}</td>*/}
+                        {/*    </tr>)*/}
+                        {/*}*/}
+                        {/*<tr>*/}
+                        {/*    <td><input type="checkbox"/></td>*/}
+                        {/*    <td>AZBS</td>*/}
+                        {/*    <td>Shifer zavod</td>*/}
+                        {/*    <td>so'm 100.00</td>*/}
+                        {/*    <td>so'm 200.00</td>*/}
+                        {/*    <td>KG</td>*/}
+                        {/*    <td></td>*/}
+                        {/*    <td>*/}
+                        {/*        <Link to={'/headerthird/mahsulotRuyxati/barcaMahsulot/taxrirlash'}>*/}
+                        {/*            <button className='taxrirlash'><img src={Edit} alt=""/> Taxrirlash</button>*/}
+                        {/*        </Link>*/}
+                        {/*        <Link*/}
+                        {/*            to={'/headerthird/mahsulotRuyxati/barcaMahsulot/view/' + input.name + '/' + input.ferma + '/' + input.pay + '/' + input.sotishNarxi + '/'}>*/}
+                        {/*            <button onClick={toggle} className='korish'><img src={Korish} alt=""/> Ko'rish*/}
+                        {/*            </button>*/}
+                        {/*        </Link>*/}
+                        {/*        <button className='ochirish'><img src={Delete} alt=""/> O'chirish</button>*/}
+                        {/*    </td>*/}
+                        {/*</tr>*/}
                         </tbody>
                     </table>
                     {
@@ -168,9 +173,9 @@ function BarchaMaxsulotlar() {
     )
 }
 
-export default connect(({MahsulotReducer: {mahsulotlar}}) => ({mahsulotlar}), {
-    getMahsulot,
-    saveMahsulot,
-    editMahsulot,
-    deleteMahsulot
+export default connect((MaxsulotlarRoyxariReducer) ,{
+    getMaxsulotRuyxati,
+    saveMaxsulotRuyxati,
+    editMaxsulotRuyxati,
+    deleteMaxsulotRuyxati
 })(BarchaMaxsulotlar)

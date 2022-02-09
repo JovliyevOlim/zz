@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2ed0236b-2151-406e-828e-c9a3e0b2b336" name="Changes" comment="">
+    <list default="true" id="2ed0236b-2151-406e-828e-c9a3e0b2b336" name="Changes" comment="back2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/hodimlarRoyxati/HodimlarRoyhati.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/hodimlarRoyxati/HodimlarRoyhati.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/MahsulotlarRuyxati/MaxsulotlarRoyxati.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/MahsulotlarRuyxati/MaxsulotlarRoyxati.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/MahsulotlarRuyxati/barchaMaxsulotlar/BarchaMaxsulotlar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/MahsulotlarRuyxati/barchaMaxsulotlar/BarchaMaxsulotlar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/reducer/MahsulotReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/reducer/MahsulotReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/reducer/MaxsulotlarRoyxariReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/reducer/MaxsulotlarRoyxariReducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -59,6 +59,7 @@
     <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/MahsulotlarRuyxati/barchaMaxsulotlar/BarchaMaxsulotlar.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/soliqlarXisoboti/SoliqlarXisoboti.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/reducer/users.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/hodimlarRoyxati/HodimlarRoyhati.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/hodimlarRoyxati/Taxrirlash/Taxrirlash.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/MijozlarXisoboti/MijozlarXisoboti.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Settings/DukonSozlamalari/eMailSozlama/EmailSozlama.js" root0="FORCE_HIGHLIGHTING" />
@@ -156,6 +157,7 @@
       <workItem from="1644314739318" duration="1777000" />
       <workItem from="1644339941167" duration="589000" />
       <workItem from="1644383371827" duration="7544000" />
+      <workItem from="1644422513856" duration="5627000" />
     </task>
     <task id="LOCAL-00001" summary="app.js">
       <created>1643606654320</created>
@@ -304,7 +306,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644391994569</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="back2">
+      <created>1644397897232</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1644397897232</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -346,6 +355,7 @@
     <MESSAGE value="pagination" />
     <MESSAGE value="s" />
     <MESSAGE value="back" />
-    <option name="LAST_COMMIT_MESSAGE" value="back" />
+    <MESSAGE value="back2" />
+    <option name="LAST_COMMIT_MESSAGE" value="back2" />
   </component>
 </project>
