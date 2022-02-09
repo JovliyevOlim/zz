@@ -75,6 +75,7 @@ function SavdoOynasi({getSavdo,editSavdo,deleteSavdo,saveSavdo}){
                         </div>
 
                         <div className="col-md-12 mt-2">
+                            <div className="table-responsive">
                             <table className={'table'}>
                                 <thead>
                                 <tr>
@@ -97,6 +98,7 @@ function SavdoOynasi({getSavdo,editSavdo,deleteSavdo,saveSavdo}){
                                 </tr>
                                 </tbody>
                             </table>
+                            </div>
 
                             <div style={{marginTop:'300px'}} className={'d-flex justify-content-between'}>
                                 <h6>Mahsulot soni: 5</h6>

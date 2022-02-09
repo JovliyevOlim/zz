@@ -6,6 +6,9 @@
     border: 1px solid #E3E6EB;
     padding: 0px 32px 0px 24px;
     }
+.headerBox .dashbortButton .im1{
+    cursor: pointer;
+}    
 .headerBox .two{
     display: flex;
     align-items: center;

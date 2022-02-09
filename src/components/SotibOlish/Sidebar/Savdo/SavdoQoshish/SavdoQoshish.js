@@ -146,6 +146,7 @@ function SavdoQoshish(){
                     <input type="text" value={input.maxsulotnomishtrix} onChange={maxsulotnomishtrix} className={'form-control'} placeholder={'mahsulot nomi yoki shtrix kodini yozing'}/>
                     <h5 style={{fontSize:'32px',cursor:'pointer'}}>+</h5>
                 </div>
+                <div className="table-responsive">
                 <table className={'table mt-4'}>
                     <thead>
                         <tr>
@@ -158,6 +159,7 @@ function SavdoQoshish(){
                         </tr>
                     </thead>
                 </table>
+                </div>
             </div>
 
             <div className="col-md-10 offset-1 mt-4 border p-4">

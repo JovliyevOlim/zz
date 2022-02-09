@@ -87,8 +87,6 @@ function XarajatTurlari({}) {
                             <input type="text" value={input.izlash} onChange={izlash} placeholder='Izlash...'/>
                      </div>
                      <div className="table-responsive">
-
-                     
                      <table className='table table-striped table-bordered mt-4'>
                             <thead>
                                    <tr>
