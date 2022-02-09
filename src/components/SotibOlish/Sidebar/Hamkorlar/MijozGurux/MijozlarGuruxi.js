@@ -12,10 +12,14 @@ import Arrow from '../../../../../img/arrowIcon.png'
 import './mijozlarGuruxi.css'
 import {useState,useEffect} from 'react'
 import {connect} from "react-redux";
-import {getTMijozGurux,saveMijozGurux,editMijozGurux,deleteMijozGurux} from "../reducer/MijozGuruxReducer";
+import {getMijozGurux,saveMijozGurux,editMijozGurux,deleteMijozGurux} from "../reducer/MijozGuruxReducer";
 import {Modal, ModalBody, ModalFooter, ModalHeader} from "reactstrap";
 
 function Mijozlarguruxi({getMijozGurux,saveMijozGurux,editMijozGurux,deleteMijozGurux,mijozgurux}) {
+
+    useEffect(()=>{
+        getMijozGurux()
+    },[])
 
     const [active, setActive] = useState(false);
 
@@ -42,10 +46,6 @@ function Mijozlarguruxi({getMijozGurux,saveMijozGurux,editMijozGurux,deleteMijoz
         let a = {...input}
         setInput(a)
     }
-
-    useEffect(()=>{
-        getTMijozGurux()
-    },[])
 
     function toggle() {
         setActive(!active)
@@ -90,21 +90,13 @@ function Mijozlarguruxi({getMijozGurux,saveMijozGurux,editMijozGurux,deleteMijoz
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>boshliq</td>
-                        <td>12%</td>
-                        <td>ssdd</td>
-                        <td>
-                            <Link to={'/headerthird/mijozlarGuruhi/taxrirlash'}>
-                                <button onClick={toggle} className='taxrirlash'><img src={Edit} alt=""/> Taxrirlash
-                                </button>
-                            </Link>
-                            {/*<Link to={'/third/mijozgurux/korish'}>*/}
-                            {/*    <button className='korish'><img src={Korish} alt=""/> Ko'rish</button>*/}
-                            {/*</Link>*/}
-                            <button className='ochirish'><img src={Delete} alt=""/> O'chirish</button>
-                        </td>
-                    </tr>
+                    {
+                        mijozgurux.map(item => <tr key={item.id}>
+                            <td>{item.name}</td>
+                            <td>{item.phoneNumber}</td>
+                            <td>{item.telegram}</td>
+                        </tr>)
+                    }
                     </tbody>
                 </table>
                 </div>
@@ -141,4 +133,4 @@ function Mijozlarguruxi({getMijozGurux,saveMijozGurux,editMijozGurux,deleteMijoz
         </div>
     )
 }
-export default connect(({MijozGuruxReducer:{mijozgurux}})=>({mijozgurux}),{getTMijozGurux,saveMijozGurux,editMijozGurux,deleteMijozGurux}) (Mijozlarguruxi)
+export default connect(({MijozGuruxReducer:{mijozgurux}})=>({mijozgurux}),{getMijozGurux,saveMijozGurux,editMijozGurux,deleteMijozGurux}) (Mijozlarguruxi)

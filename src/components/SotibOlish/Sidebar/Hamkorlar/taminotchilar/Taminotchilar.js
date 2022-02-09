@@ -7,8 +7,6 @@ import Data from '../../../../../img/Data.png'
 import Pdf from '../../../../../img/PDF.png'
 import Edit from '../../../../../img/Edit.png'
 import Korish from '../../../../../img/Korish.png'
-import Delete from '../../../../../img/Delete.png'
-// import Arrow from '../../../../../img/arrowIcon.png'
 import {useEffect} from "react";
 import {connect} from "react-redux";
 import {getTaminot,saveTaminot,editTaminot,deleteTaminot} from "../reducer/TaminotReducer";
@@ -20,7 +18,7 @@ function Taminotchilar({getTaminot,saveTaminot,editTaminot,deleteTaminot,taminot
 
     useEffect(()=>{
         getTaminot()
-    })
+    },[])
 
     const [active, setActive] = useState(false);
 
@@ -115,14 +113,23 @@ function Taminotchilar({getTaminot,saveTaminot,editTaminot,deleteTaminot,taminot
                             <th>Telefon raqam</th>
                             <th>Telegram</th>
                             <th>Taminotchi turi</th>
+                            <th className={'text-center'}>Amallar</th>
                         </tr>
                         </thead>
                         <tbody>
-                        {/*{*/}
-                        {/*    taminot.map(item=><tr key={item.id}>*/}
-                        {/*        <td>{item.name}</td>*/}
-                        {/*    </tr>)*/}
-                        {/*}*/}
+                        {
+                            taminot.map(item=><tr key={item.id}>
+                                <td>{item.name}</td>
+                                <td>{item.phoneNumber}</td>
+                                <td>{item.telegram}</td>
+                                <td></td>
+                                <td>
+                                    <button className={'btn btn-primary m-1'}>Taxrirlash</button>
+                                    <button className={'btn btn-primary m-1'}>Korish</button>
+                                    <button className={'btn btn-danger m-1'}>O`chirish</button>
+                                </td>
+                            </tr>)
+                        }
 
                         {/*<tr>*/}
                         {/*    <td>boshliq</td>*/}
@@ -213,4 +220,4 @@ function Taminotchilar({getTaminot,saveTaminot,editTaminot,deleteTaminot,taminot
         </div>
     )
 }
-export default connect(({XodimReducer:{xodimlar}})=>({xodimlar}),{getTaminot,saveTaminot,editTaminot,deleteTaminot}) (Taminotchilar)
+export default connect(({TaminotReducer:{taminot}})=>({taminot}),{getTaminot,saveTaminot,editTaminot,deleteTaminot}) (Taminotchilar)

@@ -9,15 +9,15 @@ const slice = createSlice({
     },
     reducers: {
         getFrom: (state, action) => {
-            state.taminot = action.payload.object
+            state.mijozgurux = action.payload.object
             console.log(action.payload.object);
         },
         savefrom: (state,action) => {
-            state.taminot.unshift(action.payload)
+            state.mijozgurux.unshift(action.payload)
             // toast.success('Saqlandi')
         },
         editfrom: (state,action) => {
-            state.taminot.map((item,index)=>{
+            state.mijozgurux.map((item,index)=>{
                 if (item.id === action.payload.id){
                     item.login = action.payload.login
                 }
@@ -32,8 +32,8 @@ const slice = createSlice({
     }
 });
 
-export const getTMijozGurux=()=>apiCall({
-    url: '/customer',
+export const getMijozGurux=()=>apiCall({
+    url: 'customer/get-by-businessId/1',
     method:'get',
     onSuccess: slice.actions.getFrom.type
 });

@@ -31,7 +31,7 @@ const slice = createSlice({
 });
 
 export const getLavozim=()=>apiCall({
-    url: '/role',
+    url: '/role/get-by-business/1',
     method:'get',
     onSuccess: slice.actions.getFrom.type
 });

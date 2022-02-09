@@ -56,7 +56,7 @@ function Taxrirlash({getLavozim,saveXodim,LavozimReducer,getXodim,users}) {
         setInput(a)
     }
     function onchangeparolTakror(event){
-        input.parol = event.target.value
+        input.parolTakror = event.target.value
         let a = {...input}
         setInput(a)
     }
@@ -129,14 +129,12 @@ function Taxrirlash({getLavozim,saveXodim,LavozimReducer,getXodim,users}) {
                             <label htmlFor={'log3'} className={'mt-3'}>Parol</label>
                             <input type="text" onChange={onchangeparol} value={input.parol} className={'form-control'} id={'log3'}/>
                             <label htmlFor={'log4'} className={'mt-3'}>Parolni takroran yozing</label>
-                            <input type="text" onChange={onchangeparol} value={input.parolTakror} className={'form-control'} id={'log4'}/>
+                            <input type="text" onChange={onchangeparolTakror} value={input.parolTakror} className={'form-control'} id={'log4'}/>
                             <label htmlFor={'lavozimi'} className={'mt-3'}>Lavozimi</label>
                             <select name="" id={'lavozimi'} onChange={onchangeroleName} className={'form-control'}>
-
                                 {
                                     LavozimReducer.lavozimlar.map((item,index)=> <option value={item.name}>{item.name}</option>)
                                 }
-
                             </select>
                             <h5 className={'mt-3'}>Biriktirilgan baza</h5>
                             <div className="col-md-12 d-flex justify-content-between">
