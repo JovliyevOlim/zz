@@ -11,6 +11,7 @@ export const slice = createSlice({
     },
     reducers: {
         save: (state, action) => {
+            state.users=action.payload.object
             console.log(action.payload.object)
             localStorage.setItem('tokenname',action.payload.message)
         },

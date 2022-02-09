@@ -11,14 +11,21 @@ import {Link, Route, Switch} from 'react-router-dom';
 import {useHistory} from 'react-router-dom';
 import {useEffect, useState} from 'react';
 import {connect} from "react-redux";
-import xodimReducer, {getXodim, saveXodim, editXodim, deleteXodim} from "../reducer/XodimReducer";
+import XodimReducer, {getXodim, saveXodim, editXodim, deleteXodim} from "../reducer/XodimReducer";
+import users from "../../../../../reducer/users";
 
 
-function HodimlarRoyhati({getXodim, deleteXodim, saveXodim, editXodim,xodimlar}) {
+function HodimlarRoyhati({getXodim, deleteXodim, saveXodim, editXodim,XodimReducer,users}) {
 
     useEffect(()=>{
-           getXodim()
-    },[])
+        xodim()
+    },[XodimReducer.xodimlar])
+
+
+    function xodim(){
+        getXodim(users.users.business.id)
+
+    }
 
     const [input,setInput] = useState('')
     const [inputsearch,setinputsearch] = useState('')
@@ -27,7 +34,7 @@ function HodimlarRoyhati({getXodim, deleteXodim, saveXodim, editXodim,xodimlar})
     function deletex(item){
         console.log(item)
         deleteXodim(item.id)
-        getXodim()
+        getXodim(users.users.business.id)
     }
 
     return (
@@ -75,9 +82,8 @@ function HodimlarRoyhati({getXodim, deleteXodim, saveXodim, editXodim,xodimlar})
                         </tr>
                         </thead>
                         <tbody>
-
                             {
-                                xodimlar.map((item,index)=><tr>
+                                XodimReducer.xodimlar.map((item,index)=><tr>
                                     <td>{item.username}</td>
                                     <td>{item.firstName}</td>
                                     <td>{item.lastName}</td>
@@ -114,4 +120,4 @@ function HodimlarRoyhati({getXodim, deleteXodim, saveXodim, editXodim,xodimlar})
     )
 }
 
-export default connect(({XodimReducer:{xodimlar}})=>({xodimlar}), {getXodim, saveXodim, editXodim,deleteXodim})(HodimlarRoyhati)
+export default connect((XodimReducer,users), {getXodim, saveXodim, editXodim,deleteXodim})(HodimlarRoyhati)

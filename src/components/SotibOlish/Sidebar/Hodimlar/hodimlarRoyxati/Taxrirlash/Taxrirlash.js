@@ -6,7 +6,8 @@ import {connect} from "react-redux";
 import LavozimReducer, {getLavozim, saveLavozim} from "../../reducer/LavozimReducer";
 import XodimReducer, {saveXodim,getXodim} from "../../reducer/XodimReducer";
 import {Link} from 'react-router-dom'
-function Taxrirlash({getLavozim,saveXodim,LavozimReducer,getXodim}) {
+import users from "../../../../../../reducer/users";
+function Taxrirlash({getLavozim,saveXodim,LavozimReducer,getXodim,users}) {
 
     useEffect(()=>{
        getLavozim()
@@ -71,7 +72,7 @@ function Taxrirlash({getLavozim,saveXodim,LavozimReducer,getXodim}) {
             businessId: 1,
             enabled: false
         })
-        getXodim()
+        getXodim(users.users.business.id)
     }
 
     const [active,setActive] = useState(false)
@@ -159,4 +160,4 @@ function Taxrirlash({getLavozim,saveXodim,LavozimReducer,getXodim}) {
         </div>
     )
 }
-export default connect((LavozimReducer,XodimReducer),{getLavozim,saveLavozim,saveXodim,getXodim}) (Taxrirlash)
+export default connect((LavozimReducer,XodimReducer,users),{getLavozim,saveLavozim,saveXodim,getXodim}) (Taxrirlash)

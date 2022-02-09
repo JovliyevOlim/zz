@@ -13,23 +13,13 @@
 
     color: #3A3C40;
 }
-.h h6:hover{
-    margin-left: 10px;
-    cursor: pointer;
-    color: #0044FF;
-    /*border-bottom: 2px solid gray;*/
-}
-.h .ul{
-    margin-left: 13%;
-    /*border: 1px solid red;*/
-    display: block;
-    top: 0;
-    transition: 2s linear ;
-}
+
+
 .h .ul:hover{
 
 }
-.h .ul li{
+li{
+    list-style: disc;
     /*border: 1px solid red;*/
     margin-top: 5px;
 }
@@ -44,8 +34,7 @@
 .right2{
     transform: rotate(90deg);
 }
-.h .ul li .lll{
-    text-decoration: none;
+.h .ul li{
     color: black;
     width: 80%;
 }

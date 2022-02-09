@@ -44,8 +44,6 @@ function Sidebar({functionreducer}) {
                         </div>
 
                             <Hodimlar/>
-
-
                         <Hamkorlar/>
                         <Maxsulotlar/>
                         <Haridlar/>

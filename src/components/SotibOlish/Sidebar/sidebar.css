@@ -10,8 +10,8 @@
     width: 100%;
 }
 .sidebar ul li:hover{
-    width: 120%;
-    font-size: 24px;
+    width: 100%;
+    font-size: 18px;
 }
 .sidebar2{
     transition: 1s linear;
@@ -96,4 +96,9 @@
 }
 .stroke path{
     stroke: #0044FF;
+}
+li{
+    list-style: disc;
+    /*border: 1px solid red;*/
+    margin-top: 5px;
 }

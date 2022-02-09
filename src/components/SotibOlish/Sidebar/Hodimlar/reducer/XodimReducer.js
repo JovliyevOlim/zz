@@ -12,7 +12,6 @@ const slice = createSlice({
         getFrom: (state, action) => {
             state.xodimlar = action.payload.object
             console.log(action.payload.object);
-            console.log('qoshildi')
         },
         savefrom: (state, action) => {
             state.xodimlar.unshift(action.payload)
@@ -34,9 +33,10 @@ const slice = createSlice({
     }
 });
 
-export const getXodim = () => apiCall({
-    url: '/user',
+export const getXodim = (data) => apiCall({
+    url: '/user/get-by-business/'+data,
     method: 'get',
+    data,
     onSuccess: slice.actions.getFrom.type
 });
 
