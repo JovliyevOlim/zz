@@ -505,3 +505,10 @@ input.search::placeholder{
     width: 100%;
 }
 
+.card1{
+    display: flex;
+}
+
+@media (max-width: 425.9px){
+    
+}

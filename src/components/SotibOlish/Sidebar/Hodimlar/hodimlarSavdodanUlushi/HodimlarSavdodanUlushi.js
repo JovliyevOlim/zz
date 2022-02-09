@@ -53,7 +53,7 @@ import {getXodimSavdo,saveXodimSavdo,editXodimSavdo,deleteXodimSavdo} from "../r
                                           <button> <img src={Data} alt="" />Malumotlarni kamaytirish </button>
                                           <input type="text" placeholder='Izlash...'/>
                                    </div>
-
+                                   <div className="table-responsive">
                                    <table className='table table-striped table-bordered mt-4'>
                                           <thead>
                                                  <tr>
@@ -80,6 +80,7 @@ import {getXodimSavdo,saveXodimSavdo,editXodimSavdo,deleteXodimSavdo} from "../r
                                                  </tr>
                                           </tbody>
                                    </table>
+                                   </div>
 
                                    <p>Ko'rsatildi 1 ta sahifa 1 va yana 1 ta sahifa bor</p>
                                    <div className='sahifalar'>

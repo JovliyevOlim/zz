@@ -42,7 +42,7 @@ function Lavozimlar({getLavozim, saveLavozim, deleteLavozim, editLavozim, lavozi
 
                             <input type="text" placeholder='Izlash...'/>
                         </div>
-
+                        <div className="table-responsive">
                         <table className='table table-striped table-bordered mt-4'>
                             <thead>
                             <tr>
@@ -65,6 +65,7 @@ function Lavozimlar({getLavozim, saveLavozim, deleteLavozim, editLavozim, lavozi
 
                             </tbody>
                         </table>
+                        </div>
 
                         <p>Ko'rsatildi 1 ta sahifa 2 va yana 2 ta sahifa bor</p>
                         <div className='sahifalar'>
