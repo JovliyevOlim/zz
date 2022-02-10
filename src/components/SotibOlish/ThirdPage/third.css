@@ -1,13 +1,16 @@
-    .third{
+.third {
     padding: 2rem;
 }
-.homepage2 .third{
+
+.homepage2 .third {
     padding: 1rem;
     justify-content: end;
 }
-.padding-30{
+
+.padding-30 {
     padding: 30px 30px;
 }
+
 .colorback {
     background: #FFFFFF;
     border: 1px solid #E3E6EB;
@@ -23,17 +26,20 @@
 .active {
     left: 0;
 }
-.image{
+
+.image {
     width: 64px;
     height: 64px;
     border-radius: 50%;
-    border:1px solid #EBF2F8;
+    border: 1px solid #EBF2F8;
     background-color: rgba(0, 0, 255, 0.43);
 }
-.margins{
+
+.margins {
     padding: 24px;
 }
-.margins .col-md-1{
+
+.margins .col-md-1 {
     padding: 0;
     margin-right: 12px;
 }
@@ -42,7 +48,7 @@
 h4.kitchen {
     padding: 0;
     margin: 0 0 4px 0;
-    font-family: Montserrat , sans-serif;
+    font-family: Montserrat, sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 18px;
@@ -50,11 +56,12 @@ h4.kitchen {
     /* identical to box height */
     color: #3A3C40;
 }
-.kitchen-button{
+
+.kitchen-button {
     background: #FFFFFF;
     box-shadow: 0px 8px 20px rgba(40, 41, 61, 0.08);
     border-radius: 4px;
-    font-family: 'Montserrat',sans-serif;
+    font-family: 'Montserrat', sans-serif;
     padding: 12px 24px;
     font-style: normal;
     font-weight: 500;
@@ -67,16 +74,19 @@ h4.kitchen {
     color: #82868C;
 
 }
-.kitchen-button:hover{
+
+.kitchen-button:hover {
     background: #2940D3;
     color: #FFFFFF;
 }
-.kitchen-button:active{
+
+.kitchen-button:active {
     background: #081565;
     color: #FFFFFF;
 }
+
 p.kitchen {
-    font-family: Montserrat , sans-serif;
+    font-family: Montserrat, sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 13px;
@@ -85,8 +95,9 @@ p.kitchen {
     margin: 0;
     padding: 0;
 }
+
 h4.jami {
-    font-family: "Montserrat",sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
@@ -94,10 +105,10 @@ h4.jami {
     margin-top: 10px;
     color: #82868C;
 }
-.homepage2 h4.jami{
+
+.homepage2 h4.jami {
     font-size: 12px;
 }
-
 
 
 p.raqam {
@@ -105,20 +116,20 @@ p.raqam {
     font-size: 22px;
     font-weight: bold;
 }
-.homepage2 p.raqam{
+
+.homepage2 p.raqam {
     font-weight: bold;
     font-size: 18px;
 }
-.homepage2 .foizsvg img{
+
+.homepage2 .foizsvg img {
     width: 20px;
     height: 20px;
 }
 
 
-
-
 .col-3:nth-child(1) div .row .col-12 .row .col-8 h4.foiz.colorpale {
-    font-family: "Montserrat",sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
@@ -128,7 +139,7 @@ p.raqam {
 }
 
 .col-3:nth-child(2) div .row .col-12 .row .col-8 h4.foiz.colorpale {
-    font-family: "Montserrat",sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
@@ -138,12 +149,14 @@ p.raqam {
     margin-top: 1px;
 
 }
-.apexcharts-toolbar{
+
+.apexcharts-toolbar {
     display: none;
 }
+
 .col-3:nth-child(3) div .row .col-12 .row .col-8 h4.foiz.colorpale {
 
-    font-family: "Montserrat",sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
@@ -157,7 +170,7 @@ p.raqam {
 
 .col-3:nth-child(4) div .row .col-12 .row .col-8 h4.foiz.colorpale {
 
-    font-family: "Montserrat",sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
@@ -168,7 +181,8 @@ p.raqam {
 
     color: #2CC5BD;
 }
-.homepage2 .col-3 div .row .col-12 .row .col-8  h4.foiz.colorpale{
+
+.homepage2 .col-3 div .row .col-12 .row .col-8 h4.foiz.colorpale {
     font-size: 12px;
 }
 
@@ -177,15 +191,17 @@ div.col-3.margin, div.col-4.margin {
     margin-left: -10px;
     margin-right: -10px;
 }
-.gap{
+
+.gap {
     row-gap: 5rem;
 }
 
 div.col-12.margin {
     margin-bottom: -10px;
 }
-.diagramm-text{
-    font-family: "Montserrat",sans-serif;
+
+.diagramm-text {
+    font-family: "Montserrat", sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 22px;
@@ -220,20 +236,21 @@ div.col-12.margin {
     font-size: 12px;
 }
 
-.selects-style{
+.selects-style {
     background: #F5F5F7;
     padding: 4px 14px 0 14px;
     border-radius: 4px;
 
 }
-.homepage2 .selects-style{
+
+.homepage2 .selects-style {
     padding: 4px;
     margin-bottom: 10px;
 
 }
 
 .selects {
-    padding-right:5px;
+    padding-right: 5px;
     background: #F5F5F7;
     justify-content: start;
     border: none;
@@ -250,7 +267,8 @@ div.col-12.margin {
     outline: none;
     border: 0;
 }
-.selects .options{
+
+.selects .options {
     font-family: "Montserrat", sans-serif;
     font-style: normal;
     font-weight: 500;
@@ -262,10 +280,11 @@ div.col-12.margin {
 }
 
 
-.btn-nuqta{
+.btn-nuqta {
     margin-top: -16px;
 }
-.nuqta{
+
+.nuqta {
     color: #82868C;
     letter-spacing: -1px;
     margin-left: 25px;
@@ -274,7 +293,8 @@ div.col-12.margin {
     align-items: center;
     padding: 0;
 }
-.homepage2 .nuqta{
+
+.homepage2 .nuqta {
     font-size: 30px;
 }
 
@@ -290,7 +310,7 @@ div.col-12.margin {
 }
 
 .diagramm .col-4:nth-child(1) div .row .col-6 h4 {
-    font-family: "Montserrat",sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 24px;
@@ -298,8 +318,9 @@ div.col-12.margin {
 
     color: #5A6FE4;
 }
+
 .diagramm .col-4 div .row .col-6 p {
-    font-family: "Montserrat",sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
@@ -310,8 +331,9 @@ div.col-12.margin {
     color: #82868C;
 
 }
-.diagramm-text-one{
-    font-family: "Montserrat",sans-serif;
+
+.diagramm-text-one {
+    font-family: "Montserrat", sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 22px;
@@ -319,20 +341,25 @@ div.col-12.margin {
     line-height: 32px;
     color: #3A3C40;
 }
-.homepage2 .third .container-fluid .row .col-4 .p-2 .row .col-7 .diagramm-text-one{
+
+.homepage2 .third .container-fluid .row .col-4 .p-2 .row .col-7 .diagramm-text-one {
     font-size: 22px;
 }
-.homepage2 .third .container-fluid .row .col-4 .p-2 .row .col-6 .diagramm-text-one{
-     font-size: 22px;
- }
-.homepage2 .third .container-fluid .row .col-4 .p-2 .row .col-5  .diagramm-text-one{
+
+.homepage2 .third .container-fluid .row .col-4 .p-2 .row .col-6 .diagramm-text-one {
+    font-size: 22px;
+}
+
+.homepage2 .third .container-fluid .row .col-4 .p-2 .row .col-5 .diagramm-text-one {
     font-size: 18px;
 }
-.homepage2 .third .container-fluid .row .col-md-6 div .row .col-6  .diagramm-text-one{
+
+.homepage2 .third .container-fluid .row .col-md-6 div .row .col-6 .diagramm-text-one {
     font-size: 15px;
 }
+
 .diagramm .col-4:nth-child(2) div .row .col-6 h4 {
-    font-family: "Montserrat",sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 24px;
@@ -342,8 +369,9 @@ div.col-12.margin {
     color: #FF9777;
 
 }
-.foizp{
-    font-family: "Montserrat",sans-serif;
+
+.foizp {
+    font-family: "Montserrat", sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
@@ -351,16 +379,19 @@ div.col-12.margin {
     /* identical to box height */
 
     color: #82868C;
-    margin : 0 -12px 0 5px;
+    margin: 0 -12px 0 5px;
     padding: 0;
 }
-.spandiagram span{
+
+.spandiagram span {
     background-color: rgba(211, 211, 211, 0.55);
 }
-.spandiagram{
+
+.spandiagram {
     position: relative;
 }
-.spandiagram strong{
+
+.spandiagram strong {
     position: absolute;
     top: -20px;
     color: gray;
@@ -368,150 +399,196 @@ div.col-12.margin {
     align-items: baseline;
     display: none;
 }
-.spandiagram1:nth-child(1)  .spandiagram:nth-child(1):hover span{
-    background-color: #0044FF;
-}
-.spandiagram1:nth-child(1)  .spandiagram:nth-child(2):hover span{
-    background-color: #0044FF;
-}
-.spandiagram1:nth-child(1)  .spandiagram:nth-child(3):hover span{
-    background-color: #0044FF;
-}
-.spandiagram1:nth-child(1)  .spandiagram:nth-child(4):hover span{
-     background-color: #0044FF;
- }
-.spandiagram1:nth-child(1)  .spandiagram:nth-child(5):hover span{
-      background-color: #0044FF;
-  }
-.spandiagram1:nth-child(1)  .spandiagram:nth-child(6):hover span{
-       background-color: #0044FF;
-   }
-.spandiagram1:nth-child(1)  .spandiagram:nth-child(7):hover span{
-        background-color: #0044FF;}
 
-.spandiagram1:nth-child(1)  .spandiagram:nth-child(1):hover strong{
-    display: flex;
+.spandiagram1:nth-child(1) .spandiagram:nth-child(1):hover span {
+    background-color: #0044FF;
 }
- .spandiagram1:nth-child(1)  .spandiagram:nth-child(2):hover strong{
-     display: flex;
- }.spandiagram1:nth-child(1)  .spandiagram:nth-child(3):hover strong{
-      display: flex;
-  }.spandiagram1:nth-child(1)  .spandiagram:nth-child(4):hover strong{
-       display: flex;
-   }.spandiagram1:nth-child(1)  .spandiagram:nth-child(5):hover strong{
-        display: flex;
-    }.spandiagram1:nth-child(1)  .spandiagram:nth-child(6):hover strong{
-         display: flex;
-     }.spandiagram1:nth-child(1)  .spandiagram:nth-child(7):hover strong{
-          display: flex;
-      }
-.spandiagram1:nth-child(2)  .spandiagram:nth-child(1):hover span{
-    background-color: #ff9777;
-}
-.spandiagram1:nth-child(2)  .spandiagram:nth-child(2):hover span{
-    background-color: #ff9777;
-}
-.spandiagram1:nth-child(2)  .spandiagram:nth-child(3):hover span{
-    background-color: #ff9777;
-}
-.spandiagram1:nth-child(2)  .spandiagram:nth-child(4):hover span{
-    background-color: #ff9777;
-}
-.spandiagram1:nth-child(2)  .spandiagram:nth-child(5):hover span{
-    background-color: #ff9777;
-}
-.spandiagram1:nth-child(2)  .spandiagram:nth-child(6):hover span{
-    background-color: #ff9777;
-}
-.spandiagram1:nth-child(2)  .spandiagram:nth-child(7):hover span{
-    background-color: #ff9777;}
 
-.spandiagram1:nth-child(2)  .spandiagram:nth-child(1):hover strong{
+.spandiagram1:nth-child(1) .spandiagram:nth-child(2):hover span {
+    background-color: #0044FF;
+}
+
+.spandiagram1:nth-child(1) .spandiagram:nth-child(3):hover span {
+    background-color: #0044FF;
+}
+
+.spandiagram1:nth-child(1) .spandiagram:nth-child(4):hover span {
+    background-color: #0044FF;
+}
+
+.spandiagram1:nth-child(1) .spandiagram:nth-child(5):hover span {
+    background-color: #0044FF;
+}
+
+.spandiagram1:nth-child(1) .spandiagram:nth-child(6):hover span {
+    background-color: #0044FF;
+}
+
+.spandiagram1:nth-child(1) .spandiagram:nth-child(7):hover span {
+    background-color: #0044FF;
+}
+
+.spandiagram1:nth-child(1) .spandiagram:nth-child(1):hover strong {
     display: flex;
 }
 
-.spandiagram1:nth-child(2)  .spandiagram:nth-child(2):hover strong{
+.spandiagram1:nth-child(1) .spandiagram:nth-child(2):hover strong {
     display: flex;
 }
-.spandiagram1:nth-child(2)  .spandiagram:nth-child(3):hover strong{
+
+.spandiagram1:nth-child(1) .spandiagram:nth-child(3):hover strong {
     display: flex;
 }
-.spandiagram1:nth-child(2)  .spandiagram:nth-child(4):hover strong{
+
+.spandiagram1:nth-child(1) .spandiagram:nth-child(4):hover strong {
     display: flex;
 }
-.spandiagram1:nth-child(2)  .spandiagram:nth-child(5):hover strong{
+
+.spandiagram1:nth-child(1) .spandiagram:nth-child(5):hover strong {
     display: flex;
 }
-.spandiagram1:nth-child(2)  .spandiagram:nth-child(6):hover strong{
+
+.spandiagram1:nth-child(1) .spandiagram:nth-child(6):hover strong {
     display: flex;
 }
-.spandiagram1:nth-child(2)  .spandiagram:nth-child(7):hover strong{
+
+.spandiagram1:nth-child(1) .spandiagram:nth-child(7):hover strong {
     display: flex;
 }
-.spandiagram1:nth-child(2)  .spandiagram:nth-child(7):hover strong{
+
+.spandiagram1:nth-child(2) .spandiagram:nth-child(1):hover span {
+    background-color: #ff9777;
+}
+
+.spandiagram1:nth-child(2) .spandiagram:nth-child(2):hover span {
+    background-color: #ff9777;
+}
+
+.spandiagram1:nth-child(2) .spandiagram:nth-child(3):hover span {
+    background-color: #ff9777;
+}
+
+.spandiagram1:nth-child(2) .spandiagram:nth-child(4):hover span {
+    background-color: #ff9777;
+}
+
+.spandiagram1:nth-child(2) .spandiagram:nth-child(5):hover span {
+    background-color: #ff9777;
+}
+
+.spandiagram1:nth-child(2) .spandiagram:nth-child(6):hover span {
+    background-color: #ff9777;
+}
+
+.spandiagram1:nth-child(2) .spandiagram:nth-child(7):hover span {
+    background-color: #ff9777;
+}
+
+.spandiagram1:nth-child(2) .spandiagram:nth-child(1):hover strong {
     display: flex;
 }
-.bar-chart h4{
-    font-family: "Montserrat",sans-serif;
+
+.spandiagram1:nth-child(2) .spandiagram:nth-child(2):hover strong {
+    display: flex;
+}
+
+.spandiagram1:nth-child(2) .spandiagram:nth-child(3):hover strong {
+    display: flex;
+}
+
+.spandiagram1:nth-child(2) .spandiagram:nth-child(4):hover strong {
+    display: flex;
+}
+
+.spandiagram1:nth-child(2) .spandiagram:nth-child(5):hover strong {
+    display: flex;
+}
+
+.spandiagram1:nth-child(2) .spandiagram:nth-child(6):hover strong {
+    display: flex;
+}
+
+.spandiagram1:nth-child(2) .spandiagram:nth-child(7):hover strong {
+    display: flex;
+}
+
+.spandiagram1:nth-child(2) .spandiagram:nth-child(7):hover strong {
+    display: flex;
+}
+
+.bar-chart h4 {
+    font-family: "Montserrat", sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
     line-height: 20px;
     /* identical to box height */
-    margin:0 12px 6px 0  ;
+    margin: 0 12px 6px 0;
     padding: 0;
     color: #82868C;
 
     opacity: 0.8;
 }
-.bar-chart p{
+
+.bar-chart p {
     padding: 0;
-    font-family: "Montserrat",sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 18px;
     line-height: 20px;
-    margin:0 0 6px 0;
+    margin: 0 0 6px 0;
     color: #3A3C40;
 
 }
-.thead-padding-left{
+
+.thead-padding-left {
     padding-left: 18px !important;
 }
-.thead-padding-right{
+
+.thead-padding-right {
     padding-right: 24px !important;
 }
-.th-text{
-    font-family: "Montserrat",sans-serif;
+
+.th-text {
+    font-family: "Montserrat", sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 14px;
     line-height: 17px;
     color: #3A3C40;
 }
-img.search{
+
+img.search {
     width: 24px;
     height: 24px;
     align-items: center;
 }
-input.search{
+
+input.search {
     width: 90%;
     background-color: transparent;
 }
-input.search::placeholder{
+
+input.search::placeholder {
     font-size: 16px;
 }
-.input-group{
+
+.input-group {
     width: 100%;
 }
 
-.card1{
+.card1 {
     display: flex;
 }
-.chartdiagramm{
+
+.chartdiagramm {
     height: 400px;
 }
 
+.apexcharts-toolbar {
+    display: none !important;
+}
 @media screen and (max-width: 425.9px) {
     .card1 {
         display: block !important;
@@ -521,23 +598,19 @@ input.search::placeholder{
         width: 50px;
         height: 50px;
     }
-
     h4.kitchen {
         font-size: 12px;
         margin: 0
     }
-
     p.kitchen {
         font-size: 8px;
         line-height: 10px;
     }
-
     .kitchen-button {
         padding: 2px 10px;
         font-size: 10px;
         margin-bottom: 1rem;
     }
-
     div.col-3.margin {
         margin-left: 0;
         margin-bottom: 15px;
@@ -609,19 +682,357 @@ input.search::placeholder{
     .bar-chart h4 {
         font-size: 12px;
     }
-    .bar-chart p{
+
+    .bar-chart p {
         font-size: 12px;
     }
-    .colorback2{
+
+    .colorback2 {
         background-color: #ffffff;
         border-radius: 8px;
         margin-bottom: 20px;
         padding-bottom: 1rem !important;
     }
-    .text-one{
+
+    .text-one {
         font-size: 16px;
     }
-    .apexcharts-inner{
-        width: 100%;
+    .apexcharts-graphical{
+        width: 100% !important;
+    }
+    .apexcharts-canvas{
+        display: block !important;
+        width: 100% !important;
+        height: 100% !important;
+    }
+}
+
+@media (min-width: 426px) and (max-width: 499.9px){
+        .image{
+            width: 64px;
+            height: 64px;
+        }
+    p.kitchen {
+        font-size: 12px;
+        line-height: 14px;
+    }
+
+    .kitchen-button{
+        margin-bottom: 2rem;
+    }
+    div.col-3.margin {
+        margin-left: 0;
+        margin-bottom: 15px;
+        background-color: #ffffff;
+        border-radius: 8px;
+    }
+    .colorback{
+        border: none;
+        display: flex;
+        justify-content: space-between;
+    }
+    .diagramm-text{
+        font-size: 18px;
+        text-align: center;
+        padding-top: 10px;
+    }
+    div.col-4.margin {
+        margin-left: 0;
+        margin-right: 0;
+        background-color: #ffffff;
+        margin-bottom: 20px;
+        border-radius: 8px;
+    }
+    .COL-6{
+        width: 45% !important;
+    }
+    .COL-7{
+        width: 55% !important;
+    }
+    .COL-5{
+        width: 40% !important;
+        margin-top: 20px !important;
+    }
+    .COL-4{
+        width: 30% !important;
+
+    }
+    .diagramm-text-one {
+        font-size: 15px;
+    }
+    .text-f{
+        font-size: 15px;
+    }
+    .selects-style {
+        background: #F5F5F7;
+        padding: 2px 5px 0 5px;
+        border-radius: 4px;
+    }
+    .selects {
+        padding-right: 2px;
+        font-weight: 500;
+        font-size: 10px;
+    }
+    .colorback2 {
+        background-color: #ffffff;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        padding-bottom: 1rem !important;
+    }
+
+}
+@media (min-width: 500px) and (max-width: 767.9px) {
+
+    .third .container-fluid .row .col-md-9{
+        width: 60% !important;
+    }
+    .third .container-fluid .row .col-md-3{
+        width:40% !important;
+    }
+    .third .container-fluid .row .col-md-9 .row .col-md-1{
+        width: 20% !important;
+    }
+    .third .container-fluid .row .col-md-9 .row .col-md-11{
+        width: 80% !important;
+    }
+    .image {
+        width: 50px;
+        height: 50px;
+    }
+    h4.kitchen {
+        font-size: 12px;
+        margin: 0
+    }
+    p.kitchen {
+        font-size: 8px;
+        line-height: 10px;
+    }
+    .kitchen-button {
+        padding: 4px 12px;
+        font-size: 12px;
+        margin-bottom: 1rem;
+    }
+    div.col-3.margin {
+        margin-left: -10px;
+        margin-bottom: 15px;
+        border-radius: 8px;
+    }
+
+    p.raqam {
+        font-size:90%;
+    }
+
+    .col-3 div .row .col-12 .row .col-8 h4.foiz.colorpale {
+        font-size: 12px !important;
+    }
+
+    .foizsvg img {
+        width: 15px;
+        height: 15px;
+    }
+
+    .diagramm-text {
+        font-size: 12px;
+    }
+
+    .third {
+        padding: 1.2rem;
+    }
+
+    .selects-style {
+        background: #F5F5F7;
+        padding: 4px 7px 0 7px;
+        border-radius: 2px;
+    }
+
+    h4.jami {
+        font-size: 10px;
+    }
+
+    div.col-4.margin {
+        margin-left: 0;
+        margin-right: 0;
+        background-color: #ffffff;
+        margin-bottom: 20px;
+        border-radius: 8px;
+    }
+
+    .colorback {
+        border: 0;
+        align-items: center;
+        padding:1rem;
+    }
+
+    .diagramm-text-one {
+        font-size: 28px;
+    }
+
+    .diagramm .col-4 div .row .col-6 h4 {
+        font-size: 20px !important;
+    }
+
+    .diagramm .col-4 div .row .col-6 p {
+        font-size: 10px;
+    }
+
+    .foizp {
+        font-size: 10px;
+    }
+
+    .bar-chart h4 {
+        font-size: 16px;
+    }
+
+    .bar-chart p {
+        font-size: 14px;
+    }
+
+    .colorback2 {
+        background-color: #ffffff;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        padding-bottom: 1rem !important;
+    }
+
+    .text-one {
+        font-size: 16px;
+    }
+    .apexcharts-graphical{
+        width: 100% !important;
+    }
+    .apexcharts-canvas{
+        display: block !important;
+        width: 100% !important;
+        height: 100% !important;
+    }
+    .paddding{
+        padding: 0 2rem;
+    }
+}
+@media (min-width: 768px) and (max-width: 1023.9px){
+    .third .container-fluid .row .col-md-9{
+        width: 60% !important;
+    }
+    .third .container-fluid .row .col-md-3{
+        width:40% !important;
+    }
+    .third .container-fluid .row .col-md-9 .row .col-md-1{
+        width: 15% !important;
+    }
+    .third .container-fluid .row .col-md-9 .row .col-md-11{
+        width: 85% !important;
+    }
+    .image {
+        width: 55px;
+        height: 55px;
+    }
+    h4.kitchen {
+        font-size: 16px;
+        margin: 0
+    }
+    p.kitchen {
+        font-size: 12px;
+        line-height: 13px;
+    }
+    .kitchen-button {
+        padding: 5px 14px;
+        font-size: 14px;
+        margin-bottom: 1rem;
+    }
+    div.col-3.margin {
+        margin-left: -10px;
+        margin-bottom: 15px;
+        border-radius: 8px;
+    }
+
+    p.raqam {
+        font-size:24px;
+    }
+
+    .col-3 div .row .col-12 .row .col-8 h4.foiz.colorpale {
+        font-size: 14px !important;
+    }
+
+    .foizsvg img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .diagramm-text {
+        font-size: 18px;
+    }
+
+    .third {
+        padding: 1.2rem;
+    }
+
+    .selects-style {
+        background: #F5F5F7;
+        padding: 4px 7px 0 7px;
+        border-radius: 2px;
+    }
+
+    h4.jami {
+        font-size: 18px;
+    }
+
+    div.col-4.margin {
+        margin-left: 0;
+        margin-right: 0;
+        background-color: #ffffff;
+        margin-bottom: 20px;
+        border-radius: 8px;
+    }
+
+    .colorback {
+        border: 0;
+        align-items: center;
+        padding:1rem;
+    }
+
+    .diagramm-text-one {
+        font-size: 28px;
+    }
+
+    .diagramm .col-4 div .row .col-6 h4 {
+        font-size: 20px !important;
+    }
+
+    .diagramm .col-4 div .row .col-6 p {
+        font-size: 10px;
+    }
+
+    .foizp {
+        font-size: 10px;
+    }
+
+    .bar-chart h4 {
+        font-size: 16px;
+    }
+
+    .bar-chart p {
+        font-size: 14px;
+    }
+
+    .colorback2 {
+        background-color: #ffffff;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        padding-bottom: 1rem !important;
+    }
+
+    .text-one {
+        font-size: 16px;
+    }
+    .apexcharts-graphical{
+        width: 100% !important;
+    }
+    .apexcharts-canvas{
+        display: block !important;
+        width: 100% !important;
+        height: 100% !important;
+    }
+    .paddding{
+        padding: 0 2rem;
     }
 }

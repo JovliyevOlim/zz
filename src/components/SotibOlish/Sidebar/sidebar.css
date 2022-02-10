@@ -4,6 +4,7 @@
     transition: 1s linear;
     transform: translateX(-250px);
     cursor: pointer;
+    width: 100%;
 }
 .sidebar ul li{
     transition: all 0.3s linear;
@@ -115,5 +116,8 @@ li{
     ::-webkit-scrollbar-thumb{
         border-radius: 8px;
         border: 10px solid #0044FF;
+    }
+    .sidebar{
+        width: 130% !important;
     }
 }

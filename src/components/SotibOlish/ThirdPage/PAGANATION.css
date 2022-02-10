@@ -97,3 +97,54 @@ th{
     }
 
 }
+@media (min-width: 426px) and (max-width: 499.9px) {
+
+    .table {
+        width: 250% !important;
+    }
+
+    .table2 {
+        width: 160% !important;
+    }
+
+    .table3 {
+        width: 400% !important;
+    }
+
+    .prev, .next {
+        padding: 5px;
+        width: 30px;
+        height: 25px;
+        font-size: 10px;
+    }
+
+    .paginationItem {
+        padding: 5px;
+        width: 25px;
+        height: 25px;
+    }
+
+}
+    @media (min-width: 500px) and (max-width: 767.9px){
+
+        .table{
+            width: 150% !important;
+        }
+        .table2{
+            width: 100% !important;
+        }
+        .table3{
+            width: 320% !important;
+        }
+        .prev ,.next{
+            padding: 5px;
+            width: 40px;
+            height: 30px;
+            font-size: 12px;
+        }
+        .paginationItem{
+            padding:5px;
+            width: 30px;
+            height: 30px;
+        }
+    }

@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2ed0236b-2151-406e-828e-c9a3e0b2b336" name="Changes" comment="back2">
+    <list default="true" id="2ed0236b-2151-406e-828e-c9a3e0b2b336" name="Changes" comment="responsive">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/hodimlarRoyxati/HodimlarRoyhati.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/hodimlarRoyxati/HodimlarRoyhati.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/MahsulotlarRuyxati/MaxsulotlarRoyxati.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/MahsulotlarRuyxati/MaxsulotlarRoyxati.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/MahsulotlarRuyxati/barchaMaxsulotlar/BarchaMaxsulotlar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/MahsulotlarRuyxati/barchaMaxsulotlar/BarchaMaxsulotlar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/reducer/MaxsulotlarRoyxariReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/reducer/MaxsulotlarRoyxariReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/sidebar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/sidebar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/PAGANATION.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/PAGANATION.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/Third.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/Third.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/third.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/third.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,37 +33,37 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Settings/DukonSozlamalari/maxsulot/Mahsulot2.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Savdo/SavdoQoshish/SavdoQoshish.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/reducer/KopsotilgantovarlarReducer.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/MahsulotlarRuyxati/barchaMaxsulotlar/BarchaMaxsulotlar.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/MahsulotlarRuyxati/Taxrirlash/Taxrirlash.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/reducer/XodimReducer.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Settings/DukonSozlamalari/dukon/Dukon1.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/reducer/MahsulotReducer.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/store.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/reducer/LavozimReducer.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xarajatlar/xarajatlarRoyxati/XarajatlarRoyxati.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hamkorlar/taminotchilar/Taminotchilar.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Haridlar/Xarid qilish/Xarid.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Settings/DukonSozlamalari/dukon/Dukon1.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/MahsulotlarRuyxati/MaxsulotlarRoyxati.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xarajatlar/Qoshish/XarajatQoshish.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/store.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/MaxsulotlarXisoboti/MaxsulotXisoboti.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/reducer/XodimReducer.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xarajatlar/xarajatTurlari/XarajatTurlari.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Baza/otkazmalarRoyxati/taxrirlash/Taxrirlash.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/xarajatlarXisoboti/XarajatlarXisoboti.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/KopSotilganTovarlar/KopSotilgan.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/middleware.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Baza/otkazmalarRoyxati/OtkazmalarRoyxati.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hamkorlar/MijozGurux/MijozlarGuruxi.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/otkazmalarXisoboti/OtkazmalarXisoboti.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hamkorlar/reducer/TaminotReducer.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/MahsulotlarRuyxati/barchaMaxsulotlar/BarchaMaxsulotlar.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/soliqlarXisoboti/SoliqlarXisoboti.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xarajatlar/Qoshish/XarajatQoshish.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/reducer/MahsulotReducer.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Haridlar/Xarid qilish/Xarid.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/reducer/KopsotilgantovarlarReducer.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Savdo/SavdoQoshish/SavdoQoshish.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/reducer/users.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/hodimlarRoyxati/HodimlarRoyhati.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hamkorlar/taminotchilar/Taminotchilar.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/MaxsulotlarXisoboti/MaxsulotXisoboti.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Baza/otkazmalarRoyxati/taxrirlash/Taxrirlash.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/KopSotilganTovarlar/KopSotilgan.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hamkorlar/MijozGurux/MijozlarGuruxi.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Baza/otkazmalarRoyxati/OtkazmalarRoyxati.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/xarajatlarXisoboti/XarajatlarXisoboti.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/otkazmalarXisoboti/OtkazmalarXisoboti.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Settings/DukonSozlamalari/eMailSozlama/EmailSozlama.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hamkorlar/reducer/TaminotReducer.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/soliqlarXisoboti/SoliqlarXisoboti.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/hodimlarRoyxati/Taxrirlash/Taxrirlash.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/MijozlarXisoboti/MijozlarXisoboti.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Settings/DukonSozlamalari/eMailSozlama/EmailSozlama.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Settings/DukonSozlamalari/maxsulot/Mahsulot2.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/hodimlarRoyxati/HodimlarRoyhati.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/middleware.js" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -357,5 +358,23 @@
     <MESSAGE value="back" />
     <MESSAGE value="back2" />
     <option name="LAST_COMMIT_MESSAGE" value="back2" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/Third.js</url>
+          <line>480</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/Third.js</url>
+          <line>227</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
