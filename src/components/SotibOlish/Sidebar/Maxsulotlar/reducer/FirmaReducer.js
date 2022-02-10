@@ -8,8 +8,8 @@ const slice = createSlice({
     },
     reducers: {
         getFrom: (state, action) => {
-            state.firmalar = action.payload
-            console.log(action.payload);
+            state.firmalar = action.payload.object
+            console.log(action.payload.object);
         },
         savefrom: (state,action) => {
             state.firmalar.unshift(action.payload)
@@ -32,7 +32,7 @@ const slice = createSlice({
 });
 
 export const getFirma=()=>apiCall({
-    url: '/user',
+    url: '/brand/by-businessId/1',
     method:'get',
     onSuccess: slice.actions.getFrom.type
 });

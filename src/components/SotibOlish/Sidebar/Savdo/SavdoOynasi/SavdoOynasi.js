@@ -10,7 +10,7 @@ import {useEffect, useState} from "react";
 import {connect} from "react-redux";
 import {deleteSavdo, editSavdo, getSavdo, saveSavdo} from "../reducer/SavdoOynaReducer";
 
-function SavdoOynasi({getSavdo,editSavdo,deleteSavdo,saveSavdo}){
+function SavdoOynasi({getSavdo,editSavdo,deleteSavdo,saveSavdo,savdo}){
 
     const [input,setInput] = useState(
         {
@@ -38,14 +38,13 @@ function SavdoOynasi({getSavdo,editSavdo,deleteSavdo,saveSavdo}){
 
     useEffect(()=>{
         getSavdo()
-    })
+    },[])
 
     const [count,setCount] = useState(0)
 
     return(
         <div className={'row p-4 pb-4'}>
             <div className={'colorback'}>
-
                 <div className="col-md-12 d-flex justify-content-between align-items-center mt-4">
                     <label htmlFor={'baza'}>BAZA</label>
 
@@ -86,16 +85,21 @@ function SavdoOynasi({getSavdo,editSavdo,deleteSavdo,saveSavdo}){
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td>Cardigan (Open style) sweater</td>
-                                    <td className={'d-flex  align-items-center p-3'}>
-                                        <button onClick={()=>setCount(count-1)} className={'btn btn-outline-primary'}>-</button>
-                                        {count}
-                                        <button onClick={()=>setCount(count+1)} className={'btn btn-outline-primary'}>+</button>
-                                    </td>
-                                    <td>1200000</td>
-                                    <td><button className={'btn btn-primary'}>Delete</button></td>
-                                </tr>
+                                {
+                                    savdo.map(item=><tr key={item.id}>
+                                        <td>{item.amountPaid}</td>
+                                    </tr>)
+                                }
+                                {/*<tr>*/}
+                                {/*    <td>Cardigan (Open style) sweater</td>*/}
+                                {/*    <td className={'d-flex  align-items-center p-3'}>*/}
+                                {/*        <button onClick={()=>setCount(count-1)} className={'btn btn-outline-primary'}>-</button>*/}
+                                {/*        {count}*/}
+                                {/*        <button onClick={()=>setCount(count+1)} className={'btn btn-outline-primary'}>+</button>*/}
+                                {/*    </td>*/}
+                                {/*    <td>1200000</td>*/}
+                                {/*    <td><button className={'btn btn-primary'}>Delete</button></td>*/}
+                                {/*</tr>*/}
                                 </tbody>
                             </table>
                             </div>

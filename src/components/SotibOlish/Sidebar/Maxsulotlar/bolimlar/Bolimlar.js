@@ -12,9 +12,9 @@ import './bolimlar.css'
 import {useState,useEffect} from "react";
 import {Modal, ModalBody, ModalFooter, ModalHeader} from "reactstrap";
 import {connect} from "react-redux";
-import {deleteBolim, editBolim, getBolim, saveBolim} from "../reducer/BolimReducer";
+import BolimReducer,{deleteBolim,bolimlar, editBolim, getBolim, saveBolim,} from "../reducer/BolimReducer";
 
-function Bolimlar() {
+function Bolimlar({getBolim,bolimlar}) {
 
     const [input,setInput] = useState(
         {
@@ -55,7 +55,7 @@ function Bolimlar() {
 
     useEffect(()=>{
         getBolim()
-    })
+    },[])
 
     const [active, setActive] = useState(false)
 
@@ -103,18 +103,25 @@ function Bolimlar() {
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>AZBIZ</td>
-                        <td>dona</td>
-                        <td>yuq</td>
-                        <td>
-                            <Link>
-                                <button onClick={toggle} className='taxrirlash'><img src={Edit} alt=""/> Taxrirlash
-                                </button>
-                            </Link>
-                            <button className='ochirish'><img src={Delete} alt=""/> O'chirish</button>
-                        </td>
-                    </tr>
+
+                    {
+                        bolimlar.map(item=><tr key={item.id}>
+                            <td>{item.name}</td>
+                        </tr>)
+                    }
+
+                    {/*<tr>*/}
+                    {/*    <td>AZBIZ</td>*/}
+                    {/*    <td>dona</td>*/}
+                    {/*    <td>yuq</td>*/}
+                    {/*    <td>*/}
+                    {/*        <Link>*/}
+                    {/*            <button onClick={toggle} className='taxrirlash'><img src={Edit} alt=""/> Taxrirlash*/}
+                    {/*            </button>*/}
+                    {/*        </Link>*/}
+                    {/*        <button className='ochirish'><img src={Delete} alt=""/> O'chirish</button>*/}
+                    {/*    </td>*/}
+                    {/*</tr>*/}
                     </tbody>
                 </table>
 
@@ -146,4 +153,11 @@ function Bolimlar() {
         </div>
     )
 }
-export default connect(({BolimReducer:{bolimlar}})=>({bolimlar}),{getBolim,saveBolim,deleteBolim,editBolim}) (Bolimlar)
+// export default connect((BolimReducer), {getBolim, saveBolim, editBolim,deleteBolim})(Bolimlar)
+
+export default connect(({BolimReducer: {bolimlar}}) => ({bolimlar}), {
+    getBolim,
+    saveBolim,
+    deleteBolim,
+    editBolim
+})(Bolimlar)

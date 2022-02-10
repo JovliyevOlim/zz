@@ -14,7 +14,7 @@ import {connect} from "react-redux";
 // import {deleteMahsulot, editMahsulot, getMahsulot, saveMahsulot} from "../../reducer/MahsulotReducer";
 import MaxsulotlarRoyxariReducer,{getMaxsulotRuyxati,maxsulotruyxati,saveMaxsulotRuyxati,editMaxsulotRuyxati,deleteMaxsulotRuyxati} from '../../reducer/MaxsulotlarRoyxariReducer'
 
-function BarchaMaxsulotlar({getMaxsulotRuyxati,maxsulotruyxati}) {
+function BarchaMaxsulotlar({getMaxsulotRuyxati,maxsulotruyxati,MaxsulotlarRoyxariReducer}) {
 
     const [input, setInput] = useState(
         {
@@ -124,11 +124,14 @@ function BarchaMaxsulotlar({getMaxsulotRuyxati,maxsulotruyxati}) {
                         </tr>
                         </thead>
                         <tbody>
-                        {/*{*/}
-                        {/*    maxsulotruyxati.map(item=><tr key={item.id}>*/}
+
+                        {/*{ FIX ME----------------> >*/}
+
+                        {/*    MaxsulotlarRoyxariReducer.maxsulotruyxati.map(item=><tr key={item.id}>*/}
                         {/*        <td>{item.name}</td>*/}
                         {/*    </tr>)*/}
                         {/*}*/}
+
                         {/*<tr>*/}
                         {/*    <td><input type="checkbox"/></td>*/}
                         {/*    <td>AZBS</td>*/}

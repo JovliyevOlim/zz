@@ -28,12 +28,12 @@ const slice = createSlice({
 
             // toast.info('O`chirildi')
         }
-
     }
 });
 
 export const getOtkazma=()=>apiCall({
-    url: '/user',
+    url: '/get-by-shipped-branch/1',
+    // url: '/get-by-received-branch/1',
     method:'get',
     onSuccess: slice.actions.getFrom.type
 });

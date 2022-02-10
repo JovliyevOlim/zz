@@ -15,13 +15,12 @@ import {useEffect,useState} from "react";
 import {getOtkazma} from '../reducer/OtkazmaReducer'
 import {deleteOtkazma, editOtkazma, saveOtkazma} from "../reducer/OtkazmaReducer";
 
-function OtkazmalarRoyxati({getOtkazma}) {
+function OtkazmalarRoyxati({getOtkazma,otkazmalar}) {
 
        const [input,setInput] = useState(
            {
                   view:'',
                   search:'',
-
            }
        )
 
@@ -38,7 +37,7 @@ function OtkazmalarRoyxati({getOtkazma}) {
 
        useEffect(()=>{
               getOtkazma()
-       })
+       },[])
 
        return (
               <div className="col-md-12 mt-2 ">
@@ -79,19 +78,25 @@ function OtkazmalarRoyxati({getOtkazma}) {
                                                         </tr>
                                                  </thead>
                                                  <tbody>
-                                                        <tr>
-                                                               <td>21.02.2022</td>
-                                                               <td>baza nomi</td>
-                                                               <td>baza nomi</td>
-                                                               <td>status</td>
-                                                               <td>100000</td>
-                                                               <td>10000000</td>
-                                                               <td>text</td>
-                                                               <td>   
-                                                                      <Link to={'/headerthird/utkazmaRuyxati/taxrirlash'}><button className='taxrirlash'> <img src={Edit} alt="" /> Taxrirlash</button> </Link>
-                                                                      <button className='ochirish'> <img src={Delete} alt="" /> O'chirish</button>
-                                                               </td>
-                                                        </tr>
+                                                 {
+                                                        otkazmalar.map(item=><tr key={item.id}>
+                                                               <td>{item.name}</td>
+                                                        </tr>)
+                                                 }
+
+                                                        {/*<tr>*/}
+                                                        {/*       <td>21.02.2022</td>*/}
+                                                        {/*       <td>baza nomi</td>*/}
+                                                        {/*       <td>baza nomi</td>*/}
+                                                        {/*       <td>status</td>*/}
+                                                        {/*       <td>100000</td>*/}
+                                                        {/*       <td>10000000</td>*/}
+                                                        {/*       <td>text</td>*/}
+                                                        {/*       <td>   */}
+                                                        {/*              <Link to={'/headerthird/utkazmaRuyxati/taxrirlash'}><button className='taxrirlash'> <img src={Edit} alt="" /> Taxrirlash</button> </Link>*/}
+                                                        {/*              <button className='ochirish'> <img src={Delete} alt="" /> O'chirish</button>*/}
+                                                        {/*       </td>*/}
+                                                        {/*</tr>*/}
                                                  </tbody>
                                           </table>
                                    </div>

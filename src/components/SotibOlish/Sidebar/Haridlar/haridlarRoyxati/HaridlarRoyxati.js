@@ -11,11 +11,11 @@ import {connect} from "react-redux";
 import {useEffect,useState} from "react";
 import {deleteXarid, editXarid, getXarid, saveXarid} from "../reducer/XaridReducer";
 
-function HaridlarRoyxati() {
+function HaridlarRoyxati({getXarid,xaridlar}) {
 
        useEffect(()=>{
               getXarid()
-       })
+       },[])
 
        const [input,setInput] = useState(
            {
@@ -155,20 +155,26 @@ function HaridlarRoyxati() {
                                           </tr>
                                    </thead>
                                    <tbody>
-                                          <tr>
-                                                 <td>21.23.2021</td>
-                                                 <td>nimadir</td>
-                                                 <td>Baza</td>
-                                                 <td>Diller</td>
-                                                 <td>harid st</td>
-                                                 <td>grand</td>
-                                                 <td>qarz miq</td>
-                                                 <td></td>
-                                                 <td>   
-                                                        <Link to={'/headerthird/xaridlarRuyxati/1'}><button className='taxrirlash'> <img src={Edit} alt="" /> Taxrirlash</button> </Link>
-                                                        <button className='ochirish'> <img src={Delete} alt="" /> O'chirish</button>
-                                                 </td>
-                                          </tr>
+                                   {
+                                          xaridlar.map(item=><tr key={item.id}>
+                                                 <td>{item.name}</td>
+                                          </tr>)
+                                   }
+
+                                          {/*<tr>*/}
+                                          {/*       <td>21.23.2021</td>*/}
+                                          {/*       <td>nimadir</td>*/}
+                                          {/*       <td>Baza</td>*/}
+                                          {/*       <td>Diller</td>*/}
+                                          {/*       <td>harid st</td>*/}
+                                          {/*       <td>grand</td>*/}
+                                          {/*       <td>qarz miq</td>*/}
+                                          {/*       <td></td>*/}
+                                          {/*       <td>   */}
+                                          {/*              <Link to={'/headerthird/xaridlarRuyxati/1'}><button className='taxrirlash'> <img src={Edit} alt="" /> Taxrirlash</button> </Link>*/}
+                                          {/*              <button className='ochirish'> <img src={Delete} alt="" /> O'chirish</button>*/}
+                                          {/*       </td>*/}
+                                          {/*</tr>*/}
                                    </tbody>
                             </table>
                             </div>

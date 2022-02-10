@@ -9,8 +9,8 @@ const slice = createSlice({
     },
     reducers: {
         getFrom: (state, action) => {
-            state.bolimlar = action.payload
-            console.log(action.payload);
+            state.bolimlar = action.payload.object
+            console.log(action.payload.object);
         },
         savefrom: (state,action) => {
             state.bolimlar.unshift(action.payload)
@@ -28,12 +28,11 @@ const slice = createSlice({
 
             // toast.info('O`chirildi')
         }
-
     }
 });
 
 export const getBolim=()=>apiCall({
-    url: '/user',
+    url: '/category/get-by-businessId/1',
     method:'get',
     onSuccess: slice.actions.getFrom.type
 });

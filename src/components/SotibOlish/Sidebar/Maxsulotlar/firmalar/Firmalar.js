@@ -11,10 +11,10 @@ import {useState,useEffect} from "react";
 import {connect} from "react-redux";
 import './firmalar.css'
 import {Modal,ModalHeader,ModalFooter,ModalBody} from "reactstrap";
-import {deleteFirma, editFirma, getFirma, saveFirma} from "../reducer/FirmaReducer";
-
-function Firmalar() {
-
+import {deleteFirma, editFirma, getFirma, saveFirma,} from "../reducer/FirmaReducer";
+import users from "../../../../../reducer/users";
+function Firmalar({getFirma,users,firmalar}) {
+       console.log(firmalar)
        const [input,setInput] = useState(
            {
                   view:'',
@@ -46,8 +46,9 @@ function Firmalar() {
        }
 
        useEffect(()=>{
+              // getFirma(users.users.business.id)
               getFirma()
-       })
+       },[])
 
        const [active,setActive] = useState(false)
 
@@ -71,11 +72,7 @@ function Firmalar() {
                             <select value={input.view} onChange={view} name="" id="">
                                    <option value="">25</option>
                                    <option value="">50</option>
-                                   <option value="">100</option>
-                                   <option value="">200</option>
-                                   <option value="">500</option>
-                                   <option value="">1,000</option>
-                                   <option value="">All</option>
+                                   <option value="">100</option>                                   <option value="">All</option>
                             </select>
                             <button> <img src={CSV} alt="" /> Export CSV</button>
                             <button><img src={Excel} alt="" /> Export Excel</button>
@@ -94,14 +91,21 @@ function Firmalar() {
                                    </tr>
                             </thead>
                             <tbody>
-                                   <tr>
-                                          <td>Evaset</td>
-                                          <td>eslatma</td>
-                                          <td>   
-                                                 <Link><button onClick={toggle} className='taxrirlash'> <img src={Edit} alt="" /> Taxrirlash</button> </Link>
-                                                 <button className='ochirish'> <img src={Delete} alt="" /> O'chirish</button>
-                                          </td>
-                                   </tr>
+
+                            {
+                                   firmalar.map(item =><tr key={item.id}>
+                                          <td>{item.name}</td>
+                                   </tr>)
+                            }
+
+                                   {/*<tr>*/}
+                                   {/*       <td>Evaset</td>*/}
+                                   {/*       <td>eslatma</td>*/}
+                                   {/*       <td>*/}
+                                   {/*              <Link><button onClick={toggle} className='taxrirlash'> <img src={Edit} alt="" /> Taxrirlash</button> </Link>*/}
+                                   {/*              <button className='ochirish'> <img src={Delete} alt="" /> O'chirish</button>*/}
+                                   {/*       </td>*/}
+                                   {/*</tr>*/}
                             </tbody>
                      </table>
 
@@ -132,3 +136,4 @@ function Firmalar() {
        )
 }
 export default connect(({FirmaReducer:{firmalar}})=>({firmalar}),{getFirma,saveFirma,editFirma,deleteFirma}) (Firmalar)
+// export default connect((FirmaReducer,users),{getFirma,saveFirma,editFirma,deleteFirma}) (Firmalar)

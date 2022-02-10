@@ -13,7 +13,8 @@ const slice = createSlice({
             console.log(action.payload);
         },
         savefrom: (state,action) => {
-            state.savdo.unshift(action.payload)
+            state.savdo.unshift(action.payload.object)
+            state.savdo.unshift(action.payload.message)
             // toast.success('Saqlandi')
         },
         editfrom: (state,action) => {
@@ -33,7 +34,7 @@ const slice = createSlice({
 });
 
 export const getSavdo=()=>apiCall({
-    url: '/user',
+    url: '/trade/get-by-business/1',
     method:'get',
     onSuccess: slice.actions.getFrom.type
 });

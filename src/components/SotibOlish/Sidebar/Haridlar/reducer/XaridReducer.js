@@ -9,8 +9,8 @@ const slice = createSlice({
     },
     reducers: {
         getFrom: (state, action) => {
-            state.xodimlar = action.payload
-            console.log(action.payload);
+            state.xodimlar = action.payload.object
+            console.log(action.payload.object);
         },
         savefrom: (state,action) => {
             state.xodimlar.unshift(action.payload)
@@ -25,7 +25,6 @@ const slice = createSlice({
             // toast.success('O`zgartirildi')
         },
         deletefrom:(state,action)=>{
-
             // toast.info('O`chirildi')
         }
 
@@ -33,7 +32,7 @@ const slice = createSlice({
 });
 
 export const getXarid=()=>apiCall({
-    url: '/user',
+    url: '/purchase/get-by-business/1',
     method:'get',
     onSuccess: slice.actions.getFrom.type
 });

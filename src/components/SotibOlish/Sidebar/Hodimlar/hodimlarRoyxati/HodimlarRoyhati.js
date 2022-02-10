@@ -115,7 +115,6 @@ function HodimlarRoyhati({getXodim, deleteXodim, saveXodim, editXodim,XodimReduc
                     </div>
                 </div>
             </div>
-
         </div>
     )
 }
