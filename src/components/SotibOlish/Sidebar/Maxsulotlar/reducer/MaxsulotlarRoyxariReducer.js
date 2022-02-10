@@ -9,8 +9,8 @@ const slice = createSlice({
     },
     reducers: {
         getFrom: (state, action) => {
-            state.maxsulotruyxati = action.payload
-            console.log(action.payload);
+            state.maxsulotruyxati = action.payload.object
+            console.log(action.payload.object);
         },
         savefrom: (state,action) => {
             state.maxsulotruyxati.unshift(action.payload)
@@ -24,14 +24,18 @@ const slice = createSlice({
         },
         deletefrom:(state,action)=>{
 
-
         }
-
     }
 });
 
 export const getMaxsulotRuyxati=()=>apiCall({
-    url: '/product/get-by-branch/1',
+    url: '/product/get-by-business/1',
+    method:'get',
+    onSuccess: slice.actions.getFrom.type
+});
+
+export const getCategory=()=>apiCall({
+    url: '/get-by-category/1',
     method:'get',
     onSuccess: slice.actions.getFrom.type
 });

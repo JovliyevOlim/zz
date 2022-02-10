@@ -13,15 +13,17 @@ import {useEffect, useState} from 'react';
 import {connect} from "react-redux";
 import XodimReducer, {getXodim, saveXodim, editXodim, deleteXodim} from "../reducer/XodimReducer";
 import users from "../../../../../reducer/users";
+
 function HodimlarRoyhati({getXodim, deleteXodim, saveXodim, editXodim,XodimReducer,users}) {
 
     useEffect(()=>{
         xodim()
-    },[XodimReducer.xodimlar])
+    },[])
 
 
     function xodim(){
         getXodim(users.users.business.id)
+
     }
 
     const [input,setInput] = useState('')
@@ -74,16 +76,18 @@ function HodimlarRoyhati({getXodim, deleteXodim, saveXodim, editXodim,XodimReduc
                             <th>Ism</th>
                             <th>Familiyasi</th>
                             <th>Lavozim</th>
+                            <th>Email</th>
                             <th>Amal</th>
                         </tr>
                         </thead>
                         <tbody>
                             {
-                                XodimReducer.xodimlar.map((item,index)=><tr key={index}>
+                                XodimReducer.xodimlar.map((item,index)=><tr>
                                     <td>{item.username}</td>
                                     <td>{item.firstName}</td>
                                     <td>{item.lastName}</td>
-                                        <td>{item.role}</td>
+                                    {/*<td>{item.role.name}</td>*/}
+
                                     <td>-</td>
                                     <td>
                                         <Link to={'/headerthird/hodimlarruyxati/taxrirlash'}>
