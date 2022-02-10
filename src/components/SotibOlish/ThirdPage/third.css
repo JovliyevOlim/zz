@@ -508,7 +508,120 @@ input.search::placeholder{
 .card1{
     display: flex;
 }
+.chartdiagramm{
+    height: 400px;
+}
 
-@media (max-width: 425.9px){
-    
+@media screen and (max-width: 425.9px) {
+    .card1 {
+        display: block !important;
+    }
+
+    .image {
+        width: 50px;
+        height: 50px;
+    }
+
+    h4.kitchen {
+        font-size: 12px;
+        margin: 0
+    }
+
+    p.kitchen {
+        font-size: 8px;
+        line-height: 10px;
+    }
+
+    .kitchen-button {
+        padding: 2px 10px;
+        font-size: 10px;
+        margin-bottom: 1rem;
+    }
+
+    div.col-3.margin {
+        margin-left: 0;
+        margin-bottom: 15px;
+        background-color: #ffffff;
+        border-radius: 8px;
+    }
+
+    p.raqam {
+        font-size: 18px;
+    }
+
+    .col-3 div .row .col-12 .row .col-8 h4.foiz.colorpale {
+        font-size: 12px !important;
+    }
+
+    .foizsvg img {
+        width: 15px;
+        height: 15px;
+    }
+
+    .diagramm-text {
+        font-size: 12px;
+    }
+
+    .third {
+        padding: 1.2rem;
+    }
+
+    .selects-style {
+        background: #F5F5F7;
+        padding: 4px 7px 0 7px;
+        border-radius: 2px;
+    }
+
+    h4.jami {
+        font-size: 12px;
+    }
+
+    div.col-4.margin {
+        margin-left: 0;
+        margin-right: 0;
+        background-color: #ffffff;
+        margin-bottom: 20px;
+        border-radius: 8px;
+    }
+
+    .colorback {
+        border: 0;
+        align-items: center;
+    }
+
+    .diagramm-text-one {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .diagramm .col-4 div .row .col-6 h4 {
+        font-size: 20px !important;
+    }
+
+    .diagramm .col-4 div .row .col-6 p {
+        font-size: 10px;
+    }
+
+    .foizp {
+        font-size: 10px;
+    }
+
+    .bar-chart h4 {
+        font-size: 12px;
+    }
+    .bar-chart p{
+        font-size: 12px;
+    }
+    .colorback2{
+        background-color: #ffffff;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        padding-bottom: 1rem !important;
+    }
+    .text-one{
+        font-size: 16px;
+    }
+    .apexcharts-inner{
+        width: 100%;
+    }
 }

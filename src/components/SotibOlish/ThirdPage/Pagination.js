@@ -63,24 +63,27 @@ function Pagination() {
     <div>
 
         <div>
-            <div className="row p-0 pb-3">
-                <table className={"table"}>
-                    <thead>
-                    <tr className={'justify-content-between border-0'}>
-                        <th className={'border-0 thead-padding-left'}>Mahsulot nomi</th>
-                        <th className={'border-0 '}>Kategoriya</th>
-                        <th className={'border-0 '}>Brand</th>
-                        <th className={'border-0 '}>Narxi</th>
-                        <th className={"border-0"}>Sotilganlar soni</th>
+            <div className="row p-0 pb-md-3 ">
+                <div className={'table-responsive'}>
+                    <table className={"table"}>
+                        <thead>
+                        <tr className={'justify-content-between border-0'}>
+                            <th className={'border-0 thead-padding-left'}>Mahsulot nomi</th>
+                            <th className={'border-0 '}>Kategoriya</th>
+                            <th className={'border-0 '}>Brand</th>
+                            <th className={'border-0 '}>Narxi</th>
+                            <th className={"border-0"}>Sotilganlar soni</th>
 
-                    </tr>
-                    </thead>
-                    <tbody>
+                        </tr>
+                        </thead>
+                        <tbody>
                         {getPaginatedData().map((d, idx) => (
                             <RenderComponent key={idx} data={d} />
                         ))}
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
+
+                </div>
                     <hr/>
                 <div className="pagination justify-content-end">
                     {/* previous button */}

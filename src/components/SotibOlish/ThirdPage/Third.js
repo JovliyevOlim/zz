@@ -219,24 +219,26 @@ function Third({display}) {
     }
     const series = [200000, 300000, 500000, 600000]
 
+    const windowscrenn = window.screen.height
+    const windowscrenn2 = window.screen.width
 
     return (
-        <div className={`third  pt-4 ${display} ${third}`}>
+        <div className={`third  pt-md-4  ${display} ${third}`}>
             <div className="container-fluid gap">
-                <div className="row p-0 d-flex colorback mb-3 rounded-3 justify-content-between">
-                    <div className="col-md-9 p-2 ">
+                <div className="row p-0 card1 colorback mb-3 rounded-3 justify-content-between">
+                    <div className="col-md-9 col-sm-12 p-2 ">
                         <div className="row align-items-center">
-                            <div className="col-md-1 align-items-center">
+                            <div className="col-md-1 col-sm-3 align-items-center">
                                 <img className={'image'} src={store} alt=""/>
                             </div>
-                            <div className="col-md-11 align-items-center">
+                            <div className="col-md-11 col-sm-9 align-items-center">
                                 <h4 className={'kitchen'}>Tokyo Kitchen</h4>
                                 <p className={'kitchen'}>Sizni shaxsiy boshqaruv panelida yana ko'rganimizdan juda
                                     xursandmiz</p>
                             </div>
                         </div>
                     </div>
-                    <div className="col-md-3 align-items-center d-flex justify-content-around">
+                    <div className="col-md-3 col-sm-12 align-items-center d-flex justify-content-around">
                         <button className={'kitchen-button'}>Xisobot</button>
                         <button className={'kitchen-button'}>Savdo oynasi</button>
                     </div>
@@ -245,9 +247,9 @@ function Third({display}) {
                 <div className="row p-0 mb-3 d-flex justify-content-between jami">
                     {
                         jami.map((item, index) =>
-                            <div key={index} className="col-3 margin">
+                            <div key={index} className="col-3 col-sm-12  margin">
                                 <div className={'p-2'}>
-                                    <div className="row p-0 colorback rounded-3">
+                                    <div className="row p-0 colorback">
                                         <div className="col-12 margin">
                                             <div
                                                 className="row p-2 pb-0 d-flex marginb align-items-center justify-content-start">
@@ -288,14 +290,14 @@ function Third({display}) {
                     }
 
                 </div>
-                <div className="row p-0 d-flex colorback mb-3 rounded-3 justify-content-between">
-                    <div className="col-6 pt-4 ps-4">
+                <div className="row p-0 d-flex colorback mb-3 p-sm-3 rounded-3 justify-content-between">
+                    <div className="col-6 col-sm-12 pt-md-4 pt-sm-4 ps-md-4 ps-sm-2">
                         <h3 className={'diagramm-text'}>30 kunlik savdo statistikasi (so'm)</h3>
                     </div>
-                    <div className="col-4  pt-3 p-4 offset-2">
+                    <div className="col-4 d-sm-flex   col-sm-12  pt-md-3 p-md-4 p-sm-1 offset-md-2 offset-sm-0">
                         <div className="row p-0 align-items-center  ">
-                            <div className="col-12 pe-3 d-flex justify-content-end">
-                                <div className={'selects-style'}>
+                            <div className="col-12 pe-3 d-flex justify-content-md-end">
+                                <div className={'selects-style me-sm-4'}>
                                     <select className={'selects'} form={'select'} id="select">
                                         <option value="1">Ushbu oy</option>
                                         <option value="2">O'tgan oy</option>
@@ -310,31 +312,31 @@ function Third({display}) {
                     </div>
                     <div className="col-12">
                     </div>
-                    <div className="row justify-content-between text-end ps-4">
+                    <div className="row justify-content-between text-end ps-4 table-responsive">
 
 
                         <Chart
                             options={chartOptions.options}
                             series={chartOptions.series}
                             type={'line'}
-                            height='400px'
+                            height={0.4*windowscrenn}
                         />
 
                     </div>
 
                 </div>
-                <div className="row p-0 mb-3 diagramm d-flex justify-content-between">
+                <div className="row p-0 p-sm-2 p mb-3 diagramm d-flex justify-content-between">
                     {
                         shophistory.map((item, index) =>
-                            <div key={index} className="col-4 spandiagram1 margin">
-                                <div className={'p-2'}>
+                            <div key={index} className="col-4 col-sm-12 spandiagram1 margin">
+                                <div className={'p-md-2 p-sm-4'}>
                                     <div className="row   p-0 pe-3 colorback  rounded-3">
-                                        <div className="col-6 pt-3 ps-4">
+                                        <div className="col-6 col-sm-12 pt-3 ps-4">
                                             <h3 className={'diagramm-text-one mt-1'}>{item.name}</h3>
                                         </div>
-                                        <div className="col-5  pt-3 ps-3 offset-1">
+                                        <div className="col-5 col-sm-11 pt-md-3 ps-md-3 offset-1">
                                             <div className="row p-0 align-items-center">
-                                                <div className="col-12 d-flex justify-content-between">
+                                                <div className="col-12 d-flex d-sm-flex justify-content-md-between justify-content-sm-around">
                                                     <div className={'selects-style'}>
                                                         <select className={'selects'} name="" id="">
                                                             <option value="1">Ushbu oy</option>
@@ -349,11 +351,11 @@ function Third({display}) {
                                             </div>
                                         </div>
                                         <div className="col-6 mb-4 mt-3 ps-4">
-                                            <h4>{item.jami}</h4>
+                                            <h4 className={'p-sm-0 m-sm-0'}>{item.jami}</h4>
                                             <p>{item.text}</p>
                                         </div>
                                         <div
-                                            className="col-4 mb-5 offset-2  d-flex align-items-center justify-content-end">
+                                            className="col-4 col-sm-5 mb-5 offset-md-2  pt-sm-4 d-flex align-items-center justify-content-end">
                                             {item.svg}
                                             <p className={'foizp'}>{item.foiz}</p>
                                         </div>
@@ -377,15 +379,15 @@ function Third({display}) {
                                 </div>
                             </div>)
                     }
-                    <div className="col-4 spandiagram1 margin">
+                    <div className="col-4 col-sm-12 spandiagram1 margin">
                         <div className={'p-2'}>
                             <div className="row align-items-center   p-0 pe-3 colorback  rounded-3">
-                                <div className="col-7 pt-3 ps-4">
+                                <div className="col-7 col-sm-12 pt-3 ps-4">
                                     <h3 className={'diagramm-text-one mt-1'}>To'lov usullari</h3>
                                 </div>
-                                <div className="col-5  pt-3 ps-3">
+                                <div className="col-5 col-sm-11 pt-3 ps-3">
                                     <div className="row p-0 align-items-center">
-                                        <div className="col-12 d-flex justify-content-between">
+                                        <div className="col-12 d-flex justify-content-md-between">
                                             <div className={'selects-style'}>
                                                 <select className={'selects'} name="" id="">
                                                     <option value="1">Ushbu oy</option>
@@ -406,8 +408,6 @@ function Third({display}) {
                                         options={options}
                                         series={series}
                                         type={'donut'}
-                                        width={'105%'}
-                                        height={'120%'}
                                         width={'100%'}
                                         height={'100%'}
                                     />
@@ -426,13 +426,13 @@ function Third({display}) {
 
                 </div>
                 <div className="row p-0 mb-3 d-flex justify-content-between">
-                    <div className="col-md-7">
-                        <div className={'pe-4'}>
+                    <div className="col-md-7 col-sm-12 p-sm-0 colorback2">
+                        <div className={'pe-md-4'}>
                             <div className="row p-0 colorback">
-                                <div className="col-6 pt-3 ps-3">
+                                <div className="col-6 col-sm-12 pt-3 ps-3">
                                     <h3 className={'diagramm-text-one'}>Ommabop mahsulotlar</h3>
                                 </div>
-                                <div className="col-5  pt-3 ps-3 offset-1">
+                                <div className="col-5 col-sm-11 pt-3 ps-3 offset-md-1">
                                     <div className="row p-0 align-items-center">
                                         <div className="col-12 d-flex justify-content-end">
                                             <div className={'selects-style'}>
@@ -455,13 +455,13 @@ function Third({display}) {
 
                         </div>
                     </div>
-                    <div className="col-md-5">
+                    <div className="col-md-5 col-sm-12">
                         <div>
                             <div className="row p-0 colorback">
-                                <div className="col-6 pt-3 ps-3">
-                                    <h3 className={'diagramm-text-one'}>Oz qolgan mahsulotlar</h3>
+                                <div className="col-6 col-sm-10 pt-md-3 ps-md-3 pt-sm-2">
+                                    <h3 className={'diagramm-text-one text-one pt-sm-2'}>Oz qolgan mahsulotlar</h3>
                                 </div>
-                                <div className="col-5  pt-3 ps-3 offset-1">
+                                <div className="col-5 col-sm-1  pt-md-3 ps-md-3 offset-md-1">
                                     <div className="row p-0 align-items-center">
                                         <div className="col-12 d-flex justify-content-end">
                                             <div className={'btn-nuqta'}>
@@ -482,15 +482,15 @@ function Third({display}) {
                     <div className="col-md-12">
                         <div className={''}>
                             <div className="row p-0 colorback">
-                                <div className="col-6 pt-3 ps-3">
+                                <div className="col-6 col-sm-12 pt-3 ps-3">
                                     <h3 className={'diagramm-text-one'}>Ommabop mahsulotlar</h3>
                                 </div>
-                                <div className="col-6  pt-3 ps-3 pe-0">
+                                <div className="col-6 col-sm-11  pt-3 ps-3 pe-0">
                                     <div className="row p-0 align-items-center">
                                         <div className="col-12 d-flex justify-content-end">
-                                            <div className="col-md-7 offset-3">
+                                            <div className="col-md-7 offset-md-3 col-sm-11">
                                                 <div className={'selects-style bg-transparent'}>
-                                                    <div className={'input-group mb-1'}>
+                                                    <div className={'input-group mb-1 input-group-sm'}>
                                                         <input type="text" className={'search border-0 bg-transparent'}
                                                                placeholder={'Qidirish'}/>
                                                         <img className={'search'} src={search} alt=""/>
@@ -498,7 +498,7 @@ function Third({display}) {
                                                     <hr className={'p-0 m-0'}/>
                                                 </div>
                                             </div>
-                                            <div className="col-md-2">
+                                            <div className="col-md-2 col-sm-12">
                                                 <div className={'btn-nuqta'}>
                                                     <button className={'nuqta'}>...</button>
                                                 </div>
@@ -515,11 +515,11 @@ function Third({display}) {
                     </div>
 
                 </div>
-                <div className="row p-0 mb-3 d-flex justify-content-between">
-                    <div className="col-md-6">
+                <div className="row p-0 mb-3 d-flex justify-content-between ">
+                    <div className="col-md-6 col-sm-12 colorback2">
                         <div className={'pe-4'}>
                             <div className="row p-0 colorback">
-                                <div className="col-6 pt-3 ps-3">
+                                <div className="col-6 col-sm-12 pt-3 ps-3">
                                     <h3 className={'diagramm-text-one'}>Qarzdorlarda haqingiz (Nasiyalar)</h3>
                                 </div>
                                 <div className="col-5  pt-3 ps-3 offset-1">
@@ -538,7 +538,7 @@ function Third({display}) {
 
                         </div>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-6 col-sm-12">
                         <div>
                             <div className="row p-0 colorback">
                                 <div className="col-6 pt-3 ps-3">

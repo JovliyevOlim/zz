@@ -23,6 +23,7 @@ body{
     width: 16.5%;
     }
 .homepage2 {
+    transform: translateX();
     width: 82%;
 }
 .homepageone{
@@ -30,4 +31,6 @@ body{
 }
 .homepagetwo{
     width: 100%;
+}
+@media screen and (max-width: 425.9px){
 }

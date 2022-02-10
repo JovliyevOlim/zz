@@ -62,3 +62,38 @@ td{
 th{
     font-size: 16px;
 }
+@media screen and (max-width: 425.9px){
+    td{
+        font-size: 10px;
+    }
+    th{
+        font-size: 10px;
+    }
+    .pagination-img{
+
+    }
+    .thead-padding-left{
+
+    }
+    .table{
+        width: 250% !important;
+    }
+    .table2{
+        width: 160% !important;
+    }
+    .table3{
+        width: 400% !important;
+    }
+    .paginationItem{
+        padding:5px;
+        width: 25px;
+        height: 25px;
+    }
+    .prev ,.next{
+        padding: 5px;
+        width: 30px;
+        height: 25px;
+        font-size: 10px;
+    }
+
+}

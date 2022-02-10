@@ -63,22 +63,25 @@ function Pagination4() {
 
             <div>
                 <div className="row p-0 pb-3">
-                    <table className={"table"}>
-                        <thead>
-                        <tr className={'justify-content-between border-0'}>
-                            <th className={'border-0 thead-padding-left'}>Savdo raqami</th>
-                            <th className={'border-0 '}>Mijoz</th>
-                            <th className={'border-0 '}>Qarz miqdori</th>
-                            <th className={'border-0 '}>Amal</th>
+                    <div className={'table-responsive'}>
+                        <table className={"table table4"}>
+                            <thead>
+                            <tr className={'justify-content-between border-0'}>
+                                <th className={'border-0 thead-padding-left'}>Savdo raqami</th>
+                                <th className={'border-0 '}>Mijoz</th>
+                                <th className={'border-0 '}>Qarz miqdori</th>
+                                <th className={'border-0 '}>Amal</th>
 
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {getPaginatedData().map((d, idx) => (
-                            <RenderComponent4 key={idx} data={d} />
-                        ))}
-                        </tbody>
-                    </table>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {getPaginatedData().map((d, idx) => (
+                                <RenderComponent4 key={idx} data={d} />
+                            ))}
+                            </tbody>
+                        </table>
+
+                    </div>
                     <hr/>
                     <div className="pagination justify-content-end">
                         {/* previous button */}

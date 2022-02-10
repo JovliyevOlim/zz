@@ -18,7 +18,7 @@ function Taxrirlash({getLavozim,saveXodim,LavozimReducer,getXodim,users}) {
             username: '',
             firstName: '',
             lastName: '',
-            roleName:'',
+            roleName:1,
             email: '',
             parol: '',
             parolTakror:''
@@ -41,7 +41,7 @@ function Taxrirlash({getLavozim,saveXodim,LavozimReducer,getXodim,users}) {
         setInput(a)
     }
     function onchangeroleName(event){
-        input.roleName = event.target.value
+        input.roleName = parseInt(event.target.value)
         let a = {...input}
         setInput(a)
     }
@@ -66,13 +66,12 @@ function Taxrirlash({getLavozim,saveXodim,LavozimReducer,getXodim,users}) {
             firstName: input.firstName,
             lastName: input.lastName,
             username: input.username,
-            password: "92462629",
-            roleId: 1,
+            password: input.parolTakror,
+            roleId: input.roleName,
             branchId:1,
             businessId: 1,
             enabled: false
         })
-        getXodim(users.users.business.id)
     }
 
     const [active,setActive] = useState(false)
@@ -131,9 +130,9 @@ function Taxrirlash({getLavozim,saveXodim,LavozimReducer,getXodim,users}) {
                             <label htmlFor={'log4'} className={'mt-3'}>Parolni takroran yozing</label>
                             <input type="text" onChange={onchangeparolTakror} value={input.parolTakror} className={'form-control'} id={'log4'}/>
                             <label htmlFor={'lavozimi'} className={'mt-3'}>Lavozimi</label>
-                            <select name="" id={'lavozimi'} onChange={onchangeroleName} className={'form-control'}>
+                            <select name="" id={'lavozimi'} onChange={onchangeroleName} value={input.roleName}  className={'form-control'}>
                                 {
-                                    LavozimReducer.lavozimlar.map((item,index)=> <option value={item.name}>{item.name}</option>)
+                                    LavozimReducer.lavozimlar.map((item,index)=> <option value={item.id}>{item.name}</option>)
                                 }
                             </select>
                             <h5 className={'mt-3'}>Biriktirilgan baza</h5>
@@ -144,7 +143,7 @@ function Taxrirlash({getLavozim,saveXodim,LavozimReducer,getXodim,users}) {
                                            style={{width:'20px',height:'20px',marginLeft:'20px'}}
                                            id={'b1'}/>
                                 </div>
-
+                                {console.log(input)}
                             </div>
                         </ModalBody>
                         <ModalFooter>

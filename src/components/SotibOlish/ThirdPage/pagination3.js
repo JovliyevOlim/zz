@@ -68,28 +68,31 @@ function Pagination3() {
         <div>
 
             <div>
-                <div className="row p-0 pb-3">
-                    <table className={"table"}>
-                        <thead>
-                        <tr className={'justify-content-between border-0'}>
-                            <th className={'border-0 thead-padding-left'}>Amal</th>
-                            <th className={'border-0 '}>Sana</th>
-                            <th className={'border-0 '}>Buyurtma No.</th>
-                            <th className={'border-0 '}>Mijoz</th>
-                            <th className={'border-0 '}>Telefon raqami</th>
-                            <th className={'border-0 '}>Baza</th>
-                            <th className={'border-0 '}>Status</th>
-                            <th className={'border-0 '}>Yetkazish statusi</th>
-                            <th className={'border-0 '}>Qolgan miqdor</th>
-                            <th className={'border-0 '}>Savdogar</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {getPaginatedData().map((d, idx) => (
-                            <RenderComponent3 key={idx} data={d} />
-                        ))}
-                        </tbody>
-                    </table>
+                <div className="row p-0 pb-3 ">
+                    <div className={'table-responsive'}>
+                        <table className={"table table3"}>
+                            <thead>
+                            <tr className={'justify-content-between border-0'}>
+                                <th className={'border-0 thead-padding-left'}>Amal</th>
+                                <th className={'border-0 '}>Sana</th>
+                                <th className={'border-0 '}>Buyurtma No.</th>
+                                <th className={'border-0 '}>Mijoz</th>
+                                <th className={'border-0 '}>Telefon raqami</th>
+                                <th className={'border-0 '}>Baza</th>
+                                <th className={'border-0 '}>Status</th>
+                                <th className={'border-0 '}>Yetkazish statusi</th>
+                                <th className={'border-0 '}>Qolgan miqdor</th>
+                                <th className={'border-0 '}>Savdogar</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {getPaginatedData().map((d, idx) => (
+                                <RenderComponent3 key={idx} data={d} />
+                            ))}
+                            </tbody>
+                        </table>
+
+                    </div>
                     <hr/>
                     <div className="pagination justify-content-end">
                         {/* previous button */}
