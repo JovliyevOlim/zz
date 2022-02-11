@@ -22,7 +22,6 @@ function HodimlarRoyhati({getXodim, deleteXodim, saveXodim, editXodim,  xodimlar
 
     function xodim(){
         getXodim(1)
-
     }
 
     const [input,setInput] = useState('')

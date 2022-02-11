@@ -13,7 +13,9 @@ const slice = createSlice({
             console.log(action.payload.object);
         },
         savefrom: (state,action) => {
+            console.log('wjwgj')
             state.lavozimlar.unshift(action.payload)
+            console.log(action.payload)
             // toast.success('Saqlandi')
         },
         editfrom: (state,action) => {
@@ -24,7 +26,9 @@ const slice = createSlice({
             })
         },
         deletefrom:(state,action)=>{
-
+            console.log('ochrildi')
+            console.log(action.payload.object.id)
+            console.log(typeof action.payload)
         }
 
     }

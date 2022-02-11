@@ -17,7 +17,7 @@ import {
        saveXarajatlarTurlari
 } from "../reducer/XarajatTurlariReducer";
 
-function XarajatTurlari({}) {
+function XarajatTurlari({getXarajatlarTurlari,xarajatlarturlari}) {
 
        const [input,setInput] = useState(
            {
@@ -52,7 +52,7 @@ function XarajatTurlari({}) {
 
        useEffect(()=>{
               getXarajatlarTurlari()
-       })
+       },[])
 
        const [active,setActive] = useState(false)
 
@@ -97,15 +97,20 @@ function XarajatTurlari({}) {
                                    </tr>
                             </thead>
                             <tbody>
-                                   <tr>
-                                          <td>AZBIZ</td>
-                                          <td>dona</td>
-                                          <td>yuq</td>
-                                          <td>   
-                                                 <button onClick={toggle} className='taxrirlash'> <img src={Edit} alt="" /> Taxrirlash</button>
-                                                 <button className='ochirish'> <img src={Delete} alt="" /> O'chirish</button>
-                                          </td>
-                                   </tr>
+                            {
+                                   xarajatlarturlari.map(item=><tr key={item.id}>
+                                          <td>{item.name}</td>
+                                   </tr>)
+                            }
+                                   {/*<tr>*/}
+                                   {/*       <td>AZBIZ</td>*/}
+                                   {/*       <td>dona</td>*/}
+                                   {/*       <td>yuq</td>*/}
+                                   {/*       <td>   */}
+                                   {/*              <button onClick={toggle} className='taxrirlash'> <img src={Edit} alt="" /> Taxrirlash</button>*/}
+                                   {/*              <button className='ochirish'> <img src={Delete} alt="" /> O'chirish</button>*/}
+                                   {/*       </td>*/}
+                                   {/*</tr>*/}
                             </tbody>
                      </table>
                      </div>

@@ -33,7 +33,7 @@ const slice = createSlice({
 });
 
 export const getXarajatlarTurlari=()=>apiCall({
-    url: '/user',
+    url: 'outlayCategory/get-by-businessId/1',
     method:'get',
     onSuccess: slice.actions.getFrom.type
 });

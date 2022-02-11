@@ -39,7 +39,7 @@ export const getXarajatlar=()=>apiCall({
 });
 
 export const saveXarajatlar=(data)=>apiCall({
-    url: '/get-by-businessId/1',
+    url: 'outlay/get-by-businessId/1',
     method:'post',
     data,
     onSuccess: slice.actions.savefrom.type

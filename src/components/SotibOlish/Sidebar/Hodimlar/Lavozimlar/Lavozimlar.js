@@ -13,6 +13,28 @@ function Lavozimlar({getLavozim, saveLavozim, deleteLavozim, editLavozim, lavozi
         getLavozim()
     },[])
 
+    const [input,setInput] = useState(
+        {
+            view:'',
+            izlash:''
+        }
+    )
+    function deletex(item){
+        console.log(item)
+        deleteLavozim(item.id)
+        getLavozim(1)
+    }
+    function view(e){
+        input.view = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+    function izlash(e){
+        input.izlash = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+
     return (
         <div>
             <div>
@@ -30,17 +52,13 @@ function Lavozimlar({getLavozim, saveLavozim, deleteLavozim, editLavozim, lavozi
                         </div>
                         <div className="izlash">
                             <p>Ko'rsatildi</p>
-                            <select name="" id="">
+                            <select name="" id="" value={input.view} onChange={view}>
                                 <option value="">25</option>
-                                <option value="">50</option>
-                                <option value="">100</option>
-                                <option value="">200</option>
                                 <option value="">500</option>
-                                <option value="">1,000</option>
                                 <option value="">All</option>
                             </select>
 
-                            <input type="text" placeholder='Izlash...'/>
+                            <input type="text" placeholder='Izlash...' value={input.izlash} onChange={izlash}/>
                         </div>
                         <div className="table-responsive">
                         <table className='table table-striped table-bordered mt-4'>
@@ -58,11 +76,11 @@ function Lavozimlar({getLavozim, saveLavozim, deleteLavozim, editLavozim, lavozi
                                         <Link to={'/headerthird/lavozimlar/taxrirlash'}>
                                             <button className='taxrirlash'><img src={Edit} alt=""/> Taxrirlash</button>
                                         </Link>
-                                        <button className='ochirish'><img src={Delete} alt=""/> O'chirish</button>
+                                        
+                                        <button className='ochirish' onClick={()=>deletex(item)}><img src={Delete} alt=""/> O'chirish</button>
                                     </td>
                                 </tr>)
                             }
-
                             </tbody>
                         </table>
                         </div>
