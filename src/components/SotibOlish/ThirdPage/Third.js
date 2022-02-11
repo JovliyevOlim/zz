@@ -409,7 +409,7 @@ function Third({display}) {
                                         series={series}
                                         type={'donut'}
                                         width={'100%'}
-                                        height={'100%'}
+                                        height={'212vh'}
                                     />
                                 </div>
                                 <div className="col-md-12  p-3 bar-chart d-flex align-items-center mt-4">
@@ -426,10 +426,10 @@ function Third({display}) {
 
                 </div>
                 <div className="row p-0 mb-3 d-flex justify-content-between">
-                    <div className="col-md-7 col-sm-12 p-sm-0 colorback2">
+                    <div className="col-md-7 col-sm-12   colorback2">
                         <div className={'pe-md-4'}>
                             <div className="row p-0 colorback">
-                                <div className="col-6 col-sm-12 pt-3 ps-3">
+                                <div className="col-6 col-sm-12 pt-3  mb-2 ps-3">
                                     <h3 className={'diagramm-text-one'}>Ommabop mahsulotlar</h3>
                                 </div>
                                 <div className="col-5 col-sm-11 pt-3 ps-3 offset-md-1">

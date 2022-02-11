@@ -11,10 +11,9 @@ import {Link, Route, Switch} from 'react-router-dom';
 import {useHistory} from 'react-router-dom';
 import {useEffect, useState} from 'react';
 import {connect} from "react-redux";
-import XodimReducer, {getXodim, saveXodim, editXodim, deleteXodim} from "../reducer/XodimReducer";
-import users from "../../../../../reducer/users";
+import {getXodim, saveXodim, editXodim, deleteXodim} from "../reducer/XodimReducer";
 
-function HodimlarRoyhati({getXodim, deleteXodim, saveXodim, editXodim,XodimReducer,users}) {
+function HodimlarRoyhati({getXodim, deleteXodim, saveXodim, editXodim,  xodimlar,users}) {
 
     useEffect(()=>{
         xodim()
@@ -22,7 +21,7 @@ function HodimlarRoyhati({getXodim, deleteXodim, saveXodim, editXodim,XodimReduc
 
 
     function xodim(){
-        getXodim(users.users.business.id)
+        getXodim(1)
 
     }
 
@@ -33,7 +32,7 @@ function HodimlarRoyhati({getXodim, deleteXodim, saveXodim, editXodim,XodimReduc
     function deletex(item){
         console.log(item)
         deleteXodim(item.id)
-        getXodim(users.users.business.id)
+        getXodim(1)
     }
 
     return (
@@ -82,11 +81,10 @@ function HodimlarRoyhati({getXodim, deleteXodim, saveXodim, editXodim,XodimReduc
                         </thead>
                         <tbody>
                             {
-                                XodimReducer.xodimlar.map((item,index)=><tr>
+                                xodimlar.map((item,index)=><tr>
                                     <td>{item.username}</td>
                                     <td>{item.firstName}</td>
                                     <td>{item.lastName}</td>
-                                    {/*<td>{item.role.name}</td>*/}
 
                                     <td>-</td>
                                     <td>
@@ -119,4 +117,7 @@ function HodimlarRoyhati({getXodim, deleteXodim, saveXodim, editXodim,XodimReduc
     )
 }
 
-export default connect((XodimReducer,users), {getXodim, saveXodim, editXodim,deleteXodim})(HodimlarRoyhati)
+export default
+connect(({XodimReducer:{xodimlar}})=>({xodimlar}), {getXodim, saveXodim, editXodim,deleteXodim})
+// connect(({users:{users}})=>({users}), )
+(HodimlarRoyhati)

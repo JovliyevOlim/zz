@@ -34,9 +34,11 @@ body{
 }
 @media screen and (max-width: 425.9px){
     .homepage2{
+        transition: 1s ease;
         transform: translateX(70px);
     }
     .homepage1{
+        transition: 1s ease;
         width: 100%;
     }
 }
