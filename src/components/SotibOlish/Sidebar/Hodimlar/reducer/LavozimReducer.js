@@ -26,11 +26,10 @@ const slice = createSlice({
             })
         },
         deletefrom:(state,action)=>{
-            console.log('ochrildi')
+            console.log('ochirildi')
             console.log(action.payload.object.id)
             console.log(typeof action.payload)
         }
-
     }
 });
 
@@ -55,8 +54,8 @@ export const editLavozim=(data)=>apiCall({
 });
 
 export const deleteLavozim=(data)=>apiCall({
-    url: '/role',
-    method:'post',
+    url: '/role/'+data,
+    method:'delete',
     data,
     onSuccess: slice.actions.deletefrom.type
 })

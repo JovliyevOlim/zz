@@ -43,11 +43,17 @@ function Taxrirlash({getLavozim, editLavozim, lavozimlar, saveLavozim}) {
         }
     )
 
-
+    const [Xbarchasi,setXbarchasi] = useState('')
     function changexBarchasini(e) {
         input.xBarchasinibelgilash = e.target.checked
         let a = {...input}
         setInput(a)
+        if (e.target.checked === false){
+            setXbarchasi('CHECK_ALL')
+        }else {
+            setXbarchasi('')
+        }
+        console.log(Xbarchasi)
     }
 
     function changename(e) {
@@ -215,7 +221,18 @@ function Taxrirlash({getLavozim, editLavozim, lavozimlar, saveLavozim}) {
         setInput(a)
     }
 
-
+    function saqla2(){
+        saveLavozim({
+            firstName: input.firstName,
+            lastName: input.lastName,
+            username: input.username,
+            password: input.parolTakror,
+            roleId: input.roleName,
+            branchId:1,
+            businessId: 1,
+            enabled: false
+        })
+    }
 
     function saqla() {
         saveLavozim(
@@ -223,16 +240,10 @@ function Taxrirlash({getLavozim, editLavozim, lavozimlar, saveLavozim}) {
                 name: input.name,
                 permissions: [
                 "ADD_ADDRESS",
-                "ADD_ADDRESS",
-                "ADD_ADDRESS",
-                "ADD_ADDRESS",
-                "ADD_ADDRESS",
-                "ADD_ADDRESS",
             ],
             description:null
         }
         )
-
     }
 
 

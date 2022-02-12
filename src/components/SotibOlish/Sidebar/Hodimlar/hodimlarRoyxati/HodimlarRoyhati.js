@@ -19,13 +19,18 @@ function HodimlarRoyhati({getXodim, deleteXodim, saveXodim, editXodim,  xodimlar
         xodim()
     },[])
 
-
     function xodim(){
         getXodim(1)
     }
 
     const [input,setInput] = useState('')
-    const [inputsearch,setinputsearch] = useState('')
+
+    const [inSearch,setinSearch] = useState(
+        {
+            inputsearch:''
+        }
+    )
+
     const history = useHistory();
 
     function deletex(item){
@@ -34,10 +39,17 @@ function HodimlarRoyhati({getXodim, deleteXodim, saveXodim, editXodim,  xodimlar
         getXodim(1)
     }
 
+    function search(e){
+        inSearch.inputsearch = e.target.value
+        let a = {...inSearch}
+        setinSearch(a)
+        console.log(inSearch.inputsearch)
+    }
+
     return (
         <div>
             <div className="col-md-12 ">
-                <div className="textHeader">
+                <div className = "textHeader">
                     <h2>Hodimlar ro'yxati</h2>
                     <p>Hodimlar boshqaruvi</p>
                 </div>
@@ -53,10 +65,6 @@ function HodimlarRoyhati({getXodim, deleteXodim, saveXodim, editXodim,  xodimlar
                         <select name="" id="">
                             <option value="">25</option>
                             <option value="">50</option>
-                            <option value="">100</option>
-                            <option value="">200</option>
-                            <option value="">500</option>
-                            <option value="">1,000</option>
                             <option value="">All</option>
                         </select>
                         <button><img src={CSV} alt=""/> Export CSV</button>
@@ -64,7 +72,7 @@ function HodimlarRoyhati({getXodim, deleteXodim, saveXodim, editXodim,  xodimlar
                         <button><img src={Print} alt=""/> Print</button>
                         <button><img src={Pdf} alt=""/>Export PDF</button>
                         <button><img src={Data} alt=""/>Malumotlarni kamaytirish</button>
-                        <input type="text" placeholder='Izlash...'/>
+                        <input type="text" placeholder='Izlash...' value={inSearch.inputsearch} onChange={search}/>
                     </div>
                     <div className="table-responsive">
                     <table className='table table-striped table-bordered mt-4'>
@@ -80,24 +88,50 @@ function HodimlarRoyhati({getXodim, deleteXodim, saveXodim, editXodim,  xodimlar
                         </thead>
                         <tbody>
                             {
-                                xodimlar.map((item,index)=><tr>
-                                    <td>{item.username}</td>
-                                    <td>{item.firstName}</td>
-                                    <td>{item.lastName}</td>
+                                xodimlar.filter(val=>{
+                                    if (inSearch.inputsearch===''){
+                                        return val
+                                    }else if (val.username.toUpperCase().includes(inSearch.inputsearch.toUpperCase())){
+                                        return val
+                                    }
+                                })
+                                 .map((item)=><tr key={item.id}>
+                                     <td>{item.username}</td>
+                                     <td>{item.firstName}</td>
+                                     <td>{item.lastName}</td>
 
-                                    <td>-</td>
-                                    <td>
-                                        <Link to={'/headerthird/hodimlarruyxati/taxrirlash'}>
-                                            <button className='taxrirlash'><img src={Edit} alt=""/>Taxrirlash</button>
-                                        </Link>
-                                        <Link
-                                            to={'/headerthird/hodimlarruyxati/view/' + input.username + '/' + input.firstName + '/' + input.lastName}>
-                                            <button className='korish'><img src={Korish} alt=""/> Ko'rish</button>
-                                        </Link>
-                                            <button onClick={()=>deletex(item)} className='ochirish'><img src={Delete} alt=""/> O'chirish</button>
-                                    </td>
+                                     <td>-</td>
+                                     <td>
+                                         <Link to={'/headerthird/hodimlarruyxati/taxrirlash'}>
+                                             <button className='taxrirlash'><img src={Edit} alt=""/>Taxrirlash</button>
+                                         </Link>
+                                         <Link
+                                             to={'/headerthird/hodimlarruyxati/view/' + input.username + '/' + input.firstName + '/' + input.lastName}>
+                                             <button className='korish'><img src={Korish} alt=""/> Ko'rish</button>
+                                         </Link>
+                                             <button onClick={()=>deletex(item)} className='ochirish'><img src={Delete} alt=""/> O'chirish</button>
+                                     </td>
 
-                                </tr>)
+                                 </tr>)
+
+                                // xodimlar.map((item,index)=><tr>
+                                //     <td>{item.username}</td>
+                                //     <td>{item.firstName}</td>
+                                //     <td>{item.lastName}</td>
+                                //
+                                //     <td>-</td>
+                                //     <td>
+                                //         <Link to={'/headerthird/hodimlarruyxati/taxrirlash'}>
+                                //             <button className='taxrirlash'><img src={Edit} alt=""/>Taxrirlash</button>
+                                //         </Link>
+                                //         <Link
+                                //             to={'/headerthird/hodimlarruyxati/view/' + input.username + '/' + input.firstName + '/' + input.lastName}>
+                                //             <button className='korish'><img src={Korish} alt=""/> Ko'rish</button>
+                                //         </Link>
+                                //             <button onClick={()=>deletex(item)} className='ochirish'><img src={Delete} alt=""/> O'chirish</button>
+                                //     </td>
+                                //
+                                // </tr>)
                             }
 
                         </tbody>

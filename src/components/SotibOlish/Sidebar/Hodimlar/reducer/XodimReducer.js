@@ -1,6 +1,6 @@
 import {createSlice} from "@reduxjs/toolkit";
 import {apiCall} from "../../../../../api";
-// import {toast} from "react-toastify";
+import {toast} from "react-toastify";
 
 const slice = createSlice({
     name: 'xodimlar',
@@ -12,10 +12,12 @@ const slice = createSlice({
         getFrom: (state, action) => {
             state.xodimlar = action.payload.object
             console.log(action.payload.object);
+            toast.success('Get')
         },
         savefrom: (state, action) => {
             state.xodimlar.unshift(action.payload)
             console.log(action.payload)
+            toast.success('SAQLANDI')
         },
         editfrom: (state, action) => {
             state.xodimlar.map((item, index) => {
@@ -23,12 +25,13 @@ const slice = createSlice({
                     item.login = action.payload.login
                 }
             })
-            // toast.success('O`zgartirildi')
+            toast.success('TAXRIRLANDI')
         },
         deletefrom: (state, action) => {
             console.log('ochrildi')
             console.log(action.payload.object.id)
             console.log(typeof action.payload)
+            toast.success('O`chirildi')
         }
     }
 });
@@ -55,7 +58,6 @@ export const editXodim = (data) => apiCall({
 });
 
 export const deleteXodim = (data) => apiCall({
-
     url: '/user/'+data,
     method: 'delete',
     data,

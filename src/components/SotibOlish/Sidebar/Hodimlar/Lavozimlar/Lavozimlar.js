@@ -9,6 +9,22 @@ import {getLavozim, saveLavozim, editLavozim, deleteLavozim} from "../reducer/La
 
 function Lavozimlar({getLavozim, saveLavozim, deleteLavozim, editLavozim, lavozimlar}) {
 
+    function deletel(item){
+        console.log(item)
+        deleteLavozim(item.id)
+        getLavozim(1)
+    }
+
+    const [inSearch,setInSearch] = useState(
+        {
+            inputputsearch:''
+        }
+    )
+
+    function search(e){
+
+    }
+
     useEffect(() => {
         getLavozim()
     },[])
@@ -77,7 +93,7 @@ function Lavozimlar({getLavozim, saveLavozim, deleteLavozim, editLavozim, lavozi
                                             <button className='taxrirlash'><img src={Edit} alt=""/> Taxrirlash</button>
                                         </Link>
                                         
-                                        <button className='ochirish' onClick={()=>deletex(item)}><img src={Delete} alt=""/> O'chirish</button>
+                                        <button className='ochirish' onClick={()=>deletel(item)}><img src={Delete} alt=""/> O'chirish</button>
                                     </td>
                                 </tr>)
                             }
