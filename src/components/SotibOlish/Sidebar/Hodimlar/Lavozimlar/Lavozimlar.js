@@ -105,9 +105,7 @@ function Lavozimlar({getLavozim, saveLavozim, deleteLavozim, editLavozim, lavozi
                                         <Link to={'/headerthird/lavozimlar/taxrirlash'}>
                                             <button className='taxrirlash'><img src={Edit} alt=""/> Taxrirlash</button>
                                         </Link>
-
-                                        <button className='ochirish' onClick={() => deletel(item)}><img src={Delete}
-                                                                                                        alt=""/> O'chirish
+                                        <button className='ochirish' onClick={() => deletel(item)}><img src={Delete} alt=""/> O'chirish
                                         </button>
                                     </td>
                                 </tr>)

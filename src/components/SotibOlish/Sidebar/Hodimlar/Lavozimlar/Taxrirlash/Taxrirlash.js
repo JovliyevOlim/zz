@@ -49,176 +49,362 @@ function Taxrirlash({getLavozim, editLavozim, lavozimlar, saveLavozim}) {
         let a = {...input}
         setInput(a)
         if (e.target.checked === false){
-            setXbarchasi('CHECK_ALL')
+            setXbarchasi('CHECK_ALL_USER')
         }else {
             setXbarchasi('')
         }
         console.log(Xbarchasi)
     }
-
+    // const [name,setName] = useState('')
     function changename(e) {
         input.name = e.target.value
         let a = {...input}
         setInput(a)
         console.log(input.name)
+        // if (e.target.checked === false){
+        //     setName('ADD_ROLE')
+        // }else {
+        //     setName('')
+        // }
+        // console.log(name)
     }
 
+    const [xodimkorish,setXodimkorish] = useState('')
     function changexodimkorish(e) {
         input.xodimkorish = e.target.checked
         let a = {...input}
         setInput(a)
+        if (e.target.checked ===false){
+            setXodimkorish('VIEW_USER')
+        }else {
+            setXodimkorish('')
+        }
+        console.log(xodimkorish)
     }
 
+    const [xodimqoshish,setXodimqoshish] = useState('')
     function changexodimqoshish(e) {
         input.xodimqoshish = e.target.checked
         let a = {...input}
         setInput(a)
+        if (e.target.checked===false){
+            setXodimqoshish('ADD_USER')
+        }else {
+            setXodimqoshish('')
+        }
+        console.log(xodimqoshish)
     }
 
+    const [xodimtaxrirlash,setXodimtaxrirlash] = useState('')
     function changexodimtaxrirlash(e) {
         input.xodimtaxrirlash = e.target.checked
         let a = {...input}
         setInput(a)
+        if(e.target.checked===false){
+            setXodimtaxrirlash("EDIT_USER")
+        }else {
+            setXodimtaxrirlash('')
+        }
+        console.log(xodimtaxrirlash)
     }
 
+    const [deleteXodim,setdeleteXodim] = useState('')
     function changexodimochirish(e) {
         input.xodimochirish = e.target.checked
         let a = {...input}
         setInput(a)
+        if (e.target.value===false){
+            setdeleteXodim("DELETE_USER")
+        }else {
+            setdeleteXodim('')
+        }
+        console.log(deleteXodim)
     }
 
+    const [lavozimbarcha,setlavozimbarcha] = useState('')
     function changelBarchasini(e) {
         input.lBarchasinibelgilash = e.target.checked
         let a = {...input}
         setInput(a)
+        if (e.target.checked===false){
+            setlavozimbarcha("CHECK_ALL_ROLE")
+        }else {
+            setlavozimbarcha('')
+        }
+        console.log(lavozimbarcha)
     }
 
+    const [lavozimqoshish,setlavozimqoshish] = useState('')
     function changelavozimqoshish(e) {
         input.lavozimqoshish = e.target.checked
         let a = {...input}
         setInput(a)
+        if (e.target.checked===false){
+            setlavozimqoshish("ADD_ROLE")
+        }else {
+            setlavozimqoshish('')
+        }
+        console.log(lavozimqoshish)
     }
 
+    const [lavozimkorish,setlavozimkorish] = useState('')
     function changelavozimkorish(e) {
         input.lavozimkorish = e.target.checked
         let a = {...input}
         setInput(a)
+        if (e.target.checked===false){
+            setlavozimkorish("VIEW_ROLE")
+        }else {
+            setlavozimkorish('')
+        }
+        console.log(lavozimkorish)
     }
 
+    const [lavozimtaxrirlash,setlavozimtaxrirlash] = useState('')
     function changelavozitaxrirlash(e) {
         input.lavozimtaxrirlash = e.target.checked
         let a = {...input}
         setInput(a)
+        if (e.target.checked===false){
+            setlavozimtaxrirlash("EDIT_ROLE")
+        }else {
+            setlavozimtaxrirlash('')
+        }
+        console.log(lavozimtaxrirlash)
     }
 
+    const [deleterole,setdeleterole] = useState('')
     function changelavozimochirish(e) {
         input.lavozimochirish = e.target.checked
         let a = {...input}
         setInput(a)
+        if (e.target.checked===false){
+            setdeleterole("DELETE_ROLE")
+        }else {
+            setdeleterole('')
+        }
+        console.log(deleterole)
     }
 
-
+    const [taminotbarcha,settaminotbarcha] = useState('')
     function changetBarchasi(e) {
         input.tBarchasinibelgilash = e.target.checked
         let a = {...input}
         setInput(a)
+        if (e.target.checked===false){
+            settaminotbarcha("CHECK_ALL_SUPPLIER")
+        }else {
+            settaminotbarcha('')
+        }
+        console.log(taminotbarcha)
     }
 
+    const [lang1,setlang1] = useState('')
     function changelang1(e) {
         input.lang1 = e.target.checked
         let a = {...input}
         setInput(a)
+        if (e.target.checked===false){
+            setlang1("LANG_V1")
+        }else {
+            setlang1('')
+        }
+        console.log(lang1)
     }
 
+    const [lang2,setlang2] = useState('')
     function changelang2(e) {
         input.lang2 = e.target.checked
         let a = {...input}
         setInput(a)
+        if (e.target.checked===false){
+            setlang2("LANG_V2")
+        }else {
+            setlang2('')
+        }
+        console.log(lang2)
     }
 
+    const [dillerqoshish,setdillerqoshish] = useState('')
     function changedillerqoshish(e) {
         input.dillerqoshish = e.target.checked
         let a = {...input}
         setInput(a)
+        if (e.target.checked===false){
+            setdillerqoshish("ADD_SUPPLIER")
+        }else {
+            setdillerqoshish('')
+        }
+        console.log(dillerqoshish)
     }
 
+    const [dillertaxrirlash,setdillertaxrirlash] = useState('')
     function changedillertaxrirlash(e) {
         input.dillertaxrirlash = e.target.checked
         let a = {...input}
         setInput(a)
+        if (e.target.checked===false){
+            setdillertaxrirlash("EDIT_SUPPLIER")
+        }else {
+            setdillertaxrirlash('')
+        }
+        console.log(dillertaxrirlash)
     }
 
+    const [deletediller,setdillerdelete] = useState('')
     function changedillerochirish(e) {
-
         input.dillerochirish = e.target.checked
         let a = {...input}
         setInput(a)
+        if (e.target.checked===false){
+            setdillerdelete("DELETE_SUPPLIER")
+        }else {
+            setdillerdelete('')
+        }
+        console.log(deletediller)
     }
 
+    const [mijozbarcha,setmijozbarcha] = useState('')
     function changemBarchasi(e) {
         input.mBarchasinibelgilash = e.target.checked
         let a = {...input}
         setInput(a)
+        if (e.target.checked===false){
+            setmijozbarcha("CUSTOMER_ALL")
+        }else {
+            setmijozbarcha('')
+        }
+        console.log(mijozbarcha)
     }
 
+    const [lang3,setlang3] = useState('')
     function changemlang3(e) {
         input.lang3 = e.target.checked
         let a = {...input}
         setInput(a)
+        if (e.target.checked===false){
+            setlang3("LANG_V3")
+        }else {
+            setlang3('')
+        }
+        console.log(lang3)
     }
 
+    const [lang4,setlang4] = useState('')
     function changemlang4(e) {
         input.lang4 = e.target.checked
         let a = {...input}
         setInput(a)
+        if (e.target.checked===false){
+            setlang4("LANG_V4")
+        }else {
+            setlang4('')
+        }
+        console.log(lang4)
     }
 
+    const [lang5,setlang5] = useState('')
     function changemlang5(e) {
         input.lang5 = e.target.checked
         let a = {...input}
         setInput(a)
+        if (e.target.checked===false){
+            setlang5("LANG_V5")
+        }else {
+            setlang5('')
+        }
+        console.log(lang5)
     }
 
+    const [lang6,setlang6] = useState('')
     function changemlang6(e) {
         input.lang6 = e.target.checked
         let a = {...input}
         setInput(a)
+        if (e.target.checked===false){
+            setlang6("LANG_V6")
+        }else {
+            setlang6('')
+        }
+        console.log(lang6)
     }
 
+    const [lang7,setlang7] = useState('')
     function changemlang7(e) {
         input.lang7 = e.target.checked
         let a = {...input}
         setInput(a)
+        if (e.target.checked === false){
+            setlang7("LANG_V7")
+        }else {
+            setlang7('')
+        }
+        console.log(lang7)
     }
 
+    const [lang8,setlang8] = useState('')
     function changemlang8(e) {
         input.lang8 = e.target.checked
         let a = {...input}
         setInput(a)
+        if (e.target.checked===false){
+            setlang8("LANG_V8")
+        }else {
+            setlang8('')
+        }
+        console.log(lang8)
     }
 
+    const [lang9,setlang9] = useState('')
     function changemlang9(e) {
         input.lang9 = e.target.checked
         let a = {...input}
         setInput(a)
+        if (e.target.checked===false){
+            setlang9("LANG_V9")
+        }else {
+            setlang9('')
+        }
+        console.log(lang9)
     }
 
+    const [mijozqoshish,setmijozqoshish] = useState('')
     function changemijozqoshish(e) {
         input.mijozqoshish = e.target.checked
         let a = {...input}
         setInput(a)
+        if (e.target.checked===false){
+            setmijozqoshish("CUSTOMER_ADD")
+        }else {
+            setmijozqoshish('')
+        }
+        console.log(mijozqoshish)
     }
 
+    const [mijoztaxrirlash,setmijoztaxrirlash] = useState('')
     function changemijoztaxrirlash(e) {
         input.mijoztaxrirlash = e.target.checked
         let a = {...input}
         setInput(a)
+        if (e.target.checked===false){
+            setmijoztaxrirlash("EDIT_CUSTOMER")
+        }else {
+            setmijoztaxrirlash('')
+        }
+        console.log(mijoztaxrirlash)
     }
 
+    const [deletmijoz,setdeletemijoz] = useState('')
     function changemijozochrish(e) {
         input.mijozochirish = e.target.checked
         let a = {...input}
         setInput(a)
+        if (e.target.checked===false){
+            setdeletemijoz("DELETE_CUSTOMER")
+        }else {
+            setdeletemijoz('')
+        }
+        console.log(deletmijoz)
     }
 
     function saqla2(){
