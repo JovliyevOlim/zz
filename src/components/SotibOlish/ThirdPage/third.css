@@ -619,7 +619,7 @@ input.search::placeholder {
     }
 
     p.raqam {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .col-3 div .row .col-12 .row .col-8 h4.foiz.colorpale {
@@ -632,7 +632,10 @@ input.search::placeholder {
     }
 
     .diagramm-text {
+        margin-top: 20px;
         font-size: 12px;
+        text-align: center;
+        font-weight: 800 !important;
     }
 
     .third {
@@ -641,8 +644,11 @@ input.search::placeholder {
 
     .selects-style {
         background: #F5F5F7;
-        padding: 4px 7px 0 7px;
+        padding: 4px 8px 0 8px;
         border-radius: 2px;
+    }
+    .selects{
+        font-size: 14px;
     }
 
     h4.jami {
@@ -663,10 +669,25 @@ input.search::placeholder {
     }
 
     .diagramm-text-one {
-        font-size: 28px;
+        font-size: 22px;
         text-align: center;
     }
-
+    .diagramm-text-one-sm {
+        margin-top: 5px;
+        font-size: 14px;
+        text-align: center;
+    }
+    .input-group{
+        width: 100% !important;
+    }
+    input.search{
+        width: 85%;
+    }
+    img.search{
+        margin-top: 3px;
+        width: 16px;
+        height: 16px;
+    }
     .diagramm .col-4 div .row .col-6 h4 {
         font-size: 20px !important;
     }
@@ -695,6 +716,7 @@ input.search::placeholder {
     }
 
     .text-one {
+        margin-top: 10px;
         font-size: 16px;
     }
     .apexcharts-graphical{
@@ -707,7 +729,7 @@ input.search::placeholder {
     }
 }
 
-@media (min-width: 426px) and (max-width: 499.9px){
+@media (min-width: 426px) and (max-width: 500.9px){
         .image{
             width: 64px;
             height: 64px;
@@ -732,7 +754,7 @@ input.search::placeholder {
         justify-content: space-between;
     }
     .diagramm-text{
-        font-size: 18px;
+        font-size: 18px !important;
         text-align: center;
         padding-top: 10px;
     }
@@ -742,6 +764,18 @@ input.search::placeholder {
         background-color: #ffffff;
         margin-bottom: 20px;
         border-radius: 8px;
+    }
+    .input-group{
+
+        width: 100% !important;
+    }
+    input.search{
+        width: 85%;
+    }
+    img.search{
+        margin-top: 3px;
+        width: 16px;
+        height: 16px;
     }
     .COL-6{
         width: 45% !important;
@@ -758,10 +792,22 @@ input.search::placeholder {
 
     }
     .diagramm-text-one {
-        font-size: 15px;
+        font-size: 25px;
+        text-align: center;
+    }
+    .diagramm-text-one-sm {
+        margin-top: 5px;
+        font-size: 20px;
+        text-align: center;
     }
     .text-f{
         font-size: 15px;
+    }
+    .text-one{
+        margin-top: 10px;
+        font-size: 20px;
+        text-align: left;
+        padding-left: 0.5rem;
     }
     .selects-style {
         background: #F5F5F7;
@@ -781,13 +827,13 @@ input.search::placeholder {
     }
 
 }
-@media (min-width: 500px) and (max-width: 767.9px) {
+@media (min-width: 501px) and (max-width: 767.9px) {
 
     .third .container-fluid .row .col-md-9{
-        width: 60% !important;
+        width: 58% !important;
     }
     .third .container-fluid .row .col-md-3{
-        width:40% !important;
+        width:42% !important;
     }
     .third .container-fluid .row .col-md-9 .row .col-md-1{
         width: 20% !important;
@@ -796,8 +842,8 @@ input.search::placeholder {
         width: 80% !important;
     }
     .image {
-        width: 50px;
-        height: 50px;
+        width: 44px;
+        height: 44px;
     }
     h4.kitchen {
         font-size: 12px;
@@ -810,31 +856,64 @@ input.search::placeholder {
     .kitchen-button {
         padding: 4px 12px;
         font-size: 12px;
-        margin-bottom: 1rem;
+        margin-bottom: 0.5rem;
     }
     div.col-3.margin {
-        margin-left: -10px;
-        margin-bottom: 15px;
+        width: 50% !important;
+        margin-left: -5px;
+        margin-right: -10px;
+        margin-bottom: 10px;
         border-radius: 8px;
     }
 
+
     p.raqam {
+        margin-top: -8px;
         font-size:90%;
+
     }
 
     .col-3 div .row .col-12 .row .col-8 h4.foiz.colorpale {
         font-size: 12px !important;
-    }
+        margin-top: -5px !important;
 
+    }
+    .COL-6{
+        width: 45% !important;
+    }
+    .COL-7{
+        width: 55% !important;
+    }
+    .COL-5{
+        width: 40% !important;
+        margin-top: 20px !important;
+    }
+    .COL-4{
+        width: 30% !important;
+
+    }
     .foizsvg img {
         width: 15px;
         height: 15px;
+        margin-top: -12px;
+
     }
 
     .diagramm-text {
-        font-size: 12px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        text-align: center;
+        font-size: 20px;
     }
-
+    div.col-12.margin{
+        padding: 0 0 0 3px;
+    }
+    div.col-12.margin2{
+        padding: 0 10px 0 0;
+    }
+    .marginb{
+        padding: 0;
+    }
     .third {
         padding: 1.2rem;
     }
@@ -846,7 +925,7 @@ input.search::placeholder {
     }
 
     h4.jami {
-        font-size: 10px;
+        font-size: 11px;
     }
 
     div.col-4.margin {
@@ -865,26 +944,31 @@ input.search::placeholder {
 
     .diagramm-text-one {
         font-size: 28px;
+        text-align: left;
     }
-
+    .diagramm-text-one-sm {
+        margin-top: 5px;
+        font-size: 20px;
+        text-align: center;
+    }
     .diagramm .col-4 div .row .col-6 h4 {
-        font-size: 20px !important;
+        font-size: 22px !important;
     }
 
     .diagramm .col-4 div .row .col-6 p {
-        font-size: 10px;
-    }
-
-    .foizp {
-        font-size: 10px;
-    }
-
-    .bar-chart h4 {
         font-size: 16px;
     }
 
+    .foizp {
+        font-size: 12px;
+    }
+
+    .bar-chart h4 {
+        font-size: 24px;
+    }
+
     .bar-chart p {
-        font-size: 14px;
+        font-size: 22px;
     }
 
     .colorback2 {
@@ -895,7 +979,10 @@ input.search::placeholder {
     }
 
     .text-one {
-        font-size: 16px;
+        margin-top: 10px;
+        font-size: 24px;
+        text-align: left;
+        padding-left: 0.5rem;
     }
     .apexcharts-graphical{
         width: 100% !important;
@@ -991,15 +1078,177 @@ input.search::placeholder {
     }
 
     .diagramm-text-one {
+        margin-top: 10px;
         font-size: 28px;
+        text-align: left;
     }
 
     .diagramm .col-4 div .row .col-6 h4 {
-        font-size: 20px !important;
+        font-size: 22px !important;
     }
 
     .diagramm .col-4 div .row .col-6 p {
+        font-size: 14px;
+    }
+
+    .foizp {
+        font-size: 12px;
+    }
+
+    .bar-chart h4 {
+        font-size: 28px;
+    }
+
+    .bar-chart p {
+        font-size: 26px;
+    }
+
+    .colorback2 {
+        background-color: #ffffff;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        padding-bottom: 1rem !important;
+    }
+
+    .text-one {
+
+    }
+    .text-one2{
+
+    }
+    .apexcharts-graphical{
+        width: 100% !important;
+    }
+    .apexcharts-canvas{
+        display: block !important;
+        width: 100% !important;
+        height: 100% !important;
+    }
+    .paddding{
+        padding: 0 2rem;
+    }
+    .col-mdd-8{
+        width: 60% !important;
+    }
+    .col-mdd-3{
+        width: 30% !important;
+    }
+    .col-mdd-6{
+        width: 50% !important;
+    }
+    .input-group{
+
+        width: 100% !important;
+    }
+    input.search{
+        width: 90%;
+    }
+    img.search{
+        margin-top: 3px;
+        width: 16px;
+        height: 16px;
+    }
+}
+@media (min-width: 1024px) and (max-width: 1199.9px){
+    .third .container-fluid .row .col-md-9{
+        width: 60% !important;
+    }
+    .third .container-fluid .row .col-md-3{
+        width:40% !important;
+    }
+    .third .container-fluid .row .col-md-9 .row .col-md-1{
+        width: 15% !important;
+    }
+    .third .container-fluid .row .col-md-9 .row .col-md-11{
+        width: 85% !important;
+    }
+    .image {
+        width: 64px;
+        height: 64px;
+    }
+    h4.kitchen {
+        font-size: 18px;
+        margin: 0
+    }
+    p.kitchen {
+        font-size: 14px;
+        line-height: 15px;
+    }
+    .kitchen-button {
+        padding: 7px 16px;
+        font-size: 16px;
+        margin-bottom: 0.5rem;
+    }
+    div.col-3.margin {
+        margin-left: -10px;
+        margin-bottom: 15px;
+        border-radius: 8px;
+    }
+
+    p.raqam {
+        text-align: left;
+        margin-top: 15px;
+        font-size:13px;
+    }
+
+    .col-3 div .row .col-12 .row .col-8 h4.foiz.colorpale {
+        font-size: 10px !important;
+    }
+
+    .foizsvg img {
+        width: 15px;
+        height: 15px;
+    }
+
+    .diagramm-text {
+        margin-top: -30px;
+        font-size: 24px;
+    }
+
+    .third {
+        padding: 1.2rem;
+    }
+
+    .selects-style {
+        background: #F5F5F7;
+        padding: 1px 4px 0 4px;
+        border-radius: 4px;
+    }
+    .selects{
         font-size: 10px;
+        padding: 0;
+    }
+
+    h4.jami {
+        font-size: 10px;
+    }
+
+    div.col-4.margin {
+        margin-left: 0;
+        margin-right: 0;
+        background-color: #ffffff;
+        margin-bottom: 20px;
+        border-radius: 8px;
+    }
+
+    .colorback {
+        border: 0;
+        align-items: center;
+        padding:1rem;
+    }
+
+    .diagramm-text-one {
+        margin-top: 10px;
+        font-size: 28px;
+        text-align: left;
+    }
+
+    .diagramm .col-4 div .row .col-6 h4 {
+        font-size: 18px !important;
+    }
+
+    .diagramm .col-4 div .row .col-6 p {
+        font-size: 9px;
     }
 
     .foizp {
@@ -1013,7 +1262,9 @@ input.search::placeholder {
     .bar-chart p {
         font-size: 14px;
     }
-
+    .charth{
+        height: 200px;
+    }
     .colorback2 {
         background-color: #ffffff;
         border-radius: 8px;
@@ -1022,7 +1273,10 @@ input.search::placeholder {
     }
 
     .text-one {
-        font-size: 16px;
+
+    }
+    .text-one2{
+
     }
     .apexcharts-graphical{
         width: 100% !important;
@@ -1034,5 +1288,33 @@ input.search::placeholder {
     }
     .paddding{
         padding: 0 2rem;
+    }
+    .col-mdd-8{
+        width: 60% !important;
+    }
+    .col-mdd-3{
+        width: 30% !important;
+    }
+    .col-mdd-6{
+        width: 50% !important;
+    }
+    .cardd-2{
+        width: 25% !important;
+    }
+    .cardd-3{
+        width: 33% !important;
+        height: 420px !important;
+    }
+    .input-group{
+
+        width: 100% !important;
+    }
+    input.search{
+        width: 90%;
+    }
+    img.search{
+        margin-top: 3px;
+        width: 16px;
+        height: 16px;
     }
 }

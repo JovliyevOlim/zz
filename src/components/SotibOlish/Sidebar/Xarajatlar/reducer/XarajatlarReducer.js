@@ -53,7 +53,7 @@ export const editXarajatlar=(data)=>apiCall({
 });
 
 export const deleteXarajatlar=(data)=>apiCall({
-    url: '/user',
+    url: '/get-by-businessId/1',
     method:'post',
     data,
     onSuccess: slice.actions.deletefrom.type

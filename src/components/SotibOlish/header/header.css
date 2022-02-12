@@ -97,3 +97,8 @@ hr{
 .homepage2 .padding-10{
     padding: 0 1.2rem !important;
 }
+@media screen and (max-width: 768px) {
+    .headerBox .two .img2img3 .im2{
+        display: none;
+    }
+}

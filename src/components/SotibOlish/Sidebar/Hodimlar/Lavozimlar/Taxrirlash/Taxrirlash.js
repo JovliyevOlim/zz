@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 import {saveLavozim, getLavozim, deleteLavozim, editLavozim} from '../../reducer/LavozimReducer'
 import {Link} from 'react-router-dom'
 
-function Taxrirlash(getLavozim, editLavozim, lavozimlar, saveLavozim) {
+function Taxrirlash({getLavozim, editLavozim, lavozimlar, saveLavozim}) {
 
     const [input, setInput] = useState(
         {
@@ -218,21 +218,21 @@ function Taxrirlash(getLavozim, editLavozim, lavozimlar, saveLavozim) {
 
 
     function saqla() {
-        // saveLavozim(
-        //     {
-        //     name: input.name,
-        //     // permissions: [
-        //     //     "ADD_ADDRESS",
-        //     //     "ADD_ADDRESS",
-        //     //     "ADD_ADDRESS",
-        //     //     "ADD_ADDRESS",
-        //     //     "ADD_ADDRESS",
-        //     //     "ADD_ADDRESS",
-        //     // ],
-        //     // description:null
-        // }
-        // )
-        saveLavozim()
+        saveLavozim(
+            {
+                name: input.name,
+                permissions: [
+                "ADD_ADDRESS",
+                "ADD_ADDRESS",
+                "ADD_ADDRESS",
+                "ADD_ADDRESS",
+                "ADD_ADDRESS",
+                "ADD_ADDRESS",
+            ],
+            description:null
+        }
+        )
+
     }
 
 
