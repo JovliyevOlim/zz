@@ -25,10 +25,9 @@ const slice = createSlice({
             // toast.success('O`zgartirildi')
         },
         deletefrom:(state,action)=>{
+            console.log('DELETED_MIJOZ')
 
-            // toast.info('O`chirildi')
         }
-
     }
 });
 
@@ -53,8 +52,8 @@ export const editMijozGurux=(data)=>apiCall({
 });
 
 export const deleteMijozGurux=(data)=>apiCall({
-    url: '/customer',
-    method:'post',
+    url: '/customer/'+data,
+    method:'delete',
     data,
     onSuccess: slice.actions.deletefrom.typex
 })

@@ -1,6 +1,7 @@
 import {useState} from 'react'
 import {Modal, ModalBody, ModalHeader, ModalFooter} from "reactstrap";
-
+import {saveMaxsulotRuyxati} from "../../reducer/MaxsulotlarRoyxariReducer";
+import {Link} from 'react-router-dom'
 function Taxrirlash() {
 
     const [active, setActive] = useState(false)
@@ -21,6 +22,7 @@ function Taxrirlash() {
             ferma:'',
             brandnomi:'',
             qisqaeslatma:'',
+            photoIds:'',
             // ----
             bazalar:'',
             bolim:'',
@@ -151,6 +153,24 @@ function Taxrirlash() {
     }
     function toggle3() {
         setActive3(!active3)
+    }
+
+    function saqla(){
+        saveMaxsulotRuyxati({
+            name:input.mahsulotnomi,
+            barcode: input.shtrixkod,
+            brandId:input.ferma,
+            categoryId:input.shtrixkodturi,
+            measurementId:input.ulcovbirligi,
+            photoIds:input.photoIds,
+            minQuantity:input.foydafoiz,
+            buyPrice:'',
+            salePrice:input.sotishnarxi,
+            tax:input.amaldagisoliq,
+            branchId:input.ferma,
+            expireDate:null,
+            dueDate:null
+        })
     }
 
     return (
@@ -309,6 +329,7 @@ function Taxrirlash() {
                         </tr>
                     </tbody>
                 </table>
+                <Link to={'/headerthird/mahsulotRuyxati/barcaMahsulot'}><button className={'btn btn-success form-control mt-2'} onClick={saqla}>Saqlash</button></Link>
             </div>
         </div>
 

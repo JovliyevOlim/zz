@@ -38,12 +38,6 @@ function Lavozimlar({getLavozim, saveLavozim, deleteLavozim, editLavozim, lavozi
         }
     )
 
-    function deletex(item) {
-        console.log(item)
-        deleteLavozim(item.id)
-        getLavozim(1)
-    }
-
     function view(e) {
         input.view = e.target.value
         let a = {...input}

@@ -28,7 +28,7 @@ const slice = createSlice({
             toast.success('TAXRIRLANDI')
         },
         deletefrom: (state, action) => {
-            console.log('ochrildi')
+            console.log('ochirildi')
             console.log(action.payload.object.id)
             console.log(typeof action.payload)
             toast.success('O`chirildi')

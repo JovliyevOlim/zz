@@ -13,7 +13,7 @@ const slice = createSlice({
             console.log(action.payload.object);
         },
         savefrom: (state,action) => {
-            console.log('wjwgj')
+            console.log('saqlandi')
             state.lavozimlar.unshift(action.payload)
             console.log(action.payload)
             // toast.success('Saqlandi')

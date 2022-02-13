@@ -7,18 +7,19 @@ import Data from '../../../../../img/Data.png'
 import Pdf from '../../../../../img/PDF.png'
 import Edit from '../../../../../img/Edit.png'
 import Korish from '../../../../../img/Korish.png'
+import Delete from '../../../../../img/Delete.png'
 import {useEffect} from "react";
 import {connect} from "react-redux";
-import {getTaminot,saveTaminot,editTaminot,deleteTaminot} from "../reducer/TaminotReducer";
+import {getTaminot, saveTaminot, editTaminot, deleteTaminot} from "../reducer/TaminotReducer";
 import {useState} from 'react'
 import {Modal, ModalBody, ModalFooter, ModalHeader} from "reactstrap";
 
 
-function Taminotchilar({getTaminot,saveTaminot,editTaminot,deleteTaminot,taminot}) {
+function Taminotchilar({getTaminot, saveTaminot, editTaminot, deleteTaminot, taminot}) {
 
-    useEffect(()=>{
+    useEffect(() => {
         getTaminot()
-    },[])
+    }, [])
 
     const [active, setActive] = useState(false);
 
@@ -28,52 +29,83 @@ function Taminotchilar({getTaminot,saveTaminot,editTaminot,deleteTaminot,taminot
 
     const [input, setInput] = useState(
         {
-            langv1:'',
-            dukon:'',
+            langv1: '',
+            telegram:'',
+            dukon: '',
             idraqam: '',
-            login:'',
-            ismi:'',
-            otaismi:'',
-            familiyasi:''
+            login: '',
+            ismi: '',
+            otaismi: '',
+            familiyasi: '',
+            inputsearch: ''
         },
     );
 
-    function changelangv1(e){
+    function changeizlash(e) {
+        input.inputsearch = e.target.value
+        let a = {...input}
+        setInput(a)
+        console.log(input.inputsearch)
+    }
+    function changelangv1(e) {
         input.langv1 = e.target.value
         let a = {...input}
         setInput(a)
     }
-    function changedukon(e){
+    function changedukon(e) {
         input.dukon = e.target.value
         let a = {...input}
         setInput(a)
     }
-    function changeidraqam(e){
+    function changeidraqam(e) {
         input.idraqam = e.target.value
         let a = {...input}
         setInput(a)
     }
-    function changelogin(e){
+    function TELEGRAM(e) {
+        input.telegram = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+    function changelogin(e) {
         input.login = e.target.value
         let a = {...input}
         setInput(a)
     }
-    function changeismi(e){
+    function changeismi(e) {
         input.ismi = e.target.value
         let a = {...input}
         setInput(a)
     }
-    function changeotaismi(e){
+    function changeotaismi(e) {
         input.otaismi = e.target.value
         let a = {...input}
         setInput(a)
     }
-    function changefamiliyasi(e){
+    function changefamiliyasi(e) {
         input.familiyasi = e.target.value
         let a = {...input}
         setInput(a)
     }
 
+    // Fix me - - - - - delete
+    function deleteTaminot2(item){
+        console.log(item)
+        deleteTaminot(item.id)
+        getTaminot(1)
+    }
+
+
+    function saqla(){
+        saveTaminot({
+            name:input.ismi,
+            phoneNumber: 1,
+            telegram: input.telegram,
+            supplierType:'',
+            businessId: 1
+        })
+        toggle()
+    }
     return (
 
         <div>
@@ -103,7 +135,7 @@ function Taminotchilar({getTaminot,saveTaminot,editTaminot,deleteTaminot,taminot
                         <button><img src={Print} alt=""/> Print</button>
                         <button><img src={Pdf} alt=""/>Export PDF</button>
                         <button><img src={Data} alt=""/>Malumotlarni kamaytirish</button>
-                        <input type="text" placeholder='Izlash...'/>
+                        <input type="text" placeholder='Izlash...' value={input.inputsearch} onChange={changeizlash}/>
                     </div>
 
                     <table className='table table-striped table-bordered mt-4'>
@@ -118,38 +150,36 @@ function Taminotchilar({getTaminot,saveTaminot,editTaminot,deleteTaminot,taminot
                         </thead>
                         <tbody>
                         {
-                            taminot.map(item=><tr key={item.id}>
+                            taminot.filter(val => {
+                                if (input.inputsearch === '') {
+                                    return val
+                                } else if (val.name.toUpperCase().includes(input.inputsearch.toUpperCase())) {
+                                    return val
+                                }
+                            }).map(item => <tr key={item.id}>
                                 <td>{item.name}</td>
                                 <td>{item.phoneNumber}</td>
                                 <td>{item.telegram}</td>
                                 <td></td>
-                                <td>
-                                    <button className={'btn btn-primary m-1'}>Taxrirlash</button>
-                                    <button className={'btn btn-primary m-1'}>Korish</button>
-                                    <button className={'btn btn-danger m-1'}>O`chirish</button>
+                                <td className={'text-center'}>
+                                    <Link to={'/headerthird/taminotchilar/taxrirlash'}>
+                                        <button onClick={toggle} className='taxrirlash'><img src={Edit}
+                                                                                             alt=""/> Taxrirlash
+                                        </button>
+                                    </Link>
+                                    <Link
+                                        to={'/headerthird/taminotchilar/view/' + input.name + '/' + input.tel + '/' + input.telegram + '/' + input.taminot}>
+                                        <button className='korish'><img src={Korish} alt=""/> Ko'rish</button>
+                                    </Link>
+                                    <button onClick={()=>deleteTaminot2(item)} className='ochirish'><img src={Delete} alt=""/> O'chirish</button>
+                                    <Link to={''}>
+                                        <button className="amallar">Amallar alt="" /></button>
+                                    </Link>
                                 </td>
+
                             </tr>)
                         }
 
-                        {/*<tr>*/}
-                        {/*    <td>boshliq</td>*/}
-                        {/*    <td>+998998887778</td>*/}
-                        {/*    <td>ssdd@</td>*/}
-                        {/*    <td>nimadir</td>*/}
-                        {/*    <td>*/}
-                        {/*        <Link to={'/headerthird/taminotchilar/taxrirlash'}>*/}
-                        {/*            <button onClick={toggle} className='taxrirlash'><img src={Edit} alt=""/> Taxrirlash*/}
-                        {/*            </button>*/}
-                        {/*        </Link>*/}
-                        {/*        <Link to={'/headerthird/taminotchilar/view/' + input.name+'/'+input.tel+'/'+input.telegram+'/'+input.taminot}>*/}
-                        {/*            <button className='korish'><img src={Korish} alt=""/> Ko'rish</button>*/}
-                        {/*        </Link>*/}
-                        {/*        <button className='ochirish'><img src={Delete} alt=""/> O'chirish</button>*/}
-                        {/*        <Link to={''}>*/}
-                        {/*            <button className="amallar">Amallar alt="" /></button>*/}
-                        {/*        </Link>*/}
-                        {/*    </td>*/}
-                        {/*</tr>*/}
                         </tbody>
                     </table>
 
@@ -175,43 +205,50 @@ function Taminotchilar({getTaminot,saveTaminot,editTaminot,deleteTaminot,taminot
                                 <option value="#">(ikkisi ham) Taminotchi ha Mijoz</option>
                             </select>
                             <div className="in d-flex align-items-center justify-content-sm-around mt-3">
-                                <input type="radio" checked={input.langv1} onChange={changelangv1} name={'radio'} id={'in1'}/>
+                                <input type="radio" checked={input.langv1} onChange={changelangv1} name={'radio'}
+                                       id={'in1'}/>
                                 <label htmlFor={'in1'}>
                                     lang_v1.induvidial
                                 </label>
-                                <input type="radio" checked={input.dukon} onChange={changedukon} name={'radio'} id={'in2'}/>
+                                <input type="radio" checked={input.dukon} onChange={changedukon} name={'radio'}
+                                       id={'in2'}/>
                                 <label htmlFor={'in2'}>
                                     Do`kon
                                 </label>
                             </div>
                             <label htmlFor={'idRaqam'}>ID Raqami</label>
-                            <input checked={input.idraqam} onChange={changeidraqam} type="text" id={'idRaqam'} placeholder={'ID Raqami'} className={'form-control'}/>
+                            <input checked={input.idraqam} onChange={changeidraqam} type="text" id={'idRaqam'}
+                                   placeholder={'ID Raqami'} className={'form-control'}/>
                             lang_v1.leave_empty_to_autogenerate
                             <div className="in d-flex mt-3">
                                 <div>
                                     <label htmlFor={'log1'}>Login</label>
-                                    <input type="text" checked={input.login} onChange={changelogin} className={'form-control'} placeholder={'Mr/Mrs/Mis'}
+                                    <input type="text" checked={input.login} onChange={changelogin}
+                                           className={'form-control'} placeholder={'Mr/Mrs/Mis'}
                                            id={'log1'}/>
                                 </div>
                                 <div>
                                     <label htmlFor={'ism'}>Ismi</label>
-                                    <input onChange={changeismi} checked={input.ismi} type="text" id={'ism'} placeholder={'Ismi'} className={'form-control'}/>
+                                    <input onChange={changeismi} checked={input.ismi} type="text" id={'ism'}
+                                           placeholder={'Ismi'} className={'form-control'}/>
                                 </div>
                             </div>
                             <div className="in d-flex">
                                 <div className={'mt-3'}>
                                     <label htmlFor={'ot'}>Otasining ismi</label>
-                                    <input checked={input.otaismi} onChange={changeotaismi} type="text" className={'form-control'} placeholder={'Otasining ismi'}/>
+                                    <input checked={input.otaismi} onChange={changeotaismi} type="text"
+                                           className={'form-control'} placeholder={'Otasining ismi'}/>
                                 </div>
                                 <div className={'mt-3'}>
                                     <label htmlFor={'ot'}>Familiyasi</label>
-                                    <input checked={input.familiyasi} onChange={changefamiliyasi} type="text" placeholder={'Familiyasi'} className={'form-control'}/>
+                                    <input checked={input.familiyasi} onChange={changefamiliyasi} type="text"
+                                           placeholder={'Familiyasi'} className={'form-control'}/>
                                 </div>
                             </div>
 
                         </ModalBody>
                         <ModalFooter>
-                            <button className={'btn btn-outline-primary'}>SAVE</button>
+                            <button className={'btn btn-outline-primary'} onClick={saqla}>SAVE</button>
                             <button className={'btn btn-outline-primary'} onClick={toggle}>CHIQISH</button>
                         </ModalFooter>
                     </Modal> : ''
@@ -220,4 +257,10 @@ function Taminotchilar({getTaminot,saveTaminot,editTaminot,deleteTaminot,taminot
         </div>
     )
 }
-export default connect(({TaminotReducer:{taminot}})=>({taminot}),{getTaminot,saveTaminot,editTaminot,deleteTaminot}) (Taminotchilar)
+
+export default connect(({TaminotReducer: {taminot}}) => ({taminot}), {
+    getTaminot,
+    saveTaminot,
+    editTaminot,
+    deleteTaminot
+})(Taminotchilar)

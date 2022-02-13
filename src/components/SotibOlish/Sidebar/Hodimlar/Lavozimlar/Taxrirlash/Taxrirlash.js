@@ -407,25 +407,13 @@ function Taxrirlash({getLavozim, editLavozim, lavozimlar, saveLavozim}) {
         console.log(deletmijoz)
     }
 
-    function saqla2(){
-        saveLavozim({
-            firstName: input.firstName,
-            lastName: input.lastName,
-            username: input.username,
-            password: input.parolTakror,
-            roleId: input.roleName,
-            branchId:1,
-            businessId: 1,
-            enabled: false
-        })
-    }
 
     function saqla() {
         saveLavozim(
             {
                 name: input.name,
                 permissions: [
-                "ADD_ADDRESS",
+                "ADD_USER",
             ],
             description:null
         }

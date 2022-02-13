@@ -28,8 +28,27 @@ function Mijozlarguruxi({getMijozGurux,saveMijozGurux,editMijozGurux,deleteMijoz
             guruhnomi:'',
             selectfoiz:'',
             foizda:'',
+            inputsearch:'',
+            phone:''
         }
     )
+
+    function phone(e){
+        input.phone = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+    function search(e){
+        input.inputsearch=e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+
+    function deleteM(item) {
+        console.log(item)
+        deleteMijozGurux(item.id)
+        getMijozGurux(1)
+    }
 
     function changeguruxnomi(e){
         input.guruhnomi = e.target.value
@@ -45,6 +64,15 @@ function Mijozlarguruxi({getMijozGurux,saveMijozGurux,editMijozGurux,deleteMijoz
         input.foizda = e.target.value
         let a = {...input}
         setInput(a)
+    }
+    function saqla(){
+        saveMijozGurux({
+            name:input.guruhnomi,
+            phoneNumber: input.phone,
+            telegram:'',
+            businessId:1
+        })
+        toggle()
     }
 
     function toggle() {
@@ -77,13 +105,14 @@ function Mijozlarguruxi({getMijozGurux,saveMijozGurux,editMijozGurux,deleteMijoz
                     <button><img src={Print} alt=""/> Print</button>
                     <button><img src={Pdf} alt=""/>Export PDF</button>
                     <button><img src={Data} alt=""/>Malumotlarni kamaytirish</button>
-                    <input type="text" placeholder='Izlash...'/>
+                    <input type="text" placeholder='Izlash...' value={input.inputsearch} onChange={search}/>
                 </div>
                 <div className="table-responsive">
                 <table className='table table-striped table-bordered mt-4'>
                     <thead>
                     <tr>
                         <th>Gurux nomi</th>
+                        <th>Tel raqam</th>
                         <th>Foizda(%)</th>
                         <th>Sotuv narxini guruxlash</th>
                         <th>Amallar</th>
@@ -91,10 +120,22 @@ function Mijozlarguruxi({getMijozGurux,saveMijozGurux,editMijozGurux,deleteMijoz
                     </thead>
                     <tbody>
                     {
-                        mijozgurux.map(item => <tr key={item.id}>
-                            <td>{item.name}</td>
-                            <td>{item.phoneNumber}</td>
-                            <td>{item.telegram}</td>
+                        mijozgurux.filter(val=>{
+                            if (input.inputsearch===''){
+                                return val
+                            }else if (val.name.toUpperCase().includes(input.inputsearch.toUpperCase())){
+                                return val
+                            }
+                        })
+                        .map(item => <tr key={item.id}>
+                        <td>{item.name}</td>
+                        <td>{item.phoneNumber}</td>
+                        <td>{item.telegram}</td>
+                            <td></td>
+                        <td>
+                        <button className={'btn btn-outline-primary m-1'}>Taxrirlash</button>
+                        <button className={'btn btn-outline-primary m-1'} onClick={()=>deleteM(item)}>O`chirish</button>
+                        </td>
                         </tr>)
                     }
                     </tbody>
@@ -120,11 +161,13 @@ function Mijozlarguruxi({getMijozGurux,saveMijozGurux,editMijozGurux,deleteMijoz
                         <select value={input.selectfoiz} onChange={changeselectfoiz} className={'form-control mt-3'}  name="" id="">
                             <option value="#">Foizda</option>
                         </select>
+                        <label htmlFor={'tel'}>Tel raqam</label>
+                        <input type="text" className={'form-control mt-2'} value={input.phone} onChange={phone}/>
                         <label htmlFor={'foizda'} className={'mt-3'}>Foizda</label>
                         <input type="text" checked={input.foizda} onChange={changefoizda} className={'form-control'} id={'foizda'}/>
                     </ModalBody>
                     <ModalFooter>
-                        <button className={'btn btn-primary'}>SAQLASH</button>
+                        <button className={'btn btn-primary'} onClick={saqla}>SAQLASH</button>
                         <button className={'btn btn-primary'} onClick={toggle}>CHIQISH</button>
                     </ModalFooter>
                 </Modal>:''

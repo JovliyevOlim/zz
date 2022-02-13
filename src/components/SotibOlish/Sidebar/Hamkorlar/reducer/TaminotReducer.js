@@ -15,6 +15,7 @@ const slice = createSlice({
         },
         savefrom: (state,action) => {
             state.taminot.unshift(action.payload)
+            console.log('SAQLANDI_TAMINOT')
             // toast.success('Saqlandi')
         },
         editfrom: (state,action) => {
@@ -23,11 +24,11 @@ const slice = createSlice({
                     item.login = action.payload.login
                 }
             })
-            // toast.success('O`zgartirildi')
         },
         deletefrom:(state,action)=>{
-
-            // toast.info('O`chirildi')
+            console.log('DELETE_TAMINOT')
+            console.log(action.payload.object.id)
+            console.log(typeof action.payload)
         }
 
     }
@@ -54,8 +55,8 @@ export const editTaminot=(data)=>apiCall({
 });
 
 export const deleteTaminot=(data)=>apiCall({
-    url: '/supplier',
-    method:'post',
+    url: '/supplier/'+data,
+    method:'delete',
     data,
     onSuccess: slice.actions.deletefrom.type
 })
