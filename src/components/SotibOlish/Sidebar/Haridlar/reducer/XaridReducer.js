@@ -9,15 +9,16 @@ const slice = createSlice({
     },
     reducers: {
         getFrom: (state, action) => {
-            state.xodimlar = action.payload.object
+            state.xaridlar = action.payload.object
             console.log(action.payload.object);
         },
         savefrom: (state,action) => {
-            state.xodimlar.unshift(action.payload)
+            state.xaridlar.unshift(action.payload)
             // toast.success('Saqlandi')
+            console.log('SAQLADNI_XARID');
         },
         editfrom: (state,action) => {
-            state.xodimlar.map((item,index)=>{
+            state.xaridlar.map((item,index)=>{
                 if (item.id === action.payload.id){
                     item.login = action.payload.login
                 }
@@ -26,6 +27,7 @@ const slice = createSlice({
         },
         deletefrom:(state,action)=>{
             // toast.info('O`chirildi')
+            console.log('Deleted_XArid');
         }
 
     }
@@ -38,22 +40,22 @@ export const getXarid=()=>apiCall({
 });
 
 export const saveXarid=(data)=>apiCall({
-    url: '/user',
+    url: '/purchase',
     method:'post',
     data,
     onSuccess: slice.actions.savefrom.type
 });
 
 export const editXarid=(data)=>apiCall({
-    url: '/user',
+    url: '/purchase',
     method: 'post',
     data,
     onSuccess: slice.actions.editfrom.type
 });
 
 export const deleteXarid=(data)=>apiCall({
-    url: '/user',
-    method:'post',
+    url: '/purchase/'+data,
+    method:'delete',
     data,
     onSuccess: slice.actions.deletefrom.type
 })

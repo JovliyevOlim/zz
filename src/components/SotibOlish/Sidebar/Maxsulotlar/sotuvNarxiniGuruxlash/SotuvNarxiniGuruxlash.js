@@ -12,7 +12,7 @@ import {connect} from "react-redux";
 import {Modal, ModalBody, ModalFooter, ModalHeader} from "reactstrap";
 import {deleteSotuvNarxi, editSotuvNarxi, getSotuvNarxi, saveSotuvNarxi} from "../reducer/SotuvNarxiReducer";
 
-function SotuvNarxiniGuruxlash() {
+function SotuvNarxiniGuruxlash({sotuvnarxi,getSotuvNarxi,editSotuvNarxi,deleteSotuvNarxi}) {
 
        const [input,setInput] = useState(
            {
@@ -52,7 +52,7 @@ function SotuvNarxiniGuruxlash() {
 
        useEffect(()=>{
               getSotuvNarxi()
-       })
+       },[])
 
        return (
               <div className="col-md-12 mt-2">
@@ -109,14 +109,18 @@ function SotuvNarxiniGuruxlash() {
                                           </tr>
                                    </thead>
                                    <tbody>
-                                          <tr>
-                                                 <td></td>
-                                                 <td></td>
-                                                 <td>   
-                                                        <Link><button className='taxrirlash' onClick={toggle}> <img src={Edit} alt="" /> Taxrirlash</button> </Link>
-                                                        <button className='ochirish'> <img src={Delete} alt="" /> O'chirish</button>
-                                                 </td>
-                                          </tr>
+                                   {
+                                          sotuvnarxi
+                                   }
+
+                                          {/*<tr>*/}
+                                          {/*       <td></td>*/}
+                                          {/*       <td></td>*/}
+                                          {/*       <td>   */}
+                                          {/*              <Link><button className='taxrirlash' onClick={toggle}> <img src={Edit} alt="" /> Taxrirlash</button> </Link>*/}
+                                          {/*              <button className='ochirish'> <img src={Delete} alt="" /> O'chirish</button>*/}
+                                          {/*       </td>*/}
+                                          {/*</tr>*/}
                                    </tbody>
                             </table>
                             <p>Ko'rsatildi 1 ta sahifa 1 va yana 1 ta sahifa bor</p>
@@ -145,4 +149,4 @@ function SotuvNarxiniGuruxlash() {
                </div>  
        )
 }
-export default connect(({XodimReducer:{xodimlar}})=>({xodimlar}),{getSotuvNarxi,saveSotuvNarxi,deleteSotuvNarxi,editSotuvNarxi}) (SotuvNarxiniGuruxlash)
+export default connect(({SotuvNarxiReducer:{sotuvnarxi}})=>({sotuvnarxi}),{getSotuvNarxi,saveSotuvNarxi,deleteSotuvNarxi,editSotuvNarxi}) (SotuvNarxiniGuruxlash)

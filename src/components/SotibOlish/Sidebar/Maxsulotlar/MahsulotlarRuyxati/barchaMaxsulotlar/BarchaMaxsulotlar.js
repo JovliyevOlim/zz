@@ -11,50 +11,57 @@ import {Switch, Link, Route} from 'react-router-dom'
 import {useState, useEffect} from "react";
 import KorishM from '../Taxrirlash/Korish'
 import {connect} from "react-redux";
-// import {deleteMahsulot, editMahsulot, getMahsulot, saveMahsulot} from "../../reducer/MahsulotReducer";
-import MaxsulotlarRoyxariReducer,{getMaxsulotRuyxati,maxsulotruyxati,saveMaxsulotRuyxati,editMaxsulotRuyxati,deleteMaxsulotRuyxati} from '../../reducer/MaxsulotlarRoyxariReducer'
+import MaxsulotlarRoyxariReducer, {
+    getMaxsulotRuyxati,
+    saveMaxsulotRuyxati,
+    editMaxsulotRuyxati,
+    deleteMaxsulotRuyxati
+} from '../../reducer/MaxsulotlarRoyxariReducer'
+import {deleteLavozim, editLavozim, getLavozim, saveLavozim} from "../../../Hodimlar/reducer/LavozimReducer";
+import {Bar} from "react-chartjs-2";
 
-function BarchaMaxsulotlar({getMaxsulotRuyxati,maxsulotruyxati,MaxsulotlarRoyxariReducer}) {
+function BarchaMaxsulotlar({getMaxsulotRuyxati, maxsulotruyxati,}) {
 
     const [input, setInput] = useState(
         {
-            view:'',
-            izlash:'',
+            view: '',
+            izlash: '',
             maxsulot: '',
             baza: '',
             sotibolishnarxi: '',
             sotishnarxi: '',
             qolganmaxsulot: '',
             firma: '',
-            checkbarcha:'',
-        //    ---
-            name:'',
-            barcode:'',
-            brandId:'',
-            categoryId:'',
-            measurementId:'',
-            photoIds:'',
-            minQuantity:'',
-            buyPrice:'',
-            salePrice:'',
-            tax:'',
-            branchId:'',
-            expireDate:'',
-            dueDate:'',
-            inputsearch:''
+            checkbarcha: '',
+            //    ---
+            name: '',
+            barcode: '',
+            brandId: '',
+            categoryId: '',
+            measurementId: '',
+            photoIds: '',
+            minQuantity: '',
+            buyPrice: '',
+            salePrice: '',
+            tax: '',
+            branchId: '',
+            expireDate: '',
+            dueDate: '',
+            inputsearch: ''
         }
     )
 
-    useEffect(()=>{
+    useEffect(() => {
         getMaxsulotRuyxati()
-    },[])
+    }, [])
 
-    function view(e){
+    function view(e) {
         input.view = e.target.value
         let a = {...input}
         setInput(a)
     }
-    function izlash(e){
+
+    function izlash(e) {
         input.izlash = e.target.value
         let a = {...input}
         setInput(a)
@@ -65,96 +72,110 @@ function BarchaMaxsulotlar({getMaxsulotRuyxati,maxsulotruyxati,MaxsulotlarRoyxar
     function toggle() {
         setActive(!active)
     }
-    function saqla(){
+
+    function saqla() {
         saveMaxsulotRuyxati({
-            name:input.name,
+            name: input.name,
             barcode: input.barcode,
-            brandId:input.brandId,
-            categoryId:input.categoryId,
-            measurementId:input.measurementId,
-            photoIds:input.photoIds,
-            minQuantity:input.minQuantity,
-            buyPrice:input.buyPrice,
-            salePrice:input.salePrice,
-            tax:input.tax,
-            branchId:input.branchId,
-            expireDate:input.expireDate,
-            dueDate:input.dueDate
+            brandId: input.brandId,
+            categoryId: input.categoryId,
+            measurementId: input.measurementId,
+            photoIds: input.photoIds,
+            minQuantity: input.minQuantity,
+            buyPrice: input.buyPrice,
+            salePrice: input.salePrice,
+            tax: input.tax,
+            branchId: input.branchId,
+            expireDate: input.expireDate,
+            dueDate: input.dueDate
         })
     }
 
-    function name(e){
+    function name(e) {
         input.name = e.target.value
         let a = {...input}
         setInput(a)
     }
-    function barcode(e){
+
+    function barcode(e) {
         input.barcode = e.target.value
         let a = {...input}
         setInput(a)
     }
-    function brandId(e){
+
+    function brandId(e) {
         input.brandId = e.target.value
         let a = {...input}
         setInput(a)
     }
-    function categoryId(e){
+
+    function categoryId(e) {
         input.categoryId = e.target.value
         let a = {...input}
         setInput(a)
     }
-    function measurementId(e){
+
+    function measurementId(e) {
         input.measurementId = e.target.value
         let a = {...input}
         setInput(a)
     }
-    function photoIds(e){
+
+    function photoIds(e) {
         input.photoIds = e.target.value
         let a = {...input}
         setInput(a)
     }
-    function minQuantity(e){
+
+    function minQuantity(e) {
         input.minQuantity = e.target.value
         let a = {...input}
         setInput(a)
     }
-    function buyPrice(e){
+
+    function buyPrice(e) {
         input.buyPrice = e.target.value
         let a = {...input}
         setInput(a)
     }
-    function salePrice(e){
+
+    function salePrice(e) {
         input.salePrice = e.target.value
         let a = {...input}
         setInput(a)
     }
-    function tax(e){
+
+    function tax(e) {
         input.tax = e.target.value
         let a = {...input}
         setInput(a)
     }
-    function branchId(e){
+
+    function branchId(e) {
         input.branchId = e.target.value
         let a = {...input}
         setInput(a)
     }
-    function expireDate(e){
+
+    function expireDate(e) {
         input.expireDate = e.target.value
         let a = {...input}
         setInput(a)
     }
-    function dueDate(e){
+
+    function dueDate(e) {
         input.dueDate = e.target.value
         let a = {...input}
         setInput(a)
     }
-    function search(e){
+
+    function search(e) {
         input.inputsearch = e.target.value
         let a = {...input}
         setInput(a)
     }
 
-    function deleteM(item){
+    function deleteM(item) {
         deleteMaxsulotRuyxati(item.id)
         console.log('deleted')
     }
@@ -198,45 +219,33 @@ function BarchaMaxsulotlar({getMaxsulotRuyxati,maxsulotruyxati,MaxsulotlarRoyxar
                         </thead>
                         <tbody>
 
-                        {/*{*/}
-                        {/*    maxsulotruyxati.filter(val=>{*/}
-                        {/*        if (input.izlash === ''){*/}
-                        {/*            return val*/}
-                        {/*        }else if (val.name.toUpperCase().includes(input.izlash.toUpperCase())){*/}
-                        {/*            return val*/}
-                        {/*        }*/}
-                        {/*    })*/}
-                        {/*        maxsulotruyxati.map(item=><tr key={item.id}>*/}
-                        {/*        <td>{item.name}</td>*/}
-                        {/*    </tr>)*/}
-                        {/*}*/}
-                        {/*{ FIX ME----------------> >*/}
+                        {
+                            // MaxsulotlarRoyxariReducer.maxsulotruyxati.filter(val => {
+                            //     if (input.izlash === '') {
+                            //         return val
+                            //     } else if (val.name.toUpperCase().includes(input.izlash.toUpperCase())) {
+                            //         return val
+                            //     }
+                            // })
+                            //     .map(item => <tr key={item.id}>
+                            //         <td>{item.name}</td>
+                            //         <td>
+                            //             <Link to={'/headerthird/mahsulotRuyxati/barcaMahsulot/taxrirlash'}>*/}
+                            //                 <button className='taxrirlash'><img src={Edit} alt=""/> Taxrirlash
+                            //                 </button>*/}
+                            //             </Link>
+                            //             <Link
+                            //                 to={'/headerthird/mahsulotRuyxati/barcaMahsulot/view/' + input.name + '/' + input.ferma + '/' + input.pay + '/' + input.sotishNarxi + '/'}>*/}
+                            //                 <button onClick={toggle} className='korish'><img src={Korish}
+                            //                                                                  alt=""/> Ko'rish*/}
+                            //                 </button>
+                            //             </Link>
+                            //             <button className='ochirish'><img src={Delete} alt=""/> O'chirish</button>
+                            //             */}
+                            //         </td>
+                            //     </tr>)
+                        }
 
-                        {/*    MaxsulotlarRoyxariReducer.maxsulotruyxati.map(item=><tr key={item.id}>*/}
-                        {/*        <td>{item.name}</td>*/}
-                        {/*    </tr>)*/}
-                        {/*}*/}
-
-                        {/*<tr>*/}
-                        {/*    <td><input type="checkbox"/></td>*/}
-                        {/*    <td>AZBS</td>*/}
-                        {/*    <td>Shifer zavod</td>*/}
-                        {/*    <td>so'm 100.00</td>*/}
-                        {/*    <td>so'm 200.00</td>*/}
-                        {/*    <td>KG</td>*/}
-                        {/*    <td></td>*/}
-                        {/*    <td>*/}
-                        {/*        <Link to={'/headerthird/mahsulotRuyxati/barcaMahsulot/taxrirlash'}>*/}
-                        {/*            <button className='taxrirlash'><img src={Edit} alt=""/> Taxrirlash</button>*/}
-                        {/*        </Link>*/}
-                        {/*        <Link*/}
-                        {/*            to={'/headerthird/mahsulotRuyxati/barcaMahsulot/view/' + input.name + '/' + input.ferma + '/' + input.pay + '/' + input.sotishNarxi + '/'}>*/}
-                        {/*            <button onClick={toggle} className='korish'><img src={Korish} alt=""/> Ko'rish*/}
-                        {/*            </button>*/}
-                        {/*        </Link>*/}
-                        {/*        <button className='ochirish'><img src={Delete} alt=""/> O'chirish</button>*/}
-                        {/*    </td>*/}
-                        {/*</tr>*/}
                         </tbody>
                     </table>
                     {
@@ -261,7 +270,15 @@ function BarchaMaxsulotlar({getMaxsulotRuyxati,maxsulotruyxati,MaxsulotlarRoyxar
     )
 }
 
-export default connect((MaxsulotlarRoyxariReducer) ,{
+
+// export default connect(({MaxsulotlarRoyxariReducer: {maxsulotruyxati}}) => ({maxsulotruyxati}), {
+//     getMaxsulotRuyxati,
+//     saveMaxsulotRuyxati,
+//     deleteMaxsulotRuyxati,
+//     editMaxsulotRuyxati
+// })(BarchaMaxsulotlar)
+//
+export default connect((MaxsulotlarRoyxariReducer), {
     getMaxsulotRuyxati,
     saveMaxsulotRuyxati,
     editMaxsulotRuyxati,
