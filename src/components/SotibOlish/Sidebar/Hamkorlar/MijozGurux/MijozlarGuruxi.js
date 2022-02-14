@@ -52,32 +52,36 @@ function Mijozlarguruxi({getMijozGurux,saveMijozGurux,editMijozGurux,deleteMijoz
     }
 
     return (
-        <div className="col-md-12 mt-2">
-            <div className="textHeader">
+        <div className="col-md-12 mt-2 pt-4 pb-4">
+            <div className="textHeaderMIG">
                 <h2>Mijozlar guruxlari</h2>
             </div>
-            <div className="rowStyle">
-                <div className="qoshish">
+            <div className="rowStyleMIG">
+                <div className="qoshishMIG">
                     <h5>Barcha mijozlar guruxlari</h5>
                     <button onClick={toggle} className='btn btn-primary'>+Qo'shish</button>
                 </div>
-                <div className="izlash">
-                    <p>Ko'rsatildi</p>
-                    <select name="" id="">
-                        <option value="">25</option>
-                        <option value="">50</option>
-                        <option value="">100</option>
-                        <option value="">200</option>
-                        <option value="">500</option>
-                        <option value="">1,000</option>
-                        <option value="">All</option>
-                    </select>
-                    <button><img src={CSV} alt=""/> Export CSV</button>
-                    <button><img src={Excel} alt=""/> Export Excel</button>
-                    <button><img src={Print} alt=""/> Print</button>
-                    <button><img src={Pdf} alt=""/>Export PDF</button>
-                    <button><img src={Data} alt=""/>Malumotlarni kamaytirish</button>
-                    <input type="text" placeholder='Izlash...'/>
+                <div className="izlashMIG">
+                    <div className="izlashBox1">
+                        <p>Ko'rsatildi</p>
+                        <select name="" id="">
+                            <option value="">25</option>
+                            <option value="">50</option>
+                            <option value="">100</option>
+                            <option value="">200</option>
+                            <option value="">500</option>
+                            <option value="">1,000</option>
+                            <option value="">All</option>
+                        </select>
+                        <button><img src={CSV} alt=""/> Export CSV</button>
+                        <button><img src={Excel} alt=""/> Export Excel</button>
+                        <button><img src={Print} alt=""/> Print</button>
+                        <button><img src={Pdf} alt=""/>Export PDF</button>
+                        <button><img src={Data} alt=""/>Malumotlarni kamaytirish</button>
+                    </div>
+                    <div className="izlashBox2">
+                        <input type="text" placeholder='Izlash...'/>
+                    </div>
                 </div>
                 <div className="table-responsive">
                 <table className='table table-striped table-bordered mt-4'>
@@ -127,7 +131,7 @@ function Mijozlarguruxi({getMijozGurux,saveMijozGurux,editMijozGurux,deleteMijoz
                         <button className={'btn btn-primary'}>SAQLASH</button>
                         <button className={'btn btn-primary'} onClick={toggle}>CHIQISH</button>
                     </ModalFooter>
-                </Modal>:''
+                </Modal>
 
             </div>
         </div>

@@ -84,40 +84,39 @@ function Taxrirlash({getLavozim,saveXodim,LavozimReducer,getXodim,users}) {
             <h5 className={'text-center mt-4'}>Xodim qo`shish</h5>
             <div className="col-md-12">
                 {console.log()}
-                <div className="col-md-12 d-flex justify-content-between align-items-center">
-                    <div className="col-md-4">
+                <div className="row d-flex justify-content-between align-items-center">
+                    <div className="col-sm-12 col-4 mb-2">
                         <label htmlFor={'login1'}>Login</label>
                         <input type="text" id={'login1'} value={input.username} onChange={onchangeuserName} placeholder={'Mr/Mrs/Miss'} className={'form-control'}/>
                     </div>
-                    <div className="col-md-4">
+                    <div className="col-sm-12 col-md-4 mb-2">
                         <label htmlFor={'ismi'} >Ismi</label>
                         <input type="text" onChange={onchangefirstName} id={'ismi'} placeholder={'Ismi'} value={input.firstName} className={'form-control'}/>
                     </div>
-                    <div className="col-md-4">
+                    <div className="col-sm-12 col-md-4 mb-2">
                         <label htmlFor={'login2'} >Familiyasi</label>
                         <input type="text" id={'login2'} onChange={onchangelastName} value={input.lastName} placeholder={'Familiyasi'} className={'form-control'}/>
                     </div>
                 </div>
 
-                <div className="col-md-12 d-flex mt-4 justify-content-between align-items-center">
-                    <div className="col-md-6">
+                <div className="row d-flex mt-4 justify-content-between align-items-center">
+                    <div className="col-sm-12 col-4 ">
                         <label htmlFor={'email'}>Email</label>
                         <input type="text" onChange={onchangeemail} value={input.email} className={'form-control'} placeholder={'Email'}/>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-8  d-flex pt-4 align-items-center">
                         <label htmlFor={'faol'}>Faolmi ?</label>
                         <input type="checkbox" style={{width:'20px',height:'20px'}} id={'faol'}/>
                     </div>
                 </div>
                 <h5 className={'text-center mt-4'}>Lavozim vakolatlari</h5>
-                <div className="col-md-12 d-flex mt-4 justify-content-between align-items-center">
-
-                    <div className="col-md-4">
-                        <button className={'btn btn-outline-primary'} onClick={toggle}>Login parol berish</button>
+                <div className="row mt-4 mb-5">
+                    <div className="col-6 d-flex justify-content-center" >
+                        <button className={'btn btn-outline-primary btnLogin'} onClick={toggle}>Login parol berish</button>
                     </div>
 
-                    <div className="cold-m-4">
-                        <Link to={'/headerthird/hodimlarruyxati'}><button onClick={saqla} className={'btn btn-outline-primary'}>Saqlash</button></Link>
+                    <div className="col-6 d-flex justify-content-center">
+                        <Link to={'/headerthird/hodimlarruyxati'}><button onClick={saqla} className={'btn btn-outline-primary btnSaqlash'}>Saqlash</button></Link>
                     </div>
 
                     <Modal isOpen={active} toggle={toggle}>

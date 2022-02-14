@@ -1,4 +1,13 @@
 .ht{
-    /*border: 1px solid red;*/
-    height: 70vh;
+    margin: 0 auto;
+    padding: 0px 4% 0px 4%;
+}
+@media (max-width: 425.9px) {
+    .ht .btnLogin{
+       font-size: 12px; 
+    }
+    .ht .btnSaqlash{
+       font-size: 12px; 
+    }
+      
 }

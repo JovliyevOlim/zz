@@ -37,37 +37,43 @@ function HodimlarRoyhati({getXodim, deleteXodim, saveXodim, editXodim,  xodimlar
 
     return (
         <div>
-            <div className="col-md-12 ">
-                <div className="textHeader">
-                    <h2>Hodimlar ro'yxati</h2>
-                    <p>Hodimlar boshqaruvi</p>
+            <div className="col-md-12 pb-4 pt-4">
+                <div className="textHeaderHR">
+                    <div className="textBox">
+                        <h2>Hodimlar ro'yxati</h2>
+                        <p>Hodimlar boshqaruvi</p>
+                    </div>
                 </div>
-                <div className="rowStyle">
-                    <div className="qoshish">
+                <div className="rowStyleHR">
+                    <div className="qoshishHR">
                         <h5>Barcha hodimlar</h5>
                         <Link to={'/headerthird/hodimlarruyxati/taxrirlash'}>
                             <button className='btn btn-primary'>+Qo'shish</button>
                         </Link>
                     </div>
-                    <div className="izlash">
-                        <p>Ko'rsatildi</p>
-                        <select name="" id="">
-                            <option value="">25</option>
-                            <option value="">50</option>
-                            <option value="">100</option>
-                            <option value="">200</option>
-                            <option value="">500</option>
-                            <option value="">1,000</option>
-                            <option value="">All</option>
-                        </select>
-                        <button><img src={CSV} alt=""/> Export CSV</button>
-                        <button><img src={Excel} alt=""/> Export Excel</button>
-                        <button><img src={Print} alt=""/> Print</button>
-                        <button><img src={Pdf} alt=""/>Export PDF</button>
-                        <button><img src={Data} alt=""/>Malumotlarni kamaytirish</button>
-                        <input type="text" placeholder='Izlash...'/>
+                    <div className="izlashHR">
+                        <div className="izlashBox1">
+                            <p>Ko'rsatildi</p>
+                            <select name="" id="">
+                                <option value="">25</option>
+                                <option value="">50</option>
+                                <option value="">100</option>
+                                <option value="">200</option>
+                                <option value="">500</option>
+                                <option value="">1,000</option>
+                                <option value="">All</option>
+                            </select>
+                            <button><img src={CSV} alt=""/> Export CSV</button>
+                            <button><img src={Excel} alt=""/>Export Excel</button>
+                            <button><img src={Print} alt=""/>Print</button>
+                            <button><img src={Pdf} alt=""/>Export PDF</button>
+                            <button><img src={Data} alt=""/>Malumotlarni kamaytirish</button>
+                        </div>
+                        <div className="izlashBox2">
+                            <input type="text" placeholder='Izlash...'/>
+                        </div>
                     </div>
-                    <div className="table-responsive">
+                    <div className="table-responsive mb-4">
                     <table className='table table-striped table-bordered mt-4'>
                         <thead>
                         <tr>

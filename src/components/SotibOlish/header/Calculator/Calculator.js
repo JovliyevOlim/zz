@@ -23,7 +23,7 @@ function Calculator(){
         }
     }
     return(
-        <div className={'calc'}>
+        <div className={'calc'} >
         <div className={'container'}>
             <form>
                 <input type="text" value={data} placeholder={'0'}/>

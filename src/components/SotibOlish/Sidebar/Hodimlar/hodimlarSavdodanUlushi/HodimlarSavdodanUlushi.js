@@ -27,31 +27,37 @@ import {getXodimSavdo,saveXodimSavdo,editXodimSavdo,deleteXodimSavdo} from "../r
 
        return (
               <div>
-                     <div className="col-md-12 ">
-                            <div className="textHeader">
+                     <div className="col-md-12 pt-4 pb-4" >
+                            <div className="textHeaderHS">
                                 <h2>Hodimlarni savdodan ulushi</h2>
                             </div>
-                            <div className="rowStyle">
-                                   <div className="qoshish">
+                            <div className="rowStyleHS">
+                                   <div className="qoshishHS">
+                                          <h5>Hodimlar ulushi</h5>
                                           <button onClick={toggle} className='btn btn-primary'>+Qo'shish</button>
                                    </div>
                                    <div className="izlash">
-                                          <p>Ko'rsatildi</p>
-                                          <select name="" id="">
-                                                 <option value="">25</option>
-                                                 <option value="">50</option>
-                                                 <option value="">100</option>
-                                                 <option value="">200</option>
-                                                 <option value="">500</option>
-                                                 <option value="">1,000</option>
-                                                 <option value="">All</option>
-                                          </select>
-                                          <button> <img src={CSV} alt="" /> Export CSV</button>
-                                          <button><img src={Excel} alt="" /> Export Excel</button>
-                                          <button><img src={Print} alt="" /> Print</button>
-                                          <button><img src={Pdf} alt="" />Export PDF</button>
-                                          <button> <img src={Data} alt="" />Malumotlarni kamaytirish </button>
-                                          <input type="text" placeholder='Izlash...'/>
+                                          <div className="izlashBoxHS">
+                                                 <p>Ko'rsatildi</p>
+                                                 <select name="" id="">
+                                                        <option value="">25</option>
+                                                        <option value="">50</option>
+                                                        <option value="">100</option>
+                                                        <option value="">200</option>
+                                                        <option value="">500</option>
+                                                        <option value="">1,000</option>
+                                                        <option value="">All</option>
+                                                 </select>
+                                                 <button> <img src={CSV} alt="" /> Export CSV</button>
+                                                 <button><img src={Excel} alt="" /> Export Excel</button>
+                                                 <button><img src={Print} alt="" /> Print</button>
+                                                 <button><img src={Pdf} alt="" />Export PDF</button>
+                                                 <button> <img src={Data} alt="" />Malumotlarni kamaytirish </button>
+                                          </div>
+                                          <div className="izlashBoxHS2">
+                                                 <input type="text" placeholder='Izlash...'/>
+                                          </div>
+                                          
                                    </div>
                                    <div className="table-responsive">
                                    <table className='table table-striped table-bordered mt-4'>

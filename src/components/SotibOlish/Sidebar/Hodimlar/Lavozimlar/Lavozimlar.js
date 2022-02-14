@@ -14,33 +14,36 @@ function Lavozimlar({getLavozim, saveLavozim, deleteLavozim, editLavozim, lavozi
     },[])
 
     return (
-        <div>
-            <div>
-                <div className="col-md-12 ">
-                    <div className="textHeader">
-                        <h2>Lavozimlar</h2>
-                        <p>Lavozimlar boshqaruvi</p>
+            <div className="col-md-12 pt-4 pb-4 ">
+                    <div className="textHeaderL">
+                        <div className="textBoxL">
+                            <h2>Lavozimlar</h2>
+                            <p>Lavozimlar boshqaruvi</p>
+                        </div>
                     </div>
-                    <div className="rowStyle">
+                    <div className="rowStyleL">
                         <div className="qoshish">
                             <h5>Barcha lavozimlar</h5>
                             <Link to={'/headerthird/lavozimlar/taxrirlash'}>
                                 <button className='btn btn-primary'>+Qo'shish</button>
                             </Link>
                         </div>
-                        <div className="izlash">
-                            <p>Ko'rsatildi</p>
-                            <select name="" id="">
-                                <option value="">25</option>
-                                <option value="">50</option>
-                                <option value="">100</option>
-                                <option value="">200</option>
-                                <option value="">500</option>
-                                <option value="">1,000</option>
-                                <option value="">All</option>
-                            </select>
-
-                            <input type="text" placeholder='Izlash...'/>
+                        <div className="izlashL">
+                            <div className="izlashLBox1">
+                                <p>Ko'rsatildi</p>
+                                <select name="" id="">
+                                    <option value="">25</option>
+                                    <option value="">50</option>
+                                    <option value="">100</option>
+                                    <option value="">200</option>
+                                    <option value="">500</option>
+                                    <option value="">1,000</option>
+                                    <option value="">All</option>
+                                </select>
+                            </div>
+                            <div className="izlashBox2">
+                                <input type="text" placeholder='Izlash...'/>
+                            </div>
                         </div>
                         <div className="table-responsive">
                         <table className='table table-striped table-bordered mt-4'>
@@ -75,8 +78,6 @@ function Lavozimlar({getLavozim, saveLavozim, deleteLavozim, editLavozim, lavozi
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
     )
 }
 

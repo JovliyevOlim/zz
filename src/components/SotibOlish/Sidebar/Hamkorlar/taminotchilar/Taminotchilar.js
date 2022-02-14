@@ -77,35 +77,39 @@ function Taminotchilar({getTaminot,saveTaminot,editTaminot,deleteTaminot,taminot
     return (
 
         <div>
-            <div className="col-md-12 mt-2">
-                <div className="textHeader">
+            <div className="col-md-12 pt-4 pb-4 mt-2">
+                <div className="textHeaderTM">
                     <h2>Taminotchilar/Diller </h2>
                     <p>Barcha Taminotchilar/Diller</p>
                 </div>
-                <div className="rowStyle">
-                    <div className="qoshish">
-                        <h5>Barcha Taminotchilar/Diller</h5>
+                <div className="rowStyleTM">
+                    <div className="qoshishTM">
+                        <h5>Barcha Taminotchilar</h5>
                         <button onClick={toggle} className='btn btn-primary'>+Qo'shish</button>
                     </div>
-                    <div className="izlash">
-                        <p>Ko'rsatildi</p>
-                        <select name="" id="">
-                            <option value="">25</option>
-                            <option value="">50</option>
-                            <option value="">100</option>
-                            <option value="">200</option>
-                            <option value="">500</option>
-                            <option value="">1,000</option>
-                            <option value="">All</option>
-                        </select>
-                        <button><img src={CSV} alt=""/> Export CSV</button>
-                        <button><img src={Excel} alt=""/> Export Excel</button>
-                        <button><img src={Print} alt=""/> Print</button>
-                        <button><img src={Pdf} alt=""/>Export PDF</button>
-                        <button><img src={Data} alt=""/>Malumotlarni kamaytirish</button>
-                        <input type="text" placeholder='Izlash...'/>
+                    <div className="izlashTM">
+                        <div className="izlashBox1">
+                            <p>Ko'rsatildi</p>
+                            <select name="" id="">
+                                <option value="">25</option>
+                                <option value="">50</option>
+                                <option value="">100</option>
+                                <option value="">200</option>
+                                <option value="">500</option>
+                                <option value="">1,000</option>
+                                <option value="">All</option>
+                            </select>
+                            <button><img src={CSV} alt=""/> Export CSV</button>
+                            <button><img src={Excel} alt=""/> Export Excel</button>
+                            <button><img src={Print} alt=""/> Print</button>
+                            <button><img src={Pdf} alt=""/>Export PDF</button>
+                            <button><img src={Data} alt=""/>Malumotlarni kamaytirish</button>
+                        </div>
+                        <div className="izlashBox2">
+                            <input type="text" placeholder='Izlash...'/>
+                        </div>
                     </div>
-
+                    <div className="table-responsive">
                     <table className='table table-striped table-bordered mt-4'>
                         <thead>
                         <tr>
@@ -152,6 +156,7 @@ function Taminotchilar({getTaminot,saveTaminot,editTaminot,deleteTaminot,taminot
                         {/*</tr>*/}
                         </tbody>
                     </table>
+                    </div>
 
                     <p>Ko'rsatildi 1 ta sahifa 1 va yana 1 ta sahifa bor</p>
                     <div className='sahifalar'>

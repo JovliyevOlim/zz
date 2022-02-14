@@ -53,7 +53,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 32px;
+    margin-left: 16px;
 }
 .headerBox .two .imgUserBox select{
     width: 16px;
@@ -96,4 +96,15 @@ hr{
 }
 .homepage2 .padding-10{
     padding: 0 1.2rem !important;
+}
+@media  (max-width:425.9px) {
+    .headerBox .two .img2img3 .im2{
+        display: none;
+    } 
+}
+
+@media (min-width: 426px) and (max-width: 768.9px) {
+    .headerBox .two .img2img3 .im2{
+        display: none;
+    } 
 }
