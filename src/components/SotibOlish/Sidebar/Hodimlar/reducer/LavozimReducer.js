@@ -13,7 +13,9 @@ const slice = createSlice({
             console.log(action.payload.object);
         },
         savefrom: (state,action) => {
+            console.log('saqlandi')
             state.lavozimlar.unshift(action.payload)
+            console.log(action.payload)
             // toast.success('Saqlandi')
         },
         editfrom: (state,action) => {
@@ -24,9 +26,10 @@ const slice = createSlice({
             })
         },
         deletefrom:(state,action)=>{
-
+            console.log('ochirildi')
+            console.log(action.payload.object.id)
+            console.log(typeof action.payload)
         }
-
     }
 });
 
@@ -51,8 +54,8 @@ export const editLavozim=(data)=>apiCall({
 });
 
 export const deleteLavozim=(data)=>apiCall({
-    url: '/role',
-    method:'post',
+    url: '/role/'+data,
+    method:'delete',
     data,
     onSuccess: slice.actions.deletefrom.type
 })

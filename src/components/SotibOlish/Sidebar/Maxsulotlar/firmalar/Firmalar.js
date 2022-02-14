@@ -137,3 +137,4 @@ function Firmalar({getFirma,users,firmalar}) {
 }
 export default connect(({FirmaReducer:{firmalar}})=>({firmalar}),{getFirma,saveFirma,editFirma,deleteFirma}) (Firmalar)
 // export default connect((FirmaReducer,users),{getFirma,saveFirma,editFirma,deleteFirma}) (Firmalar)
+// export default connect((FirmaReducer,users),{getFirma,saveFirma,editFirma,deleteFirma}) (Firmalar)

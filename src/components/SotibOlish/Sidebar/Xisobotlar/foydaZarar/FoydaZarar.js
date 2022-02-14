@@ -3,30 +3,43 @@ import {connect} from "react-redux";
 import {useEffect,useState} from "react";
 import {deleteFoydaZarar, editFoydaZarar, getFoydaZarar, saveFoydaZarar} from "../reducer/FoydaZararReducer";
 
-function FoydaZarar({getFoydaZarar,saveFoydaZarar,editFoydaZarar,deleteFoydaZarar}) {
+function FoydaZarar({getFoydaZarar,saveFoydaZarar,editFoydaZarar,deleteFoydaZarar,foydazarar}) {
 
        const [input,setInput] = useState(
            {
-                  bazatanlash:'',
-                  aniqsananibelgilash:'',
-
+                  branchId:1,
+                  firstDate:'',
+                  secondDate:'',
            }
        )
 
        function bazatanlash(e){
-              input.bazatanlash = e.target.value
-              let a = {...input}
-              setInput(a)
-       }
-       function aniqsananibelgilash(e){
-              input.aniqsananibelgilash = e.target.value
+              input.branchId= e.target.value
               let a = {...input}
               setInput(a)
        }
 
+       function aniqsananibelgilash(e){
+              if(e.target.value == 1){
+                     const bugun = parseInt(new Date().getFullYear())+"-"+ parseInt(new Date().getMonth()+1)+'-'+ parseInt(new Date().getDate())
+                     const bugun2 = new Date().getFullYear()+"-"+ (new Date().getMonth()+1)+'-'+ (new Date().getDate() - 7)
+                     console.log(typeof bugun)
+                     const bugun3 = new Date().toLocaleDateString()
+                     console.log(bugun3)
+                     console.log(typeof bugun3)
+                     console.log(bugun2)
+                     input.firstDate=(bugun)
+                     input.secondDate=parseInt(bugun2)
+                     let a ={...input}
+                     setInput(a)
+                     console.log(input)
+                     saveFoydaZarar(input)
+              }
+
+       }
        useEffect(()=>{
-              getFoydaZarar()
-       })
+
+       },[])
 
        return (
               <div className="col-md-12 mt-2">
@@ -48,7 +61,7 @@ function FoydaZarar({getFoydaZarar,saveFoydaZarar,editFoydaZarar,deleteFoydaZara
                                                  <select name="" id="" value={input.aniqsananibelgilash} onChange={aniqsananibelgilash}>
                                                         <option value="" hidden> Aniq sana belgilash</option>
                                                         <option value="">Bugun</option>
-                                                        <option value="">Oxirgi 1 hafta</option>
+                                                        <option value="1">Oxirgi 1 hafta</option>
                                                         <option value="">Oxirgi 1 oy</option>
                                                         <option value="">Istalgan sanani tanlash</option>
                                                  </select>
@@ -67,13 +80,12 @@ function FoydaZarar({getFoydaZarar,saveFoydaZarar,editFoydaZarar,deleteFoydaZara
                                           </tr>
                                    </thead>
                                    <tbody>
-                                          <tr>
-                                                 <td>1500000</td>
-                                                 <td>2000000</td>
-                                                 <td>300000</td>
-                                                 <td>50000</td>
-                                                 <td>100000</td>
-                                          </tr>
+                                   {
+                                          foydazarar.map(item=><tr key={item.id}>
+                                                 <td>{item.name}</td>
+                                          </tr>)
+                                   }
+                                    
                                    </tbody>
                             </table>
                             </div>

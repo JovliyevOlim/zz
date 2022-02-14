@@ -9,9 +9,47 @@ import {getLavozim, saveLavozim, editLavozim, deleteLavozim} from "../reducer/La
 
 function Lavozimlar({getLavozim, saveLavozim, deleteLavozim, editLavozim, lavozimlar}) {
 
+    function deletel(item) {
+        console.log(item)
+        deleteLavozim(item.id)
+        getLavozim(1)
+    }
+
+    const [inSearch2, setInSearch2] = useState(
+        {
+            inputputsearch2: ''
+        }
+    )
+
+    function search(e) {
+        inSearch2.inputputsearch2 = e.target.value
+        let a = {...inSearch2}
+        setInSearch2(a)
+    }
+
     useEffect(() => {
         getLavozim()
-    },[])
+    }, [])
+
+    const [input, setInput] = useState(
+        {
+            view: '',
+            izlash: ''
+        }
+    )
+
+    function view(e) {
+        input.view = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+
+    function izlash(e) {
+        input.izlash = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+
 
     return (
             <div className="col-md-12 pt-4 pb-4 ">
@@ -28,6 +66,7 @@ function Lavozimlar({getLavozim, saveLavozim, deleteLavozim, editLavozim, lavozi
                                 <button className='btn btn-primary'>+Qo'shish</button>
                             </Link>
                         </div>
+
                         <div className="izlashL">
                             <div className="izlashLBox1">
                                 <p>Ko'rsatildi</p>
@@ -46,28 +85,47 @@ function Lavozimlar({getLavozim, saveLavozim, deleteLavozim, editLavozim, lavozi
                             </div>
                         </div>
                         <div className="table-responsive">
-                        <table className='table table-striped table-bordered mt-4'>
-                            <thead>
-                            <tr>
-                                <th>Lavozimlar</th>
-                                <th>Amal</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            {
-                                lavozimlar.map(item => <tr key={item.id}>
+                            <table className='table table-striped table-bordered mt-4'>
+                                <thead>
+                                <tr>
+                                    <th>Lavozimlar</th>
+                                    <th>Amal</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {
+                                    lavozimlar.filter(val => {
+                                    if (inSearch2.inputputsearch2 === '') {
+                                        return val
+                                    } else if (val.name.toUpperCase().includes(inSearch2.inputputsearch2.toUpperCase())) {
+                                        return val
+                                    }
+                                }).map(item => <tr key={item.id}>
                                     <td>{item.name}</td>
                                     <td>
                                         <Link to={'/headerthird/lavozimlar/taxrirlash'}>
                                             <button className='taxrirlash'><img src={Edit} alt=""/> Taxrirlash</button>
                                         </Link>
-                                        <button className='ochirish'><img src={Delete} alt=""/> O'chirish</button>
+                                        <button className='ochirish' onClick={() => deletel(item)}><img src={Delete} alt=""/> O'chirish
+                                        </button>
                                     </td>
                                 </tr>)
-                            }
+                                }
 
-                            </tbody>
-                        </table>
+                                {/*{*/}
+                                {/*    lavozimlar.map(item => <tr key={item.id}>*/}
+                                {/*        <td>{item.name}</td>*/}
+                                {/*        <td>*/}
+                                {/*            <Link to={'/headerthird/lavozimlar/taxrirlash'}>*/}
+                                {/*                <button className='taxrirlash'><img src={Edit} alt=""/> Taxrirlash</button>*/}
+                                {/*            </Link>*/}
+                                {/*            */}
+                                {/*            <button className='ochirish' onClick={()=>deletel(item)}><img src={Delete} alt=""/> O'chirish</button>*/}
+                                {/*        </td>*/}
+                                {/*    </tr>)*/}
+                                {/*}*/}
+                                </tbody>
+                            </table>
                         </div>
 
                         <p>Ko'rsatildi 1 ta sahifa 2 va yana 2 ta sahifa bor</p>

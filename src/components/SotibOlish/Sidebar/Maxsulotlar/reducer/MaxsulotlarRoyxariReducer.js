@@ -55,7 +55,7 @@ export const editMaxsulotRuyxati=(data)=>apiCall({
 });
 
 export const deleteMaxsulotRuyxati=(data)=>apiCall({
-    url: '/product',
+    url: '/product/'+data,
     method:'post',
     data,
     onSuccess: slice.actions.deletefrom.type

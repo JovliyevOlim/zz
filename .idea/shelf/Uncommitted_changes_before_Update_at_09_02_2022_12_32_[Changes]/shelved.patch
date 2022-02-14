@@ -1,0 +1,487 @@
+Index: src/components/SotibOlish/Sidebar/Hodimlar/hodimlarRoyxati/HodimlarRoyhati.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import './HodimlarRoyhati.css';\r\nimport CSV from '../../../../../img/CSV.png'\r\nimport Excel from '../../../../../img/Excel.png';\r\nimport Print from '../../../../../img/Print.png';\r\nimport Data from '../../../../../img/Data.png';\r\nimport Pdf from '../../../../../img/PDF.png';\r\nimport Edit from '../../../../../img/Edit.png';\r\nimport Korish from '../../../../../img/Korish.png';\r\nimport Delete from '../../../../../img/Delete.png';\r\nimport {Link, Route, Switch} from 'react-router-dom';\r\nimport {useHistory} from 'react-router-dom';\r\nimport {useEffect, useState} from 'react';\r\nimport {connect} from \"react-redux\";\r\nimport xodimReducer, {getXodim, saveXodim, editXodim, deleteXodim} from \"../reducer/XodimReducer\";\r\n\r\n\r\nfunction HodimlarRoyhati({getXodim, deleteXodim, saveXodim, editXodim,xodimlar}) {\r\n\r\n    useEffect(()=>{\r\n           getXodim()\r\n    },[xodimlar])\r\n\r\n    const [input,setInput] = useState('')\r\n    const [inputsearch,setinputsearch] = useState('')\r\n    const history = useHistory();\r\n\r\n    function deletex(item){\r\n        console.log(item)\r\n        deleteXodim(item.id)\r\n        getXodim()\r\n    }\r\n\r\n    return (\r\n        <div>\r\n            <div className=\"col-md-12 \">\r\n                <div className=\"textHeader\">\r\n                    <h2>Hodimlar ro'yxati</h2>\r\n                    <p>Hodimlar boshqaruvi</p>\r\n                </div>\r\n                <div className=\"rowStyle\">\r\n                    <div className=\"qoshish\">\r\n                        <h5>Barcha hodimlar</h5>\r\n                        <Link to={'/headerthird/hodimlarruyxati/taxrirlash'}>\r\n                            <button className='btn btn-primary'>+Qo'shish</button>\r\n                        </Link>\r\n                    </div>\r\n                    <div className=\"izlash\">\r\n                        <p>Ko'rsatildi</p>\r\n                        <select name=\"\" id=\"\">\r\n                            <option value=\"\">25</option>\r\n                            <option value=\"\">50</option>\r\n                            <option value=\"\">100</option>\r\n                            <option value=\"\">200</option>\r\n                            <option value=\"\">500</option>\r\n                            <option value=\"\">1,000</option>\r\n                            <option value=\"\">All</option>\r\n                        </select>\r\n                        <button><img src={CSV} alt=\"\"/> Export CSV</button>\r\n                        <button><img src={Excel} alt=\"\"/> Export Excel</button>\r\n                        <button><img src={Print} alt=\"\"/> Print</button>\r\n                        <button><img src={Pdf} alt=\"\"/>Export PDF</button>\r\n                        <button><img src={Data} alt=\"\"/>Malumotlarni kamaytirish</button>\r\n                        <input type=\"text\" placeholder='Izlash...'/>\r\n                    </div>\r\n\r\n                    <table className='table table-striped table-bordered mt-4'>\r\n                        <thead>\r\n                        <tr>\r\n                            <th>Login</th>\r\n                            <th>Ism</th>\r\n                            <th>Familiyasi</th>\r\n                            <th>Lavozim</th>\r\n                            <th>Email</th>\r\n                            <th>Amal</th>\r\n                        </tr>\r\n                        </thead>\r\n                        <tbody>\r\n\r\n                            {\r\n                                xodimlar.map((item,index)=><tr>\r\n                                    <td>{item.username}</td>\r\n                                    <td>{item.firstName}</td>\r\n                                    <td>{item.lastName}</td>\r\n                                    <td>{item.role.name}</td>\r\n\r\n                                    <td>-</td>\r\n                                    <td>\r\n                                        <Link to={'/headerthird/hodimlarruyxati/taxrirlash'}>\r\n                                            <button className='taxrirlash'><img src={Edit} alt=\"\"/>Taxrirlash</button>\r\n                                        </Link>\r\n                                        <Link\r\n                                            to={'/headerthird/hodimlarruyxati/view/' + input.name + '/' + input.login + '/' + input.email}>\r\n                                            <button className='korish'><img src={Korish} alt=\"\"/> Ko'rish</button>\r\n                                        </Link>\r\n                                            <button onClick={()=>deletex(item)} className='ochirish'><img src={Delete} alt=\"\"/> O'chirish</button>\r\n                                    </td>\r\n\r\n                                </tr>)\r\n                            }\r\n\r\n                        </tbody>\r\n                    </table>\r\n\r\n                    <p>Ko'rsatildi 1 ta sahifa 1 va yana 1 ta sahifa bor</p>\r\n                    <div className='sahifalar'>\r\n                        <button>Ortga</button>\r\n                        <button>1</button>\r\n                        <button>Oldinga</button>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n\r\n        </div>\r\n    )\r\n}\r\n\r\nexport default connect(({XodimReducer:{xodimlar}})=>({xodimlar}), {getXodim, saveXodim, editXodim,deleteXodim})(HodimlarRoyhati)\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/SotibOlish/Sidebar/Hodimlar/hodimlarRoyxati/HodimlarRoyhati.js b/src/components/SotibOlish/Sidebar/Hodimlar/hodimlarRoyxati/HodimlarRoyhati.js
+--- a/src/components/SotibOlish/Sidebar/Hodimlar/hodimlarRoyxati/HodimlarRoyhati.js	(revision 3f7cc628b1ee1edd0a8d6519721f358e9c2165be)
++++ b/src/components/SotibOlish/Sidebar/Hodimlar/hodimlarRoyxati/HodimlarRoyhati.js	(date 1644313673585)
+@@ -18,7 +18,7 @@
+ 
+     useEffect(()=>{
+            getXodim()
+-    },[xodimlar])
++    },[])
+ 
+     const [input,setInput] = useState('')
+     const [inputsearch,setinputsearch] = useState('')
+@@ -77,7 +77,7 @@
+                         <tbody>
+ 
+                             {
+-                                xodimlar.map((item,index)=><tr>
++                                xodimlar.map((item,index)=><tr key={item.id}>
+                                     <td>{item.username}</td>
+                                     <td>{item.firstName}</td>
+                                     <td>{item.lastName}</td>
+Index: src/components/SotibOlish/Sidebar/Hodimlar/reducer/XodimReducer.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import {createSlice} from \"@reduxjs/toolkit\";\r\nimport {apiCall} from \"../../../../../api\";\r\n// import {toast} from \"react-toastify\";\r\n\r\nconst slice = createSlice({\r\n    name: 'xodimlar',\r\n    initialState: {\r\n        xodimlar: [],\r\n        id:''\r\n    },\r\n    reducers: {\r\n        getFrom: (state, action) => {\r\n            state.xodimlar = action.payload.object\r\n            console.log(action.payload.object);\r\n            console.log('qoshildi')\r\n        },\r\n        savefrom: (state, action) => {\r\n            state.xodimlar.unshift(action.payload)\r\n        },\r\n        editfrom: (state, action) => {\r\n            state.xodimlar.map((item, index) => {\r\n                if (item.id === action.payload.id) {\r\n                    item.login = action.payload.login\r\n                }\r\n            })\r\n            // toast.success('O`zgartirildi')\r\n        },\r\n        deletefrom: (state, action) => {\r\n            console.log('ochrildi')\r\n            console.log(action.payload.object.id)\r\n            console.log(typeof action.payload)\r\n        }\r\n\r\n    }\r\n});\r\n\r\nexport const getXodim = () => apiCall({\r\n    url: '/user',\r\n    method: 'get',\r\n    onSuccess: slice.actions.getFrom.type\r\n});\r\n\r\nexport const saveXodim = (data) => apiCall({\r\n    url: '/user',\r\n    method: 'post',\r\n    data,\r\n    onSuccess: slice.actions.savefrom.type\r\n});\r\n\r\nexport const editXodim = (data) => apiCall({\r\n    url: '/user',\r\n    method: 'post',\r\n    data,\r\n    onSuccess: slice.actions.editfrom.type\r\n});\r\n\r\nexport const deleteXodim = (data) => apiCall({\r\n\r\n    url: '/user/'+data,\r\n    method: 'delete',\r\n    data,\r\n    onSuccess: slice.actions.deletefrom.type\r\n})\r\n\r\n\r\nexport default slice.reducer\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/SotibOlish/Sidebar/Hodimlar/reducer/XodimReducer.js b/src/components/SotibOlish/Sidebar/Hodimlar/reducer/XodimReducer.js
+--- a/src/components/SotibOlish/Sidebar/Hodimlar/reducer/XodimReducer.js	(revision 3f7cc628b1ee1edd0a8d6519721f358e9c2165be)
++++ b/src/components/SotibOlish/Sidebar/Hodimlar/reducer/XodimReducer.js	(date 1644385520803)
+@@ -12,7 +12,6 @@
+         getFrom: (state, action) => {
+             state.xodimlar = action.payload.object
+             console.log(action.payload.object);
+-            console.log('qoshildi')
+         },
+         savefrom: (state, action) => {
+             state.xodimlar.unshift(action.payload)
+@@ -35,7 +34,7 @@
+ });
+ 
+ export const getXodim = () => apiCall({
+-    url: '/user',
++    url: '/user/get-by-business/1',
+     method: 'get',
+     onSuccess: slice.actions.getFrom.type
+ });
+Index: src/components/SotibOlish/Sidebar/Hamkorlar/MijozGurux/MijozlarGuruxi.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React from 'react'\r\nimport {Link} from 'react-router-dom'\r\nimport CSV from '../../../../../img/CSV.png'\r\nimport Excel from '../../../../../img/Excel.png'\r\nimport Print from '../../../../../img/Print.png'\r\nimport Data from '../../../../../img/Data.png'\r\nimport Pdf from '../../../../../img/PDF.png'\r\nimport Edit from '../../../../../img/Edit.png'\r\nimport Korish from '../../../../../img/Korish.png'\r\nimport Delete from '../../../../../img/Delete.png'\r\nimport Arrow from '../../../../../img/arrowIcon.png'\r\nimport './mijozlarGuruxi.css'\r\nimport {useState,useEffect} from 'react'\r\nimport {connect} from \"react-redux\";\r\nimport {getTMijozGurux,saveMijozGurux,editMijozGurux,deleteMijozGurux} from \"../reducer/MijozGuruxReducer\";\r\nimport {Modal, ModalBody, ModalFooter, ModalHeader} from \"reactstrap\";\r\n\r\nfunction Mijozlarguruxi({getMijozGurux,saveMijozGurux,editMijozGurux,deleteMijozGurux,mijozgurux}) {\r\n\r\n    const [active, setActive] = useState(false);\r\n\r\n    const [input,setInput] = useState(\r\n        {\r\n            guruhnomi:'',\r\n            selectfoiz:'',\r\n            foizda:'',\r\n        }\r\n    )\r\n\r\n    function changeguruxnomi(e){\r\n        input.guruhnomi = e.target.value\r\n        let a = {...input}\r\n        setInput(a)\r\n    }\r\n    function changeselectfoiz(e){\r\n        input.selectfoiz = e.target.value\r\n        let a = {...input}\r\n        setInput(a)\r\n    }\r\n    function changefoizda(e){\r\n        input.foizda = e.target.value\r\n        let a = {...input}\r\n        setInput(a)\r\n    }\r\n\r\n    useEffect(()=>{\r\n        getTMijozGurux()\r\n    },[])\r\n\r\n    function toggle() {\r\n        setActive(!active)\r\n    }\r\n\r\n    return (\r\n        <div className=\"col-md-12 mt-2\">\r\n            <div className=\"textHeader\">\r\n                <h2>Mijozlar guruxlari</h2>\r\n            </div>\r\n            <div className=\"rowStyle\">\r\n                <div className=\"qoshish\">\r\n                    <h5>Barcha mijozlar guruxlari</h5>\r\n                    <button onClick={toggle} className='btn btn-primary'>+Qo'shish</button>\r\n                </div>\r\n                <div className=\"izlash\">\r\n                    <p>Ko'rsatildi</p>\r\n                    <select name=\"\" id=\"\">\r\n                        <option value=\"\">25</option>\r\n                        <option value=\"\">50</option>\r\n                        <option value=\"\">100</option>\r\n                        <option value=\"\">200</option>\r\n                        <option value=\"\">500</option>\r\n                        <option value=\"\">1,000</option>\r\n                        <option value=\"\">All</option>\r\n                    </select>\r\n                    <button><img src={CSV} alt=\"\"/> Export CSV</button>\r\n                    <button><img src={Excel} alt=\"\"/> Export Excel</button>\r\n                    <button><img src={Print} alt=\"\"/> Print</button>\r\n                    <button><img src={Pdf} alt=\"\"/>Export PDF</button>\r\n                    <button><img src={Data} alt=\"\"/>Malumotlarni kamaytirish</button>\r\n                    <input type=\"text\" placeholder='Izlash...'/>\r\n                </div>\r\n\r\n                <table className='table table-striped table-bordered mt-4'>\r\n                    <thead>\r\n                    <tr>\r\n                        <th>Gurux nomi</th>\r\n                        <th>Foizda(%)</th>\r\n                        <th>Sotuv narxini guruxlash</th>\r\n                        <th>Amallar</th>\r\n                    </tr>\r\n                    </thead>\r\n                    <tbody>\r\n                    <tr>\r\n                        <td>boshliq</td>\r\n                        <td>12%</td>\r\n                        <td>ssdd</td>\r\n                        <td>\r\n                            <Link to={'/headerthird/mijozlarGuruhi/taxrirlash'}>\r\n                                <button onClick={toggle} className='taxrirlash'><img src={Edit} alt=\"\"/> Taxrirlash\r\n                                </button>\r\n                            </Link>\r\n                            {/*<Link to={'/third/mijozgurux/korish'}>*/}\r\n                            {/*    <button className='korish'><img src={Korish} alt=\"\"/> Ko'rish</button>*/}\r\n                            {/*</Link>*/}\r\n                            <button className='ochirish'><img src={Delete} alt=\"\"/> O'chirish</button>\r\n                        </td>\r\n                    </tr>\r\n                    </tbody>\r\n                </table>\r\n\r\n                <p>Ko'rsatildi 1 ta sahifa 1 va yana 1 ta sahifa bor</p>\r\n                <div className='sahifalar'>\r\n                    <button>Ortga</button>\r\n                    <button>1</button>\r\n                    <button>Oldinga</button>\r\n                </div>\r\n\r\n\r\n                <Modal isOpen={active} toggle={toggle}>\r\n                    <ModalHeader>\r\n                        Yangi guruh qo`shish / taxrirlash\r\n                    </ModalHeader>\r\n                    <ModalBody>\r\n                        <label htmlFor={'nomi'}>Guruh nomi</label>\r\n                        <input checked={input.guruhnomi} onChange={changeguruxnomi} id={'nomi'} type=\"text\" className={'form-control'}/>\r\n                        <label htmlFor={'lang'}>lang_v1.price_calculation_type</label>\r\n                        <select value={input.selectfoiz} onChange={changeselectfoiz} className={'form-control mt-3'}  name=\"\" id=\"\">\r\n                            <option value=\"#\">Foizda</option>\r\n                        </select>\r\n                        <label htmlFor={'foizda'} className={'mt-3'}>Foizda</label>\r\n                        <input type=\"text\" checked={input.foizda} onChange={changefoizda} className={'form-control'} id={'foizda'}/>\r\n                    </ModalBody>\r\n                    <ModalFooter>\r\n                        <button className={'btn btn-primary'}>SAQLASH</button>\r\n                        <button className={'btn btn-primary'} onClick={toggle}>CHIQISH</button>\r\n                    </ModalFooter>\r\n                </Modal>:''\r\n\r\n            </div>\r\n        </div>\r\n    )\r\n}\r\nexport default connect(({MijozGuruxReducer:{mijozgurux}})=>({mijozgurux}),{getTMijozGurux,saveMijozGurux,editMijozGurux,deleteMijozGurux}) (Mijozlarguruxi)
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/SotibOlish/Sidebar/Hamkorlar/MijozGurux/MijozlarGuruxi.js b/src/components/SotibOlish/Sidebar/Hamkorlar/MijozGurux/MijozlarGuruxi.js
+--- a/src/components/SotibOlish/Sidebar/Hamkorlar/MijozGurux/MijozlarGuruxi.js	(revision 3f7cc628b1ee1edd0a8d6519721f358e9c2165be)
++++ b/src/components/SotibOlish/Sidebar/Hamkorlar/MijozGurux/MijozlarGuruxi.js	(date 1644391207797)
+@@ -12,11 +12,15 @@
+ import './mijozlarGuruxi.css'
+ import {useState,useEffect} from 'react'
+ import {connect} from "react-redux";
+-import {getTMijozGurux,saveMijozGurux,editMijozGurux,deleteMijozGurux} from "../reducer/MijozGuruxReducer";
++import {getMijozGurux,saveMijozGurux,editMijozGurux,deleteMijozGurux} from "../reducer/MijozGuruxReducer";
+ import {Modal, ModalBody, ModalFooter, ModalHeader} from "reactstrap";
+ 
+ function Mijozlarguruxi({getMijozGurux,saveMijozGurux,editMijozGurux,deleteMijozGurux,mijozgurux}) {
+ 
++    useEffect(()=>{
++        getMijozGurux()
++    },[])
++
+     const [active, setActive] = useState(false);
+ 
+     const [input,setInput] = useState(
+@@ -43,10 +47,6 @@
+         setInput(a)
+     }
+ 
+-    useEffect(()=>{
+-        getTMijozGurux()
+-    },[])
+-
+     function toggle() {
+         setActive(!active)
+     }
+@@ -90,21 +90,13 @@
+                     </tr>
+                     </thead>
+                     <tbody>
+-                    <tr>
+-                        <td>boshliq</td>
+-                        <td>12%</td>
+-                        <td>ssdd</td>
+-                        <td>
+-                            <Link to={'/headerthird/mijozlarGuruhi/taxrirlash'}>
+-                                <button onClick={toggle} className='taxrirlash'><img src={Edit} alt=""/> Taxrirlash
+-                                </button>
+-                            </Link>
+-                            {/*<Link to={'/third/mijozgurux/korish'}>*/}
+-                            {/*    <button className='korish'><img src={Korish} alt=""/> Ko'rish</button>*/}
+-                            {/*</Link>*/}
+-                            <button className='ochirish'><img src={Delete} alt=""/> O'chirish</button>
+-                        </td>
+-                    </tr>
++                    {
++                        mijozgurux.map(item => <tr key={item.id}>
++                            <td>{item.name}</td>
++                            <td>{item.phoneNumber}</td>
++                            <td>{item.telegram}</td>
++                        </tr>)
++                    }
+                     </tbody>
+                 </table>
+ 
+@@ -140,4 +132,4 @@
+         </div>
+     )
+ }
+-export default connect(({MijozGuruxReducer:{mijozgurux}})=>({mijozgurux}),{getTMijozGurux,saveMijozGurux,editMijozGurux,deleteMijozGurux}) (Mijozlarguruxi)
+\ No newline at end of file
++export default connect(({MijozGuruxReducer:{mijozgurux}})=>({mijozgurux}),{getMijozGurux,saveMijozGurux,editMijozGurux,deleteMijozGurux}) (Mijozlarguruxi)
+\ No newline at end of file
+Index: src/components/SotibOlish/Sidebar/Hamkorlar/reducer/MijozGuruxReducer.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import {createSlice} from \"@reduxjs/toolkit\";\r\nimport {apiCall} from \"../../../../../api\";\r\n// import {toast} from \"react-toastify\";\r\n\r\nconst slice = createSlice({\r\n    name: 'mijozgurux',\r\n    initialState: {\r\n        mijozgurux: []\r\n    },\r\n    reducers: {\r\n        getFrom: (state, action) => {\r\n            state.taminot = action.payload.object\r\n            console.log(action.payload.object);\r\n        },\r\n        savefrom: (state,action) => {\r\n            state.taminot.unshift(action.payload)\r\n            // toast.success('Saqlandi')\r\n        },\r\n        editfrom: (state,action) => {\r\n            state.taminot.map((item,index)=>{\r\n                if (item.id === action.payload.id){\r\n                    item.login = action.payload.login\r\n                }\r\n            })\r\n            // toast.success('O`zgartirildi')\r\n        },\r\n        deletefrom:(state,action)=>{\r\n\r\n            // toast.info('O`chirildi')\r\n        }\r\n\r\n    }\r\n});\r\n\r\nexport const getTMijozGurux=()=>apiCall({\r\n    url: '/customer',\r\n    method:'get',\r\n    onSuccess: slice.actions.getFrom.type\r\n});\r\n\r\nexport const saveMijozGurux=(data)=>apiCall({\r\n    url: '/customer',\r\n    method:'post',\r\n    data,\r\n    onSuccess: slice.actions.savefrom.type\r\n});\r\n\r\nexport const editMijozGurux=(data)=>apiCall({\r\n    url: '/customer',\r\n    method: 'post',\r\n    data,\r\n    onSuccess: slice.actions.editfrom.type\r\n});\r\n\r\nexport const deleteMijozGurux=(data)=>apiCall({\r\n    url: '/customer',\r\n    method:'post',\r\n    data,\r\n    onSuccess: slice.actions.deletefrom.typex\r\n})\r\n\r\nexport default slice.reducer\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/SotibOlish/Sidebar/Hamkorlar/reducer/MijozGuruxReducer.js b/src/components/SotibOlish/Sidebar/Hamkorlar/reducer/MijozGuruxReducer.js
+--- a/src/components/SotibOlish/Sidebar/Hamkorlar/reducer/MijozGuruxReducer.js	(revision 3f7cc628b1ee1edd0a8d6519721f358e9c2165be)
++++ b/src/components/SotibOlish/Sidebar/Hamkorlar/reducer/MijozGuruxReducer.js	(date 1644391844318)
+@@ -9,15 +9,15 @@
+     },
+     reducers: {
+         getFrom: (state, action) => {
+-            state.taminot = action.payload.object
++            state.mijozgurux = action.payload.object
+             console.log(action.payload.object);
+         },
+         savefrom: (state,action) => {
+-            state.taminot.unshift(action.payload)
++            state.mijozgurux.unshift(action.payload)
+             // toast.success('Saqlandi')
+         },
+         editfrom: (state,action) => {
+-            state.taminot.map((item,index)=>{
++            state.mijozgurux.map((item,index)=>{
+                 if (item.id === action.payload.id){
+                     item.login = action.payload.login
+                 }
+@@ -32,8 +32,8 @@
+     }
+ });
+ 
+-export const getTMijozGurux=()=>apiCall({
+-    url: '/customer',
++export const getMijozGurux=()=>apiCall({
++    url: 'customer/get-by-businessId/1',
+     method:'get',
+     onSuccess: slice.actions.getFrom.type
+ });
+Index: src/components/SotibOlish/Sidebar/Hamkorlar/reducer/TaminotReducer.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import {createSlice} from \"@reduxjs/toolkit\";\r\nimport {apiCall} from \"../../../../../api\";\r\n// import {toast} from \"react-toastify\";\r\nimport {useEffect,useState} from \"react\";\r\n\r\nconst slice = createSlice({\r\n    name: 'taminot',\r\n    initialState: {\r\n        taminot: []\r\n    },\r\n    reducers: {\r\n        getFrom: (state, action) => {\r\n            state.taminot = action.payload\r\n            console.log(action.payload);\r\n        },\r\n        savefrom: (state,action) => {\r\n            state.taminot.unshift(action.payload)\r\n            // toast.success('Saqlandi')\r\n        },\r\n        editfrom: (state,action) => {\r\n            state.taminot.map((item,index)=>{\r\n                if (item.id === action.payload.id){\r\n                    item.login = action.payload.login\r\n                }\r\n            })\r\n            // toast.success('O`zgartirildi')\r\n        },\r\n        deletefrom:(state,action)=>{\r\n\r\n            // toast.info('O`chirildi')\r\n        }\r\n\r\n    }\r\n});\r\n\r\nexport const getTaminot=()=>apiCall({\r\n    url: '/supplier',\r\n    method:'get',\r\n    onSuccess: slice.actions.getFrom.type\r\n});\r\n\r\nexport const saveTaminot=(data)=>apiCall({\r\n    url: '/supplier',\r\n    method:'post',\r\n    data,\r\n    onSuccess: slice.actions.savefrom.type\r\n});\r\n\r\nexport const editTaminot=(data)=>apiCall({\r\n    url: '/supplier',\r\n    method: 'post',\r\n    data,\r\n    onSuccess: slice.actions.editfrom.type\r\n});\r\n\r\nexport const deleteTaminot=(data)=>apiCall({\r\n    url: '/supplier',\r\n    method:'post',\r\n    data,\r\n    onSuccess: slice.actions.deletefrom.type\r\n})\r\n\r\nexport default slice.reducer
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/SotibOlish/Sidebar/Hamkorlar/reducer/TaminotReducer.js b/src/components/SotibOlish/Sidebar/Hamkorlar/reducer/TaminotReducer.js
+--- a/src/components/SotibOlish/Sidebar/Hamkorlar/reducer/TaminotReducer.js	(revision 3f7cc628b1ee1edd0a8d6519721f358e9c2165be)
++++ b/src/components/SotibOlish/Sidebar/Hamkorlar/reducer/TaminotReducer.js	(date 1644388569812)
+@@ -10,8 +10,8 @@
+     },
+     reducers: {
+         getFrom: (state, action) => {
+-            state.taminot = action.payload
+-            console.log(action.payload);
++            state.taminot = action.payload.object
++            console.log(action.payload.object);
+         },
+         savefrom: (state,action) => {
+             state.taminot.unshift(action.payload)
+@@ -34,7 +34,7 @@
+ });
+ 
+ export const getTaminot=()=>apiCall({
+-    url: '/supplier',
++    url: '/supplier/get-by-business/1',
+     method:'get',
+     onSuccess: slice.actions.getFrom.type
+ });
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"2ed0236b-2151-406e-828e-c9a3e0b2b336\" name=\"Changes\" comment=\"\">\r\n      <change afterPath=\"$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/Pagination4.js\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/RenderComponent2.js\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/RenderComponent3.js\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/RenderComponent4.js\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/pagination2.js\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/pagination3.js\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/img/Vector.png\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/img/search-normal.png\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/PAGANATION.css\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/PAGANATION.css\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/Pagination.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/Pagination.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/RenderComponent.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/RenderComponent.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/Third.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/Third.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/third.css\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/third.css\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"JavaScript File\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitSEFilterConfiguration\">\r\n    <file-type-list>\r\n      <filtered-out-file-type name=\"LOCAL_BRANCH\" />\r\n      <filtered-out-file-type name=\"REMOTE_BRANCH\" />\r\n      <filtered-out-file-type name=\"TAG\" />\r\n      <filtered-out-file-type name=\"COMMIT_BY_MESSAGE\" />\r\n    </file-type-list>\r\n  </component>\r\n  <component name=\"HighlightingSettingsPerFile\">\r\n    <setting file=\"file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/MahsulotlarRuyxati/barchaMaxsulotlar/BarchaMaxsulotlar.js\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/MahsulotlarRuyxati/Taxrirlash/Taxrirlash.js\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/src/store.js\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xarajatlar/xarajatlarRoyxati/XarajatlarRoyxati.js\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/MahsulotlarRuyxati/MaxsulotlarRoyxati.js\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xarajatlar/xarajatTurlari/XarajatTurlari.js\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xarajatlar/Qoshish/XarajatQoshish.js\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Haridlar/Xarid qilish/Xarid.js\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/soliqlarXisoboti/SoliqlarXisoboti.js\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/reducer/KopsotilgantovarlarReducer.js\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Savdo/SavdoQoshish/SavdoQoshish.js\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/MijozlarXisoboti/MijozlarXisoboti.js\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hamkorlar/taminotchilar/Taminotchilar.js\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/MaxsulotlarXisoboti/MaxsulotXisoboti.js\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Baza/otkazmalarRoyxati/taxrirlash/Taxrirlash.js\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/KopSotilganTovarlar/KopSotilgan.js\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Baza/otkazmalarRoyxati/OtkazmalarRoyxati.js\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/xarajatlarXisoboti/XarajatlarXisoboti.js\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/otkazmalarXisoboti/OtkazmalarXisoboti.js\" root0=\"FORCE_HIGHLIGHTING\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProblemsViewState\">\r\n    <option name=\"selectedTabId\" value=\"CurrentFile\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"24RsketNtc6XaMKeOi6aNnZqMZ2\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"ASKED_SHARE_PROJECT_CONFIGURATION_FILES\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$/src/img\" />\r\n    <property name=\"node.js.detected.package.eslint\" value=\"true\" />\r\n    <property name=\"node.js.selected.package.eslint\" value=\"(autodetect)\" />\r\n    <property name=\"nodejs_package_manager_path\" value=\"yarn\" />\r\n    <property name=\"run.code.analysis.last.selected.profile\" value=\"pProject Default\" />\r\n    <property name=\"vue.rearranger.settings.migration\" value=\"true\" />\r\n  </component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\evasetpro\\src\\img\" />\r\n      <recent name=\"E:\\Projects\\evaset2\\src\\components\\SotibOlish\\Sidebar\" />\r\n      <recent name=\"E:\\Projects\\evaset2\\src\" />\r\n      <recent name=\"E:\\Projects\\evaset2\" />\r\n      <recent name=\"E:\\Projects\\gitz\\src\\components\\SotibOlish\\Sidebar\\Hodimlar\\hodimlarRoyxati\\Taxrirlash\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"E:\\Projects\\evaset2\\src\\components\\SotibOlish\\Sidebar\\Xarajatlar\" />\r\n      <recent name=\"E:\\Projects\\evaset2\\src\\components\\SotibOlish\\Sidebar\\Xarajatlar\\xarajatlarRoyxati\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"npm.start\">\r\n    <configuration name=\"Test | #1\" type=\"HttpClient.HttpRequestRunConfigurationType\" factoryName=\"HTTP Request\" temporary=\"true\" path=\"$PROJECT_DIR$/src/reducer/Test.http\" requestIdentifier=\"#1\" runType=\"Run single request\">\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"Test | #2\" type=\"HttpClient.HttpRequestRunConfigurationType\" factoryName=\"HTTP Request\" temporary=\"true\" path=\"$PROJECT_DIR$/src/reducer/Test.http\" index=\"2\" requestIdentifier=\"#2\" runType=\"Run single request\">\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"Test | #3\" type=\"HttpClient.HttpRequestRunConfigurationType\" factoryName=\"HTTP Request\" temporary=\"true\" path=\"$PROJECT_DIR$/src/reducer/Test.http\" index=\"3\" requestIdentifier=\"#3\" runType=\"Run single request\">\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"start\" type=\"js.build_tools.npm\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <package-json value=\"$PROJECT_DIR$/package.json\" />\r\n      <command value=\"run\" />\r\n      <scripts>\r\n        <script value=\"start\" />\r\n      </scripts>\r\n      <node-interpreter value=\"project\" />\r\n      <envs />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"npm.start\" />\r\n        <item itemvalue=\"HTTP Request.Test | #3\" />\r\n        <item itemvalue=\"HTTP Request.Test | #1\" />\r\n        <item itemvalue=\"HTTP Request.Test | #2\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"2ed0236b-2151-406e-828e-c9a3e0b2b336\" name=\"Changes\" comment=\"\" />\r\n      <created>1643604878473</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1643604878473</updated>\r\n      <workItem from=\"1643604879958\" duration=\"6325000\" />\r\n      <workItem from=\"1643644788676\" duration=\"1572000\" />\r\n      <workItem from=\"1643692151814\" duration=\"7663000\" />\r\n      <workItem from=\"1643787409957\" duration=\"4684000\" />\r\n      <workItem from=\"1643816701566\" duration=\"2941000\" />\r\n      <workItem from=\"1643864639049\" duration=\"6930000\" />\r\n      <workItem from=\"1643877310160\" duration=\"14332000\" />\r\n      <workItem from=\"1643968772640\" duration=\"579000\" />\r\n      <workItem from=\"1643969710596\" duration=\"4399000\" />\r\n      <workItem from=\"1643992042949\" duration=\"7322000\" />\r\n      <workItem from=\"1644038637112\" duration=\"12607000\" />\r\n      <workItem from=\"1644125029596\" duration=\"19792000\" />\r\n      <workItem from=\"1644209514200\" duration=\"24244000\" />\r\n      <workItem from=\"1644295657104\" duration=\"8453000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"app.js\">\r\n      <created>1643606654320</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1643606654320</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"app.js\">\r\n      <created>1643607793577</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1643607793577</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"app.js\">\r\n      <created>1643610356279</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1643610356279</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"app.js\">\r\n      <created>1643611412006</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1643611412006</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"app.js\">\r\n      <created>1643611485269</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1643611485269</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"yangui\">\r\n      <created>1643613534612</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1643613534612</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"baza\">\r\n      <created>1643617273005</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1643617273005</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"udar boldi\">\r\n      <created>1643629061012</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1643629061013</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"hodimRuyxat\">\r\n      <created>1643645569976</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1643645569976</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00010\" summary=\"bek\">\r\n      <created>1643969082690</created>\r\n      <option name=\"number\" value=\"00010\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1643969082690</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00011\" summary=\"come\">\r\n      <created>1643969882487</created>\r\n      <option name=\"number\" value=\"00011\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1643969882488</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00012\" summary=\"senior dasturchi ishi\">\r\n      <created>1643973508773</created>\r\n      <option name=\"number\" value=\"00012\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00012\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1643973508773</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00013\" summary=\"lavozim\">\r\n      <created>1643996858194</created>\r\n      <option name=\"number\" value=\"00013\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00013\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1643996858194</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00014\" summary=\"reducerlar\">\r\n      <created>1643998863635</created>\r\n      <option name=\"number\" value=\"00014\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00014\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1643998863635</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00015\" summary=\"lavozimtaxrirlash\">\r\n      <created>1644046416947</created>\r\n      <option name=\"number\" value=\"00015\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00015\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1644046416947</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00016\" summary=\"value\">\r\n      <created>1644162847366</created>\r\n      <option name=\"number\" value=\"00016\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00016\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1644162847366</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00017\" summary=\"pagination\">\r\n      <created>1644236984147</created>\r\n      <option name=\"number\" value=\"00017\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00017\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1644236984147</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00018\" summary=\"headersidebar\">\r\n      <created>1644240257433</created>\r\n      <option name=\"number\" value=\"00018\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00018\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1644240257433</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"19\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State>\r\n              <option name=\"TEXT_FILTER_SETTINGS\">\r\n                <TextFilterSettings>\r\n                  <option name=\"MATCH_CASE\" value=\"true\" />\r\n                </TextFilterSettings>\r\n              </option>\r\n            </State>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <option name=\"SHELVE_DETAILS_PREVIEW_SHOWN\" value=\"true\" />\r\n    <MESSAGE value=\"app.js\" />\r\n    <MESSAGE value=\"yangui\" />\r\n    <MESSAGE value=\"baza\" />\r\n    <MESSAGE value=\"udar boldi\" />\r\n    <MESSAGE value=\"hodimRuyxat\" />\r\n    <MESSAGE value=\"style\" />\r\n    <MESSAGE value=\"bek\" />\r\n    <MESSAGE value=\"come\" />\r\n    <MESSAGE value=\"senior dasturchi ishi\" />\r\n    <MESSAGE value=\"lavozim\" />\r\n    <MESSAGE value=\"reducerlar\" />\r\n    <MESSAGE value=\"lavozimtaxrirlash\" />\r\n    <MESSAGE value=\"value\" />\r\n    <MESSAGE value=\"pagination\" />\r\n    <MESSAGE value=\"headersidebar\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"headersidebar\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 3f7cc628b1ee1edd0a8d6519721f358e9c2165be)
++++ b/.idea/workspace.xml	(date 1644391800279)
+@@ -2,20 +2,17 @@
+ <project version="4">
+   <component name="ChangeListManager">
+     <list default="true" id="2ed0236b-2151-406e-828e-c9a3e0b2b336" name="Changes" comment="">
+-      <change afterPath="$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/Pagination4.js" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/RenderComponent2.js" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/RenderComponent3.js" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/RenderComponent4.js" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/pagination2.js" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/pagination3.js" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/img/Vector.png" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/img/search-normal.png" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/PAGANATION.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/PAGANATION.css" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/Pagination.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/Pagination.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/RenderComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/RenderComponent.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/Third.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/Third.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/third.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/third.css" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hamkorlar/MijozGurux/MijozlarGuruxi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hamkorlar/MijozGurux/MijozlarGuruxi.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hamkorlar/reducer/MijozGuruxReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hamkorlar/reducer/MijozGuruxReducer.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hamkorlar/reducer/TaminotReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hamkorlar/reducer/TaminotReducer.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hamkorlar/taminotchilar/Taminotchilar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hamkorlar/taminotchilar/Taminotchilar.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/hodimlarRoyxati/HodimlarRoyhati.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/hodimlarRoyxati/HodimlarRoyhati.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/hodimlarRoyxati/Taxrirlash/Taxrirlash.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/hodimlarRoyxati/Taxrirlash/Taxrirlash.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/reducer/LavozimReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/reducer/LavozimReducer.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/reducer/XodimReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/reducer/XodimReducer.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/middleware.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/reducer/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer/users.js" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -41,25 +38,35 @@
+     </file-type-list>
+   </component>
+   <component name="HighlightingSettingsPerFile">
+-    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/MahsulotlarRuyxati/barchaMaxsulotlar/BarchaMaxsulotlar.js" root0="FORCE_HIGHLIGHTING" />
++    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Settings/DukonSozlamalari/maxsulot/Mahsulot2.js" root0="FORCE_HIGHLIGHTING" />
++    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Savdo/SavdoQoshish/SavdoQoshish.js" root0="FORCE_HIGHLIGHTING" />
++    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/reducer/KopsotilgantovarlarReducer.js" root0="FORCE_HIGHLIGHTING" />
+     <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/MahsulotlarRuyxati/Taxrirlash/Taxrirlash.js" root0="FORCE_HIGHLIGHTING" />
+-    <setting file="file://$PROJECT_DIR$/src/store.js" root0="FORCE_HIGHLIGHTING" />
++    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/reducer/XodimReducer.js" root0="FORCE_HIGHLIGHTING" />
++    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Settings/DukonSozlamalari/dukon/Dukon1.js" root0="FORCE_HIGHLIGHTING" />
++    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/reducer/LavozimReducer.js" root0="FORCE_HIGHLIGHTING" />
+     <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xarajatlar/xarajatlarRoyxati/XarajatlarRoyxati.js" root0="FORCE_HIGHLIGHTING" />
++    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hamkorlar/taminotchilar/Taminotchilar.js" root0="FORCE_HIGHLIGHTING" />
++    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Haridlar/Xarid qilish/Xarid.js" root0="FORCE_HIGHLIGHTING" />
+     <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/MahsulotlarRuyxati/MaxsulotlarRoyxati.js" root0="FORCE_HIGHLIGHTING" />
+-    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xarajatlar/xarajatTurlari/XarajatTurlari.js" root0="FORCE_HIGHLIGHTING" />
+     <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xarajatlar/Qoshish/XarajatQoshish.js" root0="FORCE_HIGHLIGHTING" />
+-    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Haridlar/Xarid qilish/Xarid.js" root0="FORCE_HIGHLIGHTING" />
+-    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/soliqlarXisoboti/SoliqlarXisoboti.js" root0="FORCE_HIGHLIGHTING" />
+-    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/reducer/KopsotilgantovarlarReducer.js" root0="FORCE_HIGHLIGHTING" />
+-    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Savdo/SavdoQoshish/SavdoQoshish.js" root0="FORCE_HIGHLIGHTING" />
+-    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/MijozlarXisoboti/MijozlarXisoboti.js" root0="FORCE_HIGHLIGHTING" />
+-    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hamkorlar/taminotchilar/Taminotchilar.js" root0="FORCE_HIGHLIGHTING" />
++    <setting file="file://$PROJECT_DIR$/src/store.js" root0="FORCE_HIGHLIGHTING" />
+     <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/MaxsulotlarXisoboti/MaxsulotXisoboti.js" root0="FORCE_HIGHLIGHTING" />
++    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xarajatlar/xarajatTurlari/XarajatTurlari.js" root0="FORCE_HIGHLIGHTING" />
+     <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Baza/otkazmalarRoyxati/taxrirlash/Taxrirlash.js" root0="FORCE_HIGHLIGHTING" />
++    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/xarajatlarXisoboti/XarajatlarXisoboti.js" root0="FORCE_HIGHLIGHTING" />
+     <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/KopSotilganTovarlar/KopSotilgan.js" root0="FORCE_HIGHLIGHTING" />
++    <setting file="file://$PROJECT_DIR$/src/middleware.js" root0="FORCE_HIGHLIGHTING" />
+     <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Baza/otkazmalarRoyxati/OtkazmalarRoyxati.js" root0="FORCE_HIGHLIGHTING" />
+-    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/xarajatlarXisoboti/XarajatlarXisoboti.js" root0="FORCE_HIGHLIGHTING" />
++    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hamkorlar/MijozGurux/MijozlarGuruxi.js" root0="FORCE_HIGHLIGHTING" />
+     <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/otkazmalarXisoboti/OtkazmalarXisoboti.js" root0="FORCE_HIGHLIGHTING" />
++    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hamkorlar/reducer/TaminotReducer.js" root0="FORCE_HIGHLIGHTING" />
++    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/MahsulotlarRuyxati/barchaMaxsulotlar/BarchaMaxsulotlar.js" root0="FORCE_HIGHLIGHTING" />
++    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/soliqlarXisoboti/SoliqlarXisoboti.js" root0="FORCE_HIGHLIGHTING" />
++    <setting file="file://$PROJECT_DIR$/src/reducer/users.js" root0="FORCE_HIGHLIGHTING" />
++    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/hodimlarRoyxati/Taxrirlash/Taxrirlash.js" root0="FORCE_HIGHLIGHTING" />
++    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/MijozlarXisoboti/MijozlarXisoboti.js" root0="FORCE_HIGHLIGHTING" />
++    <setting file="file://$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Settings/DukonSozlamalari/eMailSozlama/EmailSozlama.js" root0="FORCE_HIGHLIGHTING" />
+   </component>
+   <component name="MarkdownSettingsMigration">
+     <option name="stateVersion" value="1" />
+@@ -151,6 +158,7 @@
+       <workItem from="1644125029596" duration="19792000" />
+       <workItem from="1644209514200" duration="24244000" />
+       <workItem from="1644295657104" duration="8453000" />
++      <workItem from="1644382806921" duration="8825000" />
+     </task>
+     <task id="LOCAL-00001" summary="app.js">
+       <created>1643606654320</created>
+@@ -278,7 +286,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1644240257433</updated>
+     </task>
+-    <option name="localTasksCounter" value="19" />
++    <task id="LOCAL-00019" summary="123">
++      <created>1644304498205</created>
++      <option name="number" value="00019" />
++      <option name="presentableId" value="LOCAL-00019" />
++      <option name="project" value="LOCAL" />
++      <updated>1644304498205</updated>
++    </task>
++    <option name="localTasksCounter" value="20" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -318,6 +333,7 @@
+     <MESSAGE value="value" />
+     <MESSAGE value="pagination" />
+     <MESSAGE value="headersidebar" />
+-    <option name="LAST_COMMIT_MESSAGE" value="headersidebar" />
++    <MESSAGE value="123" />
++    <option name="LAST_COMMIT_MESSAGE" value="123" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: src/reducer/users.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import {createSlice} from \"@reduxjs/toolkit\";\r\nimport {apiCall} from \"../api\";\r\n\r\nexport const slice = createSlice({\r\n    name: 'users',\r\n    initialState: {\r\n        users: [ ],\r\n        token: {\r\n            token_name: ''\r\n        }\r\n    },\r\n    reducers: {\r\n        save: (state, action) => {\r\n            console.log(action.payload)\r\n            state.token.token_name=action.payload\r\n             console.log(state.token.token_name)\r\n\r\n            localStorage.setItem('tokenname',action.payload)\r\n        },\r\n        get: (state, action) => {\r\n            console.log(action.payload)\r\n            state.users = action.payload\r\n            console.log(state.users)\r\n        }\r\n    }\r\n})\r\n\r\nexport const saveusers=(data) => apiCall({\r\n    url: '/auth/login',\r\n    method: 'post',\r\n    data,\r\n    onSuccess: slice.actions.save.type\r\n})\r\n\r\nexport const getusers = () => apiCall({\r\n    url: '/auth/login',\r\n    method: 'get',\r\n    onSuccess: slice.actions.get.type\r\n})\r\n\r\nexport default slice.reducer
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/reducer/users.js b/src/reducer/users.js
+--- a/src/reducer/users.js	(revision 3f7cc628b1ee1edd0a8d6519721f358e9c2165be)
++++ b/src/reducer/users.js	(date 1644387092569)
+@@ -11,11 +11,11 @@
+     },
+     reducers: {
+         save: (state, action) => {
+-            console.log(action.payload)
++            // console.log(action.payload.object)
+             state.token.token_name=action.payload
+-             console.log(state.token.token_name)
++             // console.log(state.token.token_name)
+ 
+-            localStorage.setItem('tokenname',action.payload)
++            localStorage.setItem('tokenname',action.payload.message)
+         },
+         get: (state, action) => {
+             console.log(action.payload)
+Index: src/middleware.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import axios from \"axios\";\r\n\r\nexport const api = ({dispatch}) => (next) => (action) => {\r\n    if (action.type !== \"api/apiCall\") {\r\n        next(action)\r\n        return\r\n    }\r\n    next(action)\r\n    const {url, method, data, onSuccess, onFail} = action.payload\r\n    axios({\r\n        baseURL: 'http://localhost:8080/api',\r\n\r\n        headers:{\r\n            Authorization:`Bearer ${localStorage.getItem('tokenname')}`\r\n        },\r\n\r\n        url, method, data\r\n    }).then(res => {\r\n        dispatch({\r\n            type: onSuccess,\r\n            payload: res.data\r\n        })\r\n    }).catch(err => {\r\n        dispatch({\r\n            type: onFail,\r\n            payload: err.data\r\n        })\r\n    })\r\n\r\n}\r\nexport default api
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/middleware.js b/src/middleware.js
+--- a/src/middleware.js	(revision 3f7cc628b1ee1edd0a8d6519721f358e9c2165be)
++++ b/src/middleware.js	(date 1644329807563)
+@@ -1,3 +1,4 @@
++
+ import axios from "axios";
+ 
+ export const api = ({dispatch}) => (next) => (action) => {
+@@ -28,4 +29,4 @@
+     })
+ 
+ }
+-export default api
+\ No newline at end of file
++export default api
+Index: src/components/SotibOlish/Sidebar/Hodimlar/hodimlarRoyxati/Taxrirlash/Taxrirlash.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import './taxrir.css'\r\n// import {Link,Route,Switch} from \"react-router-dom\";\r\nimport {Modal,ModalBody,ModalFooter,ModalHeader} from \"reactstrap\";\r\nimport {useState,useEffect} from \"react\";\r\nimport {connect} from \"react-redux\";\r\nimport LavozimReducer, {getLavozim, saveLavozim} from \"../../reducer/LavozimReducer\";\r\nimport XodimReducer, {saveXodim,getXodim} from \"../../reducer/XodimReducer\";\r\nimport {Link} from 'react-router-dom'\r\nfunction Taxrirlash({getLavozim,saveXodim,LavozimReducer,getXodim}) {\r\n\r\n    useEffect(()=>{\r\n       getLavozim()\r\n    },[])\r\n\r\n    const [input, setInput] = useState(\r\n        {\r\n            username: '',\r\n            firstName: '',\r\n            lastName: '',\r\n            roleName:'',\r\n            email: '',\r\n            parol: '',\r\n            parolTakror:''\r\n        }\r\n    );\r\n\r\n    function onchangeuserName(event){\r\n        input.username = event.target.value\r\n        let a = {...input}\r\n        setInput(a)\r\n    }\r\n    function onchangefirstName(event){\r\n        input.firstName = event.target.value\r\n        let a = {...input}\r\n        setInput(a)\r\n    }\r\n    function onchangelastName(event){\r\n        input.lastName = event.target.value\r\n        let a = {...input}\r\n        setInput(a)\r\n    }\r\n    function onchangeroleName(event){\r\n        input.roleName = event.target.value\r\n        let a = {...input}\r\n        setInput(a)\r\n    }\r\n    function onchangeemail(event){\r\n        input.roleName = event.target.value\r\n        let a = {...input}\r\n        setInput(a)\r\n    }\r\n    function onchangeparol(event){\r\n        input.parol = event.target.value\r\n        let a = {...input}\r\n        setInput(a)\r\n    }\r\n    function onchangeparolTakror(event){\r\n        input.parol = event.target.value\r\n        let a = {...input}\r\n        setInput(a)\r\n    }\r\n\r\n    function saqla(){\r\n        saveXodim({\r\n            firstName: input.firstName,\r\n            lastName: input.lastName,\r\n            username: input.username,\r\n            password: \"92462629\",\r\n            roleId: 1,\r\n            branchId:1,\r\n            businessId: 1,\r\n            enabled: false\r\n        })\r\n        getXodim()\r\n    }\r\n\r\n    const [active,setActive] = useState(false)\r\n\r\n    function toggle(){\r\n        setActive(!active)\r\n    }\r\n    return(\r\n        <div className={'row ht'}>\r\n            <h5 className={'text-center mt-4'}>Xodim qo`shish</h5>\r\n            <div className=\"col-md-12\">\r\n                {console.log()}\r\n                <div className=\"col-md-12 d-flex justify-content-between align-items-center\">\r\n                    <div className=\"col-md-4\">\r\n                        <label htmlFor={'login1'}>Login</label>\r\n                        <input type=\"text\" id={'login1'} value={input.username} onChange={onchangeuserName} placeholder={'Mr/Mrs/Miss'} className={'form-control'}/>\r\n                    </div>\r\n                    <div className=\"col-md-4\">\r\n                        <label htmlFor={'ismi'} >Ismi</label>\r\n                        <input type=\"text\" onChange={onchangefirstName} id={'ismi'} placeholder={'Ismi'} value={input.firstName} className={'form-control'}/>\r\n                    </div>\r\n                    <div className=\"col-md-4\">\r\n                        <label htmlFor={'login2'} >Familiyasi</label>\r\n                        <input type=\"text\" id={'login2'} onChange={onchangelastName} value={input.lastName} placeholder={'Familiyasi'} className={'form-control'}/>\r\n                    </div>\r\n                </div>\r\n\r\n                <div className=\"col-md-12 d-flex mt-4 justify-content-between align-items-center\">\r\n                    <div className=\"col-md-6\">\r\n                        <label htmlFor={'email'}>Email</label>\r\n                        <input type=\"text\" onChange={onchangeemail} value={input.email} className={'form-control'} placeholder={'Email'}/>\r\n                    </div>\r\n                    <div className=\"col-md-6\">\r\n                        <label htmlFor={'faol'}>Faolmi ?</label>\r\n                        <input type=\"checkbox\" style={{width:'20px',height:'20px'}} id={'faol'}/>\r\n                    </div>\r\n                </div>\r\n                <h5 className={'text-center mt-4'}>Lavozim vakolatlari</h5>\r\n                <div className=\"col-md-12 d-flex mt-4 justify-content-between align-items-center\">\r\n\r\n                    <div className=\"col-md-4\">\r\n                        <button className={'btn btn-outline-primary'} onClick={toggle}>Login parol berish</button>\r\n                    </div>\r\n\r\n                    <div className=\"cold-m-4\">\r\n                        <Link to={'/headerthird/hodimlarruyxati'}><button onClick={saqla} className={'btn btn-outline-primary'}>Saqlash</button></Link>\r\n                    </div>\r\n\r\n                    <Modal isOpen={active} toggle={toggle}>\r\n                        <ModalHeader>\r\n                            Log / Parol\r\n                        </ModalHeader>\r\n                        <ModalBody>\r\n                            <label htmlFor={'log3'} className={'mt-3'}>Parol</label>\r\n                            <input type=\"text\" onChange={onchangeparol} value={input.parol} className={'form-control'} id={'log3'}/>\r\n                            <label htmlFor={'log4'} className={'mt-3'}>Parolni takroran yozing</label>\r\n                            <input type=\"text\" onChange={onchangeparol} value={input.parolTakror} className={'form-control'} id={'log4'}/>\r\n                            <label htmlFor={'lavozimi'} className={'mt-3'}>Lavozimi</label>\r\n                            <select name=\"\" id={'lavozimi'} onChange={onchangeroleName} className={'form-control'}>\r\n\r\n                                {\r\n                                    LavozimReducer.lavozimlar.map((item,index)=> <option value={item.name}>{item.name}</option>)\r\n                                }\r\n\r\n                            </select>\r\n                            <h5 className={'mt-3'}>Biriktirilgan baza</h5>\r\n                            <div className=\"col-md-12 d-flex justify-content-between\">\r\n                                <div className=\"col-md-6 d-flex align-items-center\">\r\n                                    <label htmlFor={'b1'}>Barcha bazalar</label>\r\n                                    <input type=\"checkbox\"\r\n                                           style={{width:'20px',height:'20px',marginLeft:'20px'}}\r\n                                           id={'b1'}/>\r\n                                </div>\r\n\r\n                            </div>\r\n                        </ModalBody>\r\n                        <ModalFooter>\r\n                            <button className={'btn btn-primary'}>Saqlash</button>\r\n                            <button className={'btn btn-primary'} onClick={toggle}>Chiqish</button>\r\n                        </ModalFooter>\r\n                    </Modal>\r\n                </div>\r\n\r\n            </div>\r\n        </div>\r\n    )\r\n}\r\nexport default connect((LavozimReducer,XodimReducer),{getLavozim,saveLavozim,saveXodim,getXodim}) (Taxrirlash)
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/SotibOlish/Sidebar/Hodimlar/hodimlarRoyxati/Taxrirlash/Taxrirlash.js b/src/components/SotibOlish/Sidebar/Hodimlar/hodimlarRoyxati/Taxrirlash/Taxrirlash.js
+--- a/src/components/SotibOlish/Sidebar/Hodimlar/hodimlarRoyxati/Taxrirlash/Taxrirlash.js	(revision 3f7cc628b1ee1edd0a8d6519721f358e9c2165be)
++++ b/src/components/SotibOlish/Sidebar/Hodimlar/hodimlarRoyxati/Taxrirlash/Taxrirlash.js	(date 1644314594124)
+@@ -55,7 +55,7 @@
+         setInput(a)
+     }
+     function onchangeparolTakror(event){
+-        input.parol = event.target.value
++        input.parolTakror = event.target.value
+         let a = {...input}
+         setInput(a)
+     }
+@@ -128,14 +128,12 @@
+                             <label htmlFor={'log3'} className={'mt-3'}>Parol</label>
+                             <input type="text" onChange={onchangeparol} value={input.parol} className={'form-control'} id={'log3'}/>
+                             <label htmlFor={'log4'} className={'mt-3'}>Parolni takroran yozing</label>
+-                            <input type="text" onChange={onchangeparol} value={input.parolTakror} className={'form-control'} id={'log4'}/>
++                            <input type="text" onChange={onchangeparolTakror} value={input.parolTakror} className={'form-control'} id={'log4'}/>
+                             <label htmlFor={'lavozimi'} className={'mt-3'}>Lavozimi</label>
+                             <select name="" id={'lavozimi'} onChange={onchangeroleName} className={'form-control'}>
+-
+                                 {
+                                     LavozimReducer.lavozimlar.map((item,index)=> <option value={item.name}>{item.name}</option>)
+                                 }
+-
+                             </select>
+                             <h5 className={'mt-3'}>Biriktirilgan baza</h5>
+                             <div className="col-md-12 d-flex justify-content-between">
+Index: src/components/SotibOlish/Sidebar/Hamkorlar/taminotchilar/Taminotchilar.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import \"./taminotchilar.css\"\r\nimport {Link} from \"react-router-dom\"\r\nimport CSV from '../../../../../img/CSV.png'\r\nimport Excel from '../../../../../img/Excel.png'\r\nimport Print from '../../../../../img/Print.png'\r\nimport Data from '../../../../../img/Data.png'\r\nimport Pdf from '../../../../../img/PDF.png'\r\nimport Edit from '../../../../../img/Edit.png'\r\nimport Korish from '../../../../../img/Korish.png'\r\nimport Delete from '../../../../../img/Delete.png'\r\n// import Arrow from '../../../../../img/arrowIcon.png'\r\nimport {useEffect} from \"react\";\r\nimport {connect} from \"react-redux\";\r\nimport {getTaminot,saveTaminot,editTaminot,deleteTaminot} from \"../reducer/TaminotReducer\";\r\nimport {useState} from 'react'\r\nimport {Modal, ModalBody, ModalFooter, ModalHeader} from \"reactstrap\";\r\n\r\n\r\nfunction Taminotchilar({getTaminot,saveTaminot,editTaminot,deleteTaminot,taminot}) {\r\n\r\n    useEffect(()=>{\r\n        getTaminot()\r\n    })\r\n\r\n    const [active, setActive] = useState(false);\r\n\r\n    function toggle() {\r\n        setActive(!active)\r\n    }\r\n\r\n    const [input, setInput] = useState(\r\n        {\r\n            langv1:'',\r\n            dukon:'',\r\n            idraqam: '',\r\n            login:'',\r\n            ismi:'',\r\n            otaismi:'',\r\n            familiyasi:''\r\n        },\r\n    );\r\n\r\n    function changelangv1(e){\r\n        input.langv1 = e.target.value\r\n        let a = {...input}\r\n        setInput(a)\r\n    }\r\n    function changedukon(e){\r\n        input.dukon = e.target.value\r\n        let a = {...input}\r\n        setInput(a)\r\n    }\r\n    function changeidraqam(e){\r\n        input.idraqam = e.target.value\r\n        let a = {...input}\r\n        setInput(a)\r\n    }\r\n    function changelogin(e){\r\n        input.login = e.target.value\r\n        let a = {...input}\r\n        setInput(a)\r\n    }\r\n    function changeismi(e){\r\n        input.ismi = e.target.value\r\n        let a = {...input}\r\n        setInput(a)\r\n    }\r\n    function changeotaismi(e){\r\n        input.otaismi = e.target.value\r\n        let a = {...input}\r\n        setInput(a)\r\n    }\r\n    function changefamiliyasi(e){\r\n        input.familiyasi = e.target.value\r\n        let a = {...input}\r\n        setInput(a)\r\n    }\r\n\r\n    return (\r\n\r\n        <div>\r\n            <div className=\"col-md-12 mt-2\">\r\n                <div className=\"textHeader\">\r\n                    <h2>Taminotchilar/Diller </h2>\r\n                    <p>Barcha Taminotchilar/Diller</p>\r\n                </div>\r\n                <div className=\"rowStyle\">\r\n                    <div className=\"qoshish\">\r\n                        <h5>Barcha Taminotchilar/Diller</h5>\r\n                        <button onClick={toggle} className='btn btn-primary'>+Qo'shish</button>\r\n                    </div>\r\n                    <div className=\"izlash\">\r\n                        <p>Ko'rsatildi</p>\r\n                        <select name=\"\" id=\"\">\r\n                            <option value=\"\">25</option>\r\n                            <option value=\"\">50</option>\r\n                            <option value=\"\">100</option>\r\n                            <option value=\"\">200</option>\r\n                            <option value=\"\">500</option>\r\n                            <option value=\"\">1,000</option>\r\n                            <option value=\"\">All</option>\r\n                        </select>\r\n                        <button><img src={CSV} alt=\"\"/> Export CSV</button>\r\n                        <button><img src={Excel} alt=\"\"/> Export Excel</button>\r\n                        <button><img src={Print} alt=\"\"/> Print</button>\r\n                        <button><img src={Pdf} alt=\"\"/>Export PDF</button>\r\n                        <button><img src={Data} alt=\"\"/>Malumotlarni kamaytirish</button>\r\n                        <input type=\"text\" placeholder='Izlash...'/>\r\n                    </div>\r\n\r\n                    <table className='table table-striped table-bordered mt-4'>\r\n                        <thead>\r\n                        <tr>\r\n                            <th>Ismi</th>\r\n                            <th>Telefon raqam</th>\r\n                            <th>Telegram</th>\r\n                            <th>Taminotchi turi</th>\r\n                        </tr>\r\n                        </thead>\r\n                        <tbody>\r\n                        {/*{*/}\r\n                        {/*    taminot.map(item=><tr key={item.id}>*/}\r\n                        {/*        <td>{item.name}</td>*/}\r\n                        {/*    </tr>)*/}\r\n                        {/*}*/}\r\n\r\n                        {/*<tr>*/}\r\n                        {/*    <td>boshliq</td>*/}\r\n                        {/*    <td>+998998887778</td>*/}\r\n                        {/*    <td>ssdd@</td>*/}\r\n                        {/*    <td>nimadir</td>*/}\r\n                        {/*    <td>*/}\r\n                        {/*        <Link to={'/headerthird/taminotchilar/taxrirlash'}>*/}\r\n                        {/*            <button onClick={toggle} className='taxrirlash'><img src={Edit} alt=\"\"/> Taxrirlash*/}\r\n                        {/*            </button>*/}\r\n                        {/*        </Link>*/}\r\n                        {/*        <Link to={'/headerthird/taminotchilar/view/' + input.name+'/'+input.tel+'/'+input.telegram+'/'+input.taminot}>*/}\r\n                        {/*            <button className='korish'><img src={Korish} alt=\"\"/> Ko'rish</button>*/}\r\n                        {/*        </Link>*/}\r\n                        {/*        <button className='ochirish'><img src={Delete} alt=\"\"/> O'chirish</button>*/}\r\n                        {/*        <Link to={''}>*/}\r\n                        {/*            <button className=\"amallar\">Amallar alt=\"\" /></button>*/}\r\n                        {/*        </Link>*/}\r\n                        {/*    </td>*/}\r\n                        {/*</tr>*/}\r\n                        </tbody>\r\n                    </table>\r\n\r\n                    <p>Ko'rsatildi 1 ta sahifa 1 va yana 1 ta sahifa bor</p>\r\n                    <div className='sahifalar'>\r\n                        <button>Ortga</button>\r\n                        <button>1</button>\r\n                        <button>Oldinga</button>\r\n                    </div>\r\n                </div>\r\n\r\n                {active ?\r\n                    <Modal isOpen={active} toggle={toggle}>\r\n                        <ModalHeader>\r\n                            Yangi Qo`shish\r\n                        </ModalHeader>\r\n                        <ModalBody>\r\n                            <label htmlFor=\"\">Munosabat turi</label>\r\n                            <select name=\"\" id=\"\" className={'p-1'} style={{marginLeft: '20px'}}>\r\n                                <option value=\"#\">Tanlash</option>\r\n                                <option value=\"#\">Taminotchilar</option>\r\n                                <option value=\"#\">Mijozlar</option>\r\n                                <option value=\"#\">(ikkisi ham) Taminotchi ha Mijoz</option>\r\n                            </select>\r\n                            <div className=\"in d-flex align-items-center justify-content-sm-around mt-3\">\r\n                                <input type=\"radio\" checked={input.langv1} onChange={changelangv1} name={'radio'} id={'in1'}/>\r\n                                <label htmlFor={'in1'}>\r\n                                    lang_v1.induvidial\r\n                                </label>\r\n                                <input type=\"radio\" checked={input.dukon} onChange={changedukon} name={'radio'} id={'in2'}/>\r\n                                <label htmlFor={'in2'}>\r\n                                    Do`kon\r\n                                </label>\r\n                            </div>\r\n                            <label htmlFor={'idRaqam'}>ID Raqami</label>\r\n                            <input checked={input.idraqam} onChange={changeidraqam} type=\"text\" id={'idRaqam'} placeholder={'ID Raqami'} className={'form-control'}/>\r\n                            lang_v1.leave_empty_to_autogenerate\r\n                            <div className=\"in d-flex mt-3\">\r\n                                <div>\r\n                                    <label htmlFor={'log1'}>Login</label>\r\n                                    <input type=\"text\" checked={input.login} onChange={changelogin} className={'form-control'} placeholder={'Mr/Mrs/Mis'}\r\n                                           id={'log1'}/>\r\n                                </div>\r\n                                <div>\r\n                                    <label htmlFor={'ism'}>Ismi</label>\r\n                                    <input onChange={changeismi} checked={input.ismi} type=\"text\" id={'ism'} placeholder={'Ismi'} className={'form-control'}/>\r\n                                </div>\r\n                            </div>\r\n                            <div className=\"in d-flex\">\r\n                                <div className={'mt-3'}>\r\n                                    <label htmlFor={'ot'}>Otasining ismi</label>\r\n                                    <input checked={input.otaismi} onChange={changeotaismi} type=\"text\" className={'form-control'} placeholder={'Otasining ismi'}/>\r\n                                </div>\r\n                                <div className={'mt-3'}>\r\n                                    <label htmlFor={'ot'}>Familiyasi</label>\r\n                                    <input checked={input.familiyasi} onChange={changefamiliyasi} type=\"text\" placeholder={'Familiyasi'} className={'form-control'}/>\r\n                                </div>\r\n                            </div>\r\n\r\n                        </ModalBody>\r\n                        <ModalFooter>\r\n                            <button className={'btn btn-outline-primary'}>SAVE</button>\r\n                            <button className={'btn btn-outline-primary'} onClick={toggle}>CHIQISH</button>\r\n                        </ModalFooter>\r\n                    </Modal> : ''\r\n                }\r\n            </div>\r\n        </div>\r\n    )\r\n}\r\nexport default connect(({XodimReducer:{xodimlar}})=>({xodimlar}),{getTaminot,saveTaminot,editTaminot,deleteTaminot}) (Taminotchilar)
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/SotibOlish/Sidebar/Hamkorlar/taminotchilar/Taminotchilar.js b/src/components/SotibOlish/Sidebar/Hamkorlar/taminotchilar/Taminotchilar.js
+--- a/src/components/SotibOlish/Sidebar/Hamkorlar/taminotchilar/Taminotchilar.js	(revision 3f7cc628b1ee1edd0a8d6519721f358e9c2165be)
++++ b/src/components/SotibOlish/Sidebar/Hamkorlar/taminotchilar/Taminotchilar.js	(date 1644389710706)
+@@ -7,8 +7,6 @@
+ import Pdf from '../../../../../img/PDF.png'
+ import Edit from '../../../../../img/Edit.png'
+ import Korish from '../../../../../img/Korish.png'
+-import Delete from '../../../../../img/Delete.png'
+-// import Arrow from '../../../../../img/arrowIcon.png'
+ import {useEffect} from "react";
+ import {connect} from "react-redux";
+ import {getTaminot,saveTaminot,editTaminot,deleteTaminot} from "../reducer/TaminotReducer";
+@@ -20,7 +18,7 @@
+ 
+     useEffect(()=>{
+         getTaminot()
+-    })
++    },[])
+ 
+     const [active, setActive] = useState(false);
+ 
+@@ -115,14 +113,23 @@
+                             <th>Telefon raqam</th>
+                             <th>Telegram</th>
+                             <th>Taminotchi turi</th>
++                            <th className={'text-center'}>Amallar</th>
+                         </tr>
+                         </thead>
+                         <tbody>
+-                        {/*{*/}
+-                        {/*    taminot.map(item=><tr key={item.id}>*/}
+-                        {/*        <td>{item.name}</td>*/}
+-                        {/*    </tr>)*/}
+-                        {/*}*/}
++                        {
++                            taminot.map(item=><tr key={item.id}>
++                                <td>{item.name}</td>
++                                <td>{item.phoneNumber}</td>
++                                <td>{item.telegram}</td>
++                                <td></td>
++                                <td>
++                                    <button className={'btn btn-primary m-1'}>Taxrirlash</button>
++                                    <button className={'btn btn-primary m-1'}>Korish</button>
++                                    <button className={'btn btn-danger m-1'}>O`chirish</button>
++                                </td>
++                            </tr>)
++                        }
+ 
+                         {/*<tr>*/}
+                         {/*    <td>boshliq</td>*/}
+@@ -213,4 +220,4 @@
+         </div>
+     )
+ }
+-export default connect(({XodimReducer:{xodimlar}})=>({xodimlar}),{getTaminot,saveTaminot,editTaminot,deleteTaminot}) (Taminotchilar)
+\ No newline at end of file
++export default connect(({TaminotReducer:{taminot}})=>({taminot}),{getTaminot,saveTaminot,editTaminot,deleteTaminot}) (Taminotchilar)
+\ No newline at end of file
+Index: src/components/SotibOlish/Sidebar/Hodimlar/reducer/LavozimReducer.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import {createSlice} from \"@reduxjs/toolkit\";\r\nimport {apiCall} from \"../../../../../api\";\r\n// import {toast} from \"react-toastify\";\r\n\r\nconst slice = createSlice({\r\n    name: 'lavozimlar',\r\n    initialState: {\r\n        lavozimlar: []\r\n    },\r\n    reducers: {\r\n        getFrom: (state, action) => {\r\n            state.lavozimlar = action.payload.object\r\n            console.log(action.payload.object);\r\n        },\r\n        savefrom: (state,action) => {\r\n            state.lavozimlar.unshift(action.payload)\r\n            // toast.success('Saqlandi')\r\n        },\r\n        editfrom: (state,action) => {\r\n            state.lavozimlar.map((item,index)=>{\r\n                if (item.id === action.payload.id){\r\n                    item.login = action.payload.login\r\n                }\r\n            })\r\n        },\r\n        deletefrom:(state,action)=>{\r\n\r\n        }\r\n\r\n    }\r\n});\r\n\r\nexport const getLavozim=()=>apiCall({\r\n    url: '/role',\r\n    method:'get',\r\n    onSuccess: slice.actions.getFrom.type\r\n});\r\n\r\nexport const saveLavozim=(data)=>apiCall({\r\n    url: '/role',\r\n    method:'post',\r\n    data,\r\n    onSuccess: slice.actions.savefrom.type\r\n});\r\n\r\nexport const editLavozim=(data)=>apiCall({\r\n    url: '/role',\r\n    method: 'post',\r\n    data,\r\n    onSuccess: slice.actions.editfrom.type\r\n});\r\n\r\nexport const deleteLavozim=(data)=>apiCall({\r\n    url: '/role',\r\n    method:'post',\r\n    data,\r\n    onSuccess: slice.actions.deletefrom.type\r\n})\r\n\r\nexport default slice.reducer
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/SotibOlish/Sidebar/Hodimlar/reducer/LavozimReducer.js b/src/components/SotibOlish/Sidebar/Hodimlar/reducer/LavozimReducer.js
+--- a/src/components/SotibOlish/Sidebar/Hodimlar/reducer/LavozimReducer.js	(revision 3f7cc628b1ee1edd0a8d6519721f358e9c2165be)
++++ b/src/components/SotibOlish/Sidebar/Hodimlar/reducer/LavozimReducer.js	(date 1644387135808)
+@@ -31,7 +31,7 @@
+ });
+ 
+ export const getLavozim=()=>apiCall({
+-    url: '/role',
++    url: '/role/get-by-business/1',
+     method:'get',
+     onSuccess: slice.actions.getFrom.type
+ });

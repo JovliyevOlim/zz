@@ -70,7 +70,8 @@ function Taxrirlash({getLavozim,saveXodim,LavozimReducer,getXodim,users}) {
             roleId: input.roleName,
             branchId:1,
             businessId: 1,
-            enabled: false
+            enabled: false,
+            photoId:1
         })
     }
 
@@ -79,13 +80,17 @@ function Taxrirlash({getLavozim,saveXodim,LavozimReducer,getXodim,users}) {
     function toggle(){
         setActive(!active)
     }
+
     return(
         <div className={'row ht'}>
             <h5 className={'text-center mt-4'}>Xodim qo`shish</h5>
             <div className="col-md-12">
+
                 {console.log()}
                 <div className="row d-flex justify-content-between align-items-center">
                     <div className="col-sm-12 col-4 mb-2">
+                <div className="col-md-12 d-flex justify-content-between align-items-center">
+                    <div className="col-md-4">
                         <label htmlFor={'login1'}>Login</label>
                         <input type="text" id={'login1'} value={input.username} onChange={onchangeuserName} placeholder={'Mr/Mrs/Miss'} className={'form-control'}/>
                     </div>
@@ -153,6 +158,8 @@ function Taxrirlash({getLavozim,saveXodim,LavozimReducer,getXodim,users}) {
                 </div>
 
             </div>
+        </div>
+        </div>
         </div>
     )
 }

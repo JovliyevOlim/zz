@@ -9,8 +9,8 @@ const slice = createSlice({
     },
     reducers: {
         getFrom: (state, action) => {
-            state.xaridxisobot = action.payload
-            console.log(action.payload);
+            state.xaridxisobot = action.payload.object
+            console.log(action.payload.object);
         },
         savefrom: (state,action) => {
             state.xaridxisobot.unshift(action.payload)
@@ -25,15 +25,13 @@ const slice = createSlice({
             // toast.success('O`zgartirildi')
         },
         deletefrom:(state,action)=>{
-
             // toast.info('O`chirildi')
         }
-
     }
 });
 
 export const getXaridXisobot=()=>apiCall({
-    url: '/user',
+    url: '/purchase/get-by-business/1',
     method:'get',
     onSuccess: slice.actions.getFrom.type
 });

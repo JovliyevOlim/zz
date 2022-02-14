@@ -19,14 +19,18 @@ function HodimlarRoyhati({getXodim, deleteXodim, saveXodim, editXodim,  xodimlar
         xodim()
     },[])
 
-
     function xodim(){
         getXodim(1)
-
     }
 
     const [input,setInput] = useState('')
-    const [inputsearch,setinputsearch] = useState('')
+
+    const [inSearch,setinSearch] = useState(
+        {
+            inputsearch:''
+        }
+    )
+
     const history = useHistory();
 
     function deletex(item){
@@ -35,8 +39,14 @@ function HodimlarRoyhati({getXodim, deleteXodim, saveXodim, editXodim,  xodimlar
         getXodim(1)
     }
 
+    function search(e){
+        inSearch.inputsearch = e.target.value
+        let a = {...inSearch}
+        setinSearch(a)
+        console.log(inSearch.inputsearch)
+    }
+
     return (
-        <div>
             <div className="col-md-12 pb-4 pt-4">
                 <div className="textHeaderHR">
                     <div className="textBox">
@@ -72,7 +82,9 @@ function HodimlarRoyhati({getXodim, deleteXodim, saveXodim, editXodim,  xodimlar
                         <div className="izlashBox2">
                             <input type="text" placeholder='Izlash...'/>
                         </div>
-                    </div>
+                        </div>
+
+                   
                     <div className="table-responsive mb-4">
                     <table className='table table-striped table-bordered mt-4'>
                         <thead>
@@ -87,24 +99,50 @@ function HodimlarRoyhati({getXodim, deleteXodim, saveXodim, editXodim,  xodimlar
                         </thead>
                         <tbody>
                             {
-                                xodimlar.map((item,index)=><tr>
-                                    <td>{item.username}</td>
-                                    <td>{item.firstName}</td>
-                                    <td>{item.lastName}</td>
+                                xodimlar.filter(val=>{
+                                    if (inSearch.inputsearch===''){
+                                        return val
+                                    }else if (val.username.toUpperCase().includes(inSearch.inputsearch.toUpperCase())){
+                                        return val
+                                    }
+                                })
+                                 .map((item)=><tr key={item.id}>
+                                     <td>{item.username}</td>
+                                     <td>{item.firstName}</td>
+                                     <td>{item.lastName}</td>
 
-                                    <td>-</td>
-                                    <td>
-                                        <Link to={'/headerthird/hodimlarruyxati/taxrirlash'}>
-                                            <button className='taxrirlash'><img src={Edit} alt=""/>Taxrirlash</button>
-                                        </Link>
-                                        <Link
-                                            to={'/headerthird/hodimlarruyxati/view/' + input.username + '/' + input.firstName + '/' + input.lastName}>
-                                            <button className='korish'><img src={Korish} alt=""/> Ko'rish</button>
-                                        </Link>
-                                            <button onClick={()=>deletex(item)} className='ochirish'><img src={Delete} alt=""/> O'chirish</button>
-                                    </td>
+                                     <td>-</td>
+                                     <td>
+                                         <Link to={'/headerthird/hodimlarruyxati/taxrirlash'}>
+                                             <button className='taxrirlash'><img src={Edit} alt=""/>Taxrirlash</button>
+                                         </Link>
+                                         <Link
+                                             to={'/headerthird/hodimlarruyxati/view/' + input.username + '/' + input.firstName + '/' + input.lastName}>
+                                             <button className='korish'><img src={Korish} alt=""/> Ko'rish</button>
+                                         </Link>
+                                             <button onClick={()=>deletex(item)} className='ochirish'><img src={Delete} alt=""/> O'chirish</button>
+                                     </td>
 
-                                </tr>)
+                                 </tr>)
+
+                                // xodimlar.map((item,index)=><tr>
+                                //     <td>{item.username}</td>
+                                //     <td>{item.firstName}</td>
+                                //     <td>{item.lastName}</td>
+                                //
+                                //     <td>-</td>
+                                //     <td>
+                                //         <Link to={'/headerthird/hodimlarruyxati/taxrirlash'}>
+                                //             <button className='taxrirlash'><img src={Edit} alt=""/>Taxrirlash</button>
+                                //         </Link>
+                                //         <Link
+                                //             to={'/headerthird/hodimlarruyxati/view/' + input.username + '/' + input.firstName + '/' + input.lastName}>
+                                //             <button className='korish'><img src={Korish} alt=""/> Ko'rish</button>
+                                //         </Link>
+                                //             <button onClick={()=>deletex(item)} className='ochirish'><img src={Delete} alt=""/> O'chirish</button>
+                                //     </td>
+                                //
+                                // </tr>)
                             }
 
                         </tbody>
@@ -119,7 +157,6 @@ function HodimlarRoyhati({getXodim, deleteXodim, saveXodim, editXodim,  xodimlar
                     </div>
                 </div>
             </div>
-        </div>
     )
 }
 

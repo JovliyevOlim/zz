@@ -26,7 +26,22 @@ function BarchaMaxsulotlar({getMaxsulotRuyxati,maxsulotruyxati,MaxsulotlarRoyxar
             sotishnarxi: '',
             qolganmaxsulot: '',
             firma: '',
-            checkbarcha:''
+            checkbarcha:'',
+        //    ---
+            name:'',
+            barcode:'',
+            brandId:'',
+            categoryId:'',
+            measurementId:'',
+            photoIds:'',
+            minQuantity:'',
+            buyPrice:'',
+            salePrice:'',
+            tax:'',
+            branchId:'',
+            expireDate:'',
+            dueDate:'',
+            inputsearch:''
         }
     )
 
@@ -44,46 +59,104 @@ function BarchaMaxsulotlar({getMaxsulotRuyxati,maxsulotruyxati,MaxsulotlarRoyxar
         let a = {...input}
         setInput(a)
     }
-    function changecheckbarcha(e){
-        input.checkbarcha = e.target.value
-        let a = {...input}
-        setInput(a)
-    }
-    function changemaxsulot(e){
-        input.maxsulot = e.target.value
-        let a = {...input}
-        setInput(a)
-    }
-    function changebaza(e){
-        input.baza = e.target.value
-        let a = {...input}
-        setInput(a)
-    }
-    function changesotibolishnarxi(e){
-        input.sotibolishnarxi = e.target.value
-        let a = {...input}
-        setInput(a)
-    }
-    function changesotishnarxi(e){
-        input.sotishnarxi = e.target.value
-        let a = {...input}
-        setInput(a)
-    }
-    function changeqolganmaxsulot(e){
-        input.qolganmaxsulot = e.target.value
-        let a = {...input}
-        setInput(a)
-    }
-    function changefirma(e){
-        input.firma = e.target.value
-        let a = {...input}
-        setInput(a)
-    }
 
     const [active, setActive] = useState(false)
 
     function toggle() {
         setActive(!active)
+    }
+    function saqla(){
+        saveMaxsulotRuyxati({
+            name:input.name,
+            barcode: input.barcode,
+            brandId:input.brandId,
+            categoryId:input.categoryId,
+            measurementId:input.measurementId,
+            photoIds:input.photoIds,
+            minQuantity:input.minQuantity,
+            buyPrice:input.buyPrice,
+            salePrice:input.salePrice,
+            tax:input.tax,
+            branchId:input.branchId,
+            expireDate:input.expireDate,
+            dueDate:input.dueDate
+        })
+    }
+
+    function name(e){
+        input.name = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+    function barcode(e){
+        input.barcode = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+    function brandId(e){
+        input.brandId = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+    function categoryId(e){
+        input.categoryId = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+    function measurementId(e){
+        input.measurementId = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+    function photoIds(e){
+        input.photoIds = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+    function minQuantity(e){
+        input.minQuantity = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+    function buyPrice(e){
+        input.buyPrice = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+    function salePrice(e){
+        input.salePrice = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+    function tax(e){
+        input.tax = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+    function branchId(e){
+        input.branchId = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+    function expireDate(e){
+        input.expireDate = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+    function dueDate(e){
+        input.dueDate = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+    function search(e){
+        input.inputsearch = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+
+    function deleteM(item){
+        deleteMaxsulotRuyxati(item.id)
+        console.log('deleted')
     }
 
     return (
@@ -125,6 +198,18 @@ function BarchaMaxsulotlar({getMaxsulotRuyxati,maxsulotruyxati,MaxsulotlarRoyxar
                         </thead>
                         <tbody>
 
+                        {/*{*/}
+                        {/*    maxsulotruyxati.filter(val=>{*/}
+                        {/*        if (input.izlash === ''){*/}
+                        {/*            return val*/}
+                        {/*        }else if (val.name.toUpperCase().includes(input.izlash.toUpperCase())){*/}
+                        {/*            return val*/}
+                        {/*        }*/}
+                        {/*    })*/}
+                        {/*        maxsulotruyxati.map(item=><tr key={item.id}>*/}
+                        {/*        <td>{item.name}</td>*/}
+                        {/*    </tr>)*/}
+                        {/*}*/}
                         {/*{ FIX ME----------------> >*/}
 
                         {/*    MaxsulotlarRoyxariReducer.maxsulotruyxati.map(item=><tr key={item.id}>*/}

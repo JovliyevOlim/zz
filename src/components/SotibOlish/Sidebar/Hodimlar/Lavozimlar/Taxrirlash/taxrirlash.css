@@ -1,16 +1,10 @@
 .l1 label{
+    margin-left: 10px;
     font-size: 18px;
 }
 .li input{
     width: 30px;
     height: 30px;
-}
-
-.group .box{
-    display: flex;
-}
-.group .box label{
-    line-height: 24px;
 }
 .ikki{
     margin-left: 4%;
@@ -18,19 +12,5 @@
 .l1{
     border-radius: 8px;
     background-color: #ffffff;
-    margin: 10px;
-}
-.inpt1{
-    width: 15px;
-    height: 15px;
-    margin-top: 4px;
-    margin-left: 10px;
-    cursor: pointer;
-}
-.inpt{
-    width: 15px;
-    height: 15px;
-    margin-top: 4px;
-    margin-right: 10px;
-    cursor: pointer;
+    padding: 1rem;
 }

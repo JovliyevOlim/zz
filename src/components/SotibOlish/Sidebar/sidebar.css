@@ -126,4 +126,7 @@ li{
     .query2{
         display: block;
     }
+    .sidebar-text{
+        font-size: 14px;
+    }
 }

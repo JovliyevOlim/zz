@@ -39,7 +39,7 @@ export const getXarajatlar=()=>apiCall({
 });
 
 export const saveXarajatlar=(data)=>apiCall({
-    url: '/get-by-businessId/1',
+    url: 'outlay/get-by-businessId/1',
     method:'post',
     data,
     onSuccess: slice.actions.savefrom.type
@@ -53,7 +53,7 @@ export const editXarajatlar=(data)=>apiCall({
 });
 
 export const deleteXarajatlar=(data)=>apiCall({
-    url: '/user',
+    url: '/get-by-businessId/1',
     method:'post',
     data,
     onSuccess: slice.actions.deletefrom.type

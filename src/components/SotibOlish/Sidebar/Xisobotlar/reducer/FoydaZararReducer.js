@@ -13,7 +13,7 @@ const slice = createSlice({
             console.log(action.payload);
         },
         savefrom: (state,action) => {
-            state.foydazarar.unshift(action.payload)
+                    console.log(action.payload)
             // toast.success('Saqlandi')
         },
         editfrom: (state,action) => {
@@ -33,13 +33,13 @@ const slice = createSlice({
 });
 
 export const getFoydaZarar=()=>apiCall({
-    url: '/user',
+    url: '/benefit-lost/one-date',
     method:'get',
     onSuccess: slice.actions.getFrom.type
 });
 
 export const saveFoydaZarar=(data)=>apiCall({
-    url: '/user',
+    url: '/benefit-lost/one-date',
     method:'post',
     data,
     onSuccess: slice.actions.savefrom.type

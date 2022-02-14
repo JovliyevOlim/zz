@@ -108,3 +108,9 @@ hr{
         display: none;
     } 
 }
+
+@media screen and (max-width: 768px) {
+    .headerBox .two .img2img3 .im2{
+        display: none;
+    }
+}
