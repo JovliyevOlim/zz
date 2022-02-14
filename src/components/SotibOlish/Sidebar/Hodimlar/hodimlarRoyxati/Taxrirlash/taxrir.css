@@ -5,6 +5,7 @@
 @media (max-width: 425.9px) {
     .ht .btnLogin{
        font-size: 12px; 
+       padding: 4px;
     }
     .ht .btnSaqlash{
        font-size: 12px; 

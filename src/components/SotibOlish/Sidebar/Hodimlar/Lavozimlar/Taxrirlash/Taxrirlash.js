@@ -424,24 +424,17 @@ function Taxrirlash({getLavozim, editLavozim, lavozimlar, saveLavozim}) {
     return (
         <div className={'row mt-5'}>
             <h4 className={'text-center'}>Lavozimni qo`shish / taxrirlash</h4>
-
-            <div className="col-md-12">
-
-                <div className="col-md-11 justify-content-between ms-5 d-flex">
-
-                    <div className="l1 p-3 mt-5 col-md-6 border">
+            <div className="col-md-12" >
+                <div className="row justify-content-center " >
+                    <div className="l1 p-4 mt-5 col-sm-10 col-md-7 col-5 border">
                         <div>
                             <label htmlFor={'l'}>Lavozim nomi</label>
-                            <input type="text" className={'form-control mt-2'} value={input.name}
-                                   onChange={changename} placeholder={'Lavozim nomi'}/>
-
+                            <input type="text" className={'form-control mt-2'} value={input.name} onChange={changename} placeholder={'Lavozim nomi'}/>
                             <div className="ruxsat mt-4">
                                 <h5>Ruxsatnomalar</h5>
-
                                 <label htmlFor={'ch'}>Barchasini belgilash</label>
                                 <input type="checkbox" checked={input.xBarchasinibelgilash} onChange={changexBarchasini}
                                        style={{marginLeft: '10px', width: '15px', height: '15px'}} id={'ch'}/>
-
                                 <div className={'mt-4'}>
                                     <input type="checkbox" checked={input.xodimkorish} onChange={changexodimkorish}
                                            style={{width: '15px', height: '15px', marginTop: '4px'}} id={'kor'}/>
@@ -464,14 +457,12 @@ function Taxrirlash({getLavozim, editLavozim, lavozimlar, saveLavozim}) {
                                            id={'och'} style={{width: '15px', height: '15px', marginTop: '10px'}}/>
                                     <label htmlFor={'och'}>Xodimlarni o`chirish</label>
                                 </div>
-
                             </div>
                         </div>
                     </div>
 
-                    <div className="l1 mt-5 col-md-6 p-4 border" style={{marginLeft: '15px'}}>
+                    <div className="l1 mt-5 col-sm-10 col-5 col-md-7 p-4 border">
                         <label htmlFor={'l'}>Lavozimlar</label>
-
                         <div className="ruxsat mt-4">
                             <label htmlFor={'chch'}>Barchasini belgilash</label>
                             <input type="checkbox" checked={input.lBarchasinibelgilash} onChange={changelBarchasini}
@@ -503,9 +494,9 @@ function Taxrirlash({getLavozim, editLavozim, lavozimlar, saveLavozim}) {
                     </div>
                 </div>
 
-                <div className="col-md-11 ikki justify-content-between d-flex">
+                <div className="row ikki justify-content-center">
 
-                    <div className="l1 mt-5 col-md-6 p-4 border">
+                    <div className="l1 mt-5 p-4 col-sm-10 col-md-7 col-5 border">
                         <div>
                             <label htmlFor={'l'}>Ta`minotchi diller</label>
 
@@ -518,13 +509,13 @@ function Taxrirlash({getLavozim, editLavozim, lavozimlar, saveLavozim}) {
                                 <div className={'mt-4'}>
                                     <input type="radio" checked={input.lang1} onChange={changelang1} name={'radio'}
                                            style={{width: '15px', height: '15px', marginTop: '4px'}} id={'korDiller'}/>
-                                    <label htmlFor={'korDiller'}>lang_v1.view_all_supplier</label>
+                                    <label htmlFor={'korDiller'}>Barcha dillerlarni ko'rish</label>
                                 </div>
                                 <div>
                                     <input type="radio" checked={input.lang2} onChange={changelang2} name={'radio'}
                                            id={'qoshDiller'}
                                            style={{width: '15px', marginTop: '10px', height: '15px'}}/>
-                                    <label htmlFor={'qoshDiller'}>lang_v1.view_own_supplier</label>
+                                    <label htmlFor={'qoshDiller'}>view_own_supplier</label>
                                 </div>
                                 <div>
                                     <input type="checkbox" checked={input.dillerqoshish} onChange={changedillerqoshish}
@@ -548,7 +539,7 @@ function Taxrirlash({getLavozim, editLavozim, lavozimlar, saveLavozim}) {
                         </div>
                     </div>
 
-                    <div className="l1 mt-5 col-md-6 p-4 border" style={{marginLeft: '15px'}}>
+                    <div className="l1 mt-5 p-4 col-sm-10 col-md-7 col-5  border">
                         <label htmlFor={'l'}>Mijoz</label>
 
                         <div className="ruxsat mt-4">
@@ -559,37 +550,37 @@ function Taxrirlash({getLavozim, editLavozim, lavozimlar, saveLavozim}) {
                             <div className={'mt-4'}>
                                 <input type="radio" checked={input.lang4} onChange={changemlang4} name={'r'}
                                        style={{width: '15px', height: '15px', marginTop: '4px'}} id={'langC'}/>
-                                <label htmlFor={'langC'}>lang_v1.view_all_customer</label>
+                                <label htmlFor={'langC'}>view_all_customer</label>
                             </div>
 
                             <div className={'mt-4'}>
                                 <input type="radio" checked={input.lang5} onChange={changemlang5} name={'r'}
                                        style={{width: '15px', height: '15px', marginTop: '4px'}} id={'langC2'}/>
-                                <label htmlFor={'langC2'}>lang_v1.view_own_customer</label>
+                                <label htmlFor={'langC2'}>view_own_customer</label>
                             </div>
 
                             <div className={'mt-4'}>
                                 <input type="radio" checked={input.lang6} onChange={changemlang6} name={'r'}
                                        style={{width: '15px', height: '15px', marginTop: '4px'}} id={'langC3'}/>
-                                <label htmlFor={'langC3'}>lang_v1._customer_with_no_sell_one_month</label>
+                                <label htmlFor={'langC3'}>customer no_sell_month</label>
                             </div>
 
                             <div className={'mt-4'}>
                                 <input type="radio" checked={input.lang7} onChange={changemlang7} name={'r'}
                                        style={{width: '15px', height: '15px', marginTop: '4px'}} id={'langthree'}/>
-                                <label htmlFor={'langthree'}>lang_v1._customer_with_no_sell_three_month</label>
+                                <label htmlFor={'langthree'}>custm_with_no_sell_month</label>
                             </div>
 
                             <div className={'mt-4'}>
                                 <input type="radio" checked={input.lang8} onChange={changemlang8} name={'r'}
                                        style={{width: '15px', height: '15px', marginTop: '4px'}} id={'langsix'}/>
-                                <label htmlFor={'langsix'}>lang_v1._customer_with_no_sell_six_month</label>
+                                <label htmlFor={'langsix'}>customer_with_no_sell_6_month</label>
                             </div>
 
                             <div className={'mt-4'}>
                                 <input type="radio" checked={input.lang9} onChange={changemlang9} name={'r'}
                                        style={{width: '15px', height: '15px', marginTop: '4px'}} id={'langyear'}/>
-                                <label htmlFor={'langyear'}>lang_v1._customer_with_no_sell_year</label>
+                                <label htmlFor={'langyear'}>customer_with_no_sell_year</label>
                             </div>
 
                             <div className={'mt-4'}>
