@@ -15,6 +15,7 @@ const slice = createSlice({
         savefrom: (state,action) => {
             state.otkazmalar.unshift(action.payload)
             // toast.success('Saqlandi')
+            console.log('SAVED_OTKAZMA');
         },
         editfrom: (state,action) => {
             state.otkazmalar.map((item,index)=>{
@@ -25,36 +26,35 @@ const slice = createSlice({
             // toast.success('O`zgartirildi')
         },
         deletefrom:(state,action)=>{
-
+            console.log('DELETED_OTKAZMA');
             // toast.info('O`chirildi')
         }
     }
 });
 
 export const getOtkazma=()=>apiCall({
-    url: '/get-by-shipped-branch/1',
-    // url: '/get-by-received-branch/1',
+    url: '/exchange-product-branch/get-by-shipped-branch/1',
     method:'get',
     onSuccess: slice.actions.getFrom.type
 });
 
 export const saveOtkazma=(data)=>apiCall({
-    url: '/user',
+    url: '/exchange-product-branch',
     method:'post',
     data,
     onSuccess: slice.actions.savefrom.type
 });
 
 export const editOtkazma=(data)=>apiCall({
-    url: '/user',
+    url: '/exchange-product-branch',
     method: 'post',
     data,
     onSuccess: slice.actions.editfrom.type
 });
 
 export const deleteOtkazma=(data)=>apiCall({
-    url: '/user',
-    method:'post',
+    url: '/exchange-product-branch/'+data,
+    method:'delete',
     data,
     onSuccess: slice.actions.deletefrom.type
 })

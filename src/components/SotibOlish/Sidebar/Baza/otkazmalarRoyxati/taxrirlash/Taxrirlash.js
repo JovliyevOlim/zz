@@ -1,5 +1,6 @@
 import {useState} from 'react'
-
+import {saveOtkazma} from "../../reducer/OtkazmaReducer";
+import {Link} from 'react-router-dom'
 function Taxrirlash(){
 
     const [input,setInput] = useState(
@@ -54,6 +55,25 @@ function Taxrirlash(){
         input.qisqaeslatma = e.target.value
         let a = {...input}
         setInput(a)
+    }
+
+    function saqla(){
+        saveOtkazma(
+            {
+                shippedBranchId:1,
+                receivedBranchId:1,
+                exchangeDate:input.sana,
+                description:'',
+                exchangeStatusId:1,
+                exchangeProductDTOS:[
+                    {
+                        exchangeProductQuantity:1,
+                        productExchangeId:1
+                    }
+                ],
+                businessId:1
+            }
+        )
     }
 
     return(
@@ -126,7 +146,8 @@ function Taxrirlash(){
                     <textarea className={'form-control'} value={input.qisqaeslatma} onChange={qisqaeslatma} name="" id="" cols="30" rows="3">
 
                     </textarea>
-                    <button className={'btn mt-2 btn-outline-primary'}>Saqlash</button>
+                    <Link to={'/headerthird/utkazmaRuyxati'}><button className={'btn mt-2 btn-outline-primary'} onClick={saqla}>Saqlash</button></Link>
+
                 </div>
             </div>
         </div>

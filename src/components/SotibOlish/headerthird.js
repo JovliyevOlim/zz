@@ -42,6 +42,7 @@ import Dukon from "./Sidebar/Settings/DukonSozlamalari/Dukon";
 import SoliqlarXisoboti from "./Sidebar/Xisobotlar/soliqlarXisoboti/SoliqlarXisoboti";
 import Bazalar from './Sidebar/Settings/bazalar/Bazalar'
 import SozlamalarBtn from './Sidebar/Settings/bazalar/SozlamalarBtn'
+import Yangiotkazma from './Sidebar/Baza/otkazmalarRoyxati/taxrirlash/Taxrirlash'
 import Dukon1 from './Sidebar/Settings/DukonSozlamalari/dukon/Dukon1'
 import Soliq from './Sidebar/Settings/DukonSozlamalari/soliq/Soliq'
 function Headerthird() {
@@ -97,7 +98,8 @@ function Headerthird() {
                 <Route path={'/headerthird/turliTavar'} component={SavdoOynasi}/>
                 <Route path={'/headerthird/utkazmaRuyxati/taxrirlash'} component={Taxrirlash4}/>
                 <Route path={'/headerthird/utkazmaRuyxati'} component={OtkazmalarRoyxati}/>
-                <Route path={'/headerthird/yangiOtkazma'} component={YangiOtkazma}/>
+                <Route path={'/headerthird/utkazmaRuyxati/taxrirlash'} component={Yangiotkazma}/>
+                {/*<Route path={'/headerthird/yangiOtkazma'} component={YangiOtkazma}/>*/}
                 <Route path={'/headerthird/xarajatRuyxati'} component={XarajatlarRoyxati}/>
                 <Route path={'/headerthird/xarajatQoshish'} component={XarajatQoshish}/>
                 <Route path={'/headerthird/xarajatTurlari'} component={XarajatTurlari}/>

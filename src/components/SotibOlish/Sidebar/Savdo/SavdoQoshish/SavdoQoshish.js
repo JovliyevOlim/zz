@@ -4,7 +4,6 @@ import {connect} from "react-redux";
 import LavozimReducer, {deleteLavozim, editLavozim, getLavozim, saveLavozim} from "../../Hodimlar/reducer/LavozimReducer";
 import SavdoQoshishReducer, {deleteSavdolar, editSavdolar, getSavdolar, saveSavdolar} from "../reducer/SavdoQoshishReducer";
 import TaminotReducer from "../../Hamkorlar/reducer/TaminotReducer";
-import XodimReducer, {getXodim, saveXodim} from "../../Hodimlar/reducer/XodimReducer";
 import users from "../../../../../reducer/users";
 
 function SavdoQoshish({saveSavdolar,deleteSavdolar,}){
@@ -105,10 +104,11 @@ function SavdoQoshish({saveSavdolar,deleteSavdolar,}){
                 userId:1,
                 productTraderDto:[
                     {
-
+                        tradedQuantity:1,
+                        productTradeId:1
                     }
                 ],
-                payDate:1,
+                payDate:"2020-10-10",
                 branchId:1,
                 payMethodId:1,
                 amountPaid:1,
@@ -124,7 +124,6 @@ function SavdoQoshish({saveSavdolar,deleteSavdolar,}){
                 <h5>Savdo qo`shish</h5>
                 <select name="" value={input.savdoqoshish} onChange={savdoqoshish}>
                     <option value="">Shefir zavod(Bl001)</option>
-                    <option value="">Instrumentlar(Bl002)</option>
                 </select>
             </div>
 
@@ -140,16 +139,12 @@ function SavdoQoshish({saveSavdolar,deleteSavdolar,}){
                         <input type="number" value={input.tulovmuddati} onChange={tulovmuddati} className={'form-control'}/>
                         <select name="" id="" className={'form-control'} value={input.tulovmuddatitanlash} onChange={tulovmuddatitanlash}>
                             <option value="">Tanlash</option>
-                            <option value="">Oy</option>
-                            <option value="">Hafta</option>
                         </select>
                     </div>
                     <label htmlFor={'stat'} className={'mt-4'}>Status</label>
                     <select value={input.status} onChange={status} name="" id="" className={'form-control'}>
                         <option value="">Tanlash</option>
-                        <option value="">Final</option>
                     </select>
-
                     <label htmlFor={'savRaqam'} className={'mt-4'}>Savdo raqami</label>
                     <input type="number" value={input.savdoraqami} onChange={savdoraqami} className={'form-control'} placeholder={'savdo raqami'}/>
                 </div>
@@ -160,7 +155,7 @@ function SavdoQoshish({saveSavdolar,deleteSavdolar,}){
 
                     <label htmlFor={'hisobF'} className={'mt-4'}>Xisob Faktura sxemasi</label>
                     <select name="" value={input.xisobfakturasxemasi} onChange={xisobfakturasxemasi} id={'hisobF'} className={'form-control'}>
-                        <option value="#">Default</option>
+                        <option value="">Default</option>
                     </select>
 
                     <label htmlFor={'qoshim'} className={'mt-4'}>Qo`shimcha hujjat</label>
@@ -219,18 +214,5 @@ function SavdoQoshish({saveSavdolar,deleteSavdolar,}){
         </div>
     )
 }
-// export default
-// connect(({SavdoQoshishReducer: {savdolar}}) => ({savdolar}), {
-//         getSavdolar,
-//         saveSavdolar,
-//         editSavdolar,
-//         deleteSavdolar
-//     })
-// (SavdoQoshish)
+
 export default connect((TaminotReducer,SavdoQoshishReducer,users),{getSavdolar,saveSavdolar,editSavdolar,deleteSavdolar}) (SavdoQoshish)
-// export default connect(({SavdoOynaReducer: {lavozimlar}}) => ({lavozimlar}), {
-//     getLavozim,
-//     saveLavozim,
-//     editLavozim,
-//     deleteLavozim
-// })(SavdoQoshish)

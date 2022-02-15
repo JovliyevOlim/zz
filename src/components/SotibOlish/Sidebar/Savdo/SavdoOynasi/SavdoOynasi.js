@@ -8,7 +8,8 @@ import img7 from '../../../../../img/people.svg'
 import img8 from '../../../../../img/search-normal-1.svg'
 import {useEffect, useState} from "react";
 import {connect} from "react-redux";
-import {deleteSavdo, editSavdo, getSavdo, saveSavdo} from "../reducer/SavdoOynaReducer";
+import SavdoOynaReducer, {deleteSavdo, editSavdo, getSavdo, saveSavdo} from "../reducer/SavdoOynaReducer";
+import MaxsulotlarRoyxariReducer, {getMaxsulotRuyxati} from "../../Maxsulotlar/reducer/MaxsulotlarRoyxariReducer";
 
 function SavdoOynasi({getSavdo,editSavdo,deleteSavdo,saveSavdo,savdo}){
 
@@ -37,8 +38,10 @@ function SavdoOynasi({getSavdo,editSavdo,deleteSavdo,saveSavdo,savdo}){
     }
 
     useEffect(()=>{
-        getSavdo()
+        // getSavdo()
+        getMaxsulotRuyxati()
     },[])
+
 
     const [count,setCount] = useState(0)
 
@@ -86,10 +89,15 @@ function SavdoOynasi({getSavdo,editSavdo,deleteSavdo,saveSavdo,savdo}){
                                 </thead>
                                 <tbody>
                                 {
-                                    savdo.map(item=><tr key={item.id}>
-                                        <td>{item.amountPaid}</td>
-                                    </tr>)
+                                    // MaxsulotlarRoyxariReducer.maxsulotruyxati.map(item=><tr key={item.id}>
+                                    //     <td>{item.name}</td>
+                                    // </tr>)
+
+                                    // savdo.map(item=><tr key={item.id}>
+                                    //     <td>{item.amountPaid}</td>
+                                    // </tr>)
                                 }
+
                                 {/*<tr>*/}
                                 {/*    <td>Cardigan (Open style) sweater</td>*/}
                                 {/*    <td className={'d-flex  align-items-center p-3'}>*/}
@@ -146,4 +154,6 @@ function SavdoOynasi({getSavdo,editSavdo,deleteSavdo,saveSavdo,savdo}){
         </div>
     )
 }
-export default connect(({SavdoOynaReducer:{savdo}})=>({savdo}),{getSavdo,saveSavdo,editSavdo,deleteSavdo}) (SavdoOynasi)
+export default connect((MaxsulotlarRoyxariReducer,SavdoOynaReducer),{getSavdo,saveSavdo,editSavdo,deleteSavdo}) (SavdoOynasi)
+
+// export default connect(({SavdoOynaReducer:{savdo}})=>({savdo}),{getSavdo,saveSavdo,editSavdo,deleteSavdo}) (SavdoOynasi)

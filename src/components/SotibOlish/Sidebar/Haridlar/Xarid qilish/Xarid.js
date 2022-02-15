@@ -1,5 +1,5 @@
 import './xarid.css'
-import {useState} from "react";
+import {useState,useEffect} from "react";
 import {ModalBody, ModalHeader, ModalFooter, Modal} from "reactstrap";
 import {connect} from "react-redux";
 import XaridReducer ,{getXarid, saveXarid, deleteXarid, editXarid} from '../reducer/XaridReducer'
@@ -58,162 +58,135 @@ function Xarid({getXarid, saveXarid,taminot, deleteXarid, editXarid,XaridReducer
         let a = {...input}
         setInput(a)
     }
-
     function lang1(e) {
         input.lang1 = e.target.value
         let a = {...input}
         setInput(a)
     }
-
     function dukon(e) {
         input.dukon = e.target.value
         let a = {...input}
         setInput(a)
     }
-
     function idraqam(e) {
         input.idraqam = e.target.value
         let a = {...input}
         setInput(a)
     }
-
     function login(e) {
         input.login = e.target.value
         let a = {...input}
         setInput(a)
     }
-
     function tel(e) {
         input.tel = e.target.value
         let a = {...input}
         setInput(a)
     }
-
     function ismi(e) {
         input.ismi = e.target.value
         let a = {...input}
         setInput(a)
     }
-
     function ikkinciraqam(e) {
         input.ikkinciraqam = e.target.value
         let a = {...input}
         setInput(a)
     }
-
     function otaismi(e) {
         input.otaismi = e.target.value
         let a = {...input}
         setInput(a)
     }
-
     function telegram(e) {
         input.telegram = e.target.value
         let a = {...input}
         setInput(a)
     }
-
     function familiyasi(e) {
         input.familiyasi = e.target.value
         let a = {...input}
         setInput(a)
     }
-
     function email(e) {
         input.email = e.target.value
         let a = {...input}
         setInput(a)
     }
-
     function qisqaeslatma(e) {
         input.qisqaeslatma = e.target.value
         let a = {...input}
         setInput(a)
     }
-
     function baza(e) {
         input.baza = e.target.value
         let a = {...input}
         setInput(a)
     }
-
     function xaridsanasi(e) {
         input.xaridsanasi = e.target.value
         let a = {...input}
         setInput(a)
         console.log(input.xaridsanasi)
     }
-
     function tulovmuddati(e) {
         input.tulovmuddati = e.target.value
         let a = {...input}
         setInput(a)
     }
-
     function xaridstatusi(e) {
         input.xaridstatusi = e.target.value
         let a = {...input}
         setInput(a)
     }
-
     function qoshimchahujjat(e) {
         input.qoshimchahujjat = e.target.value
         let a = {...input}
         setInput(a)
     }
-
     function avans(e) {
         input.avans = e.target.value
         let a = {...input}
         setInput(a)
     }
-
     function tulovusuli(e) {
         input.tulovusuli = e.target.value
         let a = {...input}
         setInput(a)
     }
-
     function paidon(e) {
         input.paidon = e.target.value
         let a = {...input}
         setInput(a)
     }
-
     function eslatma(e) {
         input.eslatma = e.target.value
         let a = {...input}
         setInput(a)
     }
-
     function yetkazibberish(e) {
         input.yetkazibberish = e.target.value
         let a = {...input}
         setInput(a)
     }
-
     function yetkazibberishnarxi(e) {
         input.yetkazibberishnarxi = e.target.value
         let a = {...input}
         setInput(a)
     }
-
     function langv2(e) {
         input.langv2 = e.target.value
         let a = {...input}
         setInput(a)
     }
-
     function yetkazibberishnarxi2(e) {
         input.yetkazibberishnarxi2 = e.target.value
         let a = {...input}
         setInput(a)
     }
-
     function toggle() {
         setActive(!active)
     }
-
     function toggle2() {
         setActive2(!active2)
     }
@@ -221,14 +194,14 @@ function Xarid({getXarid, saveXarid,taminot, deleteXarid, editXarid,XaridReducer
     function saqla() {
         saveXarid(
             {
-                "dealerId": 2,
+                "dealerId": 1,
                 "seller": 1,
-                "purchaseStatusId": input.xaridstatusi,
-                "paymentStatusId": input.tulovusuli,
+                "purchaseStatusId": 1,
+                "paymentStatusId": 1,
                 "branchId": 1,
-                "date": input.xaridsanasi,
-                "description": null,
-                "deliveryPrice": input.yetkazibberishnarxi,
+                "date": "2022-10-10",
+                "description": "eejgo",
+                "deliveryPrice": 10,
                 "purchaseProductsDto": [
                     {
                         "purchasedQuantity": 10,
@@ -237,7 +210,6 @@ function Xarid({getXarid, saveXarid,taminot, deleteXarid, editXarid,XaridReducer
                 ]
             }
         )
-        console.log('saaaaaaqlani');
     }
 
     return (
@@ -269,8 +241,6 @@ function Xarid({getXarid, saveXarid,taminot, deleteXarid, editXarid,XaridReducer
                     <label htmlFor={'baza'} className={'mt-3'}>Baza</label>
                     <select name="" id={'baza'} value={input.baza} onChange={baza} className={'form-control'}>
                         <option value="">Tanlash</option>
-                        <option value="">Shefir zavod</option>
-                        <option value="">Tanlash</option>
                     </select>
                 </div>
 
@@ -282,8 +252,6 @@ function Xarid({getXarid, saveXarid,taminot, deleteXarid, editXarid,XaridReducer
                     <select name="" id={'muddat'} value={input.tulovmuddati} onChange={tulovmuddati}
                             className={'form-control'}>
                         <option value="">Tanlash</option>
-                        <option value="">Oy</option>
-                        <option value="">Hafta</option>
                     </select>
                 </div>
 
@@ -365,8 +333,8 @@ function Xarid({getXarid, saveXarid,taminot, deleteXarid, editXarid,XaridReducer
                     <label className={'mt-3'} htmlFor={'tol'}>To`lov usuli</label>
                     <select name="" id={'tol'} className={'form-control'} value={input.tulovusuli}
                             onChange={tulovusuli}>
-                        <option value="#">Naqd</option>
-                        <option value="#">Pastik</option>
+                        <option value="">Naqd</option>
+                        <option value="">Pastik</option>
                     </select>
                 </div>
                 <div className="col-md-6">
@@ -419,10 +387,3 @@ function Xarid({getXarid, saveXarid,taminot, deleteXarid, editXarid,XaridReducer
     )
 }
 export default connect((TaminotReducer,XaridReducer),{getXarid,saveXarid,editXarid,deleteXarid}) (Xarid)
-// export const a = connect((TaminotReducer),{getTaminot,saveTaminot,}) (Xarid)
-// export default connect(({XaridReducer: {xaridlar}}) => ({xaridlar}), {
-//     getXarid,
-//     saveXarid,
-//     deleteXarid,
-//     editXarid
-// })(Xarid)

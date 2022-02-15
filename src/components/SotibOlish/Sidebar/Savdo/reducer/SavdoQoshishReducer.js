@@ -1,6 +1,5 @@
 import {createSlice} from "@reduxjs/toolkit";
 import {apiCall} from "../../../../../api";
-// import {toast} from "react-toastify";
 
 const slice = createSlice({
     name: 'savdolar',

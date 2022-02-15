@@ -47,7 +47,7 @@ function Mahsulotlar() {
             {
                 active?<ul>
                     <Link to={'/headerthird/utkazmaRuyxati'} className={'bazaLink'}><li>O`tkazmalar ruyxati</li></Link>
-                    <Link to={'/headerthird/yangiOtkazma'} className={'bazaLink'}><li>Yangi o`tkazma</li></Link>
+                    <Link to={'/headerthird/utkazmaRuyxati/taxrirlash'} className={'bazaLink'}><li>Yangi o`tkazma</li></Link>
                 </ul>:''
             }
         </div>
