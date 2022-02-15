@@ -4,23 +4,31 @@
        /*box-shadow: 0px 2px 5px grey;*/
 }
 
-.textHeader{
+.textHeaderMax{
        display: flex;
        align-items: baseline;
 }
+.rowStyleMax .block{
+       display: grid;
+       grid-template-columns: 30% 30% 30%;
+       justify-content: center;
+}
+.rowStyleMax .block .box .minBox{
+      
+}      
 
 .rowStyleMax .qoshish{
        margin-bottom: 28px;
 }
-.rowStyleMax .chescbox{
+.rowStyleMax .block .box .chescbox{
        display: flex;
        align-items: center;
        text-align: center;
-       margin-top: 32px;
 }
-.rowStyleMax select{
-       width: 160px;
+.rowStyleMax .block .box select{
+       width: 90%;
        height: 32px;
+       margin-bottom: 20px;
        background-color:#F5F5F7;
 }
 
@@ -40,4 +48,25 @@
 }
 .rowStyleMax .bynBarchMax{
        margin-top: 46px;
+}
+@media (max-width: 425.9px){
+       .textHeaderMax{
+              display: block;
+       }
+       .rowStyleMax .block{
+              display: grid;
+              grid-template-columns: 100%;
+              justify-content: center;
+       }
+}
+@media (min-width:426px) and (max-width: 766px){
+       .rowStyleMax{
+              display: block;
+       }
+       .rowStyleMax .block{
+              display: grid;
+              grid-template-columns: 100%;
+              justify-content: center;
+       }
+       
 }

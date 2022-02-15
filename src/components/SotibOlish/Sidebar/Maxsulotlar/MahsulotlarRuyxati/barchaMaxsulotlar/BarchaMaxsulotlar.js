@@ -162,27 +162,31 @@ function BarchaMaxsulotlar({getMaxsulotRuyxati,maxsulotruyxati,MaxsulotlarRoyxar
     return (
         <div>
             <div className="col-md-12">
-                <div className="rowStyles">
+                <div className="rowStyleBR">
                     <div className="qoshish">
                         <h5>Barcha maxsulotlar</h5>
                         <Link to={'/headerthird/mahsulotRuyxati/barcaMahsulot/taxrirlash'}>
                             <button onClick={toggle} className='btn btn-primary'>+Qo'shish</button>
                         </Link>
                     </div>
-                    <div className="izlash">
-                        <p>Ko'rsatildi</p>
-                        <select name="" id="" value={input.view} onChange={view}>
-                            <option value="">25</option>
-                            <option value="">All</option>
-                        </select>
-                        <button><img src={CSV} alt=""/> Export CSV</button>
-                        <button><img src={Excel} alt=""/> Export Excel</button>
-                        <button><img src={Print} alt=""/> Print</button>
-                        <button><img src={Pdf} alt=""/>Export PDF</button>
-                        <button><img src={Data} alt=""/>Malumotlarni kamaytirish</button>
-                        <input type="text" placeholder='Izlash...' value={input.izlash} onChange={izlash}/>
+                    <div className="izlashBR">
+                        <div className="izlashBox1">
+                            <p>Ko'rsatildi</p>
+                            <select name="" id="" value={input.view} onChange={view}>
+                                <option value="">25</option>
+                                <option value="">All</option>
+                            </select>
+                            <button><img src={CSV} alt=""/> Export CSV</button>
+                            <button><img src={Excel} alt=""/> Export Excel</button>
+                            <button><img src={Print} alt=""/> Print</button>
+                            <button><img src={Pdf} alt=""/>Export PDF</button>
+                            <button><img src={Data} alt=""/>Malumotlarni kamaytirish</button>
+                        </div>
+                        <div className="izlashBox2">
+                            <input type="text" placeholder='Izlash...' value={input.izlash} onChange={izlash}/>
+                        </div>
                     </div>
-
+                    <div className="table-responsive">
                     <table className='table table-striped table-bordered mt-4'>
                         <thead>
                         <tr>
@@ -239,14 +243,15 @@ function BarchaMaxsulotlar({getMaxsulotRuyxati,maxsulotruyxati,MaxsulotlarRoyxar
                         {/*</tr>*/}
                         </tbody>
                     </table>
+                    </div>
                     {
                         active ? <KorishM active={active} toggle={toggle} mahsulot={input}/> : ''
                     }
                     <div className="btnBoshqarish">
-                        <button className='btn btn-danger'>Belgilanganlarni o'chirish</button>
-                        <button className='btn btn-success'>Boshqa bazaga surish</button>
-                        <button className='btn btn-primary'>Bazadan olib tashlash</button>
-                        <button className='btn btn-warning'>Belgilanganlarni vaqtinchalik o'chirish</button>
+                        <button className='btn btn-danger buttonPage'>Belgilanganlarni o'chirish</button>
+                        <button className='btn btn-success buttonPage'>Boshqa bazaga surish</button>
+                        <button className='btn btn-primary buttonPage'>Bazadan olib tashlash</button>
+                        <button className='btn btn-warning buttonPage'>Belgilanganlarni vaqtinchalik o'chirish</button>
                     </div>
 
                     <p>Ko'rsatildi 1 ta sahifa 1 va yana 1 ta sahifa bor</p>

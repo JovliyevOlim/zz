@@ -1,40 +1,44 @@
-.rowStyles{
+.rowStyleBR{
        justify-content: space-between;
        border-radius: 8px;
        padding: 40px 30px 40px 30px;
-       background-color: #FFFF;
+       /* background-color: #FFFF; */
 }
-.rowStyles .qoshish{
+.rowStyleBR .qoshish{
        display: flex;
        justify-content: space-between;
        border-radius: 16px;
 }
-.rowStyles .izlash{
+.rowStyleBR .izlashBR{
        display: flex;
+       justify-content: space-between;
        margin-top: 32px;
 }
-.rowStyles .btnBoshqarish{
+.rowStyleBR .izlashBox1{
+       display: flex;
+}
+.rowStyleBR .btnBoshqarish{
        margin-bottom: 40px;
 }
-.rowStyles .btnBoshqarish button{
+.rowStyleBR .btnBoshqarish button{
        margin: 4px;
 
 }
 
-.rowStyles .izlash p{
+.rowStyleBR .izlashBR p{
        text-align: center;
 }
-.rowStyles .izlash select{
+.rowStyleBR .izlashBR select{
        height: 28px;
        border-radius: 4px;
        border: 1px solid #6b6363a0;
        margin-left: 4px;
 }
-.rowStyles .izlash button:hover{
+.rowStyleBR .izlashBR button:hover{
        cursor: pointer;
        background-color: #e0dddd;
 }
-.rowStyles .izlash button{
+.rowStyleBR .izlashBR button{
        height: 28px;
        border-radius: 4px;
        border: 1px solid #6b6363a0;
@@ -42,11 +46,11 @@
        background-color: #f3efef;
        font-size: 11px;
 }
-.rowStyles .izlash button img{
+.rowStyleBR .izlashBR button img{
        width: 16px;
 }
 
-.rowStyles .izlash input{
+.rowStyleBR .izlashBR input{
        height: 28px;
        border-radius: 4px;
        border: 1px solid #6b6363a0;
@@ -94,15 +98,15 @@
        width: 18px;
        margin-bottom: 2px;
 }
-.rowStyles .sahifalar{
+.rowStyleBR .sahifalar{
        display: flex;
        justify-content: end;
 }
-.rowStyles .sahifalar :first-child{
+.rowStyleBR .sahifalar :first-child{
        border-radius: 4px 0px 0px 4px;
        border: 1px solid #6b6363a0;
 }
-.rowStyles .sahifalar button{
+.rowStyleBR .sahifalar button{
        border: 1px solid #6b6363a0;
        background-color: #FFFF;
        color:#1f1c1ca0;
@@ -110,4 +114,113 @@
 .sahifalar :last-child{
      border-radius: 0px 4px 4px 0px;
      
+}
+@media (max-width: 425.9px){
+       .rowStyleBR .qoshish h5{
+              font-size: 17px;
+       }
+       .rowStyleBR .izlashBR{
+              display: block;
+       }
+       .rowStyleBR .izlashBR .izlashBox1{
+              display: grid;
+              justify-content: center;
+              grid-template-columns: 110px 110px;
+              text-align: center;
+       }
+       .rowStyleBR .izlashBR .izlashBox2{
+              display: flex;
+              justify-content: center;
+       }
+       .rowStyleBR .izlashBR .izlashBox2 input{
+              width: 60%;
+              margin: 8px 0px 0px 4px;
+
+       }
+       .rowStyleBR .izlashBR .izlashBox1 select{
+              margin-bottom: 8px;
+       }
+       .rowStyleBR .izlashBR .izlashBox1 button{
+              line-height: 4px;
+              font-size: 10px;
+              margin-bottom: 8px;
+       }
+       .rowStyleBR p{
+              font-size: 12px;
+              line-height: 12px;
+       }
+       .rowStyleBR .btnBoshqarish .buttonPage{
+              font-size: 11px;
+              padding: 8px;
+              width: 80%;
+              height: 40px;
+              line-height: 10px;
+       }
+
+}
+@media (min-width: 426px) and (max-width: 768.9px){
+       .rowStyleBR .izlashBR{
+              display: block;
+       }
+       .rowStyleBR .izlashBR .izlashBox1{
+              display: grid;
+              justify-content: center;
+              grid-template-columns: 33% 33% 33%;
+              text-align: center;
+       }
+       .rowStyleBR .izlashBR .izlashBox2{
+              display: flex;
+              justify-content: center;
+       }
+       .rowStyleBR .izlashBR .izlashBox2 input{
+              width: 70%;
+              margin: 8px 0px 0px 4px;
+
+       }
+       .rowStyleBR .izlashBR .izlashBox1 button{
+              line-height: 4px;
+              margin-bottom: 8px;
+       }
+       .rowStyleBR .btnBoshqarish .buttonPage{
+              font-size: 20px;
+       }
+       .rowStyleBR .btnBoshqarish .buttonPage{
+              padding: 8px;
+              width: 160px;
+              font-size: 13px;
+              height: 40px;
+              line-height: 12px;
+       }
+}
+@media (min-width: 769px) and (max-width: 1024.9px){
+       .rowStyleBR .izlashBR .izlashBox1{
+              display: grid;
+              grid-template-columns:36% 36% 36% ;
+       }
+       .rowStyleBR .izlashBR .izlashBox1 button{
+              line-height: 4px;
+              margin-bottom: 8px;
+       }
+       .rowStyleBR .btnBoshqarish .buttonPage{
+              padding: 8px;
+              width: 170px;
+              font-size: 13px;
+              height: 40px;
+              line-height: 12px;
+       }
+       
+         
+}
+@media (min-width: 1025px) and (max-width: 1199.9px){
+       .rowStyleBR .izlashBR .izlashBox1 button{
+              line-height: 4px;
+              
+       }
+       .rowStyleBR .btnBoshqarish .buttonPage{
+              padding: 8px;
+              width: 170px;
+              font-size: 13px;
+              height: 40px;
+              line-height: 12px;
+       }      
 }
