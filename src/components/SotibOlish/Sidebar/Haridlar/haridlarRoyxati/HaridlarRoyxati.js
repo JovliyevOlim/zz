@@ -9,9 +9,10 @@ import Delete from '../../../../../img/Delete.png'
 import './haridlarRoyxati.css'
 import {connect} from "react-redux";
 import {useEffect, useState} from "react";
-import {deleteXarid, editXarid, getXarid, saveXarid} from "../reducer/XaridReducer";
+import XaridReducer, {deleteXarid, editXarid, getXarid, saveXarid} from "../reducer/XaridReducer";
+import TaminotReducer from "../../Hamkorlar/reducer/TaminotReducer";
 
-function HaridlarRoyxati({getXarid, xaridlar, deleteXarid, saveXarid}) {
+function HaridlarRoyxati({getXarid, xaridlar, deleteXarid, saveXarid,XaridReducer,TaminotReducer}) {
 
     useEffect(() => {
         getXarid()
@@ -91,15 +92,15 @@ function HaridlarRoyxati({getXarid, xaridlar, deleteXarid, saveXarid}) {
                         <h6>Baza:</h6>
                         <select name="" value={input.baza} onChange={baza} id="">
                             <option value="">Barchasi</option>
-                            <option value=""></option>
+
                         </select>
                     </div>
                     <div className="col-md-6">
                         <h6>Diller:</h6>
                         <select name="" id="" value={input.diller} onChange={diller}>
-                            <option value="">Barchasi</option>
-                            <option value=""></option>
-                            <option value=""></option>
+                            {
+                                TaminotReducer.taminot.map(item=> <option value={item.id}>{item.name}</option>)
+                            }
                         </select>
                     </div>
                 </div>
@@ -108,16 +109,12 @@ function HaridlarRoyxati({getXarid, xaridlar, deleteXarid, saveXarid}) {
                         <h6>Harid status:</h6>
                         <select name="" id="" value={input.xaridstatus} onChange={xaridstatus}>
                             <option value="">Barchasi</option>
-                            <option value="">Qabul qilindi</option>
-                            <option value="">Kutilmoqda</option>
-                            <option value="">Buyurtma berildi</option>
                         </select>
                     </div>
                     <div className="col-md-6">
                         <h6>To'lov status:</h6>
                         <select name="" value={input.tulovstatus} onChange={tulovstatus} id="">
                             <option value="">Barchasi</option>
-                            <option value="">To'langan</option>
                         </select>
                     </div>
                 </div>
@@ -171,7 +168,7 @@ function HaridlarRoyxati({getXarid, xaridlar, deleteXarid, saveXarid}) {
                         </thead>
                         <tbody>
                         {
-                            xaridlar.filter(val => {
+                            XaridReducer.xaridlar.filter(val => {
                                 if (input.search === '') {
                                     return val
                                 } else if (val.name.toUpperCase().includes(input.search.toUpperCase())) {
@@ -209,9 +206,11 @@ function HaridlarRoyxati({getXarid, xaridlar, deleteXarid, saveXarid}) {
     )
 }
 
-export default connect(({XaridReducer: {xaridlar}}) => ({xaridlar}), {
-    getXarid,
-    saveXarid,
-    editXarid,
-    deleteXarid
-})(HaridlarRoyxati)
+export default connect((TaminotReducer,XaridReducer),{getXarid,saveXarid,editXarid,deleteXarid}) (HaridlarRoyxati)
+
+// export default connect(({XaridReducer: {xaridlar}}) => ({xaridlar}), {
+//     getXarid,
+//     saveXarid,
+//     editXarid,
+//     deleteXarid
+// })(HaridlarRoyxati)

@@ -1,24 +1,24 @@
 import {createSlice} from "@reduxjs/toolkit";
 import {apiCall} from "../../../../../api";
-// import {toast} from "react-toastify";
 
 const slice = createSlice({
-    name: 'otkazmalar',
+    name: 'savdolar',
     initialState: {
-        otkazmalar: []
+        savdolar: []
     },
     reducers: {
         getFrom: (state, action) => {
-            state.otkazmalar = action.payload
+            state.savdolar = action.payload
             console.log(action.payload);
         },
         savefrom: (state,action) => {
-            state.otkazmalar.unshift(action.payload)
+            state.savdolar.unshift(action.payload.object)
+            // state.savdolar.unshift(action.payload.message)
+            console.log('SAVED_SAVDOLAR');
             // toast.success('Saqlandi')
-            console.log('SAVED_OTKAZMA');
         },
         editfrom: (state,action) => {
-            state.otkazmalar.map((item,index)=>{
+            state.savdolar.map((item,index)=>{
                 if (item.id === action.payload.id){
                     item.login = action.payload.login
                 }
@@ -26,34 +26,36 @@ const slice = createSlice({
             // toast.success('O`zgartirildi')
         },
         deletefrom:(state,action)=>{
-            console.log('DELETED_OTKAZMA');
+
+            console.log('DELETED_SAVDOLAR');
             // toast.info('O`chirildi')
         }
+
     }
 });
 
-export const getOtkazma=()=>apiCall({
-    url: '/exchange-product-branch/get-by-shipped-branch/1',
+export const getSavdolar=()=>apiCall({
+    url: '/trade/get-by-business/1',
     method:'get',
     onSuccess: slice.actions.getFrom.type
 });
 
-export const saveOtkazma=(data)=>apiCall({
-    url: '/exchange-product-branch',
+export const saveSavdolar=(data)=>apiCall({
+    url: '/trade',
     method:'post',
     data,
     onSuccess: slice.actions.savefrom.type
 });
 
-export const editOtkazma=(data)=>apiCall({
-    url: '/exchange-product-branch',
+export const editSavdolar=(data)=>apiCall({
+    url: '/trade',
     method: 'post',
     data,
     onSuccess: slice.actions.editfrom.type
 });
 
-export const deleteOtkazma=(data)=>apiCall({
-    url: '/exchange-product-branch/'+data,
+export const deleteSavdolar=(data)=>apiCall({
+    url: '/trade/'+data,
     method:'delete',
     data,
     onSuccess: slice.actions.deletefrom.type

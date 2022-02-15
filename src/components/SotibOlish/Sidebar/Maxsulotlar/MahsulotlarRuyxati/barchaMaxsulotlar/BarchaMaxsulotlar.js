@@ -17,10 +17,8 @@ import MaxsulotlarRoyxariReducer, {
     editMaxsulotRuyxati,
     deleteMaxsulotRuyxati
 } from '../../reducer/MaxsulotlarRoyxariReducer'
-import {deleteLavozim, editLavozim, getLavozim, saveLavozim} from "../../../Hodimlar/reducer/LavozimReducer";
-import {Bar} from "react-chartjs-2";
 
-function BarchaMaxsulotlar({getMaxsulotRuyxati, maxsulotruyxati,}) {
+function BarchaMaxsulotlar({getMaxsulotRuyxati, maxsulotlar,MaxsulotlarRoyxariReducer,deleteMaxsulotRuyxati,saveMaxsulotRuyxati}) {
 
     const [input, setInput] = useState(
         {
@@ -96,79 +94,66 @@ function BarchaMaxsulotlar({getMaxsulotRuyxati, maxsulotruyxati,}) {
         let a = {...input}
         setInput(a)
     }
-
     function barcode(e) {
         input.barcode = e.target.value
         let a = {...input}
         setInput(a)
     }
-
     function brandId(e) {
         input.brandId = e.target.value
         let a = {...input}
         setInput(a)
     }
-
     function categoryId(e) {
         input.categoryId = e.target.value
         let a = {...input}
         setInput(a)
     }
-
     function measurementId(e) {
         input.measurementId = e.target.value
         let a = {...input}
         setInput(a)
     }
-
     function photoIds(e) {
         input.photoIds = e.target.value
         let a = {...input}
         setInput(a)
     }
-
     function minQuantity(e) {
         input.minQuantity = e.target.value
         let a = {...input}
         setInput(a)
     }
-
     function buyPrice(e) {
         input.buyPrice = e.target.value
         let a = {...input}
         setInput(a)
     }
-
     function salePrice(e) {
         input.salePrice = e.target.value
         let a = {...input}
         setInput(a)
     }
-
     function tax(e) {
         input.tax = e.target.value
         let a = {...input}
         setInput(a)
     }
-
     function branchId(e) {
         input.branchId = e.target.value
         let a = {...input}
         setInput(a)
     }
-
     function expireDate(e) {
         input.expireDate = e.target.value
         let a = {...input}
         setInput(a)
     }
-
     function dueDate(e) {
         input.dueDate = e.target.value
         let a = {...input}
         setInput(a)
     }
-
     function search(e) {
         input.inputsearch = e.target.value
         let a = {...input}
@@ -222,32 +207,37 @@ function BarchaMaxsulotlar({getMaxsulotRuyxati, maxsulotruyxati,}) {
                         </tr>
                         </thead>
                         <tbody>
-
                         {
-                            // MaxsulotlarRoyxariReducer.maxsulotruyxati.filter(val => {
-                            //     if (input.izlash === '') {
-                            //         return val
-                            //     } else if (val.name.toUpperCase().includes(input.izlash.toUpperCase())) {
-                            //         return val
-                            //     }
-                            // })
-                            //     .map(item => <tr key={item.id}>
-                            //         <td>{item.name}</td>
-                            //         <td>
-                            //             <Link to={'/headerthird/mahsulotRuyxati/barcaMahsulot/taxrirlash'}>*/}
-                            //                 <button className='taxrirlash'><img src={Edit} alt=""/> Taxrirlash
-                            //                 </button>*/}
-                            //             </Link>
-                            //             <Link
-                            //                 to={'/headerthird/mahsulotRuyxati/barcaMahsulot/view/' + input.name + '/' + input.ferma + '/' + input.pay + '/' + input.sotishNarxi + '/'}>*/}
-                            //                 <button onClick={toggle} className='korish'><img src={Korish}
-                            //                                                                  alt=""/> Ko'rish*/}
-                            //                 </button>
-                            //             </Link>
-                            //             <button className='ochirish'><img src={Delete} alt=""/> O'chirish</button>
-                            //             */}
-                            //         </td>
-                            //     </tr>)
+                            maxsulotlar.
+                            filter(val => {
+                                if (input.izlash === '') {
+                                    return val
+                                } else if (val.name.toUpperCase().includes(input.izlash.toUpperCase())) {
+                                    return val
+                                }
+                            })
+                                .map(item => <tr key={item.id}>
+                                    <td>{item.name}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <Link to={'/headerthird/mahsulotRuyxati/barcaMahsulot/taxrirlash'}>
+                                            <button className='taxrirlash'><img src={Edit} alt=""/> Taxrirlash
+                                            </button>
+                                        </Link>
+                                        <Link
+                                            to={'/headerthird/mahsulotRuyxati/barcaMahsulot/view/' + input.name + '/' + input.ferma + '/' + input.pay + '/' + input.sotishNarxi + '/'}>
+                                            <button onClick={toggle} className='korish'><img src={Korish}
+                                                                                             alt=""/> Ko'rish
+                                            </button>
+                                        </Link>
+                                        <button onClick={()=>deleteM(item)} className='ochirish'><img src={Delete} alt=""/> O'chirish</button>
+                                    </td>
+                                </tr>)
                         }
 
                         </tbody>
@@ -276,16 +266,9 @@ function BarchaMaxsulotlar({getMaxsulotRuyxati, maxsulotruyxati,}) {
 }
 
 
-// export default connect(({MaxsulotlarRoyxariReducer: {maxsulotruyxati}}) => ({maxsulotruyxati}), {
-//     getMaxsulotRuyxati,
-//     saveMaxsulotRuyxati,
-//     deleteMaxsulotRuyxati,
-//     editMaxsulotRuyxati
-// })(BarchaMaxsulotlar)
-//
-export default connect((MaxsulotlarRoyxariReducer), {
+export default connect(({MaxsulotlarRoyxariReducer:{maxsulotlar}})=>({maxsulotlar}), {
     getMaxsulotRuyxati,
     saveMaxsulotRuyxati,
-    editMaxsulotRuyxati,
-    deleteMaxsulotRuyxati
-})(BarchaMaxsulotlar)
+    deleteMaxsulotRuyxati,
+    editMaxsulotRuyxati
+}) (BarchaMaxsulotlar)

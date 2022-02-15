@@ -313,7 +313,7 @@ function Xarid({getXarid, saveXarid,taminot, deleteXarid, editXarid}) {
                 </div>
                 </div>
 
-                <Modal isOpen={active} toggle={toggle} style={{width: '96%'}}>
+                <Modal isOpen={active} toggle={toggle} style={{width: '90%'}}>
                     <ModalHeader>
                         Yangi qo`shish / taxrirlash
                     </ModalHeader>

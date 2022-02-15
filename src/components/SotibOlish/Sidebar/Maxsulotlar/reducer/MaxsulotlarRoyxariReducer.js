@@ -3,27 +3,31 @@ import {apiCall} from "../../../../../api";
 // import {toast} from "react-toastify";
 
 const slice = createSlice({
-    name: 'maxsulotruyxati',
+    name: 'maxsulotlar',
     initialState: {
-        maxsulotruyxati: []
+        maxsulotlar: []
+
     },
     reducers: {
         getFrom: (state, action) => {
-            state.maxsulotruyxati = action.payload.object
+            state.maxsulotlar = action.payload.object
             console.log(action.payload.object);
+            console.log("OLIB_KELINDI_MAXSULOT");
         },
         savefrom: (state,action) => {
-            state.maxsulotruyxati.unshift(action.payload)
+            console.log(action.payload)
+            state.maxsulotlar.unshift(action.payload)
+            console.log('SAQLANDI_MAXSULOT');
         },
         editfrom: (state,action) => {
-            state.maxsulotruyxati.map((item,index)=>{
+            state.maxsulotlar.map((item,index)=>{
                 if (item.id === action.payload.id){
                     item.login = action.payload.login
                 }
             })
         },
         deletefrom:(state,action)=>{
-
+            console.log('DELETED_MAXSULOTLAR');
         }
     }
 });
@@ -56,7 +60,7 @@ export const editMaxsulotRuyxati=(data)=>apiCall({
 
 export const deleteMaxsulotRuyxati=(data)=>apiCall({
     url: '/product/'+data,
-    method:'post',
+    method:'delete',
     data,
     onSuccess: slice.actions.deletefrom.type
 })

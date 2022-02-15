@@ -1,6 +1,12 @@
 import {Modal,ModalFooter,ModalBody,ModalHeader} from "reactstrap";
 import {useState} from 'react'
-function SavdoQoshish(){
+import {connect} from "react-redux";
+import LavozimReducer, {deleteLavozim, editLavozim, getLavozim, saveLavozim} from "../../Hodimlar/reducer/LavozimReducer";
+import SavdoQoshishReducer, {deleteSavdolar, editSavdolar, getSavdolar, saveSavdolar} from "../reducer/SavdoQoshishReducer";
+import TaminotReducer from "../../Hamkorlar/reducer/TaminotReducer";
+import users from "../../../../../reducer/users";
+
+function SavdoQoshish({saveSavdolar,deleteSavdolar,}){
 
     const [input,setInput] = useState(
         {
@@ -92,7 +98,24 @@ function SavdoQoshish(){
     }
 
     function saqla(){
-
+        saveSavdolar(
+            {
+                customerId:1,
+                userId:1,
+                productTraderDto:[
+                    {
+                        tradedQuantity:1,
+                        productTradeId:1
+                    }
+                ],
+                payDate:"2020-10-10",
+                branchId:1,
+                payMethodId:1,
+                amountPaid:1,
+                currencyId:1,
+                addressId:1
+            }
+        )
     }
 
     return(
@@ -100,8 +123,7 @@ function SavdoQoshish(){
             <div className="col-md-10 offset-1">
                 <h5>Savdo qo`shish</h5>
                 <select name="" value={input.savdoqoshish} onChange={savdoqoshish}>
-                    <option value="#">Shefir zavod(Bl001)</option>
-                    <option value="#">Instrumentlar(Bl002)</option>
+                    <option value="">Shefir zavod(Bl001)</option>
                 </select>
             </div>
 
@@ -116,17 +138,13 @@ function SavdoQoshish(){
                     <div className={'d-flex'}>
                         <input type="number" value={input.tulovmuddati} onChange={tulovmuddati} className={'form-control'}/>
                         <select name="" id="" className={'form-control'} value={input.tulovmuddatitanlash} onChange={tulovmuddatitanlash}>
-                            <option value="#">Tanlash</option>
-                            <option value="#">Oy</option>
-                            <option value="#">Hafta</option>
+                            <option value="">Tanlash</option>
                         </select>
                     </div>
                     <label htmlFor={'stat'} className={'mt-4'}>Status</label>
                     <select value={input.status} onChange={status} name="" id="" className={'form-control'}>
-                        <option value="#">Tanlash</option>
-                        <option value="#">Final</option>
+                        <option value="">Tanlash</option>
                     </select>
-
                     <label htmlFor={'savRaqam'} className={'mt-4'}>Savdo raqami</label>
                     <input type="number" value={input.savdoraqami} onChange={savdoraqami} className={'form-control'} placeholder={'savdo raqami'}/>
                 </div>
@@ -137,7 +155,7 @@ function SavdoQoshish(){
 
                     <label htmlFor={'hisobF'} className={'mt-4'}>Xisob Faktura sxemasi</label>
                     <select name="" value={input.xisobfakturasxemasi} onChange={xisobfakturasxemasi} id={'hisobF'} className={'form-control'}>
-                        <option value="#">Default</option>
+                        <option value="">Default</option>
                     </select>
 
                     <label htmlFor={'qoshim'} className={'mt-4'}>Qo`shimcha hujjat</label>
@@ -174,8 +192,8 @@ function SavdoQoshish(){
                         <input type="text" value={input.avans} onChange={avans} className={'form-control'} id={'avans'}/>
                         <label className={'mt-3'} htmlFor={'tol'}>To`lov usuli</label>
                         <select name="" id={'tol'} className={'form-control'} value={input.tulovusuli} onChange={tulovusuli}>
-                            <option value="#">Naqd</option>
-                            <option value="#">Pastik</option>
+                            <option value="">Naqd</option>
+                            <option value="">Pastik</option>
                         </select>
                     </div>
                     <div className="col-md-6">
@@ -189,11 +207,12 @@ function SavdoQoshish(){
             </div>
             <div className={'col-md-10 offset-1 mt-5 border p-4'}>
                 <h5>Qarz miqdori!: 0.00</h5>
-                <button className={'btn btn-outline-primary'}>Saqlash</button>
+                <button className={'btn btn-outline-primary'} onClick={saqla}>Saqlash</button>
                 <button className={'btn btn-outline-primary'}>Saqlash va chek</button>
             </div>
 
         </div>
     )
 }
-export default SavdoQoshish
+
+export default connect((TaminotReducer,SavdoQoshishReducer,users),{getSavdolar,saveSavdolar,editSavdolar,deleteSavdolar}) (SavdoQoshish)

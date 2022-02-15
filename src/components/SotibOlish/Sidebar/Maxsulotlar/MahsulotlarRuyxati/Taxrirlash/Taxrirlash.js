@@ -1,10 +1,14 @@
 import {useState} from 'react'
 import {Modal, ModalBody, ModalHeader, ModalFooter} from "reactstrap";
-import {saveMaxsulotRuyxati} from "../../reducer/MaxsulotlarRoyxariReducer";
+import MaxsulotlarRoyxariReducer, {
+    saveMaxsulotRuyxati,
+    deleteMaxsulotRuyxati,
+    getMaxsulotRuyxati,
+    editMaxsulotRuyxati
+} from "../../reducer/MaxsulotlarRoyxariReducer";
 import {Link} from 'react-router-dom'
-import './/taxrirl.css'
-
-function Taxrirlash() {
+import {connect} from "react-redux";
+function Taxrirlash({saveMaxsulotRuyxati,deleteMaxsulotRuyxati,getMaxsulotRuyxati}) {
 
     const [active, setActive] = useState(false)
     const [active2, setActive2] = useState(false)
@@ -160,11 +164,12 @@ function Taxrirlash() {
     function saqla(){
         saveMaxsulotRuyxati({
             name:input.mahsulotnomi,
+            quantity:1,
             barcode: input.shtrixkod,
             brandId:input.ferma,
             categoryId:input.shtrixkodturi,
             measurementId:input.ulcovbirligi,
-            photoIds:input.photoIds,
+            photoIds:1,
             minQuantity:input.foydafoiz,
             buyPrice:'',
             salePrice:input.sotishnarxi,
@@ -173,6 +178,7 @@ function Taxrirlash() {
             expireDate:null,
             dueDate:null
         })
+        // console.log('ishladi');
     }
 
     return (
@@ -261,9 +267,9 @@ function Taxrirlash() {
                     <input type="text" id={'nomi2'} value={input.ulcovqisqanomi} onChange={ulcovqisqaNomi} className={'form-control'}/>
                     <label htmlFor={'onli'}>O`nli kasrlarga ruxsat berish</label>
                     <select name="" id={'onli'} value={input.ulcovunlikasr} onChange={ulcovunlikasr} className={'form-control'}>
-                        <option value="#">Tanlash</option>
-                        <option value="#">Ha</option>
-                        <option value="#">Yuq</option>
+                        <option value="">Tanlash</option>
+                        <option value="">Ha</option>
+                        <option value="">Yuq</option>
                     </select>
                 </ModalBody>
                 <ModalFooter>
@@ -291,8 +297,8 @@ function Taxrirlash() {
             <div className="col-md-10 mt-5 offset-1 border">
                 <label htmlFor={'sol'}>Amaldagi soliq</label>
                 <select name="" id={'sol'} value={input.amaldagisoliq} onChange={amaldagisoliq} className={'form-control'}>
-                    <option value="#">Tanlash</option>
-                    <option value="#">Mavjud emas </option>
+                    <option value="">Tanlash</option>
+                    <option value="">Mavjud emas </option>
                 </select>
                 <label htmlFor={'turiMah'} className={'mt-3'}>Soliqning ajratilishi</label>
                 <select name="" className={'form-control'} value={input.soliqajralishi} onChange={soliqajralishi} id={'turiMah'}>
@@ -344,4 +350,9 @@ function Taxrirlash() {
     )
 }
 
-export default Taxrirlash
+export default connect(({MaxsulotlarRoyxariReducer:{maxsulotlar}})=>({maxsulotlar}), {
+    getMaxsulotRuyxati,
+    saveMaxsulotRuyxati,
+    deleteMaxsulotRuyxati,
+    editMaxsulotRuyxati
+}) (Taxrirlash)
