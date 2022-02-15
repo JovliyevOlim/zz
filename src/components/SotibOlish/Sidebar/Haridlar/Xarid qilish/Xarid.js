@@ -2,7 +2,7 @@ import './xarid.css'
 import {useState} from "react";
 import {ModalBody, ModalHeader, ModalFooter, Modal} from "reactstrap";
 import {connect} from "react-redux";
-import {getXarid, saveXarid, deleteXarid, editXarid} from '../reducer/XaridReducer'
+import XaridReducer ,{getXarid, saveXarid, deleteXarid, editXarid} from '../reducer/XaridReducer'
 import {Link} from 'react-router-dom'
 import LavozimReducer, {getLavozim,lavozimlar, saveLavozim} from "../../Hodimlar/reducer/LavozimReducer";
 import XodimReducer, {getXodim, saveXodim} from "../../Hodimlar/reducer/XodimReducer";
@@ -14,7 +14,7 @@ import TaminotReducer, {
     saveTaminot
 } from "../../Hamkorlar/reducer/TaminotReducer";
 
-function Xarid({getXarid, saveXarid,taminot, deleteXarid, editXarid}) {
+function Xarid({getXarid, saveXarid,taminot, deleteXarid, editXarid,XaridReducer,TaminotReducer}) {
 
     const [active, setActive] = useState(false);
     const [active2, setActive2] = useState(false);
@@ -240,19 +240,6 @@ function Xarid({getXarid, saveXarid,taminot, deleteXarid, editXarid}) {
         console.log('saaaaaaqlani');
     }
 
-    // const [modal,setmodal] = useState([
-    //     {
-    //         idraqam:''
-    //     }
-    // ])
-
-    // function saveModal(){
-    //     modal.push({idraqam: input.idraqam})
-    //     console.log(modal.idraqam)
-    //     toggle()
-    //     console.log('dasdasdasd')
-    // }
-
     return (
         <div className={'row mt-5'}>
             <h5 className={'text-center'}>Xarid qilish</h5>
@@ -265,7 +252,7 @@ function Xarid({getXarid, saveXarid,taminot, deleteXarid, editXarid}) {
                             <select name="" value={input.diller} onChange={diller} id={'dil'}
                                     className={'form-control'}>
                                 {
-                                    // taminot.map(item=> <option value={item.id}>{item.name}</option>)
+                                    TaminotReducer.taminot.map(item=> <option value={item.id}>{item.name}</option>)
                                 }
                                 <option value="">Tanlash</option>
 
@@ -431,16 +418,11 @@ function Xarid({getXarid, saveXarid,taminot, deleteXarid, editXarid}) {
         </div>
     )
 }
-export const a = connect(({TaminotReducer: {taminot}}) => ({taminot}), {
-    getTaminot,
-    saveTaminot,
-    editTaminot,
-    deleteTaminot
-})
+export default connect((TaminotReducer,XaridReducer),{getXarid,saveXarid,editXarid,deleteXarid}) (Xarid)
 // export const a = connect((TaminotReducer),{getTaminot,saveTaminot,}) (Xarid)
-export default connect(({XaridReducer: {xaridlar}}) => ({xaridlar}), {
-    getXarid,
-    saveXarid,
-    deleteXarid,
-    editXarid
-})(Xarid)
+// export default connect(({XaridReducer: {xaridlar}}) => ({xaridlar}), {
+//     getXarid,
+//     saveXarid,
+//     deleteXarid,
+//     editXarid
+// })(Xarid)
