@@ -76,63 +76,68 @@ function Firmalar({getFirma, users, firmalar, saveFirma, deleteFirma}) {
     }
 
     return (
-        <div className="col-md-12 mt-2">
-            <div className="textHeader">
+        <div className="col-md-12 mt-2 mt-4 mb-4">
+            <div className="textHeaderFR">
                 <h2>Firmalar</h2>
                 <p>Firma yoki brendlar boshqaruvi</p>
             </div>
-            <div className="rowStyle">
-                <div className="qoshish">
-                    <h5>Barcha firma va brendlar boshqaruvi</h5>
+            <div className="rowStyleFR">
+                <div className="qoshishFR">
+                    <h5 className='sarlavha'>Barcha firma va brendlar boshqaruvi</h5>
                     <button onClick={toggle} className='btn btn-primary'>+Qo'shish</button>
                 </div>
-                <div className="izlash">
-                    <p>Ko'rsatildi</p>
-                    <select value={input.view} onChange={view} name="" id="">
-                        <option value="">25</option>
-                        <option value="">50</option>
-                        <option value="">100</option>
-                        <option value="">All</option>
-                    </select>
-                    <button><img src={CSV} alt=""/> Export CSV</button>
-                    <button><img src={Excel} alt=""/> Export Excel</button>
-                    <button><img src={Print} alt=""/> Print</button>
-                    <button><img src={Pdf} alt=""/>Export PDF</button>
-                    <button><img src={Data} alt=""/>Malumotlarni kamaytirish</button>
-                    <input type="text" value={input.search} onChange={search} placeholder='Izlash...'/>
+                <div className="izlashFR">
+                    <div className="izlashBox1">
+                        <p>Ko'rsatildi</p>
+                        <select value={input.view} onChange={view} name="" id="">
+                            <option value="">25</option>
+                            <option value="">50</option>
+                            <option value="">100</option>
+                            <option value="">All</option>
+                        </select>
+                        <button><img src={CSV} alt=""/> Export CSV</button>
+                        <button><img src={Excel} alt=""/> Export Excel</button>
+                        <button><img src={Print} alt=""/> Print</button>
+                        <button><img src={Pdf} alt=""/>Export PDF</button>
+                        <button><img src={Data} alt=""/>Malumotlarni kamaytirish</button>
+                    </div>
+                    <div className="izlashBox2">
+                        <input type="text" value={input.search} onChange={search} placeholder='Izlash...'/>
+                    </div>
                 </div>
+                <div className="table-responsive pb-4">
+                    <table className='table table-striped table-bordered mt-4'>
+                        <thead>
+                        <tr>
+                            <th>Firmalar</th>
+                            <th>Eslatma</th>
+                            <th>Amallar</th>
+                        </tr>
+                        </thead>
+                        <tbody>
 
-                <table className='table table-striped table-bordered mt-4'>
-                    <thead>
-                    <tr>
-                        <th>Firmalar</th>
-                        <th>Eslatma</th>
-                        <th>Amallar</th>
-                    </tr>
-                    </thead>
-                    <tbody>
+                        {
+                            firmalar.filter(val => {
+                                if (input.search === '') {
+                                    return val
+                                } else if (val.name.toUpperCase().includes(input.search.toUpperCase())) {
+                                    return val
+                                }
+                            }).map(item => <tr key={item.id}>
+                                <td>{item.name}</td>
+                                <td>
+                                    <Link>
+                                        <button onClick={toggle} className='taxrirlash'><img src={Edit} alt=""/> Taxrirlash
+                                        </button>
+                                    </Link>
+                                    <button className='ochirish' onClick={()=>deleteF(item)}><img src={Delete} alt=""/> O'chirish</button>
+                                </td>
+                            </tr>)
+                        }
 
-                    {
-                        firmalar.filter(val => {
-                            if (input.search === '') {
-                                return val
-                            } else if (val.name.toUpperCase().includes(input.search.toUpperCase())) {
-                                return val
-                            }
-                        }).map(item => <tr key={item.id}>
-                            <td>{item.name}</td>
-                            <td>
-                                <Link>
-                                    <button onClick={toggle} className='taxrirlash'><img src={Edit} alt=""/> Taxrirlash
-                                    </button>
-                                </Link>
-                                <button className='ochirish' onClick={()=>deleteF(item)}><img src={Delete} alt=""/> O'chirish</button>
-                            </td>
-                        </tr>)
-                    }
-
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
+                </div>
 
                 <p>Ko'rsatildi 1 ta sahifa 1 va yana 1 ta sahifa bor</p>
                 <div className='sahifalar'>

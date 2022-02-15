@@ -1,14 +1,14 @@
-.rowStyleM{
+.rowStyleHarid{
        border-radius: 8px;
        padding: 20px 30px 20px 30px;
        /*box-shadow: 0px 10px 20px grey;*/
 }
 
-.textHeader{
+.textHeaderHarid{
        display: flex;
        align-items: baseline;
 }
-.rowStyleM .sana input:hover{
+.rowStyleHarid .sana input:hover{
       cursor: pointer;
 }
 .textHeader h2{
@@ -16,7 +16,7 @@
        font-size: 24px;
 
 }
-.rowStyleM select{
+.rowStyleHarid select{
        width: 100%;
        height: 32px;
        background-color:#F5F5F7;
@@ -24,33 +24,33 @@
        font-size: 14px;
        margin-bottom: 30px;
 }
-.rowStyleM .qoshish{
+.rowStyleHarid .qoshishBH{
        margin-bottom: 28px;
 }
-.rowStyleM .btnHaridlar{
+.rowStyleHarid .btnHaridlar{
        display: flex;
        justify-content: space-between;
        margin-top: 32px;
 }
-.rowStyleM .sana input{
+.rowStyleHarid .sana input{
        border: 1px solid grey;
        margin-bottom: 32px;
 }
-.rowStyleM .haridlar{
+.rowStyleHarid .haridlar{
        margin-top: 64px;
 }
 
-.rowStyleM select{
+.rowStyleHarid select{
        width: 100%;
        height: 32px;
        background-color:#F5F5F7;
 }
 
-.rowStyleM select:hover{
+.rowStyleHarid select:hover{
        cursor: pointer;
 }
 
-.rowStyle{
+.rowStyleBH{
        justify-content: space-between;
        border-radius: 8px;
        padding: 20px 30px 20px 30px;
@@ -69,31 +69,35 @@
 
 }
 
-.rowStyle .qoshish{
+.rowStyleBH .qoshishBH{
        display: flex;
        justify-content: space-between;
        border-radius: 16px;
 }
-.rowStyle .izlash{
+.rowStyleBH .izlashBH{
        display: flex;
+       justify-content: space-between;
        margin-top: 32px;
        
 }
+.rowStyleBH .izlashBH .izlashBox1{
+       display: flex;
+}
 
-.rowStyle .izlash p{
+.rowStyleBH .izlashBH p{
        text-align: center;
 }
-.rowStyle .izlash select{
+.rowStyleBH .izlashBH select{
        height: 28px;
        border-radius: 4px;
        border: 1px solid #6b6363a0;
        margin-left: 4px;
 }
-.rowStyle .izlash button:hover{
+.rowStyleBH .izlashBH button:hover{
        cursor: pointer;
        background-color: #e0dddd;
 }
-.rowStyle .izlash button{
+.rowStyleBH .izlashBH button{
        height: 28px;
        border-radius: 4px;
        border: 1px solid #6b6363a0;
@@ -101,11 +105,11 @@
        background-color: #f3efef;
        font-size: 11px;
 }
-.rowStyle .izlash button img{
+.rowStyleBH .izlashBH button img{
        width: 16px;
 }
 
-.rowStyle .izlash input{
+.rowStyleBH .izlashBH input{
        height: 28px;
        border-radius: 4px;
        border: 1px solid #6b6363a0;
@@ -162,15 +166,15 @@
        width: 18px;
        margin-bottom: 2px;
 }
-.rowStyle .sahifalar{
+.rowStyleBH .sahifalar{
        display: flex;
        justify-content: end;
 }
-.rowStyle .sahifalar :first-child{
+.rowStyleBH .sahifalar :first-child{
        border-radius: 4px 0px 0px 4px;
        border: 1px solid #6b6363a0;
 }
-.rowStyle .sahifalar button{
+.rowStyleBH .sahifalar button{
        border: 1px solid #6b6363a0;
        background-color: #FFFF;
        color:#1f1c1ca0;
@@ -179,3 +183,117 @@
      border-radius: 0px 4px 4px 0px;
      
 }
+
+@media (max-width: 425.9px){
+       .rowStyleBH .qoshishBH .sarlavha{
+               font-size: 14px;
+        }
+        .rowStyleBH .izlashBH{
+               display: block;
+        }
+        .rowStyleBH .izlashBH .izlashBox1{
+               display: grid;
+               justify-content: center;
+               grid-template-columns: 110px 110px;
+               text-align: center;
+        }
+        .rowStyleBH .izlashBH .izlashBox2{
+               display: flex;
+               justify-content: center;
+        }
+        .rowStyleBH .izlashBH .izlashBox2 input{
+               width: 60%;
+               margin: 8px 0px 0px 4px;
+ 
+        }
+        .rowStyleBH .izlashBH .izlashBox1 select{
+               margin-bottom: 8px;
+        }
+        .rowStyleBH .izlashBH .izlashBox1 button{
+               line-height: 4px;
+               font-size: 10px;
+               margin-bottom: 8px;
+        }
+        .rowStyleBH p{
+               font-size: 12px;
+               line-height: 12px;
+        }
+        .rowStyleBH .qoshishBH h5{
+               font-size: 17px;
+        }
+        .rowStyleBH .izlashBH{
+               display: block;
+        }
+        .rowStyleBH .izlashBH .izlashBox1{
+               display: grid;
+               justify-content: center;
+               grid-template-columns: 110px 110px;
+               text-align: center;
+        }
+        .rowStyleBH .izlashBH .izlashBox2{
+               display: flex;
+               justify-content: center;
+        }
+        .rowStyleBH .izlashBH .izlashBox2 input{
+               width: 60%;
+               margin: 8px 0px 0px 4px;
+ 
+        }
+        .rowStyleBH .izlashBH .izlashBox1 select{
+               margin-bottom: 8px;
+        }
+        .rowStyleBH .izlashBH .izlashBox1 button{
+               line-height: 4px;
+               font-size: 10px;
+               margin-bottom: 8px;
+        }
+        .rowStyleBH p{
+               font-size: 12px;
+               line-height: 12px;
+        }
+        
+ }
+ 
+ @media (min-width: 426px) and (max-width: 768.9px){
+        .rowStyleBH .izlashBH{
+               display: block;
+        }
+        .rowStyleBH .izlashBH .izlashBox1{
+               display: grid;
+               justify-content: center;
+               grid-template-columns: 33% 33% 33%;
+               text-align: center;
+        }
+        .rowStyleBH .qoshishBH .sarlavha{
+              font-size: 15px;
+       }
+        .rowStyleBH .izlashBH .izlashBox2{
+               display: flex;
+               justify-content: center;
+        }
+        .rowStyleBH .izlashBH .izlashBox2 input{
+               width: 70%;
+               margin: 8px 0px 0px 4px;
+ 
+        }
+        .rowStyleBH .izlashBH .izlashBox1 button{
+               line-height: 4px;
+               margin-bottom: 8px;
+        }
+ }
+ @media (min-width: 769px) and (max-width: 1024.9px){
+        .rowStyleBH .izlashBH .izlashBox1{
+               display: grid;
+               grid-template-columns:36% 36% 36% ;
+        }
+        .rowStyleBH .izlashBH .izlashBox1 button{
+               line-height: 4px;
+               margin-bottom: 8px;
+        }
+          
+ }
+ @media (min-width: 1025px) and (max-width: 1199.9px){
+        .rowStyleBH .izlashBH .izlashBox1 button{
+               line-height: 4px;
+        }
+ }

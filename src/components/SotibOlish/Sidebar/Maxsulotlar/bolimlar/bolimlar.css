@@ -1,4 +1,4 @@
-.rowStyle{
+.rowStyleBL{
        justify-content: space-between;
        border-radius: 8px;
        padding: 20px 30px 20px 30px;
@@ -6,41 +6,45 @@
        background-color: #FFFF;
 }
 
-.textHeader{
+.textHeaderBL{
        display: flex;
        align-items: baseline;
 }
-.textHeader h2{
+.textHeaderBL h2{
        margin-right: 10px;
        font-size: 24px;
 
 }
 
-.rowStyle .qoshish{
+.rowStyleBL .qoshish{
        display: flex;
        justify-content: space-between;
        border-radius: 16px;
 }
-.rowStyle .izlash{
+.rowStyleBL .izlashBL{
        display: flex;
+       justify-content: space-between;
        margin-top: 32px;
        
 }
+.rowStyleBL .izlashBL .izlashBox1{
+       display: flex;
+}
 
-.rowStyle .izlash p{
+.rowStyleBL .izlashBL p{
        text-align: center;
 }
-.rowStyle .izlash select{
+.rowStyleBL .izlashBL select{
        height: 28px;
        border-radius: 4px;
        border: 1px solid #6b6363a0;
        margin-left: 4px;
 }
-.rowStyle .izlash button:hover{
+.rowStyleBL .izlashBL button:hover{
        cursor: pointer;
        background-color: #e0dddd;
 }
-.rowStyle .izlash button{
+.rowStyleBL .izlashBL button{
        height: 28px;
        border-radius: 4px;
        border: 1px solid #6b6363a0;
@@ -48,11 +52,11 @@
        background-color: #f3efef;
        font-size: 11px;
 }
-.rowStyle .izlash button img{
+.rowStyleBL .izlashBL button img{
        width: 16px;
 }
 
-.rowStyle .izlash input{
+.rowStyleBL .izlashBL input{
        height: 28px;
        border-radius: 4px;
        border: 1px solid #6b6363a0;
@@ -109,15 +113,15 @@
        width: 18px;
        margin-bottom: 2px;
 }
-.rowStyle .sahifalar{
+.rowStyleBL .sahifalar{
        display: flex;
        justify-content: end;
 }
-.rowStyle .sahifalar :first-child{
+.rowStyleBL .sahifalar :first-child{
        border-radius: 4px 0px 0px 4px;
        border: 1px solid #6b6363a0;
 }
-.rowStyle .sahifalar button{
+.rowStyleBL .sahifalar button{
        border: 1px solid #6b6363a0;
        background-color: #FFFF;
        color:#1f1c1ca0;
@@ -126,3 +130,116 @@
      border-radius: 0px 4px 4px 0px;
      
 }
+@media (max-width: 425.9px){
+       .textHeaderBL{
+              display: block;
+       }
+       .rowStyleBL .qoshish h5{
+               font-size: 17px;
+        }
+        .rowStyleBL .izlashBL{
+               display: block;
+        }
+        .rowStyleBL .izlashBL .izlashBox1{
+               display: grid;
+               justify-content: center;
+               grid-template-columns: 110px 110px;
+               text-align: center;
+        }
+        .rowStyleBL .izlashBL .izlashBox2{
+               display: flex;
+               justify-content: center;
+        }
+        .rowStyleBL .izlashBL .izlashBox2 input{
+               width: 60%;
+               margin: 8px 0px 0px 4px;
+ 
+        }
+        .rowStyleBL .izlashBL .izlashBox1 select{
+               margin-bottom: 8px;
+        }
+        .rowStyleBL .izlashBL .izlashBox1 button{
+               line-height: 4px;
+               font-size: 10px;
+               margin-bottom: 8px;
+        }
+        .rowStyleBL p{
+               font-size: 12px;
+               line-height: 12px;
+        }
+        .rowStyleBL .qoshish h5{
+               font-size: 17px;
+        }
+        .rowStyleBL .izlashBL{
+               display: block;
+        }
+        .rowStyleBL .izlashBL .izlashBox1{
+               display: grid;
+               justify-content: center;
+               grid-template-columns: 110px 110px;
+               text-align: center;
+        }
+        .rowStyleBL .izlashBL .izlashBox2{
+               display: flex;
+               justify-content: center;
+        }
+        .rowStyleBL .izlashBL .izlashBox2 input{
+               width: 60%;
+               margin: 8px 0px 0px 4px;
+ 
+        }
+        .rowStyleBL .izlashBL .izlashBox1 select{
+               margin-bottom: 8px;
+        }
+        .rowStyleBL .izlashBL .izlashBox1 button{
+               line-height: 4px;
+               font-size: 10px;
+               margin-bottom: 8px;
+        }
+        .rowStyleBL p{
+               font-size: 12px;
+               line-height: 12px;
+        }
+        
+ }
+ 
+ @media (min-width: 426px) and (max-width: 768.9px){
+        .rowStyleBL .izlashBL{
+               display: block;
+        }
+        .rowStyleBL .izlashBL .izlashBox1{
+               display: grid;
+               justify-content: center;
+               grid-template-columns: 33% 33% 33%;
+               text-align: center;
+        }
+        .rowStyleBL .izlashBL .izlashBox2{
+               display: flex;
+               justify-content: center;
+        }
+        .rowStyleBL .izlashBL .izlashBox2 input{
+               width: 70%;
+               margin: 8px 0px 0px 4px;
+ 
+        }
+        .rowStyleBL .izlashBL .izlashBox1 button{
+               line-height: 4px;
+               margin-bottom: 8px;
+        }
+ }
+ @media (min-width: 769px) and (max-width: 1024.9px){
+        .rowStyleBL .izlashBL .izlashBox1{
+               display: grid;
+               grid-template-columns:36% 36% 36% ;
+        }
+        .rowStyleBL .izlashBL .izlashBox1 button{
+               line-height: 4px;
+               margin-bottom: 8px;
+        }
+          
+ }
+ @media (min-width: 1025px) and (max-width: 1199.9px){
+        .rowStyleBL .izlashBL .izlashBox1 button{
+               line-height: 4px;
+        }
+ }

@@ -257,8 +257,8 @@ function Xarid({getXarid, saveXarid,taminot, deleteXarid, editXarid}) {
         <div className={'row mt-5'}>
             <h5 className={'text-center'}>Xarid qilish</h5>
             <div className="col-md-10 border mt-4 offset-1 d-flex">
-
-                <div className={'col-md-3 p-4'}>
+                <div className="row">
+                <div className={'col-3 col-sm-12'}>
                     <div className={'d-flex'}>
                         <div>
                             <label htmlFor={'dil'}>Diller</label>
@@ -275,7 +275,7 @@ function Xarid({getXarid, saveXarid,taminot, deleteXarid, editXarid}) {
                     </div>
                 </div>
 
-                <div className="col-md-3 p-4">
+                <div className="col-3 col-sm-12">
                     <label htmlFor={'qisqa'}>Qisqa eslatma</label>
                     <input type="text" className={'form-control'} value={input.qisqaeslatma} onChange={qisqaeslatma}
                            id={'qisqa'}/>
@@ -287,10 +287,10 @@ function Xarid({getXarid, saveXarid,taminot, deleteXarid, editXarid}) {
                     </select>
                 </div>
 
-                <div className="col-md-3 p-4">
+                <div className="col-3 col-sm-12">
                     <label htmlFor={'sana'}>Xarid sanasi</label>
                     <input type="date" value={input.xaridsanasi} onChange={xaridsanasi}
-                           className={'form-control mt-4'}/>
+                           className={'form-control'}/>
                     <label className={'mt-3'} htmlFor={'muddat'}>To`lov muddati</label>
                     <select name="" id={'muddat'} value={input.tulovmuddati} onChange={tulovmuddati}
                             className={'form-control'}>
@@ -300,7 +300,7 @@ function Xarid({getXarid, saveXarid,taminot, deleteXarid, editXarid}) {
                     </select>
                 </div>
 
-                <div className="col-md-3 p-4 ">
+                <div className="col-3 col-sm-12 ">
                     <label htmlFor={'status'}>Xarid statusi</label>
                     <select name="" value={input.xaridstatusi} onChange={xaridstatusi} className={'form-control'}
                             id={'status'}>
@@ -311,8 +311,9 @@ function Xarid({getXarid, saveXarid,taminot, deleteXarid, editXarid}) {
                     <input type="file" value={input.qoshimchahujjat} onChange={qoshimchahujjat}
                            className={'form-control'}/>
                 </div>
+                </div>
 
-                <Modal isOpen={active} toggle={toggle} style={{width: '500px'}}>
+                <Modal isOpen={active} toggle={toggle} style={{width: '96%'}}>
                     <ModalHeader>
                         Yangi qo`shish / taxrirlash
                     </ModalHeader>
@@ -372,61 +373,68 @@ function Xarid({getXarid, saveXarid,taminot, deleteXarid, editXarid}) {
 
             <h5 className={'text-center mt-5'}>To`lov qilish</h5>
             <div className="col-md-10 offset-1 border p-4 d-flex">
-                <div className="col-md-6">
-                    <label htmlFor={'avans'}>Avans 0 / To`lov so`mmasi</label>
-                    <input type="text" className={'form-control'} value={input.avans} onChange={avans} id={'avans'}/>
-                    <label className={'mt-3'} htmlFor={'tol'}>To`lov usuli</label>
-                    <select name="" id={'tol'} className={'form-control'} value={input.tulovusuli}
-                            onChange={tulovusuli}>
-                        <option value="#">Naqd</option>
-                        <option value="#">Pastik</option>
-                    </select>
-                </div>
-                <div className="col-md-6">
-                    <label htmlFor={'paid'}>Paid on</label>
-                    <input type="date" value={input.paidon} onChange={paidon} className={'form-control'} id={'paid'}/>
-                    <label htmlFor={'area1'} className={'mt-2'}>Eslatma</label>
-                    <textarea name="" id={'area1'} cols="30" onChange={eslatma} value={input.eslatma}
-                              className={'form-control'} rows="2">
-                    </textarea>
-                </div>
-            </div>
-            <div className={'col-md-10 offset-1 mt-5 border p-4 d-flex'}>
-                <div className="col-md-6">
-                    <h5 className={'text-center'}>Yetkazib berish</h5>
-                    <label htmlFor={'yet'}>Yetkazib berish</label>
-                    <input type="text" id={'yet'} value={input.yetkazibberish} onChange={yetkazibberish}
-                           className={'form-control'}/>
-                    <button onClick={toggle2}
-                            className={'btn btn-outline-primary mt-4'}>+lang_v1.add_additional_experence
-                    </button>
-                    <Modal isOpen={active2} toggle={toggle2}>
-                        <ModalHeader>Yetkazib berish</ModalHeader>
-                        <ModalBody>
-                            <label htmlFor={'l1'}>lang_v1.add_additional_experence_name</label>
-                            <input type="text" value={input.langv2} onChange={langv2} className={'form-control'}
-                                   id={'l1'}/>
-                            <label htmlFor={'l2'} className={'mt-3'}>Yetkazib berish narxi</label>
-                            <input type="text" className={'form-control'} value={input.yetkazibberishnarxi}
-                                   onChange={yetkazibberishnarxi} id={'l2'}/>
-                        </ModalBody>
-                        <ModalFooter>
+                <div className="row">
+                    <div className="col-6 col-sm-10">
+                        <label htmlFor={'avans'}>Avans 0 / To`lov so`mmasi</label>
+                        <input type="text" className={'form-control'} value={input.avans} onChange={avans} id={'avans'}/>
+                        <label className={'mt-3'} htmlFor={'tol'}>To`lov usuli</label>
+                        <select name="" id={'tol'} className={'form-control'} value={input.tulovusuli}
+                                onChange={tulovusuli}>
+                            <option value="#">Naqd</option>
+                            <option value="#">Pastik</option>
+                        </select>
+                    </div>
+                    <div className="col-6 col-sm-10">
+                        <label htmlFor={'paid'}>Paid on</label>
+                        <input type="date" value={input.paidon} onChange={paidon} className={'form-control'} id={'paid'}/>
+                        <label htmlFor={'area1'} className={'mt-2'}>Eslatma</label>
+                        <textarea name="" id={'area1'} cols="30" onChange={eslatma} value={input.eslatma}
+                                className={'form-control'} rows="2">
+                        </textarea>
+                    </div>
+            
+                    <div className={'col-10 col-sm-10 offset-1 mt-5 border p-2 d-flex'}>
+                        <div className="row">
+                        <div className="col-6 col-sm-12">
+                            <div className="btnBox">
+                                <label htmlFor={'yet'}>Yetkazib berish manzili</label>
+                                <input type="text" id={'yet'} value={input.yetkazibberish} onChange={yetkazibberish}
+                                    className={'form-control'}/>
+                                <button onClick={toggle2}
+                                        className={'btnAdd btn btn-primary mt-2'} >add_additional_experence
+                                </button>
+                            </div>
+                            <Modal isOpen={active2} toggle={toggle2}>
+                            <ModalHeader>Yetkazib berish</ModalHeader>
+                            <ModalBody>
+                                <label htmlFor={'l1'}>additional_experence_name</label>
+                                <input type="text" value={input.langv2} onChange={langv2} className={'form-control'}
+                                    id={'l1'}/>
+                                <label htmlFor={'l2'} className={''}>Yetkazib berish narxi</label>
+                                <input type="text" className={'form-control'} value={input.yetkazibberishnarxi}
+                                    onChange={yetkazibberishnarxi} id={'l2'}/>
+                            </ModalBody>
+                            <ModalFooter>
+                                <button className={'btn btn-primary'} onClick={saqla}>Saqlash</button>
+                                <button className={'btn btn-primary'} onClick={toggle2}>Chiqish</button>
+                            </ModalFooter>
+                            </Modal>
+                        </div>
+                        <div className="col-6 col-sm-10">
+                            <label htmlFor={'yet2'}>(+)Yetkazib berish narxi</label>
+                            <input type="text" value={input.yetkazibberishnarxi2} onChange={yetkazibberishnarxi2}
+                                className={'form-control'}/>
+                        </div>
+                        </div>
+
+                    </div>
+                    <div className={'col-10 col-sm-10 offset-1 mt-5 border p-4'}>
+                        <h5>Qarz miqdori!: 0.00</h5>
+                        <Link to={'/headerthird/xaridlarRuyxati'}>
                             <button className={'btn btn-primary'} onClick={saqla}>Saqlash</button>
-                            <button className={'btn btn-primary'} onClick={toggle2}>Chiqish</button>
-                        </ModalFooter>
-                    </Modal>
+                        </Link>
+                    </div>
                 </div>
-                <div className="col-md-6 mt-4">
-                    <label htmlFor={'yet2'}>(+)Yetkazib berish narxi</label>
-                    <input type="text" value={input.yetkazibberishnarxi2} onChange={yetkazibberishnarxi2}
-                           className={'form-control'}/>
-                </div>
-            </div>
-            <div className={'col-md-10 offset-1 mt-5 border p-4'}>
-                <h5>Qarz miqdori!: 0.00</h5>
-                <Link to={'/headerthird/xaridlarRuyxati'}>
-                    <button className={'btn btn-outline-primary'} onClick={saqla}>Saqlash</button>
-                </Link>
             </div>
         </div>
     )
