@@ -14,7 +14,8 @@ const slice = createSlice({
         },
         savefrom: (state,action) => {
             state.bolimlar.unshift(action.payload)
-            // toast.success('Saqlandi')
+            console.log('SAQLANDI_BOLIM')
+            console.log(action.payload)
         },
         editfrom: (state,action) => {
             state.bolimlar.map((item,index)=>{
@@ -25,7 +26,7 @@ const slice = createSlice({
             // toast.success('O`zgartirildi')
         },
         deletefrom:(state,action)=>{
-
+            console.log('DELETED_BOLIM')
             // toast.info('O`chirildi')
         }
     }
@@ -38,22 +39,22 @@ export const getBolim=()=>apiCall({
 });
 
 export const saveBolim=(data)=>apiCall({
-    url: '/user',
+    url: '/category',
     method:'post',
     data,
     onSuccess: slice.actions.savefrom.type
 });
 
 export const editBolim=(data)=>apiCall({
-    url: '/user',
+    url: '/category',
     method: 'post',
     data,
     onSuccess: slice.actions.editfrom.type
 });
 
 export const deleteBolim=(data)=>apiCall({
-    url: '/user',
-    method:'post',
+    url: '/category/'+data,
+    method:'delete',
     data,
     onSuccess: slice.actions.deletefrom.type
 })

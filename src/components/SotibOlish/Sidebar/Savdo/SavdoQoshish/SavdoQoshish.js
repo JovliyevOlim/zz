@@ -91,6 +91,10 @@ function SavdoQoshish(){
         setInput(a)
     }
 
+    function saqla(){
+
+    }
+
     return(
         <div className={'row mt-5'}>
             <div className="col-md-10 offset-1">

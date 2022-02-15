@@ -4,7 +4,7 @@ import {apiCall} from "../api";
 export const slice = createSlice({
     name: 'users',
     initialState: {
-        users: [ ],
+        users: [],
         token: {
             token_name: ''
         },

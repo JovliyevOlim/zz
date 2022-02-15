@@ -5,59 +5,76 @@ import Print from '../../../../../img/Print.png'
 import Data from '../../../../../img/Data.png'
 import Pdf from '../../../../../img/PDF.png'
 import Edit from '../../../../../img/Edit.png'
-// import Korish from '../../img/Korish.png'
 import Delete from '../../../../../img/Delete.png'
-// import Arrow from '../../img/arrowIcon.png'
 import './bolimlar.css'
-import {useState,useEffect} from "react";
+import {useState, useEffect} from "react";
 import {Modal, ModalBody, ModalFooter, ModalHeader} from "reactstrap";
 import {connect} from "react-redux";
-import BolimReducer,{deleteBolim,bolimlar, editBolim, getBolim, saveBolim,} from "../reducer/BolimReducer";
+import BolimReducer, {deleteBolim, bolimlar, editBolim, getBolim, saveBolim,} from "../reducer/BolimReducer";
 
-function Bolimlar({getBolim,bolimlar}) {
+function Bolimlar({getBolim, bolimlar,saveBolim,deleteBolim}) {
 
-    const [input,setInput] = useState(
+    const [input, setInput] = useState(
         {
-            view:'',
-            search:'',
-            bolimnomi:'',
-            bolimkodi:'',
-            qisqacamalumot:'',
+            view: '',
+            search: '',
+            bolimnomi: '',
+            bolimkodi: '',
+            qisqacamalumot: '',
         }
     )
 
-    function view(e){
+    function view(e) {
         input.view = e.target.value
         let a = {...input}
         setInput(a)
     }
-    function search(e){
+
+    function search(e) {
         input.search = e.target.value
         let a = {...input}
         setInput(a)
     }
-    function bolimnomi(e){
+
+    function bolimnomi(e) {
         input.bolimnomi = e.target.value
         let a = {...input}
         setInput(a)
         console.log(input.bolimnomi)
     }
-    function bolimkodi(e){
+
+    function bolimkodi(e) {
         input.bolimkodi = e.target.value
         let a = {...input}
         setInput(a)
     }
-    function qisqacamalumot(e){
+
+    function qisqacamalumot(e) {
         input.qisqacamalumot = e.target.value
         let a = {...input}
         setInput(a)
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         getBolim()
-    },[])
+    }, [])
 
     const [active, setActive] = useState(false)
+
+    function saqla(){
+        saveBolim(
+            {
+                name:input.bolimnomi,
+                businessId:1
+            }
+        )
+        toggle()
+    }
+
+    function deleteB(item){
+        deleteBolim(item.id)
+        console.log('Deleted')
+    }
 
     function toggle() {
         setActive(!active)
@@ -79,9 +96,6 @@ function Bolimlar({getBolim,bolimlar}) {
                     <select name="" value={input.view} onChange={view} id="">
                         <option value="">25</option>
                         <option value="">50</option>
-                        <option value="">100</option>
-                        <option value="">200</option>
-                        <option value="">500</option>
                         <option value="">1,000</option>
                         <option value="">All</option>
                     </select>
@@ -105,23 +119,27 @@ function Bolimlar({getBolim,bolimlar}) {
                     <tbody>
 
                     {
-                        bolimlar.map(item=><tr key={item.id}>
+                        bolimlar.filter(val => {
+                            if (input.search === '') {
+                                return val
+                            } else if (val.name.toUpperCase().includes(input.search.toUpperCase())) {
+                                return val
+                            }
+                        }).map(item => <tr key={item.id}>
                             <td>{item.name}</td>
+                            <td>
+                                <Link>
+                                    <button onClick={toggle} className='taxrirlash'><img src={Edit}
+                                                                                         alt=""/> Taxrirlash*/}
+                                    </button>
+
+                                </Link>
+                                <button className='ochirish' onClick={()=>deleteB(item)}><img src={Delete} alt=""/> O'chirish</button>
+
+                            </td>
                         </tr>)
                     }
 
-                    {/*<tr>*/}
-                    {/*    <td>AZBIZ</td>*/}
-                    {/*    <td>dona</td>*/}
-                    {/*    <td>yuq</td>*/}
-                    {/*    <td>*/}
-                    {/*        <Link>*/}
-                    {/*            <button onClick={toggle} className='taxrirlash'><img src={Edit} alt=""/> Taxrirlash*/}
-                    {/*            </button>*/}
-                    {/*        </Link>*/}
-                    {/*        <button className='ochirish'><img src={Delete} alt=""/> O'chirish</button>*/}
-                    {/*    </td>*/}
-                    {/*</tr>*/}
                     </tbody>
                 </table>
 
@@ -137,15 +155,19 @@ function Bolimlar({getBolim,bolimlar}) {
                     </ModalHeader>
                     <ModalBody>
                         <label htmlFor={'bnomi'}>Bo`lim nomi</label>
-                        <input type="text" className={'form-control'} id={'bnomi'} onChange={bolimnomi} value={input.bolimnomi}/>
+                        <input type="text" className={'form-control'} id={'bnomi'} onChange={bolimnomi}
+                               value={input.bolimnomi}/>
                         <label className={'mt-4'} htmlFor={'bkodi'}>Bo`lim kodi</label>
-                        <input type="text" className={'form-control'} value={input.bolimkodi} onChange={bolimkodi} id={'bkodi'}/>
+                        <input type="text" className={'form-control'} value={input.bolimkodi} onChange={bolimkodi}
+                               id={'bkodi'}/>
                         bo`limni izlashga oson bol`ishi uchun bironta belgi kiritng
                         <label className={'mt-3'} htmlFor={'area'}>Qisqacha malumot</label>
                         <textarea className={'form-control'} name="" id={'area'} cols="30" rows="4"> </textarea>
                     </ModalBody>
                     <ModalFooter>
-                        <button className={'btn btn-outline-primary'}>Saqlash</button>
+                        {/*<Link to={'/headerthird/bolimlar'}>*/}
+                            <button className={'btn btn-outline-primary'} onClick={saqla}>Saqlash</button>
+                        {/*</Link>*/}
                         <button className={'btn btn-outline-primary'} onClick={toggle}>Chiqish</button>
                     </ModalFooter>
                 </Modal>
@@ -153,6 +175,7 @@ function Bolimlar({getBolim,bolimlar}) {
         </div>
     )
 }
+
 // export default connect((BolimReducer), {getBolim, saveBolim, editBolim,deleteBolim})(Bolimlar)
 
 export default connect(({BolimReducer: {bolimlar}}) => ({bolimlar}), {

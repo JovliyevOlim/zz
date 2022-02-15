@@ -55,7 +55,7 @@ function Mahsulotlar() {
                     {/*<li><Link to={'/turliTavar'} className={'mahqosh'}>Turli Tavarlar</Link></li>*/}
                     {/*<li><Link to={'/mahsulotImporti'} className={'mahqosh'}>Mahsulot Importi</Link></li>*/}
                     {/*<li><Link to={'/mavjudImport'} className={'mahqosh'}>Mavjud miq import</Link></li>*/}
-                    <li><Link to={'/headerthird/sotuvNarxGuruhlanishi'} className={'mahqosh'}>Sotuv narxining guruhi</Link></li>
+                    {/*<li><Link to={'/headerthird/sotuvNarxGuruhlanishi'} className={'mahqosh'}>Sotuv narxining guruhi</Link></li>*/}
                     {/*<li><Link to={'/ulcovBirliklar'} className={'mahqosh'}>O`lchov birliklar</Link></li>*/}
                     <li><Link to={'/headerthird/bolimlar'} className={'mahqosh'}>Bo`limlar</Link></li>
                     <li><Link to={'/headerthird/firmalar'} className={'mahqosh'}>Firmalar</Link></li>

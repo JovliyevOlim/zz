@@ -38,22 +38,22 @@ export const getFirma=()=>apiCall({
 });
 
 export const saveFirma=(data)=>apiCall({
-    url: '/user',
+    url: '/brand',
     method:'post',
     data,
     onSuccess: slice.actions.savefrom.type
 });
 
 export const editFirma=(data)=>apiCall({
-    url: '/user',
+    url: '/brand',
     method: 'post',
     data,
     onSuccess: slice.actions.editfrom.type
 });
 
 export const deleteFirma=(data)=>apiCall({
-    url: '/user',
-    method:'post',
+    url: '/brand/'+data,
+    method:'delete',
     data,
     onSuccess: slice.actions.deletefrom.type
 })
