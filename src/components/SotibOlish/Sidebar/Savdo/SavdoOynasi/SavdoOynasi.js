@@ -47,14 +47,18 @@ function SavdoOynasi({getSavdo,editSavdo,deleteSavdo,saveSavdo,savdo}){
     const [count,setCount] = useState(0)
 
     return(
-        <div className={'row p-5 pb-4'} >
-            <di
-            v className={'colorback'}>
-                <div className="col-md-12 d-flex justify-content-between align-items-center mt-4">
-                    <label htmlFor={'baza'}>BAZA</label>
-
-                    <div className="nav">
-                        <button className={'btn btn-outline-primary'}>Oxirgi savdolar</button>
+        <div className={'row p-5'} >
+            <div className={'colorbackj ps-4 pe-4'}>
+                <div className="navBlock">
+                    {/* <button className={'btn btn-outline-primary'}>Oxirgi savdolar</button> */}
+                    <div className="navBox1">
+                        <label htmlFor={'baza'}>BAZA : </label>
+                            <select className="" value={input.baza} onChange={baza} name="" id="">
+                                <option value="#">Walk in-customer</option>
+                                <option value="#">Walk in-seller</option>
+                            </select>
+                    </div>
+                    <div className="navBox2">
                         <img src={img} alt=""/>
                         <img src={img2} alt=""/>
                         <img src={img3} alt=""/>
@@ -63,65 +67,60 @@ function SavdoOynasi({getSavdo,editSavdo,deleteSavdo,saveSavdo,savdo}){
                         <img src={img6} alt=""/>
                     </div>
                 </div>
-                <div className="col-md-12  d-flex">
-                    <div className="row">
-                        <div className={'col-md-6'}>
-                            <div className="row">
-                            <div className="col-md-12 d-flex mt-2">
-                                <div className="col-md-6 p-3">
-                                    <select className={'form-control'} value={input.baza} onChange={baza} name="" id="">
-                                        <option value="#">Walk in-customer</option>
-                                        <option value="#">Walk in-seller</option>
-                                    </select>
-                                </div>
-                                <div className="col-md-6 d-flex p-3">
-                                    <input type="text" className={'form-control'} value={input.mahsulotnomi} onChange={mahsulotnomi} placeholder={'mahsulot nomini yozing'}/>
-                                    <img src={img8} alt="" style={{cursor:'pointer'}}/>
-                                </div>
+                <div className="block2">
+                            <div className="brendBox">
+                                <label htmlFor={'brand'}>Barcha brandlar: </label>
+                                <select name="" className={''} id={'brand'} value={input.barchabrandlar} onChange={barchabrandlar}>
+                                    <option value="#">Barcha brandlar</option>
+                                </select>
                             </div>
-
-                            <div className="col-md-12 mt-2">
+                            <div className="mahsulotBox">
+                                <input type="text" className={''} value={input.mahsulotnomi} onChange={mahsulotnomi} placeholder={'mahsulot nomini yozing'}/>
+                                <img src={img8} alt="" style={{cursor:'pointer'}}/>
+                            </div>
+                </div>
+                <div className="">
                                 <div className="table-responsive">
-                                <table className={'table'}>
-                                    <thead>
-                                    <tr>
-                                        <th>Mahsulot</th>
-                                        <th>Miqdori</th>
-                                        <th>Jami</th>
-                                        <th>. . .</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    {
-                                        // MaxsulotlarRoyxariReducer.maxsulotruyxati.map(item=><tr key={item.id}>
-                                        //     <td>{item.name}</td>
-                                        // </tr>)
+                                    <table className={'table'}>
+                                        <thead>
+                                        <tr>
+                                            <th>Mahsulot</th>
+                                            <th>Miqdori</th>
+                                            <th>Jami</th>
+                                            <th>. . .</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {
+                                            // MaxsulotlarRoyxariReducer.maxsulotruyxati.map(item=><tr key={item.id}>
+                                            //     <td>{item.name}</td>
+                                            // </tr>)
 
-                                        // savdo.map(item=><tr key={item.id}>
-                                        //     <td>{item.amountPaid}</td>
-                                        // </tr>)
-                                    }
+                                            // savdo.map(item=><tr key={item.id}>
+                                            //     <td>{item.amountPaid}</td>
+                                            // </tr>)
+                                        }
 
-                                    {/*<tr>*/}
-                                    {/*    <td>Cardigan (Open style) sweater</td>*/}
-                                    {/*    <td className={'d-flex  align-items-center p-3'}>*/}
-                                    {/*        <button onClick={()=>setCount(count-1)} className={'btn btn-outline-primary'}>-</button>*/}
-                                    {/*        {count}*/}
-                                    {/*        <button onClick={()=>setCount(count+1)} className={'btn btn-outline-primary'}>+</button>*/}
-                                    {/*    </td>*/}
-                                    {/*    <td>1200000</td>*/}
-                                    {/*    <td><button className={'btn btn-primary'}>Delete</button></td>*/}
-                                    {/*</tr>*/}
-                                    </tbody>
-                                </table>
+                                        {/*<tr>*/}
+                                        {/*    <td>Cardigan (Open style) sweater</td>*/}
+                                        {/*    <td className={'d-flex  align-items-center p-3'}>*/}
+                                        {/*        <button onClick={()=>setCount(count-1)} className={'btn btn-outline-primary'}>-</button>*/}
+                                        {/*        {count}*/}
+                                        {/*        <button onClick={()=>setCount(count+1)} className={'btn btn-outline-primary'}>+</button>*/}
+                                        {/*    </td>*/}
+                                        {/*    <td>1200000</td>*/}
+                                        {/*    <td><button className={'btn btn-primary'}>Delete</button></td>*/}
+                                        {/*</tr>*/}
+                                        </tbody>
+                                    </table>
                                 </div>
 
-                                <div style={{marginTop:'300px'}} className={'d-flex justify-content-between'}>
+                                <div style={{marginTop:'300px'}} className={'d-flex justify-content-around'}>
                                     <h6>Mahsulot soni: 5</h6>
-                                    <h6>Jami:</h6>
+                                    <h6>Jami:200</h6>
                                 </div>
                                 <hr/>
-                                <div className={'d-flex justify-content-between'}>
+                                <div className={'chegirmaBox'}>
                                     <h6>Chegirma-</h6>
                                     <p>0.00</p>
                                     <p className={'d-flex'}>
@@ -132,18 +131,8 @@ function SavdoOynasi({getSavdo,editSavdo,deleteSavdo,saveSavdo,savdo}){
                                     <p className={'d-flex'}>Yetkazib berish
                                         <img src={img4} alt=""/></p>
                                 </div>
-                            </div>
-                            </div> 
-                        </div>
-                        <div className="col-md-6 mt-4">
-                            <label htmlFor={'brand'}>Barcha brandlar</label>
-                            <select name="" className={'form-control'} id={'brand'} value={input.barchabrandlar} onChange={barchabrandlar}>
-                                <option value="#">Barcha brandlar</option>
-                            </select>
-                        </div>
-                    </div>
                 </div>
-                <div className="col-md-12  d-flex justify-content-between align-items-center mb-4">
+                <div className="btnBox">
                     <button className={'btn btn-primary'}>Eslatma</button>
                     <button className={'btn btn-danger'}>Chegirma</button>
                     <button className={'btn btn-warning'}>Ushlab turish</button>
@@ -156,7 +145,7 @@ function SavdoOynasi({getSavdo,editSavdo,deleteSavdo,saveSavdo,savdo}){
                     <h6>Jami to`lov: 0</h6>
                     <button className={'btn btn-danger'}>Chiqish</button>
                 </div>
-            </di>
+            </div>
         </div>
     )
 }
