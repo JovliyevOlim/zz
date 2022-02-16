@@ -10,12 +10,12 @@ import Korish from '../../../../../img/Korish.png'
 import Delete from '../../../../../img/Delete.png'
 import {useEffect} from "react";
 import {connect} from "react-redux";
-import {getTaminot, saveTaminot, editTaminot, deleteTaminot} from "../reducer/TaminotReducer";
+import TaminotReducer,{getTaminot, saveTaminot, editTaminot,taminot, deleteTaminot} from "../reducer/TaminotReducer";
 import {useState} from 'react'
 import {Modal, ModalBody, ModalFooter, ModalHeader} from "reactstrap";
 
 
-function Taminotchilar({getTaminot, saveTaminot, editTaminot, deleteTaminot, taminot}) {
+function Taminotchilar({match,getTaminot, saveTaminot, editTaminot, deleteTaminot, taminot}) {
 
     useEffect(() => {
         getTaminot()
@@ -27,6 +27,8 @@ function Taminotchilar({getTaminot, saveTaminot, editTaminot, deleteTaminot, tam
         setActive(!active)
     }
 
+
+
     const [input, setInput] = useState(
         {
             langv1: '',
@@ -37,7 +39,8 @@ function Taminotchilar({getTaminot, saveTaminot, editTaminot, deleteTaminot, tam
             ismi: '',
             otaismi: '',
             familiyasi: '',
-            inputsearch: ''
+            inputsearch: '',
+            tID: '',
         },
     );
 
@@ -87,27 +90,48 @@ function Taminotchilar({getTaminot, saveTaminot, editTaminot, deleteTaminot, tam
         let a = {...input}
         setInput(a)
     }
-
-    // Fix me - - - - - delete
     function deleteTaminot2(item){
         console.log(item)
         deleteTaminot(item.id)
         getTaminot(1)
     }
 
-
-    function saqla(){
-        saveTaminot({
-            name:input.ismi,
-            phoneNumber: 1,
-            telegram: input.telegram,
-            supplierType:'',
-            businessId: 1
-        })
+    function  editt(id){
         toggle()
+        taminot.map(item=>{
+            if(item.id === id){
+                input.ismi = item.name
+                input.phoneNumber = item.phoneNumber
+                input.telegram = item.telegram
+                input.tID=id
+                let a ={...input}
+                setInput(a)
+            }
+        })
     }
-    function edit(item){
-
+    function saqla(){
+        if (input.tID !== ''){
+            editTaminot(
+                {
+                    name:input.ismi,
+                    phoneNumber: 1,
+                    telegram: input.telegram,
+                    supplierType:'',
+                    businessId: 1,
+                    id:input.tID
+                }
+            )
+        }
+        else{
+            saveTaminot({
+                name:input.ismi,
+                phoneNumber: 1,
+                telegram: input.telegram,
+                supplierType:'',
+                businessId: 1,
+            })
+        }
+        toggle()
     }
 
     return (
@@ -129,10 +153,6 @@ function Taminotchilar({getTaminot, saveTaminot, editTaminot, deleteTaminot, tam
                             <p>Ko'rsatildi</p>
                             <select name="" id="">
                                 <option value="">25</option>
-                                <option value="">50</option>
-                                <option value="">100</option>
-                                <option value="">200</option>
-                                <option value="">500</option>
                                 <option value="">1,000</option>
                                 <option value="">All</option>
                             </select>
@@ -143,7 +163,7 @@ function Taminotchilar({getTaminot, saveTaminot, editTaminot, deleteTaminot, tam
                             <button><img src={Data} alt=""/>Malumotlarni kamaytirish</button>
                         </div>
                         <div className="izlashBox2">
-                            <input type="text" placeholder='Izlash...'/>
+                            <input type="text" value={input.inputsearch} onChange={changeizlash} placeholder='Izlash...'/>
                         </div>
 
                     
@@ -174,7 +194,7 @@ function Taminotchilar({getTaminot, saveTaminot, editTaminot, deleteTaminot, tam
                                 <td></td>
                                 <td className={'text-center'}>
                                     <Link to={'/headerthird/taminotchilar/taxrirlash'}>
-                                        <button onClick={toggle} className='taxrirlash'><img src={Edit}
+                                        <button onClick={()=>editt(item.id)}  className='taxrirlash'><img src={Edit}
                                                                                              alt=""/> Taxrirlash
                                         </button>
                                     </Link>
@@ -211,10 +231,10 @@ function Taminotchilar({getTaminot, saveTaminot, editTaminot, deleteTaminot, tam
                         <ModalBody>
                             <label htmlFor="">Munosabat turi</label>
                             <select name="" id="" className={'p-1'} style={{marginLeft: '20px'}}>
-                                <option value="#">Tanlash</option>
-                                <option value="#">Taminotchilar</option>
-                                <option value="#">Mijozlar</option>
-                                <option value="#">(ikkisi ham) Taminotchi ha Mijoz</option>
+                                <option value="">Tanlash</option>
+                                <option value="">Taminotchilar</option>
+                                <option value="">Mijozlar</option>
+                                <option value="">(ikkisi ham) Taminotchi ha Mijoz</option>
                             </select>
                             <div className="in d-flex align-items-center justify-content-sm-around mt-3">
                                 <input type="radio" checked={input.langv1} onChange={changelangv1} name={'radio'}
@@ -229,31 +249,31 @@ function Taminotchilar({getTaminot, saveTaminot, editTaminot, deleteTaminot, tam
                                 </label>
                             </div>
                             <label htmlFor={'idRaqam'}>ID Raqami</label>
-                            <input checked={input.idraqam} onChange={changeidraqam} type="text" id={'idRaqam'}
+                            <input value={input.idraqam} onChange={changeidraqam} type="text" id={'idRaqam'}
                                    placeholder={'ID Raqami'} className={'form-control'}/>
                             lang_v1.leave_empty_to_autogenerate
                             <div className="in d-flex mt-3">
                                 <div>
                                     <label htmlFor={'log1'}>Login</label>
-                                    <input type="text" checked={input.login} onChange={changelogin}
+                                    <input type="text" value={input.login} onChange={changelogin}
                                            className={'form-control'} placeholder={'Mr/Mrs/Mis'}
                                            id={'log1'}/>
                                 </div>
                                 <div>
                                     <label htmlFor={'ism'}>Ismi</label>
-                                    <input onChange={changeismi} checked={input.ismi} type="text" id={'ism'}
+                                    <input onChange={changeismi} value={input.ismi} type="text" id={'ism'}
                                            placeholder={'Ismi'} className={'form-control'}/>
                                 </div>
                             </div>
                             <div className="in d-flex">
                                 <div className={'mt-3'}>
                                     <label htmlFor={'ot'}>Otasining ismi</label>
-                                    <input checked={input.otaismi} onChange={changeotaismi} type="text"
+                                    <input value={input.otaismi} onChange={changeotaismi} type="text"
                                            className={'form-control'} placeholder={'Otasining ismi'}/>
                                 </div>
                                 <div className={'mt-3'}>
                                     <label htmlFor={'ot'}>Familiyasi</label>
-                                    <input checked={input.familiyasi} onChange={changefamiliyasi} type="text"
+                                    <input value={input.familiyasi} onChange={changefamiliyasi} type="text"
                                            placeholder={'Familiyasi'} className={'form-control'}/>
                                 </div>
                             </div>

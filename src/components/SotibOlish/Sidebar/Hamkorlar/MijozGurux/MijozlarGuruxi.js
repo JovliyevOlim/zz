@@ -5,41 +5,39 @@ import Excel from '../../../../../img/Excel.png'
 import Print from '../../../../../img/Print.png'
 import Data from '../../../../../img/Data.png'
 import Pdf from '../../../../../img/PDF.png'
-import Edit from '../../../../../img/Edit.png'
-import Korish from '../../../../../img/Korish.png'
-import Delete from '../../../../../img/Delete.png'
-import Arrow from '../../../../../img/arrowIcon.png'
 import './mijozlarGuruxi.css'
-import {useState,useEffect} from 'react'
+import {useState, useEffect} from 'react'
 import {connect} from "react-redux";
-import {getMijozGurux,saveMijozGurux,editMijozGurux,deleteMijozGurux} from "../reducer/MijozGuruxReducer";
+import {getMijozGurux, saveMijozGurux, editMijozGurux, deleteMijozGurux} from "../reducer/MijozGuruxReducer";
 import {Modal, ModalBody, ModalFooter, ModalHeader} from "reactstrap";
 
-function Mijozlarguruxi({getMijozGurux,saveMijozGurux,editMijozGurux,deleteMijozGurux,mijozgurux}) {
+function Mijozlarguruxi({getMijozGurux, saveMijozGurux, editMijozGurux, deleteMijozGurux, mijozgurux}) {
 
-    useEffect(()=>{
+    useEffect(() => {
         getMijozGurux()
-    },[])
+    }, [])
 
     const [active, setActive] = useState(false);
 
-    const [input,setInput] = useState(
+    const [input, setInput] = useState(
         {
-            guruhnomi:'',
-            selectfoiz:'',
-            foizda:'',
-            inputsearch:'',
-            phone:''
+            guruhnomi: '',
+            selectfoiz: '',
+            foizda: '',
+            inputsearch: '',
+            phone: '',
+            mId: ''
         }
     )
 
-    function phone(e){
+    function phone(e) {
         input.phone = e.target.value
         let a = {...input}
         setInput(a)
     }
-    function search(e){
-        input.inputsearch=e.target.value
+
+    function search(e) {
+        input.inputsearch = e.target.value
         let a = {...input}
         setInput(a)
     }
@@ -50,28 +48,55 @@ function Mijozlarguruxi({getMijozGurux,saveMijozGurux,editMijozGurux,deleteMijoz
         getMijozGurux(1)
     }
 
-    function changeguruxnomi(e){
+    function changeguruxnomi(e) {
         input.guruhnomi = e.target.value
         let a = {...input}
         setInput(a)
     }
-    function changeselectfoiz(e){
+
+    function changeselectfoiz(e) {
         input.selectfoiz = e.target.value
         let a = {...input}
         setInput(a)
     }
-    function changefoizda(e){
+
+    function changefoizda(e) {
         input.foizda = e.target.value
         let a = {...input}
         setInput(a)
     }
-    function saqla(){
-        saveMijozGurux({
-            name:input.guruhnomi,
-            phoneNumber: input.phone,
-            telegram:'',
-            businessId:1
+
+    function editM(id) {
+        toggle()
+        mijozgurux.map(item => {
+            if (item.id === id) {
+                input.guruhnomi = item.name
+                input.phone = item.phone
+                input.mId = id
+                let a = {...input}
+                setInput(a)
+            }
         })
+    }
+
+    function saqla() {
+        if (input.mId !== '') {
+            editMijozGurux({
+                name: input.guruhnomi,
+                phoneNumber: input.phone,
+                telegram: '',
+                businessId: 1,
+                id: input.mId
+            })
+        } else {
+
+            saveMijozGurux({
+                name: input.guruhnomi,
+                phoneNumber: input.phone,
+                telegram: '',
+                businessId: 1
+            })
+        }
         toggle()
     }
 
@@ -96,10 +121,6 @@ function Mijozlarguruxi({getMijozGurux,saveMijozGurux,editMijozGurux,deleteMijoz
                         <select name="" id="">
                             <option value="">25</option>
                             <option value="">50</option>
-                            <option value="">100</option>
-                            <option value="">200</option>
-                            <option value="">500</option>
-                            <option value="">1,000</option>
                             <option value="">All</option>
                         </select>
                         <button><img src={CSV} alt=""/> Export CSV</button>
@@ -109,42 +130,46 @@ function Mijozlarguruxi({getMijozGurux,saveMijozGurux,editMijozGurux,deleteMijoz
                         <button><img src={Data} alt=""/>Malumotlarni kamaytirish</button>
                     </div>
                     <div className="izlashBox2">
-                        <input type="text" placeholder='Izlash...'/>
+                        <input type="text" value={input.inputsearch} onChange={search} placeholder='Izlash...'/>
                     </div>
-                    </div>
+                </div>
                 <div className="table-responsive">
-                <table className='table table-striped table-bordered mt-4'>
-                    <thead>
-                    <tr>
-                        <th>Gurux nomi</th>
-                        <th>Tel raqam</th>
-                        <th>Foizda(%)</th>
-                        <th>Sotuv narxini guruxlash</th>
-                        <th>Amallar</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {
-                        mijozgurux.filter(val=>{
-                            if (input.inputsearch===''){
-                                return val
-                            }else if (val.name.toUpperCase().includes(input.inputsearch.toUpperCase())){
-                                return val
-                            }
-                        })
-                        .map(item => <tr key={item.id}>
-                        <td>{item.name}</td>
-                        <td>{item.phoneNumber}</td>
-                        <td>{item.telegram}</td>
-                            <td></td>
-                        <td>
-                        <button className={'btn btn-outline-primary m-1'}>Taxrirlash</button>
-                        <button className={'btn btn-outline-primary m-1'} onClick={()=>deleteM(item)}>O`chirish</button>
-                        </td>
-                        </tr>)
-                    }
-                    </tbody>
-                </table>
+                    <table className='table table-striped table-bordered mt-4'>
+                        <thead>
+                        <tr>
+                            <th>Gurux nomi</th>
+                            <th>Tel raqam</th>
+                            <th>Foizda(%)</th>
+                            <th>Sotuv narxini guruxlash</th>
+                            <th>Amallar</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {
+                            mijozgurux.filter(val => {
+                                if (input.inputsearch === '') {
+                                    return val
+                                } else if (val.name.toUpperCase().includes(input.inputsearch.toUpperCase())) {
+                                    return val
+                                }
+                            })
+                                .map(item => <tr key={item.id}>
+                                    <td>{item.name}</td>
+                                    <td>{item.phoneNumber}</td>
+                                    <td>{item.telegram}</td>
+                                    <td></td>
+                                    <td>
+                                        <button className={'btn btn-outline-primary m-1'}
+                                                onClick={() => editM(item.id)}>Taxrirlash
+                                        </button>
+                                        <button className={'btn btn-outline-primary m-1'}
+                                                onClick={() => deleteM(item)}>O`chirish
+                                        </button>
+                                    </td>
+                                </tr>)
+                        }
+                        </tbody>
+                    </table>
                 </div>
 
                 <p>Ko'rsatildi 1 ta sahifa 1 va yana 1 ta sahifa bor</p>
@@ -161,15 +186,18 @@ function Mijozlarguruxi({getMijozGurux,saveMijozGurux,editMijozGurux,deleteMijoz
                     </ModalHeader>
                     <ModalBody>
                         <label htmlFor={'nomi'}>Guruh nomi</label>
-                        <input checked={input.guruhnomi} onChange={changeguruxnomi} id={'nomi'} type="text" className={'form-control'}/>
+                        <input value={input.guruhnomi} onChange={changeguruxnomi} id={'nomi'} type="text"
+                               className={'form-control'}/>
                         <label htmlFor={'lang'}>lang_v1.price_calculation_type</label>
-                        <select value={input.selectfoiz} onChange={changeselectfoiz} className={'form-control mt-3'}  name="" id="">
+                        <select value={input.selectfoiz} onChange={changeselectfoiz} className={'form-control mt-3'}
+                                name="" id="">
                             <option value="#">Foizda</option>
                         </select>
                         <label htmlFor={'tel'}>Tel raqam</label>
                         <input type="text" className={'form-control mt-2'} value={input.phone} onChange={phone}/>
                         <label htmlFor={'foizda'} className={'mt-3'}>Foizda</label>
-                        <input type="text" checked={input.foizda} onChange={changefoizda} className={'form-control'} id={'foizda'}/>
+                        <input type="text" value={input.foizda} onChange={changefoizda} className={'form-control'}
+                               id={'foizda'}/>
                     </ModalBody>
                     <ModalFooter>
                         <button className={'btn btn-primary'} onClick={saqla}>SAQLASH</button>
@@ -181,4 +209,10 @@ function Mijozlarguruxi({getMijozGurux,saveMijozGurux,editMijozGurux,deleteMijoz
         </div>
     )
 }
-export default connect(({MijozGuruxReducer:{mijozgurux}})=>({mijozgurux}),{getMijozGurux,saveMijozGurux,editMijozGurux,deleteMijozGurux}) (Mijozlarguruxi)
+
+export default connect(({MijozGuruxReducer: {mijozgurux}}) => ({mijozgurux}), {
+    getMijozGurux,
+    saveMijozGurux,
+    editMijozGurux,
+    deleteMijozGurux
+})(Mijozlarguruxi)

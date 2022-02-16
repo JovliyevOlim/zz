@@ -45,9 +45,6 @@ function HodimlarRoyhati({getXodim, deleteXodim, saveXodim, editXodim,XodimReduc
         console.log(inSearch.inputsearch)
     }
 
-
-
-
     return (
             <div className="col-md-12 pb-4 pt-4">
                 <div className="textHeaderHR">
