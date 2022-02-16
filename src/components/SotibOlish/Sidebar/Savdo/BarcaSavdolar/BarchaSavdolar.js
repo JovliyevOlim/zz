@@ -6,19 +6,14 @@ import Data from '../../../../../img/Data.png'
 import Pdf from '../../../../../img/PDF.png'
 import Edit from '../../../../../img/Edit.png'
 import Delete from '../../../../../img/Delete.png'
-import './xaridxisobot.css'
+import './barcasavdolar.css'
 import {useState, useRef, useEffect} from "react";
 import { DateRangePickerComponent } from '@syncfusion/ej2-react-calendars'
 import {MenuItem, TextField,Select,InputLabel} from "@mui/material";
 import {connect} from "react-redux";
-import {
-    deleteXaridXisobot,
-    editXaridXisobot,
-    getXaridXisobot,
-    saveXaridXisobot
-} from "../reducer/XaridlarXisobotiReducer";
 
-function XaridlarXisoboti({getXaridXisobot}) {
+
+function BarchaSavdolar() {
 
     const [input,setInput] = useState(
         {
@@ -63,7 +58,7 @@ function XaridlarXisoboti({getXaridXisobot}) {
     }
 
     useEffect(()=>{
-        getXaridXisobot()
+        // getXaridXisobot()
     })
 
     const [active,setActive] = useState(false)
@@ -73,8 +68,8 @@ function XaridlarXisoboti({getXaridXisobot}) {
     const minDateDate = new Date(new Date().getFullYear(), new Date().getMonth(), 8);
     const maxDateDate = new Date(new Date().getFullYear(), new Date().getMonth()+1, 20);
     function selectchange(event){
-         console.log(event.isDefaultPrevented(false))
-             event.isDefaultPrevented(true)
+        console.log(event.isDefaultPrevented(false))
+        event.isDefaultPrevented(true)
         event.isPropagationStopped(false)
         if(event.target.value == 20){
 
@@ -128,18 +123,18 @@ function XaridlarXisoboti({getXaridXisobot}) {
                     <div className="col-md-6">
                         <h6>Sanani belgilang:</h6>
                         <input type="date" className={'form-control'} value={input.sananibelgilash} onChange={sananibelgilash}/>
-                            {
-                                active?     <DateRangePickerComponent placeholder="Enter Date Range"
-                                                                      startDate={startValueDate}
-                                                                      endDate={endValueDate}
-                                                                      min={minDateDate}
-                                                                      max={maxDateDate}
-                                                                      minDays={1}
-                                                                      maxDays={10000}
-                                                                      format="dd-MMM-yy"
+                        {
+                            active?     <DateRangePickerComponent placeholder="Enter Date Range"
+                                                                  startDate={startValueDate}
+                                                                  endDate={endValueDate}
+                                                                  min={minDateDate}
+                                                                  max={maxDateDate}
+                                                                  minDays={1}
+                                                                  maxDays={10000}
+                                                                  format="dd-MMM-yy"
 
-                                ></DateRangePickerComponent>:''
-                            }
+                            ></DateRangePickerComponent>:''
+                        }
 
                     </div>
                 </div>
@@ -147,7 +142,10 @@ function XaridlarXisoboti({getXaridXisobot}) {
             </div>
 
             <div className="rowStyleH2">
-
+                <div className="qoshish">
+                    <h5>Barcha savdolar</h5>
+                    <Link to={'/third/xarajatlarRuyxati/xarajatqoshish'}><button className='btn btn-primary'>+Qo'shish</button></Link>
+                </div>
                 <div className="izlash">
                     <p>Ko'rsatildi</p>
                     <select name="" id="" value={input.view} onChange={view}>
@@ -220,4 +218,6 @@ function XaridlarXisoboti({getXaridXisobot}) {
         </div>
     )
 }
-export default connect(({FirmaReducer:{firmalar}})=>({firmalar}),{getXaridXisobot,saveXaridXisobot,editXaridXisobot,deleteXaridXisobot}) (XaridlarXisoboti)
+export default
+// connect(({FirmaReducer:{firmalar}})=>({firmalar}),{getXaridXisobot,saveXaridXisobot,editXaridXisobot,deleteXaridXisobot})
+(BarchaSavdolar)

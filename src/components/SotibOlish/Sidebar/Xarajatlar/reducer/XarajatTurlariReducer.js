@@ -3,58 +3,58 @@ import {apiCall} from "../../../../../api";
 // import {toast} from "react-toastify";
 
 const slice = createSlice({
-    name: 'xarajatlarturlari',
+    name: 'xarajatturlari',
     initialState: {
-        xarajatlarturlari: []
+        xarajatturlari: []
     },
     reducers: {
         getFrom: (state, action) => {
-            state.xarajatlarturlari = action.payload
+            state.xarajatturlari = action.payload
             console.log(action.payload);
         },
         savefrom: (state,action) => {
-            state.xarajatlarturlari.unshift(action.payload)
+            state.xarajatturlari.unshift(action.payload)
             // toast.success('Saqlandi')
+            console.log('QOSHILDI_TURLARI');
         },
         editfrom: (state,action) => {
-            state.xarajatlarturlari.map((item,index)=>{
+            state.xarajatturlari.map((item,index)=>{
                 if (item.id === action.payload.id){
                     item.login = action.payload.login
                 }
             })
-            // toast.success('O`zgartirildi')
+
         },
         deletefrom:(state,action)=>{
-
-            // toast.info('O`chirildi')
+            console.log("DELETED_ARAJATATURLARI");
         }
 
     }
 });
 
 export const getXarajatlarTurlari=()=>apiCall({
-    url: 'outlayCategory/get-by-businessId/1',
+    url: '/outlayCategory/get-by-businessId/1',
     method:'get',
     onSuccess: slice.actions.getFrom.type
 });
 
 export const saveXarajatlarTurlari=(data)=>apiCall({
-    url: '/user',
+    url: '/outlayCategory',
     method:'post',
     data,
     onSuccess: slice.actions.savefrom.type
 });
 
 export const editXarajatlarTurlari=(data)=>apiCall({
-    url: '/user',
+    url: '/outlayCategory',
     method: 'post',
     data,
     onSuccess: slice.actions.editfrom.type
 });
 
 export const deleteXarajatlarTurlari=(data)=>apiCall({
-    url: '/user',
-    method:'post',
+    url: '/outlayCategory/'+data,
+    method:'delete',
     data,
     onSuccess: slice.actions.deletefrom.type
 })

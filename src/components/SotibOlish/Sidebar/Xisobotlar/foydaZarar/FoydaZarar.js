@@ -10,6 +10,7 @@ function FoydaZarar({getFoydaZarar,saveFoydaZarar,editFoydaZarar,deleteFoydaZara
                   branchId:1,
                   firstDate:'',
                   secondDate:'',
+                  name:'',
            }
        )
 
@@ -38,8 +39,10 @@ function FoydaZarar({getFoydaZarar,saveFoydaZarar,editFoydaZarar,deleteFoydaZara
 
        }
        useEffect(()=>{
-
+              getFoydaZarar()
        },[])
+
+
 
        return (
               <div className="col-md-12 mt-2">
@@ -53,7 +56,6 @@ function FoydaZarar({getFoydaZarar,saveFoydaZarar,editFoydaZarar,deleteFoydaZara
                                                  <h6>Baza tanlash:</h6>
                                                  <select value={input.bazatanlash} onChange={bazatanlash} name="" id="" >
                                                         <option value="" >Barcha bazalar</option>
-                                                        <option value=""></option>
                                                  </select>
                                           </div>
                                           <div className="col-md-6">

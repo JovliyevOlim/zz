@@ -48,6 +48,7 @@ function Savdo() {
             {
                 active?<ul>
                     {/*<li><Link to={'/mahsulotRuyxati'} className={'mahqosh'}>Barcha savdolar</Link></li>*/}
+                    <li><Link to={'/headerthird/barcasavdolar'} className={'mahqosh'}>Barcha Savdolar</Link></li>
                     <li><Link to={'/headerthird/mahsulotQoshish'} className={'mahqosh'}>Savdo qo`shish</Link></li>
                     {/*<li><Link to={'/mahsulotShtrix'} className={'mahqosh'}>SAVDO</Link></li>*/}
                     <li><Link to={'/headerthird/turliTavar'} className={'mahqosh'}>Savdo oynasi</Link></li>

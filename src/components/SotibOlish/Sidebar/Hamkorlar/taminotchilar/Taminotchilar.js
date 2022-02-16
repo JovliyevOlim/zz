@@ -106,6 +106,10 @@ function Taminotchilar({getTaminot, saveTaminot, editTaminot, deleteTaminot, tam
         })
         toggle()
     }
+    function edit(item){
+
+    }
+
     return (
 
         <div>

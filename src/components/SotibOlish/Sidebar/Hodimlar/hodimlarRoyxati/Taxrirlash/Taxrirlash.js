@@ -83,22 +83,8 @@ function Taxrirlash({getLavozim,saveXodim,LavozimReducer,getXodim,users,match,Xo
 
     function saqla(){
 
-       //  if(match.params.id !== undefined){
-       //      editXodim({
-       //          firstName: input.firstName,
-       //          lastName: input.lastName,
-       //          username: input.username,
-       //          password: input.parolTakror,
-       //          roleId: input.roleName,
-       //          branchId:1,
-       //          businessId: 1,
-       //          enabled: false,
-       //          photoId:1,
-       //          id:match.params.id
-       //      })
-       //  }
-       // else{
-            saveXodim({
+        if(match.params.id !== undefined){
+            editXodim({
                 firstName: input.firstName,
                 lastName: input.lastName,
                 username: input.username,
@@ -107,9 +93,23 @@ function Taxrirlash({getLavozim,saveXodim,LavozimReducer,getXodim,users,match,Xo
                 branchId:1,
                 businessId: 1,
                 enabled: false,
-                photoId:1
+                photoId:1,
+                id:match.params.id
             })
-
+        }
+       else {
+            saveXodim({
+                firstName: input.firstName,
+                lastName: input.lastName,
+                username: input.username,
+                password: input.parolTakror,
+                roleId: input.roleName,
+                branchId: 1,
+                businessId: 1,
+                enabled: false,
+                photoId: 1
+            })
+        }
         if (input.parol === input.parolTakror){
             toggle()
             console.log('Parol mos');
@@ -190,7 +190,7 @@ function Taxrirlash({getLavozim,saveXodim,LavozimReducer,getXodim,users,match,Xo
                             </div>
                         </ModalBody>
                         <ModalFooter>
-                            <button className={'btn btn-primary btnSaqlash'} onClick={saqla}>Saqlash</button>
+                            <button className={'btn btn-primary btnSaqlash'} onClick={toggle}>Saqlash</button>
                             <button className={'btn btn-primary btnLogin'} onClick={toggle}>Chiqish</button>
                         </ModalFooter>
                     </Modal>
