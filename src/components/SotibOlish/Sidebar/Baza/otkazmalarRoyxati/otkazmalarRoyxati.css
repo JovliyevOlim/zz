@@ -2,6 +2,7 @@
        justify-content: space-between;
        border-radius: 8px;
        padding: 20px 30px 20px 30px;
+       background-color: #FFFFFF;
        /*box-shadow: 0px 10px 20px grey;*/
 }
 
@@ -19,26 +20,30 @@
        justify-content:space-between;
        border-radius: 16px;
 }
-.rowStyleN .izlash{
+.rowStyleN .izlashOR{
        display: flex;
+       justify-content: space-between;
        margin-top: 32px;
        
 }
+.rowStyleN .izlashOR .izlashBox1{
+       display: flex;
+}
 
-.rowStyleN .izlash p{
+.rowStyleN .izlashOR p{
        text-align: center;
 }
-.rowStyleN .izlash select{
+.rowStyleN .izlashOR select{
        height: 28px;
        border-radius: 4px;
        border: 1px solid #6b6363a0;
        margin-left: 4px;
 }
-.rowStyleN .izlash button:hover{
+.rowStyleN .izlashOR button:hover{
        cursor: pointer;
        background-color: #e0dddd;
 }
-.rowStyleN .izlash button{
+.rowStyleN .izlashOR button{
        height: 28px;
        border-radius: 4px;
        border: 1px solid #6b6363a0;
@@ -46,11 +51,11 @@
        background-color: #f3efef;
        font-size: 11px;
 }
-.rowStyleN .izlash button img{
+.rowStyleN .izlashOR button img{
        width: 16px;
 }
 
-.rowStyleN .izlash input{
+.rowStyleN .izlashOR input{
        height: 28px;
        border-radius: 4px;
        border: 1px solid #6b6363a0;
@@ -124,3 +129,113 @@
      border-radius: 0px 4px 4px 0px;
      
 }
+@media (max-width: 425.9px){
+       .rowStyleN .qoshish h5{
+               font-size: 17px;
+        }
+        .rowStyleN .izlashOR{
+               display: block;
+        }
+        .rowStyleN .izlashOR .izlashBox1{
+               display: grid;
+               justify-content: center;
+               grid-template-columns: 110px 110px;
+               text-align: center;
+        }
+        .rowStyleN .izlashOR .izlashBox2{
+               display: flex;
+               justify-content: center;
+        }
+        .rowStyleN .izlashOR .izlashBox2 input{
+               width: 60%;
+               margin: 8px 0px 0px 4px;
+ 
+        }
+        .rowStyleN .izlashOR .izlashBox1 select{
+               margin-bottom: 8px;
+        }
+        .rowStyleN .izlashOR .izlashBox1 button{
+               line-height: 4px;
+               font-size: 10px;
+               margin-bottom: 8px;
+        }
+        .rowStyleN p{
+               font-size: 12px;
+               line-height: 12px;
+        }
+        .rowStyleN .qoshish h5{
+               font-size: 17px;
+        }
+        .rowStyleN .izlashOR{
+               display: block;
+        }
+        .rowStyleN .izlashOR .izlashBox1{
+               display: grid;
+               justify-content: center;
+               grid-template-columns: 110px 110px;
+               text-align: center;
+        }
+        .rowStyleN .izlashOR .izlashBox2{
+               display: flex;
+               justify-content: center;
+        }
+        .rowStyleN .izlashOR .izlashBox2 input{
+               width: 60%;
+               margin: 8px 0px 0px 4px;
+ 
+        }
+        .rowStyleN .izlashOR .izlashBox1 select{
+               margin-bottom: 8px;
+        }
+        .rowStyleN .izlashOR .izlashBox1 button{
+               line-height: 4px;
+               font-size: 10px;
+               margin-bottom: 8px;
+        }
+        .rowStyleN p{
+               font-size: 12px;
+               line-height: 12px;
+        }
+        
+ }
+ 
+ @media (min-width: 426px) and (max-width: 768.9px){
+        .rowStyleN .izlashOR{
+               display: block;
+        }
+        .rowStyleN .izlashOR .izlashBox1{
+               display: grid;
+               justify-content: center;
+               grid-template-columns: 33% 33% 33%;
+               text-align: center;
+        }
+        .rowStyleN .izlashOR .izlashBox2{
+               display: flex;
+               justify-content: center;
+        }
+        .rowStyleN .izlashOR .izlashBox2 input{
+               width: 70%;
+               margin: 8px 0px 0px 4px;
+ 
+        }
+        .rowStyleN .izlashOR .izlashBox1 button{
+               line-height: 4px;
+               margin-bottom: 8px;
+        }
+ }
+ @media (min-width: 769px) and (max-width: 1024.9px){
+        .rowStyleN .izlashOR .izlashBox1{
+               display: grid;
+               grid-template-columns:36% 36% 36% ;
+        }
+        .rowStyleN .izlashOR .izlashBox1 button{
+               line-height: 4px;
+               margin-bottom: 8px;
+        }
+          
+ }
+ @media (min-width: 1025px) and (max-width: 1199.9px){
+        .rowStyleN .izlashOR .izlashBox1 button{
+               line-height: 4px;
+        }
+ }

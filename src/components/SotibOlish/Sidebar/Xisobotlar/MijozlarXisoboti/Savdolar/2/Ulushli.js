@@ -5,6 +5,7 @@ import Data from '../../../../../../../img/Data.png'
 import Pdf from '../../../../../../../img/PDF.png'
 import Edit from '../../../../../../../img/Edit.png'
 import Delete from '../../../../../../../img/Delete.png'
+import './ulushli.css'
 import {useState} from 'react'
 function Ulushli(){
 
@@ -27,23 +28,31 @@ function Ulushli(){
     }
 
     return(
-        <div>
-            <div className="izlash">
-                <p>Ko'rsatildi</p>
-                <select value={input.view} onChange={view} name="" id="">
-                    <option value="">25</option>
-                    <option value="">50</option>
-                    <option value="">1,000</option>
-                    <option value="">All</option>
-                </select>
-                <button> <img src={CSV} alt="" /> Export CSV</button>
-                <button><img src={Excel} alt="" /> Export Excel</button>
-                <button><img src={Print} alt="" /> Print</button>
-                <button><img src={Pdf} alt="" />Export PDF</button>
-                <button> <img src={Data} alt="" />Malumotlarni kamaytirish </button>
-                <input type="text" placeholder='Izlash...' value={input.izlash} onChange={izlash}/>
+        <div className='rowStyleUS'>
+            <div className="qoshish">
+                    <h5>Ulushli savdolar</h5>
             </div>
-            <div className="table-responsive">
+            <div className="izlashUS">
+                <div className="izlashBox1">
+                    <p>Ko'rsatildi</p>
+                    <select value={input.view} onChange={view} name="" id="">
+                        <option value="">25</option>
+                        <option value="">50</option>
+                        <option value="">1,000</option>
+                        <option value="">All</option>
+                    </select>
+                    <button> <img src={CSV} alt="" /> Export CSV</button>
+                    <button><img src={Excel} alt="" /> Export Excel</button>
+                    <button><img src={Print} alt="" /> Print</button>
+                    <button><img src={Pdf} alt="" />Export PDF</button>
+                    <button> <img src={Data} alt="" />Malumotlarni kamaytirish </button>
+                </div>
+                <div className="izlashBox2">
+                    <input type="text" placeholder='Izlash...' value={input.izlash} onChange={izlash}/>
+                </div>
+                
+            </div>
+            <div className="table-responsive mb-4">
                 <table className='table table-striped table-bordered mt-4 '>
                     <thead>
                     <tr>

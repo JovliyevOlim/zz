@@ -11,6 +11,7 @@ import {useState, useRef, useEffect} from "react";
 import { DateRangePickerComponent } from '@syncfusion/ej2-react-calendars'
 import {MenuItem, TextField,Select,InputLabel} from "@mui/material";
 import {connect} from "react-redux";
+import './xaridxisobot.css'
 import {
     deleteXaridXisobot,
     editXaridXisobot,
@@ -96,24 +97,24 @@ function XaridlarXisoboti({getXaridXisobot}) {
     }
 
     return (
-        <div className="col-md-12 mt-2">
-            <div className="textHeader">
-                <h2>Xaridlar Xisoboti</h2>
+        <div className="col-md-12 mt-4 mb-4">
+            <div className="textHeaderXH">
+                <h2>Xaridlar hisoboti</h2>
             </div>
-            <div className="rowStyleH">
+            <div className="rowStyleXH">
                 <div className="qoshish">
                     <h5>Filtirlash</h5>
                 </div>
                 <div className="row cont">
                     <div className="col-md-6">
                         <h6>Baza:</h6>
-                        <select name="" value={input.baza} onChange={baza} id="">
+                        <select name="" value={input.baza} onChange={baza} id="" className='inputData'>
                             <option value="#">Tanlash</option>
                         </select>
                     </div>
                     <div className="col-md-6">
                         <h6>Diller:</h6>
-                        <select name="" value={input.diller} onChange={diller} id="" className={'form-control'}>
+                        <select name="" value={input.diller} onChange={diller} id="" className={'inputData'}>
                             <option value="">Mavjud emas</option>
                             <option value="">Taminotchi</option>
                             <option value="">(2)</option>
@@ -123,11 +124,11 @@ function XaridlarXisoboti({getXaridXisobot}) {
                 <div className="row">
                     <div className="col-md-6">
                         <h6>Mahsulot izlash:</h6>
-                        <input type="text" value={input.mahsulotizlash} onChange={mahsulotizlash} className={'form-control'}/>
+                        <input type="text" value={input.mahsulotizlash} onChange={mahsulotizlash} placeholder="Mahsulot nomi" className={'inputData'}/>
                     </div>
                     <div className="col-md-6">
                         <h6>Sanani belgilang:</h6>
-                        <input type="date" className={'form-control'} value={input.sananibelgilash} onChange={sananibelgilash}/>
+                        <input type="date" className={'inputData'} value={input.sananibelgilash} onChange={sananibelgilash}/>
                             {
                                 active?     <DateRangePickerComponent placeholder="Enter Date Range"
                                                                       startDate={startValueDate}
@@ -146,23 +147,27 @@ function XaridlarXisoboti({getXaridXisobot}) {
 
             </div>
 
-            <div className="rowStyleH2">
+            <div className="rowStyleXH2">
 
-                <div className="izlash">
-                    <p>Ko'rsatildi</p>
-                    <select name="" id="" value={input.view} onChange={view}>
-                        <option value="">25</option>
-                        <option value="">50</option>
-                        <option value="">All</option>
-                    </select>
-                    <button> <img src={CSV} alt="" /> Export CSV</button>
-                    <button><img src={Excel} alt="" /> Export Excel</button>
-                    <button><img src={Print} alt="" /> Print</button>
-                    <button><img src={Pdf} alt="" />Export PDF</button>
-                    <button> <img src={Data} alt="" />Malumotlarni kamaytirish </button>
-                    <input value={input.izlash} onChange={izlash} type="text" placeholder='Izlash...'/>
+                <div className="izlashXH2">
+                    <div className="izlashBox1">
+                        <p>Ko'rsatildi</p>
+                        <select name="" id="" value={input.view} onChange={view}>
+                            <option value="">25</option>
+                            <option value="">50</option>
+                            <option value="">All</option>
+                        </select>
+                        <button> <img src={CSV} alt="" /> Export CSV</button>
+                        <button><img src={Excel} alt="" /> Export Excel</button>
+                        <button><img src={Print} alt="" /> Print</button>
+                        <button><img src={Pdf} alt="" />Export PDF</button>
+                        <button> <img src={Data} alt="" />Malumotlarni kamaytirish </button>
+                    </div>
+                    <div className="izlashBox2">
+                        <input value={input.izlash} onChange={izlash} type="text" placeholder='Izlash...'/>
+                    </div>
                 </div>
-                <div className="table-responsive">
+                <div className="table-responsive mb-4">
                     <table className='table table-striped table-bordered mt-4 '>
                         <thead>
                         <tr>

@@ -45,7 +45,7 @@ function OtkazmalarRoyxati({getOtkazma, otkazmalar, deleteOtkazma, saveOtkazma})
     }
 
     return (
-        <div className="col-md-12 mt-2 ">
+        <div className="col-md-12 mt-2 mt-4 mb-4 ">
             <div className="textHeader">
                 <h2>Bazadan Bazaga</h2>
             </div>
@@ -56,19 +56,23 @@ function OtkazmalarRoyxati({getOtkazma, otkazmalar, deleteOtkazma, saveOtkazma})
                         <button className='btn btn-primary'>+Qo'shish</button>
                     </Link>
                 </div>
-                <div className="izlash">
-                    <p>Ko'rsatildi</p>
-                    <select name="" value={input.view} onChange={view} id="">
-                        <option value="">25</option>
-                        <option value="">1,000</option>
-                        <option value="">All</option>
-                    </select>
-                    <button><img src={CSV} alt=""/> Export CSV</button>
-                    <button><img src={Excel} alt=""/> Export Excel</button>
-                    <button><img src={Print} alt=""/> Print</button>
-                    <button><img src={Pdf} alt=""/>Export PDF</button>
-                    <button><img src={Data} alt=""/>Malumotlarni kamaytirish</button>
-                    <input type="text" placeholder='Izlash...' value={input.search} onChange={search}/>
+                <div className="izlashOR">
+                    <div className="izlashBox1">
+                        <p>Ko'rsatildi</p>
+                        <select name="" value={input.view} onChange={view} id="">
+                            <option value="">25</option>
+                            <option value="">1,000</option>
+                            <option value="">All</option>
+                        </select>
+                        <button><img src={CSV} alt=""/> Export CSV</button>
+                        <button><img src={Excel} alt=""/> Export Excel</button>
+                        <button><img src={Print} alt=""/> Print</button>
+                        <button><img src={Pdf} alt=""/>Export PDF</button>
+                        <button><img src={Data} alt=""/>Malumotlarni kamaytirish</button>
+                    </div>
+                    <div className="izlashBox2">
+                        <input type="text" placeholder='Izlash...' value={input.search} onChange={search}/>
+                    </div>
                 </div>
                 <div className="table-responsive">
                     <table className='table table-striped table-bordered mt-4'>

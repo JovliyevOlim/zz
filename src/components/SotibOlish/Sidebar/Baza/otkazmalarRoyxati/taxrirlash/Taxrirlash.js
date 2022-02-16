@@ -138,7 +138,7 @@ function Taxrirlash({saveOtkazma,editOtkazma,getOtkazma}){
             </div>
         </div>
     )
-}
+        }
 
 export default connect(({OtkazmaReducer: {otkazmalar}}) => ({otkazmalar}), {
     getOtkazma,

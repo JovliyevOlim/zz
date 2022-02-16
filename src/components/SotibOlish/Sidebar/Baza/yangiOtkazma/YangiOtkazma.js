@@ -65,11 +65,11 @@ export default function YangiOtkazma() {
                      </div>
                      <div className="rowStyleM">
                             <div className="row cont">
-                                   <div className="col-md-6">
+                                   <div className="col-md-6 col-sm-12">
                                           <h6>Qisqa eslatma:</h6>
                                           <input value={input.qisqaeslatma} onChange={qisqaeslatma} className={'form-control'} type="text" placeholder='Eslatma...' />
                                    </div>
-                                   <div className="col-md-6">
+                                   <div className="col-md-6 col-sm-12">
                                           <h6>Status:</h6>
                                           <select name="" id="" value={input.status} onChange={status}>
                                                  <option value="">Tanlash</option>
@@ -78,14 +78,14 @@ export default function YangiOtkazma() {
                                    </div>
                             </div>
                             <div className="row">
-                                   <div className="col-md-6">
+                                   <div className="col-md-6 col-sm-12">
                                           <h6>Bazadan(Amaldagi baza):</h6>
                                           <select name="" id="" value={input.bazadan} onChange={bazadan}>
                                                  <option value="">Tanlash</option>
                                                  <option value=""></option>
                                           </select>
                                    </div>
-                                   <div className="col-md-6">
+                                   <div className="col-md-6 col-sm-12">
                                           <h6>Bazaga(O'tkaziladigan baza):</h6>
                                           <select name="" id="" value={input.bazaga} onChange={bazaga}>
                                                  <option value="">Tanlash</option>
@@ -94,7 +94,7 @@ export default function YangiOtkazma() {
                                    </div>
                             </div>
                             <div className="row">
-                                   <div className="col-md-12" >
+                                   <div className="col-md-12 col-sm-12" >
                                           <div className="sana">
                                                  <h6>Sana:</h6>
                                                  <input type="date" value={input.sana} onChange={sana}/>
@@ -116,7 +116,7 @@ export default function YangiOtkazma() {
                                           </div>
                                    </div>
                             </div>
-                            <div className="table-responsive">
+                            <div className="table-responsive mb-4">
                                    <table className='table table-striped table-bordered mt-4 '>
                                           <thead>
                                                  <tr>
@@ -140,11 +140,11 @@ export default function YangiOtkazma() {
                             </div>
 
                             <div className="row cont">
-                                   <div className="col-md-6">
+                                   <div className="col-md-6 col-sm-12">
                                           <h6>Yo'lkira xaqi:</h6>
                                           <input type="text" value={input.yulhaqi} onChange={yulhaqi}/>
                                    </div>
-                                   <div className="col-md-6">
+                                   <div className="col-md-6 col-sm-12">
                                           <h6>Qisqa eslatma:</h6>
                                           <input type="text" placeholder='Eslatma...' value={input.qisqaeslatmaarea} onChange={qisqaeslatmaarea}/>
                                    </div>

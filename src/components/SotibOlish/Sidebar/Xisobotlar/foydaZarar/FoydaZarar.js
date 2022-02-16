@@ -45,20 +45,20 @@ function FoydaZarar({getFoydaZarar,saveFoydaZarar,editFoydaZarar,deleteFoydaZara
 
 
        return (
-              <div className="col-md-12 mt-2">
+              <div className="col-md-12 mt-4 mb-4">
                      <div className="textHeaderF">
                      <h2>Foyda va Zarar</h2>
                      </div>
                      <div className="rowStyleF">
                             <div className="izlashF">
                                    <div className="row">
-                                          <div className="col-md-6 ">
+                                          <div className="col-md-6 col-sm-10">
                                                  <h6>Baza tanlash:</h6>
                                                  <select value={input.bazatanlash} onChange={bazatanlash} name="" id="" >
                                                         <option value="" >Barcha bazalar</option>
                                                  </select>
                                           </div>
-                                          <div className="col-md-6">
+                                          <div className="col-md-6 col-sm-10">
                                                  <h6>Aniq sanani belgilash:</h6>
                                                  <select name="" id="" value={input.aniqsananibelgilash} onChange={aniqsananibelgilash}>
                                                         <option value="" hidden> Aniq sana belgilash</option>
@@ -70,7 +70,7 @@ function FoydaZarar({getFoydaZarar,saveFoydaZarar,editFoydaZarar,deleteFoydaZara
                                           </div>
                                    </div>
                             </div>
-                            <div className="table-responsive">
+                            <div className="table-responsive mb-4">
                             <table className='table table-striped table-bordered mt-4'>
                                    <thead>
                                           <tr>

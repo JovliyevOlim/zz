@@ -84,22 +84,22 @@ function XarajatlarRoyxati({getXarajatlar, saveXarajatlar, deleteXarajatlar, xar
     }
 
     return (
-        <div className="col-md-12 mt-2">
-            <div className="textHeader">
+        <div className="col-md-12 mt-4 mb-4">
+            <div className="textHeaderHRR">
                 <h2>Xarajatlar</h2>
             </div>
-            <div className="rowStyleH">
+            <div className="rowStyleHRR">
                 <div className="qoshish">
                     <h5>Filtirlash</h5>
                 </div>
                 <div className="row cont">
-                    <div className="col-md-6">
+                    <div className="col-md-6 col-sm-12">
                         <h6>Baza:</h6>
                         <select name="" value={input.baza} onChange={baza} id="">
                             <option value="">Barcha bazalar</option>
                         </select>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-6 col-sm-12">
                         <h6>Xarajat qildi:</h6>
                         <select name="" id="" value={input.xarajatqildi} onChange={xarajatqildi}>
                             <option value="">Barchasi</option>
@@ -107,13 +107,13 @@ function XarajatlarRoyxati({getXarajatlar, saveXarajatlar, deleteXarajatlar, xar
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-md-6">
+                    <div className="col-md-6 col-sm-12">
                         <h6>Aloqa:</h6>
                         <select name="" id="" value={input.aloqa} onChange={aloqa}>
                             <option value="">Barchasi</option>
                         </select>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-6 col-sm-12">
                         <h6>Xarajat turi:</h6>
                         <select name="" id="" value={input.xarajatturi} onChange={xarajatturi}>
                             <option value="">Barchasi</option>
@@ -122,13 +122,13 @@ function XarajatlarRoyxati({getXarajatlar, saveXarajatlar, deleteXarajatlar, xar
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-md-6">
+                    <div className="col-md-6 col-sm-12">
                         <div className="sana">
                             <h6>Sanani belgilang:</h6>
                             <input type="date" value={input.sana} onChange={sana}/>
                         </div>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-6 col-sm-12">
                         <h6>Obuna:</h6>
                         <select name="" id="" value={input.obuna} onChange={obuna}>
                             <option value="">Barchasi</option>
@@ -138,27 +138,32 @@ function XarajatlarRoyxati({getXarajatlar, saveXarajatlar, deleteXarajatlar, xar
                 </div>
             </div>
 
-            <div className="rowStyleH2">
+            <div className="rowStyleHRR2">
                 <div className="qoshish">
                     <h5>Barcha savdolar</h5>
                     <Link to={'/headerthird/xarajatQoshish'}>
                         <button className='btn btn-primary'>+Qo'shish</button>
                     </Link>
                 </div>
-                <div className="izlash">
-                    <p>Ko'rsatildi</p>
-                    <select name="" id="" value={input.view} onChange={view}>
-                        <option value="">25</option>
-                        <option value="">All</option>
-                    </select>
-                    <button><img src={CSV} alt=""/> Export CSV</button>
-                    <button><img src={Excel} alt=""/> Export Excel</button>
-                    <button><img src={Print} alt=""/> Print</button>
-                    <button><img src={Pdf} alt=""/>Export PDF</button>
-                    <button><img src={Data} alt=""/>Malumotlarni kamaytirish</button>
-                    <input type="text" placeholder='Izlash...' value={input.izlash} onChange={izlash}/>
+                <div className="izlashHRR2">
+                    <div className="izlashBox1">
+                        <p>Ko'rsatildi</p>
+                        <select name="" id="" value={input.view} onChange={view}>
+                            <option value="">25</option>
+                            <option value="">All</option>
+                        </select>
+                        <button><img src={CSV} alt=""/> Export CSV</button>
+                        <button><img src={Excel} alt=""/> Export Excel</button>
+                        <button><img src={Print} alt=""/> Print</button>
+                        <button><img src={Pdf} alt=""/>Export PDF</button>
+                        <button><img src={Data} alt=""/>Malumotlarni kamaytirish</button>
+                    </div>
+                    <div className="izlashBox2">
+                        <input type="text" placeholder='Izlash...' value={input.izlash} onChange={izlash}/>
+                    </div>
+                    
                 </div>
-                <div className="table-responsive">
+                <div className="table-responsive mb-4">
                     <table className='table table-striped table-bordered mt-4 '>
                         <thead>
                         <tr>

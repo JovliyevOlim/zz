@@ -103,7 +103,7 @@ function Headerthird() {
                 <Route path={'/headerthird/utkazmaRuyxati/taxrirlash'} component={Taxrirlash4}/>
                 <Route path={'/headerthird/utkazmaRuyxati'} component={OtkazmalarRoyxati}/>
                 <Route path={'/headerthird/utkazmaRuyxati/taxrirlash'} component={Yangiotkazma}/>
-                {/*<Route path={'/headerthird/yangiOtkazma'} component={YangiOtkazma}/>*/}
+                <Route path={'/headerthird/yangiOtkazma'} component={YangiOtkazma}/>
                 <Route path={'/headerthird/xarajatRuyxati'} component={XarajatlarRoyxati}/>
                 <Route path={'/headerthird/xarajatQoshish'} component={XarajatQoshish}/>
                 <Route path={'/headerthird/xarajatTurlari'} component={XarajatTurlari}/>

@@ -52,18 +52,18 @@ function MijozlarXisoboti() {
     })
 
     return (
-        <div className="col-md-12 mt-2">
-            <div className="textHeader">
+        <div className="col-md-12 mt-4 mb-4">
+            <div className="textHeaderMIX">
                 <h2>Mijozlar xisobot</h2>
             </div>
-            <div className="rowStyleH">
+            <div className="rowStyleMIX">
                 <div className="qoshish">
                     <h5>Filtirlash</h5>
                 </div>
                 <div className="row cont">
                     <div className="col-md-6">
                         <h6>Xodim:</h6>
-                        <select value={inputvalue.xodim} onChange={xodim} name="" id="">
+                        <select className='inptData' value={inputvalue.xodim} onChange={xodim} name="" id="">
                             <option value="#">Barcha xodimlar</option>
                             <option value="#"> . . . . . .</option>
                         </select>
@@ -75,7 +75,7 @@ function MijozlarXisoboti() {
                 <div className="row">
                     <div className="col-md-6">
                         <h6>Baza:</h6>
-                        <select name="" id="" value={inputvalue.baza} onChange={baza} className={'form-control'}>
+                        <select name="" id="" value={inputvalue.baza} onChange={baza} className={'inptData'}>
                             <option value="">Tanlash</option>
                             <option value="">Shefir zavod</option>
                             <option value="">Instrumentlar</option>
@@ -83,7 +83,7 @@ function MijozlarXisoboti() {
                     </div>
                     <div className="col-md-6">
                         <h6>Sanani belgilang:</h6>
-                        <select name="" id="" className={'form-control'} value={inputvalue.sananibelgilang} onChange={sananibelgilang}>
+                        <select name="" id="" className={'inptData'} value={inputvalue.sananibelgilang} onChange={sananibelgilang}>
                             <option value="">Bugun</option>
                             <option value="">Kecha</option>
                             <option value="">Oxirgi 7 kun</option>
@@ -102,7 +102,7 @@ function MijozlarXisoboti() {
                 </div>
             </div>
 
-            <div className="rowStyleH2">
+            <div className="rowSty">
                 <div className="col-md-12">
                     <h5>Summary</h5>
                     <h3>Jami savdo - Jami sotuvlar bo`yicha daromad: ( backend-backend = backend )</h3>
@@ -110,16 +110,16 @@ function MijozlarXisoboti() {
                 </div>
             </div>
 
-            <div className="rowStyleH2">
-                <div className={'d-flex'}>
-                    <Link to={'/headerthird/mijozlarXisoboti/1'}><button className={'btn btn-outline-danger'}>Savdolar</button></Link>
-                    <Link to={'/headerthird/mijozlarXisoboti/2'}><button className={'btn btn-outline-danger'}>Ulushli savdolar</button></Link>
-                    <Link to={'/headerthird/mijozlarXisoboti/3'}><button className={'btn btn-outline-danger'}>Xarajatlar</button></Link>
-                    <Link to={'/headerthird/mijozlarXisoboti/4'}><button className={'btn btn-outline-danger'}>Mijozlar bn ishlash</button></Link>
+            <div className="rowStyleMIX2">
+                <div className={'btnBoxPage'}>
+                    <Link to={'/headerthird/mijozlarXisoboti/1'}><button className={'btnPagenesion'}>Savdolar</button></Link>
+                    <Link to={'/headerthird/mijozlarXisoboti/2'}><button className={'btnPagenesion'}>Ulushli savdolar</button></Link>
+                    <Link to={'/headerthird/mijozlarXisoboti/3'}><button className={'btnPagenesion'}>Xarajatlar</button></Link>
+                    <Link to={'/headerthird/mijozlarXisoboti/4'}><button className={'btnPagenesion'}>Mijozlar bn ishlash</button></Link>
                 </div>
 
                 <div className="qoshish mt-4">
-                    <h5>Barcha savdolar</h5>
+                    <h5></h5>
                     {/*<Link to={'/third/xarajatlarRuyxati/xarajatqoshish'}><button className='btn btn-primary'>+Qo'shish</button></Link>*/}
                 </div>
 

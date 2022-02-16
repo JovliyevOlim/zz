@@ -1,3 +1,4 @@
+
 function MijozlarBnIshlash(){
     return(
         <div className={'row'}>

@@ -6,6 +6,7 @@ import Data from '../../../../../../../img/Data.png'
 import Pdf from '../../../../../../../img/PDF.png'
 import Edit from '../../../../../../../img/Edit.png'
 import Delete from '../../../../../../../img/Delete.png'
+import './xarajat.css'
 
 function Xarajatlar3(){
 
@@ -28,22 +29,29 @@ function Xarajatlar3(){
     }
 
     return(
-        <div>
-
-            <div className="izlash">
-                <p>Ko'rsatildi</p>
-                <select value={input.view} onChange={view} name="" id="">
-                    <option value="">25</option>
-                    <option value="">500</option>
-                    <option value="">1,000</option>
-                    <option value="">All</option>
-                </select>
-                <button> <img src={CSV} alt="" /> Export CSV</button>
-                <button><img src={Excel} alt="" /> Export Excel</button>
-                <button><img src={Print} alt="" /> Print</button>
-                <button><img src={Pdf} alt="" />Export PDF</button>
-                <button> <img src={Data} alt="" />Malumotlarni kamaytirish </button>
-                <input type="text" placeholder='Izlash...' value={input.izlash} onChange={izlash}/>
+        <div className='rowStyleXT'>
+             <div className="qoshish">
+                    <h5>Xarajatlar</h5>
+            </div>
+            <div className="izlashXT">
+                <div className="izlashBox1">
+                    <p>Ko'rsatildi</p>
+                    <select value={input.view} onChange={view} name="" id="">
+                        <option value="">25</option>
+                        <option value="">500</option>
+                        <option value="">1,000</option>
+                        <option value="">All</option>
+                    </select>
+                    <button> <img src={CSV} alt="" /> Export CSV</button>
+                    <button><img src={Excel} alt="" /> Export Excel</button>
+                    <button><img src={Print} alt="" /> Print</button>
+                    <button><img src={Pdf} alt="" />Export PDF</button>
+                    <button> <img src={Data} alt="" />Malumotlarni kamaytirish </button>
+                </div>
+                <div className="izlashBox2">
+                    <input type="text" placeholder='Izlash...' value={input.izlash} onChange={izlash}/>
+                </div>
+                
             </div>
             <div className="table-responsive">
                 <table className='table table-striped table-bordered mt-4 '>
