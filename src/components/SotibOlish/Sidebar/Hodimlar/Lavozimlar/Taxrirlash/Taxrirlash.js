@@ -43,17 +43,17 @@ function Taxrirlash({getLavozim, editLavozim, lavozimlar, saveLavozim}) {
         }
     )
 
+    const [permission,setpermission] = useState([])
+
     const [Xbarchasi,setXbarchasi] = useState('')
     function changexBarchasini(e) {
         input.xBarchasinibelgilash = e.target.checked
         let a = {...input}
         setInput(a)
-        if (e.target.checked === false){
-            setXbarchasi('CHECK_ALL_USER')
-        }else {
-            setXbarchasi('')
-        }
-        console.log(Xbarchasi)
+        changexodimkorish(e)
+        changexodimqoshish(e)
+        changexodimochirish(e)
+        changexodimtaxrirlash(e)
     }
     // const [name,setName] = useState('')
     function changename(e) {
@@ -71,53 +71,57 @@ function Taxrirlash({getLavozim, editLavozim, lavozimlar, saveLavozim}) {
 
     const [xodimkorish,setXodimkorish] = useState('')
     function changexodimkorish(e) {
-        input.xodimkorish = e.target.checked
-        let a = {...input}
-        setInput(a)
+
         if (e.target.checked ===false){
             setXodimkorish('VIEW_USER')
         }else {
             setXodimkorish('')
         }
+        input.xodimkorish = e.target.checked
+        let a = {...input}
+        setInput(a)
         console.log(xodimkorish)
     }
 
     const [xodimqoshish,setXodimqoshish] = useState('')
     function changexodimqoshish(e) {
-        input.xodimqoshish = e.target.checked
-        let a = {...input}
-        setInput(a)
+
         if (e.target.checked===false){
             setXodimqoshish('ADD_USER')
         }else {
             setXodimqoshish('')
         }
+        input.xodimqoshish = e.target.checked
+        let a = {...input}
+        setInput(a)
         console.log(xodimqoshish)
     }
 
     const [xodimtaxrirlash,setXodimtaxrirlash] = useState('')
     function changexodimtaxrirlash(e) {
-        input.xodimtaxrirlash = e.target.checked
-        let a = {...input}
-        setInput(a)
+
         if(e.target.checked===false){
             setXodimtaxrirlash("EDIT_USER")
         }else {
             setXodimtaxrirlash('')
         }
+        input.xodimtaxrirlash = e.target.checked
+        let a = {...input}
+        setInput(a)
         console.log(xodimtaxrirlash)
     }
 
     const [deleteXodim,setdeleteXodim] = useState('')
     function changexodimochirish(e) {
-        input.xodimochirish = e.target.checked
-        let a = {...input}
-        setInput(a)
+
         if (e.target.value===false){
             setdeleteXodim("DELETE_USER")
         }else {
             setdeleteXodim('')
         }
+        input.xodimochirish = e.target.checked
+        let a = {...input}
+        setInput(a)
         console.log(deleteXodim)
     }
 
@@ -263,7 +267,6 @@ function Taxrirlash({getLavozim, editLavozim, lavozimlar, saveLavozim}) {
         }
         console.log(deletediller)
     }
-
     const [mijozbarcha,setmijozbarcha] = useState('')
     function changemBarchasi(e) {
         input.mBarchasinibelgilash = e.target.checked
@@ -276,7 +279,6 @@ function Taxrirlash({getLavozim, editLavozim, lavozimlar, saveLavozim}) {
         }
         console.log(mijozbarcha)
     }
-
     const [lang3,setlang3] = useState('')
     function changemlang3(e) {
         input.lang3 = e.target.checked
@@ -428,6 +430,9 @@ function Taxrirlash({getLavozim, editLavozim, lavozimlar, saveLavozim}) {
                 <div className="row justify-content-center " >
                     <div className="l1 p-4 mt-5 col-sm-10 col-md-7 col-5 border">
                         <div>
+                            {
+                                console.log(input)
+                            }
                             <label htmlFor={'l'}>Lavozim nomi</label>
                             <input type="text" className={'form-control mt-2'} value={input.name} onChange={changename} placeholder={'Lavozim nomi'}/>
                             <div className="ruxsat mt-4">

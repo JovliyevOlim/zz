@@ -45,6 +45,7 @@ import SozlamalarBtn from './Sidebar/Settings/bazalar/SozlamalarBtn'
 import Yangiotkazma from './Sidebar/Baza/otkazmalarRoyxati/taxrirlash/Taxrirlash'
 import Dukon1 from './Sidebar/Settings/DukonSozlamalari/dukon/Dukon1'
 import Soliq from './Sidebar/Settings/DukonSozlamalari/soliq/Soliq'
+import BarchaSavdolar from "./Sidebar/Savdo/BarcaSavdolar/BarchaSavdolar";
 function Headerthird() {
 
     const [classheader,setClassheader] = useState('classheader1')
@@ -60,7 +61,7 @@ function Headerthird() {
     const history = useHistory()
 
     useEffect(() => {
-        history.push('/headerthird/third')
+        history.push('/headerthird')
     }, [])
 
     window.addEventListener('popstate',function (){
@@ -73,7 +74,8 @@ function Headerthird() {
                 <Header sidebarfunc={sidebarheader}/>
             </div>
             <Switch>
-                <Route path={'/headerthird/third'} component={Third}/>
+
+                <Route path={'/headerthird/hodimlarruyxati/taxrirlash/:id?'} component={Taxrirlash}/>
                 <Route path={'/headerthird/hodimlarruyxati/taxrirlash/:id?'} component={Taxrirlash}/>
                 <Route path={'/headerthird/hodimlarruyxati/taxrirlash'} component={Taxrirlash}/>
                 <Route path={'/headerthird/hodimlarruyxati/view/:name?/:login?/:email?'} component={Korish}/>
@@ -95,6 +97,7 @@ function Headerthird() {
                 <Route path={'/headerthird/xaridlarRuyxati'} component={HaridlarRoyxati}/>
                 {/*fix me xaridlar ruyxati taxrirlash*/}
                 <Route path={'/headerthird/xaridlarRuyxati/1'} component={Xarid}/>
+                <Route path={'/headerthird/barcasavdolar'} component={BarchaSavdolar}/>
                 <Route path={'/headerthird/mahsulotQoshish'} component={SavdoQoshish}/>
                 <Route path={'/headerthird/turliTavar'} component={SavdoOynasi}/>
                 <Route path={'/headerthird/utkazmaRuyxati/taxrirlash'} component={Taxrirlash4}/>
@@ -117,7 +120,7 @@ function Headerthird() {
                 <Route path={'/headerthird/soliqlarXisoboti'} component={SoliqlarXisoboti}/>
                 <Route path={'/headerthird/bazalarSetting'} component={Bazalar}/>
                 <Route path={'/headerthird/bazaSozlama'} component={SozlamalarBtn}/>
-
+                <Route path={'/headerthird/'} component={Third}/>
             </Switch>
         </div>
     );

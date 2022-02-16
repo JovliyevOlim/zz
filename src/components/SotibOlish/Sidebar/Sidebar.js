@@ -14,11 +14,33 @@ import Savdo from "./Savdo/Savdo";
 import logo from '../../../img/LOGO.png'
 import {Route, Switch, Link} from "react-router-dom";
 import functionreducer from "../../../reducer/functionreducer";
+import {active} from "../../../reducer/functionreducer";
 import xodimReducer from "./Hodimlar/reducer/XodimReducer";
+import users from "../../../reducer/users";
 
-function Sidebar({functionreducer}) {
+function Sidebar({functionreducer,active,users}) {
+
+    useEffect(()=>{
+        // permission()
+
+    })
+    function sidebaractive(){
+            active()
+    }
+
+    const [adduser,setadduser]=useState(true)
 
 
+    function permission(){
+        console.log(users.users.role.permissions)
+        users.users.role.permissions.map(item=>{
+            switch (item){
+                case "ADD_USER":;
+                setadduser(true)
+                    break;
+            }
+        })
+    }
 
     return (
                 <div className={`col-md-12 sidebar ${functionreducer.func.class3} ${functionreducer.func.class4}`}>
@@ -29,7 +51,7 @@ function Sidebar({functionreducer}) {
                         <div className="row bosh">
                             <div className="imgDiv">
                                 <div className={'d-flex align-items-center'}>
-                                    <Link className={'d-flex align-items-center'} to={'/headerthird/third'}><svg className={'sidebar-img'} width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <Link onClick={sidebaractive} className={'d-flex align-items-center'} to={'/headerthird/'}><svg className={'sidebar-img'} width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M5 10H7C9 10 10 9 10 7V5C10 3 9 2 7 2H5C3 2 2 3 2 5V7C2 9 3 10 5 10Z" stroke="#0044FF" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
                                         <path d="M17 10H19C21 10 22 9 22 7V5C22 3 21 2 19 2H17C15 2 14 3 14 5V7C14 9 15 10 17 10Z" stroke="#0044FF" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
                                         <path d="M17 22H19C21 22 22 21 22 19V17C22 15 21 14 19 14H17C15 14 14 15 14 17V19C14 21 15 22 17 22Z" stroke="#0044FF" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
@@ -43,13 +65,16 @@ function Sidebar({functionreducer}) {
 
                         </div>
 
-                            <Hodimlar/>
+                        {
+                           adduser ?  <Hodimlar/> :''
+                        }
+
                         <Hamkorlar/>
                         <Maxsulotlar/>
                         <Haridlar/>
                         <Savdo/>
                         <Baza/>
-                        {/*<MahBaza/>*/}
+                        <MahBaza/>
                         <Xarajatlar/>
                         <Xirsobotlar/>
                         <Sozlamalar/>
@@ -61,4 +86,4 @@ function Sidebar({functionreducer}) {
     )
 }
 
-export default connect(functionreducer) (Sidebar)
+export default connect((functionreducer,users),{active}) (Sidebar)

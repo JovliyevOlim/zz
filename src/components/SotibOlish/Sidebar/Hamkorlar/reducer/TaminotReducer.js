@@ -24,6 +24,7 @@ const slice = createSlice({
                     item.login = action.payload.login
                 }
             })
+            console.log('EDITED_TAMINOT');
         },
         deletefrom:(state,action)=>{
             console.log('DELETE_TAMINOT')

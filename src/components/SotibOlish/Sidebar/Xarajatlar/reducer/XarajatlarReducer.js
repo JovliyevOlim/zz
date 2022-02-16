@@ -51,7 +51,7 @@ export const editXarajatlar=(data)=>apiCall({
 });
 
 export const deleteXarajatlar=(data)=>apiCall({
-    url: '/outlay',
+    url: '/outlay/'+data,
     method:'delete',
     data,
     onSuccess: slice.actions.deletefrom.type

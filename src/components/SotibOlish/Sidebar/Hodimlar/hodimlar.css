@@ -9,15 +9,9 @@
     font-size: 16px;
     line-height: 24px;
     /* identical to box height, or 150% */
-
-
     color: #3A3C40;
 }
 
-
-.h .ul:hover{
-
-}
 li{
     list-style: disc;
     /*border: 1px solid red;*/

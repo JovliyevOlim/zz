@@ -13,7 +13,7 @@ import {toast} from "react-toastify";
 import users ,{saveusers,getusers}from "../../reducer/users";
 
 
-function Home({saveusers, getusers, linkpost,active}) {
+function Home({saveusers, getusers,users, linkpost,active}) {
 
     useEffect(() => {
     }, [])
@@ -63,14 +63,16 @@ function Home({saveusers, getusers, linkpost,active}) {
         }
     }
 
+
+
     function placeholder() {
         Setplaceholderl('parol yoki login xato !')
         Setplaceholderp('parol yoki login xato !')
     }
 
     function testusers() {
-        linkpost()
         saveusers({username:inputlogin,password:inputparol})
+        linkpost()
         }
 
     return (

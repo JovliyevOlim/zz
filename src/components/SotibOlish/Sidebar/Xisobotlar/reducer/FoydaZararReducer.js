@@ -9,12 +9,14 @@ const slice = createSlice({
     },
     reducers: {
         getFrom: (state, action) => {
-            state.foydazarar = action.payload
-            console.log(action.payload);
+            state.foydazarar = action.payload.object
+            console.log(action.payload.object);
+            console.log('keldi_foyda');
         },
         savefrom: (state,action) => {
                     console.log(action.payload)
             // toast.success('Saqlandi')
+            console.log("SAQLANDI_FOYDA");
         },
         editfrom: (state,action) => {
             state.foydazarar.map((item,index)=>{
@@ -25,7 +27,7 @@ const slice = createSlice({
             // toast.success('O`zgartirildi')
         },
         deletefrom:(state,action)=>{
-
+            console.log("DELETETD_FOYDA");
             // toast.info('O`chirildi')
         }
 
@@ -39,22 +41,22 @@ export const getFoydaZarar=()=>apiCall({
 });
 
 export const saveFoydaZarar=(data)=>apiCall({
-    url: '/benefit-lost/one-date',
+    url: '/benefit-lost',
     method:'post',
     data,
     onSuccess: slice.actions.savefrom.type
 });
 
 export const editFoydaZarar=(data)=>apiCall({
-    url: '/user',
+    url: '/benefit-lost',
     method: 'post',
     data,
     onSuccess: slice.actions.editfrom.type
 });
 
 export const deleteFoydaZarar=(data)=>apiCall({
-    url: '/user',
-    method:'post',
+    url: '/benefit-lost/'+data,
+    method:'delete',
     data,
     onSuccess: slice.actions.deletefrom.type
 })

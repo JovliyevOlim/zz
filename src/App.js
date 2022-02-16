@@ -3,16 +3,14 @@ import Home from "./components/Hbody/Home";
 import './App.css'
 import {connect} from "react-redux";
 import {active} from "./reducer/functionreducer";
-import SecondPage from "./components/Pricing/SecondPage/SecondPage";
 import {useState} from "react";
 import {Route, Switch, Link, Redirect} from "react-router-dom";
 import Headerthird from "./components/SotibOlish/headerthird";
 import {useHistory} from "react-router-dom";
-import HodimlarRoyhati from "./components/SotibOlish/Sidebar/Hodimlar/hodimlarRoyxati/HodimlarRoyhati";
 import functionreducer from "./reducer/functionreducer";
 import Sidebar from "./components/SotibOlish/Sidebar/Sidebar";
-import OtkazmalarRoyxati from './components/SotibOlish/Sidebar/Baza/otkazmalarRoyxati/OtkazmalarRoyxati'
-function App({func,active}) {
+import users from "./reducer/users";
+function App({functionreducer,active,users}) {
     const history = useHistory()
 
     useEffect(() => {
@@ -22,20 +20,25 @@ function App({func,active}) {
     const [link, Setlink] = useState('')
 
     function linkpost() {
-        history.push('')
-        Setlink('/headerthird')
+            history.push('')
+            Setlink('/headerthird')
+        // else{
+        //     history.push('')
+        //     Setlink('/home')
+        //     console.log('fallsese')
+        // }
     }
 
     return (
         <div className={'app-css'}>
-            <div className={`${func.class1}`}>
+            <div className={`${functionreducer.func.class1}`}>
                 {
-                    func.actives ? <Sidebar/>
+                    functionreducer.func.actives ? <Sidebar/>
                         : ''
                 }
 
             </div>
-            <div className={`${func.class2}`}>
+            <div className={`${functionreducer.func.class2}`}>
                 <Switch>
                     <Route path={'/home'} render={() => <Home linkpost={linkpost}/>}/>
                     <Route path={'/headerthird'} component={Headerthird}/>
@@ -47,4 +50,4 @@ function App({func,active}) {
     );
 }
 
-export default connect(({functionreducer: {func}}) => ({func}),{active})(App);
+export default connect((functionreducer,users),{active})(App);
