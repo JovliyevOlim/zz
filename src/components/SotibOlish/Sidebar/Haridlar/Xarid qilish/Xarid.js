@@ -4,9 +4,6 @@ import {ModalBody, ModalHeader, ModalFooter, Modal} from "reactstrap";
 import {connect} from "react-redux";
 import {getXarid, saveXarid, deleteXarid, editXarid} from '../reducer/XaridReducer'
 import {Link} from 'react-router-dom'
-import LavozimReducer, {getLavozim,lavozimlar, saveLavozim} from "../../Hodimlar/reducer/LavozimReducer";
-import XodimReducer, {getXodim, saveXodim} from "../../Hodimlar/reducer/XodimReducer";
-import users from "../../../../../reducer/users";
 import TaminotReducer, {
     deleteTaminot,
     editTaminot,
