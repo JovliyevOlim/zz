@@ -81,7 +81,7 @@ function Lavozimlar({getLavozim, saveLavozim, deleteLavozim, editLavozim, lavozi
                                 </select>
                             </div>
                             <div className="izlashBox2">
-                                <input type="text" placeholder='Izlash...'/>
+                                <input type="text" value={inSearch2.inputputsearch2} onChange={search} placeholder='Izlash...'/>
                             </div>
                         </div>
                         <div className="table-responsive">
@@ -112,18 +112,6 @@ function Lavozimlar({getLavozim, saveLavozim, deleteLavozim, editLavozim, lavozi
                                 </tr>)
                                 }
 
-                                {/*{*/}
-                                {/*    lavozimlar.map(item => <tr key={item.id}>*/}
-                                {/*        <td>{item.name}</td>*/}
-                                {/*        <td>*/}
-                                {/*            <Link to={'/headerthird/lavozimlar/taxrirlash'}>*/}
-                                {/*                <button className='taxrirlash'><img src={Edit} alt=""/> Taxrirlash</button>*/}
-                                {/*            </Link>*/}
-                                {/*            */}
-                                {/*            <button className='ochirish' onClick={()=>deletel(item)}><img src={Delete} alt=""/> O'chirish</button>*/}
-                                {/*        </td>*/}
-                                {/*    </tr>)*/}
-                                {/*}*/}
                                 </tbody>
                             </table>
                         </div>

@@ -17,14 +17,11 @@ const slice = createSlice({
         savefrom: (state, action) => {
             state.xodimlar.unshift(action.payload)
             console.log(action.payload)
-            toast.success('SAQLANDI')
+            console.log('save')
+            toast.success('SAQLANDI_XODIM')
         },
         editfrom: (state, action) => {
-            state.xodimlar.map((item, index) => {
-                if (item.id === action.payload.id) {
-                    item.login = action.payload.login
-                }
-            })
+           console.log('edit')
             toast.success('TAXRIRLANDI')
         },
         deletefrom: (state, action) => {
@@ -51,8 +48,8 @@ export const saveXodim = (data) => apiCall({
 });
 
 export const editXodim = (data) => apiCall({
-    url: '/user',
-    method: 'post',
+    url: '/user/'+data.id,
+    method: 'put',
     data,
     onSuccess: slice.actions.editfrom.type
 });

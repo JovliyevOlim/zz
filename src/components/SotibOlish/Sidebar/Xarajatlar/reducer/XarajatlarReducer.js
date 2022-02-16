@@ -1,6 +1,5 @@
 import {createSlice} from "@reduxjs/toolkit";
 import {apiCall} from "../../../../../api";
-// import {toast} from "react-toastify";
 
 const slice = createSlice({
     name: 'xarajatlar',
@@ -9,12 +8,11 @@ const slice = createSlice({
     },
     reducers: {
         getFrom: (state, action) => {
-            state.xarajatlar = action.payload
-            console.log(action.payload);
+            state.xarajatlar = action.payload.object
+            console.log(action.payload.object);
         },
         savefrom: (state,action) => {
             state.xarajatlar.unshift(action.payload)
-            // toast.success('Saqlandi')
         },
         editfrom: (state,action) => {
             state.xarajatlar.map((item,index)=>{
@@ -22,39 +20,39 @@ const slice = createSlice({
                     item.login = action.payload.login
                 }
             })
-            // toast.success('O`zgartirildi')
+            console.log('saqlandi_xarajat');
         },
         deletefrom:(state,action)=>{
 
+            console.log('DELETEED_XARAJAT');
             // toast.info('O`chirildi')
         }
-
     }
 });
 
 export const getXarajatlar=()=>apiCall({
-    url: '/user',
+    url: '/outlay/get-by-businessId/1',
     method:'get',
     onSuccess: slice.actions.getFrom.type
 });
 
 export const saveXarajatlar=(data)=>apiCall({
-    url: 'outlay/get-by-businessId/1',
+    url: '/outlay',
     method:'post',
     data,
     onSuccess: slice.actions.savefrom.type
 });
 
 export const editXarajatlar=(data)=>apiCall({
-    url: '/user',
+    url: '/outlay',
     method: 'post',
     data,
     onSuccess: slice.actions.editfrom.type
 });
 
 export const deleteXarajatlar=(data)=>apiCall({
-    url: '/get-by-businessId/1',
-    method:'post',
+    url: '/outlay',
+    method:'delete',
     data,
     onSuccess: slice.actions.deletefrom.type
 })

@@ -407,7 +407,6 @@ function Taxrirlash({getLavozim, editLavozim, lavozimlar, saveLavozim}) {
         console.log(deletmijoz)
     }
 
-
     function saqla() {
         saveLavozim(
             {
@@ -418,6 +417,7 @@ function Taxrirlash({getLavozim, editLavozim, lavozimlar, saveLavozim}) {
             description:null
         }
         )
+        getLavozim()
     }
 
 
@@ -600,7 +600,6 @@ function Taxrirlash({getLavozim, editLavozim, lavozimlar, saveLavozim}) {
                                 <label htmlFor={'tax2'}>O`chirish</label>
                             </div>
                         </div>
-                        {/*/headerthird/lavozimlar*/}
                         <Link to={'/headerthird/lavozimlar'}>
                             <button className={'btn btn-primary mt-4 ml-4'} onClick={saqla}>Saqlash</button>
                         </Link>
@@ -608,7 +607,6 @@ function Taxrirlash({getLavozim, editLavozim, lavozimlar, saveLavozim}) {
                     </div>
 
                 </div>
-
 
             </div>
 

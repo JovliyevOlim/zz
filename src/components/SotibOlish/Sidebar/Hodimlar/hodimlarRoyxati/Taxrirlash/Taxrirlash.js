@@ -4,13 +4,14 @@ import {Modal,ModalBody,ModalFooter,ModalHeader} from "reactstrap";
 import {useState,useEffect} from "react";
 import {connect} from "react-redux";
 import LavozimReducer, {getLavozim, saveLavozim} from "../../reducer/LavozimReducer";
-import XodimReducer, {saveXodim,getXodim} from "../../reducer/XodimReducer";
+import XodimReducer, {saveXodim,getXodim,editXodim} from "../../reducer/XodimReducer";
 import {Link} from 'react-router-dom'
 import users from "../../../../../../reducer/users";
-function Taxrirlash({getLavozim,saveXodim,LavozimReducer,getXodim,users}) {
+function Taxrirlash({getLavozim,saveXodim,LavozimReducer,getXodim,users,match,XodimReducer,editXodim,}) {
 
     useEffect(()=>{
        getLavozim()
+        editx()
     },[])
 
     const [input, setInput] = useState(
@@ -24,6 +25,25 @@ function Taxrirlash({getLavozim,saveXodim,LavozimReducer,getXodim,users}) {
             parolTakror:''
         }
     );
+
+
+   function  editx(){
+        if(match.params.id !== undefined){
+                getXodim()
+        }
+        XodimReducer.xodimlar.map(item=>{
+            if(item.id == match.params.id){
+                input.username=item.username
+                input.firstName=item.firstName
+                input.lastName=item.lastName
+                input.parol=''
+                input.roleName=item.role.id
+                let a ={...input}
+                setInput(a)
+            }
+        })
+    }
+
 
     function onchangeuserName(event){
         input.username = event.target.value
@@ -62,17 +82,40 @@ function Taxrirlash({getLavozim,saveXodim,LavozimReducer,getXodim,users}) {
     }
 
     function saqla(){
-        saveXodim({
-            firstName: input.firstName,
-            lastName: input.lastName,
-            username: input.username,
-            password: input.parolTakror,
-            roleId: input.roleName,
-            branchId:1,
-            businessId: 1,
-            enabled: false,
-            photoId:1
-        })
+
+       //  if(match.params.id !== undefined){
+       //      editXodim({
+       //          firstName: input.firstName,
+       //          lastName: input.lastName,
+       //          username: input.username,
+       //          password: input.parolTakror,
+       //          roleId: input.roleName,
+       //          branchId:1,
+       //          businessId: 1,
+       //          enabled: false,
+       //          photoId:1,
+       //          id:match.params.id
+       //      })
+       //  }
+       // else{
+            saveXodim({
+                firstName: input.firstName,
+                lastName: input.lastName,
+                username: input.username,
+                password: input.parolTakror,
+                roleId: input.roleName,
+                branchId:1,
+                businessId: 1,
+                enabled: false,
+                photoId:1
+            })
+
+        if (input.parol === input.parolTakror){
+            toggle()
+            console.log('Parol mos');
+        }else {
+            alert('= = - - > ERROR PAROL MOS EMAS')
+        }
     }
 
     const [active,setActive] = useState(false)
@@ -89,6 +132,7 @@ function Taxrirlash({getLavozim,saveXodim,LavozimReducer,getXodim,users}) {
                         <label htmlFor={'login1'}>Login</label>
                         <input type="text" id={'login1'} value={input.username} onChange={onchangeuserName} placeholder={'Mr/Mrs/Miss'} className={'form-control'}/>
                     </div>
+
                     <div className="col-sm-12 col-md-4 mb-2">
                         <label htmlFor={'ismi'} >Ismi</label>
                         <input type="text" onChange={onchangefirstName} id={'ismi'} placeholder={'Ismi'} value={input.firstName} className={'form-control'}/>
@@ -142,17 +186,16 @@ function Taxrirlash({getLavozim,saveXodim,LavozimReducer,getXodim,users}) {
                                            style={{width:'20px',height:'20px',marginLeft:'20px'}}
                                            id={'b1'}/>
                                 </div>
-                                {console.log(input)}
+
                             </div>
                         </ModalBody>
                         <ModalFooter>
-                            <button className={'btn btn-primary btnSaqlash'}>Saqlash</button>
+                            <button className={'btn btn-primary btnSaqlash'} onClick={saqla}>Saqlash</button>
                             <button className={'btn btn-primary btnLogin'} onClick={toggle}>Chiqish</button>
                         </ModalFooter>
                     </Modal>
                 </div>
         </div>
-
     )
 }
-export default connect((LavozimReducer,XodimReducer,users),{getLavozim,saveLavozim,saveXodim,getXodim}) (Taxrirlash)
+export default connect((LavozimReducer,XodimReducer,users),{getLavozim,saveLavozim,saveXodim,getXodim,editXodim}) (Taxrirlash)

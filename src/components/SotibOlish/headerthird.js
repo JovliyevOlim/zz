@@ -74,6 +74,7 @@ function Headerthird() {
             </div>
             <Switch>
                 <Route path={'/headerthird/third'} component={Third}/>
+                <Route path={'/headerthird/hodimlarruyxati/taxrirlash/:id?'} component={Taxrirlash}/>
                 <Route path={'/headerthird/hodimlarruyxati/taxrirlash'} component={Taxrirlash}/>
                 <Route path={'/headerthird/hodimlarruyxati/view/:name?/:login?/:email?'} component={Korish}/>
                 <Route path={'/headerthird/hodimlarruyxati'} component={HodimlarRoyhati}/>

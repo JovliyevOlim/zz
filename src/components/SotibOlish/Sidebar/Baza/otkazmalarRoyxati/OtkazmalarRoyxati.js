@@ -94,7 +94,7 @@ function OtkazmalarRoyxati({getOtkazma, otkazmalar, deleteOtkazma, saveOtkazma})
                                 }
                             })
                                 .map(item => <tr key={item.id}>
-                                <td>{item.name}</td>
+                                <td>{item.date}</td>
                                 <td>
                                     <Link to={'/headerthird/utkazmaRuyxati/taxrirlash'}>
                                         <button className='taxrirlash'><img src={Edit} alt=""/> Taxrirlash</button>
@@ -103,7 +103,9 @@ function OtkazmalarRoyxati({getOtkazma, otkazmalar, deleteOtkazma, saveOtkazma})
                                 </td>
                             </tr>)
                         }
-
+                        {
+                            console.log(otkazmalar)
+                        }
                         </tbody>
                     </table>
                 </div>
