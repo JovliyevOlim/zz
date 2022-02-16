@@ -3,10 +3,12 @@ import mahsulot from '../../../../img/box-tick.svg'
 import './savdo.css'
 import {useState} from 'react'
 import {Switch,Route,Link} from 'react-router-dom'
+import {connect} from "react-redux";
+import {active} from "../../../../reducer/functionreducer";
 
-function Savdo() {
+function Savdo({active}) {
 
-    const [active,setActive] = useState(false);
+    const [active2,setActive] = useState(false);
 
 
     const [classs,setClasss] = useState('');
@@ -14,7 +16,7 @@ function Savdo() {
     const [fontsiza,setfontsize] = useState('');
 
     function toggle() {
-        setActive(!active)
+        setActive(!active2)
         if(classs===''){
             setClasss('right2')
             setfill('stroke')
@@ -27,6 +29,9 @@ function Savdo() {
         }
     }
 
+    function sidebaractive(){
+        active()
+    }
     return(
         <div className={'row mahsulot'}>
             <div className="imgDiv" onClick={toggle}>
@@ -46,12 +51,12 @@ function Savdo() {
 
             </div>
             {
-                active?<ul>
+                active2?<ul>
                     {/*<li><Link to={'/mahsulotRuyxati'} className={'mahqosh'}>Barcha savdolar</Link></li>*/}
                     <li><Link to={'/headerthird/barcasavdolar'} className={'mahqosh'}>Barcha Savdolar</Link></li>
-                    <li><Link to={'/headerthird/mahsulotQoshish'} className={'mahqosh'}>Savdo qo`shish</Link></li>
+                    <li onClick={sidebaractive}><Link to={'/headerthird/mahsulotQoshish'} className={'mahqosh'}>Savdo qo`shish</Link></li>
                     {/*<li><Link to={'/mahsulotShtrix'} className={'mahqosh'}>SAVDO</Link></li>*/}
-                    <li><Link to={'/headerthird/turliTavar'} className={'mahqosh'}>Savdo oynasi</Link></li>
+                    <li onClick={sidebaractive}><Link to={'/headerthird/turliTavar'} className={'mahqosh'}>Savdo oynasi</Link></li>
                     {/*<li><Link to={'/mahsulotImporti'} className={'mahqosh'}>lang_v1_add_draft</Link></li>*/}
                     {/*<li><Link to={'/mavjudImport'} className={'mahqosh'}>Eslatmalar ro`yxati</Link></li>*/}
                     {/*<li><Link to={'/sotuvNarxGuruhlanishi'} className={'mahqosh'}>lang_v1.add_quotation</Link></li>*/}
@@ -64,4 +69,4 @@ function Savdo() {
         </div>
     )
 }
-export default Savdo
+export default connect(({functionreducer:{func}})=>({func}),{active}) (Savdo)

@@ -1,18 +1,20 @@
 import down from '../../../../img/arrow-right2.svg'
 import mahsulot from '../../../../img/box.svg'
+import {connect} from "react-redux";
 import './mahsulotlar.css'
 import {useState} from 'react'
+import {active} from "../../../../reducer/functionreducer";
 import {Switch, Route, Link} from 'react-router-dom'
 
-function Mahsulotlar() {
+function Mahsulotlar({active}) {
 
-    const [active, setActive] = useState(false);
+    const [active2, setActive] = useState(false);
     const [classs,setClasss] = useState('');
     const [fill,setfill] = useState('');
     const [fontsiza,setfontsize] = useState('');
 
     function toggle() {
-        setActive(!active)
+        setActive(!active2)
         if(classs===''){
             setClasss('right2')
             setfill('fill')
@@ -23,6 +25,10 @@ function Mahsulotlar() {
             setfill('')
             setfontsize('')
         }
+    }
+
+    function sidebaractive(){
+        active()
     }
 
     return (
@@ -48,17 +54,17 @@ function Mahsulotlar() {
                     <path d="M8.91016 19.92L15.4302 13.4C16.2002 12.63 16.2002 11.37 15.4302 10.6L8.91016 4.07999" stroke="#3A3C40" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>            </div>
             {
-                active ? <ul>
-                    <li><Link to={'/headerthird/mahsulotRuyxati'} className={'mahqosh'}>Maxsulotlar ruyxati</Link></li>
+                active2 ? <ul>
+                    <li  onClick={sidebaractive}><Link to={'/headerthird/mahsulotRuyxati'} className={'mahqosh'}>Maxsulotlar ruyxati</Link></li>
                     {/*<li><Link to={'/mahsulotQoshish'} className={'mahqosh'}>Maxsulot qo`shish</Link></li>*/}
                     {/*<li><Link to={'/mahsulotShtrix'} className={'mahqosh'}>Shtrix kodlar</Link></li>*/}
                     {/*<li><Link to={'/turliTavar'} className={'mahqosh'}>Turli Tavarlar</Link></li>*/}
                     {/*<li><Link to={'/mahsulotImporti'} className={'mahqosh'}>Mahsulot Importi</Link></li>*/}
                     {/*<li><Link to={'/mavjudImport'} className={'mahqosh'}>Mavjud miq import</Link></li>*/}
-                    {/*<li><Link to={'/headerthird/sotuvNarxGuruhlanishi'} className={'mahqosh'}>Sotuv narxining guruhi</Link></li>*/}
+                    <li  onClick={sidebaractive}><Link to={'/headerthird/sotuvNarxGuruhlanishi'} className={'mahqosh'}>Sotuv narxining guruhi</Link></li>
                     {/*<li><Link to={'/ulcovBirliklar'} className={'mahqosh'}>O`lchov birliklar</Link></li>*/}
-                    <li><Link to={'/headerthird/bolimlar'} className={'mahqosh'}>Bo`limlar</Link></li>
-                    <li><Link to={'/headerthird/firmalar'} className={'mahqosh'}>Firmalar</Link></li>
+                    <li  onClick={sidebaractive}><Link to={'/headerthird/bolimlar'} className={'mahqosh'}>Bo`limlar</Link></li>
+                    <li  onClick={sidebaractive}><Link to={'/headerthird/firmalar'} className={'mahqosh'}>Firmalar</Link></li>
                     {/*<li><Link to={'/kafolat'} className={'mahqosh'}>Kafolatlar</Link></li>*/}
                 </ul> : ''
             }
@@ -66,4 +72,4 @@ function Mahsulotlar() {
     )
 }
 
-export default Mahsulotlar
+export default connect(({functionreducer:{func}})=>({func}),{active}) (Mahsulotlar)

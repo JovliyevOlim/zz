@@ -1,17 +1,20 @@
 import down from '../../../../img/arrow-right2.svg'
 import './haridlar.css'
 import {useState} from 'react'
+import {connect} from "react-redux";
 import {Link,Switch,Route} from 'react-router-dom'
-function Mahsulotlar() {
+import {active} from "../../../../reducer/functionreducer";
 
-    const [active,setActive] = useState(false);
+function Mahsulotlar({active}) {
+
+    const [active2,setActive] = useState(false);
 
     const [classs,setClasss] = useState('');
     const [fill,setfill] = useState('');
     const [fontsiza,setfontsize] = useState('');
 
     function toggle() {
-        setActive(!active)
+        setActive(!active2)
         if(classs===''){
             setClasss('right2')
             setfill('stroke')
@@ -22,6 +25,9 @@ function Mahsulotlar() {
             setfill('')
             setfontsize('')
         }
+    }
+    function sidebaractive(){
+        active()
     }
 
     return(
@@ -41,13 +47,13 @@ function Mahsulotlar() {
                 </svg>
             </div>
             {
-                active?<ul>
-                    <li><Link to={'/headerthird/xaridlarRuyxati'} className={'haridClass'}>Xaridlar ruyxati</Link></li>
-                    <li><Link to={'/headerthird/xaridQilish'} className={'haridClass'}>Xarid qilish</Link></li>
+                active2?<ul>
+                    <li onClick={sidebaractive}><Link   to={'/headerthird/xaridlarRuyxati'} className={'haridClass'}>Xaridlar ruyxati</Link></li>
+                    <li onClick={sidebaractive}><Link  to={'/headerthird/xaridQilish'} className={'haridClass'}>Xarid qilish</Link></li>
                     {/*<li><Link to={'/headerthird/qaytganXarid'} className={'haridClass'}>Qaytarilgan Xaridlar</Link></li>*/}
                 </ul>:''
             }
         </div>
     )
 }
-export default Mahsulotlar
+export default connect(({functionreducer:{func}})=>({func}),{active}) (Mahsulotlar)

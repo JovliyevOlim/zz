@@ -3,16 +3,19 @@ import {Switch,Link,Route} from 'react-router-dom'
 import mahsulot from '../../../../img/setting-2.svg'
 import './sozlamalar.css'
 import {useState} from 'react'
-function Sozlamalar() {
+import {connect} from "react-redux";
+import {active} from "../../../../reducer/functionreducer";
 
-    const [active,setActive] = useState(false);
+function Sozlamalar({active}) {
+
+    const [active2,setActive] = useState(false);
 
     const [classs,setClasss] = useState('');
     const [fill,setfill] = useState('');
     const [fontsiza,setfontsize] = useState('');
 
     function toggle() {
-        setActive(!active)
+        setActive(!active2)
         if(classs===''){
             setClasss('right2')
             setfill('fill')
@@ -25,6 +28,9 @@ function Sozlamalar() {
         }
     }
 
+    function sidebaractive(){
+        active()
+    }
     return(
         <div className={'row mahsulot'} onClick={toggle}>
             <div className="imgDiv" >
@@ -42,9 +48,9 @@ function Sozlamalar() {
                     <path d="M8.91016 19.92L15.4302 13.4C16.2002 12.63 16.2002 11.37 15.4302 10.6L8.91016 4.07999" stroke="#3A3C40" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>              </div>
             {
-                active?<ul style={{width:'80%'}}>
-                    <Link to={'/headerthird/dukonSozlama'} className={'mahsulotSetting'}><li>Do`kon sozlamalari</li></Link>
-                    <Link to={'/headerthird/bazalarSetting'} className={'mahsulotSetting'}><li>Bazalar</li></Link>
+                active2 ?<ul style={{width:'80%'}}>
+                    <Link to={'/headerthird/dukonSozlama'} className={'mahsulotSetting'}><li onClick={sidebaractive}>Do`kon sozlamalari</li></Link>
+                    <Link to={'/headerthird/bazalarSetting'} className={'mahsulotSetting'}><li onClick={sidebaractive}>Bazalar</li></Link>
                     {/*<Link to={'/chekSetting'} className={'mahsulotSetting'}><li>Cheklar sozlamalari</li></Link>*/}
                     {/*<Link to={'/shtrixKodlar'} className={'mahsulotSetting'}><li>Shtrix kodlar sozlamalari</li></Link>*/}
                     {/*<Link to={'/printerSozlamalari'} className={'mahsulotSetting'}><li>Printer sozlamalari</li></Link>*/}
@@ -54,4 +60,4 @@ function Sozlamalar() {
         </div>
     )
 }
-export default Sozlamalar
+export default  connect(({functionreducer:{func}})=>({func}),{active})  (Sozlamalar)

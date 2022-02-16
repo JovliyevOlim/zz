@@ -3,16 +3,19 @@ import mahsulot from '../../../../img/card-send.svg'
 import {Switch,Link,Route} from 'react-router-dom'
 import './xarajatlar.css'
 import {useState} from 'react'
-function Mahsulotlar() {
+import {connect} from "react-redux";
+import {active} from "../../../../reducer/functionreducer";
 
-    const [active,setActive] = useState(false);
+function Mahsulotlar({active}) {
+
+    const [active2,setActive] = useState(false);
 
     const [classs,setClasss] = useState('');
     const [fill,setfill] = useState('');
     const [fontsiza,setfontsize] = useState('');
 
     function toggle() {
-        setActive(!active)
+        setActive(!active2)
         if(classs===''){
             setClasss('right2')
             setfill('fill')
@@ -25,6 +28,9 @@ function Mahsulotlar() {
         }
     }
 
+    function sidebaractive(){
+        active()
+    }
     return(
         <div className={'row mahsulot'}>
             <div className="imgDiv" onClick={toggle}>
@@ -45,13 +51,13 @@ function Mahsulotlar() {
                 </svg>
             </div>
             {
-                active?<ul>
-                    <Link to={'/headerthird/xarajatRuyxati'} className={'mahsulotXarajat'}><li>Xarajatlar ruyxati</li></Link>
-                    <Link to={'/headerthird/xarajatQoshish'} className={'mahsulotXarajat'}><li>Xarajat qoshish</li></Link>
-                    <Link to={'/headerthird/xarajatTurlari'} className={'mahsulotXarajat'}><li>Xarajat turlari</li></Link>
+                active2 ?<ul>
+                    <Link to={'/headerthird/xarajatRuyxati'} className={'mahsulotXarajat'}><li onClick={sidebaractive}>Xarajatlar ruyxati</li></Link>
+                    <Link to={'/headerthird/xarajatQoshish'} className={'mahsulotXarajat'}><li onClick={sidebaractive}>Xarajat qoshish</li></Link>
+                    <Link to={'/headerthird/xarajatTurlari'} className={'mahsulotXarajat'}><li onClick={sidebaractive}>Xarajat turlari</li></Link>
                 </ul>:''
             }
         </div>
     )
 }
-export default Mahsulotlar
+export default connect(({functionreducer:{func}})=>({func}),{active}) (Mahsulotlar)

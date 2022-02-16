@@ -3,15 +3,17 @@ import hamkor from '../../../../img/notification.png'
 import './hamkorlar.css'
 import {useState} from 'react'
 import {Link,Switch,Route} from 'react-router-dom'
-function Hamkorlar() {
+import {connect} from "react-redux";
+import {active} from "../../../../reducer/functionreducer";
+function Hamkorlar({active}) {
 
-    const [active,setActive] = useState(false);
+    const [active2,setActive] = useState(false);
     const [classs,setClasss] = useState('');
     const [fill,setfill] = useState('');
     const [fontsiza,setfontsize] = useState('');
 
     function toggle() {
-        setActive(!active)
+        setActive(!active2)
         if(classs===''){
             setClasss('right2')
             setfill('fill')
@@ -23,6 +25,10 @@ function Hamkorlar() {
             setfontsize('')
         }
     }
+    function sidebaractive(){
+        active()
+    }
+
     return(
         <div className={'row hamkor'}>
             <div className="imgDiv" onClick={toggle}>
@@ -42,10 +48,10 @@ function Hamkorlar() {
                 </svg>
             </div>
             {
-                active?<ul>
-                    <li><Link className={'hamkorlar'} to={'/headerthird/taminotchilar'}>Taminotchilar</Link></li>
+                active2 ?<ul>
+                    <li onClick={sidebaractive}><Link className={'hamkorlar'} to={'/headerthird/taminotchilar'}>Taminotchilar</Link></li>
                     {/*<li><Link className={'hamkorlar'} to={'/mijozlar'}>Mijozlar</Link></li>*/}
-                    <li><Link className={'hamkorlar'} to={'/headerthird/mijozlarGuruhi'}>Mijozlar guruxlari</Link></li>
+                    <li onClick={sidebaractive}><Link className={'hamkorlar'} to={'/headerthird/mijozlarGuruhi'}>Mijozlar guruxlari</Link></li>
                     {/*<li><Link className={'hamkorlar'} to={'/malumotTiklash'}>Malumotlarni tiklash</Link></li>*/}
                 </ul>:''
             }
@@ -53,4 +59,4 @@ function Hamkorlar() {
         </div>
     )
 }
-export default Hamkorlar
+export default connect(({functionreducer:{func}})=>({func}), {active}) (Hamkorlar)

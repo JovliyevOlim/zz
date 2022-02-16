@@ -61,7 +61,7 @@ function Headerthird() {
     const history = useHistory()
 
     useEffect(() => {
-        history.push('/headerthird/third')
+        history.push('/headerthird')
     }, [])
 
     window.addEventListener('popstate',function (){
@@ -74,7 +74,8 @@ function Headerthird() {
                 <Header sidebarfunc={sidebarheader}/>
             </div>
             <Switch>
-                <Route path={'/headerthird/third'} component={Third}/>
+
+                <Route path={'/headerthird/hodimlarruyxati/taxrirlash/:id?'} component={Taxrirlash}/>
                 <Route path={'/headerthird/hodimlarruyxati/taxrirlash/:id?'} component={Taxrirlash}/>
                 <Route path={'/headerthird/hodimlarruyxati/taxrirlash'} component={Taxrirlash}/>
                 <Route path={'/headerthird/hodimlarruyxati/view/:name?/:login?/:email?'} component={Korish}/>
@@ -119,7 +120,7 @@ function Headerthird() {
                 <Route path={'/headerthird/soliqlarXisoboti'} component={SoliqlarXisoboti}/>
                 <Route path={'/headerthird/bazalarSetting'} component={Bazalar}/>
                 <Route path={'/headerthird/bazaSozlama'} component={SozlamalarBtn}/>
-
+                <Route path={'/headerthird/'} component={Third}/>
             </Switch>
         </div>
     );

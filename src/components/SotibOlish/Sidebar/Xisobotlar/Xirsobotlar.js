@@ -3,16 +3,19 @@ import mahsulot from '../../../../img/status-up.svg'
 import './xisobotlar.css'
 import {useState} from 'react'
 import {Switch,Link,Route} from 'react-router-dom'
-function Xirsobotlar() {
+import {connect} from "react-redux";
+import {active} from "../../../../reducer/functionreducer";
 
-    const [active,setActive] = useState(false);
+function Xirsobotlar({active}) {
+
+    const [active2,setActive] = useState(false);
 
     const [classs,setClasss] = useState('');
     const [fill,setfill] = useState('');
     const [fontsiza,setfontsize] = useState('');
 
     function toggle() {
-        setActive(!active)
+        setActive(!active2)
         if(classs===''){
             setClasss('right2')
             setfill('fill')
@@ -25,6 +28,9 @@ function Xirsobotlar() {
         }
     }
 
+    function sidebaractive(){
+        active()
+    }
     return(
         <div className={'row mahsulot'}>
             <div className=" imgDiv" onClick={toggle}>
@@ -45,28 +51,28 @@ function Xirsobotlar() {
                     <path d="M8.91016 19.92L15.4302 13.4C16.2002 12.63 16.2002 11.37 15.4302 10.6L8.91016 4.07999" stroke="#3A3C40" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>              </div>
             {
-                active?<ul>
-                    <Link to={'/headerthird/foydaZarar'} className={'mahsulotXisobot'}><li>Foyda va zarar</li></Link>
-                    <Link to={'/headerthird/xaridlarXisoboti'} className={'mahsulotXisobot'}><li>Xaridlar hisoboti</li></Link>
-                    <Link to={'/headerthird/mijozlarXisoboti'} className={'mahsulotXisobot'}><li>Mijozlar hisoboti(nasiya)</li></Link>
+                active2 ?<ul>
+                    <Link to={'/headerthird/foydaZarar'} className={'mahsulotXisobot'}><li onClick={sidebaractive}>Foyda va zarar</li></Link>
+                    <Link to={'/headerthird/xaridlarXisoboti'} className={'mahsulotXisobot'}><li onClick={sidebaractive}>Xaridlar hisoboti</li></Link>
+                    <Link to={'/headerthird/mijozlarXisoboti'} className={'mahsulotXisobot'}><li onClick={sidebaractive}>Mijozlar hisoboti(nasiya)</li></Link>
                     {/*<Link to={'/smendagiXisoboti'} className={'mahsulotXisobot'}><li>Smendagi hisobotlar</li></Link>*/}
-                    <Link to={'/headerthird/xarajatXisoboti'} className={'mahsulotXisobot'}><li>Xarajat hisoboti</li></Link>
-                    <Link to={'/headerthird/savdoTolov'} className={'mahsulotXisobot'}><li>Savdodagi to`lov</li></Link>
+                    <Link to={'/headerthird/xarajatXisoboti'} className={'mahsulotXisobot'}><li onClick={sidebaractive}>Xarajat hisoboti</li></Link>
+                    <Link to={'/headerthird/savdoTolov'} className={'mahsulotXisobot'}><li onClick={sidebaractive}>Savdodagi to`lov</li></Link>
                     {/*<Link to={'/xaridQarz'} className={'mahsulotXisobot'}><li>Xarid u-n to`langan qarz</li></Link>*/}
-                    <Link to={'/headerthird/mahsulotXisoboti'} className={'mahsulotXisobot'}><li>Mahsulotlar hisoboti</li></Link>
+                    <Link to={'/headerthird/mahsulotXisoboti'} className={'mahsulotXisobot'}><li onClick={sidebaractive}>Mahsulotlar hisoboti</li></Link>
                     {/*<Link to={'/savdolarHisoboti'} className={'mahsulotXisobot'}><li>Savdolar hisoboti</li></Link>*/}
                     {/*<Link to={'/savdolarHisoboti'} className={'mahsulotXisobot'}><li>Savdolar hisoboti</li></Link>*/}
                     {/*<Link to={'/xaridlarSavdolar'} className={'mahsulotXisobot'}><li>Xaridlar va savdolar</li></Link>*/}
-                    <Link to={'/headerthird/kopSotilgan'} className={'mahsulotXisobot'}><li>Ko`p sotilgan tovarlar</li></Link>
-                    <Link to={'/headerthird/otkazmalarXisoboti'} className={'mahsulotXisobot'}><li>O`tkazmalar hisoboti</li></Link>
-                    <Link to={'/headerthird/qoldiqlarXisoboti'} className={'mahsulotXisobot'}><li>Qoldiqlar hisoboti</li></Link>
+                    <Link to={'/headerthird/kopSotilgan'} className={'mahsulotXisobot'}><li onClick={sidebaractive}>Ko`p sotilgan tovarlar</li></Link>
+                    <Link to={'/headerthird/otkazmalarXisoboti'} className={'mahsulotXisobot'}><li onClick={sidebaractive}>O`tkazmalar hisoboti</li></Link>
+                    <Link to={'/headerthird/qoldiqlarXisoboti'} className={'mahsulotXisobot'}><li onClick={sidebaractive}>Qoldiqlar hisoboti</li></Link>
                     {/*<Link to={'/guruhlarXisoboti'} className={'mahsulotXisobot'}><li>Guruhlar bo`yicha hisobot</li></Link>*/}
                     {/*<Link to={'/taminotMijoz'} className={'mahsulotXisobot'}><li>Ta`minot va mijoz hisoboti</li></Link>*/}
-                    <Link to={'/headerthird/soliqlarXisoboti'} className={'mahsulotXisobot'}><li>Soliqlar hisoboti</li></Link>
+                    <Link to={'/headerthird/soliqlarXisoboti'} className={'mahsulotXisobot'}><li onClick={sidebaractive}>Soliqlar hisoboti</li></Link>
                     {/*<Link to={'/kmDastur'} className={'mahsulotXisobot'}><li>Kimlar dasturga kirdi?</li></Link>*/}
                 </ul>:''
             }
         </div>
     )
 }
-export default Xirsobotlar
+export default  connect(({functionreducer:{func}})=>({func}),{active})  (Xirsobotlar)

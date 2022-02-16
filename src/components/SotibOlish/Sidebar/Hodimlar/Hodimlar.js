@@ -2,16 +2,18 @@ import './hodimlar.css'
 import {Link,Switch,Route} from 'react-router-dom'
 import {useState} from 'react'
 import right from '../../../../img/arrow-right2.svg'
-function Hodimlar() {
+import {connect} from "react-redux";
+import {active,activemedia} from "../../../../reducer/functionreducer";
 
-    const [active,setActive] = useState(false);
+function Hodimlar({active}) {
+
+    const [active2,setActive] = useState(false);
     const [classs,setClasss] = useState('');
     const [fill,setfill] = useState('');
     const [fontsiza,setfontsize] = useState('');
-    const [backactive,setbackactive] = useState(false)
 
     function toggle() {
-        setActive(!active)
+        setActive(!active2)
         if(classs===''){
             setClasss('right2')
             setfill('stroke')
@@ -22,6 +24,9 @@ function Hodimlar() {
             setfill('')
             setfontsize('')
         }
+    }
+    function sidebaractive(){
+        activemedia()
     }
     return(
         <div className={'row h'}>
@@ -44,10 +49,10 @@ function Hodimlar() {
                 </div>
                 <div>
                     {
-                        active?<ul >
-                            <li ><Link to={'/headerthird/hodimlarruyxati'} className={"lll"}>Xodimlar ruyxati</Link></li>
-                            <li><Link to={'/headerthird/lavozimlar'} className={"lll"}>Lavozimlar</Link></li>
-                            {/*<li><Link to={'/headerthird/hodimulush'} className={"lll"}>Xodimlar ulushi</Link>   </li>*/}
+                        active2 ?<ul >
+                            <li onClick={sidebaractive}><Link  to={'/headerthird/hodimlarruyxati'} className={"lll"}>Xodimlar ruyxati</Link></li>
+                            <li onClick={sidebaractive}><Link  to={'/headerthird/lavozimlar'} className={"lll"}>Lavozimlar</Link></li>
+                            <li onClick={sidebaractive}><Link  to={'/headerthird/hodimulush'} className={"lll"}>Xodimlar ulushi</Link>   </li>
                         </ul>:''
                     }
                 </div>
@@ -55,4 +60,4 @@ function Hodimlar() {
         // </div>
     )
 }
-export default Hodimlar
+export default connect(({functionreducer:{func}})=>({func}),{active,activemedia}) (Hodimlar)

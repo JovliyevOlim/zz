@@ -3,16 +3,19 @@ import {Link,Switch,Route} from 'react-router-dom'
 import mahsulot from '../../../../img/convert-3d-cube.svg'
 import './baza.css'
 import {useState} from 'react'
-function Mahsulotlar() {
+import {connect} from "react-redux";
+import {active} from "../../../../reducer/functionreducer";
 
-    const [active,setActive] = useState(false);
+function Mahsulotlar({active}) {
+
+    const [active2,setActive] = useState(false);
 
     const [classs,setClasss] = useState('');
     const [fill,setfill] = useState('');
     const [fontsiza,setfontsize] = useState('');
 
     function toggle() {
-        setActive(!active)
+        setActive(!active2)
         if(classs===''){
             setClasss('right2')
             setfill('fill')
@@ -23,6 +26,10 @@ function Mahsulotlar() {
             setfill('')
             setfontsize('')
         }
+    }
+
+    function sidebaractive(){
+        active()
     }
     return(
         <div className={'row baza'}>
@@ -45,12 +52,12 @@ function Mahsulotlar() {
                 </svg>
             </div>
             {
-                active?<ul>
-                    <Link to={'/headerthird/utkazmaRuyxati'} className={'bazaLink'}><li>O`tkazmalar ruyxati</li></Link>
-                    <Link to={'/headerthird/utkazmaRuyxati/taxrirlash'} className={'bazaLink'}><li>Yangi o`tkazma</li></Link>
+                active2 ?<ul>
+                    <Link to={'/headerthird/utkazmaRuyxati'} className={'bazaLink'}><li onClick={sidebaractive}>O`tkazmalar ruyxati</li></Link>
+                    <Link to={'/headerthird/yangiOtkazma'} className={'bazaLink'}><li onClick={sidebaractive}>Yangi o`tkazma</li></Link>
                 </ul>:''
             }
         </div>
     )
 }
-export default Mahsulotlar
+export default connect(({functionreducer:{func}})=>({func}),{active}) (Mahsulotlar)

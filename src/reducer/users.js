@@ -8,15 +8,23 @@ export const slice = createSlice({
         token: {
             token_name: ''
         },
+        gotopage:false,
+        businessId:1
+
     },
     reducers: {
         save: (state, action) => {
-            state.users=action.payload.object
-            console.log(action.payload.object)
-            localStorage.setItem('tokenname',action.payload.message)
+            console.log(action.payload.object.business.id)
+                state.users = action.payload.object
+            state.businessId=action.payload.object.business.id
+                localStorage.setItem('tokenname',action.payload.message)
+                state.gotopage=true
+                console.log('tureeen')
+
+
         },
         get: (state, action) => {
-            console.log(action.payload)
+            console.log(action.payload.status)
             state.users = action.payload
             console.log(state.users)
         }
@@ -27,7 +35,8 @@ export const saveusers=(data) => apiCall({
     url: '/auth/login',
     method: 'post',
     data,
-    onSuccess: slice.actions.save.type
+    onSuccess: slice.actions.save.type,
+    onFail: slice.actions.save.type
 })
 
 export const getusers = () => apiCall({
