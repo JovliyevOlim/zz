@@ -46,7 +46,7 @@ function Hodimlar() {
                         active?<ul >
                             <li><Link to={'/headerthird/hodimlarruyxati'} className={"lll"}>Xodimlar ruyxati</Link></li>
                             <li><Link to={'/headerthird/lavozimlar'} className={"lll"}>Lavozimlar</Link></li>
-                            <li><Link to={'/headerthird/hodimulush'} className={"lll"}>Xodimlar ulushi</Link>   </li>
+                            {/*<li><Link to={'/headerthird/hodimulush'} className={"lll"}>Xodimlar ulushi</Link>   </li>*/}
                         </ul>:''
                     }
                 </div>

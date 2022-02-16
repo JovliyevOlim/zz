@@ -1,7 +1,10 @@
 import {useState} from "react";
 import {Modal, ModalBody, ModalFooter, ModalHeader} from "reactstrap";
-
-function XarajatQoshish(){
+import {saveOtkazma} from "../../Baza/reducer/OtkazmaReducer";
+import {connect} from "react-redux";
+import {deleteXarajatlar, editXarajatlar, getXarajatlar, saveXarajatlar} from "../reducer/XarajatlarReducer";
+import {Link} from 'react-router-dom'
+function XarajatQoshish({deleteXarajatlar,saveXarajatlar,}){
 
     const [input,setInput] = useState(
         {
@@ -123,6 +126,20 @@ function XarajatQoshish(){
     }
 
     const [active,setActive] = useState(false)
+
+    function saqla(){
+        saveXarajatlar(
+            {
+                outlayCategoryId:1,
+                totalSum:input.jamisumma,
+                branchId:1,
+                spenderId:1,
+                description:input.qisqaeslatma,
+                date:input.sana
+            }
+        )
+        console.log(saveXarajatlar);
+    }
 
     function toggle(){
         setActive(!active)
@@ -263,11 +280,17 @@ function XarajatQoshish(){
             </div>
             <div className={'col-md-10 offset-1 mt-5 border p-4'}>
                 <h5>Qarz miqdori!: 0.00</h5>
-                <button className={'btn btn-outline-primary'}>Saqlash</button>
+                <Link to={'/headerthird/xarajatRuyxati'}><button className={'btn btn-outline-primary'} onClick={saqla}>Saqlash</button></Link>
                 <button className={'btn btn-outline-primary'}>Saqlash va chek</button>
             </div>
 
         </div>
     )
 }
-export default XarajatQoshish
+
+export default connect(({XarajatlarReducer: {xarajatlar}}) => ({xarajatlar}), {
+    getXarajatlar,
+    saveXarajatlar,
+    editXarajatlar,
+    deleteXarajatlar
+})(XarajatQoshish)

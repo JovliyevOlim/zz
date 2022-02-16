@@ -3,20 +3,23 @@
   <component name="ChangeListManager">
     <list default="true" id="2ed0236b-2151-406e-828e-c9a3e0b2b336" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Baza/Baza.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Baza/Baza.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Baza/otkazmalarRoyxati/OtkazmalarRoyxati.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Baza/otkazmalarRoyxati/OtkazmalarRoyxati.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Baza/otkazmalarRoyxati/taxrirlash/Taxrirlash.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Baza/otkazmalarRoyxati/taxrirlash/Taxrirlash.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Baza/reducer/OtkazmaReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Baza/reducer/OtkazmaReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Haridlar/Xarid qilish/Xarid.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Haridlar/Xarid qilish/Xarid.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Haridlar/haridlarRoyxati/HaridlarRoyxati.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Haridlar/haridlarRoyxati/HaridlarRoyxati.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/MahsulotlarRuyxati/Taxrirlash/Taxrirlash.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/MahsulotlarRuyxati/Taxrirlash/Taxrirlash.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/MahsulotlarRuyxati/barchaMaxsulotlar/BarchaMaxsulotlar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/MahsulotlarRuyxati/barchaMaxsulotlar/BarchaMaxsulotlar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/reducer/MaxsulotlarRoyxariReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/reducer/MaxsulotlarRoyxariReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Savdo/SavdoOynasi/SavdoOynasi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Savdo/SavdoOynasi/SavdoOynasi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Savdo/SavdoQoshish/SavdoQoshish.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Savdo/SavdoQoshish/SavdoQoshish.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Savdo/reducer/SavdoQoshishReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Savdo/reducer/SavdoQoshishReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/Hodimlar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/Hodimlar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/Lavozimlar/Lavozimlar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/Lavozimlar/Lavozimlar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/Lavozimlar/Taxrirlash/Taxrirlash.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/Lavozimlar/Taxrirlash/Taxrirlash.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/hodimlarRoyxati/HodimlarRoyhati.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/hodimlarRoyxati/HodimlarRoyhati.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/hodimlarRoyxati/Taxrirlash/Taxrirlash.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/hodimlarRoyxati/Taxrirlash/Taxrirlash.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/reducer/LavozimReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/reducer/LavozimReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/reducer/XodimReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/reducer/XodimReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Sidebar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xarajatlar/Qoshish/XarajatQoshish.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xarajatlar/Qoshish/XarajatQoshish.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xarajatlar/reducer/XarajatlarReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xarajatlar/reducer/XarajatlarReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xarajatlar/xarajatlarRoyxati/XarajatlarRoyxati.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xarajatlar/xarajatlarRoyxati/XarajatlarRoyxati.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/headerthird.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/headerthird.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/middleware.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,7 +193,9 @@
       <workItem from="1644686343224" duration="5684000" />
       <workItem from="1644693101236" duration="13584000" />
       <workItem from="1644816017915" duration="16088000" />
-      <workItem from="1644849679267" duration="26170000" />
+      <workItem from="1644849679267" duration="37604000" />
+      <workItem from="1644940819103" duration="7040000" />
+      <workItem from="1644987624851" duration="622000" />
     </task>
     <task id="LOCAL-00001" summary="app.js">
       <created>1643606654320</created>
@@ -395,7 +400,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644903430134</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="dkjaboihawldbvlaskhvbaslkhvbaf">
+      <created>1644923149931</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1644923149931</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -430,7 +442,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="SHELVE_DETAILS_PREVIEW_SHOWN" value="true" />
-    <MESSAGE value="app.js" />
     <MESSAGE value="yangui" />
     <MESSAGE value="baza" />
     <MESSAGE value="udar boldi" />
@@ -455,7 +466,8 @@
     <MESSAGE value="ketmon2" />
     <MESSAGE value="SavdoOynagaca" />
     <MESSAGE value="dajkhjvfijkaldcnalsdchgkas" />
-    <option name="LAST_COMMIT_MESSAGE" value="dajkhjvfijkaldcnalsdchgkas" />
+    <MESSAGE value="dkjaboihawldbvlaskhvbaslkhvbaf" />
+    <option name="LAST_COMMIT_MESSAGE" value="dkjaboihawldbvlaskhvbaslkhvbaf" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

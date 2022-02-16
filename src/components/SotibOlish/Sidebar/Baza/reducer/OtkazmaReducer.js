@@ -9,12 +9,11 @@ const slice = createSlice({
     },
     reducers: {
         getFrom: (state, action) => {
-            state.otkazmalar = action.payload
-            console.log(action.payload);
+            state.otkazmalar = action.payload.object
+            console.log(action.payload.object);
         },
         savefrom: (state,action) => {
             state.otkazmalar.unshift(action.payload)
-            // toast.success('Saqlandi')
             console.log('SAVED_OTKAZMA');
         },
         editfrom: (state,action) => {
@@ -23,11 +22,9 @@ const slice = createSlice({
                     item.login = action.payload.login
                 }
             })
-            // toast.success('O`zgartirildi')
         },
         deletefrom:(state,action)=>{
             console.log('DELETED_OTKAZMA');
-            // toast.info('O`chirildi')
         }
     }
 });
@@ -47,7 +44,7 @@ export const saveOtkazma=(data)=>apiCall({
 
 export const editOtkazma=(data)=>apiCall({
     url: '/exchange-product-branch',
-    method: 'post',
+    method: 'put',
     data,
     onSuccess: slice.actions.editfrom.type
 });

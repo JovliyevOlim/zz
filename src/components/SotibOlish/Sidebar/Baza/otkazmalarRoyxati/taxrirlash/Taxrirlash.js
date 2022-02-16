@@ -1,7 +1,8 @@
-import {useState} from 'react'
-import {saveOtkazma} from "../../reducer/OtkazmaReducer";
+import {useEffect, useState} from 'react'
+import {deleteOtkazma, editOtkazma, getOtkazma, saveOtkazma} from "../../reducer/OtkazmaReducer";
 import {Link} from 'react-router-dom'
-function Taxrirlash(){
+import {connect} from "react-redux";
+function Taxrirlash({saveOtkazma,editOtkazma,getOtkazma}){
 
     const [input,setInput] = useState(
         {
@@ -63,7 +64,7 @@ function Taxrirlash(){
                 shippedBranchId:1,
                 receivedBranchId:1,
                 exchangeDate:input.sana,
-                description:'',
+                description:'ddd',
                 exchangeStatusId:1,
                 exchangeProductDTOS:[
                     {
@@ -74,7 +75,9 @@ function Taxrirlash(){
                 businessId:1
             }
         )
+        console.log('ishladiii');
     }
+
 
     return(
         <div className={'row p-3'}>
@@ -119,24 +122,7 @@ function Taxrirlash(){
                     <div className="col-md-6 offset-3">
                         <input type="text" className={'form-control'} value={input.izlashproduct} onChange={izlashproduct} placeholder={'izlash product'}/>
                     </div>
-                    <table className={'table mt-4'}>
-                        <thead>
-                            <tr>
-                                <th>Maxsulot</th>
-                                <th>Miqdori</th>
-                                <th>Narxi</th>
-                                <th>Jami</th>
-                                <th>Delete</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    body qisim
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+
                 </div>
 
                 <div className="col-md-12">
@@ -153,4 +139,10 @@ function Taxrirlash(){
         </div>
     )
 }
-export default Taxrirlash
+
+export default connect(({OtkazmaReducer: {otkazmalar}}) => ({otkazmalar}), {
+    getOtkazma,
+    saveOtkazma,
+    editOtkazma,
+    deleteOtkazma
+})(Taxrirlash)

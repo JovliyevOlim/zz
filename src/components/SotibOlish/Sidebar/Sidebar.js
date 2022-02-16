@@ -49,7 +49,7 @@ function Sidebar({functionreducer}) {
                         <Haridlar/>
                         <Savdo/>
                         <Baza/>
-                        <MahBaza/>
+                        {/*<MahBaza/>*/}
                         <Xarajatlar/>
                         <Xirsobotlar/>
                         <Sozlamalar/>
