@@ -131,15 +131,11 @@ function Bolimlar({getBolim, bolimlar,saveBolim,deleteBolim}) {
                             }
                         }).map(item => <tr key={item.id}>
                             <td>{item.name}</td>
-                            <td>
+                            <td>j
                                 <Link>
-                                    <button onClick={toggle} className='taxrirlash'><img src={Edit}
-                                                                                         alt=""/> Taxrirlash*/}
-                                    </button>
-
+                                    <button onClick={toggle} className='taxrirlash'> <img src={Edit} alt=""/> Taxrirlash </button>                                                    
                                 </Link>
                                 <button className='ochirish' onClick={()=>deleteB(item)}><img src={Delete} alt=""/> O'chirish</button>
-
                             </td>
                         </tr>)
                     }

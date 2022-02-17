@@ -72,21 +72,21 @@ function XarajatlarXisoboti() {
                     <h5>Filtirlash</h5>
                 </div>
                 <div className="row cont">
-                    <div className="col-md-4">
+                    <div className="col-4 col-sm-12">
                         <h6>Baza:</h6>
                         <select value={input.baza} onChange={baza} name="" id="">
                             <option value="">Barchasi</option>
                             <option value=""></option>
                         </select>
                     </div>
-                    <div className="col-md-4">
+                    <div className="col-4 col-sm-12">
                         <h6>Bo'limlar:</h6>
                         <select name="" id="" onChange={bolim} value={input.bolim}>
                             <option value="">Barchasi</option>
                             <option value=""></option>
                         </select>
                     </div>
-                    <div className="col-md-4">
+                    <div className="col-4 col-sm-12">
                         <h6>Aniq sanani belgilash:</h6>
                         <select name="" id="" value={input.aniqsana} onChange={aniqsana}>
                             <option value="" hidden>Aniq sanani belgilash</option>
