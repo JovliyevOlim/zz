@@ -28,7 +28,6 @@ const slice = createSlice({
             })
             toast.success('TAXRIRLANDI')
             state.current=state.current+1
-
         },
         deletefrom: (state, action) => {
             console.log('ochirildi')

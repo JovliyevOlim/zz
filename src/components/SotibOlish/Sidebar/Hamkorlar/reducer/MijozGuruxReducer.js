@@ -5,7 +5,8 @@ import {apiCall} from "../../../../../api";
 const slice = createSlice({
     name: 'mijozgurux',
     initialState: {
-        mijozgurux: []
+        mijozgurux: [],
+        current:0
     },
     reducers: {
         getFrom: (state, action) => {
@@ -14,19 +15,17 @@ const slice = createSlice({
         },
         savefrom: (state,action) => {
             state.mijozgurux.unshift(action.payload)
+            state.current+=1
             // toast.success('Saqlandi')
         },
         editfrom: (state,action) => {
-            state.mijozgurux.map((item,index)=>{
-                if (item.id === action.payload.id){
-                    item.login = action.payload.login
-                }
-            })
+
+            state.current+=1
             // toast.success('O`zgartirildi')
         },
         deletefrom:(state,action)=>{
             console.log('DELETED_MIJOZ')
-
+            state.current-=1
         }
     }
 });
@@ -45,8 +44,8 @@ export const saveMijozGurux=(data)=>apiCall({
 });
 
 export const editMijozGurux=(data)=>apiCall({
-    url: '/customer',
-    method: 'post',
+    url: '/customer/'+data.id,
+    method: 'put',
     data,
     onSuccess: slice.actions.editfrom.type
 });

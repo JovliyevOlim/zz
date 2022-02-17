@@ -98,7 +98,6 @@
 }
 li{
     list-style: disc;
-    /*border: 1px solid red;*/
     margin-top: 5px;
 }
 @media screen and (max-width: 425.9px){
@@ -118,8 +117,6 @@ li{
     .sidebar{
         width: 140% !important;
     }
-
-
 }
 @media (min-width: 426px) and (max-width: 649.9px){
     ::-webkit-scrollbar{

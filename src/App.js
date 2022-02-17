@@ -22,11 +22,6 @@ function App({functionreducer,active,users}) {
     function linkpost() {
             history.push('')
             Setlink('/headerthird')
-        // else{
-        //     history.push('')
-        //     Setlink('/home')
-        //     console.log('fallsese')
-        // }
     }
 
     return (

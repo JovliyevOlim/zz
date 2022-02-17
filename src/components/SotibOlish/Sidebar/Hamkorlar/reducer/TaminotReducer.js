@@ -6,7 +6,8 @@ import {useEffect,useState} from "react";
 const slice = createSlice({
     name: 'taminot',
     initialState: {
-        taminot: []
+        taminot: [],
+        current:0
     },
     reducers: {
         getFrom: (state, action) => {
@@ -16,26 +17,23 @@ const slice = createSlice({
         savefrom: (state,action) => {
             state.taminot.unshift(action.payload)
             console.log('SAQLANDI_TAMINOT')
-            // toast.success('Saqlandi')
+            state.current+=1
         },
         editfrom: (state,action) => {
-            state.taminot.map((item,index)=>{
-                if (item.id === action.payload.id){
-                    item.login = action.payload.login
-                }
-            })
             console.log('EDITED_TAMINOT');
+            state.current+=1
         },
         deletefrom:(state,action)=>{
             console.log('DELETE_TAMINOT')
             console.log(action.payload.object.id)
             console.log(typeof action.payload)
+            state.current-=1
         }
 
     }
 });
 
-export const getTaminot=()=>apiCall({
+export const getTaminot=(data)=>apiCall({
     url: '/supplier/get-by-business/1',
     method:'get',
     onSuccess: slice.actions.getFrom.type
@@ -49,8 +47,8 @@ export const saveTaminot=(data)=>apiCall({
 });
 
 export const editTaminot=(data)=>apiCall({
-    url: '/supplier',
-    method: 'post',
+    url: '/supplier/'+data.id,
+    method: 'put',
     data,
     onSuccess: slice.actions.editfrom.type
 });
