@@ -1,60 +1,62 @@
-.textHeader{
-    display: flex;
-    align-items: baseline;
+.rowStyleOX{
+    border-radius: 8px;
+    padding: 20px 30px 20px 30px;
+    margin-top: 32px;
+    background-color: #FFFFFF;
 }
-.rowStyleX select{
-    width: 100%;
-    height: 32px;
-    background-color:#F5F5F7;
-    padding-left: 4px;
-    font-size: 14px;
-    margin-bottom: 30px;
-}
-.rowStyleX select{
-    width: 100%;
-    height: 32px;
-    background-color:#F5F5F7;
+.rowStyleOX select{
+    height: 28px;
+    border-radius: 4px;
+    border: 1px solid #6b6363a0;
+    margin-left: 4px;
+    background-color: #f3efef;
 }
 
-.rowStyleX select:hover{
+.rowStyleOX .inptStyls{
+    width: 100%;
     cursor: pointer;
 }
-.rowStyleTab{
+
+.rowStyleUTX{
     justify-content: space-between;
     border-radius: 8px;
     padding: 20px 30px 20px 30px;
-    /*box-shadow: 0px 10px 20px grey;*/
     margin-top: 32px;
+    background-color: #FFFFFF;
 }
 .textHeader h2{
     margin-right: 10px;
     font-size: 24px;
 }
-.rowStyleTab .qoshish{
+.rowStyleUTX .qoshish{
     display: flex;
     justify-content: space-between;
     border-radius: 16px;
 }
-.rowStyleTab .izlash{
+.rowStyleUTX .izlashUTX{
     display: flex;
+    justify-content: space-between;
     margin-top: 32px;
     
 }
+.rowStyleUTX .izlashUTX .izlashBox1{
+    display: flex;
+}
 
-.rowStyleTab .izlash p{
+.rowStyleUTX .izlashUTX p{
     text-align: center;
 }
-.rowStyleTab .izlash select{
+.rowStyleUTX .izlashUTX select{
     height: 28px;
     border-radius: 4px;
     border: 1px solid #6b6363a0;
     margin-left: 4px;
 }
-.rowStyleTab .izlash button:hover{
+.rowStyleUTX .izlashUTX button:hover{
     cursor: pointer;
     background-color: #e0dddd;
 }
-.rowStyleTab .izlash button{
+.rowStyleUTX .izlashUTX button{
     height: 28px;
     border-radius: 4px;
     border: 1px solid #6b6363a0;
@@ -62,11 +64,11 @@
     background-color: #f3efef;
     font-size: 11px;
 }
-.rowStyleTab .izlash button img{
+.rowStyleUTX .izlashUTX button img{
     width: 16px;
 }
 
-.rowStyleTab .izlash input{
+.rowStyleUTX .izlashUTX input{
     height: 28px;
     border-radius: 4px;
     border: 1px solid #6b6363a0;
@@ -74,15 +76,15 @@
     padding: 8px 0px 8px 12px;
     margin-left: 24px;
 }
-.rowStyleTab .sahifalar{
+.rowStyleUTX .sahifalar{
     display: flex;
     justify-content: end;
 }
-.rowStyleTab .sahifalar :first-child{
+.rowStyleUTX .sahifalar :first-child{
     border-radius: 4px 0px 0px 4px;
     border: 1px solid #6b6363a0;
 }
-.rowStyleTab .sahifalar button{
+.rowStyleUTX .sahifalar button{
     border: 1px solid #6b6363a0;
     background-color: #FFFF;
     color:#1f1c1ca0;
@@ -90,4 +92,117 @@
 .sahifalar :last-child{
   border-radius: 0px 4px 4px 0px;
   
+}
+@media (max-width: 425.9px){
+    .textHeaderBL{
+           display: block;
+    }
+    .rowStyleUTX .qoshish h5{
+            font-size: 17px;
+     }
+     .rowStyleUTX .izlashUTX{
+            display: block;
+     }
+     .rowStyleUTX .izlashUTX .izlashBox1{
+            display: grid;
+            justify-content: center;
+            grid-template-columns: 110px 110px;
+            text-align: center;
+     }
+     .rowStyleUTX .izlashUTX .izlashBox2{
+            display: flex;
+            justify-content: center;
+     }
+     .rowStyleUTX .izlashUTX .izlashBox2 input{
+            width: 60%;
+            margin: 8px 0px 0px 4px;
+
+     }
+     .rowStyleUTX .izlashUTX .izlashBox1 select{
+            margin-bottom: 8px;
+     }
+     .rowStyleUTX .izlashUTX .izlashBox1 button{
+            line-height: 4px;
+            font-size: 10px;
+            margin-bottom: 8px;
+     }
+     .rowStyleUTX p{
+            font-size: 12px;
+            line-height: 12px;
+     }
+     .rowStyleUTX .qoshish h5{
+            font-size: 17px;
+     }
+     .rowStyleUTX .izlashUTX{
+            display: block;
+     }
+     .rowStyleUTX .izlashUTX .izlashBox1{
+            display: grid;
+            justify-content: center;
+            grid-template-columns: 110px 110px;
+            text-align: center;
+     }
+     .rowStyleUTX .izlashUTX .izlashBox2{
+            display: flex;
+            justify-content: center;
+     }
+     .rowStyleUTX .izlashUTX .izlashBox2 input{
+            width: 60%;
+            margin: 8px 0px 0px 4px;
+
+     }
+     .rowStyleUTX .izlashUTX .izlashBox1 select{
+            margin-bottom: 8px;
+     }
+     .rowStyleUTX .izlashUTX .izlashBox1 button{
+            line-height: 4px;
+            font-size: 10px;
+            margin-bottom: 8px;
+     }
+     .rowStyleUTX p{
+            font-size: 12px;
+            line-height: 12px;
+     }
+     
+}
+
+@media (min-width: 426px) and (max-width: 768.9px){
+     .rowStyleUTX .izlashUTX{
+            display: block;
+     }
+     .rowStyleUTX .izlashUTX .izlashBox1{
+            display: grid;
+            justify-content: center;
+            grid-template-columns: 33% 33% 33%;
+            text-align: center;
+     }
+     .rowStyleUTX .izlashUTX .izlashBox2{
+            display: flex;
+            justify-content: center;
+     }
+     .rowStyleUTX .izlashUTX .izlashBox2 input{
+            width: 70%;
+            margin: 8px 0px 0px 4px;
+
+     }
+     .rowStyleUTX .izlashUTX .izlashBox1 button{
+            line-height: 4px;
+            margin-bottom: 8px;
+     }
+}
+@media (min-width: 769px) and (max-width: 1024.9px){
+     .rowStyleUTX .izlashUTX .izlashBox1{
+            display: grid;
+            grid-template-columns:36% 36% 36% ;
+     }
+     .rowStyleUTX .izlashUTX .izlashBox1 button{
+            line-height: 4px;
+            margin-bottom: 8px;
+     }
+       
+}
+@media (min-width: 1025px) and (max-width: 1199.9px){
+     .rowStyleUTX .izlashUTX .izlashBox1 button{
+            line-height: 4px;
+     }
 }

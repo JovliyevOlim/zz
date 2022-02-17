@@ -71,23 +71,23 @@ function QoldiqlarXisoboti() {
     })
 
     return (
-        <div className="col-md-12 mt-2">
+        <div className="col-md-12 mt-4 ">
         <div className="textHeader">
                <h2>Qoldiqlar xisoboti</h2>
         </div>
-        <div className="rowStyleM">
+        <div className="rowStyleQXS">
                <div className="qoshish">
                       <h5>Filtirlash</h5>
                </div>
-               <div className="row cont">
-                      <div className="col-md-6">
+               <div className="row">
+                      <div className="col-6 col-sm-12">
                              <h6>Baza:</h6>
                              <select value={input.bazatanlash} onChange={bazatanlash} name="" id="">
                                     <option value="">Barchasi</option>
                                     <option value=""></option>
                              </select>
                       </div>
-                      <div className="col-md-6">
+                      <div className="col-6 col-sm-12">
                              <h6>Bo'limlar:</h6>
                              <select value={input.bolim} onChange={bolim} name="" id="" >
                                     <option value="">Barchasi</option>
@@ -96,14 +96,14 @@ function QoldiqlarXisoboti() {
                       </div>
                </div>
                <div className="row">
-                      <div className="col-md-6">
+                      <div className="col-6 col-sm-12">
                              <h6>Firma:</h6>
                              <select name="" id="" value={input.firma} onChange={firma}>
                                     <option value="">Barchasi</option>
                                     <option value="">Boshliq</option>
                              </select>
                       </div>
-                      <div className="col-md-6">
+                      <div className="col-6 col-sm-12">
                              <h6>Bo'lim ichida bo'lim:</h6>
                                     <select name="" id="" value={input.bolim2} onChange={bolim2}>
                                            <option value="">Barchasi</option>
@@ -111,14 +111,14 @@ function QoldiqlarXisoboti() {
                       </div>
                </div>
                <div className="row">
-                      <div className="col-md-6" >
+                      <div className="col-6 col-sm-12" >
                             <h6>O'lchov birligi:</h6>
                             <select name="" id="" value={input.ulcovbirligi} onChange={ulcovbirligi}>
                                 <option value="">Barchasi</option>
                                 <option value=""></option>
                             </select>
                       </div>
-                      <div className="col-md-6">
+                      <div className="col-6 col-sm-12">
                                     <h6>Faqat ishlab chiqarilgan maxsulotlar:</h6>
                              <div className="obuna">
                              <input type="checkbox" checked={input.ishlabciqariladigancheck} onChange={ishlabciqariladigancheck}/>
@@ -127,56 +127,52 @@ function QoldiqlarXisoboti() {
                </div>
         </div>
 
-        <div className="row">
-            <div className="col-md-3">
-                <div className="rowStyle">
+        <div className="cardBox">
+                <div className="boxx">
                     <div className="cardlar">
                         <p>BAZADAGI TOVARLAR SUMMASI <br /> (sotib olish narxida):</p>
                         <h3>240 000 000 so'm</h3>
                     </div>
                 </div>
-            </div>
-            <div className="col-md-3">
-                <div className="rowStyle">
+                <div className="boxx">
                 <div className="cardlar">
                         <p>BAZADAGI TOVARLAR SUMMASI <br /> (sotish narxida):</p>
                         <h3>2 400 000 so'm</h3>
                     </div>
                 </div>
-            </div>
-            <div className="col-md-3">
-                <div className="rowStyle">
+                <div className="boxx">
                 <div className="cardlar">
                         <p>FOYDA:</p>
                         <h3>2 400 000 so'm</h3>
                     </div>
                 </div>
-            </div>
-            <div className="col-md-3">
-                <div className="rowStyle">
+                <div className="boxx">
                 <div className="cardlar">
                         <p>FOYDA FOIZGA HISOBLANGANDA:</p>
                         <h3>98%</h3>
                     </div>
                 </div>
-            </div>
 
         </div>
         
-        <div className="rowStyle">
-               <div className="izlash">
-                      <p>Ko'rsatildi</p>
-                      <select name="" id="" value={input.view} onChange={view}>
-                             <option value="">25</option>
-                             <option value="">1,000</option>
-                             <option value="">All</option>
-                      </select>
-                      <button> <img src={CSV} alt="" /> Export CSV</button>
-                      <button><img src={Excel} alt="" /> Export Excel</button>
-                      <button><img src={Print} alt="" /> Print</button>
-                      <button><img src={Pdf} alt="" />Export PDF</button>
-                      <button> <img src={Data} alt="" />Malumotlarni kamaytirish </button>
-                      <input type="text" placeholder='Izlash...' value={input.izlash} onChange={izlash}/>
+        <div className="styleContener">
+               <div className="izlashStyle">
+                      <div className="izlashBox1">
+                            <p>Ko'rsatildi</p>
+                            <select name="" id="" value={input.view} onChange={view}>
+                                   <option value="">25</option>
+                                   <option value="">1,000</option>
+                                   <option value="">All</option>
+                            </select>
+                            <button> <img src={CSV} alt="" /> Export CSV</button>
+                            <button><img src={Excel} alt="" /> Export Excel</button>
+                            <button><img src={Print} alt="" /> Print</button>
+                            <button><img src={Pdf} alt="" />Export PDF</button>
+                            <button> <img src={Data} alt="" />Malumotlarni kamaytirish </button>
+                      </div>
+                      <div className="izlashBox2">
+                            <input type="text" placeholder='Izlash...' value={input.izlash} onChange={izlash}/>
+                      </div>
                </div>
                <div className="table-responsive mb-4">
                       <table className='table table-striped table-bordered mt-4 '>

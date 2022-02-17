@@ -29,21 +29,25 @@ export default function SotishdagiSoliqlar() {
 
     return (
         <div className="col-md-12 mt-2">
-        <div className="rowStyleSotish">
+        <div className="rowStyleSTS">
             <h5>Sotishdagi soliqlar</h5>
-               <div className="izlash">
-                      <p>Ko'rsatildi</p>
-                      <select name="" id="" value={input.view} onChange={view}>
-                             <option value="">25</option>
-                             <option value="">1,000</option>
-                             <option value="">All</option>
-                      </select>
-                      <button> <img src={CSV} alt="" /> Export CSV</button>
-                      <button><img src={Excel} alt="" /> Export Excel</button>
-                      <button><img src={Print} alt="" /> Print</button>
-                      <button><img src={Pdf} alt="" />Export PDF</button>
-                      <button> <img src={Data} alt="" />Malumotlarni kamaytirish </button>
-                      <input type="text" placeholder='Izlash...' value={input.izlash} onChange={izlash}/>
+               <div className="izlashSTS">
+                      <div className="izlashBox1">
+                            <p>Ko'rsatildi</p>
+                            <select name="" id="" value={input.view} onChange={view}>
+                                   <option value="">25</option>
+                                   <option value="">1,000</option>
+                                   <option value="">All</option>
+                            </select>
+                            <button> <img src={CSV} alt="" /> Export CSV</button>
+                            <button><img src={Excel} alt="" /> Export Excel</button>
+                            <button><img src={Print} alt="" /> Print</button>
+                            <button><img src={Pdf} alt="" />Export PDF</button>
+                            <button> <img src={Data} alt="" />Malumotlarni kamaytirish </button>
+                      </div>
+                      <div className="izlashBox2">
+                            <input type="text" placeholder='Izlash...' value={input.izlash} onChange={izlash}/>
+                      </div>
                </div>
                 <div className="table-responsive">
                <table className='table table-striped table-bordered mt-4'>

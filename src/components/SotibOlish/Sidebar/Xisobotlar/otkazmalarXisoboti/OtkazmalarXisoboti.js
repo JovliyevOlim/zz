@@ -46,22 +46,22 @@ function OtkazmalarXisoboti({getOtkazmalarxisoboti,saveOtkazmalarxisoboti,editOt
     })
 
     return (
-        <div className="col-md-12 mt-2">
+        <div className="col-md-12 mt-4 ">
                      <div className="textHeader">
                             <h2>O'tkazmalar xisoboti</h2>
                      </div>
-                     <div className="rowStyleX">
+                     <div className="rowStyleOX m-0">
                             <div className="row">
-                                   <div className="col-md-6">
+                                   <div className="col-6 col-sm-12">
                                           <h6>Baza tanlash:</h6>
-                                          <select name="" value={input.bazatanlash} onChange={bazatanlash} id="">
+                                          <select name="" className='inptStyls' value={input.bazatanlash} onChange={bazatanlash} id="">
                                                  <option value="">Barchasi</option>
                                                  <option value=""></option>
                                           </select>
                                    </div>
-                                   <div className="col-md-6">
+                                   <div className="col-6 col-sm-12">
                                        <h6>Aniq sanani belgilash:</h6>
-                                       <select name="" id="" value={input.aniqsananibelgilash} onChange={aniqsananibelgilash}>
+                                       <select name="" id="" className='inptStyls' value={input.aniqsananibelgilash} onChange={aniqsananibelgilash}>
                                            <option value="" hidden>Aniq sanani belgilash</option>
                                            <option value="">Bugun</option>
                                        </select>
@@ -69,23 +69,28 @@ function OtkazmalarXisoboti({getOtkazmalarxisoboti,saveOtkazmalarxisoboti,editOt
                             </div>
                      </div>
                      
-                     <div className="rowStyleTab">
+                     <div className="rowStyleUTX">
                      <div className="qoshish">
                                    <h5>Malumotlar bazasi:</h5>
                             </div>
-                                <div className="izlash">
-                                    <p>Ko'rsatildi</p>
-                                    <select name="" value={input.view} onChange={view} id="">
-                                            <option value="">25</option>
-                                            <option value="">1,000</option>
-                                            <option value="">All</option>
-                                    </select>
-                                    <button> <img src={CSV} alt="" /> Export CSV</button>
-                                    <button><img src={Excel} alt="" /> Export Excel</button>
-                                    <button><img src={Print} alt="" /> Print</button>
-                                    <button><img src={Pdf} alt="" />Export PDF</button>
-                                    <button> <img src={Data} alt="" />Malumotlarni kamaytirish </button>
-                                    <input type="text" value={input.izlash} onChange={izlash} placeholder='Izlash...'/>
+                                <div className="izlashUTX">
+                                       <div className="izlashBox1">
+                                          <p>Ko'rsatildi</p>
+                                          <select name="" value={input.view} onChange={view} id="">
+                                                 <option value="">25</option>
+                                                 <option value="">1,000</option>
+                                                 <option value="">All</option>
+                                          </select>
+                                          <button> <img src={CSV} alt="" /> Export CSV</button>
+                                          <button><img src={Excel} alt="" /> Export Excel</button>
+                                          <button><img src={Print} alt="" /> Print</button>
+                                          <button><img src={Pdf} alt="" />Export PDF</button>
+                                          <button> <img src={Data} alt="" />Malumotlarni kamaytirish </button>
+
+                                       </div>
+                                       <div className="izlashBox2">
+                                          <input type="text" value={input.izlash} onChange={izlash} placeholder='Izlash...'/>
+                                       </div>
                                 </div>
                             <div className="table-responsive">
                                    <table className='table table-striped table-bordered mt-4 '>

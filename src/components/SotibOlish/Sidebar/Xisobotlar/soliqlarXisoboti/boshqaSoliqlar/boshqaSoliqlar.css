@@ -1,4 +1,4 @@
-.rowStyleHaridBoshqa{
+.rowStyleBSS{
     justify-content: space-between;
     border-radius: 8px;
     background-color: #FFFF;
@@ -11,26 +11,30 @@
     margin-right: 10px;
     font-size: 24px;
 }
-.rowStyleHaridBoshqa .izlash{
+.rowStyleBSS .izlashBSS{
     display: flex;
+    justify-content: space-between;
     margin-top: 32px;
     
 }
+.rowStyleBSS .izlashBSS .izlashBox1{
+    display: flex;
+}
 
-.rowStyleHaridBoshqa .izlash p{
+.rowStyleBSS .izlashBSS p{
     text-align: center;
 }
-.rowStyleHaridBoshqa .izlash select{
+.rowStyleBSS .izlashBSS select{
     height: 28px;
     border-radius: 4px;
     border: 1px solid #6b6363a0;
     margin-left: 4px;
 }
-.rowStyleHaridBoshqa .izlash button:hover{
+.rowStyleBSS .izlashBSS button:hover{
     cursor: pointer;
     background-color: #e0dddd;
 }
-.rowStyleHaridBoshqa .izlash button{
+.rowStyleBSS .izlashBSS button{
     height: 28px;
     border-radius: 4px;
     border: 1px solid #6b6363a0;
@@ -38,11 +42,11 @@
     background-color: #f3efef;
     font-size: 11px;
 }
-.rowStyleHaridBoshqa .izlash button img{
+.rowStyleBSS .izlashBSS button img{
     width: 16px;
 }
 
-.rowStyleHaridBoshqa .izlash input{
+.rowStyleBSS .izlashBSS input{
     height: 28px;
     border-radius: 4px;
     border: 1px solid #6b6363a0;
@@ -50,11 +54,11 @@
     padding: 8px 0px 8px 12px;
     margin-left: 24px;
 }
-.rowStyleHaridBoshqa .sahifalar{
+.rowStyleBSS .sahifalar{
     display: flex;
     justify-content: end;
 }
-.rowStyleHaridBoshqa .sahifalar :first-child{
+.rowStyleBSS .sahifalar :first-child{
     border-radius: 4px 0px 0px 4px;
     border: 1px solid #6b6363a0;
     -webkit-border-radius: 4px 0px 0px 4px;
@@ -62,7 +66,7 @@
     -ms-border-radius: 4px 0px 0px 4px;
     -o-border-radius: 4px 0px 0px 4px;
 }
-.rowStyleHaridBoshqa .sahifalar button{
+.rowStyleBSS .sahifalar button{
     border: 1px solid #6b6363a0;
     background-color: #FFFF;
     color:#1f1c1ca0;
@@ -70,4 +74,114 @@
 .sahifalar :last-child{
   border-radius: 0px 4px 4px 0px;
   
+}
+@media (max-width: 425.9px){
+    .rowStyleBSS .qoshish h5{
+            font-size: 17px;
+     }
+     .rowStyleBSS .izlashBSS{
+            display: block;
+     }
+     .rowStyleBSS .izlashBSS .izlashBox1{
+            display: grid;
+            justify-content: center;
+            grid-template-columns: 110px 110px;
+            text-align: center;
+     }
+     .rowStyleBSS .izlashBSS .izlashBox2{
+            display: flex;
+            justify-content: center;
+     }
+     .rowStyleBSS .izlashBSS .izlashBox2 input{
+            width: 60%;
+            margin: 8px 0px 0px 4px;
+
+     }
+     .rowStyleBSS .izlashBSS .izlashBox1 select{
+            margin-bottom: 8px;
+     }
+     .rowStyleBSS .izlashBSS .izlashBox1 button{
+            line-height: 4px;
+            font-size: 10px;
+            margin-bottom: 8px;
+     }
+     .rowStyleBSS p{
+            font-size: 12px;
+            line-height: 12px;
+     }
+     .rowStyleBSS .qoshish h5{
+            font-size: 17px;
+     }
+     .rowStyleBSS .izlashBSS{
+            display: block;
+     }
+     .rowStyleBSS .izlashBSS .izlashBox1{
+            display: grid;
+            justify-content: center;
+            grid-template-columns: 110px 110px;
+            text-align: center;
+     }
+     .rowStyleBSS .izlashBSS .izlashBox2{
+            display: flex;
+            justify-content: center;
+     }
+     .rowStyleBSS .izlashBSS .izlashBox2 input{
+            width: 60%;
+            margin: 8px 0px 0px 4px;
+
+     }
+     .rowStyleBSS .izlashBSS .izlashBox1 select{
+            margin-bottom: 8px;
+     }
+     .rowStyleBSS .izlashBSS .izlashBox1 button{
+            line-height: 4px;
+            font-size: 10px;
+            margin-bottom: 8px;
+     }
+     .rowStyleBSS p{
+            font-size: 12px;
+            line-height: 12px;
+     }
+     
+}
+
+@media (min-width: 426px) and (max-width: 768.9px){
+     .rowStyleBSS .izlashBSS{
+            display: block;
+     }
+     .rowStyleBSS .izlashBSS .izlashBox1{
+            display: grid;
+            justify-content: center;
+            grid-template-columns: 33% 33% 33%;
+            text-align: center;
+     }
+     .rowStyleBSS .izlashBSS .izlashBox2{
+            display: flex;
+            justify-content: center;
+     }
+     .rowStyleBSS .izlashBSS .izlashBox2 input{
+            width: 70%;
+            margin: 8px 0px 0px 4px;
+
+     }
+     .rowStyleBSS .izlashBSS .izlashBox1 button{
+            line-height: 4px;
+            margin-bottom: 8px;
+     }
+}
+@media (min-width: 769px) and (max-width: 1024.9px){
+     .rowStyleBSS .izlashBSS .izlashBox1{
+            display: grid;
+            grid-template-columns:36% 36% 36% ;
+     }
+     .rowStyleBSS .izlashBSS .izlashBox1 button{
+            line-height: 4px;
+            margin-bottom: 8px;
+     }
+       
+}
+@media (min-width: 1025px) and (max-width: 1199.9px){
+     .rowStyleBSS .izlashBSS .izlashBox1 button{
+            line-height: 4px;
+     }
 }

@@ -31,24 +31,24 @@ function SoliqlarXisoboti() {
     })
 
     return (
-        <div className="col-md-12 mt-2">
-        <div className="textHeader">
+        <div className="col-md-12 mt-4 mb-4">
+        <div className="textHeaderSoliq">
                <h2>Soliqlar xisoboti</h2>
                <p>Tanlangan sana oralig'idagi soliq tafsilotlari</p>
         </div>
-        <div className="rowStyleM">
+        <div className="rowStyleSoliq">
                <div className="qoshish">
                       <h5>Filtirlash</h5>
                </div>
-               <div className="row cont">
-                      <div className="col-md-6">
+               <div className="row">
+                      <div className="col-6 col-sm-12">
                              <h6>Baza:</h6>
                              <select name="" id="" value={input.baza} onChange={baza}>
                                     <option value="">Barchasi</option>
                                     <option value=""></option>
                              </select>
                       </div>
-                      <div className="col-md-6">
+                      <div className="col-6 col-sm-12">
                              <h6>Aniq sanani belgilash:</h6>
                              <select name="" id="" value={input.aniqsanabelgilash} onChange={aniqsanabelgilash}>
                                     <option value="">Bugun</option>
@@ -62,7 +62,7 @@ function SoliqlarXisoboti() {
 
         <div className="row">
             <div className="col-md-12">
-                <div className="rowStyle">
+                <div className="rowStyleSSS">
                     <div className="cardlar">
                         <p>JAMI XISOBOTLAR <br /> (kirim-chiqim xarajatlar):</p>
                         <h3>240 000 000 so'm</h3>
@@ -71,7 +71,7 @@ function SoliqlarXisoboti() {
             </div>
         </div>
         
-        <div className="rowStyle">
+        <div className="rowStyleSSS">
                 <Link to={'/headerthird/soliqlarXisoboti/harid'}><button className='btn btn-success '>Hariddagi soliqlar</button></Link>
                 <Link to={'/headerthird/soliqlarXisoboti/sotish'}><button className='btn btn-primary m-2'>Sotishdagi soliqlar</button></Link>
                 <Link to={'/headerthird/soliqlarXisoboti/boshqa'}><button className='btn btn-danger'>Boshqa soliqlar </button></Link>

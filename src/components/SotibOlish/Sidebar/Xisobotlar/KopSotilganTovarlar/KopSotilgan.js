@@ -126,22 +126,22 @@ function KopSotilgan({mijoz,dukon,summa,eslatma,getKopsotilgan,editKopsotilgan,s
     };
 
     return (
-        <div className="col-md-12 mt-2">
+        <div className="col-md-12 mt-4 ">
             <div className="textHeader">
                 <h2>Ko`p sotilgan tovarlar</h2>
             </div>
-            <div className="rowStyleH">
+            <div className="rowStyleKS">
                 <div className="qoshish">
                     <h5>Filtirlash</h5>
                 </div>
-                <div className="row cont">
-                    <div className="col-md-6">
+                <div className="row">
+                    <div className="col-6 col-sm-12">
                         <h6>Baza:</h6>
-                        <input value={inputvalue.baza} onChange={baza} type="text" className={'form-control'}/>
+                        <input value={inputvalue.baza} onChange={baza} placeholder='Baza nomi...' type="text" className={'inputSelectStyl'}/>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-6 col-sm-12">
                         <h6>Bo`lim:</h6>
-                        <select name="" value={inputvalue.bolim} onChange={bolim} id="" >
+                        <select name="" value={inputvalue.bolim} onChange={bolim} id="" className='inputSelectStyl' >
                             <option value="">Bugun</option>
                             <option value="">Kecha</option>
                             <option value="">Oxirgi 7 kun</option>
@@ -149,17 +149,17 @@ function KopSotilgan({mijoz,dukon,summa,eslatma,getKopsotilgan,editKopsotilgan,s
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-md-6">
+                    <div className="col-6 col-sm-12">
                         <h6>Bo`lim ichida bo`lim:</h6>
-                        <select name="" id="" value={inputvalue.bolim2} onChange={bolim2}>
+                        <select name="" id="" className='inputSelectStyl' value={inputvalue.bolim2} onChange={bolim2}>
                             <option value="">Tanlash</option>
                             <option value="">Shefir zavod</option>
                             <option value="">Instrumentlar</option>
                         </select>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-6 col-sm-12">
                         <h6>Ferma:</h6>
-                        <select name="" id="" value={inputvalue.firma} onChange={firma}>
+                        <select name="" className='inputSelectStyl'  id="" value={inputvalue.firma} onChange={firma}>
                             <option value="">Bugun</option>
                             <option value="">Kecha</option>
                             <option value="">Oxirgi 7 kun</option>
@@ -173,19 +173,22 @@ function KopSotilgan({mijoz,dukon,summa,eslatma,getKopsotilgan,editKopsotilgan,s
                         </select>
                     </div>
 
-                    <div className="col-md-12 d-flex">
-                        <div className="col-md-3">
+                </div>
+
+
+                    <div className="row">
+                        <div className="col-3 col-sm-12">
                             <label htmlFor={'olcov1'}>O`lchov birligi</label>
-                            <select name="" id={'olcov1'} value={inputvalue.ulcovbirligi} onChange={ulcovbirligi}>
+                            <select name="" id={'olcov1'} className='inputSelectStyl' value={inputvalue.ulcovbirligi} onChange={ulcovbirligi}>
                                 <option value="#">Barchasi</option>
                                 <option value="#">Pc(s)</option>
                                 <option value="#">Kg</option>
                                 <option value="#">Dona</option>
                             </select>
                         </div>
-                        <div className="col-md-3">
+                        <div className="col-3 col-sm-12">
                             <label htmlFor={'olcov2'}>Sanani belgilang</label>
-                            <select name="" id={'olcov2'} onChange={sananiblegilang} value={inputvalue.sananiblegilang}>
+                            <select name="" className='inputSelectStyl' id={'olcov2'} onChange={sananiblegilang} value={inputvalue.sananiblegilang}>
                                 <option value="#">Sanani belgilang</option>
                                 <option value="#">Bugun</option>
                                 <option value="#">Kecha</option>
@@ -195,25 +198,25 @@ function KopSotilgan({mijoz,dukon,summa,eslatma,getKopsotilgan,editKopsotilgan,s
                                 <option value="#">Siz istagan sana</option>
                             </select>
                         </div>
-                        <div className="col-md-3">
-                            <label htmlFor={'olcov3'}>Num of products</label>
-                            <input type="text" id={'olcov3'} className={'form-control'} value={inputvalue.numofproduct} onChange={numofproduct}/>
+                        <div className="col-3 col-sm-12">
+                            <label htmlFor={'olcov3'}>Mahsulot soni</label>
+                            <input type="text" id={'olcov3'}  placeholder='Mahsulot soni...' className={'inputSelectStyl'} value={inputvalue.numofproduct} onChange={numofproduct}/>
                         </div>
-                        <div className="col-md-3">
+                        <div className="col-3 col-sm-12">
                             <label htmlFor={'olcov4'} >Maxsulot turi</label>
-                            <select name="" id={'olcov4'} value={inputvalue.maxsulotturi} onChange={maxsulotturi}>
+                            <select name="" className='inputSelectStyl' id={'olcov4'} value={inputvalue.maxsulotturi} onChange={maxsulotturi}>
                                 <option value="#">Barchasi</option>
                                 <option value="#">Bir tuliq</option>
                                 <option value="#">Turli xil</option>
                             </select>
                         </div>
                     </div>
-                </div>
+                
             </div>
 
-            <div className="rowStyleH2">
+            <div className="rowStyleKS2 mpb-4">
 
-                <div className="row justify-content-between text-end ps-4">
+                <div className="row justify-content-between text-end ps-2 pe-2 pb-4 ">
 
 
                     <Chart

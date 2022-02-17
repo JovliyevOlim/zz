@@ -75,22 +75,22 @@ function SavdodaTulov({mijoz,dukon,summa,eslatma}) {
     }
 
     return (
-        <div className="col-md-12 mt-2">
+        <div className="col-md-12 mt-4 mt-4">
             <div className="textHeader">
-                <h2>Savdodagi tulov</h2>
+                <h2>Savdodagi to'lov</h2>
             </div>
-            <div className="rowStyleH">
+            <div className="rowStyleST">
                 <div className="qoshish">
                     <h5>Filtirlash</h5>
                 </div>
                 <div className="row cont">
-                    <div className="col-md-6">
+                    <div className="col-md-6 col-sm-12">
                         <h6>Baza:</h6>
                         <select name="" id="" value={inputvalue.baza} onChange={baza} className={'form-control'}>
                             <option value="#">Tanlash</option>
                         </select>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-6 col-sm-12">
                         <h6>Mijoz:</h6>
                         <select name="" id="" className={'form-control'} value={inputvalue.mijoz} onChange={mijoz}>
                             <option value="">Mavjud emas</option>
@@ -100,13 +100,13 @@ function SavdodaTulov({mijoz,dukon,summa,eslatma}) {
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-md-6">
+                    <div className="col-md-6 col-sm-12">
                         <h6>Tulov usuli:</h6>
                         <select name="" id="" className={'form-control'} value={inputvalue.tulovusuli} onChange={tulovusuli}>
                             <option value="">Tanlash</option>
                         </select>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-6 col-sm-12">
                         <h6>Mijoz guruxi:</h6>
                         <select name="" id="" className={'form-control'} value={inputvalue.mijozguruhi} onChange={mijozguruhi}>
                             <option value="">Bugun</option>
@@ -118,7 +118,7 @@ function SavdodaTulov({mijoz,dukon,summa,eslatma}) {
                 </div>
             </div>
 
-            <div className="rowStyleH2">
+            <div className="rowStyleST2">
                 <div className="col-md-12">
                     <h5>Summary</h5>
 
@@ -128,29 +128,33 @@ function SavdodaTulov({mijoz,dukon,summa,eslatma}) {
 
             </div>
 
-            <div className="rowStyleH2">
+            <div className="rowStyleST2">
 
                 <div className="qoshish mt-4">
                     <h5>Barcha savdolar</h5>
                     {/*<Link to={'/third/xarajatlarRuyxati/xarajatqoshish'}><button className='btn btn-primary'>+Qo'shish</button></Link>*/}
                 </div>
 
-                <div className="izlash">
-                    <p>Ko'rsatildi</p>
-                    <select value={inputvalue.izlash} onChange={izlash} name="" id="">
-                        <option value="">25</option>
-                        <option value="">1,000</option>
-                        <option value="">All</option>
-                    </select>
-                    <button> <img src={CSV} alt="" /> Export CSV</button>
-                    <button><img src={Excel} alt="" /> Export Excel</button>
-                    <button><img src={Print} alt="" /> Print</button>
-                    <button><img src={Pdf} alt="" />Export PDF</button>
-                    <button> <img src={Data} alt="" />Malumotlarni kamaytirish </button>
-                    <input type="text" placeholder='Izlash...' value={inputvalue.view} onChange={view}/>
+                <div className="izlashST2">
+                    <div className="izlashBox1">
+                        <p>Ko'rsatildi</p>
+                        <select value={inputvalue.izlash} onChange={izlash} name="" id="">
+                            <option value="">25</option>
+                            <option value="">1,000</option>
+                            <option value="">All</option>
+                        </select>
+                        <button> <img src={CSV} alt="" /> Export CSV</button>
+                        <button><img src={Excel} alt="" /> Export Excel</button>
+                        <button><img src={Print} alt="" /> Print</button>
+                        <button><img src={Pdf} alt="" />Export PDF</button>
+                        <button> <img src={Data} alt="" />Malumotlarni kamaytirish </button>
+                    </div>
+                    <div className="izlashBox2">
+                        <input type="text" placeholder='Izlash...' value={inputvalue.view} onChange={view}/>
+                    </div>
                 </div>
                 <div className="table-responsive">
-                    <table className='table table-striped table-bordered mt-4 '>
+                    <table className='table table-striped table-bordered mt-4 mb-4 '>
                         <thead>
                         <tr>
                             <th>Qisqa eslatma</th>
@@ -186,10 +190,7 @@ function SavdodaTulov({mijoz,dukon,summa,eslatma}) {
                                 <ModalBody>
                                     <div>
                                         <div className={'d-flex'}>
-                                            Mijoz:=>{mijoz}
-                                            Dukon:=>{dukon}
-                                            Summa:=>{summa}
-                                            Eslatma:=>{eslatma}
+                                            
                                         </div>
                                     </div>
                                 </ModalBody>
