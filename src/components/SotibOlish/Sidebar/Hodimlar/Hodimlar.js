@@ -5,7 +5,7 @@ import right from '../../../../img/arrow-right2.svg'
 import {connect} from "react-redux";
 import {active,activemedia} from "../../../../reducer/functionreducer";
 
-function Hodimlar({active}) {
+function Hodimlar({active,activemedia}) {
 
     const [active2,setActive] = useState(false);
     const [classs,setClasss] = useState('');
@@ -26,7 +26,6 @@ function Hodimlar({active}) {
         }
     }
     function sidebaractive(){
-        activemedia()
     }
     return(
         <div className={'row h'}>

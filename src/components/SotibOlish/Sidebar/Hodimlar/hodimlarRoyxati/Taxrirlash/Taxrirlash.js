@@ -42,7 +42,7 @@ function Taxrirlash({getLavozim,saveXodim,LavozimReducer,getXodim,XodimReducer,u
         setInput(a)
     }
     function onchangeroleName(event){
-        input.roleName = parseInt(event.target.value)
+        input.roleName = (event.target.value)
         let a = {...input}
         setInput(a)
     }

@@ -996,36 +996,49 @@ input.search::placeholder {
         padding: 0 2rem;
     }
 }
-@media (min-width: 768px) and (max-width: 1023.9px){
-    .third .container-fluid .row .col-md-9{
+@media (min-width: 768px) and (max-width: 1023.9px) {
+    .third .container-fluid .row .col-md-9 {
         width: 60% !important;
     }
-    .third .container-fluid .row .col-md-3{
-        width:40% !important;
+
+    .third .container-fluid .row .col-md-3 {
+        width: 40% !important;
     }
-    .third .container-fluid .row .col-md-9 .row .col-md-1{
+
+    .third .container-fluid .row .col-md-9 .row .col-md-1 {
         width: 15% !important;
     }
-    .third .container-fluid .row .col-md-9 .row .col-md-11{
+
+    .third .container-fluid .row .col-md-9 .row .col-md-11 {
         width: 85% !important;
     }
+
     .image {
         width: 55px;
         height: 55px;
     }
+
+    .homepage2 .image {
+        width: 46px;
+        height: 46px;
+    }
+
     h4.kitchen {
         font-size: 16px;
         margin: 0
     }
+
     p.kitchen {
         font-size: 12px;
         line-height: 13px;
     }
+
     .kitchen-button {
         padding: 5px 14px;
         font-size: 14px;
         margin-bottom: 1rem;
     }
+
     div.col-3.margin {
         margin-left: -10px;
         margin-bottom: 15px;
@@ -1033,7 +1046,7 @@ input.search::placeholder {
     }
 
     p.raqam {
-        font-size:24px;
+        font-size: 24px;
     }
 
     .col-3 div .row .col-12 .row .col-8 h4.foiz.colorpale {
@@ -1074,7 +1087,7 @@ input.search::placeholder {
     .colorback {
         border: 0;
         align-items: center;
-        padding:1rem;
+        padding: 1rem;
     }
 
     .diagramm-text-one {
@@ -1113,43 +1126,117 @@ input.search::placeholder {
     .text-one {
 
     }
-    .text-one2{
+
+    .text-one2 {
 
     }
-    .apexcharts-graphical{
+
+    .apexcharts-graphical {
         width: 100% !important;
     }
-    .apexcharts-canvas{
+
+    .apexcharts-canvas {
         display: block !important;
         width: 100% !important;
         height: 100% !important;
     }
-    .paddding{
+
+    .paddding {
         padding: 0 2rem;
     }
-    .col-mdd-8{
+
+    .col-mdd-8 {
         width: 60% !important;
     }
-    .col-mdd-3{
+
+    .col-mdd-3 {
         width: 30% !important;
     }
-    .col-mdd-6{
+
+    .col-mdd-6 {
         width: 50% !important;
     }
-    .input-group{
+
+    .input-group {
 
         width: 100% !important;
     }
-    input.search{
+
+    input.search {
         width: 90%;
     }
-    img.search{
+
+    img.search {
         margin-top: 3px;
         width: 16px;
         height: 16px;
     }
+
+    .homepage2 .coll-1 {
+        text-align: center;
+        width: 18%;
+        padding: 0;
+    }
+
+    .homepage2 .coll-10 {
+        width: 81%;
+        padding: 0;
+    }
+
+    .homepage2 h4.jami {
+        font-size: 14px;
+    }
+
+    .homepage2 .col-12.margin {
+        padding: 0 0 0 10px;
+    }
+
+    .homepage2 .col-12.margin2 {
+        padding: 0 5px 0 5px;
+    }
+
+    .homepage2 p.raqam {
+        margin-top: 15px;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .homepage2 .col-3 div .row .col-12 .row .col-8 h4.foiz.colorpale {
+        font-size: 12px !important;
+    }
+
+    .homepage .col-3.col-sm-12.col-md-6.cardd-2.d-flex.justify-content-center.margin {
+        padding: 0 0;
+    }
+
+    .homepage2 .cardd-3 {
+        width: 100% !important;
+    }
+
+    .homepage2 .col-lg-7 .pe-md-4 .row.p-0.colorback {
+        margin-left: 1px;
+    }
+
+    .homepage2 .col-lg-6 .pe-4 .row.p-0.colorback {
+        margin-left: 1px;
+    }
+
+    .homepage2 h4.kitchen {
+        margin-left: 2px;
+        font-size: 16px;
+    }
+    .homepage2 p.kitchen{
+        margin-left: 3px;
+        font-size: 12px;
+    }
+    .homepage2   .kitchen-button {
+        padding: 5px 12px;
+        font-size: 14px;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+    }
 }
-@media (min-width: 1024px) and (max-width: 1199.9px){
+@media (min-width: 1024px) and (max-width: 1280.9px){
     .third .container-fluid .row .col-md-9{
         width: 60% !important;
     }
@@ -1294,6 +1381,249 @@ input.search::placeholder {
     }
     .col-mdd-3{
         width: 30% !important;
+    }
+    .col-mdd-6{
+        width: 50% !important;
+    }
+    .cardd-2{
+        width: 25% !important;
+    }
+    .cardd-3{
+        width: 33% !important;
+        height: 420px !important;
+    }
+    .input-group{
+
+        width: 100% !important;
+    }
+    input.search{
+        width: 90%;
+    }
+    img.search{
+        margin-top: 3px;
+        width: 16px;
+        height: 16px;
+    }
+    .homepage2 .imgsvg{
+        width: 15px;
+        height: 15px;
+    }
+    .homepage2 .coll-1{
+        text-align: center;
+        width: 18%;
+        padding: 0;
+    }
+    .homepage2 .coll-10{
+        width: 81%;
+        padding: 0;
+    }
+    .homepage2 h4.jami{
+        font-size: 10px;
+    }
+    .homepage2 .col-12.margin{
+        padding:0 0 0 10px;
+    }
+    .homepage2 .col-12.margin2{
+        padding:0 5px 0 5px;
+    }
+    .homepage2 p.raqam{
+        font-size: 11px;
+        font-weight: bold;
+    }
+    .homepage2 .col-3 div .row .col-12 .row .col-8 h4.foiz.colorpale{
+        font-size: 9px !important;
+    }
+    .homepage .col-3.col-sm-12.col-md-6.cardd-2.d-flex.justify-content-center.margin{
+        padding: 0 0;
+    }
+    .homepage2 .cardd-3{
+        width: 100% !important;
+        height: 420px !important;
+    }
+    .homepage2 .col-lg-7 .pe-md-4 .row.p-0.colorback{
+        margin-left: 1px;
+    }
+    .homepage2 .col-lg-6 .pe-4 .row.p-0.colorback{
+        margin-left: 1px;
+    }
+}
+@media (min-width: 1281px) and (max-width: 2000px){
+    .third .container-fluid .row .col-md-9{
+        width: 60% !important;
+    }
+    .third .container-fluid .row .col-md-3{
+        width:40% !important;
+    }
+    .third .container-fluid .row .col-md-9 .row .col-md-1{
+        width: 15% !important;
+    }
+    .third .container-fluid .row .col-md-9 .row .col-md-11{
+        width: 85% !important;
+    }
+    .image {
+        width: 85px;
+        height: 85px;
+    }
+    h4.kitchen {
+        font-size: 24px;
+        margin-bottom: 5px;
+    }
+    p.kitchen {
+        font-size: 20px;
+        line-height: 20px;
+    }
+    .kitchen-button {
+        padding: 20px 30px;
+        font-size: 24px;
+        margin-top: 2.5rem;
+        margin-bottom: 2.5rem;
+    }
+    div.col-3.margin {
+        margin-left: -10px;
+        margin-bottom: 15px;
+        border-radius: 8px;
+    }
+
+    p.raqam {
+        text-align: left;
+        margin-top: 20px;
+        font-size:20px;
+    }
+    .homepage2 p.raqam{
+        font-size:14px;
+    }
+
+    .col-3 div .row .col-12 .row .col-8 h4.foiz.colorpale {
+        font-size: 15px !important;
+    }
+    .homepage2 .col-3 div .row .col-12 .row .col-8 h4.foiz.colorpale{
+        font-size: 12px !important;
+    }
+
+    .foizsvg img {
+        width: 25px;
+        height: 25px;
+    }
+    .homepage2 .col-3 div .row .col-12 .row .col-8 h4.foiz.colorpale{
+       width: 18px;
+        height: 18px;
+    }
+
+    .diagramm-text {
+        margin-top: -30px;
+        font-size: 24px;
+    }
+    .homepage2 .third .container-fluid .row .col-4 .p-md-2 .row .col-6 .diagramm-text-one {
+        font-size: 16px;
+    }
+    .third {
+        padding: 1.2rem;
+    }
+
+    .selects-style {
+        background: #F5F5F7;
+        padding: 5px 10px 0 10px;
+        border-radius: 4px;
+    }
+    .selects{
+        font-size: 15px;
+        padding: 0;
+    }
+
+    h4.jami {
+        font-size: 15px;
+    }
+    .homepage2 h4.jami{
+        font-size: 11px;
+    }
+    div.col-4.margin {
+        margin-left: 0;
+        margin-right: 0;
+        background-color: #ffffff;
+        margin-bottom: 20px;
+        border-radius: 8px;
+    }
+
+    .colorback {
+        border: 0;
+        align-items: center;
+        padding:1rem;
+    }
+
+    .diagramm-text-one {
+        margin-top: 10px;
+        font-size: 24px;
+        text-align: left;
+    }
+    .homepage2 .third .container-fluid .row .col-4 .p-2 .row .col-7 .diagramm-text-one {
+        font-size: 16px;
+    }
+
+    .diagramm .col-4 div .row .col-6 h4 {
+        font-size: 24px !important;
+    }
+
+    .diagramm .col-4 div .row .col-6 p {
+        font-size: 16px;
+    }
+    .homepage2 .diagramm .col-4 div .row .col-6 p{
+        font-size: 13px;
+    }
+
+    .foizp {
+        font-size: 14px;
+    }
+    .homepage2 .foizp{
+        font-size: 10px;
+    }
+    .homepage2 .bar-chart h4{
+        font-size: 16px;
+    }
+    .bar-chart h4 {
+        font-size: 20px;
+    }
+
+    .homepage2 .bar-chart p{
+        font-size: 16px;
+    }
+    .bar-chart p {
+        font-size: 18px;
+    }
+    .charth{
+        height: 200px;
+    }
+    .colorback2 {
+        border-radius: 8px;
+        margin-bottom: 20px;
+        padding-bottom: 1rem !important;
+    }
+    .homepage2 .diagramm-text-one-sm{
+        font-size: 18px !important;
+    }
+
+
+    .homepage2    .text-one {
+            font-size: 22px;
+    }
+    .text-one2{
+
+    }
+    .apexcharts-graphical{
+        width: 100% !important;
+    }
+    .apexcharts-canvas{
+        display: block !important;
+        width: 100% !important;
+        height: 100% !important;
+    }
+    .paddding{
+        padding: 0 2rem;
+    }
+    .col-mdd-8{
+        width: 70% !important;
+    }
+    .col-mdd-3{
+        width: 25% !important;
     }
     .col-mdd-6{
         width: 50% !important;

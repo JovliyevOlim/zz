@@ -6,7 +6,10 @@
 
 }
 body{
+    background: silver;
+
 }
+
 .app-css{
     width: 100%;
     display: flex;
@@ -34,14 +37,14 @@ body{
 .homepagetwo{
     width: 100%;
 }
-@media screen and (max-width: 425.9px){
-    .homepage2{
-        transition: 1s ease;
-        transform: translateX(25%);
-        width: 100%;
-    }
+@media screen and  (max-width: 425.9px){
     .homepage1{
         transition: 1s ease;
+        width: 75%;
+    }
+    .homepage2 {
+        transition: 1s;
+        transform: translateX(70px);
         width: 100%;
     }
     .homepageone{
@@ -49,24 +52,71 @@ body{
     }
     .homepagetwo{
         width: 100%;
-        transform: translateX(0);
     }
 }
-@media (min-width: 426px) and (max-width: 649.9px){
-    .homepage2{
-        transition: 1s ease;
-        transform: translateX(25%);
-    }
+@media (min-width: 426px)  and  (max-width: 500.9px){
     .homepage1{
         transition: 1s ease;
+        width: 75%;
+    }
+    .homepage2 {
+        transition: 1s;
+        transform: translateX(70px);
+        width: 100%;
+    }
+    .homepageone{
+        width: 0;
+    }
+    .homepagetwo{
         width: 100%;
     }
 }
-@media (min-width: 650px) and (max-width: 767.9px){
-    .homepage2{
-            width: 66%;
-    }
+@media (min-width: 501px)  and  (max-width: 767.9px){
     .homepage1{
-        width: 34%;
+        transition: 1s ease;
+        width: 75%;
+    }
+    .homepage2 {
+        transition: 1s;
+        transform: translateX(70px);
+        width: 100%;
+    }
+    .homepageone{
+        width: 0;
+    }
+    .homepagetwo{
+        width: 100%;
+    }
+}
+@media (min-width: 768px)  and  (max-width: 1023.9px){
+    .homepage1{
+        transition: 1s ease;
+        width: 25%;
+    }
+    .homepage2 {
+        transition: 1s;
+        width: 75%;
+    }
+    .homepageone{
+        width: 0;
+    }
+    .homepagetwo{
+        width: 100%;
+    }
+}
+@media (min-width: 1024px)  and  (max-width: 1280.9px){
+    .homepage1{
+        transition: 1s ease;
+        width: 20%;
+    }
+    .homepage2 {
+        transition: 1s;
+        width: 80%;
+    }
+    .homepageone{
+        width: 0;
+    }
+    .homepagetwo{
+        width: 100%;
     }
 }
