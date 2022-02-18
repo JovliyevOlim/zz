@@ -1,4 +1,5 @@
 import {useState} from 'react'
+import './dukon1.css'
 
 function Dukon1() {
 
@@ -105,37 +106,36 @@ function Dukon1() {
     }
 
     return (
-
-        <div className="col-md-10">
-
-            <div className={'col-md-12 d-flex justify-content-between'}>
-                <div style={{width: '31%'}}>
+        <div className="dukonCont">
+             <h3 className='text-center pb-3'>Dukon sozlamalari</h3>
+            <div className={'row mb-3'}>
+                <div className='col-4'>
                     <label htmlFor={'nomi'}>Dukon nomi</label>
                     <input type="text" id={'nomi'} className={'form-control'} value={input.dukonnomi} onChange={dukonnomi}/>
                 </div>
-                <div style={{width: '31%'}}>
+                <div className='col-4'>
                     <label htmlFor={'sana'}>Ochilgan sana</label>
                     <input type="date" id={'sana'} className={'form-control'} value={input.ochilgansana} onChange={ochilgansana}/>
                 </div>
-                <div style={{width: '31%'}}>
+                <div className='col-4'>
                     <label htmlFor={'nomi'}>Savdodan foyda(barcha)</label>
                     <input type="text" className={'form-control'} value={input.savdodanfoiz} onChange={savdodanfoiz}/>
                 </div>
             </div>
 
-            <div className={'col-md-12 mt-4 d-flex justify-content-between'}>
-                <div style={{width: '31%'}}>
+            <div className={'row mb-3'}>
+                <div className='col-4'>
                     <label htmlFor={'nomi'}>Valyuta</label>
                     <input type="text" id={'nomi'} className={'form-control'} value={input.valyuta} onChange={valyuta}/>
                 </div>
-                <div style={{width: '31%'}}>
+                <div className='col-4'>
                     <label htmlFor={'sana'}>Valyuta joylashuvi</label>
                     <select name="" id="" className={'form-control'} value={input.valyutajoylashuvi} onChange={valyutajoylashuvi}>
                         <option value="#">Narxdan chapga</option>
                         <option value="#">Narxdan o`nga</option>
                     </select>
                 </div>
-                <div style={{width: '31%'}}>
+                <div className='col-4'>
                     <label htmlFor={'nomi'}>Vaqt zonasi</label>
                     <select name="" id="" className={'form-control'} value={input.vaqtzonasi} onChange={vaqtzonasi}>
                         <option value="#">ASIA/Srednekolymsk</option>
@@ -144,12 +144,12 @@ function Dukon1() {
                 </div>
             </div>
 
-            <div className={'col-md-12 mt-4 d-flex justify-content-between'}>
-                <div style={{width: '31%'}}>
+            <div className={'row mb-3'}>
+                <div className='col-4'>
                     <label htmlFor={'nomi3'}>Logoni yangilash</label>
                     <input type="file" id={'nomi3'} value={input.legionyangilash} onChange={legionyangilash} className={'form-control'}/>
                 </div>
-                <div style={{width: '31%'}}>
+                <div className='col-4'>
                     <label htmlFor={'sana'}>Xisobot yil boshlanadigan oy</label>
                     <select name="" id="" className={'form-control'} value={input.xisobotyil} onChange={xisobotyil}>
                         <option value="#">Yanvar</option>
@@ -166,7 +166,7 @@ function Dukon1() {
                         <option value="#">Dekabr</option>
                     </select>
                 </div>
-                <div style={{width: '31%'}}>
+                <div className='col-4'>
                     <label htmlFor={'nomi'}>Savdolar usulari</label>
                     <select name="" id="" className={'form-control'} value={input.savdolarusulari} onChange={savdolarusulari}>
                         <option value="#">Fifo</option>
@@ -176,12 +176,12 @@ function Dukon1() {
                 </div>
             </div>
 
-            <div className={'col-md-12 mt-4 d-flex justify-content-between'}>
-                <div style={{width: '31%'}}>
+            <div className={'row mb-3'}>
+                <div className='col-4'>
                     <label htmlFor={'nomi5'}>O`tkazmalar muddati</label>
                     <input type="text" id={'nomi5'} className={'form-control'} value={input.otkazmamuddati} onChange={otkazmamuddati}/>
                 </div>
-                <div style={{width: '31%'}}>
+                <div className='col-4'>
                     <label htmlFor={'sana'}>Kun formati</label>
                     <select name="" id="" className={'form-control'} value={input.kunformat} onChange={kunformat}>
                         <option value="#">mm/dd/yyyy</option>
@@ -189,7 +189,7 @@ function Dukon1() {
                         <option value="#">yyyy/dd/mm</option>
                     </select>
                 </div>
-                <div style={{width: '31%'}}>
+                <div className='col-4'>
                     <label htmlFor={'nomi'}>Vaqt formati</label>
                     <select name="" id="" className={'form-control'} value={input.vaqtformat} onChange={vaqtformat}>
                         <option value="#">12 soatlik</option>
@@ -198,26 +198,25 @@ function Dukon1() {
                 </div>
             </div>
 
-            <div className="col-md-12 mt-4 d-flex justify-content-between">
-                <div style={{width: '48%'}}>
+            <div className="row mb-3">
+                <div className='col-3'>
                     <label htmlFor={'l1'}>lang_v1.code_1_name:</label>
                     <input type="text" id={'l1'} className={'form-control'} value={input.lang1_name} onChange={lang1_name}/>
                 </div>
-                <div style={{width: '48%'}}>
+                <div className='col-3'>
                     <label htmlFor={'l2'}>lang_v1.code_1:</label>
                     <input type="text" id={'l2'} onChange={lang1} value={input.lang1} className={'form-control'}/>
                 </div>
-            </div>
-            <div className="col-md-12 mt-4 d-flex justify-content-between">
-                <div style={{width: '48%'}}>
+                <div className='col-3'>
                     <label htmlFor={'l3'}>lang_v1.code_2_name:</label>
                     <input type="text" id={'l3'} className={'form-control'} onChange={lang2_name} value={input.lang2_name}/>
                 </div>
-                <div style={{width: '48%'}}>
+                <div className='col-3'>
                     <label htmlFor={'l4'}>lang_v1.code_2:</label>
                     <input type="text" id={'l4'} className={'form-control'} value={input.lang2}/>
                 </div>
             </div>
+            
         </div>
 
     )

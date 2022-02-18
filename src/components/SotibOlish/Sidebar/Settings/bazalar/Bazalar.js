@@ -36,8 +36,8 @@ export default function Bazalar() {
 
     return (
         <div>
-            <div className="col-md-12 mt-2">
-                <div className="textHeader">
+            <div className="col-md-12 mt-4 mb-4">
+                <div className="textHeaderBaza">
                     <h2>Bazalar</h2>
                     <p> boshqaruvi</p>
                 </div>
@@ -46,7 +46,7 @@ export default function Bazalar() {
                         <h5>Sizning bazalaringiz</h5>
                         <button onClick={toggle} className='btn btn-primary'>+Qo'shish</button>
                     </div>
-                    <div className="izlash">
+                    <div className="izlashBaza">
                         <input type="text" placeholder='Izlash...'/>
                     </div>
                     <div className="table-responsive">

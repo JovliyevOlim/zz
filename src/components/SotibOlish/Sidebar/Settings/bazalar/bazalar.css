@@ -6,11 +6,11 @@
     background-color: #FFFF;
 }
 
-.textHeader{
+.textHeaderBaza{
     display: flex;
     align-items: baseline;
 }
-.textHeader h2{
+.textHeaderBaza h2{
     margin-right: 10px;
     font-size: 24px;
 
@@ -21,27 +21,27 @@
     justify-content: space-between;
     border-radius: 16px;
 }
-.rowStyleBaza .izlash{
+.rowStyleBaza .izlashBaza{
     display: flex;
     justify-content: end;
     margin-top: 32px;
     
 }
 
-.rowStyleBaza .izlash p{
+.rowStyleBaza .izlashBaza p{
     text-align: center;
 }
-.rowStyleBaza .izlash select{
+.rowStyleBaza .izlashBaza select{
     height: 28px;
     border-radius: 4px;
     border: 1px solid #6b6363a0;
     margin-left: 4px;
 }
-.rowStyleBaza .izlash button:hover{
+.rowStyleBaza .izlashBaza button:hover{
     cursor: pointer;
     background-color: #e0dddd;
 }
-.rowStyleBaza .izlash button{
+.rowStyleBaza .izlashBaza button{
     height: 28px;
     border-radius: 4px;
     border: 1px solid #6b6363a0;
@@ -49,11 +49,11 @@
     background-color: #f3efef;
     font-size: 11px;
 }
-.rowStyleBaza .izlash button img{
+.rowStyleBaza .izlashBaza button img{
     width: 16px;
 }
 
-.rowStyleBaza .izlash input{
+.rowStyleBaza .izlashBaza input{
     height: 28px;
     border-radius: 4px;
     border: 1px solid #6b6363a0;

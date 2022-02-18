@@ -46,7 +46,8 @@ function Sozlamalar({active}) {
 
                 <svg className={`sidebar-img  ${classs}`} width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M8.91016 19.92L15.4302 13.4C16.2002 12.63 16.2002 11.37 15.4302 10.6L8.91016 4.07999" stroke="#3A3C40" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>              </div>
+                </svg>             
+            </div>
             {
                 active2 ?<ul style={{width:'80%'}}>
                     <Link to={'/headerthird/dukonSozlama'} className={'mahsulotSetting'}><li onClick={sidebaractive}>Do`kon sozlamalari</li></Link>
