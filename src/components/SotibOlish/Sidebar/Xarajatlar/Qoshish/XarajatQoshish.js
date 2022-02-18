@@ -148,15 +148,15 @@ function XarajatQoshish({deleteXarajatlar,saveXarajatlar,}){
     }
 
     return(
-        <div className="container">
-        <div className={'row contenerX mt-4'}>
-            <div className="col-md-10 d-flex justify-content-center">
+        <div className="contenerX">
+        <div className={'row  mt-4'}>
+            <div className="col-12 d-flex justify-content-center">
                 <h5>Xarajat qo`shish</h5>
             </div>
 
-            <div className="col-md-10 p-2 border mt-4">
+            <div className="col-12 border mt-4">
                 <div className="row">
-                    <div className="col-md-4 col-sm-12">
+                    <div className="col-4 col-sm-12">
                         <label htmlFor="">baza</label>
                         <select className={'form-control'} value={input.baza} onChange={baza} name="" >
                             <option value="#">Tanlash</option>
@@ -176,7 +176,7 @@ function XarajatQoshish({deleteXarajatlar,saveXarajatlar,}){
                         </textarea>
                     </div>
 
-                    <div className="col-md-4 col-sm-12">
+                    <div className="col-4 col-sm-12">
                         <label htmlFor={'muddat'}>Xarajat turi</label>
                         {/*<div className={'d-flex'}>*/}
                         {/*    <input type="number" className={'form-control'}/>*/}
@@ -222,7 +222,7 @@ function XarajatQoshish({deleteXarajatlar,saveXarajatlar,}){
                                 <button className={'btn btn-primary'} onClick={toggle}>Chiqish</button>
                             </ModalFooter>
                         </Modal>
-                    <div className="col-md-4 col-sm-12">
+                    <div className="col-4 col-sm-12">
                         <label htmlFor={'savOyna'}>Qisqa eslatma</label>
                         <input type="text" className={'form-control'} value={input.qisqaeslatma} onChange={qisqaeslatma}/>
 
@@ -238,7 +238,7 @@ function XarajatQoshish({deleteXarajatlar,saveXarajatlar,}){
                 </div>
             </div>
 
-            <div className="col-md-10 mt-4 border p-4">
+            <div className="col-12 mt-4 border p-4">
                 <div className="row">
                     <div className="col-md-6 col-sm-12 d-flex">
                         <input type="text" className={'form-control'} value={input.maxsulotnomishtrix} onChange={maxsulotnomishtrix} placeholder={'mahsulot nomi yoki shtrix kodini yozing'}/>
@@ -261,12 +261,10 @@ function XarajatQoshish({deleteXarajatlar,saveXarajatlar,}){
                 </div>
             </div>
 
-            <div className="col-md-10  mt-4 border p-4">
+            <div className="col-12  mt-4 border p-4">
                 <div className="row">
                     <h5 className={'text-center mt-5'}>To`lov qilish</h5>
-                    <div className="col-md-12 border p-1 d-flex">
-                        <div className="row">
-                            <div className="col-md-6 col-sm-12">
+                            <div className="col-6 col-sm-12">
                                 <label htmlFor={'avans'}>Avans 0 / To`lov so`mmasi</label>
                                 <input type="text" className={'form-control'} id={'avans'}/>
                                 <label className={'mt-3'} htmlFor={'tol'}>To`lov usuli</label>
@@ -286,8 +284,6 @@ function XarajatQoshish({deleteXarajatlar,saveXarajatlar,}){
                                 <textarea name="" id={'area1'} cols="30" value={input.eslatma} onChange={eslatma} className={'form-control'} rows="2">
                             </textarea>
                         </div>
-                        </div>
-                    </div>
                 </div>
             </div>
             <div className={'col-md-10 offset-1 mt-5 border p-4'}>

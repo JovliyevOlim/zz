@@ -5,6 +5,7 @@ import LavozimReducer, {deleteLavozim, editLavozim, getLavozim, saveLavozim} fro
 import SavdoQoshishReducer, {deleteSavdolar, editSavdolar, getSavdolar, saveSavdolar} from "../reducer/SavdoQoshishReducer";
 import TaminotReducer from "../../Hamkorlar/reducer/TaminotReducer";
 import users from "../../../../../reducer/users";
+import './savdoQoshish.css'
 
 function SavdoQoshish({saveSavdolar,deleteSavdolar,}){
 
@@ -119,9 +120,10 @@ function SavdoQoshish({saveSavdolar,deleteSavdolar,}){
     }
 
     return(
+        <div className="savdoQBox">
         <div className={'row mt-5 d-flex justify-content-center'}>
             <div className="col-md-10">
-                <h5>Savdo qo`shish</h5>
+                <h5 className="mt-3">Savdo qo`shish</h5>
                 <select name="" value={input.savdoqoshish} onChange={savdoqoshish}>
                     <option value="">Shefir zavod(Bl001)</option>
                 </select>
@@ -215,6 +217,7 @@ function SavdoQoshish({saveSavdolar,deleteSavdolar,}){
                 <button className={'btn btn-outline-primary'}>Saqlash va chek</button>
             </div>
 
+        </div>
         </div>
     )
 }

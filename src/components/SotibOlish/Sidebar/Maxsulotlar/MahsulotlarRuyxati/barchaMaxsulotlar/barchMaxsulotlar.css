@@ -2,7 +2,6 @@
        justify-content: space-between;
        border-radius: 8px;
        padding: 40px 30px 40px 30px;
-       /* background-color: #FFFF; */
 }
 .rowStyleBR .qoshish{
        display: flex;
@@ -14,8 +13,12 @@
        justify-content: space-between;
        margin-top: 32px;
 }
-.rowStyleBR .izlashBox1{
+.rowStyleBR .izlashBR .izlashBox1{
        display: flex;
+}
+
+.rowStyleBR  .izlashBR p{
+       text-align: center;
 }
 .rowStyleBR .btnBoshqarish{
        margin-bottom: 40px;
@@ -25,14 +28,14 @@
 
 }
 
-.rowStyleBR .izlashBR p{
-       text-align: center;
-}
+
 .rowStyleBR .izlashBR select{
+       width: 80px;
        height: 28px;
        border-radius: 4px;
        border: 1px solid #6b6363a0;
        margin-left: 4px;
+       background-color: #FFFFFF;
 }
 .rowStyleBR .izlashBR button:hover{
        cursor: pointer;

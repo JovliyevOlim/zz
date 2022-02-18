@@ -251,8 +251,9 @@ function Xarid({getXarid, saveXarid,taminot, deleteXarid, editXarid}) {
     // }
 
     return (
-        <div className={'row mt-5'}>
-            <h5 className={'text-center'}>Xarid qilish</h5>
+        <div className='xaridQilishBox'>
+        <div className={'row  mt-5 '}>
+            <h5 className={'text-center mt-3'}>Xarid qilish</h5>
             <div className="col-md-10 border mt-4 offset-1 d-flex">
                 <div className="row">
                 <div className={'col-3 col-sm-12'}>
@@ -433,6 +434,7 @@ function Xarid({getXarid, saveXarid,taminot, deleteXarid, editXarid}) {
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     )
 }

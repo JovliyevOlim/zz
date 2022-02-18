@@ -29,6 +29,8 @@
        text-align: center;
 }
 .rowStyleQH .izlashQH select{
+       width: 80px;
+       background-color: #FFFFFF;
        height: 28px;
        border-radius: 4px;
        border: 1px solid #6b6363a0;

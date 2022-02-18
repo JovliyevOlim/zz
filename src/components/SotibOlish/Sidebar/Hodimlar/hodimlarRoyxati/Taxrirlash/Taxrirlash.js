@@ -123,7 +123,7 @@ function Taxrirlash({getLavozim,saveXodim,LavozimReducer,getXodim,XodimReducer,u
     }
 
     return(
-        <div className={'row ht'}>
+        <div className={' ht'}>
             <h5 className={'text-center mt-4'}>Xodim qo`shish</h5>
                 <div className="row">
                     <div className="col-sm-12 col-4 mb-2">

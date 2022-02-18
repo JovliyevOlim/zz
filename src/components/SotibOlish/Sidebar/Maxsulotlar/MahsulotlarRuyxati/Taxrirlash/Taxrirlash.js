@@ -1,3 +1,4 @@
+import './taxrirl.css'
 import {useState} from 'react'
 import {Modal, ModalBody, ModalHeader, ModalFooter} from "reactstrap";
 import MaxsulotlarRoyxariReducer, {
@@ -182,7 +183,7 @@ function Taxrirlash({saveMaxsulotRuyxati,deleteMaxsulotRuyxati,getMaxsulotRuyxat
     }
 
     return (
-        <div className={'row mt-5 cont'}>
+        <div className={'row mt-5 contanerT'}>
             <h4 className={'text-center'}>Mahsulot qo`shish / Taxrirlash</h4>
             <div className="col-10 col-sm-10 border p-4 justify-content-center offset-1 d-flex" >
                 <div className="row">

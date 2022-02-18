@@ -5,7 +5,7 @@ export default function QisqaQoshimcha(){
         <div className={'qisqaCont'}>
              <h3 className='text-center pb-3'>Qisqa qo'shimchalar sozlamalari</h3>
             <div className="row">
-                <div className="col-md-4 ">
+                <div className="col-4 col-md-12 mb-3">
                     <label htmlFor={'purcase'}>Purchase</label>
                     <input type="text" className={'form-control mb-4'} id={'purcase'}/>
 
@@ -18,7 +18,7 @@ export default function QisqaQoshimcha(){
                     <label htmlFor={'bazadan4'}>Savdo uchun to`lov:</label>
                     <input type="text" className={'form-control mb-4'} id={'bazadan4'}/>
                 </div>
-                <div className="col-md-4">
+                <div className="col-4 col-md-12 mb-3">
                     <label htmlFor={'xq'}>Xaridni qaytarish</label>
                     <input type="text" className={'form-control mb-4'} id={'xq'}/>
 
@@ -31,7 +31,7 @@ export default function QisqaQoshimcha(){
                     <label htmlFor={'xt'}>Xarajatni to`lovi:</label>
                     <input type="text" className={'form-control mb-4'} id={'xt'}/>
                 </div>
-                <div className="col-md-4">
+                <div className="col-4 col-md-12 mb-3">
                     <label htmlFor={'xq2'}>Xaridlar</label>
                     <input type="text" className={'form-control mb-4'} id={'xq2'}/>
 
