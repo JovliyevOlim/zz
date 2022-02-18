@@ -15,15 +15,13 @@ import users from "../../../../../reducer/users";
 import XodimReducer, {getXodim, saveXodim, editXodim, deleteXodim} from "../reducer/XodimReducer";
 import mapStateToProps from "react-redux/lib/connect/mapStateToProps";
 
-function HodimlarRoyhati({getXodim, deleteXodim, saveXodim, editXodim,XodimReducer,  xodimlar,users}) {
+function HodimlarRoyhati({getXodim, deleteXodim,XodimReducer,  xodimlar,users}) {
 
     useEffect(()=>{
-        xodim()
+        getXodim(users.businessId)
     },[XodimReducer.current])
 
-    function xodim(){
-        getXodim(users.businessId)
-    }
+
 
     const [input,setInput] = useState('')
     const [inSearch,setinSearch] = useState(
@@ -33,7 +31,6 @@ function HodimlarRoyhati({getXodim, deleteXodim, saveXodim, editXodim,XodimReduc
     )
 
     function deletex(item){
-        console.log(item)
         deleteXodim(item.id)
         getXodim(users.businessId)
     }
@@ -118,7 +115,8 @@ function HodimlarRoyhati({getXodim, deleteXodim, saveXodim, editXodim,XodimReduc
                                              to={'/headerthird/hodimlarruyxati/view/' + input.username + '/' + input.firstName + '/' + input.lastName}>
                                              <button className='korish'><img src={Korish} alt=""/> Ko'rish</button>
                                          </Link>
-                                             <button onClick={()=>deletex(item)} className='ochirish'><img src={Delete} alt=""/> O'chirish</button>
+                                         <Link to={'/headerthird/hodimlarruyxati'}><button onClick={()=>deletex(item)} className='ochirish'><img src={Delete} alt=""/> O'chirish</button>
+                                         </Link>
                                      </td>
 
                                  </tr>)

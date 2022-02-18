@@ -154,21 +154,21 @@ function Third({display}) {
             number: "2 400 000 so'm",
             foiz: "+10.23%",
             text: 'JAMI XARIDLAR',
-            svg: <img src={shopping} alt={'shopping'}/>,
+            svg: <img  className={'imgsvg'} src={shopping} alt={'shopping'}/>,
             svgfoiz: <img src={jami1} alt={'jami1'}/>
         },
         {
             number: "2 400 000 so'm",
             foiz: "+10.23%",
             text: 'JAMI SAVDO',
-            svg: <img src={jamisavdo} alt={'jamisavdo'}/>,
+            svg: <img className={'imgsvg'} src={jamisavdo} alt={'jamisavdo'}/>,
             svgfoiz: <img src={jami2} alt={'jami2'}/>
         },
         {
             number: "2 400 000 so'm",
             foiz: "+10.23%",
             text: 'BOZORDAN QARZIM',
-            svg: <img src={bozordanqarz} alt={'bozordanqarz'}/>,
+            svg: <img  className={'imgsvg'} src={bozordanqarz} alt={'bozordanqarz'}/>,
             svgfoiz: <img src={jami3} alt={'jami3'}/>
         },
         {
@@ -176,7 +176,7 @@ function Third({display}) {
             foiz: "+10.23%",
             text: 'QARZDORLARDAN HAQIM',
             svgfoiz: <img src={jami4} alt={'jami4'}/>,
-            svg: <img src={qarzdorlar} alt={'qarzdorlar'}/>,
+            svg: <img src={qarzdorlar} className={'imgsvg'} alt={'qarzdorlar'}/>,
         },
     ])
     const [active, Setactive] = useState(false)
@@ -255,10 +255,10 @@ function Third({display}) {
                                         <div className="col-12 margin">
                                             <div
                                                 className="row p-2 pb-0 d-flex marginb align-items-center justify-content-start">
-                                                <div className="col-1">
+                                                <div className="col-md-1 coll-1">
                                                     {item.svg}
                                                 </div>
-                                                <div className="col-10">
+                                                <div className="col-md-10 coll-10">
                                                     <h4 className={'jami'}>{item.text}</h4>
                                                 </div>
                                             </div>
@@ -321,7 +321,7 @@ function Third({display}) {
                             options={chartOptions.options}
                             series={chartOptions.series}
                             type={'line'}
-                            height={windowscrenn}
+                            height={windowscrenn*0.40}
                         />
 
                     </div>
@@ -429,13 +429,13 @@ function Third({display}) {
 
                 </div>
                 <div className="row p-0 mb-3 d-flex justify-content-between">
-                    <div className="col-md-12 col-sm-12   colorback2">
+                    <div className="col-md-12 col-sm-12 col-lg-7  colorback2">
                         <div className={'pe-md-4'}>
                             <div className="row p-0 colorback">
                                 <div className="col-6 col-sm-12 col-md-12 col-mdd-8 pt-3  mb-2 ps-3">
                                     <h3 className={'diagramm-text-one'}>Ommabop mahsulotlar</h3>
                                 </div>
-                                <div className="col-5 col-sm-11 col-md-12 col-mdd-3 pt-3 ps-3 offset-md-1">
+                                <div className="col-5 col-sm-11 col-md-12 col-mdd-3 pt-3 ps-3 offset-md-1 offset-lg-0">
                                     <div className="row p-0 align-items-center">
                                         <div className="col-12 d-flex justify-content-end justify-content-center justify-content-md-end">
                                             <div className={'selects-style'}>
@@ -458,13 +458,13 @@ function Third({display}) {
 
                         </div>
                     </div>
-                    <div className="col-md-12 col-sm-12">
+                    <div className="col-md-12 col-sm-12 col-lg-5">
                         <div>
                             <div className="row p-0 colorback">
-                                <div className="col-6 col-sm-10 col-md-10 col-mdd-8 pt-md-3 ps-md-3 pt-sm-2">
+                                <div className=" col-sm-10 col-md-10 col-mdd-8 col-lg-8 pt-md-3 ps-md-3 pt-sm-2">
                                     <h3 className={'diagramm-text-one text-one pt-sm-2'}>Oz qolgan mahsulotlar</h3>
                                 </div>
-                                <div className="col-5 col-sm-1 col-md-1 col-mdd-3 pt-md-3 ps-md-3 offset-md-1">
+                                <div className=" col-sm-1 col-md-1 col-mdd-3 pt-md-3 col-lg-3 ps-md-3 offset-md-1 offset-lg-0">
                                     <div className="row p-0 align-items-center">
                                         <div className="col-12 d-flex justify-content-end">
                                             <div className={'btn-nuqta'}>
@@ -520,14 +520,14 @@ function Third({display}) {
 
                 </div>
                 <div className="row p-0 mb-3 d-flex justify-content-between ">
-                    <div className="col-md-6 col-sm-12 col-md-12 colorback2">
+                    <div className="col-md-6 col-sm-12 col-md-12 col-lg-6 colorback2">
                         <div className={'pe-4'}>
                             <div className="row p-0 colorback">
-                                <div className="col-6 col-sm-10 col-md-10 pt-3 ps-3">
+                                <div className=" col-sm-10 col-md-10 col-lg-10 pt-3 ps-3"> {/*col-6*/}
                                     <h3 className={'diagramm-text-one diagramm-text-one-sm'}>Qarzdorlarda haqingiz
                                         (Nasiyalar)</h3>
                                 </div>
-                                <div className="col-5 col-sm-1 col-md-1  pt-3 ps-3 offset-sm-1">
+                                <div className="col-sm-1 col-md-1 col-lg-1  pt-3 ps-3 offset-sm-1"> {/*col-5*/}
                                     <div className="row p-0 align-items-center">
                                         <div className="col-12 d-flex justify-content-end justify-content-center">
                                             <div className={'btn-nuqta'}>
@@ -543,7 +543,7 @@ function Third({display}) {
 
                         </div>
                     </div>
-                    <div className="col-md-6 col-sm-12 col-md-12">
+                    <div className="col-md-6 col-sm-12 col-md-12 col-lg-6">
                         <div>
                             <div className="row p-0 colorback">
                                 <div className="col-6 col-sm-10 col-md-10 pt-3 ps-3">

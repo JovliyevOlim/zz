@@ -218,3 +218,46 @@ th{
             height: 32px;
         }
     }
+    @media (min-width: 1024px) and (max-width: 1279.9px){
+
+
+        .homepage2 td{
+            font-size: 13px;
+        }
+        .homepage2 th{
+            font-size: 14px;
+        }
+        .prev ,.next{
+            padding: 5px;
+            width: 42px;
+            height: 32px;
+            font-size: 14px;
+        }
+        .paginationItem{
+            padding:5px;
+            width: 32px;
+            height: 32px;
+        }
+    }
+    @media (min-width: 1281px) and (max-width: 2000px){
+
+
+        .homepage2 td{
+            font-size: 13px;
+        }
+        .homepage2 th{
+            font-size: 14px;
+        }
+        .prev ,.next{
+            padding: 5px;
+            width: 42px;
+            height: 32px;
+            font-size: 14px;
+        }
+        .paginationItem{
+            padding:5px;
+            width: 32px;
+            height: 32px;
+        }
+    }
+

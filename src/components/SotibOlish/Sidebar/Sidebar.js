@@ -43,7 +43,7 @@ function Sidebar({functionreducer,active,users}) {
     }
 
     return (
-                <div className={`col-md-12 sidebar ${functionreducer.func.class3} ${functionreducer.func.class4}`}>
+                <div className={`col-md-12 sidebar ${functionreducer.func.class3}`}>
                     <div className="sidehead d-flex justify-content-center">
                         <img src={logo} alt="logo"/>
                     </div>

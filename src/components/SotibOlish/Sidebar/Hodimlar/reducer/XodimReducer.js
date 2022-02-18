@@ -12,13 +12,12 @@ const slice = createSlice({
         getFrom: (state, action) => {
             state.xodimlar = action.payload.object
             console.log(action.payload.object);
-            toast.success('Get')
+            console.log('getdeltetishladi')
         },
         savefrom: (state, action) => {
             state.xodimlar.unshift(action.payload)
             console.log(action.payload)
             state.current=state.current+1
-            toast.success('SAQLANDI')
         },
         editfrom: (state, action) => {
             state.xodimlar.map((item, index) => {
@@ -26,15 +25,12 @@ const slice = createSlice({
                     item.login = action.payload.login
                 }
             })
-            toast.success('TAXRIRLANDI')
             state.current=state.current+1
         },
         deletefrom: (state, action) => {
             console.log('ochirildi')
             console.log(action.payload.object.id)
-            console.log(typeof action.payload)
-            toast.success('O`chirildi')
-            state.current=state.current-1
+
         }
     }
 });
