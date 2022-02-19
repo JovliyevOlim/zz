@@ -219,9 +219,7 @@ function Third({display}) {
     }
     const series = [200000, 300000, 500000, 600000]
     const windowscrenn = window.screen.height
-    console.log(windowscrenn)
     const windowscrenn2 = window.screen.width
-    console.log(windowscrenn2)
 
 
     return (

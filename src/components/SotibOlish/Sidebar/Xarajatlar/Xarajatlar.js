@@ -29,7 +29,6 @@ function Mahsulotlar({active}) {
     }
 
     function sidebaractive(){
-        active()
     }
     return(
         <div className={'row mahsulot'}>
@@ -52,9 +51,9 @@ function Mahsulotlar({active}) {
             </div>
             {
                 active2 ?<ul>
-                    <Link to={'/headerthird/xarajatRuyxati'} className={'mahsulotXarajat'}><li onClick={sidebaractive}>Xarajatlar ruyxati</li></Link>
-                    <Link to={'/headerthird/xarajatQoshish'} className={'mahsulotXarajat'}><li onClick={sidebaractive}>Xarajat qoshish</li></Link>
-                    <Link to={'/headerthird/xarajatTurlari'} className={'mahsulotXarajat'}><li onClick={sidebaractive}>Xarajat turlari</li></Link>
+                    <Link to={'/headerthird/xarajatRuyxati'}><li className={'li-text'} onClick={sidebaractive}>Xarajatlar ruyxati</li></Link>
+                    <Link to={'/headerthird/xarajatQoshish'}><li className={'li-text'} onClick={sidebaractive}>Xarajat qoshish</li></Link>
+                    <Link to={'/headerthird/xarajatTurlari'}><li className={'li-text'} onClick={sidebaractive}>Xarajat turlari</li></Link>
                 </ul>:''
             }
         </div>

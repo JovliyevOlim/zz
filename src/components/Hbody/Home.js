@@ -70,10 +70,11 @@ function Home({saveusers, getusers,users, linkpost,active}) {
         Setplaceholderp('parol yoki login xato !')
     }
 
-    function testusers() {
-        saveusers({username:inputlogin,password:inputparol})
+    async function testusers() {
         linkpost()
-        }
+        saveusers({username:inputlogin,password:inputparol})
+
+    }
 
 
 

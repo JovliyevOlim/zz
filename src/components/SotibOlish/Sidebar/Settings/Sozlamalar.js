@@ -29,7 +29,7 @@ function Sozlamalar({active}) {
     }
 
     function sidebaractive(){
-        active()
+
     }
     return(
         <div className={'row mahsulot'} onClick={toggle}>
@@ -50,8 +50,8 @@ function Sozlamalar({active}) {
             </div>
             {
                 active2 ?<ul style={{width:'80%'}}>
-                    <Link to={'/headerthird/dukonSozlama'} className={'mahsulotSetting'}><li onClick={sidebaractive}>Do`kon sozlamalari</li></Link>
-                    <Link to={'/headerthird/bazalarSetting'} className={'mahsulotSetting'}><li onClick={sidebaractive}>Bazalar</li></Link>
+                    <Link to={'/headerthird/dukonSozlama'} ><li   className={'li-text'} onClick={sidebaractive}>Do`kon sozlamalari</li></Link>
+                    <Link to={'/headerthird/bazalarSetting'}><li className={'li-text'} onClick={sidebaractive}>Bazalar</li></Link>
                     {/*<Link to={'/chekSetting'} className={'mahsulotSetting'}><li>Cheklar sozlamalari</li></Link>*/}
                     {/*<Link to={'/shtrixKodlar'} className={'mahsulotSetting'}><li>Shtrix kodlar sozlamalari</li></Link>*/}
                     {/*<Link to={'/printerSozlamalari'} className={'mahsulotSetting'}><li>Printer sozlamalari</li></Link>*/}

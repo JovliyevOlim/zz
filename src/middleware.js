@@ -1,5 +1,6 @@
 
 import axios from "axios";
+
 export const api = ({dispatch}) => (next) => (action) => {
     if (action.type !== "api/apiCall") {
         next(action)
@@ -15,7 +16,7 @@ export const api = ({dispatch}) => (next) => (action) => {
 
         url, method, data,params
     }).then(res => {
-        dispatch({
+         dispatch({
             type: onSuccess,
             payload: res.data
         })

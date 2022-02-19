@@ -10,6 +10,9 @@ import {useHistory} from "react-router-dom";
 import functionreducer from "./reducer/functionreducer";
 import Sidebar from "./components/SotibOlish/Sidebar/Sidebar";
 import users from "./reducer/users";
+
+
+
 function App({functionreducer,active,users}) {
     const history = useHistory()
 
@@ -19,13 +22,14 @@ function App({functionreducer,active,users}) {
 
     const [link, Setlink] = useState('')
 
-    function linkpost() {
+     async function linkpost() {
+            await
             history.push('')
             Setlink('/headerthird')
     }
 
     return (
-        <div className={'app-css'}>
+        <div className={`app-css ${functionreducer.func.class5}`}>
             <div className={`${functionreducer.func.class1}`}>
                 {
                     functionreducer.func.actives ? <Sidebar/>

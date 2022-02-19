@@ -4,7 +4,6 @@ import RenderComponent from "./RenderComponent";
 
 function Pagination() {
     useEffect(() => {
-        console.log('third')
         ommabop()
     }, [])
 

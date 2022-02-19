@@ -49,9 +49,9 @@ function Hodimlar({active,activemedia}) {
                 <div>
                     {
                         active2 ?<ul >
-                            <li onClick={sidebaractive}><Link  to={'/headerthird/hodimlarruyxati'} className={"lll"}>Xodimlar ruyxati</Link></li>
-                            <li onClick={sidebaractive}><Link  to={'/headerthird/lavozimlar'} className={"lll"}>Lavozimlar</Link></li>
-                            <li onClick={sidebaractive}><Link  to={'/headerthird/hodimulush'} className={"lll"}>Xodimlar ulushi</Link>   </li>
+                            <li onClick={sidebaractive}><Link  to={'/headerthird/hodimlarruyxati'} className={"lll li-text"}>Xodimlar ruyxati</Link></li>
+                            <li onClick={sidebaractive}><Link  to={'/headerthird/lavozimlar'} className={"lll li-text"}>Lavozimlar</Link></li>
+                            <li onClick={sidebaractive}><Link  to={'/headerthird/hodimulush'} className={"lll li-text"}>Xodimlar ulushi</Link>   </li>
                         </ul>:''
                     }
                 </div>

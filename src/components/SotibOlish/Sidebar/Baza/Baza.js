@@ -53,8 +53,8 @@ function Mahsulotlar({active}) {
             </div>
             {
                 active2 ?<ul>
-                    <Link to={'/headerthird/utkazmaRuyxati'} className={'bazaLink'}><li onClick={sidebaractive}>O`tkazmalar ruyxati</li></Link>
-                    <Link to={'/headerthird/yangiOtkazma'} className={'bazaLink'}><li onClick={sidebaractive}>Yangi o`tkazma</li></Link>
+                    <Link to={'/headerthird/utkazmaRuyxati'} ><li className={'li-text'} onClick={sidebaractive}>O`tkazmalar ruyxati</li></Link>
+                    <Link to={'/headerthird/yangiOtkazma'} ><li className={'li-text'} onClick={sidebaractive}>Yangi o`tkazma</li></Link>
                 </ul>:''
             }
         </div>

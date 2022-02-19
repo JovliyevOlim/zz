@@ -28,7 +28,6 @@ function Mahsulotlar({active}) {
     }
 
     function sidebaractive(){
-        active()
     }
 
     return (
@@ -55,7 +54,7 @@ function Mahsulotlar({active}) {
                 </svg>            </div>
             {
                 active2 ? <ul>
-                    <li  onClick={sidebaractive}><Link to={'/headerthird/mahsulotRuyxati'} className={'mahqosh'}>Maxsulotlar ruyxati</Link></li>
+                    <li  onClick={sidebaractive}><Link to={'/headerthird/mahsulotRuyxati'} className={'li-text'}>Maxsulotlar ruyxati</Link></li>
                     {/*<li><Link to={'/mahsulotQoshish'} className={'mahqosh'}>Maxsulot qo`shish</Link></li>*/}
                     {/*<li><Link to={'/mahsulotShtrix'} className={'mahqosh'}>Shtrix kodlar</Link></li>*/}
                     {/*<li><Link to={'/turliTavar'} className={'mahqosh'}>Turli Tavarlar</Link></li>*/}
@@ -65,8 +64,8 @@ function Mahsulotlar({active}) {
                     {/* <li  onClick={sidebaractive}><Link to={'/headerthird/sotuvNarxGuruhlanishi'} className={'mahqosh'}>Sotuv narxining guruhi</Link></li> */}
                     {/*<li  onClick={sidebaractive}><Link to={'/headerthird/sotuvNarxGuruhlanishi'} className={'mahqosh'}>Sotuv narxining guruhi</Link></li>*/}
                     {/*<li><Link to={'/ulcovBirliklar'} className={'mahqosh'}>O`lchov birliklar</Link></li>*/}
-                    <li  onClick={sidebaractive}><Link to={'/headerthird/bolimlar'} className={'mahqosh'}>Bo`limlar</Link></li>
-                    <li  onClick={sidebaractive}><Link to={'/headerthird/firmalar'} className={'mahqosh'}>Firmalar</Link></li>
+                    <li  onClick={sidebaractive}><Link to={'/headerthird/bolimlar'} className={'li-text'}>Bo`limlar</Link></li>
+                    <li  onClick={sidebaractive}><Link to={'/headerthird/firmalar'} className={'li-text'}>Firmalar</Link></li>
                     {/*<li><Link to={'/kafolat'} className={'mahqosh'}>Kafolatlar</Link></li>*/}
                 </ul> : ''
             }

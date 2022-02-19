@@ -8,15 +8,14 @@ export const slice = createSlice({
         token: {
             token_name: ''
         },
-        businessId:1,
-        payload:[]
+        businessId:'',
+        link:'401'
     },
     reducers: {
         save: (state, action) => {
-              console.log(state.payload)
-            state.payload = action.payload
+
+            state.payload = action.payload.object
             console.log(state.payload)
-            console.log('olm')
 
         },
         get: (state, action) => {
