@@ -10,9 +10,12 @@ import {useEffect, useState} from "react";
 import {connect} from "react-redux";
 import './savdoOynasi.css'
 import SavdoOynaReducer, {deleteSavdo, editSavdo, getSavdo, saveSavdo} from "../reducer/SavdoOynaReducer";
-import MaxsulotlarRoyxariReducer, {getMaxsulotRuyxati} from "../../Maxsulotlar/reducer/MaxsulotlarRoyxariReducer";
+import MaxsulotlarRoyxariReducer, {
+    deleteMaxsulotRuyxati,
+    getMaxsulotRuyxati
+} from "../../Maxsulotlar/reducer/MaxsulotlarRoyxariReducer";
 
-function SavdoOynasi({getSavdo,editSavdo,deleteSavdo,saveSavdo,savdo}){
+function SavdoOynasi({getSavdo,deleteSavdo,savdo,getMaxsulotRuyxati,MaxsulotlarRoyxariReducer,deleteMaxsulotRuyxati}){
 
     const [input,setInput] = useState(
         {
@@ -21,6 +24,29 @@ function SavdoOynasi({getSavdo,editSavdo,deleteSavdo,saveSavdo,savdo}){
             barchabrandlar:''
         }
     )
+
+    const [arr1,setarr1] = useState([
+        {
+            name: 'CR7',
+            id:''
+        }
+    ])
+
+    function push(name,id){
+        let a = arr1
+        a.push({name: name,id:id})
+        setarr1(a)
+        console.log('sss');
+    }
+
+    function deleteM(id){
+        console.log(id);
+        console.log(arr1);
+        let a = arr1
+        a.slice(id,1)
+        setarr1(a)
+        console.log(arr1);
+    }
 
     function baza(e){
         input.baza = e.target.value
@@ -43,19 +69,60 @@ function SavdoOynasi({getSavdo,editSavdo,deleteSavdo,saveSavdo,savdo}){
         getMaxsulotRuyxati()
     },[])
 
+    function deleteMaxsulot(item){
+        deleteMaxsulotRuyxati(item.id)
+        console.log('Deleted');
+    }
 
     const [count,setCount] = useState(0)
 
     return(
-        <div className={'row p-5'} >
-            <div className={'colorbackj ps-4 pe-4'}>
+        <div className={'row p-5 '} >
+
+            <div className={'col-md-12'}>
+                <div className="brendBox">
+                    <label htmlFor={'brand'}>Barcha brandlar: </label>
+                    <select name="" className={'form-control'} id={'brand'} value={input.barchabrandlar} onChange={barchabrandlar}>
+                        <option value="#">Barcha brandlar</option>
+                    </select>
+                </div>
+
+                <table className={'table'}>
+                    <thead>
+                        <tr>
+                            <th>NAME :</th>
+                            <th>ICON :</th>
+                            <th>X :</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {
+                        MaxsulotlarRoyxariReducer.maxsulotlar.map(item=><tr key={item.id}>
+
+                                <td className={'tdd'} onClick={()=>push(item.name,item.id)}>{item.name}
+
+                                </td>
+                                <td>-</td>
+                                <td><button onClick={()=>deleteMaxsulot(item)} className={'btn btn-outline-danger'}>Delete</button></td>
+
+                        </tr>)
+                    }
+                    {
+                        console.log(push)
+                    }
+                    </tbody>
+                </table>
+
+            </div>
+
+            <div className={'colorbackj ps-4 pe-4 mt-4'}>
                 <div className="navBlock">
                     {/* <button className={'btn btn-outline-primary'}>Oxirgi savdolar</button> */}
                     <div className="navBox1">
                         <label htmlFor={'baza'}>BAZA : </label>
                             <select className="" value={input.baza} onChange={baza} name="" id="">
-                                <option value="#">Walk in-customer</option>
-                                <option value="#">Walk in-seller</option>
+                                <option value="">Walk in-customer</option>
+                                <option value="">Walk in-seller</option>
                             </select>
                     </div>
                     <div className="navBox2">
@@ -68,13 +135,8 @@ function SavdoOynasi({getSavdo,editSavdo,deleteSavdo,saveSavdo,savdo}){
                     </div>
                 </div>
                 <div className="block2">
-                            <div className="brendBox">
-                                <label htmlFor={'brand'}>Barcha brandlar: </label>
-                                <select name="" className={''} id={'brand'} value={input.barchabrandlar} onChange={barchabrandlar}>
-                                    <option value="#">Barcha brandlar</option>
-                                </select>
-                            </div>
-                            <div className="mahsulotBox">
+
+                            <div className="mahsulotBox" style={{marginLeft:'60px'}}>
                                 <input type="text" className={''} value={input.mahsulotnomi} onChange={mahsulotnomi} placeholder={'mahsulot nomini yozing'}/>
                                 <img src={img8} alt="" style={{cursor:'pointer'}}/>
                             </div>
@@ -85,37 +147,31 @@ function SavdoOynasi({getSavdo,editSavdo,deleteSavdo,saveSavdo,savdo}){
                                         <thead>
                                         <tr>
                                             <th>Mahsulot</th>
-                                            <th>Miqdori</th>
+                                            <th className={'text-center'}>Miqdori</th>
                                             <th>Jami</th>
                                             <th>. . .</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         {
-                                            // MaxsulotlarRoyxariReducer.maxsulotruyxati.map(item=><tr key={item.id}>
-                                            //     <td>{item.name}</td>
-                                            // </tr>)
-
-                                            // savdo.map(item=><tr key={item.id}>
-                                            //     <td>{item.amountPaid}</td>
-                                            // </tr>)
+                                            arr1.map(item=><tr key={item.id}>
+                                                <td style={{marginLeft:'10px'}}>{item.name}</td>
+                                                <td className={'d-flex justify-content-between'}>
+                                                    <button onClick={()=>setCount(p=>p+1)} className={'btn btn-outline-dark'}>+</button>
+                                                    {count}
+                                                    <button onClick={()=>setCount(p=>p-1)} className={'btn btn-outline-dark'}>-</button>
+                                                </td>
+                                                <td> </td>
+                                                <td>
+                                                    <button onClick={()=>deleteM(item.id)} className={'btn btn-outline-dark'}>Delete</button>
+                                                </td>
+                                            </tr>)
                                         }
-
-                                        {/*<tr>*/}
-                                        {/*    <td>Cardigan (Open style) sweater</td>*/}
-                                        {/*    <td className={'d-flex  align-items-center p-3'}>*/}
-                                        {/*        <button onClick={()=>setCount(count-1)} className={'btn btn-outline-primary'}>-</button>*/}
-                                        {/*        {count}*/}
-                                        {/*        <button onClick={()=>setCount(count+1)} className={'btn btn-outline-primary'}>+</button>*/}
-                                        {/*    </td>*/}
-                                        {/*    <td>1200000</td>*/}
-                                        {/*    <td><button className={'btn btn-primary'}>Delete</button></td>*/}
-                                        {/*</tr>*/}
                                         </tbody>
                                     </table>
                                 </div>
 
-                                <div style={{marginTop:'300px'}} className={'d-flex justify-content-around'}>
+                                <div style={{marginTop:'100px'}} className={'d-flex justify-content-around'}>
                                     <h6>Mahsulot soni: 5</h6>
                                     <h6>Jami:200</h6>
                                 </div>
@@ -149,6 +205,6 @@ function SavdoOynasi({getSavdo,editSavdo,deleteSavdo,saveSavdo,savdo}){
         </div>
     )
 }
-export default connect((MaxsulotlarRoyxariReducer,SavdoOynaReducer),{getSavdo,saveSavdo,editSavdo,deleteSavdo}) (SavdoOynasi)
+export default connect((MaxsulotlarRoyxariReducer,SavdoOynaReducer),{getSavdo,saveSavdo,editSavdo,deleteSavdo,getMaxsulotRuyxati,deleteMaxsulotRuyxati}) (SavdoOynasi)
 
 // export default connect(({SavdoOynaReducer:{savdo}})=>({savdo}),{getSavdo,saveSavdo,editSavdo,deleteSavdo}) (SavdoOynasi)

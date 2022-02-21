@@ -154,3 +154,14 @@
         grid-gap: 10px;
     }
 }
+
+tbody .tdd{
+    cursor:pointer;
+    transition: 0.5s all linear;
+}
+tbody .tdd:hover{
+    cursor:pointer;
+    background: darkblue;
+    color: #ffff;
+    font-size: 18px;
+}

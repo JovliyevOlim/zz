@@ -6,7 +6,6 @@ const slice = createSlice({
     name: 'maxsulotlar',
     initialState: {
         maxsulotlar: []
-
     },
     reducers: {
         getFrom: (state, action) => {
@@ -52,8 +51,8 @@ export const saveMaxsulotRuyxati=(data)=>apiCall({
 });
 
 export const editMaxsulotRuyxati=(data)=>apiCall({
-    url: '/product',
-    method: 'post',
+    url: '/product/'+data.id,
+    method: 'put',
     data,
     onSuccess: slice.actions.editfrom.type
 });
