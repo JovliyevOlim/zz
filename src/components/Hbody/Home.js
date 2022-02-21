@@ -4,16 +4,15 @@ import './home.css'
 import React, {useState, useEffect} from "react";
 import Header from "../header/Header";
 import Bottom from "../Bottom/Bottom";
-import Third from "../SotibOlish/ThirdPage/Third";
 import {Link, Switch, Route, Redirect} from 'react-router-dom'
 import {connect} from "react-redux";
 import {active} from "../../reducer/functionreducer";
 import SecondPage from "../Pricing/SecondPage/SecondPage";
-import {toast} from "react-toastify";
-import users ,{saveusers,getusers}from "../../reducer/users";
+import users ,{saveusers,getusers,changeerror}from "../../reducer/users";
+import {idID} from "@mui/material/locale";
 
 
-function Home({saveusers, getusers,users, linkpost,active}) {
+function Home({saveusers, getusers,users, linkpost,active,changeerror}) {
 
     useEffect(() => {
     }, [])
@@ -25,27 +24,29 @@ function Home({saveusers, getusers,users, linkpost,active}) {
 
     function login(event) {
         setLogin(event.target.value)
+        // if (inputparol === '' || inputlogin === '') {
+        //     setdisabled(true)
+        // } else (
+        //     setdisabled(false)
+        // )
         // console.log(inputlogin)
-        if (inputparol !== '') {
-            setdisabled(false)
-        } else (
-            setdisabled(true)
-        )
+        changeerror()
     }
 
     function parol(event) {
         setparol(event.target.value)
+        // if (inputlogin === '' || inputparol === '') {
+        //     setdisabled(true)
+        // } else (
+        //     setdisabled(false)
+        // )
         // console.log(inputparol)
-        if (inputlogin !== '') {
-            setdisabled(false)
-        } else (
-            setdisabled(true)
-        )
+        changeerror()
     }
 
     function changechecked() {
         setchecked(prev => !prev)
-
+            console.log(checked)
     }
 
 
@@ -65,15 +66,10 @@ function Home({saveusers, getusers,users, linkpost,active}) {
 
 
 
-    function placeholder() {
-        Setplaceholderl('parol yoki login xato !')
-        Setplaceholderp('parol yoki login xato !')
-    }
 
-    async function testusers() {
-        linkpost()
+
+    function testusers() {
         saveusers({username:inputlogin,password:inputparol})
-
     }
 
 
@@ -85,6 +81,8 @@ function Home({saveusers, getusers,users, linkpost,active}) {
                 <div>
                     <Header/>
                 </div>
+                {console.log(inputlogin)}
+                {console.log(inputparol)}
                 <div className={'home-body'}>
                     <div className="homeContainer">
                             <div className={"home-img"}>
@@ -119,6 +117,9 @@ function Home({saveusers, getusers,users, linkpost,active}) {
                                         placeholder={placeholderp}/>
                                     <img onClick={changetypeinput} src={eye} alt=""/>
                                 </div>
+                                {
+                                  users.error ? <span className={'error'}> Login yoki parol xato !</span>:''
+                                }
                                 <div className="kirish-checkbox">
                                     <input onChange={changechecked} checked={checked} type="checkbox" id={'check'}/>
                                     <label htmlFor={'check'}>
@@ -134,7 +135,7 @@ function Home({saveusers, getusers,users, linkpost,active}) {
                                     </div>
                                 
                                 </div>
-                            <button onClick={testusers} className={'btn btn-primary form-control kirish'}>Kirish </button>
+                            <button onClick={testusers}  disabled={disabled} className={'btn btn-primary form-control kirish'}>Kirish </button>
                             </div>
                         </div>
                     </div>
@@ -155,4 +156,4 @@ function Home({saveusers, getusers,users, linkpost,active}) {
     )
 }
 
-export default connect((users), {getusers, saveusers,active})(Home)
+export default connect((users), {getusers, saveusers,active,changeerror})(Home)

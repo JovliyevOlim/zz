@@ -1,6 +1,5 @@
 
 import axios from "axios";
-
 export const api = ({dispatch}) => (next) => (action) => {
     if (action.type !== "api/apiCall") {
         next(action)
@@ -8,7 +7,7 @@ export const api = ({dispatch}) => (next) => (action) => {
     }
     next(action)
     const {url, method, data, onSuccess,params, onFail} = action.payload
-    axios({
+   axios({
         baseURL: 'http://localhost:8080/api',
         headers:{
             Authorization:`Bearer ${localStorage.getItem('tokenname')}`

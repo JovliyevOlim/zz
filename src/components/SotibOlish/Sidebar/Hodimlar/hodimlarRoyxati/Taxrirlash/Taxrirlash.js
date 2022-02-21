@@ -7,10 +7,12 @@ import LavozimReducer, {getLavozim, saveLavozim} from "../../reducer/LavozimRedu
 import XodimReducer, {saveXodim,getXodim,editXodim} from "../../reducer/XodimReducer";
 import {Link} from 'react-router-dom'
 import users from "../../../../../../reducer/users";
-function Taxrirlash({getLavozim,saveXodim,LavozimReducer,getXodim,XodimReducer,users,match,editXodim}) {
+import branchreducer,{getbranch} from "../../../../../../reducer/branchreducer";
+function Taxrirlash({getLavozim,saveXodim,LavozimReducer,getXodim,XodimReducer,users,match,editXodim,getbranch,branchreducer}) {
 
     useEffect(()=>{
        getLavozim()
+        getbranch(users.businessId)
         editx()
     },[])
 
@@ -182,6 +184,15 @@ function Taxrirlash({getLavozim,saveXodim,LavozimReducer,getXodim,XodimReducer,u
                                     <input type="checkbox"
                                            style={{width:'20px',height:'20px',marginLeft:'20px'}}
                                            id={'b1'}/>
+                                    {
+                                        branchreducer.branch.map(item=><div>
+                                            <label htmlFor={'b1'}>{item.name}</label>
+                                            <input type="checkbox"
+                                                   style={{width:'20px',height:'20px',marginLeft:'20px'}}
+                                                   id={'b1'}/>
+
+                                        </div>)
+                                    }
                                 </div>
                                 {console.log(input)}
                             </div>
@@ -196,4 +207,4 @@ function Taxrirlash({getLavozim,saveXodim,LavozimReducer,getXodim,XodimReducer,u
 
     )
 }
-export default connect((LavozimReducer,XodimReducer,users),{getLavozim,saveLavozim,saveXodim,getXodim,editXodim}) (Taxrirlash)
+export default connect((LavozimReducer,XodimReducer,users,branchreducer),{getLavozim,saveLavozim,saveXodim,getXodim,editXodim,getbranch}) (Taxrirlash)

@@ -3,6 +3,7 @@ import {useState} from 'react'
 import {connect} from 'react-redux'
 import {saveLavozim, getLavozim, deleteLavozim, editLavozim} from '../../reducer/LavozimReducer'
 import {Link} from 'react-router-dom'
+import users from "../../../../../../reducer/users";
 
 function Taxrirlash({getLavozim, editLavozim, lavozimlar, saveLavozim}) {
 

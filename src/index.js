@@ -7,10 +7,13 @@ import './assets/css/grid.css'
 import './assets/css/index.css'
 import {Provider} from "react-redux";
 import store from "./store";
+import 'react-toastify/dist/ReactToastify.css';
+import {ToastContainer} from "react-toastify";
 import {BrowserRouter} from "react-router-dom";
 
 ReactDOM.render(
     <Provider store={store}>
+        <ToastContainer/>
         <BrowserRouter>
             <App />
         </BrowserRouter>

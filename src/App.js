@@ -10,23 +10,11 @@ import {useHistory} from "react-router-dom";
 import functionreducer from "./reducer/functionreducer";
 import Sidebar from "./components/SotibOlish/Sidebar/Sidebar";
 import users from "./reducer/users";
+import {ToastContainer} from "react-toastify";
 
 
 
 function App({functionreducer,active,users}) {
-    const history = useHistory()
-
-    useEffect(() => {
-        history.push('/home')
-        }, [])
-
-    const [link, Setlink] = useState('')
-
-     async function linkpost() {
-            await
-            history.push('')
-            Setlink('/headerthird')
-    }
 
     return (
         <div className={`app-css ${functionreducer.func.class5}`}>
@@ -35,13 +23,30 @@ function App({functionreducer,active,users}) {
                     functionreducer.func.actives ? <Sidebar/>
                         : ''
                 }
-
+                {console.log('feljfle')}
             </div>
             <div className={`${functionreducer.func.class2}`}>
+                {console.log(users.linkhome)}
+                {console.log(users.linkheader)}
                 <Switch>
-                    <Route path={'/home'} render={() => <Home linkpost={linkpost}/>}/>
-                    <Route path={'/headerthird'} component={Headerthird}/>
-                    <Redirect to={link}/>
+                    {
+                        users.linkhome ?
+                            <Route path={'/home'} component={Home}/>
+                            :''
+                    }
+                    {
+                        users.linkheader ?  <Route path={'/headerthird'} component={Headerthird}/>:''
+
+                    }
+                    {
+                        users.linkhome ?                     <Redirect to={'/home'}/>:''
+                    }
+
+                    {
+                       users.linkheader ?   <Redirect to={'/headerthird'}/>:''
+                    }
+
+
                 </Switch>
             </div>
         </div>

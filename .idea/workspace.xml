@@ -1,40 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2ed0236b-2151-406e-828e-c9a3e0b2b336" name="Changes" comment="sidebar">
+    <list default="true" id="2ed0236b-2151-406e-828e-c9a3e0b2b336" name="Changes" comment="setting">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/JsonData/customers-list.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/JsonData/notification.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/JsonData/sidebar_routes.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/JsonData/status-card-data.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/JsonData/top-customers.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/JsonData/user_menus.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/favicon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/tuat.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Hbody/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Hbody/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Baza/Baza.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Baza/Baza.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hamkorlar/Hamkorlar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hamkorlar/Hamkorlar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Haridlar/Haridlar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Haridlar/Haridlar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/Hodimlar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/Hodimlar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/Maxsulotlar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/Maxsulotlar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Savdo/Savdo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Savdo/Savdo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Settings/Sozlamalar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Settings/Sozlamalar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Sidebar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xarajatlar/Xarajatlar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xarajatlar/Xarajatlar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/Xirsobotlar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Xisobotlar/Xirsobotlar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/sidebar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/sidebar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/Pagination.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/Pagination.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/Pagination4.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/Pagination4.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/Third.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/Third.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/pagination2.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/pagination2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/pagination3.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/pagination3.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/third.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/ThirdPage/third.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Hbody/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Hbody/home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/Lavozimlar/Taxrirlash/Taxrirlash.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/Lavozimlar/Taxrirlash/Taxrirlash.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/hodimlarRoyxati/Taxrirlash/Taxrirlash.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Hodimlar/hodimlarRoyxati/Taxrirlash/Taxrirlash.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/middleware.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducer/functionreducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer/functionreducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducer/branchreducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer/branchreducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reducer/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer/users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,6 +111,7 @@
     <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -215,7 +197,8 @@
       <workItem from="1645017346000" duration="2991000" />
       <workItem from="1645073704268" duration="18641000" />
       <workItem from="1645164509903" duration="8723000" />
-      <workItem from="1645247608982" duration="23013000" />
+      <workItem from="1645247608982" duration="23709000" />
+      <workItem from="1645331581866" duration="17798000" />
     </task>
     <task id="LOCAL-00001" summary="app.js">
       <created>1643606654320</created>
@@ -434,7 +417,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645168836824</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="setting">
+      <created>1645277322491</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1645277322491</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -469,7 +459,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="SHELVE_DETAILS_PREVIEW_SHOWN" value="true" />
-    <MESSAGE value="udar boldi" />
     <MESSAGE value="hodimRuyxat" />
     <MESSAGE value="style" />
     <MESSAGE value="bek" />
@@ -494,7 +483,8 @@
     <MESSAGE value="permissino" />
     <MESSAGE value="editfunction" />
     <MESSAGE value="sidebar" />
-    <option name="LAST_COMMIT_MESSAGE" value="sidebar" />
+    <MESSAGE value="setting" />
+    <option name="LAST_COMMIT_MESSAGE" value="setting" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
