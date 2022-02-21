@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2ed0236b-2151-406e-828e-c9a3e0b2b336" name="Changes" comment="sidebar">
+    <list default="true" id="2ed0236b-2151-406e-828e-c9a3e0b2b336" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/reducer/MaxsulotlarRoyxariReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/reducer/MaxsulotlarRoyxariReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Savdo/SavdoOynasi/SavdoOynasi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Savdo/SavdoOynasi/SavdoOynasi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Savdo/SavdoOynasi/savdoOynasi.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Savdo/SavdoOynasi/savdoOynasi.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/middleware.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -415,7 +412,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645277322491</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="savOyna">
+      <created>1645442113105</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1645442113105</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -450,7 +454,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="SHELVE_DETAILS_PREVIEW_SHOWN" value="true" />
-    <MESSAGE value="hodimRuyxat" />
     <MESSAGE value="style" />
     <MESSAGE value="bek" />
     <MESSAGE value="come" />
@@ -475,7 +478,8 @@
     <MESSAGE value="editfunction" />
     <MESSAGE value="sidebar" />
     <MESSAGE value="setting" />
-    <option name="LAST_COMMIT_MESSAGE" value="setting" />
+    <MESSAGE value="savOyna" />
+    <option name="LAST_COMMIT_MESSAGE" value="savOyna" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

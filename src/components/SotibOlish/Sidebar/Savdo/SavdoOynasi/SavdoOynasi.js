@@ -14,6 +14,7 @@ import MaxsulotlarRoyxariReducer, {
     deleteMaxsulotRuyxati,
     getMaxsulotRuyxati
 } from "../../Maxsulotlar/reducer/MaxsulotlarRoyxariReducer";
+import {Modal, ModalBody, ModalFooter, ModalHeader} from "reactstrap";
 
 function SavdoOynasi({getSavdo,deleteSavdo,savdo,getMaxsulotRuyxati,MaxsulotlarRoyxariReducer,deleteMaxsulotRuyxati}){
 
@@ -28,17 +29,21 @@ function SavdoOynasi({getSavdo,deleteSavdo,savdo,getMaxsulotRuyxati,MaxsulotlarR
     const [arr1,setarr1] = useState([
         {
             name: 'CR7',
-            id:''
+            id:'',
+            counter:0
         }
     ])
 
-    function push(name,id){
-        let a = arr1
-        a.push({name: name,id:id})
+    const [active,setActive] = useState(false)
+    const [active2,setActive2] = useState(false)
+    const [active3,setActive3] = useState(false)
+
+    function pushesh(name,id){
+       arr1.push({name: name,id:id,counter:0})
+        let a = [...arr1]
         setarr1(a)
         console.log('sss');
     }
-
     function deleteM(id){
         console.log(id);
         console.log(arr1);
@@ -47,7 +52,6 @@ function SavdoOynasi({getSavdo,deleteSavdo,savdo,getMaxsulotRuyxati,MaxsulotlarR
         setarr1(a)
         console.log(arr1);
     }
-
     function baza(e){
         input.baza = e.target.value
         let a = {...input}
@@ -65,17 +69,45 @@ function SavdoOynasi({getSavdo,deleteSavdo,savdo,getMaxsulotRuyxati,MaxsulotlarR
     }
 
     useEffect(()=>{
-        // getSavdo()
         getMaxsulotRuyxati()
     },[])
+
+    function toggle(){
+        setActive(!active)
+    }
+    function toggle2(){
+        setActive2(!active2)
+    }
+    function toggle3(){
+        setActive3(!active3)
+    }
 
     function deleteMaxsulot(item){
         deleteMaxsulotRuyxati(item.id)
         console.log('Deleted');
     }
 
-    const [count,setCount] = useState(0)
+    const [count,setCounter] = useState(0)
 
+    function setCount(id){
+           arr1.map(item=>{
+                if (item.id===id){
+                    item.counter+=1
+                }
+            })
+        let a =[...arr1]
+        setarr1(a)
+    }
+
+    function sMinus(id){
+        arr1.map(item=>{
+            if (item.id === id){
+                item.counter-=1
+            }
+        })
+        let a = [...arr1]
+        setarr1(a)
+    }
     return(
         <div className={'row p-5 '} >
 
@@ -92,24 +124,22 @@ function SavdoOynasi({getSavdo,deleteSavdo,savdo,getMaxsulotRuyxati,MaxsulotlarR
                         <tr>
                             <th>NAME :</th>
                             <th>ICON :</th>
-                            <th>X :</th>
+                            {/*<th>X :</th>*/}
                         </tr>
                     </thead>
                     <tbody>
                     {
                         MaxsulotlarRoyxariReducer.maxsulotlar.map(item=><tr key={item.id}>
 
-                                <td className={'tdd'} onClick={()=>push(item.name,item.id)}>{item.name}
+                                <td className={'tdd'} onClick={()=>pushesh(item.name,item.id)}>{item.name}
 
                                 </td>
                                 <td>-</td>
-                                <td><button onClick={()=>deleteMaxsulot(item)} className={'btn btn-outline-danger'}>Delete</button></td>
+                                {/*<td><button onClick={()=>deleteMaxsulot(item)} className={'btn btn-outline-danger'}>Delete</button></td>*/}
 
                         </tr>)
                     }
-                    {
-                        console.log(push)
-                    }
+
                     </tbody>
                 </table>
 
@@ -126,18 +156,51 @@ function SavdoOynasi({getSavdo,deleteSavdo,savdo,getMaxsulotRuyxati,MaxsulotlarR
                             </select>
                     </div>
                     <div className="navBox2">
-                        <img src={img} alt=""/>
-                        <img src={img2} alt=""/>
-                        <img src={img3} alt=""/>
-                        <img src={img4} alt=""/>
-                        <img src={img5} alt=""/>
+                        <img style={{cursor:'pointer'}} onClick={toggle} src={img} alt=""/>
+                        <Modal isOpen={active} toggle={toggle}>
+                            <ModalHeader>
+                                USHLAB TURISH
+                            </ModalHeader>
+                            <ModalBody>
+                                Manba Topilmadi !!!
+                            </ModalBody>
+                            <ModalFooter>
+                                <button className={'btn btn-outline-primary'} onClick={toggle}>'Chiqish</button>
+                            </ModalFooter>
+                        </Modal>
+                        {/*<img style={{cursor:'pointer'}} onClick={toggle2} src={img2} alt=""/>*/}
+                        <img style={{cursor:'pointer'}} src={img3} alt=""/>
+                        <img style={{cursor:'pointer'}} onClick={toggle2} src={img4} alt=""/>
+                        <Modal isOpen={active2} toggle={toggle2}>
+                            <ModalHeader>
+                                Smenadagi xisobot
+                            </ModalHeader>
+                            <ModalBody>
+                                Manba Topilmadi !!!
+                            </ModalBody>
+                            <ModalFooter>
+                                <button className={'btn btn-outline-primary'} onClick={toggle2}>'Chiqish</button>
+                            </ModalFooter>
+                        </Modal>
+                        <img style={{cursor:'pointer'}} onClick={toggle3} src={img5} alt=""/>
+                        <Modal isOpen={active3} toggle={toggle3}>
+                            <ModalHeader>
+                                Currency
+                            </ModalHeader>
+                            <ModalBody>
+                                Manba Topilmadi !!!
+                            </ModalBody>
+                            <ModalFooter>
+                                <button className={'btn btn-outline-primary'} onClick={toggle3}>'Chiqish</button>
+                            </ModalFooter>
+                        </Modal>
                         <img src={img6} alt=""/>
                     </div>
                 </div>
                 <div className="block2">
 
                             <div className="mahsulotBox" style={{marginLeft:'60px'}}>
-                                <input type="text" className={''} value={input.mahsulotnomi} onChange={mahsulotnomi} placeholder={'mahsulot nomini yozing'}/>
+                                <input type="text" value={input.mahsulotnomi} onChange={mahsulotnomi} placeholder={'mahsulot nomini yozing'}/>
                                 <img src={img8} alt="" style={{cursor:'pointer'}}/>
                             </div>
                 </div>
@@ -154,12 +217,19 @@ function SavdoOynasi({getSavdo,deleteSavdo,savdo,getMaxsulotRuyxati,MaxsulotlarR
                                         </thead>
                                         <tbody>
                                         {
-                                            arr1.map(item=><tr key={item.id}>
+                                            arr1.filter(val=>{
+                                                if (input.mahsulotnomi===''){
+                                                    return val
+                                                }else if (val.name.toUpperCase().includes(input.mahsulotnomi.toUpperCase())){
+                                                    return val
+                                                }
+                                            })
+                                                .map(item=><tr key={item.id}>
                                                 <td style={{marginLeft:'10px'}}>{item.name}</td>
                                                 <td className={'d-flex justify-content-between'}>
-                                                    <button onClick={()=>setCount(p=>p+1)} className={'btn btn-outline-dark'}>+</button>
-                                                    {count}
-                                                    <button onClick={()=>setCount(p=>p-1)} className={'btn btn-outline-dark'}>-</button>
+                                                    <button onClick={()=>setCount(item.id)} className={'btn btn-outline-dark'}>+</button>
+                                                    {item.counter}
+                                                    <button onClick={()=>sMinus(item.id)} className={'btn btn-outline-dark'}>-</button>
                                                 </td>
                                                 <td> </td>
                                                 <td>
@@ -172,7 +242,11 @@ function SavdoOynasi({getSavdo,deleteSavdo,savdo,getMaxsulotRuyxati,MaxsulotlarR
                                 </div>
 
                                 <div style={{marginTop:'100px'}} className={'d-flex justify-content-around'}>
-                                    <h6>Mahsulot soni: 5</h6>
+                                    <h6>Mahsulot soni: {
+                                        arr1.map(item=><tr key={item.id}>
+                                            <td style={{fontSize:'18px'}}>{item.counter}</td>
+                                        </tr>)
+                                    }</h6>
                                     <h6>Jami:200</h6>
                                 </div>
                                 <hr/>
