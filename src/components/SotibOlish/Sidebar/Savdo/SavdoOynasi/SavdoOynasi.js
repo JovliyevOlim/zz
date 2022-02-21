@@ -15,6 +15,7 @@ import MaxsulotlarRoyxariReducer, {
     getMaxsulotRuyxati
 } from "../../Maxsulotlar/reducer/MaxsulotlarRoyxariReducer";
 import {Modal, ModalBody, ModalFooter, ModalHeader} from "reactstrap";
+import Calculator from "../../../header/Calculator/Calculator";
 
 function SavdoOynasi({getSavdo,deleteSavdo,savdo,getMaxsulotRuyxati,MaxsulotlarRoyxariReducer,deleteMaxsulotRuyxati}){
 
@@ -37,6 +38,10 @@ function SavdoOynasi({getSavdo,deleteSavdo,savdo,getMaxsulotRuyxati,MaxsulotlarR
     const [active,setActive] = useState(false)
     const [active2,setActive2] = useState(false)
     const [active3,setActive3] = useState(false)
+    const [openCalc,setOpenCalc] = useState(false)
+    function openCalcul(){
+        setOpenCalc(!openCalc)
+    }
 
     function pushesh(name,id){
        arr1.push({name: name,id:id,counter:0})
@@ -169,8 +174,12 @@ function SavdoOynasi({getSavdo,deleteSavdo,savdo,getMaxsulotRuyxati,MaxsulotlarR
                             </ModalFooter>
                         </Modal>
                         {/*<img style={{cursor:'pointer'}} onClick={toggle2} src={img2} alt=""/>*/}
-                        <img style={{cursor:'pointer'}} src={img3} alt=""/>
+                        <img onClick={openCalcul} style={{cursor:'pointer'}} src={img3} alt=""/>
+
+
+
                         <img style={{cursor:'pointer'}} onClick={toggle2} src={img4} alt=""/>
+
                         <Modal isOpen={active2} toggle={toggle2}>
                             <ModalHeader>
                                 Smenadagi xisobot
@@ -240,7 +249,11 @@ function SavdoOynasi({getSavdo,deleteSavdo,savdo,getMaxsulotRuyxati,MaxsulotlarR
                                         </tbody>
                                     </table>
                                 </div>
-
+                                <div className={'bbb'}>
+                                    {
+                                        openCalc?<Calculator/>:''
+                                    }
+                                </div>
                                 <div style={{marginTop:'100px'}} className={'d-flex justify-content-around'}>
                                     <h6>Mahsulot soni: {
                                         arr1.map(item=><tr key={item.id}>
