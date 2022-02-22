@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="2ed0236b-2151-406e-828e-c9a3e0b2b336" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/MahsulotlarRuyxati/MaxsulotlarRoyxati.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/MahsulotlarRuyxati/MaxsulotlarRoyxati.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/MahsulotlarRuyxati/Taxrirlash/Taxrirlash.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/MahsulotlarRuyxati/Taxrirlash/Taxrirlash.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/MahsulotlarRuyxati/barchaMaxsulotlar/BarchaMaxsulotlar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SotibOlish/Sidebar/Maxsulotlar/MahsulotlarRuyxati/barchaMaxsulotlar/BarchaMaxsulotlar.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,7 +189,7 @@
       <workItem from="1645247608982" duration="23709000" />
       <workItem from="1645331581866" duration="17798000" />
       <workItem from="1645506660605" duration="432000" />
-      <workItem from="1645509024871" duration="778000" />
+      <workItem from="1645509024871" duration="1236000" />
     </task>
     <task id="LOCAL-00001" summary="app.js">
       <created>1643606654320</created>
@@ -436,7 +436,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645451624871</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="barcamaxsulot">
+      <created>1645509828299</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1645509828299</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -471,7 +478,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="SHELVE_DETAILS_PREVIEW_SHOWN" value="true" />
-    <MESSAGE value="come" />
     <MESSAGE value="senior dasturchi ishi" />
     <MESSAGE value="lavozim" />
     <MESSAGE value="reducerlar" />
@@ -496,7 +502,8 @@
     <MESSAGE value="savOyna" />
     <MESSAGE value="savOyna2" />
     <MESSAGE value="savOyna3" />
-    <option name="LAST_COMMIT_MESSAGE" value="savOyna3" />
+    <MESSAGE value="barcamaxsulot" />
+    <option name="LAST_COMMIT_MESSAGE" value="barcamaxsulot" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

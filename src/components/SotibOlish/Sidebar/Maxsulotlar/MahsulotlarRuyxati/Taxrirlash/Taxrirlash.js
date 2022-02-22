@@ -21,6 +21,7 @@ function Taxrirlash({saveMaxsulotRuyxati,deleteMaxsulotRuyxati,getMaxsulotRuyxat
             shtrixkod:'',
             shtrixkodturi:'',
             //----
+            sotibolishnarxi:'',
             ulcovbirligi:'',
             ulcovnomi:'',
             ulcovqisqanomi:'',
@@ -63,6 +64,11 @@ function Taxrirlash({saveMaxsulotRuyxati,deleteMaxsulotRuyxati,getMaxsulotRuyxat
     }
     function ulcovbirligi(e){
         input.ulcovbirligi = e.target.value
+        let a = {...input}
+        setInput(a)
+    }
+    function sotibolishnarxi(e){
+        input.sotibolishnarxi = e.target.value
         let a = {...input}
         setInput(a)
     }
@@ -169,10 +175,10 @@ function Taxrirlash({saveMaxsulotRuyxati,deleteMaxsulotRuyxati,getMaxsulotRuyxat
             barcode: input.shtrixkod,
             brandId:input.ferma,
             categoryId:input.shtrixkodturi,
-            measurementId:input.ulcovbirligi,
+            measurementId:1,
             photoIds:1,
             minQuantity:input.foydafoiz,
-            buyPrice:'',
+            buyPrice:input.sotibolishnarxi,
             salePrice:input.sotishnarxi,
             tax:input.amaldagisoliq,
             branchId:input.ferma,
@@ -195,8 +201,8 @@ function Taxrirlash({saveMaxsulotRuyxati,deleteMaxsulotRuyxati,getMaxsulotRuyxat
                         <div className={'d-flex justify-content-between '}>
 
                             <select name="" id={'olcov'} onChange={ulcovbirligi} value={input.ulcovbirligi} className={'form-control'}>
-                                <option value="#">Tanlash</option>
-                                <option value="#">Kg</option>
+                                <option value="">Tanlash</option>
+                                <option value="">Kg</option>
                             </select>
                             <h2 onClick={toggle} style={{cursor: 'pointer'}}>+</h2>
                         </div>
@@ -303,8 +309,8 @@ function Taxrirlash({saveMaxsulotRuyxati,deleteMaxsulotRuyxati,getMaxsulotRuyxat
                 </select>
                 <label htmlFor={'turiMah'} className={'mt-3'}>Soliqning ajratilishi</label>
                 <select name="" className={'form-control'} value={input.soliqajralishi} onChange={soliqajralishi} id={'turiMah'}>
-                    <option value="#">Narxga qo`shiladi</option>
-                    <option value="#">Narx ichida</option>
+                    <option value="">Narxga qo`shiladi</option>
+                    <option value="">Narx ichida</option>
                 </select>
                 <div className="table-responsive"> 
                 <table className={'table'}>
@@ -333,6 +339,8 @@ function Taxrirlash({saveMaxsulotRuyxati,deleteMaxsulotRuyxati,getMaxsulotRuyxat
                                 <label htmlFor={''}>Sotish narxi</label><br/>
                                 <input type="text" placeholder={'soliqsiz narxi'} value={input.sotishnarxi} onChange={sotishnarxi}
                                        style={{border:'1px solid gray',padding:'10px'}}/>
+                                <label htmlFor={''}>Sotib olish narxi</label>
+                                <input type="text" placeholder={'sotib olish narxi'} value={input.sotibolishnarxi} onChange={sotibolishnarxi}/>
                             </td>
                             <td>
                                 <p className='m-0' >mahsulot rasmi</p>

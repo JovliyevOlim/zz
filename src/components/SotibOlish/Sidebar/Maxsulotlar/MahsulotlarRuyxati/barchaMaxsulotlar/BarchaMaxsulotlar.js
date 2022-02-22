@@ -89,76 +89,6 @@ function BarchaMaxsulotlar({getMaxsulotRuyxati, maxsulotlar,MaxsulotlarRoyxariRe
         })
     }
 
-    function name(e) {
-        input.name = e.target.value
-        let a = {...input}
-        setInput(a)
-    }
-    function barcode(e) {
-        input.barcode = e.target.value
-        let a = {...input}
-        setInput(a)
-    }
-    function brandId(e) {
-        input.brandId = e.target.value
-        let a = {...input}
-        setInput(a)
-    }
-    function categoryId(e) {
-        input.categoryId = e.target.value
-        let a = {...input}
-        setInput(a)
-    }
-    function measurementId(e) {
-        input.measurementId = e.target.value
-        let a = {...input}
-        setInput(a)
-    }
-    function photoIds(e) {
-        input.photoIds = e.target.value
-        let a = {...input}
-        setInput(a)
-    }
-    function minQuantity(e) {
-        input.minQuantity = e.target.value
-        let a = {...input}
-        setInput(a)
-    }
-    function buyPrice(e) {
-        input.buyPrice = e.target.value
-        let a = {...input}
-        setInput(a)
-    }
-    function salePrice(e) {
-        input.salePrice = e.target.value
-        let a = {...input}
-        setInput(a)
-    }
-    function tax(e) {
-        input.tax = e.target.value
-        let a = {...input}
-        setInput(a)
-    }
-    function branchId(e) {
-        input.branchId = e.target.value
-        let a = {...input}
-        setInput(a)
-    }
-    function expireDate(e) {
-        input.expireDate = e.target.value
-        let a = {...input}
-        setInput(a)
-    }
-    function dueDate(e) {
-        input.dueDate = e.target.value
-        let a = {...input}
-        setInput(a)
-    }
-    function search(e) {
-        input.inputsearch = e.target.value
-        let a = {...input}
-        setInput(a)
-    }
 
     function deleteM(item) {
         deleteMaxsulotRuyxati(item.id)
@@ -264,7 +194,6 @@ function BarchaMaxsulotlar({getMaxsulotRuyxati, maxsulotlar,MaxsulotlarRoyxariRe
         </div>
     )
 }
-
 
 export default connect(({MaxsulotlarRoyxariReducer:{maxsulotlar}})=>({maxsulotlar}), {
     getMaxsulotRuyxati,
