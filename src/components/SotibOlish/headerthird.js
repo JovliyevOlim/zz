@@ -46,6 +46,7 @@ import Yangiotkazma from './Sidebar/Baza/otkazmalarRoyxati/taxrirlash/Taxrirlash
 import Dukon1 from './Sidebar/Settings/DukonSozlamalari/dukon/Dukon1'
 import Soliq from './Sidebar/Settings/DukonSozlamalari/soliq/Soliq'
 import BarchaSavdolar from "./Sidebar/Savdo/BarcaSavdolar/BarchaSavdolar";
+import Profil from './header/Profil';
 function Headerthird() {
 
     const [classheader,setClassheader] = useState('classheader1')
@@ -120,6 +121,7 @@ function Headerthird() {
                 <Route path={'/headerthird/soliqlarXisoboti'} component={SoliqlarXisoboti}/>
                 <Route path={'/headerthird/bazalarSetting'} component={Bazalar}/>
                 <Route path={'/headerthird/bazaSozlama'} component={SozlamalarBtn}/>
+                <Route path={'/headerthird/profil'} component={Profil}/>
                 <Route path={'/headerthird/'} component={Third}/>
             </Switch>
         </div>

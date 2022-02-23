@@ -2,10 +2,12 @@ import './header.css'
 import imgMenu from '../../../img/menu.png'
 import imgCalc from '../../../img/calculator.png'
 import imgNot from '../../../img/notification.png'
+import Arrow from '../../../img/Arrow.png'
 import {useState,useEffect} from "react";
 import {connect} from "react-redux";
 import {active} from "../../../reducer/functionreducer";
 import Calculator from "./Calculator/Calculator";
+import { Link } from 'react-router-dom';
 
 
 function Header({active,sidebarfunc}) {
@@ -47,12 +49,7 @@ function Header({active,sidebarfunc}) {
                     <div className="imgUserBox">
                         <div className="imgUser">
                         </div>
-                        <select className={'profil'} name="" id="">
-                            <option value='none'> </option>
-                            <option value="#">Profile</option>
-                            <option value="#">About Me</option>
-                            <option value="#">My Cabinet</option>
-                        </select>
+                        <Link to={'/headerthird/profil'}> <img src={Arrow} alt="" /> </Link>
                     </div>    
                 </div>
 
