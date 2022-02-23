@@ -1,4 +1,4 @@
-import { Link,Switch,Route } from 'react-router-dom'
+import {Link, Switch, Route, useHistory} from 'react-router-dom'
 import CSV from '../../../../../img/CSV.png'
 import Excel from '../../../../../img/Excel.png'
 import Print from '../../../../../img/Print.png'
@@ -24,7 +24,7 @@ function MijozlarXisoboti() {
             sananibelgilang:'',
         }
     )
-
+    const history = useHistory()
     function xodim(e){
         inputvalue.xodim = e.target.value
         let a = {...inputvalue}
@@ -49,7 +49,8 @@ function MijozlarXisoboti() {
 
     useEffect(()=>{
         getMijozhisobot()
-    })
+        history.push('/headerthird/mijozlarXisoboti/1')
+    },[])
 
     return (
         <div className="col-md-12 mt-4 mb-4">
@@ -64,8 +65,8 @@ function MijozlarXisoboti() {
                     <div className="col-md-6">
                         <h6>Xodim:</h6>
                         <select className='inptData' value={inputvalue.xodim} onChange={xodim} name="" id="">
-                            <option value="#">Barcha xodimlar</option>
-                            <option value="#"> . . . . . .</option>
+                            <option value="">Barcha xodimlar</option>
+                            <option value=""> . . . . . .</option>
                         </select>
                     </div>
                     <div className="col-md-6">
@@ -115,7 +116,7 @@ function MijozlarXisoboti() {
                     <Link to={'/headerthird/mijozlarXisoboti/1'}><button className={'btnPagenesion'}>Savdolar</button></Link>
                     <Link to={'/headerthird/mijozlarXisoboti/2'}><button className={'btnPagenesion'}>Ulushli savdolar</button></Link>
                     <Link to={'/headerthird/mijozlarXisoboti/3'}><button className={'btnPagenesion'}>Xarajatlar</button></Link>
-                    <Link to={'/headerthird/mijozlarXisoboti/4'}><button className={'btnPagenesion'}>Mijozlar bn ishlash</button></Link>
+                    {/*<Link to={'/headerthird/mijozlarXisoboti/4'}><button className={'btnPagenesion'}>Mijozlar bn ishlash</button></Link>*/}
                 </div>
 
                 <div className="qoshish mt-4">

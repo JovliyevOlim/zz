@@ -8,8 +8,9 @@ import './otkazmalarXisoboti.css'
 import {connect} from 'react-redux'
 import {getOtkazmalarxisoboti,saveOtkazmalarxisoboti,editOtkazmalarxisoboti,deleteOtkazmalarxisoboti} from '../reducer/OtkazmalarxisobotiReducer'
 import {useEffect,useState} from 'react'
+import OtkazmaReducer, {deleteOtkazma, editOtkazma, getOtkazma, saveOtkazma} from "../../Baza/reducer/OtkazmaReducer";
 
-function OtkazmalarXisoboti({getOtkazmalarxisoboti,saveOtkazmalarxisoboti,editOtkazmalarxisoboti,deleteOtkazmalarxisoboti}) {
+function OtkazmalarXisoboti({getOtkazma,OtkazmaReducer}) {
 
     const [input,setInput] = useState(
         {
@@ -42,8 +43,9 @@ function OtkazmalarXisoboti({getOtkazmalarxisoboti,saveOtkazmalarxisoboti,editOt
     }
 
     useEffect(()=>{
-        getOtkazmalarxisoboti()
-    })
+        // getOtkazmalarxisoboti()
+        getOtkazma()
+    },[])
 
     return (
         <div className="col-md-12 mt-4 ">
@@ -96,21 +98,30 @@ function OtkazmalarXisoboti({getOtkazmalarxisoboti,saveOtkazmalarxisoboti,editOt
                                    <table className='table table-striped table-bordered mt-4 '>
                                           <thead>
                                                  <tr>
-                                                        <th>Sana</th>
-                                                        <th>Qisqa eslatma</th>
-                                                        <th>Baza</th>
-                                                        <th>Turi</th>
-                                                        <th>Savdogar</th>
+                                                        {/*<th>Sana</th>*/}
+                                                        {/*<th>Qisqa eslatma</th>*/}
+                                                        {/*<th>Baza</th>*/}
+                                                        {/*<th>Turi</th>*/}
+                                                        {/*<th>Savdogar</th>*/}
+                                                     <th>shippedBranchId</th>
+                                                     <th>receivedBranchId</th>
+                                                     <th>exchangeDate</th>
+                                                     <th>description</th>
+                                                     <th>exchangeStatusId</th>
+                                                     <th>businessId</th>
                                                  </tr>
                                           </thead>
                                           <tbody>
-                                                 <tr>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                 </tr>
+                                          {
+                                              OtkazmaReducer.otkazmalar.map(item=><tr key={item.id}>
+                                                  <td>{item.shippedBranchId}</td>
+                                                  <td>{item.receivedBranchId}</td>
+                                                  <td>{item.exchangeDate}</td>
+                                                  <td>{item.description}</td>
+                                                  <td>{item.exchangeStatusId}</td>
+                                                  <td>{item.businessId}</td>
+                                              </tr>)
+                                          }
                                           </tbody>
                                    </table>
                             </div>
@@ -125,4 +136,5 @@ function OtkazmalarXisoboti({getOtkazmalarxisoboti,saveOtkazmalarxisoboti,editOt
               </div>
     )
 }
-export default connect(({OtkazmalarxisobotiReducer:{otkazmaxisobot}})=>({otkazmaxisobot}),{getOtkazmalarxisoboti,saveOtkazmalarxisoboti,editOtkazmalarxisoboti,deleteOtkazmalarxisoboti}) (OtkazmalarXisoboti)
+
+export default connect((OtkazmaReducer),{getOtkazma,saveOtkazma,editOtkazma,deleteOtkazma}) (OtkazmalarXisoboti)

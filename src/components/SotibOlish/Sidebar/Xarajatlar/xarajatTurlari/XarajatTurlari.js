@@ -54,9 +54,7 @@ function XarajatTurlari({getXarajatlarTurlari, xarajatturlari,saveXarajatlarTurl
         console.log('uuuuuhbbhu')
     }
 
-    useEffect(() => {
-        getXarajatlarTurlari()
-    }, [])
+
 
     const [active, setActive] = useState(false)
 
@@ -75,6 +73,10 @@ function XarajatTurlari({getXarajatlarTurlari, xarajatturlari,saveXarajatlarTurl
         toggle()
     }
 
+
+    useEffect(() => {
+        getXarajatlarTurlari()
+    }, [])
     return (
         <div className="col-md-12 mt-4 mb-4">
             <div className="textHeaderXRT">

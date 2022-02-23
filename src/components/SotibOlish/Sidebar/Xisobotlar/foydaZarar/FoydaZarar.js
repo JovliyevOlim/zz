@@ -1,9 +1,16 @@
 import './foydaZarar.css'
 import {connect} from "react-redux";
 import {useEffect,useState} from "react";
-import {deleteFoydaZarar, editFoydaZarar, getFoydaZarar, saveFoydaZarar} from "../reducer/FoydaZararReducer";
+import FoydaZararReducer, {deleteFoydaZarar, editFoydaZarar, getFoydaZarar, saveFoydaZarar} from "../reducer/FoydaZararReducer";
+import MaxsulotlarRoyxariReducer, {
+       deleteMaxsulotRuyxati,
+       getMaxsulotRuyxati
+} from "../../Maxsulotlar/reducer/MaxsulotlarRoyxariReducer";
+import SavdoOynaReducer, {deleteSavdo, editSavdo, getSavdo, saveSavdo} from "../../Savdo/reducer/SavdoOynaReducer";
+// import DatePicker from "react-datepicker";
+// import "react-datepicker/dist/react-datepicker.css";
 
-function FoydaZarar({getFoydaZarar,saveFoydaZarar,editFoydaZarar,deleteFoydaZarar,foydazarar}) {
+function FoydaZarar({getFoydaZarar,saveFoydaZarar,MaxsulotlarRoyxariReducer,deleteFoydaZarar,foydazarar}) {
 
        const [input,setInput] = useState(
            {
@@ -14,6 +21,7 @@ function FoydaZarar({getFoydaZarar,saveFoydaZarar,editFoydaZarar,deleteFoydaZara
            }
        )
 
+       const [startDate, setStartDate] = useState(new Date());
        function bazatanlash(e){
               input.branchId= e.target.value
               let a = {...input}
@@ -40,12 +48,14 @@ function FoydaZarar({getFoydaZarar,saveFoydaZarar,editFoydaZarar,deleteFoydaZara
        }
        useEffect(()=>{
               getFoydaZarar()
+              getMaxsulotRuyxati()
        },[])
 
 
 
        return (
               <div className="col-md-12 mt-4 mb-4">
+                     {/*<DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />*/}
                      <div className="textHeaderF">
                      <h2>Foyda va Zarar</h2>
                      </div>
@@ -74,6 +84,7 @@ function FoydaZarar({getFoydaZarar,saveFoydaZarar,editFoydaZarar,deleteFoydaZara
                             <table className='table table-striped table-bordered mt-4'>
                                    <thead>
                                           <tr>
+                                                 <th>Nomi</th>
                                                  <th>Maxsulot sotib olish narxi(sum)</th>
                                                  <th>Maxsulot sotish narxi(sum)</th>
                                                  <th>Umumiy qoladigan foyda(sum) </th>
@@ -83,11 +94,16 @@ function FoydaZarar({getFoydaZarar,saveFoydaZarar,editFoydaZarar,deleteFoydaZara
                                    </thead>
                                    <tbody>
                                    {
-                                          foydazarar.map(item=><tr key={item.id}>
+                                          MaxsulotlarRoyxariReducer.maxsulotlar.map(item=><tr key={item.id}>
                                                  <td>{item.name}</td>
+                                                 <td>{item.buyPrice}</td>
+                                                 <td>{item.salePrice}</td>
+                                                 <td>{item.salePrice-item.buyPrice}</td>
+                                                 <td>{item.tax}</td>
+                                                 <td>{(item.salePrice-item.buyPrice) -item.tax}</td>
                                           </tr>)
                                    }
-                                    
+
                                    </tbody>
                             </table>
                             </div>
@@ -102,4 +118,5 @@ function FoydaZarar({getFoydaZarar,saveFoydaZarar,editFoydaZarar,deleteFoydaZara
               </div>  
        )
 }
-export default connect(({FoydaZararReducer:{foydazarar}})=>({foydazarar}),{getFoydaZarar,saveFoydaZarar,editFoydaZarar,deleteFoydaZarar}) (FoydaZarar)
+// export default connect(({FoydaZararReducer:{foydazarar}})=>({foydazarar}),{getFoydaZarar,saveFoydaZarar,editFoydaZarar,deleteFoydaZarar}) (FoydaZarar)
+export default connect((MaxsulotlarRoyxariReducer,FoydaZararReducer),{getFoydaZarar,saveFoydaZarar,editFoydaZarar,deleteFoydaZarar,getMaxsulotRuyxati,deleteMaxsulotRuyxati}) (FoydaZarar)
