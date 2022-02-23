@@ -148,12 +148,12 @@ function BarchaMaxsulotlar({getMaxsulotRuyxati, maxsulotlar,MaxsulotlarRoyxariRe
                             })
                                 .map(item => <tr key={item.id}>
                                     <td>{item.name}</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td> </td>
+                                    <td> </td>
+                                    <td> </td>
+                                    <td> </td>
+                                    <td> </td>
+                                    <td> </td>
                                     <td>
                                         <Link to={'/headerthird/mahsulotRuyxati/barcaMahsulot/taxrirlash'}>
                                             <button className='taxrirlash'><img src={Edit} alt=""/> Taxrirlash

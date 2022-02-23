@@ -6,10 +6,19 @@ import Pdf from '../../../../../../../img/PDF.png'
 import Edit from '../../../../../../../img/Edit.png'
 import Delete from '../../../../../../../img/Delete.png'
 import './savdolar.css'
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
+import {useHistory} from "react-router-dom";
+import {connect} from "react-redux";
 
-function Savdolar1(){
+import SavdoQoshishReducer, { getSavdolar} from "../../../../Savdo/reducer/SavdoQoshishReducer";
+import MijozGuruxReducer, {getMijozGurux} from "../../../../Hamkorlar/reducer/MijozGuruxReducer";
 
+function Savdolar1({SavdoQoshishReducer,getMijozGurux}){
+
+    useEffect(()=>{
+       getSavdolar()
+        getMijozGurux()
+    },[])
     const [input,setInput] = useState(
         {
             view:'',
@@ -57,32 +66,29 @@ function Savdolar1(){
                 <table className='table table-striped table-bordered mt-4 '>
                     <thead>
                     <tr>
-                        <th>sana</th>
-                        <th>Savdo raqami</th>
-                        <th>Mijoz</th>
-                        <th>Telefon raqami</th>
-                        <th>Baza</th>
-                        <th>To'lov statusi</th>
-                        {/*<th>To'lov usuli</th>*/}
-                        <th>Jami summa</th>
-                        <th>To'langan summa</th>
-                        <th>Qarz</th>
-
+                        <th>customerId</th>
+                        <th>userId</th>
+                        <th>productTraderDto</th>
+                        <th>payDate</th>
+                        <th>branchId</th>
+                        <th>payMethodId</th>
+                        <th>currencyId</th>
+                        <th>addressId</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>21.23.2021</td>
-                        <td>12</td>
-                        <td>mijoz</td>
-                        <td>9098888899</td>
-                        <td>baza </td>
-                        <td>to'lov status</td>
-                        <td>naqd</td>
-                        <td>200000</td>
-                        <td>33222333</td>
-
-                    </tr>
+                    {
+                        SavdoQoshishReducer.savdolar.map(item=><tr key={item.id}>
+                            <td>{item.customerId}</td>
+                            <td>{item.userId}</td>
+                            <td>{item.productTraderDto}</td>
+                            <td>{item.payDate}</td>
+                            <td>{item.branchId}</td>
+                            <td>{item.payMethodId}</td>
+                            <td>{item.currencyId}</td>
+                            <td>{item.addressId}</td>
+                        </tr>)
+                    }
                     </tbody>
                 </table>
             </div>
@@ -90,4 +96,5 @@ function Savdolar1(){
         </div>
     )
 }
-export default Savdolar1
+
+export default connect((SavdoQoshishReducer,MijozGuruxReducer),{getSavdolar,getMijozGurux}) (Savdolar1)

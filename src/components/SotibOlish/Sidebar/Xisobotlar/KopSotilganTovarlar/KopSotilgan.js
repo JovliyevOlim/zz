@@ -12,11 +12,11 @@ import Chart from "react-apexcharts";
 import {connect} from 'react-redux'
 import {getKopsotilgan,saveKopsotilgan,editKopsotilgan,deleteKopsotilgan} from '../reducer/KopsotilgantovarlarReducer'
 import {useEffect,useState} from 'react'
-function KopSotilgan({mijoz,dukon,summa,eslatma,getKopsotilgan,editKopsotilgan,saveKopsotilgan,deleteKopsotilgan}) {
+function KopSotilgan({mijoz,dukon,summa,eslatma,}) {
 
     useEffect(()=>{
         getKopsotilgan()
-    })
+    },[])
 
     const [inputvalue,setInputvalue] = useState(
         {

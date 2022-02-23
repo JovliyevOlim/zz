@@ -28,13 +28,15 @@ import QoldiqlarxisobotiReducer from './components/SotibOlish/Sidebar/Xisobotlar
 import SoliqlarxisobotiReducer from './components/SotibOlish/Sidebar/Xisobotlar/reducer/SoliqlarxisobotiReducer'
 import MaxsulotlarRoyxariReducer from "./components/SotibOlish/Sidebar/Maxsulotlar/reducer/MaxsulotlarRoyxariReducer";
 import branchreducer from "./reducer/branchreducer";
+import SavdoQoshishReducer from "./components/SotibOlish/Sidebar/Savdo/reducer/SavdoQoshishReducer";
 export default configureStore({
     reducer:{
         users,functionreducer,XodimReducer,LavozimReducer,XodimSavdoReducer,TaminotReducer,
         MijozGuruxReducer,MahsulotReducer,SotuvNarxiReducer,BolimReducer,FirmaReducer,XaridReducer,SavdoOynaReducer,
         OtkazmaReducer,XarajatlarReducer,XarajatTurlariReducer,FoydaZararReducer,XaridlarXisobotiReducer,
         MijozHisobotiReducer,XarajatXisobotReducer,SavdodagiTulovReducer,MaxsulotxisobotReducer,KopsotilgantovarlarReducer,
-        OtkazmalarxisobotiReducer,QoldiqlarxisobotiReducer,SoliqlarxisobotiReducer,MaxsulotlarRoyxariReducer,branchreducer
+        OtkazmalarxisobotiReducer,QoldiqlarxisobotiReducer,SoliqlarxisobotiReducer,MaxsulotlarRoyxariReducer,branchreducer,
+        SavdoQoshishReducer,
     },
         middleware:[api]
 })

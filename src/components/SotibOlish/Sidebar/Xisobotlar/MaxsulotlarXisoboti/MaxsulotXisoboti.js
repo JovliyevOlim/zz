@@ -11,7 +11,13 @@ import {useState,useEffect} from "react";
 import {Modal, ModalBody, ModalFooter, ModalHeader} from "reactstrap";
 import {getMaxsulotxisobot,saveMaxsulotxisobot,editMaxsulotxisobot,deleteMaxsulotxisobot} from '../reducer/MaxsulotxisobotReducer'
 import {connect} from 'react-redux'
-function MaxsulotXisoboti({getMaxsulotxisobot,saveMaxsulotxisobot,editMaxsulotxisobot,deleteMaxsulotxisobot,mijoz,dukon,summa,eslatma}) {
+import MaxsulotlarRoyxariReducer, {
+    deleteMaxsulotRuyxati,
+    editMaxsulotRuyxati,
+    getMaxsulotRuyxati,
+    saveMaxsulotRuyxati
+} from "../../Maxsulotlar/reducer/MaxsulotlarRoyxariReducer";
+function MaxsulotXisoboti({getMaxsulotxisobot,MaxsulotlarRoyxariReducer,dukon,summa,eslatma}) {
 
     const [inputvalue,setInputvalue] = useState(
         {
@@ -56,8 +62,9 @@ function MaxsulotXisoboti({getMaxsulotxisobot,saveMaxsulotxisobot,editMaxsulotxi
     }
 
     useEffect(()=>{
-        getMaxsulotxisobot()
-    })
+        // getMaxsulotxisobot()
+        getMaxsulotRuyxati()
+    },[])
 
     // const {mijoz,dukon,summa,eslatma} = props.match.params
     const [input,setInput] = useState(
@@ -164,56 +171,41 @@ function MaxsulotXisoboti({getMaxsulotxisobot,saveMaxsulotxisobot,editMaxsulotxi
                     <table className='table table-striped table-bordered mt-4 '>
                         <thead>
                         <tr>
-                            <th>Maxsulot</th>
-                            <th>Shtrix kod</th>
-                            <th>Qisqa malumot</th>
-                            <th>Xarid sanasi</th>
-                            <th>Purchase</th>
-                            <th>Diller</th>
-                            <th>Xarid narxi</th>
-                            <th>To'lov usuli</th>
-                            <th>Sana</th>
-                            <th>Savdo</th>
-                            <th>Mijoz</th>
-                            <th>Baza</th>
-                            <th>Miqdor</th>
-                            <th>Sotish narxi</th>
-                            <th>Jami</th>
-
+                            <th>name</th>
+                            <th>quantity</th>
+                            <th>barcode</th>
+                            <th>brandId</th>
+                            <th>categoryId</th>
+                            <th>measurementId</th>
+                            <th>photoIds</th>
+                            <th>minQuantity</th>
+                            <th>buyPrice</th>
+                            <th>salePrice</th>
+                            <th>tax</th>
+                            <th>branchId</th>
+                            <th>expireDate</th>
+                            <th>dueDate</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>21.23.2021</td>
-                            <td>12</td>
-                            <td>mijoz</td>
-                            <td>9098888899</td>
-                            <td>baza </td>
-                            <td>to'lov status</td>
-                            <td>naqd</td>
-                            <td>
-                                {/*<Link to={'/third/savdodaTulov/korish/'+input.mijoz+'/'+input.dukon+'/'+input.eslatma+'/'+input.summa}><button className={'btn btn-outline-primary'} onClick={toggle}>Ko`rish</button></Link>*/}
-                                anca narsa yozish kk
-                            </td>
-                            <Modal isOpen={active} toggle={toggle}>
-                                <ModalHeader>
-                                    Ko`rish
-                                </ModalHeader>
-                                <ModalBody>
-                                    <div>
-                                        <div className={'d-flex'}>
-                                           
-                                        </div>
-                                    </div>
-                                </ModalBody>
-                                <ModalFooter>
-                                    <button className={'btn btn-outline-primary'}>Print</button>
-                                    <button className={'btn btn-outline-primary'} onClick={toggle}>Chiqish</button>
-                                </ModalFooter>
-                            </Modal>
-                            {/*<td>200000</td>*/}
-                            {/*<td>33222333</td>*/}
-                        </tr>
+                        {
+                            MaxsulotlarRoyxariReducer.maxsulotlar.map(item=><tr key={item.id}>
+                                <td>{item.name}</td>
+                                <td>{item.quantity}</td>
+                                <td>{item.barcode}</td>
+                                <td>{item.branchId}</td>
+                                <td>{item.categoryId}</td>
+                                <td>{item.measurementId}</td>
+                                <td>{item.photoIds}</td>
+                                <td>{item.minQuantity}</td>
+                                <td>{item.buyPrice}</td>
+                                <td>{item.salePrice}</td>
+                                <td>{item.tax}</td>
+                                <td>{item.branchId}</td>
+                                <td>{item.expireDate}</td>
+                                <td>{item.dueDate}</td>
+                            </tr>)
+                        }
                         </tbody>
                     </table>
                 </div>
@@ -229,4 +221,4 @@ function MaxsulotXisoboti({getMaxsulotxisobot,saveMaxsulotxisobot,editMaxsulotxi
         </div>
     )
 }
-export default connect(({MaxsulotxisobotReducer:{maxsulotxisobot}})=>({maxsulotxisobot}),{getMaxsulotxisobot,saveMaxsulotxisobot,editMaxsulotxisobot,deleteMaxsulotxisobot}) (MaxsulotXisoboti)
+export default connect((MaxsulotlarRoyxariReducer),{getMaxsulotRuyxati,saveMaxsulotRuyxati,editMaxsulotRuyxati,deleteMaxsulotRuyxati}) (MaxsulotXisoboti)

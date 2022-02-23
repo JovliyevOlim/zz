@@ -15,10 +15,18 @@ import {
     saveXarajatxisobot,
     editXarajatxisobot,
     deleteXarajatxisobot,
-    xarajatxisobot
 } from '../reducer/XarajatXisobotReducer'
+import MaxsulotlarRoyxariReducer, {
+    deleteMaxsulotRuyxati,
+    getMaxsulotRuyxati
+} from "../../Maxsulotlar/reducer/MaxsulotlarRoyxariReducer";
+import SavdoOynaReducer, {deleteSavdo, editSavdo, getSavdo, saveSavdo} from "../../Savdo/reducer/SavdoOynaReducer";
+import XarajatTurlariReducer, {
+    deleteXarajatlarTurlari, editXarajatlarTurlari,
+    getXarajatlarTurlari, saveXarajatlarTurlari
+} from "../../Xarajatlar/reducer/XarajatTurlariReducer";
 
-function XarajatlarXisoboti() {
+function XarajatlarXisoboti({XarajatTurlariReducer}) {
 
 
     const [input,setInput] = useState(
@@ -60,7 +68,7 @@ function XarajatlarXisoboti() {
 
     useEffect(() => {
         getXarajatxisobot()
-    })
+    },[])
 
     return (
         <div className="col-md-12 mt-4 mb-4">
@@ -126,17 +134,20 @@ function XarajatlarXisoboti() {
                     <table className='table table-striped table-bordered mt-4 '>
                         <thead>
                         <tr>
+                            {/*<th>Title</th>*/}
                             <th>Xarajat turi</th>
+                            <th>branchId</th>
                             <th>Xarajat sababi</th>
                             <th>Xarajat miqdori(sum)</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
+                        {
+                            XarajatTurlariReducer.xarajatturlari.map(item=><tr key={item.id}>
+                                <td>{item.title}</td>
+                                <td>{item.branchId}</td>
+                            </tr>)
+                        }
                         </tbody>
                     </table>
                 </div>
@@ -152,9 +163,4 @@ function XarajatlarXisoboti() {
     )
 }
 
-export default connect(({XarajatXisobotReducer: {xarajatxisobot}}) => ({xarajatxisobot}), {
-    getXarajatxisobot,
-    saveXarajatxisobot,
-    editXarajatxisobot,
-    deleteXarajatxisobot
-})(XarajatlarXisoboti)
+export default connect((XarajatTurlariReducer,SavdoOynaReducer),{getXarajatlarTurlari,saveXarajatlarTurlari,editXarajatlarTurlari,deleteXarajatlarTurlari,}) (XarajatlarXisoboti)

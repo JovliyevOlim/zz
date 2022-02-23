@@ -4,22 +4,16 @@ import Excel from '../../../../../img/Excel.png'
 import Print from '../../../../../img/Print.png'
 import Data from '../../../../../img/Data.png'
 import Pdf from '../../../../../img/PDF.png'
-import Edit from '../../../../../img/Edit.png'
-import Delete from '../../../../../img/Delete.png'
 import './xaridxisobot.css'
 import {useState, useRef, useEffect} from "react";
 import { DateRangePickerComponent } from '@syncfusion/ej2-react-calendars'
 import {MenuItem, TextField,Select,InputLabel} from "@mui/material";
 import {connect} from "react-redux";
 import './xaridxisobot.css'
-import {
-    deleteXaridXisobot,
-    editXaridXisobot,
-    getXaridXisobot,
-    saveXaridXisobot
-} from "../reducer/XaridlarXisobotiReducer";
+import SavdoOynaReducer, {deleteSavdo, editSavdo, getSavdo, saveSavdo} from "../../Savdo/reducer/SavdoOynaReducer";
+import XaridReducer, {deleteXarid, editXarid, getXarid, saveXarid} from "../../Haridlar/reducer/XaridReducer";
 
-function XaridlarXisoboti({getXaridXisobot}) {
+function XaridlarXisoboti({getXaridXisobot,XaridReducer}) {
 
     const [input,setInput] = useState(
         {
@@ -28,7 +22,8 @@ function XaridlarXisoboti({getXaridXisobot}) {
             mahsulotizlash:'',
             sananibelgilash:'',
             view:'',
-            izlash:''
+            izlash:'',
+            eslatma:''
         }
     )
 
@@ -64,8 +59,9 @@ function XaridlarXisoboti({getXaridXisobot}) {
     }
 
     useEffect(()=>{
-        getXaridXisobot()
-    })
+        // getXaridXisobot()
+        getXarid()
+    },[])
 
     const [active,setActive] = useState(false)
     const [selectvalue,setSelectvalue] =useState('')
@@ -78,7 +74,6 @@ function XaridlarXisoboti({getXaridXisobot}) {
              event.isDefaultPrevented(true)
         event.isPropagationStopped(false)
         if(event.target.value == 20){
-
             setActive(true)
         }
         else{
@@ -171,46 +166,37 @@ function XaridlarXisoboti({getXaridXisobot}) {
                     <table className='table table-striped table-bordered mt-4 '>
                         <thead>
                         <tr>
-                            <th>sana</th>
-                            <th>Savdo raqami</th>
-                            <th>Mijoz</th>
-                            <th>Telefon raqami</th>
-                            <th>Baza</th>
-                            <th>To'lov statusi</th>
-                            <th>To'lov usuli</th>
-                            <th>Jami summa</th>
-                            <th>To'langan summa</th>
-                            <th>Qarz</th>
-                            <th>Yetkazish statusi</th>
-                            <th>Jami maxsulotlar</th>
-                            <th>Savdogar</th>
-                            <th>Savdo eslatmasi</th>
-                            <th>Yetkazish manzili</th>
-                            <th>Amallar</th>
+                            <td>dealerId</td>
+                            <td>seller</td>
+                            <td>purchaseStatusId</td>
+                            <td>paymentStatusId</td>
+                            <td>branchId</td>
+                            <td>date</td>
+                            <td>description</td>
+                            <td>deliveryPrice</td>
+                            <td>purchaseProductsDto</td>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>21.23.2021</td>
-                            <td>12</td>
-                            <td>mijoz</td>
-                            <td>9098888899</td>
-                            <td>baza </td>
-                            <td>to'lov status</td>
-                            <td>naqd</td>
-                            <td>200000</td>
-                            <td>33222333</td>
-                            <td>33222333</td>
-                            <td>bir kun</td>
-                            <td>jami maxsulot</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            {/*<td>*/}
-                            {/*    <Link to={'/third/xarajatlarRuyxati/xarajatqoshish'}><button className='taxrirlash'> <img src={Edit} alt="" /> Taxrirlash</button> </Link>*/}
-                            {/*    <button className='ochirish'> <img src={Delete} alt="" /> O'chirish</button>*/}
-                            {/*</td>*/}
-                        </tr>
+                        {
+                            XaridReducer.xaridlar.filter(val=>{
+                                if (input.eslatma===''){
+                                    return val
+                                }else if (val.description.toUpperCase().includes(input.eslatma.toUpperCase())){
+                                    return val
+                                }
+                            })
+                                .map(item=><tr key={item.id}>
+                                <td>{item.dealerId}</td>
+                                <td>{item.seller}</td>
+                                <td>{item.purchaseStatusId}</td>
+                                <td>{item.paymentStatusId}</td>
+                                <td>{item.branchId}</td>
+                                <td>{item.date}</td>
+                                <td>{item.description}</td>
+                                <td>{item.deliveryPrice}</td>
+                            </tr>)
+                        }
                         </tbody>
                     </table>
                 </div>
@@ -225,4 +211,5 @@ function XaridlarXisoboti({getXaridXisobot}) {
         </div>
     )
 }
-export default connect(({FirmaReducer:{firmalar}})=>({firmalar}),{getXaridXisobot,saveXaridXisobot,editXaridXisobot,deleteXaridXisobot}) (XaridlarXisoboti)
+// export default connect(({FirmaReducer:{firmalar}})=>({firmalar}),{getXaridXisobot,saveXaridXisobot,editXaridXisobot,deleteXaridXisobot}) (XaridlarXisoboti)
+export default connect((XaridReducer,SavdoOynaReducer),{getXarid,saveXarid,editXarid,deleteXarid}) (XaridlarXisoboti)

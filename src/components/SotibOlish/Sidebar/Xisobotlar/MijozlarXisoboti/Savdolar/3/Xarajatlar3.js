@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
 import CSV from '../../../../../../../img/CSV.png'
 import Excel from '../../../../../../../img/Excel.png'
 import Print from '../../../../../../../img/Print.png'
@@ -7,8 +7,15 @@ import Pdf from '../../../../../../../img/PDF.png'
 import Edit from '../../../../../../../img/Edit.png'
 import Delete from '../../../../../../../img/Delete.png'
 import './xarajat.css'
+import {connect} from "react-redux";
+import XarajatlarReducer, {
+    deleteXarajatlar,
+    editXarajatlar,
+    getXarajatlar,
+    saveXarajatlar
+} from "../../../../Xarajatlar/reducer/XarajatlarReducer";
 
-function Xarajatlar3(){
+function Xarajatlar3({XarajatlarReducer,getXarajatlar}){
 
     const [input,setInput] = useState(
         {
@@ -28,6 +35,9 @@ function Xarajatlar3(){
         setInput(a)
     }
 
+    useEffect(()=>{
+        getXarajatlar()
+    },[])
     return(
         <div className='rowStyleXT'>
              <div className="qoshish">
@@ -57,38 +67,30 @@ function Xarajatlar3(){
                 <table className='table table-striped table-bordered mt-4 '>
                     <thead>
                     <tr>
-                        <th>sana</th>
-                        <th>Qisqa eslatma</th>
-                        <th>Xarajat turi</th>
-                        <th>Baza</th>
-                        <th>To'lov statusi</th>
-                        {/*<th>To'lov usuli</th>*/}
-                        <th>Jami summa</th>
-                        <th>To'langan summa</th>
-                        <th>Xarajat qildi</th>
-                        <th>Xarajat eslatmasi</th>
-
+                        <th>outlayCategoryId</th>
+                        <th>totalSum</th>
+                        <th>branchId</th>
+                        <th>spenderId</th>
+                        <th>description</th>
+                        <th>date</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>21.23.2021</td>
-                        <td>12</td>
-                        <td>mijoz</td>
-                        <td>9098888899</td>
-                        <td>baza </td>
-                        <td>to'lov status</td>
-                        <td>naqd</td>
-                        <td>200000</td>
-                        <td>33222333</td>
-
-                    </tr>
+                    {
+                        XarajatlarReducer.xarajatlar.map(item=><tr key={item.id}>
+                            <td>{item.outlayCategoryId}</td>
+                            <td>{item.branchId}</td>
+                            <td>{item.spenderId}</td>
+                            <td>{item.description}</td>
+                            <td>{item.date}</td>
+                        </tr>)
+                    }
                     </tbody>
                 </table>
             </div>
-
-
         </div>
     )
 }
-export default Xarajatlar3
+
+export default connect((XarajatlarReducer),{getXarajatlar,
+    saveXarajatlar,editXarajatlar,deleteXarajatlar}) (Xarajatlar3)
