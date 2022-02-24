@@ -26,6 +26,10 @@ function Hamkorlar({active}) {
         }
     }
     function sidebaractive(){
+        const windowWidth = window.innerWidth;
+        if(windowWidth <= 767){
+            active()
+        }
     }
 
     return(
@@ -49,9 +53,9 @@ function Hamkorlar({active}) {
             {
                 active2 ?<ul>
                     <li onClick={sidebaractive}><Link className={'li-text'} to={'/headerthird/taminotchilar'}>Taminotchilar</Link></li>
-                    {/*<li><Link className={'hamkorlar'} to={'/mijozlar'}>Mijozlar</Link></li>*/}
+                    {/*<li onClick={sidebaractive}><Link className={'hamkorlar'} to={'/mijozlar'}>Mijozlar</Link></li>*/}
                     <li onClick={sidebaractive}><Link className={'li-text'} to={'/headerthird/mijozlarGuruhi'}>Mijozlar guruxlari</Link></li>
-                    {/*<li><Link className={'hamkorlar'} to={'/malumotTiklash'}>Malumotlarni tiklash</Link></li>*/}
+                    {/*<li onClick={sidebaractive}><Link className={'hamkorlar'} to={'/malumotTiklash'}>Malumotlarni tiklash</Link></li>*/}
                 </ul>:''
             }
 

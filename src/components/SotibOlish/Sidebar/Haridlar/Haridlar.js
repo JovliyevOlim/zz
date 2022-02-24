@@ -27,6 +27,10 @@ function Mahsulotlar({active}) {
         }
     }
     function sidebaractive(){
+        const windowWidth = window.innerWidth;
+        if(windowWidth <=767){
+            active()
+        }
     }
 
     return(
@@ -49,7 +53,7 @@ function Mahsulotlar({active}) {
                 active2?<ul>
                     <li onClick={sidebaractive}><Link   to={'/headerthird/xaridlarRuyxati'} className={'li-text'}>Xaridlar ruyxati</Link></li>
                     <li onClick={sidebaractive}><Link  to={'/headerthird/xaridQilish'} className={'li-text'}>Xarid qilish</Link></li>
-                    {/*<li><Link to={'/headerthird/qaytganXarid'} className={'haridClass'}>Qaytarilgan Xaridlar</Link></li>*/}
+                    {/*<li onClick={sidebaractive}><Link to={'/headerthird/qaytganXarid'} className={'haridClass'}>Qaytarilgan Xaridlar</Link></li>*/}
                 </ul>:''
             }
         </div>

@@ -28,6 +28,10 @@ function Mahsulotlar({active}) {
     }
 
     function sidebaractive(){
+        const windowWidth = window.innerWidth;
+        if(windowWidth <= 767){
+            active()
+        }
     }
 
     return (
@@ -63,7 +67,7 @@ function Mahsulotlar({active}) {
 
                     {/* <li  onClick={sidebaractive}><Link to={'/headerthird/sotuvNarxGuruhlanishi'} className={'mahqosh'}>Sotuv narxining guruhi</Link></li> */}
                     {/*<li  onClick={sidebaractive}><Link to={'/headerthird/sotuvNarxGuruhlanishi'} className={'mahqosh'}>Sotuv narxining guruhi</Link></li>*/}
-                    {/*<li><Link to={'/ulcovBirliklar'} className={'mahqosh'}>O`lchov birliklar</Link></li>*/}
+                    {/*<li onClick={sidebaractive}><Link to={'/ulcovBirliklar'} className={'mahqosh'}>O`lchov birliklar</Link></li>*/}
                     <li  onClick={sidebaractive}><Link to={'/headerthird/bolimlar'} className={'li-text'}>Bo`limlar</Link></li>
                     <li  onClick={sidebaractive}><Link to={'/headerthird/firmalar'} className={'li-text'}>Firmalar</Link></li>
                     {/*<li><Link to={'/kafolat'} className={'mahqosh'}>Kafolatlar</Link></li>*/}

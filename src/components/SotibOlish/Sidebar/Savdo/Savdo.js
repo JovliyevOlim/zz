@@ -30,6 +30,11 @@ function Savdo({active}) {
     }
 
     function sidebaractive(){
+
+        const windowWidth = window.innerWidth;
+        if(windowWidth <= 767){
+            active()
+        }
     }
     return(
         <div className={'row mahsulot'}>
@@ -52,7 +57,7 @@ function Savdo({active}) {
             {
                 active2?<ul>
                     {/*<li><Link to={'/mahsulotRuyxati'} className={'mahqosh'}>Barcha savdolar</Link></li>*/}
-                    <li><Link to={'/headerthird/barcasavdolar'}  className={'li-text'} >Barcha Savdolar</Link></li>
+                    <li onClick={sidebaractive}><Link to={'/headerthird/barcasavdolar'}  className={'li-text'} >Barcha Savdolar</Link></li>
                     <li onClick={sidebaractive}><Link to={'/headerthird/mahsulotQoshish'} className={'li-text'}>Savdo qo`shish</Link></li>
                     {/*<li><Link to={'/mahsulotShtrix'} className={'mahqosh'}>SAVDO</Link></li>*/}
                     <li   onClick={sidebaractive}><Link to={'/headerthird/turliTavar'} className={'li-text'} >Savdo oynasi</Link></li>

@@ -29,7 +29,10 @@ function Mahsulotlar({active}) {
     }
 
     function sidebaractive(){
-        active()
+        const windowWidth = window.innerWidth;
+        if(windowWidth <= 767){
+            active()
+        }
     }
     return(
         <div className={'row baza'}>

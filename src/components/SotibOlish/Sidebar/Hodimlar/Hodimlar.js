@@ -26,6 +26,10 @@ function Hodimlar({active,activemedia}) {
         }
     }
     function sidebaractive(){
+        const windowWidth = window.innerWidth;
+        if(windowWidth <= 767){
+            active()
+        }
     }
     return(
         <div className={'row h'}>
